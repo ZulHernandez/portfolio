@@ -1,0 +1,624 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333333;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #fff;
+  mix-blend-mode: exclusion;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff2079;
+}
+
+::-moz-selection {
+  background: #ff589a;
+  color: #000;
+  mix-blend-mode: difference;
+  text-decoration: dotted underline;
+}
+
+::selection {
+  background: #ff589a;
+  color: #000;
+  mix-blend-mode: difference;
+  -webkit-text-decoration: dotted underline;
+          text-decoration: dotted underline;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Raleway-Thin";
+  src: url(../assets/fonts/Raleway/Raleway-Thin.TTF);
+}
+@font-face {
+  font-display: swap;
+  font-family: "Raleway-ExtraLight";
+  src: url(../assets/fonts/Raleway/Raleway-ExtraLight.TTF);
+}
+@font-face {
+  font-display: swap;
+  font-family: "Raleway-Light";
+  src: url(../assets/fonts/Raleway/Raleway-Light.TTF);
+}
+@font-face {
+  font-display: swap;
+  font-family: "Raleway-Regular";
+  src: url(../assets/fonts/Raleway/Raleway-Regular.TTF);
+}
+@font-face {
+  font-display: swap;
+  font-family: "Raleway-Medium";
+  src: url(../assets/fonts/Raleway/Raleway-Medium.TTF);
+}
+@font-face {
+  font-display: swap;
+  font-family: "Raleway-SemiBold";
+  src: url(../assets/fonts/Raleway/Raleway-SemiBold.TTF);
+}
+@font-face {
+  font-display: swap;
+  font-family: "Raleway-Bold";
+  src: url(../assets/fonts/Raleway/Raleway-Bold.TTF);
+}
+@font-face {
+  font-display: swap;
+  font-family: "Raleway-ExtraBold";
+  src: url(../assets/fonts/Raleway/Raleway-ExtraBold.TTF);
+}
+@font-face {
+  font-display: swap;
+  font-family: "Raleway-Black";
+  src: url(../assets/fonts/Raleway/Raleway-Black.TTF);
+}
+@font-face {
+  font-display: swap;
+  font-family: "RockSalt-Regular";
+  src: url(../assets/fonts/Home/RockSalt-Regular.ttf);
+}
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Mono";
+  src: url(../assets/fonts/Home/IBMPlexMono-Bold.ttf);
+}
+html {
+  font-size: 10px;
+}
+@media (max-width: 1200px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 7px;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 6px;
+  }
+}
+@media (max-width: 400px) {
+  html {
+    font-size: 5px;
+  }
+}
+@media (max-width: 300px) {
+  html {
+    font-size: 4px;
+  }
+}
+@media (max-width: 200px) {
+  html {
+    font-size: 3px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway-Regular", sans-serif;
+  background-color: #fafafa;
+  color: #333333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container-fluid {
+  padding: 15rem 40rem 0 40rem;
+}
+@media (max-width: 1600px) {
+  .container-fluid {
+    padding: 15rem 35rem 0 35rem;
+  }
+}
+@media (max-width: 1400px) {
+  .container-fluid {
+    padding: 15rem 30rem 0 30rem;
+  }
+}
+@media (max-width: 1200px) {
+  .container-fluid {
+    padding: 10rem 20rem 0 20rem;
+  }
+}
+@media (max-width: 900px) {
+  .container-fluid {
+    padding: 5rem 10rem 0 10rem;
+  }
+}
+@media (max-width: 600px) {
+  .container-fluid {
+    padding: 5rem 5rem 0 5rem;
+  }
+}
+@media (max-width: 400px) {
+  .container-fluid {
+    padding: 5rem 2rem 0 2rem;
+  }
+}
+@media (max-width: 300px) {
+  .container-fluid {
+    padding: 5rem 1rem 0 1rem;
+  }
+}
+@media (max-width: 200px) {
+  .container-fluid {
+    padding: 5rem 0.5rem 0 0.5rem;
+  }
+}
+
+.nav-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - 10rem);
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 5rem;
+  box-shadow: 0 0.4rem 5rem 0px rgba(128, 128, 128, 0.1);
+}
+@media (max-width: 900px) {
+  .nav-header {
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.75);
+    -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(25px);
+    border-radius: 0 0 2rem 2rem;
+    transition: all 1s ease-in-out;
+  }
+}
+.nav-header__sup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-header__sup img {
+  height: 4rem;
+  width: 4rem;
+}
+.nav-header__links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  max-height: -moz-min-content;
+  max-height: min-content;
+}
+@media (max-width: 900px) {
+  .nav-header__links {
+    padding-top: 5rem;
+    gap: 10rem;
+    flex-direction: column;
+  }
+}
+.nav-header__links img {
+  height: 1.7rem;
+}
+@media (max-width: 900px) {
+  .nav-header__links img {
+    height: 6.8rem;
+  }
+}
+.nav-header__links span {
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #333333;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 900px) {
+  .nav-header__links span {
+    font-family: "Raleway-SemiBold", sans-serif;
+    font-size: 5.6rem;
+    text-decoration: none;
+  }
+}
+.nav-header__links span:hover {
+  text-decoration: underline;
+}
+.nav-header__links span.active {
+  color: #ff2079;
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  text-decoration: none;
+}
+.nav-header__options span {
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #333333;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 900px) {
+  .nav-header__options span {
+    font-family: "Raleway-SemiBold", sans-serif;
+    font-size: 2.1rem;
+    text-decoration: none;
+  }
+}
+.nav-header__options span:hover {
+  text-decoration: underline;
+}
+.nav-header__options span.active {
+  color: #ff2079;
+  text-decoration: none;
+}
+.nav-header #menu {
+  cursor: pointer;
+}
+
+#hola,
+#hello {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+#hola #hola-head,
+#hello #hola-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  gap: 8rem;
+}
+@media (max-width: 1200px) {
+  #hola #hola-head,
+  #hello #hola-head {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+#hola #hola-head h2,
+#hello #hola-head h2 {
+  color: #4d4d4d;
+  font-family: "Raleway-Regular", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  margin: 0px;
+}
+#hola #hola-head h1,
+#hello #hola-head h1 {
+  color: #ff2079;
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 9.6rem;
+  text-decoration: none;
+  margin: 0px;
+}
+#hola #hola-head #hola-head__text__pointer,
+#hello #hola-head #hola-head__text__pointer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+#hola #hola-head #pd,
+#hello #hola-head #pd {
+  font-family: "RockSalt-Regular", sans-serif;
+  font-size: 2.5rem;
+  text-decoration: none;
+  width: 43%;
+  line-height: 5rem;
+}
+#hola #hola-head #point,
+#hello #hola-head #point {
+  font-family: "Raleway-Black", sans-serif;
+  font-size: 2.5rem;
+  text-decoration: none;
+  width: 2%;
+}
+#hola #hola-head #sd,
+#hello #hola-head #sd {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-size: 2.5rem;
+  text-decoration: none;
+  width: 55%;
+}
+#hola #hola-head img,
+#hello #hola-head img {
+  width: 20rem;
+}
+@media (max-width: 1600px) {
+  #hola #hola-head h2,
+  #hello #hola-head h2 {
+    font-family: "Raleway-Regular", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+  #hola #hola-head h1,
+  #hello #hola-head h1 {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 9rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #pd,
+  #hello #hola-head #pd {
+    font-family: "RockSalt-Regular", sans-serif;
+    font-size: 2.5rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #point,
+  #hello #hola-head #point {
+    font-family: "Raleway-Black", sans-serif;
+    font-size: 2.5rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #sd,
+  #hello #hola-head #sd {
+    font-family: "IBM Plex Mono", sans-serif;
+    font-size: 2.5rem;
+    text-decoration: none;
+  }
+}
+@media (max-width: 1400px) {
+  #hola #hola-head h2,
+  #hello #hola-head h2 {
+    font-family: "Raleway-Regular", sans-serif;
+    font-size: 1.9rem;
+    text-decoration: none;
+  }
+  #hola #hola-head h1,
+  #hello #hola-head h1 {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 8.5rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #pd,
+  #hello #hola-head #pd {
+    font-family: "RockSalt-Regular", sans-serif;
+    font-size: 2.3rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #point,
+  #hello #hola-head #point {
+    font-family: "Raleway-Black", sans-serif;
+    font-size: 2.3rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #sd,
+  #hello #hola-head #sd {
+    font-family: "IBM Plex Mono", sans-serif;
+    font-size: 2.3rem;
+    text-decoration: none;
+  }
+}
+@media (max-width: 1200px) {
+  #hola #hola-head h2,
+  #hello #hola-head h2 {
+    font-family: "Raleway-Regular", sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
+  #hola #hola-head h1,
+  #hello #hola-head h1 {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 8rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #pd,
+  #hello #hola-head #pd {
+    font-family: "RockSalt-Regular", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #point,
+  #hello #hola-head #point {
+    font-family: "Raleway-Black", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #sd,
+  #hello #hola-head #sd {
+    font-family: "IBM Plex Mono", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+@media (max-width: 900px) {
+  #hola #hola-head h2,
+  #hello #hola-head h2 {
+    font-family: "Raleway-Regular", sans-serif;
+    font-size: 1.6rem;
+    text-decoration: none;
+  }
+  #hola #hola-head h1,
+  #hello #hola-head h1 {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 7rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #pd,
+  #hello #hola-head #pd {
+    font-family: "RockSalt-Regular", sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #point,
+  #hello #hola-head #point {
+    font-family: "Raleway-Black", sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #sd,
+  #hello #hola-head #sd {
+    font-family: "IBM Plex Mono", sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
+}
+@media (max-width: 600px) {
+  #hola #hola-head h2,
+  #hello #hola-head h2 {
+    font-family: "Raleway-Regular", sans-serif;
+    font-size: 1.4rem;
+    text-decoration: none;
+  }
+  #hola #hola-head h1,
+  #hello #hola-head h1 {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 6rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #pd,
+  #hello #hola-head #pd {
+    font-family: "RockSalt-Regular", sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #point,
+  #hello #hola-head #point {
+    font-family: "Raleway-Black", sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #sd,
+  #hello #hola-head #sd {
+    font-family: "IBM Plex Mono", sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+}
+@media (max-width: 400px) {
+  #hola #hola-head h2,
+  #hello #hola-head h2 {
+    font-family: "Raleway-Regular", sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  #hola #hola-head h1,
+  #hello #hola-head h1 {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 5rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #pd,
+  #hello #hola-head #pd {
+    font-family: "RockSalt-Regular", sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #point,
+  #hello #hola-head #point {
+    font-family: "Raleway-Black", sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #sd,
+  #hello #hola-head #sd {
+    font-family: "IBM Plex Mono", sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+}
+@media (max-width: 300px) {
+  #hola #hola-head h2,
+  #hello #hola-head h2 {
+    font-family: "Raleway-Regular", sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  #hola #hola-head h1,
+  #hello #hola-head h1 {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 4rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #pd,
+  #hello #hola-head #pd {
+    font-family: "RockSalt-Regular", sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #point,
+  #hello #hola-head #point {
+    font-family: "Raleway-Black", sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #sd,
+  #hello #hola-head #sd {
+    font-family: "IBM Plex Mono", sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+}
+@media (max-width: 200px) {
+  #hola #hola-head h2,
+  #hello #hola-head h2 {
+    font-family: "Raleway-Regular", sans-serif;
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+  #hola #hola-head h1,
+  #hello #hola-head h1 {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 3rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #pd,
+  #hello #hola-head #pd {
+    font-family: "RockSalt-Regular", sans-serif;
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #point,
+  #hello #hola-head #point {
+    font-family: "Raleway-Black", sans-serif;
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+  #hola #hola-head #sd,
+  #hello #hola-head #sd {
+    font-family: "IBM Plex Mono", sans-serif;
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+}
+#hola #hola-text p,
+#hello #hola-text p {
+  color: #666666;
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 2.4rem;
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */

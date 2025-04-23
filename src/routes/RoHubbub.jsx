@@ -5,8 +5,6 @@ import subc from "../assets/imgs/vector/companies/CUAM.svg";
 import { useContext } from "react";
 import { MyContext } from "../components/context/MyContext";
 
-import "../styles/hubbub.css";
-
 import CoHero from "../components/general/CoHero";
 import CoPuesto from "../components/hubbub/CoPuesto";
 import CoResPri from "../components/hubbub/CoResPri";

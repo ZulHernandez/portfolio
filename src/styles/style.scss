@@ -1,0 +1,445 @@
+//main Variables
+$red-800: #ff2079;
+$red-700: #ff3c8a;
+$red-600: #ff589a;
+$red-500: #ff74ab;
+$red-400: #ff90bc;
+$red-300: #ffabcd;
+$red-200: #ffc7dd;
+$red-100: #ffe3ee;
+$shade-800: #333333;
+$shade-700: #4d4d4d;
+$shade-600: #666666;
+$shade-500: #808080;
+$shade-400: #999999;
+$shade-300: #b3b3b3;
+$shade-200: #cccccc;
+$shade-100: #e6e6e6;
+$shade-0: #fff;
+
+//main ScroolBar
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: $shade-0;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $shade-800;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: $shade-0;
+    mix-blend-mode: exclusion;
+    &:hover {
+        background-color: rgba($red-800, 1);
+    }
+}
+
+//main Selection
+::selection {
+    background: $red-600;
+    color: #000;
+    mix-blend-mode: difference;
+    text-decoration: dotted underline;
+}
+
+//main FONTS
+
+$fonts: (
+    "Raleway-Thin",
+    "Raleway-ExtraLight",
+    "Raleway-Light",
+    "Raleway-Regular",
+    "Raleway-Medium",
+    "Raleway-SemiBold",
+    "Raleway-Bold",
+    "Raleway-ExtraBold",
+    "Raleway-Black"
+);
+
+@each $font in $fonts {
+    @font-face {
+        font-display: swap;
+        font-family: $font;
+        src: url(../assets/fonts/Raleway/#{$font}.TTF);
+    }
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "RockSalt-Regular";
+    src: url(../assets/fonts/Home/RockSalt-Regular.ttf);
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "IBM Plex Mono";
+    src: url(../assets/fonts/Home/IBMPlexMono-Bold.ttf);
+}
+
+@mixin fnFont($font, $size, $decoration) {
+    font-family: $font, sans-serif;
+    font-size: $size;
+    text-decoration: $decoration;
+}
+
+html {
+    font-size: 10px;
+    @media (max-width: 1200px) {
+        font-size: 8px;
+    }
+    @media (max-width: 900px) {
+        font-size: 7px;
+    }
+    @media (max-width: 600px) {
+        font-size: 6px;
+    }
+    @media (max-width: 400px) {
+        font-size: 5px;
+    }
+    @media (max-width: 300px) {
+        font-size: 4px;
+    }
+    @media (max-width: 200px) {
+        font-size: 3px;
+    }
+}
+
+//main Global Styles
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway-Regular", sans-serif;
+    background-color: #fafafa;
+    color: $shade-800;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container-fluid {
+    padding: 15rem 40rem 0 40rem;
+    @media (max-width: 1600px) {
+        padding: 15rem 35rem 0 35rem;
+    }
+    @media (max-width: 1400px) {
+        padding: 15rem 30rem 0 30rem;
+    }
+    @media (max-width: 1200px) {
+        padding: 10rem 20rem 0 20rem;
+    }
+    @media (max-width: 900px) {
+        padding: 5rem 10rem 0 10rem;
+    }
+    @media (max-width: 600px) {
+        padding: 5rem 5rem 0 5rem;
+    }
+    @media (max-width: 400px) {
+        padding: 5rem 2rem 0 2rem;
+    }
+    @media (max-width: 300px) {
+        padding: 5rem 1rem 0 1rem;
+    }
+    @media (max-width: 200px) {
+        padding: 5rem 0.5rem 0 0.5rem;
+    }
+}
+
+//main Navbar
+.nav-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 10rem);
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 5rem;
+    box-shadow: 0 0.4rem 5rem 0px rgba($shade-500, 0.1);
+    @media (max-width: 900px) {
+        flex-direction: column;
+        background-color: rgba($shade-0, 0.75);
+        backdrop-filter: blur(25px);
+        border-radius: 0 0 2rem 2rem;
+        transition: all 1s ease-in-out;
+    }
+
+    &__sup {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        gap: 2rem;
+        img {
+            height: 4rem;
+            width: 4rem;
+        }
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        max-height: min-content;
+        @media (max-width: 900px) {
+            padding-top: 5rem;
+            gap: 10rem;
+            flex-direction: column;
+        }
+
+        img {
+            height: 1.7rem;
+            @media (max-width: 900px) {
+                height: 6.8rem;
+            }
+        }
+
+        span {
+            @include fnFont("Raleway-SemiBold", 1.4rem, none);
+            @media (max-width: 900px) {
+                @include fnFont("Raleway-SemiBold", 5.6rem, none);
+            }
+            color: $shade-800;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &.active {
+                color: $red-800;
+                @include fnFont("Raleway-Bold", 1.4rem, none);
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__options {
+        span {
+            @include fnFont("Raleway-SemiBold", 1.4rem, none);
+            @media (max-width: 900px) {
+                @include fnFont("Raleway-SemiBold", 2.1rem, none);
+            }
+            color: $shade-800;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &.active {
+                color: $red-800;
+                text-decoration: none;
+            }
+        }
+    }
+    #menu {
+        cursor: pointer;
+    }
+}
+
+//main Home
+#hola,
+#hello {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    #hola-head {
+        //background-color: blue;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        gap: 8rem;
+
+        @media (max-width: 1200px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        h2 {
+            color: $shade-700;
+            @include fnFont("Raleway-Regular", 2rem, none);
+            margin: 0px;
+        }
+        h1 {
+            color: $red-800;
+            @include fnFont("Raleway-Bold", 9.6rem, none);
+            margin: 0px;
+        }
+        #hola-head__text__pointer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 2rem;
+        }
+        #pd {
+            @include fnFont("RockSalt-Regular", 2.5rem, none);
+            width: 43%;
+            line-height: 5rem;
+        }
+        #point {
+            @include fnFont("Raleway-Black", 2.5rem, none);
+            width: 2%;
+        }
+        #sd {
+            @include fnFont("IBM Plex Mono", 2.5rem, none);
+            width: 55%;
+        }
+
+        img {
+            width: 20rem;
+        }
+
+        @media (max-width: 1600px) {
+            h2 {
+                @include fnFont("Raleway-Regular", 2rem, none);
+            }
+            h1 {
+                @include fnFont("Raleway-Bold", 9rem, none);
+            }
+            #pd {
+                @include fnFont("RockSalt-Regular", 2.5rem, none);
+            }
+            #point {
+                @include fnFont("Raleway-Black", 2.5rem, none);
+            }
+            #sd {
+                @include fnFont("IBM Plex Mono", 2.5rem, none);
+            }
+        }
+        @media (max-width: 1400px) {
+            h2 {
+                @include fnFont("Raleway-Regular", 1.9rem, none);
+            }
+            h1 {
+                @include fnFont("Raleway-Bold", 8.5rem, none);
+            }
+            #pd {
+                @include fnFont("RockSalt-Regular", 2.3rem, none);
+            }
+            #point {
+                @include fnFont("Raleway-Black", 2.3rem, none);
+            }
+            #sd {
+                @include fnFont("IBM Plex Mono", 2.3rem, none);
+            }
+        }
+        @media (max-width: 1200px) {
+            h2 {
+                @include fnFont("Raleway-Regular", 1.8rem, none);
+            }
+            h1 {
+                @include fnFont("Raleway-Bold", 8rem, none);
+            }
+            #pd {
+                @include fnFont("RockSalt-Regular", 2rem, none);
+            }
+            #point {
+                @include fnFont("Raleway-Black", 2rem, none);
+            }
+            #sd {
+                @include fnFont("IBM Plex Mono", 2rem, none);
+            }
+        }
+        @media (max-width: 900px) {
+            h2 {
+                @include fnFont("Raleway-Regular", 1.6rem, none);
+            }
+            h1 {
+                @include fnFont("Raleway-Bold", 7rem, none);
+            }
+            #pd {
+                @include fnFont("RockSalt-Regular", 1.8rem, none);
+            }
+            #point {
+                @include fnFont("Raleway-Black", 1.8rem, none);
+            }
+            #sd {
+                @include fnFont("IBM Plex Mono", 1.8rem, none);
+            }
+        }
+        @media (max-width: 600px) {
+            h2 {
+                @include fnFont("Raleway-Regular", 1.4rem, none);
+            }
+            h1 {
+                @include fnFont("Raleway-Bold", 6rem, none);
+            }
+            #pd {
+                @include fnFont("RockSalt-Regular", 1.5rem, none);
+            }
+            #point {
+                @include fnFont("Raleway-Black", 1.5rem, none);
+            }
+            #sd {
+                @include fnFont("IBM Plex Mono", 1.5rem, none);
+            }
+        }
+        @media (max-width: 400px) {
+            h2 {
+                @include fnFont("Raleway-Regular", 1.2rem, none);
+            }
+            h1 {
+                @include fnFont("Raleway-Bold", 5rem, none);
+            }
+            #pd {
+                @include fnFont("RockSalt-Regular", 1.2rem, none);
+            }
+            #point {
+                @include fnFont("Raleway-Black", 1.2rem, none);
+            }
+            #sd {
+                @include fnFont("IBM Plex Mono", 1.2rem, none);
+            }
+        }
+        @media (max-width: 300px) {
+            h2 {
+                @include fnFont("Raleway-Regular", 1rem, none);
+            }
+            h1 {
+                @include fnFont("Raleway-Bold", 4rem, none);
+            }
+            #pd {
+                @include fnFont("RockSalt-Regular", 1rem, none);
+            }
+            #point {
+                @include fnFont("Raleway-Black", 1rem, none);
+            }
+            #sd {
+                @include fnFont("IBM Plex Mono", 1rem, none);
+            }
+        }
+        @media (max-width: 200px) {
+            h2 {
+                @include fnFont("Raleway-Regular", 0.8rem, none);
+            }
+            h1 {
+                @include fnFont("Raleway-Bold", 3rem, none);
+            }
+            #pd {
+                @include fnFont("RockSalt-Regular", 0.8rem, none);
+            }
+            #point {
+                @include fnFont("Raleway-Black", 0.8rem, none);
+            }
+            #sd {
+                @include fnFont("IBM Plex Mono", 0.8rem, none);
+            }
+        }
+    }
+    #hola-text {
+        p {
+            color: $shade-600;
+            @include fnFont("Raleway-Medium", 2.4rem, none);
+        }
+    }
+}

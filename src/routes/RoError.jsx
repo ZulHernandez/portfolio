@@ -1,7 +1,5 @@
 import sign from "/sign.svg";
 
-import "../styles/resume.css";
-
 import { useContext } from "react";
 import { MyContext } from "../components/context/MyContext";
 import { Link } from "react-router-dom";

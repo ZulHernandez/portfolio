@@ -5,8 +5,6 @@ import subc from "../assets/imgs/vector/companies/CMarsoft.svg";
 import { useContext } from "react";
 import { MyContext } from "../components/context/MyContext";
 
-import "../styles/gook.css";
-
 import CoHero from "../components/general/CoHero";
 import CoPuesto from "../components/gook/CoPuesto";
 import CoReq from "../components/gook/CoReq";

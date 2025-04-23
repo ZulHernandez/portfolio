@@ -1,143 +1,123 @@
 import sign from "/sign.svg";
 import signGrey from "/Greysign.svg";
-
-import bnBehance from "../../assets/imgs/vector/bn-behance.svg";
-import bnGit from "../../assets/imgs/vector/bn-git.svg";
-import bnIssuu from "../../assets/imgs/vector/bn-issuu.svg";
-import bnLink from "../../assets/imgs/vector/bn-link.svg";
-import bnSketch from "../../assets/imgs/vector/bn-sketch.svg";
-import bnCalendario from "../../assets/imgs/vector/bn-Calendar.svg";
-import bnRaylto from "../../assets/imgs/vector/bn-raylto.svg";
-
-import clBehance from "../../assets/imgs/vector/color-behance.svg";
-import clGit from "../../assets/imgs/vector/color-git.svg";
-import clIssuu from "../../assets/imgs/vector/color-issuu.svg";
-import clLink from "../../assets/imgs/vector/color-link.svg";
-import clSketch from "../../assets/imgs/vector/color-sketch.svg";
-import cCalendario from "../../assets/imgs/vector/color-Calendar.svg";
-import clRaylto from "../../assets/imgs/vector/color-raylto.svg";
+import menu from "../../assets/imgs/vectores/menu.svg";
 
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { MyContext } from "../../components/context/MyContext";
+import useScreenSize from "../context/useScreenSize";
 
-//* Redes sociales
-let redes = [
+let opciones = [
 	{
 		id: 1,
-		name: "Behance",
-		bn: bnBehance,
-		cl: clBehance,
-		link: "https://www.behance.net/zulhernndez",
+		name: "Home",
+		icon: [sign, signGrey],
+		link: "/",
 	},
 	{
 		id: 2,
-		name: "GitHub",
-		bn: bnGit,
-		cl: clGit,
-		link: "https://github.com/ZulHernandez",
+		name: ["Trabajos", "Works"],
+		icon: null,
+		link: "/works",
 	},
 	{
 		id: 3,
-		name: "RAYLTO",
-		bn: bnRaylto,
-		cl: clRaylto,
-		link: "https://relayto.com/saul-hernandez/docs",
+		name: ["Currículo", "Resume"],
+		icon: null,
+		link: "/resume",
 	},
 	{
 		id: 4,
-		name: "LinkedIn",
-		bn: bnLink,
-		cl: clLink,
-		link: "https://www.linkedin.com/in/saululises/",
-	},
-	{
-		id: 5,
-		name: "Sketchfab",
-		bn: bnSketch,
-		cl: clSketch,
-		link: "https://sketchfab.com/zulHernandez1912",
-	},
-	{
-		id: 6,
-		name: "Google Calendar",
-		bn: bnCalendario,
-		cl: cCalendario,
-		link: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3IHfVcWon0GCIlKQNx98HMtHPHf_UV5dvAJD88J-6lr3AS9z3heiAl9kd_KvBRN88H2-5mS9VQ",
+		name: ["Sobre mí", "About me"],
+		icon: null,
+		link: "/about-me",
 	},
 ];
 
-//* Componente de redes sociales
-const CoRedes = (props) => {
-	return redes.map((red) => {
-		return (
-			<a key={red.id} rel="noreferrer" href={red.link} target="_blank">
-				<img loading="lazy"
-					className="nav-link-icons clickable"
-					src={red.bn}
-					onMouseOver={(e) => (e.currentTarget.src = red.cl)}
-					onMouseOut={(e) => (e.currentTarget.src = red.bn)}
-					alt={props.name}
-				/>
-			</a>
-		);
-	});
-};
-
 //* Componente del header
 const CoNav = () => {
+	const { ruta, language, setLanguage } = useContext(MyContext);
+	const { width, height } = useScreenSize();
+	const [amplio, setAmplio] = useState(false);
 
-	const {ruta, language, setLanguage } = useContext(MyContext);
-
-	return (
-		<div className="nav-header">
-			<div className="container-nav-link-left">
-				<Link to="/">
-					<img loading="lazy" src={ruta == "/" ? sign : signGrey} alt="sign" />
-				</Link>
-				<span className="nav-link">|</span>
-				<Link to="/experience">
-					<span
-						className={
-							ruta == "/"
-								? "nav-link-inactive nav-link clickable"
-								: "nav-link-active nav-link clickable"
-						}
-					>
-						{language == "EN" ? "Experience" : "Experiencia"}
-					</span>
-				</Link>
-			</div>
-			<div className="container-nav-link-right">
-				<div id="social-media" className="container-nav-link-right-media">
-					<CoRedes />
+	if (width >= 900) {
+		return (
+			<div className="nav-header">
+				<div className="nav-header__links">
+					{opciones.map((opcion) => (
+						<Link to={opcion.link} key={opcion.id}>
+							{opcion.icon ? (
+								<img
+									src={ruta === opcion.link ? opcion.icon[0] : opcion.icon[1]}
+									alt={opcion.name}
+								/>
+							) : (
+								<span className={ruta === opcion.link ? "active" : ""}>
+									{language === "ES" ? opcion.name[0] : opcion.name[1]}
+								</span>
+							)}
+							{opcion.name[language]}
+						</Link>
+					))}
 				</div>
-				<div className="container-nav-link-right-language">
+				<div className="nav-header__options">
 					<span
-						className={
-							language == "ES"
-								? "nav-link-inactive nav-link clickable"
-								: "nav-link-active nav-link clickable"
-						}
+						className={language === "EN" ? "active" : ""}
 						onClick={() => setLanguage("EN")}
 					>
 						EN
 					</span>
-					<span className="nav-link">|</span>
+					<span style={{ textDecoration: "none" }}>&nbsp;|&nbsp;</span>
 					<span
-						className={
-							language == "EN"
-								? "nav-link-inactive nav-link clickable"
-								: "nav-link-active nav-link clickable"
-						}
+						className={language === "ES" ? "active" : ""}
 						onClick={() => setLanguage("ES")}
 					>
 						ES
 					</span>
 				</div>
 			</div>
-		</div>
-	);
+		);
+	} else {
+		
+		return (
+			<div className="nav-header">
+				<div className="nav-header__sup">
+					<img id="menu" src={menu} alt="Menú" onClick={() => {setAmplio(!amplio)}}/>
+					<div className="nav-header__options">
+						<span
+							className={language === "EN" ? "active" : ""}
+							onClick={() => setLanguage("EN")}
+						>
+							EN
+						</span>
+						<span style={{ textDecoration: "none" }}>&nbsp;|&nbsp;</span>
+						<span
+							className={language === "ES" ? "active" : ""}
+							onClick={() => setLanguage("ES")}
+						>
+							ES
+						</span>
+					</div>
+				</div>
+				<div className="nav-header__links" style={{ display: amplio ? "flex" : "none", paddingBottom: amplio ? "50px" : "20px" }}>
+					{opciones.map((opcion) => (
+						<Link to={opcion.link} key={opcion.id}>
+							{opcion.icon ? (
+								<img
+									src={ruta === opcion.link ? opcion.icon[0] : opcion.icon[1]}
+									alt={opcion.name}
+								/>
+							) : (
+								<span className={ruta === opcion.link ? "active" : ""}>
+									{language === "ES" ? opcion.name[0] : opcion.name[1]}
+								</span>
+							)}
+						</Link>
+					))}
+				</div>
+			</div>
+		);
+	}
 };
 
 export default CoNav;

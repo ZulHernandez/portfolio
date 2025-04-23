@@ -4,8 +4,6 @@ import banner from "../assets/imgs/liverpool/banner.webp";
 import { useContext } from "react";
 import { MyContext } from "../components/context/MyContext";
 
-import "../styles/liverpool.css";
-
 import CoHero from "../components/general/CoHero";
 import CoPuesto from "../components/liverpool/CoPuesto";
 import CoResearch from "../components/liverpool/CoResearch";
