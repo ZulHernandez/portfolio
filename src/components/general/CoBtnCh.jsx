@@ -1,0 +1,42 @@
+import chevron from "../../assets/imgs/general/chevron.svg";
+
+const CoBtnCh = () => {
+	return (
+		<div className="btn-chevron">
+			<svg
+				width="25"
+				height="25"
+				viewBox="0 0 25 25"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<mask
+					id="mask0_1883_2208"
+					style={{ maskType: "alpha" }}
+					maskUnits="userSpaceOnUse"
+					x="0"
+					y="0"
+					width="25"
+					height="25"
+				>
+					<rect
+						x="0.227295"
+						y="0.267334"
+						width="24.5455"
+						height="24.5455"
+						fill="#D9D9D9"
+					/>
+				</mask>
+				<g mask="url(#mask0_1883_2208)">
+					<path
+						id="chevron"
+						d="M8.4346 22.7673L6.61926 20.9519L15.0312 12.54L6.61926 4.12809L8.4346 2.31274L18.6619 12.54L8.4346 22.7673Z"
+						fill="#333333"
+					/>
+				</g>
+			</svg>
+		</div>
+	);
+};
+
+export default CoBtnCh;

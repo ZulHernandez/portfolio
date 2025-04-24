@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../context/MyContext";
-import sign from "/BNsign.svg";
+import sign from "/sign.svg";
 
 let footOptions = [
 	{

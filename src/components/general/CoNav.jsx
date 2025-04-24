@@ -82,7 +82,7 @@ const CoNav = () => {
 		return (
 			<div className="nav-header">
 				<div className="nav-header__sup">
-					<img id="menu" src={menu} alt="Menú" onClick={() => {setAmplio(!amplio)}}/>
+					<img id="menu" style={{transform: amplio ? "scaleY(-1)" : "scaleY(1)"}} src={menu} alt="Menú" onClick={() => {setAmplio(!amplio)}}/>
 					<div className="nav-header__options">
 						<span
 							className={language === "EN" ? "active" : ""}
