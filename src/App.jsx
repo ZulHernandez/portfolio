@@ -5,6 +5,7 @@ import RoHome from "./routes/RoHome";
 import RoError from "./routes/RoError";
 import CoNav from "./components/general/CoNav";
 import CoFooter from "./components/general/CoFooter";
+import CoNavLeft from "./components/general/CoNavLeft";
 
 import "./styles/style.css";
 
@@ -16,12 +17,13 @@ function App() {
 	return (
 		<>
 			<MyContext.Provider value={{ posicion, setPosicion, ruta, setRuta, language, setLanguage}}>
-				<CoNav lan={language} ruta={ruta} />
+				<CoNav/>
+				<CoNavLeft/>
 				<Routes>
 					<Route path="/" element={<RoHome />} />
 					<Route path="*" element={<RoError />}/>
 				</Routes>
-				{/* <CoFooter /> */}
+				<CoFooter />
 			</MyContext.Provider>
 		</>
 	);

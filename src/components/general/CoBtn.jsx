@@ -1,8 +1,14 @@
 import chevron from "../../assets/imgs/general/chevron.svg";
 
-const CoBtnCh = () => {
+const CoBtn = ({ type, text }) => {
 	return (
-		<div className="btn-chevron">
+		<div
+			style={{ padding: text ? "1rem 2rem" : "1rem 1rem",
+				borderRadius: text ? "2.5rem" : "50%",
+			}}
+			className={`btn ${type}`}
+		>
+			<span style={{ display: text ? "block" : "none" }}>{text}</span>
 			<svg
 				width="25"
 				height="25"
@@ -39,4 +45,4 @@ const CoBtnCh = () => {
 	);
 };
 
-export default CoBtnCh;
+export default CoBtn;
