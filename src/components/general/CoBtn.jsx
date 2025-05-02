@@ -1,47 +1,52 @@
 import chevron from "../../assets/imgs/general/chevron.svg";
+import { Link } from "react-router-dom";
 
-const CoBtn = ({ type, text }) => {
+
+const CoBtn = ({ type, text, link }) => {
 	return (
-		<div
-			style={{ padding: text ? "1rem 2rem" : "1rem 1rem",
-				borderRadius: text ? "2.5rem" : "50%",
-			}}
-			className={`btn ${type}`}
-		>
-			<span style={{ display: text ? "block" : "none" }}>{text}</span>
-			<svg
-				width="25"
-				height="25"
-				viewBox="0 0 25 25"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
+		<Link to={link} >
+			<div
+				style={{
+					padding: text ? "1rem 2rem" : "1rem 1rem",
+					borderRadius: text ? "2.5rem" : "50%",
+				}}
+				className={`btn ${type}`}
 			>
-				<mask
-					id="mask0_1883_2208"
-					style={{ maskType: "alpha" }}
-					maskUnits="userSpaceOnUse"
-					x="0"
-					y="0"
+				<span style={{ display: text ? "block" : "none" }}>{text}</span>
+				<svg
 					width="25"
 					height="25"
+					viewBox="0 0 25 25"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
 				>
-					<rect
-						x="0.227295"
-						y="0.267334"
-						width="24.5455"
-						height="24.5455"
-						fill="#D9D9D9"
-					/>
-				</mask>
-				<g mask="url(#mask0_1883_2208)">
-					<path
-						id="chevron"
-						d="M8.4346 22.7673L6.61926 20.9519L15.0312 12.54L6.61926 4.12809L8.4346 2.31274L18.6619 12.54L8.4346 22.7673Z"
-						fill="#333333"
-					/>
-				</g>
-			</svg>
-		</div>
+					<mask
+						id="mask0_1883_2208"
+						style={{ maskType: "alpha" }}
+						maskUnits="userSpaceOnUse"
+						x="0"
+						y="0"
+						width="25"
+						height="25"
+					>
+						<rect
+							x="0.227295"
+							y="0.267334"
+							width="24.5455"
+							height="24.5455"
+							fill="#D9D9D9"
+						/>
+					</mask>
+					<g mask="url(#mask0_1883_2208)">
+						<path
+							id="chevron"
+							d="M8.4346 22.7673L6.61926 20.9519L15.0312 12.54L6.61926 4.12809L8.4346 2.31274L18.6619 12.54L8.4346 22.7673Z"
+							fill="#333333"
+						/>
+					</g>
+				</svg>
+			</div>
+		</Link>
 	);
 };
 

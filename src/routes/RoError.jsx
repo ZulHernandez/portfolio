@@ -2,32 +2,50 @@ import sign from "/sign.svg";
 
 import { useContext } from "react";
 import { MyContext } from "../components/context/MyContext";
-import { Link } from "react-router-dom";
+
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+import CoBtn from "../components/general/CoBtn";
 
 const RoResume = () => {
-	const { language} = useContext(MyContext);
+	const { language } = useContext(MyContext);
+	const { setAmplio } = useContext(MyContext);
+
+	useEffect(() => {
+		setAmplio(false); // Reset amplio on route change
+	}, [location.pathname]);
 
 	return (
 		<div className="div-error">
 			<img src={sign} />
 			<div className="div-error-text">
-				<h2>{language == "EN" ? "Wrong way" : "Por aquí no"}</h2>
+				<h1>{language == "EN" ? "Wrong way" : "Por aquí no"}</h1>
 				<p>
 					{language == "EN"
 						? "Seems like were not able to find what you were looking for."
 						: "Parece que no fuimos capaces de encontrar aquello que estabas buscando."}
-				</p>
-				<p>
+					<br />
+					<br />
 					{language == "EN"
 						? "Feel free to explore the rest of the site."
 						: "Siente libre de explorar el resto del sitio."}
 				</p>
 				<br />
-				<Link to="/">
-					<p id="link">{language == "EN"
-						? "GO TO HOME PAGE"
-						: "IR A LA PÁGINA PRINCIPAL"}</p>
-				</Link>
+				<br />
+				<br />
+				<br />
+				<div className="work__cta">
+					<CoBtn
+						type="secondary"
+						text={
+							language == "ES"
+								? "Ir al inicio del sitio"
+								: "Go to the home page"
+						}
+						link="/"
+					/>
+				</div>
 			</div>
 		</div>
 	);

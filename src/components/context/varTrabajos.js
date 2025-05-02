@@ -1,11 +1,11 @@
-import GLUE from "../../assets/imgs/home/GLUE.png"
+import GLUE from "../../assets/imgs/home/GLUE.png";
 import GLUEgif from "../../assets/imgs/gifs/GLUE.gif";
 
 import MOVILIDAD from "../../assets/imgs/home/MOVILIDAD.png";
 import MOVILIDADgif from "../../assets/imgs/gifs/MOVILIDAD.gif";
 
 import ACTIVA from "../../assets/imgs/home/ACTIVA.png";
-import ACTIVAgif from "../../assets/imgs/gifs/ACTIVA.gif"
+import ACTIVAgif from "../../assets/imgs/gifs/ACTIVA.gif";
 
 import HUBBUB from "../../assets/imgs/home/HUBBUB.png";
 import HUBBUBgif from "../../assets/imgs/gifs/HUBBUB.gif";
@@ -14,7 +14,7 @@ import GALERIA from "../../assets/imgs/home/GALERIA.png";
 import GALERIAgif from "../../assets/imgs/gifs/GALERIA.gif";
 
 import GOOK from "../../assets/imgs/home/GOOK.png";
-import GOOKgif from "../../assets/imgs/gifs/GOOK.gif"
+import GOOKgif from "../../assets/imgs/gifs/GOOK.gif";
 
 import liver from "../../assets/imgs/home/liverpool.svg";
 import uam from "../../assets/imgs/home/uma.svg";
@@ -27,20 +27,8 @@ const varTrabajos = () => {
 			cover: GLUE,
 			covergif: GLUEgif,
 			tags: [
-				[
-					"Automatización",
-					"Desarrollo",
-					"Interfaz",
-					"Plug Ins",
-					"Sistema de diseño",
-				],
-				[
-					"Automatization",
-					"Development",
-					"Interface",
-					"Plugins",
-					"Design System",
-				],
+				["Desarrollo", "Sistema de Diseño"],
+				["Development", "Design system"],
 			],
 			title: ["GLUE y DesignOps", "GLUE & DesignOps"],
 			des: [
@@ -55,8 +43,8 @@ const varTrabajos = () => {
 			cover: MOVILIDAD,
 			covergif: MOVILIDADgif,
 			tags: [
-				["Experiencia", "Interfaz", "Investigación", "Servicios", "Journey"],
-				["Experience", "Interface", "Research", "Services", "Journey"],
+				["Experiencia", "Interfaz", "Investigación", "Servicios"],
+				["Experience", "Interface", "Research", "Services"],
 			],
 			title: [
 				"Sistema de electrolineras, MoviLidad",
@@ -74,20 +62,8 @@ const varTrabajos = () => {
 			cover: ACTIVA,
 			covergif: ACTIVAgif,
 			tags: [
-				[
-					"Experiencia",
-					"Interfaz",
-					"Investigación",
-					"Fintech",
-					"Mejora continua",
-				],
-				[
-					"Experience",
-					"Interface",
-					"Research",
-					"Fintech",
-					"Continuous improvement",
-				],
+				["Experiencia", "Interfaz", "Investigación", "Fintech"],
+				["Experience", "Interface", "Research", "Fintech"],
 			],
 			title: [
 				"Activa, un producto de ahorro e inversión",
@@ -105,22 +81,8 @@ const varTrabajos = () => {
 			cover: HUBBUB,
 			covergif: HUBBUBgif,
 			tags: [
-				[
-					"Deserrallo",
-					"Experiencia",
-					"Interfaz",
-					"Investigación",
-					"Planeación",
-					"Visualización de datoa",
-				],
-				[
-					"Development",
-					"Experience",
-					"Interface",
-					"Research",
-					"Planning",
-					"Data visualization",
-				],
+				["Desarrollo", "Experiencia", "Interfaz", "Investigación", "Visualización de datos"],
+				["Development", "Experience", "Interface", "Research", "Data visualization"],
 			],
 			title: [
 				"HUBBUB y la visualización del ruido en la CDMX",
@@ -141,14 +103,8 @@ const varTrabajos = () => {
 			cover: GALERIA,
 			covergif: GALERIAgif,
 			tags: [
-				[
-					"Experiencia",
-					"Interfaz",
-					"Investigación",
-					"Rediseño",
-					"Inmobiliaria",
-				],
-				["Experience", "Interface", "Research", "Redesign", "Real estate"],
+				["Experiencia", "Interfaz", "Investigación", "Rediseño"],
+				["Experience", "Interface", "Research", "Redesign"],
 			],
 			title: ["Un rediseño completo de imagen", "A complete redesign of image"],
 			des: [
@@ -163,16 +119,16 @@ const varTrabajos = () => {
 			cover: GOOK,
 			covergif: GOOKgif,
 			tags: [
-				["Experiencia", "Interfaz", "Investigación", "SaaS", "e-commerce"],
-				["Experience", "Interface", "Research", "SaaS", "e-commerce"],
+				["Experiencia", "Interfaz", "Investigación", "E-commerce"],
+				["Experience", "Interface", "Research", "E-commerce"],
 			],
 			title: [
 				"Vendamos y organizemos lentes",
 				"Let's sell and organice glasses",
 			],
 			des: [
-				"Desarrollo de e-commerce más CMR con administración de inventarios para una tienda de óptica",
-				"Development of e-commerce plus CRM with inventory management for an optical store.",
+				"Desarrollo de E-commerce más CMR con administración de inventarios para una tienda de óptica",
+				"Development of E-commerce plus CRM with inventory management for an optical store.",
 			],
 			date: ["ago 2020 - sep 2021", "aug 2020 - sep 2021"],
 			logo: [marsoft, gook],
@@ -180,7 +136,7 @@ const varTrabajos = () => {
 		},
 	];
 
-    return {trabajos};
+	return { trabajos };
 };
 
 export default varTrabajos;

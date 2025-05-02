@@ -1,21 +1,15 @@
 import { useContext } from "react";
 import { MyContext } from "../../components/context/MyContext";
+import dayjs from "dayjs";
 
 import perfil from "../../assets/imgs/home/perfil.png";
 
 const CoHola = () => {
 	const { language } = useContext(MyContext);
 
-	var today = new Date();
-	var year = today.getFullYear();
-	var month = today.getMonth(); // Months are zero-based
-	var diff = 0;
-
-	if (month >= 10) {
-		diff = year - 2016;
-	} else {
-		diff = year - 2017;
-	}
+	let startDate = dayjs("2016-04-01");
+	let currentDate = dayjs();
+	let diff = currentDate.diff(startDate, "year");
 
 	return (
 		<div id={language == "ES" ? "hola" : "hello"} className="container-fluid">
