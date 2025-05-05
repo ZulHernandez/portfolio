@@ -81,7 +81,7 @@ const CoConozca = () => {
 				</div>
 				<div className="contact-card__redes">
 					{redes.map((red, index) => (
-						<a key={index} href={red.url} className="contact-card__link">
+						<a key={index} href={red.url} target="_blank" rel="noreferrer" className="contact-card__link">
 							<div className="contact-card__redes">
 								<img src={red.icon} alt={red.text} />
 							</div>

@@ -67,7 +67,7 @@ const CoNav = () => {
 	const { ruta, language, setLanguage, amplio, setAmplio } = useContext(MyContext);
 	const { width, height } = useScreenSize();
 
-	if (width >= 900) {
+	if (width >= 800) {
 		return (
 			<div className="nav-header">
 				<div className="nav-header__links">

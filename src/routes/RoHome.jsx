@@ -10,7 +10,7 @@ import { MyContext } from "../components/context/MyContext.js";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const RoResume = () => {
+const RoHome = () => {
 	const { setRuta, setAmplio } = useContext(MyContext);
 	const location = useLocation();
 
@@ -33,4 +33,4 @@ const RoResume = () => {
 	);
 };
 
-export default RoResume;
+export default RoHome;
