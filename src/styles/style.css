@@ -609,6 +609,68 @@ a {
   }
 }
 
+.tags-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+.tags-list__tag {
+  border-color: #ff2079;
+  border-style: solid;
+  border-width: 0.2rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+  gap: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.tags-list__tag img {
+  display: none;
+}
+.tags-list__tag span {
+  color: #ff2079;
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+@media (max-width: 1200px) {
+  .tags-list__tag span {
+    font-family: "Raleway-Medium", sans-serif;
+    font-size: 1.6rem;
+    text-decoration: none;
+  }
+}
+.tags-list__tag.active {
+  background-color: #ff2079;
+}
+.tags-list__tag.active span {
+  color: #fff;
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+@media (max-width: 1200px) {
+  .tags-list__tag.active span {
+    font-family: "Raleway-Medium", sans-serif;
+    font-size: 1.6rem;
+    text-decoration: none;
+  }
+}
+.tags-list__tag.active img {
+  display: block;
+  width: 1.5rem;
+}
+@media (max-width: 1200px) {
+  .tags-list__tag.active img {
+    width: 2rem;
+  }
+}
+
 #hola,
 #hello {
   gap: 8rem;
@@ -1145,77 +1207,6 @@ footer img {
     padding-top: 7.5rem;
   }
 }
-#mis-trabajos .tags-list,
-#my-works .tags-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-  width: 100%;
-}
-#mis-trabajos .tags-list__tag,
-#my-works .tags-list__tag {
-  border-color: #ff2079;
-  border-style: solid;
-  border-width: 0.2rem;
-  padding: 0.8rem 1.5rem;
-  border-radius: 1rem;
-  gap: 1rem;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  transition: all 0.3s ease-in-out;
-}
-#mis-trabajos .tags-list__tag img,
-#my-works .tags-list__tag img {
-  display: none;
-}
-#mis-trabajos .tags-list__tag span,
-#my-works .tags-list__tag span {
-  color: #ff2079;
-  font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-@media (max-width: 1200px) {
-  #mis-trabajos .tags-list__tag span,
-  #my-works .tags-list__tag span {
-    font-family: "Raleway-Medium", sans-serif;
-    font-size: 1.6rem;
-    text-decoration: none;
-  }
-}
-#mis-trabajos .tags-list__tag.active,
-#my-works .tags-list__tag.active {
-  background-color: #ff2079;
-}
-#mis-trabajos .tags-list__tag.active span,
-#my-works .tags-list__tag.active span {
-  color: #fff;
-  font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-@media (max-width: 1200px) {
-  #mis-trabajos .tags-list__tag.active span,
-  #my-works .tags-list__tag.active span {
-    font-family: "Raleway-Medium", sans-serif;
-    font-size: 1.6rem;
-    text-decoration: none;
-  }
-}
-#mis-trabajos .tags-list__tag.active img,
-#my-works .tags-list__tag.active img {
-  display: block;
-  width: 1.5rem;
-}
-@media (max-width: 1200px) {
-  #mis-trabajos .tags-list__tag.active img,
-  #my-works .tags-list__tag.active img {
-    width: 2rem;
-  }
-}
 
 #linea-del-tiempo .time-line,
 #timeline .time-line {
@@ -1520,16 +1511,142 @@ footer img {
     text-decoration: none;
   }
 }
-#linea-del-tiempo .time-line-info #cardUno, #linea-del-tiempo .time-line-info #cardTres,
+#linea-del-tiempo .time-line-info #cardUno,
+#linea-del-tiempo .time-line-info #cardTres,
 #timeline .time-line-info #cardUno,
 #timeline .time-line-info #cardTres {
   opacity: 0.5;
   transform: scale(0.8);
 }
 @media (max-width: 800px) {
-  #linea-del-tiempo .time-line-info #cardUno, #linea-del-tiempo .time-line-info #cardTres,
+  #linea-del-tiempo .time-line-info #cardUno,
+  #linea-del-tiempo .time-line-info #cardTres,
   #timeline .time-line-info #cardUno,
   #timeline .time-line-info #cardTres {
     display: none;
   }
+}
+
+#resume {
+  padding-top: 10rem;
+}
+#resume .resume__sheet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  width: calc(100% - 20rem);
+  padding: 7rem 10rem 7rem 10rem;
+  background-color: #fff;
+}
+@media (max-width: 1200px) {
+  #resume .resume__sheet {
+    padding: 5rem 10rem 5rem 10rem;
+    width: calc(100% - 20rem);
+  }
+}
+@media (max-width: 800px) {
+  #resume .resume__sheet {
+    padding: 5rem 5rem 5rem 5rem;
+    width: calc(100% - 10rem);
+  }
+}
+#resume .resume__sheet-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+@media (max-width: 800px) {
+  #resume .resume__sheet-header {
+    gap: 1rem;
+  }
+}
+#resume .resume__sheet-header h1 {
+  color: #ff2079;
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 4.8rem;
+  text-decoration: none;
+  margin: 0px;
+}
+#resume .resume__sheet-header h2 {
+  color: #4d4d4d;
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: none;
+  margin: 0px;
+}
+#resume .resume__sheet-header hr {
+  width: 100%;
+  height: 0.2rem;
+  background-color: #cccccc;
+  border-radius: 1rem;
+  border: none;
+}
+#resume .resume__sheet-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 5rem;
+  width: 100%;
+}
+#resume .resume__sheet-content__info {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+#resume .resume__sheet-content__info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#resume .resume__sheet-content__info-card h3 {
+  color: #4d4d4d;
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  margin: 0px;
+}
+#resume .resume__sheet-content__info-card__bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+#resume .resume__sheet-content__info-card__bullets p {
+  color: #808080;
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  margin: 0px;
+}
+#resume .resume__sheet-content__info-card__bullets a p {
+  margin: 0px;
+  color: #4d4d4d;
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+#resume .resume__sheet-content__body {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#resume .resume__sheet-content__body h3 {
+  color: #4d4d4d;
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  margin: 0px;
+}
+#resume .resume__sheet-content__body-summary ul {
+  padding-left: 2rem;
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
