@@ -1636,17 +1636,78 @@ footer img {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 2.5rem;
 }
-#resume .resume__sheet-content__body h3 {
+#resume .resume__sheet-content__body-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+#resume .resume__sheet-content__body-card h3 {
   color: #4d4d4d;
   font-family: "Raleway-Bold", sans-serif;
   font-size: 2rem;
   text-decoration: none;
   margin: 0px;
 }
-#resume .resume__sheet-content__body-summary ul {
+#resume .resume__sheet-content__body-card-summary ul {
   padding-left: 2rem;
   font-family: "Raleway-Medium", sans-serif;
   font-size: 1.4rem;
   text-decoration: none;
+}
+#resume .resume__sheet-content__body-card-experiencia h4 {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  margin: 0px;
+}
+#resume .resume__sheet-content__body-card-experiencia__ubicacion {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #808080;
+  margin: 0px;
+}
+#resume .resume__sheet-content__body-card-experiencia ul {
+  padding-left: 2rem;
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.printable {
+  width: 210mm;
+  height: 297mm;
+  position: relative;
+  background: white;
+  padding: 20mm;
+  box-sizing: border-box;
+}
+
+.printable-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+@media print {
+  .printable {
+    width: 210mm; /* Ancho A4 */
+    height: 297mm; /* Alto A4 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transform: scale(1);
+    overflow: hidden;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

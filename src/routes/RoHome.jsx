@@ -11,26 +11,29 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const RoHome = () => {
-	const { setRuta, setAmplio } = useContext(MyContext);
-	const location = useLocation();
+    const { setRuta, setAmplio } = useContext(MyContext);
+    const location = useLocation();
 
-	setRuta("/");
+    // Mover la actualización de estado a useEffect
+    useEffect(() => {
+        setRuta("/"); // Se ejecuta después del renderizado inicial
+    }, []); // Se ejecuta solo una vez al montar el componente
 
-	useEffect(() => {
-		setAmplio(false); // Reset amplio on route change
-	}, [location.pathname]);
+    useEffect(() => {
+        setAmplio(false); // Reset amplio on route change
+    }, [location.pathname]);
 
-	return (
-		<>
-			<CoNavLeft /> {/* Add CoNavLeft component here */}
-			<div>
-				<CoHola />
-				<CoColab />
-				<CoTrabajos />
-				<CoConozca />
-			</div>
-		</>
-	);
+    return (
+        <>
+            <CoNavLeft />
+            <div>
+                <CoHola />
+                <CoColab />
+                <CoTrabajos />
+                <CoConozca />
+            </div>
+        </>
+    );
 };
 
 export default RoHome;

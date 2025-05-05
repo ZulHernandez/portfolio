@@ -1278,18 +1278,76 @@ footer {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                h3 {
-                    color: $shade-700;
-                    @include fnFont("Raleway-Bold", 2rem, none);
-                    margin: 0px;
-                }
-                &-summary {
-                    ul {
-                        padding-left: 2rem;
-                        @include fnFont("Raleway-Medium", 1.4rem, none);
+                gap: 2.5rem;
+                &-card {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+                    h3 {
+                        color: $shade-700;
+                        @include fnFont("Raleway-Bold", 2rem, none);
+                        margin: 0px;
+                    }
+                    &-summary {
+                        ul {
+                            padding-left: 2rem;
+                            @include fnFont("Raleway-Medium", 1.4rem, none);
+                        }
+                    }
+                    &-experiencia {
+                        h4 {
+                            @include fnFont("Raleway-Medium", 1.4rem, none);
+                            margin: 0px;
+                        }
+                        &__ubicacion {
+                            @include fnFont("Raleway-Medium", 1.4rem, none);
+                            color: $shade-500;
+                            margin: 0px;
+                        }
+                        ul {
+                            padding-left: 2rem;
+                            @include fnFont("Raleway-Medium", 1.4rem, none);
+                        }
                     }
                 }
             }
         }
+    }
+}
+
+.printable {
+    width: 210mm;
+    height: 297mm;
+    position: relative;
+    background: white;
+    padding: 20mm;
+    box-sizing: border-box;
+}
+
+.printable-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+@media print {
+    .printable {
+        width: 210mm; /* Ancho A4 */
+        height: 297mm; /* Alto A4 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        transform: scale(1);
+        overflow: hidden;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
     }
 }

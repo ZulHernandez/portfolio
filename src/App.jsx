@@ -15,6 +15,7 @@ function App() {
 	const [ruta, setRuta] = useState("/");
 	const [language, setLanguage] = useState("ES");
 	const [amplio, setAmplio] = useState(false);
+	const [filtroResumen, setFiltroResumen] = useState(0);
 
 	return (
 		<>
@@ -28,6 +29,8 @@ function App() {
 					setLanguage,
 					amplio,
 					setAmplio,
+					filtroResumen,
+					setFiltroResumen,
 				}}
 			>
 				<CoNav />
