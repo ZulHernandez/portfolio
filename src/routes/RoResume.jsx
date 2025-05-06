@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import { MyContext } from "../components/context/MyContext.js";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useRef } from "react";
+import useScreenSize from "../components/context/useScreenSize.js";
 
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import CoBtn from "../components/general/CoBtn.jsx";
 
 let tipos = [
 	["General", "General"],
@@ -561,8 +565,9 @@ let proyectos = [
 	},
 ];
 
-const generatePDF = () => {
+const generatePDF = (language) => {
 	const printableElement = document.querySelector(".printable");
+	printableElement.style.display = "block"; // A4 width
 
 	if (!printableElement) {
 		console.error("No se encontró el elemento con la clase 'printable'.");
@@ -583,8 +588,10 @@ const generatePDF = () => {
 		const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
 		pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
-		pdf.save("resume.pdf");
+		pdf.save(language == "ES" ? "CV-SaulHdz.pdf" : "Resume-SaulHdz.pdf");
 	});
+
+	printableElement.style.display = "none"; // A4 width
 };
 
 const CoCardResume = ({ experiencia }) => {
@@ -617,12 +624,18 @@ const CoCardResume = ({ experiencia }) => {
 };
 
 const RoResume = () => {
-	const { setRuta, language, filtroResumen, setFiltroResumen } =
+	const { setRuta, language, filtroResumen, setFiltroResumen, setAmplio } =
 		useContext(MyContext);
+	const location = useLocation();
+	const { width, height } = useScreenSize();
 
 	useEffect(() => {
-		setRuta("/"); // Se ejecuta después del renderizado inicial
+		setRuta("/resume"); // Se ejecuta después del renderizado inicial
 	}, []); // Se ejecuta solo una vez al montar el componente
+
+	useEffect(() => {
+		setAmplio(false); // Reset amplio on route change
+	}, [location.pathname]);
 
 	const contentRef = useRef();
 
@@ -682,8 +695,11 @@ const RoResume = () => {
 					</div>
 				))}
 			</div>
-			<div ref={contentRef} className="printable">
-				<div className="printable-content">
+			<div
+				ref={contentRef}
+				className="resume__sheet printable"
+			>
+				<div className="resume__sheet-body">
 					<div className="resume__sheet-header">
 						<h1
 							style={{
@@ -781,7 +797,117 @@ const RoResume = () => {
 					</div>
 				</div>
 			</div>
-			<button onClick={generatePDF}>Descargar PDF</button>
+			<div
+				ref={contentRef}
+				className="resume__sheet"
+				style={{ zoom: width / 1000 }}
+			>
+				<div className="resume__sheet-body">
+					<div className="resume__sheet-header">
+						<h1
+							style={{
+								color:
+									filtroResumen === 0
+										? "#ff2079"
+										: filtroResumen === 1
+										? "#2088FF"
+										: filtroResumen === 2
+										? "#7220FF"
+										: "#FF904B",
+							}}
+						>
+							Saúl Hernández
+						</h1>
+						<h2>
+							{experiencias[0].rol[language == "ES" ? 0 : 1]}
+							{language == "ES" ? " en " : " at "}
+							{experiencias[0].empresa}
+						</h2>
+						<hr />
+					</div>
+					<div className="resume__sheet-content">
+						<div className="resume__sheet-content__info">
+							{infos.map((info, index) => (
+								<div key={index} className="resume__sheet-content__info-card">
+									<h3>{language == "ES" ? info.title[0] : info.title[1]}</h3>
+									<div className="resume__sheet-content__info-card__bullets">
+										{info.bullets.map((bullet, index) => (
+											<div key={index}>
+												<p>
+													{bullet.subtext && <span>{bullet.subtext}</span>}
+													{bullet.subtext && <br />}
+												</p>
+												<a
+													href={bullet.link}
+													target="_blank"
+													rel="noopener noreferrer"
+												>
+													<p>
+														{language == "ES" ? bullet.text[0] : bullet.text[1]}
+													</p>
+												</a>
+											</div>
+										))}
+									</div>
+								</div>
+							))}
+							<div className="resume__sheet-content__info-card">
+								<h3>{language == "ES" ? "Habilidades" : "Skills"}</h3>
+								<div className="resume__sheet-content__info-card__bullets">
+									{habilidades[filtroResumen].map((habilidad, index) => (
+										<div key={index}>
+											<p>{language == "ES" ? habilidad[0] : habilidad[1]}</p>
+										</div>
+									))}
+								</div>
+							</div>
+						</div>
+						<div className="resume__sheet-content__body">
+							<div className="resume__sheet-content__body-card">
+								<h3>{language == "ES" ? "Resumen" : "Summary"}</h3>
+								<div className="resume__sheet-content__body-card-summary">
+									<ul>
+										{Resumenes[filtroResumen].map((resumen, index) => (
+											<li key={index}>
+												{language == "ES" ? resumen[0] : resumen[1]}
+											</li>
+										))}
+									</ul>
+								</div>
+							</div>
+							<div className="resume__sheet-content__body-card">
+								<h3>{language == "ES" ? "Experiencia" : "Experience"}</h3>
+								{experiencias.map((experiencia, index) => (
+									<div key={index}>
+										<CoCardResume
+											experiencia={experiencia}
+											language={language}
+										/>
+									</div>
+								))}
+								<h3>
+									{language == "ES"
+										? "Actividades y proyectos"
+										: "Activities and projects"}
+								</h3>
+								{proyectos.map((proyecto, index) => (
+									<div key={index}>
+										<CoCardResume experiencia={proyecto} />
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div onClick={() => generatePDF(language)}>
+				<CoBtn
+					type={"secondary"}
+					text={language == "ES" ? "Descargar CV" : "Download Resume"}
+					link={null}
+					icon={"none"}
+				></CoBtn>
+			</div>
 		</div>
 	);
 };

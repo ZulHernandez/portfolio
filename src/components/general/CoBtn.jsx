@@ -2,7 +2,7 @@ import chevron from "../../assets/imgs/general/chevron.svg";
 import { Link } from "react-router-dom";
 
 
-const CoBtn = ({ type, text, link }) => {
+const CoBtn = ({ type, text, link, icon }) => {
 	return (
 		<Link to={link} >
 			<div
@@ -14,6 +14,9 @@ const CoBtn = ({ type, text, link }) => {
 			>
 				<span style={{ display: text ? "block" : "none" }}>{text}</span>
 				<svg
+					style={{
+						display: icon 
+					}}
 					width="25"
 					height="25"
 					viewBox="0 0 25 25"
