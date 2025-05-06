@@ -1537,6 +1537,7 @@ footer img {
   background: white;
   padding: 15mm;
   box-sizing: border-box;
+  border-radius: 3mm;
 }
 #resume .resume__sheet-body {
   width: 100%;
