@@ -565,7 +565,7 @@ let proyectos = [
 	},
 ];
 
-const generatePDF = (language) => {
+const generatePDF = (language, filtro) => {
 	const printableElement = document.querySelector(".printable");
 	printableElement.style.display = "block"; // A4 width
 
@@ -900,7 +900,7 @@ const RoResume = () => {
 					</div>
 				</div>
 			</div>
-			<div onClick={() => generatePDF(language)}>
+			<div onClick={() => generatePDF(language , filtroResumen)}>
 				<CoBtn
 					type={"secondary"}
 					text={language == "ES" ? "Descargar CV" : "Download Resume"}
