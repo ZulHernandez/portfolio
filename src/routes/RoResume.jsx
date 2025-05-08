@@ -574,7 +574,7 @@ const generatePDF = (language, filtro) => {
 		return;
 	}
 
-	html2canvas(printableElement, {
+	html2canvas(printableElement, { 
 		scale: 2,
 		windowWidth: printableElement.scrollWidth,
 		windowHeight: printableElement.scrollHeight,

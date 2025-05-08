@@ -5,6 +5,7 @@ import RoHome from "./routes/RoHome";
 import RoWorks from "./routes/RoWorks";
 import RoResume from "./routes/RoResume";
 import RoError from "./routes/RoError";
+import RoAbout from "./routes/RoAbout";
 import CoNav from "./components/general/CoNav";
 import CoFooter from "./components/general/CoFooter";
 
@@ -38,6 +39,7 @@ function App() {
 					<Route path="/" element={<RoHome />} />
 					<Route path="/works" element={<RoWorks />} />
 					<Route path="/resume" element={<RoResume />} />
+					<Route path="/about-me" element={<RoAbout />} />
 					<Route path="*" element={<RoError />} />
 				</Routes>
 				<CoFooter />

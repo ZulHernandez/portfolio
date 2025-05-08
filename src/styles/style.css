@@ -1182,8 +1182,7 @@ footer img {
 
 #mis-trabajos,
 #my-works {
-  margin-bottom: 5rem;
-  padding-top: 5rem;
+  padding: 10rem 15rem;
 }
 #mis-trabajos #span,
 #my-works #span {
@@ -1675,4 +1674,42 @@ footer img {
 
 .printable {
   display: none;
+}
+
+#conozcamonos,
+#get-to-know-me {
+  padding: 10rem 15rem;
+}
+#conozcamonos #span,
+#get-to-know-me #span {
+  color: #666666;
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: none;
+  margin: 0px;
+}
+@media (max-width: 1200px) {
+  #conozcamonos #span,
+  #get-to-know-me #span {
+    font-family: "Raleway-Medium", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+#conozcamonos .tab,
+#get-to-know-me .tab {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  width: 100%;
+  background-color: red;
+}
+#conozcamonos .tab-buttons,
+#get-to-know-me .tab-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: blue;
 }/*# sourceMappingURL=style.css.map */

@@ -948,7 +948,7 @@ footer {
 //main Works
 #mis-trabajos,
 #my-works {
-    margin-bottom: 5rem;
+    padding: 10rem 15rem;
     #span {
         color: $shade-600;
         @include fnFont("Raleway-Medium", 1.6rem, none);
@@ -957,7 +957,6 @@ footer {
         }
         margin: 0px;
     }
-    padding-top: 5rem;
     @media (max-width: 1200px) {
         padding-top: 7.5rem;
     }
@@ -1318,6 +1317,36 @@ footer {
     }
 }
 
-.printable{
+.printable {
     display: none;
+}
+
+//main About
+
+#conozcamonos,
+#get-to-know-me {
+    padding: 10rem 15rem;
+    #span {
+        color: $shade-600;
+        @include fnFont("Raleway-Medium", 1.6rem, none);
+        @media (max-width: 1200px) {
+            @include fnFont("Raleway-Medium", 2rem, none);
+        }
+        margin: 0px;
+    }
+    .tab {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+        width: 100%;
+        background-color: red;
+        &-buttons{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            background-color: blue;
+        }
+    }
 }
