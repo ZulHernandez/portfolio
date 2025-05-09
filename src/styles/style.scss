@@ -1329,7 +1329,7 @@ footer {
     #span {
         color: $shade-600;
         @include fnFont("Raleway-Medium", 1.6rem, none);
-        @media (max-width: 1200px) {
+        @media (max-width: 800px) {
             @include fnFont("Raleway-Medium", 2rem, none);
         }
         margin: 0px;
@@ -1339,14 +1339,127 @@ footer {
         flex-direction: row;
         gap: 5rem;
         width: 100%;
-        background-color: red;
-        &-buttons{
+        &-buttons {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            background-color: blue;
+            &__item {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 2rem;
+                padding: 1rem;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    text-decoration: underline;
+                }
+                img {
+                    width: 2rem;
+                    height: 2rem;
+                    @media (max-width: 1200px) {
+                        width: 3rem;
+                        height: 3rem;
+                    }
+                }
+                span {
+                    color: $shade-800;
+                    @include fnFont("Raleway-Medium", 1.8rem, none);
+                    @media (max-width: 1200px) {
+                        @include fnFont("Raleway-Medium", 2.5rem, none);
+                    }
+                    margin: 0px;
+                }
+                &.active {
+                    background-color: $shade-0;
+                    border-radius: 5px;
+                    span {
+                        display: block;
+                        @media (max-width: 1200px) {
+                            display: none;
+                        }
+                    }
+                }
+                &.inactive {
+                    opacity: 25%;
+                    span {
+                        display: block;
+                        @media (max-width: 1200px) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        &-content {
+            display: flex;
+            flex-direction: row;
+            border-radius: 20px;
+            padding: 3rem;
+            gap: 3rem;
+            background-color: $shade-0;
+            margin: 0px 10rem;
+            width: calc(100% - 26rem);
+            @media (max-width: 1000px) {
+                width: calc(100% - 6rem);
+                margin: 0px;
+            }
+            @media (max-width: 800px) {
+                flex-direction: column;
+                align-items: center;
+            }
+            .div-img {
+                height: 20rem;
+                aspect-ratio: 1/1;
+                border-radius: 2rem;
+                background-size: cover;
+                @media (max-width: 800px) {
+                    width: 100%;
+                }
+            }
+            &__info {
+                &-text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                    width: 100%;
+                    h2 {
+                        @include fnFont("Raleway-semibold", 2.4rem, none);
+                        @media (max-width: 800px) {
+                            @include fnFont("Raleway-semibold", 3rem, none);
+                        }
+                        margin: 0px;
+                    }
+                    span {
+                        color: $shade-600;
+                        @include fnFont("Raleway-Medium", 1.6rem, none);
+                        @media (max-width: 800px) {
+                            @include fnFont("Raleway-Medium", 2rem, none);
+                        }
+                        margin: 0px;
+                    }
+                    &__list {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding: 2rem 5rem 0px 5rem;
+                        width: calc(100% - 10rem);
+                        @media (max-width: 1200px) {
+                            flex-wrap: wrap;
+                            gap: 2rem;
+                            justify-content: center;
+                        }
+                        &-item {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 0.5rem;
+                        }
+                    }
+                }
+            }
         }
     }
 }
