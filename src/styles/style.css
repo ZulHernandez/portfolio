@@ -1203,7 +1203,7 @@ footer img {
 @media (max-width: 1200px) {
   #mis-trabajos,
   #my-works {
-    padding-top: 7.5rem;
+    padding: 15rem 10rem;
   }
 }
 
@@ -1680,6 +1680,12 @@ footer img {
 #get-to-know-me {
   padding: 10rem 15rem;
 }
+@media (max-width: 1200px) {
+  #conozcamonos,
+  #get-to-know-me {
+    padding: 15rem 10rem;
+  }
+}
 #conozcamonos #span,
 #get-to-know-me #span {
   color: #666666;
@@ -1716,8 +1722,8 @@ footer img {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2rem;
-  padding: 1rem;
+  gap: 1rem;
+  padding: 1rem 2rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -1790,8 +1796,7 @@ footer img {
   padding: 3rem;
   gap: 3rem;
   background-color: #fff;
-  margin: 0px 10rem;
-  width: calc(100% - 26rem);
+  width: calc(100% - 6rem);
 }
 @media (max-width: 1000px) {
   #conozcamonos .tab-content,
@@ -1811,13 +1816,16 @@ footer img {
 #get-to-know-me .tab-content .div-img {
   height: 20rem;
   aspect-ratio: 1/1;
-  border-radius: 2rem;
+  border-radius: 1rem;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 @media (max-width: 800px) {
   #conozcamonos .tab-content .div-img,
   #get-to-know-me .tab-content .div-img {
     width: 100%;
+    border-radius: 2rem;
   }
 }
 #conozcamonos .tab-content__info-text,
@@ -1871,7 +1879,7 @@ footer img {
   #get-to-know-me .tab-content__info-text__list {
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: center;
+    justify-content: space-between;
   }
 }
 #conozcamonos .tab-content__info-text__list-item,
@@ -1880,4 +1888,30 @@ footer img {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+}
+#conozcamonos .tab-content__info-text__list-item img,
+#get-to-know-me .tab-content__info-text__list-item img {
+  width: 3rem;
+  height: 3rem;
+}
+@media (max-width: 1200px) {
+  #conozcamonos .tab-content__info-text__list-item img,
+  #get-to-know-me .tab-content__info-text__list-item img {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+#conozcamonos .tab-content__info-text__list-item span,
+#get-to-know-me .tab-content__info-text__list-item span {
+  font-family: "Raleway-semibold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+@media (max-width: 1200px) {
+  #conozcamonos .tab-content__info-text__list-item span,
+  #get-to-know-me .tab-content__info-text__list-item span {
+    font-family: "Raleway-semibold", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
 }/*# sourceMappingURL=style.css.map */

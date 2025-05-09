@@ -958,7 +958,7 @@ footer {
         margin: 0px;
     }
     @media (max-width: 1200px) {
-        padding-top: 7.5rem;
+        padding: 15rem 10rem;
     }
 }
 
@@ -1326,6 +1326,9 @@ footer {
 #conozcamonos,
 #get-to-know-me {
     padding: 10rem 15rem;
+    @media (max-width: 1200px) {
+        padding: 15rem 10rem;
+    }
     #span {
         color: $shade-600;
         @include fnFont("Raleway-Medium", 1.6rem, none);
@@ -1349,8 +1352,8 @@ footer {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                gap: 2rem;
-                padding: 1rem;
+                gap: 1rem;
+                padding: 1rem 2rem;
                 cursor: pointer;
                 transition: all 0.3s ease-in-out;
                 &:hover {
@@ -1400,8 +1403,7 @@ footer {
             padding: 3rem;
             gap: 3rem;
             background-color: $shade-0;
-            margin: 0px 10rem;
-            width: calc(100% - 26rem);
+            width: calc(100% - 6rem);
             @media (max-width: 1000px) {
                 width: calc(100% - 6rem);
                 margin: 0px;
@@ -1413,10 +1415,13 @@ footer {
             .div-img {
                 height: 20rem;
                 aspect-ratio: 1/1;
-                border-radius: 2rem;
+                border-radius: 1rem;
                 background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
                 @media (max-width: 800px) {
                     width: 100%;
+                    border-radius: 2rem;
                 }
             }
             &__info {
@@ -1446,16 +1451,31 @@ footer {
                         justify-content: space-between;
                         padding: 2rem 5rem 0px 5rem;
                         width: calc(100% - 10rem);
+
                         @media (max-width: 1200px) {
                             flex-wrap: wrap;
                             gap: 2rem;
-                            justify-content: center;
+                            justify-content: space-between;
                         }
                         &-item {
                             display: flex;
                             flex-direction: column;
                             align-items: center;
                             gap: 0.5rem;
+                            img {
+                                width: 3rem;
+                                height: 3rem;
+                                @media (max-width: 1200px) {
+                                    width: 4rem;
+                                    height: 4rem;
+                                }
+                            }
+                            span {
+                                @include fnFont("Raleway-semibold", 1.4rem, none);
+                                @media (max-width: 1200px) {
+                                    @include fnFont("Raleway-semibold", 2rem, none);
+                                }
+                            }
                         }
                     }
                 }

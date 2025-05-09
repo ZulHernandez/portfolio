@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../components/context/MyContext.js";
 
 import CoTitle from "../components/general/CoTitle.jsx";
-import CoBtn from "../components/general/CoBtn.jsx";
 
 import sport from "../assets/imgs/about/sport.svg";
 import music from "../assets/imgs/about/music.svg";
@@ -39,40 +38,49 @@ const CoSport = () => {
 			text: language == "ES" ? "Dorso" : "Backstroke",
 		},
 		{
+			icon: free,
+			text: language == "ES" ? "Libre" : "Free",
+		},
+		{
 			icon: breast,
-			text: language == "ES" ? "Dorso" : "Backstroke",
+			text: language == "ES" ? "Pecho" : "Breaststroke",
 		},
 		{
 			icon: fly,
 			text: language == "ES" ? "Mariposa" : "Butterfly",
 		},
-		{
-			icon: free,
-			text: language == "ES" ? "Libre" : "Free",
-		},
-	]
-		
+	];
 
 	return (
-		<div className="tab-content__info">
-			<div className="tab-content__info-text">
-				<h2>Me encanta nadar</h2>
-				<span>
-					{language == "ES"
-						? "Llevo nadando ya más de un año y no podría estar más enamorado de este deporte, es una sensación increíble el poder perderse en el agua después de un día de trabajo."
-						: "I have been swimming for more than a year now and I couldn't be more in love with this sport, it is an incredible feeling to be able to get lost in the water after a day of work."}
-					<br />
-					{language == "ES"
-						? "Si tuviera que calificar que hacer un tier-list de que estilo me gusta más..."
-						: "If I had to rate what style I like the most..."}
-				</span>
-				<div className="tab-content__info-text__list">
-					{styles.map((style, index) => (
-						<div key={index} className="tab-content__info-text__list-item" style={{opacity: 1 - index * 0.2}}>
-							<img src={style.icon} alt={style.text} />
-							<span>{style.text}</span>
-						</div>
-					))}
+		<div className="tab-content">
+			<div
+				className="div-img"
+				style={{ backgroundImage: "url(" + imgSport + ")" }}
+			></div>
+			<div className="tab-content__info">
+				<div className="tab-content__info-text">
+					<h2>Me encanta nadar</h2>
+					<span>
+						{language == "ES"
+							? "Llevo nadando ya más de un año y no podría estar más enamorado de este deporte, es una sensación increíble el poder perderse en el agua después de un día de trabajo."
+							: "I have been swimming for more than a year now and I couldn't be more in love with this sport, it is an incredible feeling to be able to get lost in the water after a day of work."}
+						<br />
+						{language == "ES"
+							? "Si tuviera que calificar que hacer un tier-list de que estilo me gusta más..."
+							: "If I had to rate what style I like the most..."}
+					</span>
+					<div className="tab-content__info-text__list">
+						{styles.map((style, index) => (
+							<div
+								key={index}
+								className="tab-content__info-text__list-item"
+								style={{ opacity: 1 - index * 0.2 }}
+							>
+								<img src={style.icon} alt={style.text} />
+								<span>{style.text}</span>
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -106,9 +114,6 @@ const RoAbout = () => {
 					: "I leave you this section so you can learn more about me, beyond my work there are other things about me that may be interesting."}
 			</span>
 			<div className="tab">
-				<span style={{ transform: "rotate(180deg)" }}>
-					<CoBtn type={"primary"} text={null} />
-				</span>
 				<div className="tab-buttons">
 					<span onClick={() => setFiltro(1)}>
 						<CoTab
@@ -146,17 +151,8 @@ const RoAbout = () => {
 						/>
 					</span>
 				</div>
-				<span>
-					<CoBtn type={"primary"} text={null} />
-				</span>
 			</div>
-			<div className="tab-content">
-				<div
-					className="div-img"
-					style={{ backgroundImage: "url(" + imgSport + ")" }}
-				></div>
-				<CoSport />
-			</div>
+			{filtro === 1 && <CoSport />}
 		</div>
 	);
 };
