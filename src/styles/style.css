@@ -1788,6 +1788,11 @@ footer img {
     display: none;
   }
 }
+#conozcamonos .tab-body,
+#get-to-know-me .tab-body {
+  display: flex;
+  flex-direction: column;
+}
 #conozcamonos .tab-content,
 #get-to-know-me .tab-content {
   display: flex;
