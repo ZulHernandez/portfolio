@@ -1396,14 +1396,31 @@ footer {
                 }
             }
         }
+        &-body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+            gap: 5rem;
+            background-color: $shade-0;
+            width: calc(100% - 6rem);
+
+            padding: 3rem;
+            span {
+                color: $shade-600;
+                @include fnFont("Raleway-Medium", 1.6rem, none);
+                @media (max-width: 800px) {
+                    @include fnFont("Raleway-Medium", 2rem, none);
+                }
+                margin: 0px;
+            }
+        }
         &-content {
             display: flex;
             flex-direction: row;
             border-radius: 20px;
-            padding: 3rem;
             gap: 3rem;
-            background-color: $shade-0;
-            width: calc(100% - 6rem);
             @media (max-width: 1000px) {
                 width: calc(100% - 6rem);
                 margin: 0px;
@@ -1434,14 +1451,6 @@ footer {
                         @include fnFont("Raleway-semibold", 2.4rem, none);
                         @media (max-width: 800px) {
                             @include fnFont("Raleway-semibold", 3rem, none);
-                        }
-                        margin: 0px;
-                    }
-                    span {
-                        color: $shade-600;
-                        @include fnFont("Raleway-Medium", 1.6rem, none);
-                        @media (max-width: 800px) {
-                            @include fnFont("Raleway-Medium", 2rem, none);
                         }
                         margin: 0px;
                     }
@@ -1477,6 +1486,76 @@ footer {
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+    .music-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 2rem;
+        width: 100%;
+        gap: 2rem;
+        @media (max-width: 800px) {
+            flex-direction: column;
+        }
+        .music-card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            max-width: 30rem;
+            width: 100%;
+            min-width: 2rem;
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: $shade-25;
+            transition: all 0.3s ease-in-out;
+            @media (max-width: 800px) {
+                flex-direction: row;
+                max-width: calc(100% - 4rem);
+                gap: 2rem;
+                align-items: flex-start;
+            }
+            &__cover{
+                width: 100%;
+                aspect-ratio: 1/1;
+                display: block;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                @media (max-width: 800px) {
+                    width: 30rem;
+                    aspect-ratio: 1/1;
+                }
+            }
+            &__info{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                h3{
+                    @include fnFont("Raleway-Black", 3rem, none);
+                    margin-bottom: 1rem;
+                    @media (max-width: 800px) {
+                        @include fnFont("Raleway-Black", 3.2rem, none);
+                    }
+                }
+                p{
+                    @include fnFont("Raleway-Semibold", 1.6rem, none);
+                    color: $shade-600;
+                    margin: 0px;
+                    @media (max-width: 800px) {
+                        @include fnFont("Raleway-Semibold", 2rem, none);
+                    }
+                }
+                #year {
+                    @include fnFont("Raleway-Regular", 1.6rem, none);
+                    @media (max-width: 800px) {
+                        @include fnFont("Raleway-Regular", 2rem, none);
+                        
                     }
                 }
             }

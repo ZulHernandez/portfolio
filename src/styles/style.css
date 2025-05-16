@@ -1788,15 +1788,40 @@ footer img {
     display: none;
   }
 }
+#conozcamonos .tab-body,
+#get-to-know-me .tab-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 5rem;
+  background-color: #fff;
+  width: calc(100% - 6rem);
+  padding: 3rem;
+}
+#conozcamonos .tab-body span,
+#get-to-know-me .tab-body span {
+  color: #666666;
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: none;
+  margin: 0px;
+}
+@media (max-width: 800px) {
+  #conozcamonos .tab-body span,
+  #get-to-know-me .tab-body span {
+    font-family: "Raleway-Medium", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
 #conozcamonos .tab-content,
 #get-to-know-me .tab-content {
   display: flex;
   flex-direction: row;
   border-radius: 20px;
-  padding: 3rem;
   gap: 3rem;
-  background-color: #fff;
-  width: calc(100% - 6rem);
 }
 @media (max-width: 1000px) {
   #conozcamonos .tab-content,
@@ -1850,22 +1875,6 @@ footer img {
     text-decoration: none;
   }
 }
-#conozcamonos .tab-content__info-text span,
-#get-to-know-me .tab-content__info-text span {
-  color: #666666;
-  font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.6rem;
-  text-decoration: none;
-  margin: 0px;
-}
-@media (max-width: 800px) {
-  #conozcamonos .tab-content__info-text span,
-  #get-to-know-me .tab-content__info-text span {
-    font-family: "Raleway-Medium", sans-serif;
-    font-size: 2rem;
-    text-decoration: none;
-  }
-}
 #conozcamonos .tab-content__info-text__list,
 #get-to-know-me .tab-content__info-text__list {
   display: flex;
@@ -1911,6 +1920,112 @@ footer img {
   #conozcamonos .tab-content__info-text__list-item span,
   #get-to-know-me .tab-content__info-text__list-item span {
     font-family: "Raleway-semibold", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+#conozcamonos .music-list,
+#get-to-know-me .music-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+  width: 100%;
+  gap: 2rem;
+}
+@media (max-width: 800px) {
+  #conozcamonos .music-list,
+  #get-to-know-me .music-list {
+    flex-direction: column;
+  }
+}
+#conozcamonos .music-list .music-card,
+#get-to-know-me .music-list .music-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 30rem;
+  width: 100%;
+  min-width: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #f7f7f7;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 800px) {
+  #conozcamonos .music-list .music-card,
+  #get-to-know-me .music-list .music-card {
+    flex-direction: row;
+    max-width: calc(100% - 4rem);
+    gap: 2rem;
+    align-items: flex-start;
+  }
+}
+#conozcamonos .music-list .music-card__cover,
+#get-to-know-me .music-list .music-card__cover {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 800px) {
+  #conozcamonos .music-list .music-card__cover,
+  #get-to-know-me .music-list .music-card__cover {
+    width: 30rem;
+    aspect-ratio: 1/1;
+  }
+}
+#conozcamonos .music-list .music-card__info,
+#get-to-know-me .music-list .music-card__info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#conozcamonos .music-list .music-card__info h3,
+#get-to-know-me .music-list .music-card__info h3 {
+  font-family: "Raleway-Black", sans-serif;
+  font-size: 3rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+@media (max-width: 800px) {
+  #conozcamonos .music-list .music-card__info h3,
+  #get-to-know-me .music-list .music-card__info h3 {
+    font-family: "Raleway-Black", sans-serif;
+    font-size: 3.2rem;
+    text-decoration: none;
+  }
+}
+#conozcamonos .music-list .music-card__info p,
+#get-to-know-me .music-list .music-card__info p {
+  font-family: "Raleway-Semibold", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #666666;
+  margin: 0px;
+}
+@media (max-width: 800px) {
+  #conozcamonos .music-list .music-card__info p,
+  #get-to-know-me .music-list .music-card__info p {
+    font-family: "Raleway-Semibold", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+#conozcamonos .music-list .music-card__info #year,
+#get-to-know-me .music-list .music-card__info #year {
+  font-family: "Raleway-Regular", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+@media (max-width: 800px) {
+  #conozcamonos .music-list .music-card__info #year,
+  #get-to-know-me .music-list .music-card__info #year {
+    font-family: "Raleway-Regular", sans-serif;
     font-size: 2rem;
     text-decoration: none;
   }
