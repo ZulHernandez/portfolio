@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../context/MyContext";
-import CoTitle from "../general/CoTitle";
+import CoTitle from "./CoTitle";
 
 import tel from "../../assets/imgs/home/call.svg";
 import mail from "../../assets/imgs/home/mail.svg";

@@ -1,7 +1,9 @@
 import { useContext, useEffect, useState, useRef } from "react";
 import { MyContext } from "../components/context/MyContext.js";
+import { useLocation } from "react-router-dom";
 
 import CoTitle from "../components/general/CoTitle.jsx";
+import CoConozca from "../components/general/CoConozca.jsx";
 
 import sport from "../assets/imgs/about/sport.svg";
 import music from "../assets/imgs/about/music.svg";
@@ -16,26 +18,45 @@ import breast from "../assets/imgs/about/sport/breast.svg";
 import fly from "../assets/imgs/about/sport/fly.svg";
 import free from "../assets/imgs/about/sport/free.svg";
 
-import imgMusic from "../assets/imgs/about/music/foto.jpeg";
+import imgMusic from "../assets/imgs/about/music/foto.jpg";
 import amp from "../assets/imgs/about/music/amp.svg";
 import electric from "../assets/imgs/about/music/electric.svg";
 import guitar from "../assets/imgs/about/music/guitar.svg";
 import melodic from "../assets/imgs/about/music/melodic.svg";
 import microphone from "../assets/imgs/about/music/microphone.svg";
 
-import f1 from "../assets/imgs/games/Frame-1.png";
-import f2 from "../assets/imgs/games/Frame-2.png";
-import f3 from "../assets/imgs/games/Frame-3.png";
-import f4 from "../assets/imgs/games/Frame-4.png";
-import f5 from "../assets/imgs/games/Frame-5.png";
-import f6 from "../assets/imgs/games/Frame-6.png";
-import f7 from "../assets/imgs/games/Frame-7.png";
-import f8 from "../assets/imgs/games/Frame-8.png";
+import f1 from "../assets/imgs/about/games/Frame-1.png";
+import f2 from "../assets/imgs/about/games/Frame-2.png";
+import f3 from "../assets/imgs/about/games/Frame-3.png";
+import f4 from "../assets/imgs/about/games/Frame-4.png";
+import f5 from "../assets/imgs/about/games/Frame-5.png";
+import f6 from "../assets/imgs/about/games/Frame-6.png";
+import f7 from "../assets/imgs/about/games/Frame-7.png";
+import f8 from "../assets/imgs/about/games/Frame-8.png";
+
+import oyasumi from "../assets/imgs/about/manga/oyasumi.png";
+import uzumaki from "../assets/imgs/about/manga/uzumaki.png";
+import gakko from "../assets/imgs/about/manga/gakko.png";
+import bibliomania from "../assets/imgs/about/manga/bibliomania.png";
+import eri from "../assets/imgs/about/manga/eri.png";
+import evangelion from "../assets/imgs/about/manga/evangelion.png";
+import cowboy from "../assets/imgs/about/manga/cowboy.png";
+import madoka from "../assets/imgs/about/manga/madoka.png";
+import perfect from "../assets/imgs/about/manga/perfect.png";
+import jujutsu from "../assets/imgs/about/manga/jujutsu.png";
+
+import apio from "../assets/imgs/about/food/apio.svg";
+import tomate from "../assets/imgs/about/food/tomate.svg";
+import hierbabuena from "../assets/imgs/about/food/hierbabuena.svg";
+import chile from "../assets/imgs/about/food/chile.svg";
+import naranja from "../assets/imgs/about/food/naranja.svg";
+import limon from "../assets/imgs/about/food/limon.svg";
+import sal from "../assets/imgs/about/food/sal.svg";
 
 const API_KEY = "AIzaSyD786eN8Xt3Z-ItaSYVSDuZ4AVLrApAPD4";
 const PLAYLIST_ID = "PLC_vmjLKExTmybkcbAHXzqPsZuVH9Lc6I";
 
-const CoMusicCard = ({ cover, song, artist, album, year, url }) => {
+const CoCard = ({ cover, title, author, url }) => {
 	const iframeRef = useRef(null);
 	const [display, setDisplay] = useState(0);
 
@@ -49,38 +70,45 @@ const CoMusicCard = ({ cover, song, artist, album, year, url }) => {
 				setDisplay(0);
 			}}
 		>
-			<div
-				className="music-card__cover"
-				style={{
-					backgroundImage: `url(${cover})`,
-					display: display == 0 ? "block" : "none",
-				}}
-			></div>
-			<div
-				className="music-card__cover"
-				style={{
-					display: display == 1 ? "block" : "none",
-				}}
-			>
-				<iframe
-					ref={iframeRef}
+			{url == null ? (
+				<div
 					className="music-card__cover"
-					src={`https://www.youtube.com/embed/${
-						url.split("v=")[1]
-					}?enablejsapi=1&origin=http://localhost:5173`}
-					title={`${song} by ${artist}`}
-					frameBorder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media;"
-					referrerPolicy="strict-origin-when-cross-origin"
-				></iframe>
-			</div>
+					style={{
+						backgroundImage: `url(${cover})`,
+					}}
+				></div>
+			) : (
+				<div
+					className="music-card__cover"
+					style={{
+						backgroundImage: `url(${cover})`,
+						display: display == 0 ? "block" : "none",
+					}}
+				></div>
+			)}
+			{url == null ? null : (
+				<div
+					className="music-card__cover"
+					style={{
+						display: display == 1 ? "block" : "none",
+					}}
+				>
+					<iframe
+						ref={iframeRef}
+						className="music-card__cover"
+						src={`https://www.youtube.com/embed/${
+							url.split("v=")[1]
+						}?enablejsapi=1&origin=http://localhost:5173`}
+						title={`${title} by ${author}`}
+						frameBorder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media;"
+						referrerPolicy="strict-origin-when-cross-origin"
+					></iframe>
+				</div>
+			)}
 			<div className="music-card__info">
-				<h3>{song}</h3>
-				<p>
-					{artist}
-					{/*  - {album} */}
-				</p>
-				{/* <p id="year">{year}</p> */}
+				<h3>{title}</h3>
+				<p>{author}</p>
 			</div>
 		</div>
 	);
@@ -264,14 +292,17 @@ const CoMusic = () => {
 					{language == "ES"
 						? "Ultimamente he estado escuchando:"
 						: "Recently, I have been listening to:"}
+					<br />
+					<br />
+					<br />
 				</span>
 				<div className="music-list">
 					{songs.map((song, index) => (
-						<CoMusicCard
+						<CoCard
 							key={index}
 							cover={song.coverImage}
-							song={song.title}
-							artist={song.artist}
+							title={song.title}
+							author={song.artist}
 							url={song.url}
 						/>
 					))}
@@ -284,14 +315,23 @@ const CoMusic = () => {
 const CoGames = () => {
 	const { language } = useContext(MyContext);
 
-	let opacities = [0, 0, 0, 0.2, 0.4, 0.6, 0.8, 1];
+	const [opacities, setOpacities] = useState([
+		1, 0, 0, 0, 0.05, 0.1, 0.15, 0.2,
+	]);
 
-	window.onload = () => {
-		setInterval(() => {
-			opacities.unshift(opacities.pop()); // Mueve el último elemento al inicio
-			console.log(opacities); // Muestra el array actualizado
-		}, 41);
-	};
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setOpacities((prev) => {
+				const newArray = [
+					prev[prev.length - 1],
+					...prev.slice(0, prev.length - 1),
+				]; // Moves last element to the front
+				return newArray;
+			});
+		}, 41 * 10);
+
+		return () => clearInterval(interval); // Cleanup on unmount
+	}, []);
 
 	return (
 		<div className="tab-body">
@@ -343,74 +383,387 @@ const CoGames = () => {
 	);
 };
 
-const RoAbout = () => {
-	const { language, setRuta } = useContext(MyContext);
+const CoManga = () => {
+	const { language } = useContext(MyContext);
 
-	const [filtro, setFiltro] = useState(3);
+	const mangas = [
+		{
+			cover: oyasumi,
+			title: "Oyasumi Punpun",
+			author: "Inio Asano",
+			url: null,
+		},
+		{
+			cover: eri,
+			title: "Sayonara Eri",
+			author: "Tatsuki Fujimoto",
+			url: null,
+		},
+		{
+			cover: uzumaki,
+			title: "Uzumaki",
+			author: "Junji Ito",
+			url: null,
+		},
+		{
+			cover: gakko,
+			title: "Gakkō Gurashi!",
+			author: "Norimitsu Kaihō",
+			url: null,
+		},
+
+		{
+			cover: bibliomania,
+			title: "Bibliomania",
+			author: "Orval, Macchiro",
+			url: null,
+		},
+	];
+
+	const animes = [
+		{
+			cover: evangelion,
+			title: "Neon Genesis Evangelion",
+			author: "Hideaki Anno",
+			url: null,
+		},
+		{
+			cover: cowboy,
+			title: "Cowboy Bebop",
+			author: "Shinichirō Watanabe",
+			url: null,
+		},
+		{
+			cover: madoka,
+			title: "Puella Magi Madoka Magica",
+			author: "Gen Urobuchi",
+			url: null,
+		},
+		{
+			cover: perfect,
+			title: "Perfect Blue",
+			author: "Satoshi Kon",
+			url: null,
+		},
+		{
+			cover: jujutsu,
+			title: "Jujutsu Kaisen",
+			author: "Gege Akutami",
+			url: null,
+		},
+	];
+
+	return (
+		<div className="tab-body">
+			<div className="tab-content">
+				<div className="tab-content__info">
+					<div className="tab-content__info-text">
+						<h2>
+							{language == "ES"
+								? "Slices of live, terror y ¿mechas?"
+								: "Slices of life, terror and mechas?"}
+						</h2>
+						<span>
+							{language == "ES"
+								? "Soy más de leer manga que ver anime y asi he encontrado increíbles autores que me han hecho pasar buenos y malos momentos. Aquí esta mi top de mangas aunque, si es posible, deberías leer más sobre el autor."
+								: "I prefer reading manga over watching anime, and this has led me to discover incredible authors who have given me both good and bad moments. Here is my top manga, although if possible, you should read more about the author."}
+						</span>
+					</div>
+				</div>
+			</div>
+			<div className="music-list">
+				{mangas.map((manga, index) => (
+					<CoCard
+						key={index}
+						cover={manga.cover}
+						title={manga.title}
+						author={manga.author}
+						url={manga.url}
+					/>
+				))}
+			</div>
+			<div className="tab-content">
+				<div className="tab-content__info">
+					<div className="tab-content__info-text">
+						<span>
+							{language == "ES"
+								? "A pesar de gustar más el formato manga, hay obras que definitivamente no podría más sino viéndolas a toda color y animadas. Te recomiendo mucho darles un vistazo, podrían gustarte bastante."
+								: "Despite preferring the manga format, there are definitely works that I couldn't enjoy as much if I didn't watch them in full color and animated. I highly recommend checking them out; you might like them a lot."}
+						</span>
+					</div>
+				</div>
+			</div>
+			<div className="music-list">
+				{animes.map((anime, index) => (
+					<CoCard
+						key={index}
+						cover={anime.cover}
+						title={anime.title}
+						author={anime.author}
+						url={anime.url}
+					/>
+				))}
+			</div>
+		</div>
+	);
+};
+
+const CoComida = () => {
+	const { language } = useContext(MyContext);
+
+	const ingredientes = [
+		{
+			icon: apio,
+			text: language == "ES" ? "Apio" : "Celery",
+		},
+		{
+			icon: tomate,
+			text: language == "ES" ? "Tomate" : "Tomato",
+		},
+		{
+			icon: hierbabuena,
+			text: language == "ES" ? "Hierbabuena" : "Mint",
+		},
+		{
+			icon: chile,
+			text: language == "ES" ? "Chile serrano" : "Serrano pepper",
+		},
+		{
+			icon: naranja,
+			text: language == "ES" ? "Naranja" : "Orange",
+		},
+		{
+			icon: limon,
+			text: language == "ES" ? "Limón" : "Lemon",
+		},
+		{
+			icon: sal,
+			text: language == "ES" ? "Sal" : "Salt",
+		},
+	];
+
+	const ingredienteItems = [
+		{
+			cantidad: "1",
+			text: language == "ES" ? "Rama de apio" : "Celery stalk",
+		},
+		{
+			cantidad: "2",
+			text:
+				language == "ES"
+					? "Tomates (Jitomate verde)"
+					: "Tomatoes (Green tomato)",
+		},
+		{
+			cantidad: "3",
+			text: language == "ES" ? "Hojas de hierbabuena" : "Mint leaves",
+		},
+		{
+			cantidad: "1",
+			text: language == "ES" ? "Chile serrano" : "Serrano peppers",
+		},
+		{
+			cantidad: "1",
+			text: language == "ES" ? "Naranja" : "Orange",
+		},
+		{
+			cantidad: "1",
+			text:
+				language == "ES" ? "Limón verde sin semilla" : "Seedless green lemon",
+		},
+		{
+			cantidad: "-",
+			text: language == "ES" ? "Sal" : "Salt",
+		},
+		{
+			cantidad: "-",
+			text: language == "ES" ? "Oregano" : "Oregano",
+		},
+		{
+			cantidad: "-",
+			text: language == "ES" ? "Agua" : "Water",
+		},
+	];
+
+	const steps = [
+		{
+			cantidad: "1",
+			text:
+				language == "ES"
+					? "Picamos la rama de apio, los tomates, las hojas de hierbabuena y el chile serrano."
+					: "Chop the celery stalk, tomatoes, mint leaves, and serrano pepper.",
+		},
+		{
+			cantidad: "2",
+			text:
+				language == "ES"
+					? "Exprimimos el jugo del limón y el de naranja, reservamos."
+					: "Juice the lemon and orange, set aside.",
+		},
+		{
+			cantidad: "3",
+			text:
+				language == "ES"
+					? "Molcajeteamos o procesamos con la licuadora y agregamos la sal y el orégano al gusto."
+					: "Grind in a mortar or blender and add salt and oregano to taste.",
+		},
+		{
+			cantidad: "4",
+			text:
+				language == "ES"
+					? "Si lo requiere la licuadora o tu en el molcajete puedes agregar agua poco a poco hasta lograr la consistencia que más te guste, yo la prefiero un poco más pastosa."
+					: "If the blender requires it or you in the mortar, you can add water little by little until you achieve the consistency you like best; I prefer it a little thicker.",
+		},
+		{
+			cantidad: "5",
+			text:
+				language == "ES"
+					? "Acompaña con totopos o para unos taquitos."
+					: "Serve with tortilla chips or tacos.",
+		},
+	];
+
+	return (
+		<div className="tab-body">
+			<div className="tab-content">
+				<div className="tab-content__info">
+					<div className="tab-content__info-text">
+						<h2>
+							{language == "ES"
+								? "Comida asiática, cocinar y una receta "
+								: "Asian food, cooking, and a recipe"}
+						</h2>
+						<span>
+							{language == "ES"
+								? "Me encanta comer pero también amo cocinar, de las cosas que mas suelo cocinar son comida asiática desde platillos salados como ramen, giozas u onigiris como también platillos dulces como el helado de matcha. La comida mexicana obviamente me encanta, hago una birria espectacular y justo les dejare una reseta de salsa verde cruda para que puedan comer con su familia."
+								: "I love eating but I also love cooking. Some of the things I cook the most are Asian food, from savory dishes like ramen, gyozas, or onigiris to sweet dishes like matcha ice cream. I obviously love Mexican food; I make a spectacular birria, and I will leave you a recipe for raw green salsa so you can enjoy it with your family."}
+						</span>
+						<div className="tab-content__info-text__list">
+							{ingredientes.map((ingrediente, index) => (
+								<div key={index} className="tab-content__info-text__list-item">
+									<img src={ingrediente.icon} alt={ingrediente.text} />
+								</div>
+							))}
+						</div>
+						<br />
+						<br />
+						<center>
+							<div className="receipe">
+								<div className="receipe__ingredients">
+									<h3>{language == "ES" ? "Ingredientes" : "Ingredients"}</h3>
+									<div className="receipe__ingredients-list">
+										{ingredienteItems.map((item, index) => (
+											<div
+												className="receipe__ingredients-list-item"
+												key={index}
+											>
+												<span>{item.cantidad}</span>
+												<span>{item.text}</span>
+											</div>
+										))}
+									</div>
+								</div>
+								<div className="receipe__instructions">
+									<h3>{language == "ES" ? "Instrucciones" : "Instructions"}</h3>
+									<div className="receipe__instructions-list">
+										{steps.map((item, index) => (
+											<div
+												className="receipe__instructions-list-item"
+												key={index}
+											>
+												<span>{item.cantidad}</span>
+												<span>{item.text}</span>
+											</div>
+										))}
+									</div>
+								</div>
+							</div>
+						</center>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+const RoAbout = () => {
+	const { language, setRuta, setAmplio } = useContext(MyContext);
+	const location = useLocation();
+	const [filtro, setFiltro] = useState(2);
 
 	useEffect(() => {
 		setRuta("/about-me");
 	}, [setRuta]);
 
+	useEffect(() => {
+		setAmplio(false); // Reset amplio on route change
+	}, [location.pathname]);
+
 	return (
-		<div
-			id={language == "ES" ? "conozcamonos" : "get-to-know-me"}
-			className="container-fluid"
-		>
-			<CoTitle
-				titles={
-					language == "ES"
-						? "Conozcámonos un poco más"
-						: "Get to know me a little more"
-				}
-			/>
-			<span id="span">
-				{language == "ES"
-					? "Te dejo este apartado para que conozcas más sobre mi, más allá de mi trabajo hay otras cosas sobre mi que pueden ser interesantes."
-					: "I leave you this section so you can learn more about me, beyond my work there are other things about me that may be interesting."}
-			</span>
-			<div className="tab">
-				<div className="tab-buttons">
-					<span onClick={() => setFiltro(1)}>
-						<CoTab
-							status={filtro == 1 ? "active" : "inactive"}
-							icon={sport}
-							text={language == "ES" ? "Deporte" : "Sport"}
-						/>
-					</span>
-					<span onClick={() => setFiltro(2)}>
-						<CoTab
-							status={filtro == 2 ? "active" : "inactive"}
-							icon={music}
-							text={language == "ES" ? "Música" : "Music"}
-						/>
-					</span>
-					<span onClick={() => setFiltro(3)}>
-						<CoTab
-							status={filtro == 3 ? "active" : "inactive"}
-							icon={games}
-							text={language == "ES" ? "Juegos" : "Games"}
-						/>
-					</span>
-					<span onClick={() => setFiltro(4)}>
-						<CoTab
-							status={filtro == 4 ? "active" : "inactive"}
-							icon={manga}
-							text={language == "ES" ? "Manga" : "Manga"}
-						/>
-					</span>
-					<span onClick={() => setFiltro(5)}>
-						<CoTab
-							status={filtro == 5 ? "active" : "inactive"}
-							icon={food}
-							text={language == "ES" ? "Comida" : "Food"}
-						/>
-					</span>
+		<div>
+			<div
+				id={language == "ES" ? "conozcamonos" : "get-to-know-me"}
+				className="container-fluid"
+				style={{ minHeight: "50vh" }}
+			>
+				<CoTitle
+					titles={
+						language == "ES"
+							? "Conozcámonos un poco más"
+							: "Get to know me a little more"
+					}
+				/>
+				<span id="span">
+					{language == "ES"
+						? "Te dejo este apartado para que conozcas más sobre mi, más allá de mi trabajo hay otras cosas sobre mi que pueden ser interesantes."
+						: "I leave you this section so you can learn more about me, beyond my work there are other things about me that may be interesting."}
+				</span>
+				<div className="tab">
+					<div className="tab-buttons">
+						<span onClick={() => setFiltro(2)}>
+							<CoTab
+								status={filtro == 2 ? "active" : "inactive"}
+								icon={music}
+								text={language == "ES" ? "Música" : "Music"}
+							/>
+						</span>
+						<span onClick={() => setFiltro(4)}>
+							<CoTab
+								status={filtro == 4 ? "active" : "inactive"}
+								icon={manga}
+								text={language == "ES" ? "Manga" : "Manga"}
+							/>
+						</span>
+						<span onClick={() => setFiltro(3)}>
+							<CoTab
+								status={filtro == 3 ? "active" : "inactive"}
+								icon={games}
+								text={language == "ES" ? "Juegos" : "Games"}
+							/>
+						</span>
+						<span onClick={() => setFiltro(1)}>
+							<CoTab
+								status={filtro == 1 ? "active" : "inactive"}
+								icon={sport}
+								text={language == "ES" ? "Deporte" : "Sport"}
+							/>
+						</span>
+						<span onClick={() => setFiltro(5)}>
+							<CoTab
+								status={filtro == 5 ? "active" : "inactive"}
+								icon={food}
+								text={language == "ES" ? "Comida" : "Food"}
+							/>
+						</span>
+					</div>
 				</div>
+				{filtro === 1 && <CoSport />}
+				{filtro === 2 && <CoMusic />}
+				{filtro === 3 && <CoGames />}
+				{filtro === 4 && <CoManga />}
+				{filtro === 5 && <CoComida />}
 			</div>
-			{filtro === 1 && <CoSport />}
-			{filtro === 2 && <CoMusic />}
-			{filtro === 3 && <CoGames />}
+			<CoConozca></CoConozca>
 		</div>
 	);
 };

@@ -1,7 +1,7 @@
 import CoHola from "../components/home/CoHola.jsx";
 import CoColab from "../components/home/CoColab.jsx";
 import CoTrabajos from "../components/home/CoTrabajos.jsx";
-import CoConozca from "../components/home/CoConozca.jsx";
+import CoConozca from "../components/general/CoConozca.jsx";
 import CoNavLeft from "../components/general/CoNavLeft.jsx";
 
 import { useContext } from "react";
