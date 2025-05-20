@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { MyContext } from "../components/context/MyContext.js";
 
 import CoTitle from "../components/general/CoTitle.jsx";
@@ -23,20 +23,62 @@ import guitar from "../assets/imgs/about/music/guitar.svg";
 import melodic from "../assets/imgs/about/music/melodic.svg";
 import microphone from "../assets/imgs/about/music/microphone.svg";
 
+import f1 from "../assets/imgs/games/Frame-1.png";
+import f2 from "../assets/imgs/games/Frame-2.png";
+import f3 from "../assets/imgs/games/Frame-3.png";
+import f4 from "../assets/imgs/games/Frame-4.png";
+import f5 from "../assets/imgs/games/Frame-5.png";
+import f6 from "../assets/imgs/games/Frame-6.png";
+import f7 from "../assets/imgs/games/Frame-7.png";
+import f8 from "../assets/imgs/games/Frame-8.png";
+
 const API_KEY = "AIzaSyD786eN8Xt3Z-ItaSYVSDuZ4AVLrApAPD4";
 const PLAYLIST_ID = "PLC_vmjLKExTmybkcbAHXzqPsZuVH9Lc6I";
 
-const CoMusicCard = ({ cover, song, artist, album, year }) => {
+const CoMusicCard = ({ cover, song, artist, album, year, url }) => {
+	const iframeRef = useRef(null);
+	const [display, setDisplay] = useState(0);
+
 	return (
-		<div className="music-card">
+		<div
+			className="music-card"
+			onMouseEnter={() => {
+				setDisplay(1);
+			}}
+			onMouseLeave={() => {
+				setDisplay(0);
+			}}
+		>
 			<div
 				className="music-card__cover"
-				style={{ backgroundImage: `url(${cover})` }}
+				style={{
+					backgroundImage: `url(${cover})`,
+					display: display == 0 ? "block" : "none",
+				}}
 			></div>
+			<div
+				className="music-card__cover"
+				style={{
+					display: display == 1 ? "block" : "none",
+				}}
+			>
+				<iframe
+					ref={iframeRef}
+					className="music-card__cover"
+					src={`https://www.youtube.com/embed/${
+						url.split("v=")[1]
+					}?enablejsapi=1&origin=http://localhost:5173`}
+					title={`${song} by ${artist}`}
+					frameBorder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media;"
+					referrerPolicy="strict-origin-when-cross-origin"
+				></iframe>
+			</div>
 			<div className="music-card__info">
 				<h3>{song}</h3>
 				<p>
-					{artist}{/*  - {album} */}
+					{artist}
+					{/*  - {album} */}
 				</p>
 				{/* <p id="year">{year}</p> */}
 			</div>
@@ -80,36 +122,40 @@ const CoSport = () => {
 	];
 
 	return (
-		<div className="tab-content">
-			<div
-				className="div-img"
-				style={{ backgroundImage: "url(" + imgSport + ")" }}
-			></div>
-			<div className="tab-content__body">
-				<div className="tab-content__info">
-					<div className="tab-content__info-text">
-						<h2>{language == "ES" ? "Me encanta nadar" : "I love swimming"}</h2>
-						<span>
-							{language == "ES"
-								? "Llevo nadando ya más de un año y no podría estar más enamorado de este deporte, es una sensación increíble el poder perderse en el agua después de un día de trabajo."
-								: "I have been swimming for more than a year now and I couldn't be more in love with this sport, it is an incredible feeling to be able to get lost in the water after a day of work."}
-							<br />
-							<br />
-							{language == "ES"
-								? "Si tuviera que calificar que hacer un tier-list de que estilo me gusta más..."
-								: "If I had to rate what style I like the most..."}
-						</span>
-						<div className="tab-content__info-text__list">
-							{styles.map((style, index) => (
-								<div
-									key={index}
-									className="tab-content__info-text__list-item"
-									style={{ opacity: 1 - index * 0.2 }}
-								>
-									<img src={style.icon} alt={style.text} />
-									<span>{style.text}</span>
-								</div>
-							))}
+		<div className="tab-body">
+			<div className="tab-content">
+				<div
+					className="div-img"
+					style={{ backgroundImage: "url(" + imgSport + ")" }}
+				></div>
+				<div className="tab-content__body">
+					<div className="tab-content__info">
+						<div className="tab-content__info-text">
+							<h2>
+								{language == "ES" ? "Me encanta nadar" : "I love swimming"}
+							</h2>
+							<span>
+								{language == "ES"
+									? "Llevo nadando ya más de un año y no podría estar más enamorado de este deporte, es una sensación increíble el poder perderse en el agua después de un día de trabajo."
+									: "I have been swimming for more than a year now and I couldn't be more in love with this sport, it is an incredible feeling to be able to get lost in the water after a day of work."}
+								<br />
+								<br />
+								{language == "ES"
+									? "Si tuviera que calificar que hacer un tier-list de que estilo me gusta más..."
+									: "If I had to rate what style I like the most..."}
+							</span>
+							<div className="tab-content__info-text__list">
+								{styles.map((style, index) => (
+									<div
+										key={index}
+										className="tab-content__info-text__list-item"
+										style={{ opacity: 1 - index * 0.2 }}
+									>
+										<img src={style.icon} alt={style.text} />
+										<span>{style.text}</span>
+									</div>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>
@@ -153,8 +199,6 @@ const CoMusic = () => {
 					`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=${PLAYLIST_ID}&key=${API_KEY}`
 				);
 				const data = await response.json();
-				console.table(data.items[0]);
-				
 
 				// Ordenar por fecha de publicación y tomar los últimos 3
 				const sortedSongs = data.items
@@ -162,12 +206,13 @@ const CoMusic = () => {
 						(a, b) =>
 							new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt)
 					)
-					.slice(0, 3)
+					.slice(0, 5)
 					.map((item) => ({
 						title: item.snippet.title,
 						artist: item.snippet.videoOwnerChannelTitle.split(" - ")[0],
 						coverImage: item.snippet.thumbnails.maxres.url,
 						publishedAt: item.snippet.publishedAt,
+						url: `https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`,
 					}));
 
 				setSongs(sortedSongs);
@@ -214,19 +259,84 @@ const CoMusic = () => {
 					</div>
 				</div>
 			</div>
-			<span>
-				{language == "ES"
-					? "Ultimamente he estado escuchando:"
-					: "Recently, I have been listening to:"}
-			</span>
-			<div className="music-list">
-				{songs.map((song, index) => (
-					<CoMusicCard
-						key={index}
-						cover={song.coverImage}
-						song={song.title}
-						artist={song.artist}
-					/>
+			<div style={{ width: "100%" }}>
+				<span>
+					{language == "ES"
+						? "Ultimamente he estado escuchando:"
+						: "Recently, I have been listening to:"}
+				</span>
+				<div className="music-list">
+					{songs.map((song, index) => (
+						<CoMusicCard
+							key={index}
+							cover={song.coverImage}
+							song={song.title}
+							artist={song.artist}
+							url={song.url}
+						/>
+					))}
+				</div>
+			</div>
+		</div>
+	);
+};
+
+const CoGames = () => {
+	const { language } = useContext(MyContext);
+
+	let opacities = [0, 0, 0, 0.2, 0.4, 0.6, 0.8, 1];
+
+	window.onload = () => {
+		setInterval(() => {
+			opacities.unshift(opacities.pop()); // Mueve el último elemento al inicio
+			console.log(opacities); // Muestra el array actualizado
+		}, 41);
+	};
+
+	return (
+		<div className="tab-body">
+			<div className="tab-content">
+				<div className="tab-content__info">
+					<div className="tab-content__info-text">
+						<h2>
+							{language == "ES"
+								? "Soy más de singleplayer..."
+								: "I prefer singleplayer games..."}
+						</h2>
+						<span>
+							{language == "ES"
+								? "Me gustan los juegos donde me encuentro solo descubriendo una gran historia. Diría que mis géneros favoritos son los walking simulators, los metroid-vania y los plataformeros clasicos. Definitivamente mi juego favorito es Hollowknight."
+								: "I like games where I find myself alone discovering a great story. I would say my favorite genres are walking simulators, metroidvanias, and classic platformers. Definitely, my favorite game is Hollow Knight."}
+							<br />
+							<br />
+							<b>
+								{language == "ES"
+									? "P.D. Silk Song es real!"
+									: "P.S. Silk Song is real!"}
+							</b>
+						</span>
+						<h4>
+							{language == "ES"
+								? "... pero me encantan los juegos de mesa"
+								: "... but i also like board games"}
+						</h4>
+						<span>
+							{language == "ES"
+								? "Últimamente he estado coleccionando y descubriendo juegos de mesas que me han encantado, no tengo muchos aún en mi colección pero pronto estare llenos de ellos"
+								: "Lately, I have been collecting and discovering board games that I have loved, I don't have many yet in my collection but soon I will be filled with them"}
+						</span>
+					</div>
+				</div>
+			</div>
+			<div className="frame-container">
+				{[...Array(8)].map((_, i) => (
+					<div key={i}>
+						<img
+							src={eval(`f${i + 1}`)}
+							alt={`Frame ${i + 1}`}
+							style={{ zIndex: i + 1, opacity: opacities[i] }}
+						/>
+					</div>
 				))}
 			</div>
 		</div>
@@ -236,7 +346,7 @@ const CoMusic = () => {
 const RoAbout = () => {
 	const { language, setRuta } = useContext(MyContext);
 
-	const [filtro, setFiltro] = useState(2);
+	const [filtro, setFiltro] = useState(3);
 
 	useEffect(() => {
 		setRuta("/about-me");
@@ -300,6 +410,7 @@ const RoAbout = () => {
 			</div>
 			{filtro === 1 && <CoSport />}
 			{filtro === 2 && <CoMusic />}
+			{filtro === 3 && <CoGames />}
 		</div>
 	);
 };

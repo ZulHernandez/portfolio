@@ -1799,6 +1799,7 @@ footer img {
   background-color: #fff;
   width: calc(100% - 6rem);
   padding: 3rem;
+  border-radius: 2rem;
 }
 #conozcamonos .tab-body span,
 #get-to-know-me .tab-body span {
@@ -1820,15 +1821,8 @@ footer img {
 #get-to-know-me .tab-content {
   display: flex;
   flex-direction: row;
-  border-radius: 20px;
   gap: 3rem;
-}
-@media (max-width: 1000px) {
-  #conozcamonos .tab-content,
-  #get-to-know-me .tab-content {
-    width: calc(100% - 6rem);
-    margin: 0px;
-  }
+  width: 100%;
 }
 @media (max-width: 800px) {
   #conozcamonos .tab-content,
@@ -1872,6 +1866,21 @@ footer img {
   #get-to-know-me .tab-content__info-text h2 {
     font-family: "Raleway-semibold", sans-serif;
     font-size: 3rem;
+    text-decoration: none;
+  }
+}
+#conozcamonos .tab-content__info-text h4,
+#get-to-know-me .tab-content__info-text h4 {
+  font-family: "Raleway-semibold", sans-serif;
+  font-size: 1.8rem;
+  text-decoration: none;
+  margin: 0px;
+}
+@media (max-width: 800px) {
+  #conozcamonos .tab-content__info-text h4,
+  #get-to-know-me .tab-content__info-text h4 {
+    font-family: "Raleway-semibold", sans-serif;
+    font-size: 2.5rem;
     text-decoration: none;
   }
 }
@@ -1928,16 +1937,12 @@ footer img {
 #get-to-know-me .music-list {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-top: 2rem;
+  align-items: flex-start;
+  gap: 3rem;
   width: 100%;
-  gap: 2rem;
-}
-@media (max-width: 800px) {
-  #conozcamonos .music-list,
-  #get-to-know-me .music-list {
-    flex-direction: column;
-  }
+  -webkit-clip-path: fill-box;
+          clip-path: fill-box;
+  overflow-x: scroll;
 }
 #conozcamonos .music-list .music-card,
 #get-to-know-me .music-list .music-card {
@@ -1947,20 +1952,25 @@ footer img {
   gap: 1rem;
   max-width: 30rem;
   width: 100%;
-  min-width: 2rem;
+  min-width: 20rem;
   padding: 2rem;
   border-radius: 1rem;
   background-color: #f7f7f7;
   transition: all 0.3s ease-in-out;
+  margin: 5rem 0px;
+  aspect-ratio: 2/3.5;
+  display: block;
+  /* @media (max-width: 800px) {
+      flex-direction: row;
+      max-width: calc(100% - 4rem);
+      gap: 3rem;
+      align-items: flex-start;
+  } */
 }
-@media (max-width: 800px) {
-  #conozcamonos .music-list .music-card,
-  #get-to-know-me .music-list .music-card {
-    flex-direction: row;
-    max-width: calc(100% - 4rem);
-    gap: 2rem;
-    align-items: flex-start;
-  }
+#conozcamonos .music-list .music-card:hover,
+#get-to-know-me .music-list .music-card:hover {
+  box-shadow: 20px 20px 40px #e6e6e6, -20px -20px 40px #ffffff;
+  transform: scale(1.05);
 }
 #conozcamonos .music-list .music-card__cover,
 #get-to-know-me .music-list .music-card__cover {
@@ -1970,13 +1980,6 @@ footer img {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-@media (max-width: 800px) {
-  #conozcamonos .music-list .music-card__cover,
-  #get-to-know-me .music-list .music-card__cover {
-    width: 30rem;
-    aspect-ratio: 1/1;
-  }
 }
 #conozcamonos .music-list .music-card__info,
 #get-to-know-me .music-list .music-card__info {
@@ -2029,4 +2032,24 @@ footer img {
     font-size: 2rem;
     text-decoration: none;
   }
+}
+#conozcamonos .frame-container,
+#get-to-know-me .frame-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+#conozcamonos .frame-container div,
+#get-to-know-me .frame-container div {
+  width: calc((100% - 7rem) / 8);
+  -webkit-clip-path: none;
+          clip-path: none;
+  align-items: center !important;
+  justify-content: center !important;
+  display: flex;
+}
+#conozcamonos .frame-container div img,
+#get-to-know-me .frame-container div img {
+  width: 30rem;
 }/*# sourceMappingURL=style.css.map */

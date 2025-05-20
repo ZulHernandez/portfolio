@@ -1405,8 +1405,8 @@ footer {
             gap: 5rem;
             background-color: $shade-0;
             width: calc(100% - 6rem);
-
             padding: 3rem;
+            border-radius: 2rem;
             span {
                 color: $shade-600;
                 @include fnFont("Raleway-Medium", 1.6rem, none);
@@ -1419,12 +1419,8 @@ footer {
         &-content {
             display: flex;
             flex-direction: row;
-            border-radius: 20px;
             gap: 3rem;
-            @media (max-width: 1000px) {
-                width: calc(100% - 6rem);
-                margin: 0px;
-            }
+            width: 100%;
             @media (max-width: 800px) {
                 flex-direction: column;
                 align-items: center;
@@ -1451,6 +1447,13 @@ footer {
                         @include fnFont("Raleway-semibold", 2.4rem, none);
                         @media (max-width: 800px) {
                             @include fnFont("Raleway-semibold", 3rem, none);
+                        }
+                        margin: 0px;
+                    }
+                    h4 {
+                        @include fnFont("Raleway-semibold", 1.8rem, none);
+                        @media (max-width: 800px) {
+                            @include fnFont("Raleway-semibold", 2.5rem, none);
                         }
                         margin: 0px;
                     }
@@ -1494,56 +1497,61 @@ footer {
     .music-list {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        margin-top: 2rem;
+        align-items: flex-start;
+        gap: 3rem;
         width: 100%;
-        gap: 2rem;
-        @media (max-width: 800px) {
-            flex-direction: column;
-        }
-        .music-card{
+        clip-path: fill-box;
+        overflow-x: scroll;
+
+        .music-card {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1rem;
             max-width: 30rem;
             width: 100%;
-            min-width: 2rem;
+            min-width: 20rem;
             padding: 2rem;
             border-radius: 1rem;
             background-color: $shade-25;
             transition: all 0.3s ease-in-out;
-            @media (max-width: 800px) {
+            margin: 5rem 0px;
+            aspect-ratio: 2/3.5;
+            display: block;
+            &:hover {
+                box-shadow:
+                    20px 20px 40px #e6e6e6,
+                    -20px -20px 40px #ffffff;
+                transform: scale(1.05);
+            }
+
+            /* @media (max-width: 800px) {
                 flex-direction: row;
                 max-width: calc(100% - 4rem);
-                gap: 2rem;
+                gap: 3rem;
                 align-items: flex-start;
-            }
-            &__cover{
+            } */
+            &__cover {
                 width: 100%;
                 aspect-ratio: 1/1;
                 display: block;
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;
-                @media (max-width: 800px) {
-                    width: 30rem;
-                    aspect-ratio: 1/1;
-                }
             }
-            &__info{
+            &__info {
                 width: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                h3{
+                h3 {
                     @include fnFont("Raleway-Black", 3rem, none);
                     margin-bottom: 1rem;
                     @media (max-width: 800px) {
                         @include fnFont("Raleway-Black", 3.2rem, none);
                     }
                 }
-                p{
+                p {
                     @include fnFont("Raleway-Semibold", 1.6rem, none);
                     color: $shade-600;
                     margin: 0px;
@@ -1555,9 +1563,24 @@ footer {
                     @include fnFont("Raleway-Regular", 1.6rem, none);
                     @media (max-width: 800px) {
                         @include fnFont("Raleway-Regular", 2rem, none);
-                        
                     }
                 }
+            }
+        }
+    }
+    .frame-container {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        div {
+            width: calc((100% - 1rem * 7) / 8);
+            clip-path: none;
+            align-items: center !important;
+            justify-content: center !important;
+            display: flex;
+            img{
+                width: 30rem;
             }
         }
     }
