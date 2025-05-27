@@ -31,16 +31,28 @@ let anclasResume = [
 	},
 ];
 
-let anclasAbout = [
+let anclasGlue = [
 	{
-		text: ["Este soy yo", "This is me"],
-		id: ["esto-soy-yo", "this-is-me"],
+		text: ["Sumario", "Summary"],
+		id: ["sumario", "summary"],
 	},
 	{
-		text: ["Conozcámonos", "Let's get in touch"],
-		id: ["conozcamonos", "getInTouch"],
+		text: ["El contexto", "Context"],
+		id: ["contexto", "context"],
 	},
-]
+	{
+		text: ["Tecnologias adoptadas", "Technologies Used"],
+		id: ["tecnologias-adoptadas", "technologies-used"],
+	},
+	{
+		text: ["Automatización de procesos", "Automation of Processes"],
+		id: ["automatizacion-de-procesos", "automation-of-processes"],
+	},
+	{
+		text: ["Futuros pasos", "Future Steps"],
+		id: ["futuros-pasos", "future-steps"],
+	},
+];
 
 const CoNavLeft = () => {
 	const { language } = useContext(MyContext);
@@ -54,8 +66,8 @@ const CoNavLeft = () => {
 		case "/works":
 			anclas = anclasResume;
 			break;
-		case "/about-me":
-			anclas = anclasAbout;
+		case "/works/glue":
+			anclas = anclasGlue;
 			break;
 		default:
 			anclas = null;
