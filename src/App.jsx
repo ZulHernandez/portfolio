@@ -1,11 +1,14 @@
 import { MyContext } from "./components/context/MyContext";
 import { useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
+
 import RoHome from "./routes/RoHome";
 import RoWorks from "./routes/RoWorks";
 import RoResume from "./routes/RoResume";
 import RoError from "./routes/RoError";
 import RoAbout from "./routes/RoAbout";
+import RoGLUE from "./routes/works/RoGLUE";
+
 import CoNav from "./components/general/CoNav";
 import CoFooter from "./components/general/CoFooter";
 
@@ -38,6 +41,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<RoHome />} />
 					<Route path="/works" element={<RoWorks />} />
+					<Route path="/works/glue" element={<RoGLUE />} />
 					<Route path="/resume" element={<RoResume />} />
 					<Route path="/about-me" element={<RoAbout />} />
 					<Route path="*" element={<RoError />} />

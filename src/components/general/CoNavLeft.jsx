@@ -21,14 +21,37 @@ let anclasHome = [
 ];
 
 let anclasResume = [
-    {
-        text: ["Mis trabajos", "My works"],
-        id: ["mis-trabajos", "my-works"],
-    },
-    {
-        text: ["Línea del tiempo", "Timeline"],
-        id: ["linea-del-tiempo", "timeline"],
-    },
+	{
+		text: ["Mis trabajos", "My works"],
+		id: ["mis-trabajos", "my-works"],
+	},
+	{
+		text: ["Línea del tiempo", "Timeline"],
+		id: ["linea-del-tiempo", "timeline"],
+	},
+];
+
+let anclasGlue = [
+	{
+		text: ["Sumario", "Summary"],
+		id: ["sumario", "summary"],
+	},
+	{
+		text: ["El contexto", "Context"],
+		id: ["contexto", "context"],
+	},
+	{
+		text: ["Tecnologias adoptadas", "Technologies Used"],
+		id: ["tecnologias-adoptadas", "technologies-used"],
+	},
+	{
+		text: ["Automatización de procesos", "Automation of Processes"],
+		id: ["automatizacion-de-procesos", "automation-of-processes"],
+	},
+	{
+		text: ["Futuros pasos", "Future Steps"],
+		id: ["futuros-pasos", "future-steps"],
+	},
 ];
 
 const CoNavLeft = () => {
@@ -42,6 +65,9 @@ const CoNavLeft = () => {
 			break;
 		case "/works":
 			anclas = anclasResume;
+			break;
+		case "/works/glue":
+			anclas = anclasGlue;
 			break;
 		default:
 			anclas = null;
