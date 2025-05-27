@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 
 import CoTitle from "../components/general/CoTitle.jsx";
 import CoConozca from "../components/general/CoConozca.jsx";
+import CoNavLeft from "../components/general/CoNavLeft.jsx";
 
 import sport from "../assets/imgs/about/sport.svg";
 import music from "../assets/imgs/about/music.svg";
@@ -701,8 +702,9 @@ const RoAbout = () => {
 
 	return (
 		<div>
+			<CoNavLeft />
 			<div
-				id={language == "ES" ? "conozcamonos" : "get-to-know-me"}
+				id={language == "ES" ? "esto-soy-yo" : "this-is-me"}
 				className="container-fluid"
 				style={{ minHeight: "50vh" }}
 			>

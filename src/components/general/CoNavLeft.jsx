@@ -21,15 +21,26 @@ let anclasHome = [
 ];
 
 let anclasResume = [
-    {
-        text: ["Mis trabajos", "My works"],
-        id: ["mis-trabajos", "my-works"],
-    },
-    {
-        text: ["Línea del tiempo", "Timeline"],
-        id: ["linea-del-tiempo", "timeline"],
-    },
+	{
+		text: ["Mis trabajos", "My works"],
+		id: ["mis-trabajos", "my-works"],
+	},
+	{
+		text: ["Línea del tiempo", "Timeline"],
+		id: ["linea-del-tiempo", "timeline"],
+	},
 ];
+
+let anclasAbout = [
+	{
+		text: ["Este soy yo", "This is me"],
+		id: ["esto-soy-yo", "this-is-me"],
+	},
+	{
+		text: ["Conozcámonos", "Let's get in touch"],
+		id: ["conozcamonos", "getInTouch"],
+	},
+]
 
 const CoNavLeft = () => {
 	const { language } = useContext(MyContext);
@@ -43,6 +54,9 @@ const CoNavLeft = () => {
 		case "/works":
 			anclas = anclasResume;
 			break;
+		case "/about-me":
+			anclas = anclasAbout;
+			break;
 		default:
 			anclas = null;
 			break;
@@ -55,14 +69,13 @@ const CoNavLeft = () => {
 					<a
 						key={index}
 						href={`#${ancla.id[language == "ES" ? 0 : 1]}`}
-						className={
-							ruta == `/${ancla.id[language == "ES" ? 0 : 1]}`
-								? "nav-left__link active"
-								: "nav-left__link"
-						}
-						onClick={() => setRuta(`/${ancla.id[language == "ES" ? 0 : 1]}`)}
+						onClick={() => {
+							document
+								.getElementById(ancla.id[language == "ES" ? 0 : 1])
+								.scrollIntoView({ behavior: "smooth" });
+						}}
 					>
-						{ancla.text[language == "ES" ? 0 : 1]}
+						<span>{ancla.text[language == "ES" ? 0 : 1]}</span>
 					</a>
 				);
 			})}

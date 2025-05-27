@@ -9,6 +9,8 @@ import RoAbout from "./routes/RoAbout";
 import CoNav from "./components/general/CoNav";
 import CoFooter from "./components/general/CoFooter";
 
+import RoGlue from "./routes/work/RoGlue";
+
 import "./styles/style.css";
 
 function App() {
@@ -38,6 +40,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<RoHome />} />
 					<Route path="/works" element={<RoWorks />} />
+					<Route path="/works/glue" element={<RoGlue />} />
 					<Route path="/resume" element={<RoResume />} />
 					<Route path="/about-me" element={<RoAbout />} />
 					<Route path="*" element={<RoError />} />
