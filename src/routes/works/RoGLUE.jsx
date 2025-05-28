@@ -22,6 +22,9 @@ const RoGLUE = () => {
 	return (
 		<>
 			<CoNavLeft />
+			<div>
+				
+			</div>
 		</>
 	);
 };

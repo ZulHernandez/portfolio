@@ -66,6 +66,9 @@ const CoNavLeft = () => {
 		case "/works":
 			anclas = anclasResume;
 			break;
+		case "/about-me":
+			anclas = anclasHome;
+			break;
 		case "/works/glue":
 			anclas = anclasGlue;
 			break;
