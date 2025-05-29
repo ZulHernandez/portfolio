@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { MyContext } from "../../../components/context/MyContext.js";
-import { Link } from "react-router-dom";
 
 import CoTitle from "../../../components/general/CoTitle.jsx";
 
@@ -110,14 +109,36 @@ const CoContexto = () => {
 		{
 			title:
 				language === "ES"
-					? "1. Adopción de tecnologías."
-					: "Adoption of technologies.",
+					? "1. Tecnologías adoptadas."
+					: "1. Adoption of technologies.",
 			description:
 				language === "ES"
 					? "Busco desarrollar e integrar herramientas tecnológicas en el entorno de trabajo, con el objetivo de optimizar los flujos de trabajo, proporcionar recursos de diseño innovadores para los UXers y modernizar la administración y los procesos de diseño."
 					: "I seek to develop and integrate technological tools into the work environment, with the aim of optimizing workflows, providing innovative design resources for UXers, and modernizing management and design processes.",
 			ref: language === "ES" ? "#tecnologias-adoptadas" : "#technologies-used",
 		},
+		{
+			title:
+				language === "ES"
+					? "2. Mejora de insumos."
+					: "2. Improvement of inputs.",
+			description:
+				language === "ES"
+					? "A través de auditorías y la definición de estándares de calidad en los procesos de diseño, trabajo para fortalecer la gobernabilidad del sistema de diseño, facilitando su uso."
+					: "Through audits and the definition of quality standards in design processes, I work to strengthen the governance of the design system, facilitating its use.",
+			ref: language === "ES" ? "#mejora-de-insumos" : "#improvement-of-inputs",
+		},
+		{
+			title:
+				language === "ES"
+					? "3. Automatización de procesos."
+					: "3. Automation of processes.",
+			description:
+				language === "ES"
+					? "Analizo y detecto procesos susceptibles de automatización con el fin de mejorar el rendimiento general y la eficiencia operativa."
+					: "I analyze and detect processes that can be automated in order to improve overall performance and operational efficiency.",
+			ref: language === "ES" ? "#automatizacion-de-procesos" : "#automation-of-processes",
+		}
 	];
 
 	return (
@@ -168,6 +189,7 @@ const CoContexto = () => {
 						</a>
 						<br />
 						<span>{bullet.description}</span>
+						<br /><br />
 					</div>
 				))}
 			</div>

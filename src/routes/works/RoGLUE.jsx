@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import CoNavLeft from "../../components/general/CoNavLeft.jsx";
 import CoSumario from "../../components/works/CoSumario.jsx";
 import CoContexto from "../../components/works/glue/CoContexto.jsx";
+import CoTech from "../../components/works/glue/CoTech.jsx";
 
 import fotoGLUE from "../../assets/imgs/gifs/GLUE.gif";
 import liverpool from "../../assets/imgs/works/companies/liverpool.svg";
@@ -65,6 +66,10 @@ const RoGLUE = () => {
 					team={sumario.bullets.team}
 				/>
 				<CoContexto />
+                <CoTech />
+				<center>
+					<hr style={{ border: "3px solid #ccc", margin: "1rem 0", width: "80%", borderRadius: "5rem"}} />
+				</center>
 			</div>
 		</>
 	);

@@ -45,6 +45,10 @@ let anclasGlue = [
 		id: ["tecnologias-adoptadas", "technologies-used"],
 	},
 	{
+		text: ["Mejora de insumos", "Improvement of Inputs"],
+		id: ["mejora-de-insumos", "improvement-of-inputs"],
+	},
+	{
 		text: ["Automatización de procesos", "Automation of Processes"],
 		id: ["automatizacion-de-procesos", "automation-of-processes"],
 	},

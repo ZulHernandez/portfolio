@@ -677,6 +677,45 @@ a {
   }
 }
 
+.card-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.card-kpi__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+.card-kpi__header h4 {
+  color: #333333;
+  font-family: "Raleway-Semibold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  margin: 0px;
+}
+.card-kpi__header h5 {
+  color: #4d4d4d;
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 3.2rem;
+  text-decoration: none;
+  margin: 0px;
+}
+.card-kpi__header span {
+  color: #808080;
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin: 0px;
+}
+.card-kpi__img {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
+}
+
 #hola,
 #hello {
   gap: 8rem;
@@ -2488,7 +2527,7 @@ footer img {
   font-family: "Raleway-Bold", sans-serif;
   font-size: 1.4rem;
   text-decoration: none;
-  color: #333333;
+  color: #666666;
   margin: 0px;
 }
 @media (max-width: 1200px) {
@@ -2498,4 +2537,230 @@ footer img {
     font-size: 2rem;
     text-decoration: none;
   }
+}
+
+#tecnologias-adoptadas span,
+#technologies-used span {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #666666;
+}
+@media (max-width: 1200px) {
+  #tecnologias-adoptadas span,
+  #technologies-used span {
+    font-family: "Raleway-Medium", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+#tecnologias-adoptadas .tokens-list,
+#technologies-used .tokens-list {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  width: 100%;
+}
+@media (max-width: 800px) {
+  #tecnologias-adoptadas .tokens-list,
+  #technologies-used .tokens-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#tecnologias-adoptadas .tokens-list__card,
+#technologies-used .tokens-list__card {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+#tecnologias-adoptadas .tokens-list__card-header,
+#technologies-used .tokens-list__card-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 0.2rem solid #cccccc;
+}
+#tecnologias-adoptadas .tokens-list__card-header span,
+#technologies-used .tokens-list__card-header span {
+  font-family: "Raleway-Semibold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #4d4d4d;
+  margin: 0px;
+}
+@media (max-width: 800px) {
+  #tecnologias-adoptadas .tokens-list__card-header span,
+  #technologies-used .tokens-list__card-header span {
+    font-family: "Raleway-Semibold", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+#tecnologias-adoptadas .tokens-list__card-header-title,
+#technologies-used .tokens-list__card-header-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+#tecnologias-adoptadas .tokens-list__card-header-title img,
+#technologies-used .tokens-list__card-header-title img {
+  width: 2rem;
+}
+#tecnologias-adoptadas .tokens-list__card-header-title span,
+#technologies-used .tokens-list__card-header-title span {
+  font-family: "Raleway-Semibold", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #4d4d4d;
+  margin: 0px;
+}
+@media (max-width: 800px) {
+  #tecnologias-adoptadas .tokens-list__card-header-title span,
+  #technologies-used .tokens-list__card-header-title span {
+    font-family: "Raleway-Semibold", sans-serif;
+    font-size: 2.5rem;
+    text-decoration: none;
+  }
+}
+#tecnologias-adoptadas .tokens-list #beta,
+#technologies-used .tokens-list #beta {
+  width: 33%;
+}
+@media (max-width: 800px) {
+  #tecnologias-adoptadas .tokens-list #beta,
+  #technologies-used .tokens-list #beta {
+    width: 100%;
+  }
+}
+#tecnologias-adoptadas .tokens-list #beta .tokens-list__card-header-title span,
+#technologies-used .tokens-list #beta .tokens-list__card-header-title span {
+  letter-spacing: 0.5rem;
+}
+@media (max-width: 800px) {
+  #tecnologias-adoptadas .tokens-list #beta .tokens-list__card-header-title span,
+  #technologies-used .tokens-list #beta .tokens-list__card-header-title span {
+    letter-spacing: 0.2rem;
+  }
+}
+#tecnologias-adoptadas .tokens-list #release,
+#technologies-used .tokens-list #release {
+  width: 67%;
+}
+@media (max-width: 800px) {
+  #tecnologias-adoptadas .tokens-list #release,
+  #technologies-used .tokens-list #release {
+    width: 100%;
+  }
+}
+#tecnologias-adoptadas .tokens-list #release .tokens-list__card-kpis,
+#technologies-used .tokens-list #release .tokens-list__card-kpis {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+}
+#tecnologias-adoptadas .tokens-list #release .tokens-list__card-kpis__column,
+#technologies-used .tokens-list #release .tokens-list__card-kpis__column {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+#tecnologias-adoptadas .kpis-list,
+#technologies-used .kpis-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+}
+@media (max-width: 800px) {
+  #tecnologias-adoptadas .kpis-list,
+  #technologies-used .kpis-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+  }
+}
+#tecnologias-adoptadas .kpis-list img,
+#technologies-used .kpis-list img {
+  width: 4rem;
+}
+@media (max-width: 800px) {
+  #tecnologias-adoptadas .kpis-list img,
+  #technologies-used .kpis-list img {
+    width: 5rem;
+    transform: rotate(90deg);
+  }
+}
+#tecnologias-adoptadas .kpis-list__card,
+#technologies-used .kpis-list__card {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+#tecnologias-adoptadas .kpis-list__card-header,
+#technologies-used .kpis-list__card-header {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  #tecnologias-adoptadas .kpis-list__card-header,
+  #technologies-used .kpis-list__card-header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+#tecnologias-adoptadas .kpis-list__card-header span,
+#technologies-used .kpis-list__card-header span {
+  font-family: "Raleway-Semibold", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #4d4d4d;
+  margin: 0px;
+}
+@media (max-width: 800px) {
+  #tecnologias-adoptadas .kpis-list__card-header span,
+  #technologies-used .kpis-list__card-header span {
+    font-family: "Raleway-Semibold", sans-serif;
+    font-size: 2.5rem;
+    text-decoration: none;
+    text-align: center;
+  }
+}
+#tecnologias-adoptadas .kpis-list__card-header img,
+#technologies-used .kpis-list__card-header img {
+  width: 2rem;
+}
+@media (max-width: 800px) {
+  #tecnologias-adoptadas .kpis-list__card-header img,
+  #technologies-used .kpis-list__card-header img {
+    width: 3rem;
+  }
+}
+#tecnologias-adoptadas .kpis-list__card-body,
+#technologies-used .kpis-list__card-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  border-radius: 1rem;
+}
+#tecnologias-adoptadas .kpis-list__card-body .card-kpi,
+#technologies-used .kpis-list__card-body .card-kpi {
+  width: 20rem;
 }/*# sourceMappingURL=style.css.map */

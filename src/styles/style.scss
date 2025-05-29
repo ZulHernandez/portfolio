@@ -574,6 +574,39 @@ a {
     }
 }
 
+.card-kpi{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        h4{
+            color: $shade-800;
+            @include fnFont("Raleway-Semibold", 1.4rem, none);
+            margin: 0px;
+        }
+        h5{
+            color: $shade-700;
+            @include fnFont("Raleway-Bold", 3.2rem, none);
+            margin: 0px;
+        }
+        span{
+            color: $shade-500;
+            @include fnFont("Raleway-Medium", 1.2rem, none);
+            margin: 0px;
+        }
+    }
+    &__img{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 1rem;
+    }
+}
+
 //main Home
 #hola,
 #hello {
@@ -1775,7 +1808,7 @@ footer {
 
 #contexto,
 #context {
-    span{
+    span {
         color: $shade-600;
         @include fnFont("Raleway-Medium", 1.4rem, none);
         @media (max-width: 1200px) {
@@ -1783,7 +1816,7 @@ footer {
         }
         margin: 0px;
     }
-    .time-list{
+    .time-list {
         display: flex;
         flex-direction: row;
         gap: 4rem;
@@ -1792,20 +1825,20 @@ footer {
             flex-direction: column;
             align-items: center;
         }
-        .time-card{
+        .time-card {
             display: flex;
             flex-direction: column;
             gap: 2rem;
             width: 100%;
             align-items: center;
-            h4{
+            h4 {
                 @include fnFont("Raleway-Bold", 1.4rem, none);
                 margin: 0px;
                 @media (max-width: 1200px) {
                     @include fnFont("Raleway-Bold", 2rem, none);
                 }
             }
-            &-body{
+            &-body {
                 display: flex;
                 flex-direction: row;
                 gap: 5rem;
@@ -1820,7 +1853,7 @@ footer {
                     width: calc(100% - 6rem);
                     border-width: 0.4rem;
                 }
-                &__item{
+                &__item {
                     display: flex;
                     flex-direction: column;
                     gap: 2rem;
@@ -1834,7 +1867,7 @@ footer {
                             height: 7rem;
                         }
                     }
-                    &-head{
+                    &-head {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
@@ -1845,10 +1878,9 @@ footer {
                             margin: 0px;
                             @media (max-width: 1200px) {
                                 @include fnFont("Raleway-Semibold", 2rem, none);
-                                
                             }
                         }
-                        h6{
+                        h6 {
                             @include fnFont("Raleway-Medium", 2rem, none);
                             text-align: center;
                             color: $shade-700;
@@ -1858,7 +1890,7 @@ footer {
                             }
                         }
                     }
-                    span{
+                    span {
                         @include fnFont("Raleway-Medium", 1.4rem, none);
                         color: $shade-700;
                         margin: 0px;
@@ -1871,13 +1903,171 @@ footer {
             }
         }
     }
-    .bullet-point{
-        &__title{
+    .bullet-point {
+        &__title {
             @include fnFont("Raleway-Bold", 1.4rem, none);
-            color: $shade-800;
+            color: $shade-600;
             margin: 0px;
             @media (max-width: 1200px) {
                 @include fnFont("Raleway-Bold", 2rem, none);
+            }
+        }
+    }
+}
+
+#tecnologias-adoptadas,
+#technologies-used {
+    span {
+        @include fnFont("Raleway-Medium", 1.4rem, none);
+        color: $shade-600;
+        @media (max-width: 1200px) {
+            @include fnFont("Raleway-Medium", 2rem, none);
+        }
+    }
+    .tokens-list {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        width: 100%;
+        @media (max-width: 800px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__card {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            background-color: #fff;
+            border-radius: 2rem;
+            padding: 2rem;
+            &-header {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding-bottom: 2rem;
+                border-bottom: 0.2rem solid $shade-200;
+                span{
+                    @include fnFont("Raleway-Semibold", 1.4rem, none);
+                    @media (max-width: 800px) {
+                        @include fnFont("Raleway-Semibold", 2rem, none);
+                    }
+                    color: $shade-700;
+                    margin: 0px;
+                }
+                &-title {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 1rem;
+                    img {
+                        width: 2rem;
+                    }
+                    span{
+                        @include fnFont("Raleway-Semibold", 2rem, none);
+                        @media (max-width: 800px) {
+                            @include fnFont("Raleway-Semibold", 2.5rem, none);
+                        }
+                        color: $shade-700;
+                        margin: 0px;
+                    }
+                }
+            }
+        }
+        #beta {
+            width: 33%;
+            @media (max-width: 800px) {
+                width: 100%;
+            }
+            .tokens-list__card-header-title{
+                span{
+                    letter-spacing: 0.5rem;
+                    @media (max-width: 800px) {
+                        letter-spacing: 0.2rem;
+                    }
+                }
+            }
+        }
+        #release {
+            width: 67%;
+            @media (max-width: 800px) {
+                width: 100%;
+            }
+            .tokens-list__card-kpis{
+                display: flex;
+                flex-direction: row;
+                gap: 5rem;
+                &__column {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3rem;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .kpis-list{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        width: 100%;
+        @media (max-width: 800px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 5rem;
+        }
+        img{
+            width: 4rem;
+            @media (max-width: 800px) {
+                width: 5rem;
+                transform: rotate(90deg);
+            }
+        }
+        &__card{
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            width: 100%;
+            &-header{
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                @media (max-width: 800px) {
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                span{
+                    @include fnFont("Raleway-Semibold", 2rem, none);
+                    color: $shade-700;
+                    margin: 0px;
+                    @media (max-width: 800px) {
+                        @include fnFont("Raleway-Semibold", 2.5rem, none);
+                        text-align: center;
+                    }
+                }
+                img{
+                    width: 2rem;
+                    @media (max-width: 800px) {
+                        width: 3rem;
+                    }
+                }
+            }
+            &-body{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                width: 100%;
+                border-radius: 1rem;
+                .card-kpi{
+                    width: 20rem;
+                }
             }
         }
     }
