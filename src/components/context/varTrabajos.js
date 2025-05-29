@@ -38,6 +38,7 @@ const varTrabajos = () => {
 			date: ["feb 2023 - actualidad", "feb 2023 - present"],
 			logo: [liver],
 			comp: ["El Puerto de Liverpool", "El Puerto de Liverpool"],
+			link: "glue"
 		},
 		{
 			cover: MOVILIDAD,

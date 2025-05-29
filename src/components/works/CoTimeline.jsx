@@ -200,7 +200,6 @@ const CoTimeline = () => {
         }
     }
 
-
 	function scrollToAnchor(anchorId) {
 		const container = document.querySelector(".time-line");
 		const target = document.getElementById(anchorId);

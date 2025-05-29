@@ -149,7 +149,7 @@ const CoTrabajos = () => {
 											<span>{destacado.comp[language == "ES" ? 0 : 1]}</span>
 										</div>
 									</div>
-									<CoBtn type="primary" text={null} />
+									<CoBtn type="primary" text={null} link={`/works/${destacado.link}`} />
 								</div>
 							</div>
 						</div>
