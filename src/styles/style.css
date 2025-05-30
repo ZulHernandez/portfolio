@@ -716,6 +716,65 @@ a {
   gap: 1rem;
 }
 
+.co-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.co-icon img {
+  width: 5rem;
+}
+@media (max-width: 1200px) {
+  .co-icon img {
+    width: 7rem;
+  }
+}
+.co-icon__text {
+  font-family: "Raleway-Semibold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #4d4d4d;
+}
+@media (max-width: 1200px) {
+  .co-icon__text {
+    font-family: "Raleway-Semibold", sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
+}
+
+.co-file {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.co-file img {
+  width: 2rem;
+}
+@media (max-width: 1200px) {
+  .co-file img {
+    width: 3rem;
+  }
+}
+.co-file span {
+  font-family: "Raleway-Semibold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #4d4d4d;
+  width: -moz-max-content;
+  width: max-content;
+}
+@media (max-width: 1200px) {
+  .co-file span {
+    font-family: "Raleway-Semibold", sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+    width: 100%;
+  }
+}
+
 #hola,
 #hello {
   gap: 8rem;
@@ -2213,6 +2272,21 @@ footer img {
     align-items: center;
   }
 }
+#sumario .sumario-card:hover,
+#summary .sumario-card:hover {
+  border-radius: 2rem;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.02);
+}
+#sumario .sumario-card:hover .img-cover,
+#summary .sumario-card:hover .img-cover {
+  display: none;
+}
+#sumario .sumario-card:hover .gif-cover,
+#summary .sumario-card:hover .gif-cover {
+  display: block;
+}
 #sumario .sumario-card__photo,
 #summary .sumario-card__photo {
   border-radius: 1rem;
@@ -2577,6 +2651,21 @@ footer img {
   border-radius: 2rem;
   padding: 2rem;
 }
+#tecnologias-adoptadas .tokens-list__card:hover,
+#technologies-used .tokens-list__card:hover {
+  border-radius: 2rem;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.02);
+}
+#tecnologias-adoptadas .tokens-list__card:hover .img-cover,
+#technologies-used .tokens-list__card:hover .img-cover {
+  display: none;
+}
+#tecnologias-adoptadas .tokens-list__card:hover .gif-cover,
+#technologies-used .tokens-list__card:hover .gif-cover {
+  display: block;
+}
 #tecnologias-adoptadas .tokens-list__card-header,
 #technologies-used .tokens-list__card-header {
   width: 100%;
@@ -2763,4 +2852,139 @@ footer img {
 #tecnologias-adoptadas .kpis-list__card-body .card-kpi,
 #technologies-used .kpis-list__card-body .card-kpi {
   width: 20rem;
+}
+
+#mejora-de-insumos span,
+#improvement-of-inputs span {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #666666;
+}
+@media (max-width: 1200px) {
+  #mejora-de-insumos span,
+  #improvement-of-inputs span {
+    font-family: "Raleway-Medium", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+#mejora-de-insumos .subtitle,
+#improvement-of-inputs .subtitle {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+@media (max-width: 1200px) {
+  #mejora-de-insumos .subtitle,
+  #improvement-of-inputs .subtitle {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 2.2rem;
+    text-decoration: none;
+  }
+}
+#mejora-de-insumos .bullet,
+#improvement-of-inputs .bullet {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#mejora-de-insumos .bullet__body,
+#improvement-of-inputs .bullet__body {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  align-items: flex-start;
+}
+@media (max-width: 800px) {
+  #mejora-de-insumos .bullet__body,
+  #improvement-of-inputs .bullet__body {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#mejora-de-insumos .bullet__body__card,
+#improvement-of-inputs .bullet__body__card {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: #fff;
+  gap: 3rem;
+  width: 100%;
+}
+@media (max-width: 800px) {
+  #mejora-de-insumos .bullet__body__card,
+  #improvement-of-inputs .bullet__body__card {
+    width: calc(100% - 4rem);
+  }
+}
+#mejora-de-insumos .bullet__body__card:hover,
+#improvement-of-inputs .bullet__body__card:hover {
+  border-radius: 2rem;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.02);
+}
+#mejora-de-insumos .bullet__body__card:hover .img-cover,
+#improvement-of-inputs .bullet__body__card:hover .img-cover {
+  display: none;
+}
+#mejora-de-insumos .bullet__body__card:hover .gif-cover,
+#improvement-of-inputs .bullet__body__card:hover .gif-cover {
+  display: block;
+}
+#mejora-de-insumos .bullet__body__card-schema,
+#improvement-of-inputs .bullet__body__card-schema {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#mejora-de-insumos .bullet__body__card-title,
+#improvement-of-inputs .bullet__body__card-title {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #4d4d4d;
+}
+@media (max-width: 1200px) {
+  #mejora-de-insumos .bullet__body__card-title,
+  #improvement-of-inputs .bullet__body__card-title {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 2.5rem;
+    text-decoration: none;
+  }
+}
+#mejora-de-insumos .bullet__body li,
+#improvement-of-inputs .bullet__body li {
+  color: #666666;
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  margin: 0px;
+}
+@media (max-width: 1200px) {
+  #mejora-de-insumos .bullet__body li,
+  #improvement-of-inputs .bullet__body li {
+    font-family: "Raleway-Medium", sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
+}
+#mejora-de-insumos .bullet__carrousel,
+#improvement-of-inputs .bullet__carrousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 3rem;
+  width: 100%;
+}
+#mejora-de-insumos .bullet__carrousel .bullet__body__card,
+#improvement-of-inputs .bullet__carrousel .bullet__body__card {
+  margin: 3rem 0px;
+}
+#mejora-de-insumos .bullet__carrousel #schema,
+#improvement-of-inputs .bullet__carrousel #schema {
+  width: 100%;
+  min-width: 30rem;
 }/*# sourceMappingURL=style.css.map */
