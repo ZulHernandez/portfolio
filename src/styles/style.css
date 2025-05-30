@@ -2922,7 +2922,6 @@ footer img {
 #mejora-de-insumos .bullet__body__card:hover,
 #improvement-of-inputs .bullet__body__card:hover {
   border-radius: 2rem;
-  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
   transition: all 0.3s ease-in-out;
   transform: scale(1.02);
 }
@@ -2977,7 +2976,8 @@ footer img {
   flex-direction: row;
   overflow-x: auto;
   gap: 3rem;
-  width: 100%;
+  width: calc(100% - 10rem);
+  margin: 0rem 5rem;
 }
 #mejora-de-insumos .bullet__carrousel .bullet__body__card,
 #improvement-of-inputs .bullet__carrousel .bullet__body__card {
@@ -2987,4 +2987,56 @@ footer img {
 #improvement-of-inputs .bullet__carrousel #schema {
   width: 100%;
   min-width: 30rem;
+}
+
+#automatizacion-de-procesos span,
+#automation-of-processes span {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #666666;
+}
+@media (max-width: 1200px) {
+  #automatizacion-de-procesos span,
+  #automation-of-processes span {
+    font-family: "Raleway-Medium", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+#automatizacion-de-procesos .subtitle,
+#automation-of-processes .subtitle {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+@media (max-width: 1200px) {
+  #automatizacion-de-procesos .subtitle,
+  #automation-of-processes .subtitle {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 2.2rem;
+    text-decoration: none;
+  }
+}
+#automatizacion-de-procesos .plugins,
+#automation-of-processes .plugins {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#automatizacion-de-procesos .plugins-carrousel,
+#automation-of-processes .plugins-carrousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 3rem;
+  width: calc(100% - 10rem);
+  margin: 0rem 5rem;
+}
+#automatizacion-de-procesos .plugins-carrousel__card,
+#automation-of-processes .plugins-carrousel__card {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=style.css.map */

@@ -9,6 +9,7 @@ import CoSumario from "../../components/works/CoSumario.jsx";
 import CoContexto from "../../components/works/glue/CoContexto.jsx";
 import CoTech from "../../components/works/glue/CoTech.jsx";
 import CoInsumos from "../../components/works/glue/CoInsumos.jsx";
+import CoAutoma from "../../components/works/glue/CoAutoma.jsx";
 
 import fotoGLUE from "../../assets/imgs/gifs/GLUE.gif";
 import liverpool from "../../assets/imgs/works/companies/liverpool.svg";
@@ -72,6 +73,10 @@ const RoGLUE = () => {
 					<hr style={{ border: "0.2rem solid #ccc", margin: "1rem 0", width: "80%", borderRadius: "5rem"}} />
 				</center>
 				<CoInsumos />
+				<center>
+					<hr style={{ border: "0.2rem solid #ccc", margin: "1rem 0", width: "80%", borderRadius: "5rem"}} />
+				</center>
+				<CoAutoma />
 			</div>
 		</>
 	);

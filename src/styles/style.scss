@@ -2184,9 +2184,6 @@ footer {
                 }
                 &:hover {
                     border-radius: 2rem;
-                    box-shadow:
-                        2rem 2rem 4rem #d2d2d2,
-                        -2rem -2rem 4rem #ffffff;
                     transition: all 0.3s ease-in-out;
                     transform: scale(1.02);
                     .img-cover {
@@ -2223,13 +2220,50 @@ footer {
             flex-direction: row;
             overflow-x: auto;
             gap: 3rem;
-            width: 100%;
+            width: calc(100% - 10rem);
+            margin: 0rem 5rem;
             .bullet__body__card {
                 margin: 3rem 0px;
             }
             #schema {
                 width: 100%;
                 min-width: 30rem;
+            }
+        }
+    }
+}
+
+#automatizacion-de-procesos,
+#automation-of-processes {
+    span {
+        @include fnFont("Raleway-Medium", 1.4rem, none);
+        color: $shade-600;
+        @media (max-width: 1200px) {
+            @include fnFont("Raleway-Medium", 2rem, none);
+        }
+    }
+    .subtitle {
+        @include fnFont("Raleway-Bold", 1.6rem, none);
+        @media (max-width: 1200px) {
+            @include fnFont("Raleway-Bold", 2.2rem, none);
+        }
+    }
+    .plugins {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        &-carrousel {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            gap: 3rem;
+            width: calc(100% - 10rem);
+            margin: 0rem 5rem;
+            &__card {
+                background-color: $shade-0;
+                border-radius: 1rem;
+                padding: 1rem;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
         }
     }
