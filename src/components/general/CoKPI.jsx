@@ -5,9 +5,9 @@ const CoKPI = ({ title, dato, desc, imgs, imgSize, pos, color }) => {
 				className="card-kpi__header"
 				style={{ alignItems: pos, textAlign: pos }}
 			>
-				<h4 style={{ color: color === "pink" ? "#FF2079" : "#333333" }}>{title}</h4>
-				<h5 style={{ color: color === "pink" ? "#FF3C8A" : "#4D4D4D" }}>{dato}</h5>
-				<span>{desc}</span>
+				<h4 style={{ color: color}}>{title}</h4>
+				<h5 style={{ color: color}}>{dato}</h5>
+				<span className="desc">{desc}</span>
 			</div>
 			<div className="card-kpi__img" style={{ justifyContent: pos }}>
 				{imgs.map((img, index) => (

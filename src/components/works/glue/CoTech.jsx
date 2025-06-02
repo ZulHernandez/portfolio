@@ -67,7 +67,7 @@ const CoTech = () => {
 						imgs={[circLiverpool, circSuburbia, circPuerto]}
 						imgSize="2.4rem"
 						pos="left"
-						color="grey"
+						color="#4D4D4D"
 					/>
 					<CoKPI
 						title={
@@ -82,7 +82,7 @@ const CoTech = () => {
 						imgs={[colourToken1]}
 						imgSize="10rem"
 						pos="left"
-						color="grey"
+						color="#4D4D4D"
 					/>
 				</div>
 				<div className="tokens-list__card" id="release">
@@ -118,7 +118,7 @@ const CoTech = () => {
 								]}
 								imgSize="2.4rem"
 								pos="left"
-								color="grey"
+								color="#4D4D4D"
 							/>
 							<CoKPI
 								title={
@@ -135,7 +135,7 @@ const CoTech = () => {
 								imgs={[colourToken2]}
 								imgSize="10rem"
 								pos="left"
-								color="grey"
+								color="#4D4D4D"
 							/>
 						</div>
 						<div className="tokens-list__card-kpis__column">
@@ -152,7 +152,7 @@ const CoTech = () => {
 								imgs={[null]}
 								imgSize="2.4rem"
 								pos="left"
-								color="grey"
+								color="#4D4D4D"
 							/>
 							<CoKPI
 								title={
@@ -169,7 +169,7 @@ const CoTech = () => {
 								imgs={[null]}
 								imgSize="2.4rem"
 								pos="left"
-								color="grey"
+								color="#4D4D4D"
 							/>
 							<CoKPI
 								title={language === "ES" ? "Tamaños de texto" : "Text sizes"}
@@ -182,7 +182,7 @@ const CoTech = () => {
 								imgs={[null]}
 								imgSize="2.4rem"
 								pos="left"
-								color="grey"
+								color="#4D4D4D"
 							/>
 						</div>
 					</div>
@@ -219,7 +219,7 @@ const CoTech = () => {
 							imgs={[null]}
 							imgSize="10rem"
 							pos="center"
-							color="grey"
+							color="#4D4D4D"
 						/>
 						<CoKPI
 							title={
@@ -236,7 +236,7 @@ const CoTech = () => {
 							imgs={[null]}
 							imgSize="10rem"
 							pos="center"
-							color="grey"
+							color="#4D4D4D"
 						/>
 						<CoKPI
 							title={
@@ -257,7 +257,7 @@ const CoTech = () => {
 							imgs={[null]}
 							imgSize="10rem"
 							pos="center"
-							color="grey"
+							color="#4D4D4D"
 						/>
 					</div>
 				</div>
@@ -287,7 +287,7 @@ const CoTech = () => {
 							imgs={[null]}
 							imgSize="10rem"
 							pos="center"
-							color="pink"
+							color="#FF3C8A"
 						/>
 						<CoKPI
 							title={
@@ -304,7 +304,7 @@ const CoTech = () => {
 							imgs={[null]}
 							imgSize="10rem"
 							pos="center"
-							color="pink"
+							color="#FF3C8A"
 						/>
 						<CoKPI
 							title={
@@ -325,7 +325,7 @@ const CoTech = () => {
 							imgs={[null]}
 							imgSize="10rem"
 							pos="center"
-							color="pink"
+							color="#FF3C8A"
 						/>
 					</div>
 				</div>

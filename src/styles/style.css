@@ -695,6 +695,13 @@ a {
   text-decoration: none;
   margin: 0px;
 }
+@media (max-width: 1200px) {
+  .card-kpi__header h4 {
+    font-family: "Raleway-Semibold", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
 .card-kpi__header h5 {
   color: #4d4d4d;
   font-family: "Raleway-Bold", sans-serif;
@@ -702,12 +709,26 @@ a {
   text-decoration: none;
   margin: 0px;
 }
-.card-kpi__header span {
+@media (max-width: 1200px) {
+  .card-kpi__header h5 {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 4rem;
+    text-decoration: none;
+  }
+}
+.card-kpi__header .desc {
   color: #808080;
   font-family: "Raleway-Medium", sans-serif;
   font-size: 1.2rem;
   text-decoration: none;
   margin: 0px;
+}
+@media (max-width: 1200px) {
+  .card-kpi__header .desc {
+    font-family: "Raleway-Medium", sans-serif;
+    font-size: 1.6rem;
+    text-decoration: none;
+  }
 }
 .card-kpi__img {
   display: flex;
@@ -2651,6 +2672,12 @@ footer img {
   border-radius: 2rem;
   padding: 2rem;
 }
+@media (max-width: 800px) {
+  #tecnologias-adoptadas .tokens-list__card,
+  #technologies-used .tokens-list__card {
+    padding: 3rem;
+  }
+}
 #tecnologias-adoptadas .tokens-list__card:hover,
 #technologies-used .tokens-list__card:hover {
   border-radius: 2rem;
@@ -2917,6 +2944,7 @@ footer img {
   #mejora-de-insumos .bullet__body__card,
   #improvement-of-inputs .bullet__body__card {
     width: calc(100% - 4rem);
+    padding: 3rem;
   }
 }
 #mejora-de-insumos .bullet__body__card:hover,
@@ -3036,7 +3064,116 @@ footer img {
 #automatizacion-de-procesos .plugins-carrousel__card,
 #automation-of-processes .plugins-carrousel__card {
   background-color: #fff;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-width: 40%;
+  margin: 3rem 0px;
+}
+@media (max-width: 800px) {
+  #automatizacion-de-procesos .plugins-carrousel__card,
+  #automation-of-processes .plugins-carrousel__card {
+    min-width: 80%;
+    padding: 3rem;
+  }
+}
+#automatizacion-de-procesos .plugins-carrousel__card:hover,
+#automation-of-processes .plugins-carrousel__card:hover {
+  border-radius: 2rem;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.02);
+}
+#automatizacion-de-procesos .plugins-carrousel__card:hover .img-cover,
+#automation-of-processes .plugins-carrousel__card:hover .img-cover {
+  display: none;
+}
+#automatizacion-de-procesos .plugins-carrousel__card:hover .gif-cover,
+#automation-of-processes .plugins-carrousel__card:hover .gif-cover {
+  display: block;
+}
+#automatizacion-de-procesos .plugins-carrousel__card-header,
+#automation-of-processes .plugins-carrousel__card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0.5rem;
+}
+#automatizacion-de-procesos .plugins-carrousel__card-header-title,
+#automation-of-processes .plugins-carrousel__card-header-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0rem;
+}
+#automatizacion-de-procesos .plugins-carrousel__card-header-title span,
+#automation-of-processes .plugins-carrousel__card-header-title span {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  margin: 0px;
+}
+@media (max-width: 1200px) {
+  #automatizacion-de-procesos .plugins-carrousel__card-header-title span,
+  #automation-of-processes .plugins-carrousel__card-header-title span {
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 2.2rem;
+    text-decoration: none;
+  }
+}
+#automatizacion-de-procesos .plugins-carrousel__card-kpi-list,
+#automation-of-processes .plugins-carrousel__card-kpi-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+#automatizacion-de-procesos .plugins-carrousel__card-kpi-list img,
+#automation-of-processes .plugins-carrousel__card-kpi-list img {
+  width: 4rem;
+}
+@media (max-width: 1200px) {
+  #automatizacion-de-procesos .plugins-carrousel__card-kpi-list,
+  #automation-of-processes .plugins-carrousel__card-kpi-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  #automatizacion-de-procesos .plugins-carrousel__card-kpi-list img,
+  #automation-of-processes .plugins-carrousel__card-kpi-list img {
+    transform: rotate(90deg);
+  }
+}
+#automatizacion-de-procesos .plugins-carrousel__card li,
+#automation-of-processes .plugins-carrousel__card li {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #666666;
+}
+@media (max-width: 1200px) {
+  #automatizacion-de-procesos .plugins-carrousel__card li,
+  #automation-of-processes .plugins-carrousel__card li {
+    font-family: "Raleway-Medium", sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+#automatizacion-de-procesos .plugins-carrousel__card .subtitle,
+#automation-of-processes .plugins-carrousel__card .subtitle {
+  font-family: "Raleway-Semibold", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #666666;
+  margin: 0px;
+}
+@media (max-width: 1200px) {
+  #automatizacion-de-procesos .plugins-carrousel__card .subtitle,
+  #automation-of-processes .plugins-carrousel__card .subtitle {
+    font-family: "Raleway-Semibold", sans-serif;
+    font-size: 2.2rem;
+    text-decoration: none;
+  }
 }/*# sourceMappingURL=style.css.map */

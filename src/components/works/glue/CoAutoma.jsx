@@ -2,17 +2,98 @@ import { useContext } from "react";
 import { MyContext } from "../../../components/context/MyContext.js";
 
 import CoTitle from "../../../components/general/CoTitle.jsx";
+import CoKPI from "../../general/CoKPI.jsx";
 
-const CoCardPlugin = ({ title, description, icon }) => {
+import projectSetter from "../../../assets/imgs/works/glue/projectSetter.svg";
+import plpFiller from "../../../assets/imgs/works/glue/plpFiller.svg";
+import frameReferencer from "../../../assets/imgs/works/glue/frameReferencer.svg";
+import arrow from "../../../assets/imgs/works/glue/arrow_back.svg";
+
+const CoCardPlugin = ({
+	icon,
+	title,
+	description,
+	kpi,
+	color,
+	capacidades,
+}) => {
+	const { language } = useContext(MyContext);
+
 	return (
 		<div className="plugins-carrousel__card">
-			<div className="plugins-carrousel__card__icon">
+			<div className="plugins-carrousel__card-header">
 				<img src={icon} alt={title} />
+				<div className="plugins-carrousel__card-header-title">
+					<span style={{ color: color }}>{title[0]}</span>
+					<span style={{ color: color }}>{title[1]}</span>
+				</div>
 			</div>
-			<div className="plugins-carrousel__card__content">
-				<h3>{title}</h3>
-				<p>{description}</p>
+			<span>{description}</span>
+			<hr
+				style={{
+					width: "100%",
+					borderColor: "#cccccc",
+					backgroundColor: "#cccccc",
+					borderWidth: "0.15rem",
+					borderStyle: "solid",
+					borderRadius: "0.5rem",
+				}}
+			/>
+			<div className="plugins-carrousel__card-kpi-list">
+				<CoKPI
+					title=""
+					dato={kpi[0].dato}
+					desc={kpi[0].desc}
+					imgs={[null]}
+					color="#4D4D4D"
+					pos="center"
+				/>
+				<img src={arrow} alt="" />
+				<CoKPI
+					title=""
+					dato={kpi[1].dato}
+					desc={kpi[1].desc}
+					imgs={[null]}
+					color={color}
+					pos="center"
+				/>
 			</div>
+			<span className="subtitle">
+				{language === "ES" ? "Capacidades" : "Capabilities"}
+			</span>
+			<div>
+				{capacidades.map((capacidad, index) => (
+					<li key={index} style={{ paddingLeft: capacidad.nivel * 2 + "rem" }}>
+						{capacidad.text}
+					</li>
+				))}
+			</div>
+		</div>
+	);
+};
+
+const CoCardServer = ({ icon, title, description, tech }) => {
+	const { language } = useContext(MyContext);
+	return (
+		<div className="plugins-carrousel__card">
+			<div className="plugins-carrousel__card-header">
+				<img src={icon} alt={title} />
+				<div className="plugins-carrousel__card-header-title">
+					<span style={{ color: "#4D4D4D" }}>{title[0]}</span>
+					<span style={{ color: "#4D4D4D" }}>{title[1]}</span>
+				</div>
+			</div>
+			<span>{description}</span>
+			<hr
+				style={{
+					width: "100%",
+					borderColor: "#cccccc",
+					backgroundColor: "#cccccc",
+					borderWidth: "0.15rem",
+					borderStyle: "solid",
+					borderRadius: "0.5rem",
+				}}
+			/>
 		</div>
 	);
 };
@@ -20,34 +101,237 @@ const CoCardPlugin = ({ title, description, icon }) => {
 const CoAutoma = () => {
 	const { language } = useContext(MyContext);
 
-    const plugins = [
-        {
-            icon: "/path/to/automation-plugin-icon.svg",
-            title: ["PROJECT" , "SETTER"],
-            description: language === "ES"
-                ? "Genera un proyecto con la estructura de páginas estandarizada de acuerdo al tipo de proyecto deseado"
-                : "Generates a project with the standardized page structure according to the desired project type.",
-            kpi: [
-                {
-                    
-                }
-            ]
-        },
-        {
-            title: language === "ES" ? "Plugin de Auditoría" : "Audit Plugin",
-            description: language === "ES"
-                ? "Facilita la auditoría de componentes y estilos en el sistema de diseño."
-                : "Facilitates the auditing of components and styles in the design system.",
-            icon: "/path/to/audit-plugin-icon.svg"
-        },
-        {
-            title: language === "ES" ? "Plugin de Exportación" : "Export Plugin",
-            description: language === "ES"
-                ? "Permite la exportación rápida de activos y componentes del sistema de diseño."
-                : "Allows quick export of assets and components from the design system.",
-            icon: "/path/to/export-plugin-icon.svg"
-        }
-    ];
+	const plugins = [
+		{
+			icon: projectSetter,
+			title: ["PROJECT", "SETTER"],
+			description:
+				language === "ES"
+					? "Genera un proyecto con la estructura de páginas estandarizada de acuerdo al tipo de proyecto deseado"
+					: "Generates a project with the standardized page structure according to the desired project type.",
+			kpi: [
+				{
+					dato: "30 min",
+					desc:
+						language === "ES"
+							? "Proceso que comprendía copiar el témplate, generar una portada y ajustar el archivo manualmente de ser necesario"
+							: "Process that involved copying the template, generating a cover page, and manually adjusting the file if necessary.",
+				},
+				{
+					dato: language === "ES" ? "30 seg" : "30 sec",
+					desc:
+						language === "ES"
+							? "Se reduce el tiempo en un " +
+							  Math.round(100 - (30 * 100) / 1800) +
+							  "% sin necesidad de un ajuste manual concreto pues el plugin permite presetearlo"
+							: "Time is reduced by " +
+							  Math.round(100 - (30 * 100) / 1800) +
+							  "% without the need for specific manual adjustments, as the plugin allows presetting.",
+				},
+			],
+			color: "#FF3C8A",
+			capacidades: [
+				{
+					nivel: 0,
+					text:
+						language === "ES"
+							? "Se requiere de credenciales para utilizar el plugin"
+							: "Credentials are required to use the plugin",
+				},
+				{
+					nivel: 0,
+					text:
+						language === "ES"
+							? "Se puede editar información directa del proyecto para la portada como nombre del proyecto, coordinación del proyecto y si es o no un proyecto que involucra más coordinaciones"
+							: "You can edit project information directly for the cover page, such as project name, project coordination, and whether it involves more coordinations or not.",
+				},
+				{
+					nivel: 0,
+					text:
+						language === "ES"
+							? "Inicialización de 4 tipos de proyectos:"
+							: "Initialization of 4 types of projects:",
+				},
+				{
+					nivel: 1,
+					text:
+						language === "ES"
+							? "Proyecto completo estándar de UX"
+							: "Standard UX project",
+				},
+				{
+					nivel: 1,
+					text:
+						language === "ES"
+							? "Proyecto de research para investigaciones"
+							: "Research project for investigations",
+				},
+				{
+					nivel: 1,
+					text:
+						language === "ES"
+							? "Proyecto de herramienta de ventas para desarrollos internos"
+							: "Sales tool project for internal development",
+				},
+				{
+					nivel: 1,
+					text:
+						language === "ES"
+							? "Proyecto personalizado que permite seleccionar que páginas se busca insertar"
+							: "Custom project that allows selecting which pages to insert",
+				},
+				{
+					nivel: 0,
+					text:
+						language === "ES"
+							? "Insertar páginas dentro del la estructura de páginas"
+							: "Insert pages within the page structure",
+				},
+			],
+		},
+		{
+			icon: plpFiller,
+			title: ["PLP", "FILLER"],
+			description:
+				language === "ES"
+					? "Pensado para generar la vista de un PLP completo de forma rápida y con información real obtenida directamente del productivo del e-commerce"
+					: "Designed to quickly generate a complete PLP view with real information obtained directly from the e-commerce production environment.",
+			kpi: [
+				{
+					dato: "2 hrs",
+					desc:
+						language === "ES"
+							? "Proceso que comprendía ajustar manualmente la información de un PLP con datos reales del productivo"
+							: "Process that involved manually adjusting the information of a PLP with real data from the production environment.",
+				},
+				{
+					dato: language === "ES" ? "30 seg" : "30 sec",
+					desc:
+						language === "ES"
+							? `Se reduce el tiempo en un ${Math.round(
+									100 - (30 * 100) / 3600
+							  )}% con el mero esfuerzo de un texto y un click`
+							: `Time is reduced by ${Math.round(
+									100 - (30 * 100) / 3600
+							  )}% with the mere effort of a text and a click.`,
+				},
+			],
+			color: "#5010F3",
+			capacidades: [
+				{
+					nivel: 0,
+					text:
+						language === "ES"
+							? "Se obtiene la información directamente del productivo del e-commerce de Liverpool"
+							: "Information is obtained directly from the Liverpool e-commerce production environment.",
+				},
+				{
+					nivel: 0,
+					text:
+						language === "ES"
+							? "Dicha información se pinta directamente en un componente tipo card PLP"
+							: "This information is directly rendered in a PLP card component.",
+				},
+				{
+					nivel: 0,
+					text:
+						language === "ES"
+							? "Solo se requiere de un texto valido."
+							: "Only a valid text is required.",
+				},
+			],
+		},
+		{
+			icon: frameReferencer,
+			title: ["FRAME", "REFERENCER"],
+			description:
+				language === "ES"
+					? "Permite conectar a través de hipervínculos y flechas dos frames con el objetivo de enlazarlos de alguna forma."
+					: "Allows connecting two frames through hyperlinks and arrows to link them in some way.",
+			kpi: [
+				{
+					dato:
+						language === "ES" ? "Navegación y peso" : "Navigation and weight",
+					desc:
+						language === "ES"
+							? "Permite una navegación dentro de documentos grandes mucho más ligera gracias a los hipervínculos y flechas. La duplicación en png de frames aligera el peso del documento."
+							: "Allows for much lighter navigation within large documents thanks to hyperlinks and arrows. The duplication in PNG of frames lightens the document's weight.",
+				},
+				{
+					dato:
+						language === "ES" ? "Navegación y peso" : "Navigation and weight",
+					desc:
+						language === "ES"
+							? "Permite una navegación dentro de documentos grandes mucho más ligera gracias a los hipervínculos y flechas. La duplicación en png de frames aligera el peso del documento."
+							: "Allows for much lighter navigation within large documents thanks to hyperlinks and arrows. The duplication in PNG of frames lightens the document's weight.",
+				},
+			],
+			color: "#EC48FC",
+			capacidades: [
+				{
+					nivel: 0,
+					text:
+						language === "ES"
+							? "Puedes modificar el color de las referencias e hipervínculos"
+							: "You can modify the color of references and hyperlinks",
+				},
+				{
+					nivel: 0,
+					text:
+						language === "ES"
+							? "Puedes activar o desactivar las siguientes opciones:"
+							: "You can activate or deactivate the following options:",
+				},
+				{
+					nivel: 1,
+					text:
+						language === "ES"
+							? "Generar una copia del frame en PNG"
+							: "Generate a copy of the frame in PNG",
+				},
+				{
+					nivel: 1,
+					text:
+						language === "ES" ? "Generar hipervínculos" : "Generate hyperlinks",
+				},
+				{
+					nivel: 1,
+					text:
+						language === "ES"
+							? "Crear conectores entre dos frames"
+							: "Create connectors between two frames",
+				},
+				{
+					nivel: 0,
+					text:
+						language === "ES"
+							? "Se pueden generar esas interacciones entre dos frames seleccionando un frame y después seleccionar otro con la tecla SHIFT"
+							: "These interactions can be generated between two frames by selecting one frame and then selecting another with the SHIFT key.",
+				},
+			],
+		},
+	];
+
+	const servers = [
+		{
+			icon: "https://via.placeholder.com/150",
+			title: ["SERVER", "1"],
+			description:
+				language === "ES"
+					? "Servidor para la gestión de datos de los plugins."
+					: "Server for managing plugin data.",
+			tech: ["Node.js", "Express", "MongoDB"],
+		},
+		{
+			icon: "https://via.placeholder.com/150",
+			title: ["SERVER", "2"],
+			description:
+				language === "ES"
+					? "Servidor para la autenticación y autorización de usuarios."
+					: "Server for user authentication and authorization.",
+			tech: ["Node.js", "Express", "JWT"],
+		},
+	];
 
 	return (
 		<div
@@ -75,9 +359,35 @@ const CoAutoma = () => {
 					{language === "ES" ? "PlugIns (3 herramientas)" : "Plugins (3 tools)"}
 				</span>
 				<div className="plugins-carrousel">
-					<CoCardPlugin
-
-					/>
+					{plugins.map((plugin, index) => (
+						<CoCardPlugin
+							key={index}
+							icon={plugin.icon}
+							title={plugin.title}
+							description={plugin.description}
+							kpi={plugin.kpi}
+							color={plugin.color}
+							capacidades={plugin.capacidades}
+						/>
+					))}
+				</div>
+			</div>
+			<div className="plugins">
+				<span className="subtitle">
+					{language === "ES"
+						? "Servidores (2 herramientas)"
+						: "Servers (2 tools)"}
+				</span>
+				<div className="plugins-carrousel">
+					{servers.map((server, index) => (
+						<CoCardPlugin
+							key={index}
+							icon={server.icon}
+							title={server.title}
+							description={server.description}
+							tech={server.tech}
+						/>
+					))}
 				</div>
 			</div>
 		</div>

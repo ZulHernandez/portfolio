@@ -586,16 +586,25 @@ a {
         h4 {
             color: $shade-800;
             @include fnFont("Raleway-Semibold", 1.4rem, none);
+            @media (max-width: 1200px) {
+                @include fnFont("Raleway-Semibold", 2rem, none);
+            }
             margin: 0px;
         }
         h5 {
             color: $shade-700;
             @include fnFont("Raleway-Bold", 3.2rem, none);
+            @media (max-width: 1200px) {
+                @include fnFont("Raleway-Bold", 4rem, none);
+            }
             margin: 0px;
         }
-        span {
+        .desc {
             color: $shade-500;
             @include fnFont("Raleway-Medium", 1.2rem, none);
+            @media (max-width: 1200px) {
+                @include fnFont("Raleway-Medium", 1.6rem, none);
+            }
             margin: 0px;
         }
     }
@@ -1996,6 +2005,9 @@ footer {
             background-color: #fff;
             border-radius: 2rem;
             padding: 2rem;
+            @media (max-width: 800px) {
+                padding: 3rem;
+            }
             &:hover {
                 border-radius: 2rem;
                 box-shadow:
@@ -2181,6 +2193,7 @@ footer {
                 width: 100%;
                 @media (max-width: 800px) {
                     width: calc(100% - 4rem);
+                    padding: 3rem;
                 }
                 &:hover {
                     border-radius: 2rem;
@@ -2261,9 +2274,80 @@ footer {
             margin: 0rem 5rem;
             &__card {
                 background-color: $shade-0;
-                border-radius: 1rem;
-                padding: 1rem;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                border-radius: 2rem;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                min-width: 40%;
+                margin: 3rem 0px;
+                @media (max-width: 800px) {
+                    min-width: 80%;
+                    padding: 3rem;
+                }
+                &:hover {
+                    border-radius: 2rem;
+                    transition: all 0.3s ease-in-out;
+                    transform: scale(1.02);
+                    .img-cover {
+                        display: none;
+                    }
+                    .gif-cover {
+                        display: block;
+                    }
+                }
+                &-header {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    width: 100%;
+                    gap: 0.5rem;
+                    &-title {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 0rem;
+                        span {
+                            @include fnFont("Raleway-Bold", 1.4rem, none);
+                            text-transform: uppercase;
+                            letter-spacing: 0.25rem;
+                            @media (max-width: 1200px) {
+                                @include fnFont("Raleway-Bold", 2.2rem, none);
+                            }
+                            margin: 0px;
+                        }
+                    }
+                }
+                &-kpi-list {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 2rem;
+                    img {
+                        width: 4rem;
+                    }
+                    @media (max-width: 1200px) {
+                        flex-direction: column;
+                        align-items: center;
+                        img {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+                li {
+                    @include fnFont("Raleway-Medium", 1.4rem, none);
+                    color: $shade-600;
+                    @media (max-width: 1200px) {
+                        @include fnFont("Raleway-Medium", 2rem, none);
+                    }
+                }
+                .subtitle {
+                    @include fnFont("Raleway-Semibold", 1.6rem, none);
+                    color: $shade-600;
+                    margin: 0px;
+                    @media (max-width: 1200px) {
+                        @include fnFont("Raleway-Semibold", 2.2rem, none);
+                    }
+                }
             }
         }
     }
