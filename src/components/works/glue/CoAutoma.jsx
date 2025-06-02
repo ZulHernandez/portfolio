@@ -9,6 +9,16 @@ import plpFiller from "../../../assets/imgs/works/glue/plpFiller.svg";
 import frameReferencer from "../../../assets/imgs/works/glue/frameReferencer.svg";
 import arrow from "../../../assets/imgs/works/glue/arrow_back.svg";
 
+import credential from "../../../assets/imgs/works/glue/credential.svg";
+import crawler from "../../../assets/imgs/works/glue/crawler.svg";
+
+import node from "../../../assets/imgs/works/glue/node.svg";
+import express from "../../../assets/imgs/works/glue/express.svg";
+import puppeteer from "../../../assets/imgs/works/glue/puppeteer.svg";
+import js from "../../../assets/imgs/works/glue/js.svg";
+import render from "../../../assets/imgs/works/glue/render.svg";
+import insomnia from "../../../assets/imgs/works/glue/insomnia.svg";
+
 const CoCardPlugin = ({
 	icon,
 	title,
@@ -40,23 +50,36 @@ const CoCardPlugin = ({
 				}}
 			/>
 			<div className="plugins-carrousel__card-kpi-list">
-				<CoKPI
-					title=""
-					dato={kpi[0].dato}
-					desc={kpi[0].desc}
-					imgs={[null]}
-					color="#4D4D4D"
-					pos="center"
-				/>
-				<img src={arrow} alt="" />
-				<CoKPI
-					title=""
-					dato={kpi[1].dato}
-					desc={kpi[1].desc}
-					imgs={[null]}
-					color={color}
-					pos="center"
-				/>
+				{kpi.length === 1 ? (
+					<CoKPI
+						title=""
+						dato={kpi[0].dato}
+						desc={kpi[0].desc}
+						imgs={[null]}
+						color={color}
+						pos="center"
+					/>
+				) : kpi.length === 2 ? (
+					<>
+						<CoKPI
+							title=""
+							dato={kpi[0].dato}
+							desc={kpi[0].desc}
+							imgs={[null]}
+							color="#4D4D4D"
+							pos="center"
+						/>
+						<img src={arrow} alt="" />
+						<CoKPI
+							title=""
+							dato={kpi[1].dato}
+							desc={kpi[1].desc}
+							imgs={[null]}
+							color={color}
+							pos="center"
+						/>
+					</>
+				) : null}
 			</div>
 			<span className="subtitle">
 				{language === "ES" ? "Capacidades" : "Capabilities"}
@@ -75,15 +98,23 @@ const CoCardPlugin = ({
 const CoCardServer = ({ icon, title, description, tech }) => {
 	const { language } = useContext(MyContext);
 	return (
-		<div className="plugins-carrousel__card">
+		<div id="server-card" className="plugins-carrousel__card">
 			<div className="plugins-carrousel__card-header">
 				<img src={icon} alt={title} />
 				<div className="plugins-carrousel__card-header-title">
 					<span style={{ color: "#4D4D4D" }}>{title[0]}</span>
 					<span style={{ color: "#4D4D4D" }}>{title[1]}</span>
 				</div>
+				<div className="plugins-carrousel__card-header-tech">
+					{tech.map((item, index) => (
+						<img
+							key={index}
+							src={item}
+							style={{ width: "2rem", height: "2rem", margin: "0 0.5rem" }}
+						/>
+					))}
+				</div>
 			</div>
-			<span>{description}</span>
 			<hr
 				style={{
 					width: "100%",
@@ -94,6 +125,7 @@ const CoCardServer = ({ icon, title, description, tech }) => {
 					borderRadius: "0.5rem",
 				}}
 			/>
+			<span>{description}</span>
 		</div>
 	);
 };
@@ -257,14 +289,6 @@ const CoAutoma = () => {
 							? "Permite una navegación dentro de documentos grandes mucho más ligera gracias a los hipervínculos y flechas. La duplicación en png de frames aligera el peso del documento."
 							: "Allows for much lighter navigation within large documents thanks to hyperlinks and arrows. The duplication in PNG of frames lightens the document's weight.",
 				},
-				{
-					dato:
-						language === "ES" ? "Navegación y peso" : "Navigation and weight",
-					desc:
-						language === "ES"
-							? "Permite una navegación dentro de documentos grandes mucho más ligera gracias a los hipervínculos y flechas. La duplicación en png de frames aligera el peso del documento."
-							: "Allows for much lighter navigation within large documents thanks to hyperlinks and arrows. The duplication in PNG of frames lightens the document's weight.",
-				},
 			],
 			color: "#EC48FC",
 			capacidades: [
@@ -314,22 +338,22 @@ const CoAutoma = () => {
 
 	const servers = [
 		{
-			icon: "https://via.placeholder.com/150",
-			title: ["SERVER", "1"],
+			icon: credential,
+			title: ["CREDENTIAL", "SERVER"],
 			description:
 				language === "ES"
-					? "Servidor para la gestión de datos de los plugins."
-					: "Server for managing plugin data.",
-			tech: ["Node.js", "Express", "MongoDB"],
+					? "Servidor dedicado a validar y verificar credenciales"
+					: "Server dedicated to validating and verifying credentials.",
+			tech: [node, express, js, render, insomnia],
 		},
 		{
-			icon: "https://via.placeholder.com/150",
-			title: ["SERVER", "2"],
+			icon: crawler,
+			title: ["CRAWLER", "SERVER"],
 			description:
 				language === "ES"
-					? "Servidor para la autenticación y autorización de usuarios."
-					: "Server for user authentication and authorization.",
-			tech: ["Node.js", "Express", "JWT"],
+					? "Servidor dedicado a validar y verificar credenciales"
+					: "Server dedicated to validating and verifying credentials.",
+			tech: [node, express, puppeteer, js, render, insomnia],
 		},
 	];
 
@@ -378,9 +402,9 @@ const CoAutoma = () => {
 						? "Servidores (2 herramientas)"
 						: "Servers (2 tools)"}
 				</span>
-				<div className="plugins-carrousel">
+				<div id="server" className="plugins-carrousel">
 					{servers.map((server, index) => (
-						<CoCardPlugin
+						<CoCardServer
 							key={index}
 							icon={server.icon}
 							title={server.title}

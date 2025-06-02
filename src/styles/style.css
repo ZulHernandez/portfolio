@@ -3097,7 +3097,7 @@ footer img {
 #automation-of-processes .plugins-carrousel__card-header {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   gap: 0.5rem;
 }
@@ -3124,6 +3124,15 @@ footer img {
     font-size: 2.2rem;
     text-decoration: none;
   }
+}
+#automatizacion-de-procesos .plugins-carrousel__card-header-tech,
+#automation-of-processes .plugins-carrousel__card-header-tech {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0rem;
+  width: 100%;
 }
 #automatizacion-de-procesos .plugins-carrousel__card-kpi-list,
 #automation-of-processes .plugins-carrousel__card-kpi-list {
@@ -3175,5 +3184,38 @@ footer img {
     font-family: "Raleway-Semibold", sans-serif;
     font-size: 2.2rem;
     text-decoration: none;
+  }
+}
+#automatizacion-de-procesos #server,
+#automation-of-processes #server {
+  overflow-x: unset;
+  gap: 3rem;
+  -webkit-clip-path: none;
+          clip-path: none;
+  padding: 3rem 0px;
+}
+@media (max-width: 800px) {
+  #automatizacion-de-procesos #server,
+  #automation-of-processes #server {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+#automatizacion-de-procesos #server .plugins-carrousel__card,
+#automation-of-processes #server .plugins-carrousel__card {
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  #automatizacion-de-procesos #server .plugins-carrousel__card,
+  #automation-of-processes #server .plugins-carrousel__card {
+    width: calc(100% - 6rem);
+    margin: 0rem;
+  }
+}
+@media (max-width: 400px) {
+  #automatizacion-de-procesos #server .plugins-carrousel__card-header-tech,
+  #automation-of-processes #server .plugins-carrousel__card-header-tech {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

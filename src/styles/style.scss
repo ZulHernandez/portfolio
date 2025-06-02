@@ -2299,7 +2299,7 @@ footer {
                 &-header {
                     display: flex;
                     flex-direction: row;
-                    align-items: flex-start;
+                    align-items: center;
                     width: 100%;
                     gap: 0.5rem;
                     &-title {
@@ -2316,6 +2316,14 @@ footer {
                             }
                             margin: 0px;
                         }
+                    }
+                    &-tech {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-end;
+                        gap: 0rem;
+                        width: 100%;
                     }
                 }
                 &-kpi-list {
@@ -2347,6 +2355,30 @@ footer {
                     @media (max-width: 1200px) {
                         @include fnFont("Raleway-Semibold", 2.2rem, none);
                     }
+                }
+            }
+        }
+    }
+
+    #server {
+        overflow-x: unset;
+        gap: 3rem;
+        clip-path: none;
+        padding: 3rem 0px;
+        @media (max-width: 800px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+        }
+        .plugins-carrousel__card {
+            width: 100%;
+            @media (max-width: 1200px) {
+                width: calc(100% - 6rem);
+                margin: 0rem;
+            }
+            &-header-tech{
+                @media (max-width: 400px) {
+                    display: none;
                 }
             }
         }
