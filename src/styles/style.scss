@@ -92,11 +92,11 @@ $fonts: (
 }
 
 @mixin fnFlex($direction, $justify, $align, $gap) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-    gap: $gap;
+    display: flex !important;
+    flex-direction: $direction !important;
+    justify-content: $justify !important;
+    align-items: $align !important;
+    gap: $gap !important;
 }
 
 html {
@@ -156,7 +156,11 @@ a {
 }
 
 .container-fluid {
-    @include fnFlex(column, center, flex-start, 5rem);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: flex-start;
+    gap: 5rem;
     padding: 7.5rem 15rem 5rem 15rem;
     @media (max-width: 1200px) {
         padding: 7.5rem 10rem 5rem 10rem;
@@ -793,6 +797,7 @@ footer {
     background-color: $shade-900;
     color: $shade-0;
     @include fnFlex(row, space-between, center, 5rem);
+    flex-direction: row;
     @media (max-width: 800px) {
         @include fnFlex(column, space-between, center, 5rem);
     }
