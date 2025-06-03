@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { MyContext } from "../../components/context/MyContext";
 import dayjs from "dayjs";
 
-import perfil from "../../assets/imgs/home/perfil.png";
+import perfil from "../../assets/imgs/home/perfil.webp";
 
 const CoHola = () => {
 	const { language } = useContext(MyContext);

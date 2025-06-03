@@ -10,21 +10,20 @@ import ecomerce from "../../../assets/imgs/works/glue/ecomerce.svg";
 import EShandOff from "../../../assets/imgs/works/glue/ES-hand-off.svg";
 import ENhandOff from "../../../assets/imgs/works/glue/EN-hand-off.svg";
 
-
 const CoCard = ({ icon, title, tag, description }) => {
 	return (
-        <div className="backlog__card">
-            <div className="backlog__card-header">
-                <img src={icon} alt={title.join(" ")} />
-                <div className="backlog__card-header-title">
-                    <span>{title[0]}</span>
-                    <span>{title[1]}</span>
-                </div>
-                <div className="backlog__card-header-tag">
-                    <span>{tag}</span>
-                </div>
-            </div>
-            <hr
+		<div className="backlog__card">
+			<div className="backlog__card-header">
+				<img src={icon} alt={title.join(" ")} />
+				<div className="backlog__card-header-title">
+					<span>{title[0]}</span>
+					<span>{title[1]}</span>
+				</div>
+				<div className="backlog__card-header-tag">
+					<span>{tag}</span>
+				</div>
+			</div>
+			<hr
 				style={{
 					width: "100%",
 					borderColor: "#cccccc",
@@ -34,8 +33,8 @@ const CoCard = ({ icon, title, tag, description }) => {
 					borderRadius: "0.5rem",
 				}}
 			/>
-            <span>{description}</span>
-        </div>
+			<span>{description}</span>
+		</div>
 	);
 };
 
@@ -52,7 +51,7 @@ const CoFuture = () => {
 					? "App pensada para la agrupación completa de todos los sub-plugins involucrados en el proceso de diseño"
 					: "App designed for the complete grouping of all sub-plugins involved in the design process",
 		},
-        {
+		{
 			icon: bolito,
 			title: ["BOLITO", "WRITTER"],
 			tag: language === "ES" ? "nuevo" : "new",
@@ -61,7 +60,7 @@ const CoFuture = () => {
 					? "Implementación de un LLM (Llama) como asistente de copy writting, voz y tono, redacción y más"
 					: "Implementation of a LLM (Llama) as a copywriting, voice and tone, writing assistant and more",
 		},
-        {
+		{
 			icon: audit,
 			title: ["AUDIT", "ASISTAND"],
 			tag: language === "ES" ? "nuevo" : "new",
@@ -70,7 +69,7 @@ const CoFuture = () => {
 					? "Asistente de auditorias automático para componentes, tokens e instancias"
 					: "Automatic audit assistant for components, tokens and instances",
 		},
-        {
+		{
 			icon: ecomerce,
 			title: ["E-COMMERCE", "FILLER"],
 			tag: language === "ES" ? "mejora" : "improvement",
@@ -115,7 +114,7 @@ const CoFuture = () => {
 					/>
 				))}
 			</div>
-            <div className="bullet">
+			<div className="bullet">
 				<span className="subtitle">
 					{language === "ES" ? "· Procesos de hand-off" : "· Handoff processes"}
 				</span>
@@ -126,7 +125,9 @@ const CoFuture = () => {
 							: "In order to improve handoff and distribution processes of design frameworks, as well as the integration of other design teams such as marketing, branding, and others, research has been conducted on methods for tokenization and distribution of libraries in various ways to the teams."}
 					</span>
 				</div>
-                <img src={language === "ES" ? EShandOff : ENhandOff} alt="" />
+				<center>
+					<img src={language === "ES" ? EShandOff : ENhandOff} alt="" />
+				</center>
 			</div>
 		</div>
 	);

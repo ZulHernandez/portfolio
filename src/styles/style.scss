@@ -122,11 +122,9 @@ html {
 }
 
 //main Global Styles
-html {
-    scroll-behavior: smooth;
-}
 
 body {
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     font-family: "Raleway-Regular", sans-serif;
@@ -164,7 +162,7 @@ a {
         padding: 7.5rem 10rem 5rem 10rem;
     }
     &.grey {
-        background-image: url("../assets/imgs/general/noise.png");
+        background-image: url("../assets/imgs/general/noise.webp");
         background-repeat: repeat;
         background-size: 100%;
         padding: 7.5rem 15rem 7.5rem 15rem;
@@ -957,12 +955,7 @@ footer {
             clip-path: fill-box;
             overflow-x: scroll;
             &__line {
-                background-color: yellow;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 1rem;
+                @include fnFlex(column, center, center, 1rem);
                 width: 4px;
                 span {
                     @include fnFont("Raleway-Bold", 1.4rem, none, $shade-600);
@@ -2073,6 +2066,7 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        width: 100%;
         &-carrousel {
             display: flex;
             flex-direction: row;
@@ -2171,15 +2165,16 @@ footer {
         gap: 3rem;
         clip-path: none;
         padding: 3rem 0px;
+        width: calc(100% - 10rem);
         @media (max-width: 800px) {
             flex-direction: column;
             align-items: center;
             gap: 3rem;
         }
         .plugins-carrousel__card {
-            width: 100%;
+            width: calc(100% - 10rem);
             @media (max-width: 1200px) {
-                width: calc(100% - 6rem);
+                width: calc(100% - 7.5rem);
                 margin: 0rem;
             }
             &-header-tech {
@@ -2217,6 +2212,12 @@ footer {
             @media (max-width: 800px) {
                 flex-direction: column;
                 align-items: center;
+            }
+        }
+        img{
+            width: 100rem;
+            @media (max-width: 1200px) {
+                width: 80rem;
             }
         }
     }

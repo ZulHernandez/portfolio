@@ -4,8 +4,8 @@ import { MyContext } from "../../context/MyContext.js";
 import CoTitle from "../../../components/general/CoTitle.jsx";
 import CoKPI from "../../general/CoKPI.jsx";
 
-import beta from "../../../assets/imgs/works/glue/beta.png";
-import release from "../../../assets/imgs/works/glue/release.png";
+import beta from "../../../assets/imgs/works/glue/beta.webp";
+import release from "../../../assets/imgs/works/glue/release.webp";
 
 import circLiverpool from "../../../assets/imgs/works/glue/circLiverpool.svg";
 import circSuburbia from "../../../assets/imgs/works/glue/circSuburbia.svg";
@@ -21,7 +21,7 @@ import circPlus from "../../../assets/imgs/works/glue/circPlus.svg";
 import colourToken2 from "../../../assets/imgs/works/glue/colourToken2.svg";
 import styleLib from "../../../assets/imgs/works/glue/styleLib.svg";
 import arrow from "../../../assets/imgs/works/glue/arrow_back.svg";
-import varLib from "../../../assets/imgs/works/glue/varLib.png";
+import varLib from "../../../assets/imgs/works/glue/varLib.webp";
 
 
 

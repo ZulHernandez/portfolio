@@ -1,19 +1,19 @@
-import GLUE from "../../assets/imgs/home/GLUE.png";
+import GLUE from "../../assets/imgs/home/GLUE.webp";
 import GLUEgif from "../../assets/imgs/gifs/GLUE.gif";
 
-import MOVILIDAD from "../../assets/imgs/home/MOVILIDAD.png";
+import MOVILIDAD from "../../assets/imgs/home/MOVILIDAD.webp";
 import MOVILIDADgif from "../../assets/imgs/gifs/MOVILIDAD.gif";
 
-import ACTIVA from "../../assets/imgs/home/ACTIVA.png";
+import ACTIVA from "../../assets/imgs/home/ACTIVA.webp";
 import ACTIVAgif from "../../assets/imgs/gifs/ACTIVA.gif";
 
-import HUBBUB from "../../assets/imgs/home/HUBBUB.png";
+import HUBBUB from "../../assets/imgs/home/HUBBUB.webp";
 import HUBBUBgif from "../../assets/imgs/gifs/HUBBUB.gif";
 
-import GALERIA from "../../assets/imgs/home/GALERIA.png";
+import GALERIA from "../../assets/imgs/home/GALERIA.webp";
 import GALERIAgif from "../../assets/imgs/gifs/GALERIA.gif";
 
-import GOOK from "../../assets/imgs/home/GOOK.png";
+import GOOK from "../../assets/imgs/home/GOOK.webp";
 import GOOKgif from "../../assets/imgs/gifs/GOOK.gif";
 
 import liver from "../../assets/imgs/home/liverpool.svg";
