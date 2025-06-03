@@ -4,14 +4,14 @@ import { MyContext } from "../context/MyContext";
 import CoTitle from "../general/CoTitle";
 import CoBtn from "../general/CoBtn";
 
-import close from "../../assets/imgs/vectores/close.svg"
+import close from "../../assets/imgs/vectores/close.svg";
 
 import useScreenSize from "../context/useScreenSize";
 import varTrabajos from "../context/varTrabajos";
 
 const CoTrabajos = () => {
 	const { language } = useContext(MyContext);
-	const { width, height } = useScreenSize();
+	const { width } = useScreenSize();
 	const { trabajos } = varTrabajos();
 
 	let tags = trabajos.map((trabajo) => trabajo.tags[language == "ES" ? 0 : 1]);
@@ -50,13 +50,13 @@ const CoTrabajos = () => {
 					<div
 						onClick={() => {
 							setFiltro(filtro == tag ? "" : tag);
-                            console.log(filtro);
+							console.log(filtro);
 							setDestacados(
 								filtro == tag
 									? trabajos
 									: trabajos.filter((trabajo) =>
 											trabajo.tags[language == "ES" ? 0 : 1].includes(tag)
-									)
+									  )
 							);
 						}}
 						className={
@@ -149,7 +149,13 @@ const CoTrabajos = () => {
 											<span>{destacado.comp[language == "ES" ? 0 : 1]}</span>
 										</div>
 									</div>
-									<CoBtn type="primary" text={null} link={`/works/${destacado.link}`} />
+									{destacado.link ? (
+										<CoBtn
+											type="primary"
+											text={null}
+											link={`/works/${destacado.link}`}
+										/>
+									) : null}
 								</div>
 							</div>
 						</div>

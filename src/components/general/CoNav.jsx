@@ -3,7 +3,7 @@ import signGrey from "/Greysign.svg";
 import menu from "../../assets/imgs/vectores/menu.svg";
 
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MyContext } from "../../components/context/MyContext";
 import useScreenSize from "../context/useScreenSize";
 
@@ -65,7 +65,7 @@ const redes = [
 //* Componente del header
 const CoNav = () => {
 	const { ruta, language, setLanguage, amplio, setAmplio } = useContext(MyContext);
-	const { width, height } = useScreenSize();
+	const { width } = useScreenSize();
 
 	if (width >= 800) {
 		return (

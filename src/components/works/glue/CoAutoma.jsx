@@ -18,6 +18,7 @@ import puppeteer from "../../../assets/imgs/works/glue/puppeteer.svg";
 import js from "../../../assets/imgs/works/glue/js.svg";
 import render from "../../../assets/imgs/works/glue/render.svg";
 import insomnia from "../../../assets/imgs/works/glue/insomnia.svg";
+import cron from "../../../assets/imgs/works/glue/cron.svg";
 
 const CoCardPlugin = ({
 	icon,
@@ -344,7 +345,7 @@ const CoAutoma = () => {
 				language === "ES"
 					? "Servidor dedicado a validar y verificar credenciales"
 					: "Server dedicated to validating and verifying credentials.",
-			tech: [node, express, js, render, insomnia],
+			tech: [node, express, js, render, insomnia, cron],
 		},
 		{
 			icon: crawler,
@@ -353,7 +354,7 @@ const CoAutoma = () => {
 				language === "ES"
 					? "Servidor dedicado a validar y verificar credenciales"
 					: "Server dedicated to validating and verifying credentials.",
-			tech: [node, express, puppeteer, js, render, insomnia],
+			tech: [node, express, puppeteer, js, render, insomnia, cron],
 		},
 	];
 

@@ -39,29 +39,29 @@ let foots = [
 			{
 				name: ["Inicio", "Home"],
 				url: "/",
-				target: ""
+				target: "",
 			},
 			{
 				name: ["Trabajos", "Works"],
 				url: "/works",
-				target: ""
+				target: "",
 			},
 			{
 				name: ["Currículo", "Resume"],
 				url: "/resume",
-				target: ""
+				target: "",
 			},
 			{
 				name: ["Sobre mi", "About me"],
 				url: "/about-me",
-				target: ""
+				target: "",
 			},
 		],
 	},
 ];
 
 const CoFooter = () => {
-	const { language } = useContext(MyContext);
+	const { language, setLanguage } = useContext(MyContext);
 	const { ruta, setRuta } = useContext(MyContext);
 
 	return (
@@ -73,7 +73,12 @@ const CoFooter = () => {
 							<h4>{foot.title[language == "ES" ? 0 : 1]}</h4>
 							{foot.links.map((link, index) => {
 								return (
-									<Link to={link.url} key={index} target={link.target} rel="noopener noreferrer">
+									<Link
+										to={link.url}
+										key={index}
+										target={link.target}
+										rel="noopener noreferrer"
+									>
 										<span
 											key={index}
 											onClick={() => setRuta(link.url)}
@@ -88,7 +93,22 @@ const CoFooter = () => {
 					);
 				})}
 				<div className="footer__links-card">
-					<h4>Opciones</h4>
+					<h4>{language === "ES" ? "Opciones" : "Options"}</h4>
+					<div className="nav-header__options">
+						<span
+							className={language === "EN" ? "active" : ""}
+							onClick={() => setLanguage("EN")}
+						>
+							EN
+						</span>
+						<span style={{ textDecoration: "none" }}>&nbsp;|&nbsp;</span>
+						<span
+							className={language === "ES" ? "active" : ""}
+							onClick={() => setLanguage("ES")}
+						>
+							ES
+						</span>
+					</div>
 				</div>
 			</div>
 			<img src={sign} alt="Home" />

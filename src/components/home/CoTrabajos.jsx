@@ -94,18 +94,24 @@ const CoTrabajos = () => {
 											<span>{destacado.comp[language == "ES" ? 0 : 1]}</span>
 										</div>
 									</div>
-									<CoBtn type="primary" text={null} />
+									{destacado.link ? (
+										<CoBtn
+											type="primary"
+											text={null}
+											link={`/works/${destacado.link}`}
+										/>
+									) : null}
 								</div>
 							</div>
 						</div>
 					)
-					//) : null
 				)}
 			</div>
 			<div className="work__cta">
 				<CoBtn
 					type="secondary"
 					text={language == "ES" ? "Conoce más trabajos" : "See my other works"}
+					link="/works"
 				/>
 			</div>
 		</div>
