@@ -692,9 +692,20 @@ const RoAbout = () => {
 	const location = useLocation();
 	const [filtro, setFiltro] = useState(2);
 
+	let anclasAbout = [
+		{
+			text: language == "ES" ? "Esto soy yo" : "This is me",
+			id: language == "ES" ? "esto-soy-yo" : "this-is-me",
+		},
+		{
+			text: language == "ES" ? "Conozcámonos" : "Let's get to know each other",
+			id: language == "ES" ? "conozcamonos" : "getInTouch",
+		},
+	];
+
 	useEffect(() => {
-		setRuta("/about-me");
-	}, [setRuta]);
+        setRuta("/about-me"); // Se ejecuta después del renderizado inicial
+    }, []);
 
 	useEffect(() => {
 		setAmplio(false); // Reset amplio on route change
@@ -702,7 +713,6 @@ const RoAbout = () => {
 
 	return (
 		<div>
-			<CoNavLeft />
 			<div
 				id={language == "ES" ? "esto-soy-yo" : "this-is-me"}
 				className="container-fluid"
@@ -711,8 +721,8 @@ const RoAbout = () => {
 				<CoTitle
 					titles={
 						language == "ES"
-							? "Conozcámonos un poco más"
-							: "Get to know me a little more"
+							? "Este soy yo"
+							: "This is me"
 					}
 				/>
 				<span id="span">
@@ -766,6 +776,7 @@ const RoAbout = () => {
 				{filtro === 5 && <CoComida />}
 			</div>
 			<CoConozca></CoConozca>
+			<CoNavLeft anclas={anclasAbout} />
 		</div>
 	);
 };

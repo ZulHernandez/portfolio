@@ -54,9 +54,36 @@ const RoGLUE = () => {
 		},
 	};
 
+	let anclasGlue = [
+		{
+			text: language == "ES" ? "Sumario" : "Summary",
+			id: language == "ES" ? "sumario" : "summary",
+		},
+		{
+			text: language == "ES" ? "El contexto" : "Context",
+			id: language == "ES" ? "contexto" : "context",
+		},
+		{
+			text: language == "ES" ? "Tecnologias adoptadas" : "Technologies Used",
+			id: language == "ES" ? "tecnologias-adoptadas" : "technologies-used",
+		},
+		{
+			text: language == "ES" ? "Mejora de insumos" : "Improvement of Inputs",
+			id: language == "ES" ? "mejora-de-insumos" : "improvement-of-inputs",
+		},
+		{
+			text: language == "ES" ? "Automatización de procesos" : "Automation of Processes",
+			id: language == "ES" ? "automatizacion-de-procesos" : "automation-of-processes",
+		},
+		{
+			text: language == "ES" ? "Futuros pasos" : "Future Steps",
+			id: language == "ES" ? "futuros-pasos" : "future-steps",
+		},
+	];
+
 	return (
 		<>
-			<CoNavLeft />
+			<CoNavLeft anclas={anclasGlue} />
 			<div>
 				<CoSumario
 					foto={sumario.foto}

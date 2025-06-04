@@ -1,85 +1,8 @@
 import { useContext } from "react";
 import { MyContext } from "../context/MyContext.js";
 
-let anclasHome = [
-	{
-		text: ["Hola", "Hello"],
-		id: ["hola", "hello"],
-	},
-	{
-		text: ["Dónde he colaborado", "Where I have collaborated"],
-		id: ["colab", "colab"],
-	},
-	{
-		text: ["Mis trabajos destacados", "My featured works"],
-		id: ["trabajos", "works"],
-	},
-	{
-		text: ["Conozcámonos", "Let's get in touch"],
-		id: ["conozcamonos", "getInTouch"],
-	},
-];
-
-let anclasResume = [
-	{
-		text: ["Mis trabajos", "My works"],
-		id: ["mis-trabajos", "my-works"],
-	},
-	{
-		text: ["Línea del tiempo", "Timeline"],
-		id: ["linea-del-tiempo", "timeline"],
-	},
-];
-
-let anclasGlue = [
-	{
-		text: ["Sumario", "Summary"],
-		id: ["sumario", "summary"],
-	},
-	{
-		text: ["El contexto", "Context"],
-		id: ["contexto", "context"],
-	},
-	{
-		text: ["Tecnologias adoptadas", "Technologies Used"],
-		id: ["tecnologias-adoptadas", "technologies-used"],
-	},
-	{
-		text: ["Mejora de insumos", "Improvement of Inputs"],
-		id: ["mejora-de-insumos", "improvement-of-inputs"],
-	},
-	{
-		text: ["Automatización de procesos", "Automation of Processes"],
-		id: ["automatizacion-de-procesos", "automation-of-processes"],
-	},
-	{
-		text: ["Futuros pasos", "Future Steps"],
-		id: ["futuros-pasos", "future-steps"],
-	},
-];
-
-const CoNavLeft = () => {
+const CoNavLeft = ({anclas}) => {
 	const { language } = useContext(MyContext);
-	const { ruta, setRuta } = useContext(MyContext);
-
-	let anclas;
-	switch (ruta) {
-		case "/":
-			anclas = anclasHome;
-			break;
-		case "/works":
-			anclas = anclasResume;
-			break;
-		case "/about-me":
-			anclas = anclasHome;
-			break;
-		case "/works/glue":
-			anclas = anclasGlue;
-			break;
-		default:
-			anclas = null;
-			break;
-	}
 
 	return (
 		<div className="nav-left">
@@ -87,14 +10,14 @@ const CoNavLeft = () => {
 				return (
 					<a
 						key={index}
-						href={`#${ancla.id[language == "ES" ? 0 : 1]}`}
+						href={`#${ancla.id}`}
 						onClick={() => {
 							document
-								.getElementById(ancla.id[language == "ES" ? 0 : 1])
+								.getElementById(ancla.id)
 								.scrollIntoView({ behavior: "smooth" });
 						}}
 					>
-						<span>{ancla.text[language == "ES" ? 0 : 1]}</span>
+						<span>{ancla.text}</span>
 					</a>
 				);
 			})}
