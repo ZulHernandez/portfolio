@@ -10,6 +10,8 @@ import ecomerce from "../../../assets/imgs/works/glue/ecomerce.svg";
 import EShandOff from "../../../assets/imgs/works/glue/ES-hand-off.svg";
 import ENhandOff from "../../../assets/imgs/works/glue/EN-hand-off.svg";
 
+import PropTypes from "prop-types";
+
 const CoCard = ({ icon, title, tag, description }) => {
 	return (
 		<div className="backlog__card">
@@ -36,6 +38,13 @@ const CoCard = ({ icon, title, tag, description }) => {
 			<span>{description}</span>
 		</div>
 	);
+};
+
+CoCard.propTypes = {
+	icon: PropTypes.string.isRequired,
+	title: PropTypes.arrayOf(PropTypes.string).isRequired,
+	tag: PropTypes.string.isRequired,
+	description: PropTypes.string.isRequired,
 };
 
 const CoFuture = () => {
@@ -126,7 +135,7 @@ const CoFuture = () => {
 					</span>
 				</div>
 				<center>
-					<img src={language === "ES" ? EShandOff : ENhandOff} alt="" />
+					<img className="schema-hand-off" src={language === "ES" ? EShandOff : ENhandOff} alt="" />
 				</center>
 			</div>
 		</div>
