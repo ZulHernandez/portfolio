@@ -167,7 +167,7 @@ a {
 
 .text-normal {
     @include fnFont("Raleway-Medium", 1.4rem, none, $shade-700);
-    background-color: greenyellow;
+    width: 100%;
 }
 
 .div-title {

@@ -122,8 +122,12 @@ const CoCardServer = ({ icon, title, description, tech }) => {
 			<div className="plugins-carrousel__card-header">
 				<img src={icon} alt={title} />
 				<div className="plugins-carrousel__card-header-title">
-					<span style={{ color: "#4D4D4D" }}>{title[0]}</span>
-					<span style={{ color: "#4D4D4D" }}>{title[1]}</span>
+					<span className="text-normal" style={{ color: "#4D4D4D" }}>
+						{title[0]}
+					</span>
+					<span className="text-normal" style={{ color: "#4D4D4D" }}>
+						{title[1]}
+					</span>
 				</div>
 				<div className="plugins-carrousel__card-header-tech">
 					{tech.map((item, index) => (
@@ -145,7 +149,7 @@ const CoCardServer = ({ icon, title, description, tech }) => {
 					borderRadius: "0.5rem",
 				}}
 			/>
-			<span>{description}</span>
+			<span className="text-normal">{description}</span>
 		</div>
 	);
 };

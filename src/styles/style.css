@@ -154,7 +154,7 @@ a {
   font-size: 1.4rem;
   text-decoration: none;
   color: #4d4d4d;
-  background-color: greenyellow;
+  width: 100%;
 }
 @media (max-width: 800px) {
   .text-normal {
