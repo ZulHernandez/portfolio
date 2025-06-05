@@ -26,14 +26,14 @@ import guitar from "../assets/imgs/about/music/guitar.svg";
 import melodic from "../assets/imgs/about/music/melodic.svg";
 import microphone from "../assets/imgs/about/music/microphone.svg";
 
-import f1 from "../assets/imgs/about/games/Frame-1.webp";
-import f2 from "../assets/imgs/about/games/Frame-2.webp";
-import f3 from "../assets/imgs/about/games/Frame-3.webp";
-import f4 from "../assets/imgs/about/games/Frame-4.webp";
-import f5 from "../assets/imgs/about/games/Frame-5.webp";
-import f6 from "../assets/imgs/about/games/Frame-6.webp";
-import f7 from "../assets/imgs/about/games/Frame-7.webp";
-import f8 from "../assets/imgs/about/games/Frame-8.webp";
+import f1 from "../assets/imgs/about/games/f1.webp";
+import f2 from "../assets/imgs/about/games/f2.webp";
+import f3 from "../assets/imgs/about/games/f3.webp";
+import f4 from "../assets/imgs/about/games/f4.webp";
+import f5 from "../assets/imgs/about/games/f5.webp";
+import f6 from "../assets/imgs/about/games/f6.webp";
+import f7 from "../assets/imgs/about/games/f7.webp";
+import f8 from "../assets/imgs/about/games/f8.webp";
 
 import oyasumi from "../assets/imgs/about/manga/oyasumi.webp";
 import uzumaki from "../assets/imgs/about/manga/uzumaki.webp";
@@ -320,6 +320,10 @@ const CoGames = () => {
 		1, 0, 0, 0, 0.05, 0.1, 0.15, 0.2,
 	]);
 
+	const frames = [
+		f1, f2, f3, f4, f5, f6, f7, f8,
+	];
+
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setOpacities((prev) => {
@@ -370,10 +374,10 @@ const CoGames = () => {
 				</div>
 			</div>
 			<div className="frame-container">
-				{[...Array(8)].map((_, i) => (
+				{frames.map((frame, i) => (
 					<div key={i}>
 						<img
-							src={eval(`f${i + 1}`)}
+							src={frame}
 							alt={`Frame ${i + 1}`}
 							style={{ zIndex: i + 1, opacity: opacities[i] }}
 						/>

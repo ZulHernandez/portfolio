@@ -1,6 +1,6 @@
 import { MyContext } from "./components/context/MyContext";
 import { useState } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import RoHome from "./routes/RoHome";
 import RoWorks from "./routes/RoWorks";
@@ -11,7 +11,6 @@ import RoGLUE from "./routes/works/RoGLUE";
 
 import CoNav from "./components/general/CoNav";
 import CoFooter from "./components/general/CoFooter";
-import CoNavLeft from "./components/general/CoNavLeft";
 
 import "./styles/style.css";
 
