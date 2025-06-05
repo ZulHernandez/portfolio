@@ -8,7 +8,7 @@ import varTrabajos from "../context/varTrabajos";
 
 const CoTrabajos = () => {
 	const { language } = useContext(MyContext);
-	const { width, height } = useScreenSize();
+	const { width } = useScreenSize();
 	const { trabajos } = varTrabajos();
 	let destacados = trabajos.splice(0, 4);
 

@@ -627,7 +627,7 @@ const RoResume = () => {
 	const { setRuta, language, filtroResumen, setFiltroResumen, setAmplio } =
 		useContext(MyContext);
 	const location = useLocation();
-	const { width, height } = useScreenSize();
+	const { width } = useScreenSize();
 
 	useEffect(() => {
 		setRuta("/resume"); // Se ejecuta después del renderizado inicial

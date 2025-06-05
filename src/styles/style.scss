@@ -22,6 +22,37 @@ $shade-50: #f2f2f2;
 $shade-25: #f7f7f7;
 $shade-0: #fff;
 
+@mixin fnFont($font, $size, $decoration, $color) {
+    font-family: $font, sans-serif;
+    font-size: $size;
+    text-decoration: $decoration;
+    color: $color;
+    @media (max-width: 800px) {
+        font-size: calc($size * 1.2);
+    }
+}
+
+@mixin fnFlex($direction, $justify, $align, $gap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin fnCard($size) {
+    background-color: $shade-0;
+    border-radius: 2rem;
+    padding: 2rem;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        box-shadow:
+            2rem 2rem 4rem #d2d2d2,
+            -2rem -2rem 4rem #ffffff;
+        transform: scale(1.02);
+    }
+}
+
 //main ScroolBar
 ::-webkit-scrollbar {
     width: 7.5px;
@@ -84,19 +115,16 @@ $fonts: (
     src: url(../assets/fonts/Home/IBMPlexMono-Bold.ttf);
 }
 
-@mixin fnFont($font, $size, $decoration, $color) {
-    font-family: $font, sans-serif;
-    font-size: $size;
-    text-decoration: $decoration;
-    color: $color;
-}
-
-@mixin fnFlex($direction, $justify, $align, $gap) {
-    display: flex !important;
-    flex-direction: $direction !important;
-    justify-content: $justify !important;
-    align-items: $align !important;
-    gap: $gap !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -142,10 +170,6 @@ a {
     width: 100%;
     h2 {
         @include fnFont("Raleway-Bold", 3.2rem, none, $shade-700);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Bold", 4rem, none, $shade-700);
-        }
-        margin: 0px;
     }
     img {
         width: 5rem;
@@ -188,12 +212,6 @@ a {
         width: 2.4rem;
         height: 2.4rem;
     }
-    span {
-        @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-0);
-        @media (max-width: 800px) {
-            @include fnFont("Raleway-SemiBold", 2.1rem, none, $shade-0);
-        }
-    }
     &.primary {
         border-color: $shade-800;
         color: $shade-800;
@@ -218,9 +236,6 @@ a {
         &:hover {
             background-color: $shade-900;
             @include fnFont("Raleway-Black", 1.4rem, underline, $shade-0);
-            @media (max-width: 800px) {
-                @include fnFont("Raleway-Black", 2.1rem, underline, $shade-0);
-            }
         }
     }
 }
@@ -259,7 +274,8 @@ a {
         @media (max-width: 800px) {
             @include fnFlex(column, space-between, center, 0rem);
             padding-top: 5rem;
-            min-height: calc(100vh - 15.5rem) !important;
+            width: 100%;
+            min-height: calc(100vh - 20rem);
             &--text {
                 @include fnFlex(column, flex-start, flex-end, 15rem);
                 width: 100%;
@@ -276,7 +292,7 @@ a {
         span {
             @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-800);
             @media (max-width: 800px) {
-                @include fnFont("Raleway-SemiBold", 11.2rem, none, $shade-800);
+                @include fnFont("Raleway-SemiBold", 7rem, none, $shade-800);
             }
             cursor: pointer;
             transition: all 0.3s ease-in-out;
@@ -286,10 +302,10 @@ a {
 
             &.active {
                 @include fnFont("Raleway-Bold", 1.4rem, none, $red-800);
-                text-decoration: none;
                 @media (max-width: 800px) {
-                    @include fnFont("Raleway-SemiBold", 11.2rem, none, $red-800);
+                    @include fnFont("Raleway-SemiBold", 7rem, none, $red-800);
                 }
+                text-decoration: none;
             }
         }
     }
@@ -297,9 +313,6 @@ a {
     &__options {
         span {
             @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-800);
-            @media (max-width: 800px) {
-                @include fnFont("Raleway-SemiBold", 2.1rem, none, $shade-800);
-            }
             cursor: pointer;
             transition: all 0.3s ease-in-out;
             &:hover {
@@ -357,8 +370,7 @@ a {
         display: block !important;
         writing-mode: vertical-rl;
         transform: rotate(180deg);
-        @include fnFont("Raleway-SemiBold", 1.2rem, none, $shade-600);
-
+        @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-600);
         &:hover {
             text-decoration: dotted underline;
         }
@@ -373,10 +385,7 @@ a {
         background-color: $shade-700;
         padding: 0.8rem 1.5rem;
         border-radius: 1rem;
-        @include fnFont("Raleway-SemiBold", 1.2rem, none, $shade-0);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-SemiBold", 1.6rem, none, $shade-0);
-        }
+        @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-0);
     }
 }
 
@@ -384,11 +393,8 @@ a {
     @include fnFlex(row, flex-start, center, 3rem);
     flex-wrap: wrap;
     .work-card {
-        background-color: $shade-0;
-        border-radius: 2rem;
-        padding: 2rem;
-        display: flex;
-        gap: 2rem;
+        @include fnFlex(column, flex-start, flex-start, 2rem);
+        @include fnCard("m");
         img {
             height: min-content;
             border-radius: 1rem;
@@ -400,12 +406,6 @@ a {
             display: none;
         }
         &:hover {
-            border-radius: 2rem;
-            box-shadow:
-                2rem 2rem 4rem #d2d2d2,
-                -2rem -2rem 4rem #ffffff;
-            transition: all 0.3s ease-in-out;
-            transform: scale(1.02);
             .img-cover {
                 display: none;
             }
@@ -424,17 +424,9 @@ a {
                     @include fnFlex(column, flex-start, flex-start, 1rem);
                     h3 {
                         @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-800);
-                        @media (max-width: 1200px) {
-                            @include fnFont("Raleway-Semibold", 3rem, none, $shade-800);
-                        }
-                        margin: 0px;
                     }
                     span {
                         @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-                        @media (max-width: 1200px) {
-                            @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-                        }
-                        margin: 0px;
                     }
                 }
             }
@@ -445,10 +437,6 @@ a {
                     @include fnFlex(column, flex-start, flex-start, 1rem);
                     span {
                         @include fnFont("Raleway-Bold", 1.4rem, none, $shade-800);
-                        @media (max-width: 1200px) {
-                            @include fnFont("Raleway-Bold", 2rem, none, $shade-800);
-                        }
-                        margin: 0px;
                     }
                     &__comp {
                         @include fnFlex(row, flex-start, center, 0.5rem);
@@ -460,10 +448,6 @@ a {
                         }
                         span {
                             @include fnFont("Raleway-Medium", 1.4rem, none, $shade-800);
-                            @media (max-width: 1200px) {
-                                @include fnFont("Raleway-Medium", 2rem, none, $shade-800);
-                            }
-                            margin: 0px;
                         }
                     }
                 }
@@ -490,18 +474,12 @@ a {
             display: none;
         }
         span {
-            @include fnFont("Raleway-Medium", 1.2rem, none, $red-800);
-            @media (max-width: 1200px) {
-                @include fnFont("Raleway-Medium", 1.6rem, none, $red-800);
-            }
+            @include fnFont("Raleway-Medium", 1.4rem, none, $red-800);
         }
         &.active {
             background-color: $red-800;
             span {
-                @include fnFont("Raleway-Medium", 1.2rem, none, $shade-0);
-                @media (max-width: 1200px) {
-                    @include fnFont("Raleway-Medium", 1.6rem, none, $shade-0);
-                }
+                @include fnFont("Raleway-Medium", 1.4rem, none, $shade-0);
             }
             img {
                 display: block;
@@ -521,24 +499,12 @@ a {
         width: 100%;
         h4 {
             @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-800);
-            @media (max-width: 1200px) {
-                @include fnFont("Raleway-Semibold", 2rem, none, $shade-800);
-            }
-            margin: 0px;
         }
         h5 {
             @include fnFont("Raleway-Bold", 3.2rem, none, $shade-700);
-            @media (max-width: 1200px) {
-                @include fnFont("Raleway-Bold", 4rem, none, $shade-700);
-            }
-            margin: 0px;
         }
         .desc {
             @include fnFont("Raleway-Medium", 1.2rem, none, $shade-500);
-            @media (max-width: 1200px) {
-                @include fnFont("Raleway-Medium", 1.6rem, none, $shade-500);
-            }
-            margin: 0px;
         }
     }
     &__img {
@@ -557,9 +523,6 @@ a {
     }
     &__text {
         @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-700);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Semibold", 1.8rem, none, $shade-700);
-        }
     }
 }
 
@@ -574,10 +537,6 @@ a {
     span {
         @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-700);
         width: max-content;
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Semibold", 1.8rem, none, $shade-700);
-            width: 100%;
-        }
     }
 }
 
@@ -587,6 +546,7 @@ a {
     @include fnFlex(column, center, flex-start, 8rem);
     padding: 20rem 15rem 10rem 15rem;
     @media (max-width: 1200px) {
+        @include fnFlex(column, center, center, 8rem);
         padding: 20rem 10rem 10rem 10rem;
     }
     #hola-head {
@@ -598,20 +558,13 @@ a {
 
         h2 {
             @include fnFont("Raleway-Regular", 2rem, none, $shade-700);
-            @media (max-width: 1200px) {
-                @include fnFont("Raleway-Regular", 3rem, none, $shade-700);
-            }
-            margin: 0px;
         }
         h1 {
             @include fnFont("Raleway-Bold", 8.5rem, none, $red-800);
             padding-bottom: 1rem;
             @media (max-width: 1200px) {
-                @include fnFont("Raleway-Bold", 6rem, none, $red-800);
                 padding-bottom: 3rem;
             }
-
-            margin: 0px;
         }
         #hola-head__text__pointer {
             @include fnFlex(row, space-between, center, 2rem);
@@ -622,7 +575,6 @@ a {
             width: 43%;
             line-height: 5rem;
             @media (max-width: 1200px) {
-                @include fnFont("RockSalt-Regular", 3rem, none, $shade-800);
                 width: 49%;
             }
         }
@@ -634,7 +586,6 @@ a {
             @include fnFont("IBM Plex Mono", 2.5rem, none, $shade-800);
             width: 55%;
             @media (max-width: 1200px) {
-                @include fnFont("IBM Plex Mono", 3rem, none, $shade-800);
                 width: 49%;
             }
         }
@@ -648,17 +599,14 @@ a {
                 border-radius: 50%;
                 background: #f7f7f7;
                 box-shadow:
-                    2rem 2rem 4rem rgba(#5010F3, 0.2),
-                    -2rem -2rem 4rem rgba(#FF2079, 0.2);
+                    2rem 2rem 4rem rgba(#5010f3, 0.2),
+                    -2rem -2rem 4rem rgba(#ff2079, 0.2);
             }
         }
     }
     #hola-text {
         p {
             @include fnFont("Raleway-Medium", 2.4rem, none, $shade-600);
-            @media (max-width: 1200px) {
-                @include fnFont("Raleway-Medium", 2.8rem, none, $shade-600);
-            }
         }
     }
 }
@@ -694,37 +642,20 @@ a {
                 @include fnFlex(column, space-between, flex-start, 0.5rem);
                 h3 {
                     @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-700);
-                    @media (max-width: 1200px) {
-                        @include fnFont("Raleway-Semibold", 3rem, none, $shade-700);
-                    }
-                    margin: 0px;
                 }
                 span {
                     @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-700);
-                    @media (max-width: 1200px) {
-                        @include fnFont("Raleway-Semibold", 2rem, none, $shade-700);
-                    }
-                    margin: 0px;
                 }
             }
         }
         h4 {
-            margin: 0px;
             @include fnFont("Raleway-Semibold", 2rem, none, $shade-700);
-            @media (max-width: 1200px) {
-                @include fnFont("Raleway-Semibold", 2.5rem, none, $shade-700);
-            }
         }
         ul {
             padding-left: 3rem;
-            margin: 0px;
         }
         li {
             @include fnFont("Raleway-Medium", 1.6rem, none, $shade-600);
-            @media (max-width: 1200px) {
-                @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-            }
-            margin: 0px;
         }
     }
 }
@@ -741,7 +672,7 @@ a {
 #getInTouch {
     .contact-card {
         @include fnFlex(row, space-between, flex-end, 2rem);
-        width: 100%;    
+        width: 100%;
         @media (max-width: 1200px) {
             @include fnFlex(column, flex-start, flex-start, 5rem);
         }
@@ -749,10 +680,6 @@ a {
             @include fnFlex(column, flex-start, flex-start, 2rem);
             p {
                 @include fnFont("Raleway-Medium", 2.4rem, none, $shade-700);
-                @media (max-width: 1200px) {
-                    @include fnFont("Raleway-Medium", 2.8rem, none, $shade-700);
-                }
-                margin: 0px;
             }
             &-link {
                 @include fnFlex(row, flex-start, center, 1rem);
@@ -767,10 +694,6 @@ a {
                 }
                 span {
                     @include fnFont("Raleway-Medium", 2rem, none, $shade-700);
-                    @media (max-width: 1200px) {
-                        @include fnFont("Raleway-Medium", 2.5rem, none, $shade-700);
-                    }
-                    margin: 0px;
                 }
             }
         }
@@ -797,7 +720,7 @@ footer {
     background-color: $shade-900;
     color: $shade-0;
     @include fnFlex(row, space-between, center, 5rem);
-    flex-direction: row;
+    flex-direction: row !important;
     @media (max-width: 800px) {
         @include fnFlex(column, space-between, center, 5rem);
     }
@@ -816,16 +739,9 @@ footer {
             }
             h4 {
                 @include fnFont("Raleway-Bold", 2rem, none, $shade-0);
-                @media (max-width: 800px) {
-                    @include fnFont("Raleway-Bold", 4rem, none, $shade-0);
-                }
-                margin: 0px;
             }
             span {
-                @include fnFont("Raleway-Medium", 1rem, none, $shade-0);
-                @media (max-width: 800px) {
-                    @include fnFont("Raleway-Medium", 2rem, none, $shade-0);
-                }
+                @include fnFont("Raleway-Medium", 1.4rem, none, $shade-0);
                 cursor: pointer;
                 transition: all 0.3s ease-in-out;
                 &:hover {
@@ -833,10 +749,7 @@ footer {
                 }
 
                 &.active {
-                    @include fnFont("Raleway-Bold", 1rem, none, $red-800);
-                    @media (max-width: 1200px) {
-                        @include fnFont("Raleway-Bold", 2rem, none, $red-800);
-                    }
+                    @include fnFont("Raleway-Bold", 1.5rem, none, $red-800);
                     text-decoration: none;
                 }
             }
@@ -866,18 +779,9 @@ footer {
     h1 {
         @include fnFont("Raleway-Bold", 4rem, none, $red-700);
         padding-bottom: 1rem;
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Bold", 6rem, none, $red-700);
-            padding-bottom: 3rem;
-        }
-
-        margin: 0px;
     }
     p {
         @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Medium", 2.5rem, none, $shade-600);
-        }
     }
     .work__cta {
         @include fnFlex(row, flex-start, center, 1rem);
@@ -893,11 +797,7 @@ footer {
 #my-works {
     padding: 10rem 15rem;
     #span {
-        @include fnFont("Raleway-Medium", 1.6rem, none, $shade-600);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-        }
-        margin: 0px;
+        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
     }
     @media (max-width: 1200px) {
         padding: 15rem 10rem;
@@ -923,18 +823,12 @@ footer {
                 @include fnFlex(row, center, center, 1rem);
                 transition: all 0.3s ease-in-out;
                 span {
-                    @include fnFont("Raleway-Bold", 1.2rem, none, $shade-0);
-                    @media (max-width: 1200px) {
-                        @include fnFont("Raleway-Bold", 1.6rem, none, $shade-0);
-                    }
+                    @include fnFont("Raleway-Bold", 1.4rem, none, $shade-0);
                 }
                 &.active {
                     background-color: $red-800;
                     span {
-                        @include fnFont("Raleway-Medium", 1.2rem, none, $shade-0);
-                        @media (max-width: 1200px) {
-                            @include fnFont("Raleway-Medium", 1.6rem, none, $shade-0);
-                        }
+                        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-0);
                     }
                     img {
                         display: block;
@@ -964,9 +858,6 @@ footer {
                 width: 4px;
                 span {
                     @include fnFont("Raleway-Bold", 1.4rem, none, $shade-600);
-                    @media (max-width: 1200px) {
-                        @include fnFont("Raleway-Bold", 2rem, none, $shade-600);
-                    }
                 }
             }
         }
@@ -984,7 +875,7 @@ footer {
                     span {
                         background-color: $shade-800;
                         padding: 0.5rem 1rem;
-                        @include fnFont("Raleway-Bold", 1.2rem, none, $shade-0);
+                        @include fnFont("Raleway-Bold", 1.4rem, none, $shade-0);
                         border-radius: 0rem 1rem 1rem 1rem;
                         filter: drop-shadow(0px 2px 0.5rem $shade-500);
                         display: none;
@@ -992,9 +883,6 @@ footer {
                         z-index: 10;
                         top: 1.7rem;
                         left: 1.7rem;
-                        @media (max-width: 1200px) {
-                            @include fnFont("Raleway-Bold", 1.6rem, none, $shade-0);
-                        }
                     }
                     &:hover {
                         background-color: $red-800;
@@ -1027,42 +915,26 @@ footer {
             }
         }
         &-info {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 5rem;
+            @include fnFlex(row, center, center, 5rem);
             width: 100%;
             &__card {
                 transition: all 0.3s ease-in-out;
                 width: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-                align-items: center;
+                @include fnFlex(column, center, center, 2rem);
                 text-align: center;
                 height: 12rem;
                 @media (max-width: 1200px) {
                     height: 25rem;
                 }
                 &-head {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 2rem;
+                    @include fnFlex(row, center, center, 2rem);
                     width: 100%;
-                    justify-content: center;
                     @media (max-width: 1200px) {
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
+                        @include fnFlex(column, center, center, 1rem);
                         text-align: center;
-                        gap: 1rem;
                     }
                     &__text {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        align-items: flex-start;
+                        @include fnFlex(column, space-between, flex-start, 0.5rem);
                         text-align: left;
                         @media (max-width: 1200px) {
                             align-items: center;
@@ -1070,28 +942,17 @@ footer {
                         }
                         h2 {
                             @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-700);
-                            margin: 0px;
-                            @media (max-width: 1200px) {
-                                @include fnFont("Raleway-Semibold", 3rem, none, $shade-700);
-                            }
                         }
                         p {
                             @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-                            margin: 0px;
-                            @media (max-width: 1200px) {
-                                @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-                            }
                         }
                     }
                 }
             }
             h3 {
                 @include fnFont("Raleway-Semibold", 2rem, none, $shade-700);
-                margin: 0px;
+
                 height: max-content;
-                @media (max-width: 1200px) {
-                    @include fnFont("Raleway-Semibold", 2.5rem, none, $shade-700);
-                }
             }
             #cardUno,
             #cardTres {
@@ -1110,6 +971,7 @@ footer {
     padding-top: 10rem;
     align-items: center;
     .resume__sheet {
+        @include fnCard("s");
         width: 210mm;
         height: 297mm;
         background: white;
@@ -1117,30 +979,19 @@ footer {
         box-sizing: border-box;
         border-radius: 3mm;
         &-body {
+            @include fnFlex(column, flex-start, center, 5mm);
             width: 100%;
             height: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 5mm;
-            align-items: center;
-            justify-content: flex-start;
             overflow: hidden;
         }
-
         &-header {
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1mm;
+            @include fnFlex(column, center, center, 1mm);
             h1 {
                 @include fnFont("Raleway-Bold", 48px, none, $shade-700);
-                margin: 0px;
             }
             h2 {
                 @include fnFont("Raleway-Bold", 16px, none, $shade-700);
-                margin: 0px;
             }
             hr {
                 width: 100%;
@@ -1150,38 +1001,24 @@ footer {
                 border: none;
             }
         }
-
         &-content {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 10mm;
+            @include fnFlex(row, center, flex-start, 10mm);
             width: 100%;
             &__info {
+                @include fnFlex(column, center, flex-start, 5mm);
                 width: 30%;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5mm;
                 &-card {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1mm;
+                    @include fnFlex(column, center, flex-start, 1mm);
                     h3 {
                         @include fnFont("Raleway-Bold", 18px, none, $shade-700);
-                        margin: 0px;
                     }
                     &__bullets {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 0.8mm;
+                        @include fnFlex(column, center, flex-start, 0.8mm);
                         p {
                             @include fnFont("Raleway-Medium", 11px, none, $shade-500);
-                            margin: 0px;
                         }
                         a {
                             p {
-                                margin: 0px;
                                 @include fnFont("Raleway-Medium", 11px, none, $shade-700);
                             }
                         }
@@ -1190,39 +1027,31 @@ footer {
             }
             &__body {
                 width: 70%;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5mm;
+                @include fnFlex(column, flex-start, flex-start, 5mm);
                 &-card {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2mm;
+                    @include fnFlex(column, flex-start, flex-start, 2mm);
                     h3 {
                         @include fnFont("Raleway-Bold", 18px, none, $shade-700);
-                        margin: 0px;
                     }
                     &-summary {
                         ul {
-                            padding-left: 2mm;
+                            padding-left: 4mm;
                             @include fnFont("Raleway-Medium", 11px, none, $shade-700);
-                            margin: 0px;
                         }
                     }
                     &-experiencia {
                         padding: 2mm 0px 0px 0px;
                         h4 {
                             @include fnFont("Raleway-Medium", 11px, none, $shade-700);
-                            margin: 0px;
                         }
                         &__ubicacion {
                             @include fnFont("Raleway-Medium", 11px, none, $shade-500);
-                            margin: 0px;
+
                             padding-bottom: 5mm;
                         }
                         ul {
                             margin: 0;
-                            padding-left: 2mm;
+                            padding-left: 4mm;
                             @include fnFont("Raleway-Medium", 11px, none, $shade-500);
                         }
                     }
@@ -1245,28 +1074,17 @@ footer {
         padding: 15rem 10rem;
     }
     #span {
-        @include fnFont("Raleway-Medium", 1.6rem, none, $shade-600);
-        @media (max-width: 800px) {
-            @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-        }
-        margin: 0px;
+        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
     }
     .tab {
-        display: flex;
-        flex-direction: row;
-        gap: 5rem;
+        @include fnFlex(row, center, center, 5rem);
         width: 100%;
         &-buttons {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
+            @include fnFlex(row, space-between, center, 1rem);
             width: 100%;
             &__item {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 1rem;
+                @include fnFlex(row, center, center, 1rem);
+                @include fnCard("m");
                 padding: 1rem 2rem;
                 cursor: pointer;
                 transition: all 0.3s ease-in-out;
@@ -1282,11 +1100,7 @@ footer {
                     }
                 }
                 span {
-                    @include fnFont("Raleway-Medium", 1.8rem, none, $shade-800);
-                    @media (max-width: 1200px) {
-                        @include fnFont("Raleway-Medium", 2.5rem, none, $shade-800);
-                    }
-                    margin: 0px;
+                    @include fnFont("Raleway-Medium", 1.4rem, none, $shade-800);
                 }
                 &.active {
                     background-color: $shade-0;
@@ -1310,38 +1124,26 @@ footer {
             }
         }
         &-body {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
+            @include fnFlex(column, flex-start, flex-start, 5rem);
+            @include fnCard("m");
             width: 100%;
-            gap: 5rem;
             background-color: $shade-0;
-            width: calc(100% - 26rem);
+            width: calc(100% - 16rem);
             padding: 3rem;
-            margin: 0px 10rem;
-            border-radius: 2rem;
+            margin: 0px 5rem;
             @media (max-width: 800px) {
                 width: calc(100% - 6rem);
-                margin: 0px;
             }
             span {
                 color: $shade-600;
-                @include fnFont("Raleway-Medium", 1.6rem, none, $shade-600);
-                @media (max-width: 800px) {
-                    @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-                }
-                margin: 0px;
+                @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
             }
         }
         &-content {
-            display: flex;
-            flex-direction: row;
-            gap: 3rem;
+            @include fnFlex(row, center, flex-start, 3rem);
             width: 100%;
             @media (max-width: 800px) {
-                flex-direction: column;
-                align-items: center;
+                @include fnFlex(column, center, center, 3rem);
             }
             .div-img {
                 height: 20rem;
@@ -1356,43 +1158,22 @@ footer {
                 }
             }
             &__info {
+                width: 100%;
                 &-text {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2rem;
+                    @include fnFlex(column, flex-start, flex-start, 2rem);
                     width: 100%;
                     h2 {
                         @include fnFont("Raleway-semibold", 2.4rem, none, $shade-800);
-                        @media (max-width: 800px) {
-                            @include fnFont("Raleway-semibold", 3rem, none, $shade-800);
-                        }
-                        margin: 0px;
                     }
                     h4 {
                         @include fnFont("Raleway-semibold", 1.8rem, none, $shade-800);
-                        @media (max-width: 800px) {
-                            @include fnFont("Raleway-semibold", 2.5rem, none, $shade-800);
-                        }
-                        margin: 0px;
                     }
                     &__list {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
+                        @include fnFlex(row, space-between, space-between, 0rem);
                         padding: 2rem 5rem 0px 5rem;
-                        width: calc(100% - 10rem);
-
-                        @media (max-width: 1200px) {
-                            flex-wrap: wrap;
-                            gap: 5rem;
-                            row-gap: 2.5rem;
-                            justify-content: center;
-                        }
+                        width: calc(100% - 5rem);
                         &-item {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            gap: 0.5rem;
+                            @include fnFlex(column, center, center, 0.5rem);
                             img {
                                 width: 3rem;
                                 height: 3rem;
@@ -1403,9 +1184,6 @@ footer {
                             }
                             span {
                                 @include fnFont("Raleway-semibold", 1.4rem, none, $shade-800);
-                                @media (max-width: 1200px) {
-                                    @include fnFont("Raleway-semibold", 2rem, none, $shade-800);
-                                }
                             }
                         }
                     }
@@ -1414,41 +1192,20 @@ footer {
         }
     }
     .music-list {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 3rem;
+        @include fnFlex(row, flex-start, flex-start, 3rem);
         width: 100%;
         clip-path: fill-box;
         overflow-x: scroll;
 
         .music-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
+            @include fnFlex(column, center, center, 1rem);
+            @include fnCard("m");
             max-width: 30rem;
             width: 100%;
             min-width: 20rem;
-            padding: 2rem;
-            border-radius: 1rem;
             background-color: $shade-25;
-            transition: all 0.3s ease-in-out;
             margin: 0rem 0px 5rem 0px;
             display: block;
-            &:hover {
-                box-shadow:
-                    20px 20px 40px #e6e6e6,
-                    -20px -20px 40px #ffffff;
-                transform: scale(1.05);
-            }
-
-            /* @media (max-width: 800px) {
-                flex-direction: row;
-                max-width: calc(100% - 4rem);
-                gap: 3rem;
-                align-items: flex-start;
-            } */
             &__cover {
                 width: 100%;
                 aspect-ratio: 1/1;
@@ -1458,38 +1215,24 @@ footer {
                 background-size: cover;
             }
             &__info {
+                @include fnFlex(column, center, flex-start, 1rem);
                 width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
                 h3 {
                     @include fnFont("Raleway-Black", 3rem, none, $shade-800);
                     margin-bottom: 1rem;
-                    @media (max-width: 800px) {
-                        @include fnFont("Raleway-Black", 3.2rem, none, $shade-800);
-                    }
                 }
                 p {
                     @include fnFont("Raleway-Semibold", 1.6rem, none, $shade-600);
-                    margin: 0px;
-                    @media (max-width: 800px) {
-                        @include fnFont("Raleway-Semibold", 2rem, none, $shade-600);
-                    }
                 }
                 #year {
                     @include fnFont("Raleway-Regular", 1.6rem, none, $shade-600);
-                    @media (max-width: 800px) {
-                        @include fnFont("Raleway-Regular", 2rem, none, $shade-600);
-                    }
                 }
             }
         }
     }
     .frame-container {
-        display: flex;
+        @include fnFlex(row, center, center, 0rem);
         width: 100%;
-        align-items: center;
-        justify-content: center;
         div {
             width: calc((100% - 1rem * 7) / 8);
             clip-path: none;
@@ -1502,44 +1245,31 @@ footer {
         }
     }
     .receipe {
-        display: flex;
-        flex-direction: row;
+        @include fnFlex(row, center, center, 5rem);
         width: 80%;
-        gap: 5rem;
         text-align: left;
         @media (max-width: 800px) {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 5rem;
+            @include fnFlex(column, center, flex-start, 5rem);
             width: 80%;
         }
         &__ingredients {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            @include fnFlex(column, center, flex-start, 2rem);
             width: 40%;
             @media (max-width: 800px) {
                 width: 100%;
             }
             h3 {
                 @include fnFont("Raleway-Semibold", 1.6rem, none, $shade-800);
-                margin: 0px;
             }
             &-list {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
+                @include fnFlex(column, flex-start, flex-start, 1rem);
                 &-item {
-                    display: flex;
-                    align-items: center;
-                    gap: 1rem;
-                    flex-direction: row;
+                    @include fnFlex(row, center, center, 1rem);
                 }
             }
         }
         &__instructions {
-            display: flex;
-            flex-direction: column;
+            @include fnFlex(column, center, flex-start, 2rem);
             gap: 2rem;
             width: 60%;
             @media (max-width: 800px) {
@@ -1547,17 +1277,11 @@ footer {
             }
             h3 {
                 @include fnFont("Raleway-Semibold", 1.6rem, none, $shade-800);
-                margin: 0px;
             }
             &-list {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
+                @include fnFlex(column, flex-start, flex-start, 1rem);
                 &-item {
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 1rem;
-                    flex-direction: row;
+                    @include fnFlex(row, center, flex-start, 1rem);
                 }
             }
         }
@@ -1569,32 +1293,11 @@ footer {
 #summary {
     padding-top: 15rem;
     .sumario-card {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        width: 100%;
-        padding: 2rem;
-        border-radius: 1rem;
-        background-color: $shade-0;
-        transition: all 0.3s ease-in-out;
-        gap: 3rem;
+        @include fnFlex(row, flex-start, flex-start, 3rem);
+        @include fnCard("m");
+        width: calc(100% - 4rem);
         @media (max-width: 800px) {
-            flex-direction: column;
-            align-items: center;
-        }
-        &:hover {
-            border-radius: 2rem;
-            box-shadow:
-                2rem 2rem 4rem #d2d2d2,
-                -2rem -2rem 4rem #ffffff;
-            transition: all 0.3s ease-in-out;
-            transform: scale(1.02);
-            .img-cover {
-                display: none;
-            }
-            .gif-cover {
-                display: block;
-            }
+            @include fnFlex(column, center, center, 3rem);
         }
         &__photo {
             border-radius: 1rem;
@@ -1604,83 +1307,47 @@ footer {
             }
         }
         &__body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            @include fnFlex(column, space-between, flex-start, 1rem);
             width: 100%;
             &-text {
-                display: flex;
-                flex-direction: column;
-                gap: 3rem;
+                @include fnFlex(column, flex-start, flex-start, 3rem);
                 width: 100%;
                 &-upper {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1.5rem;
+                    @include fnFlex(column, space-between, flex-start, 1.5rem);
                     width: 100%;
                     &-head {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
+                        @include fnFlex(row, space-between, center, 2rem);
+                        width: 100%;
                         h2 {
                             @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-800);
-                            margin: 0px;
-                            @media (max-width: 1200px) {
-                                @include fnFont("Raleway-Semibold", 3rem, none, $shade-800);
-                            }
                         }
                         span {
                             @include fnFont("Raleway-Bold", 1.4rem, none, $shade-800);
-                            margin: 0px;
-                            @media (max-width: 1200px) {
-                                @include fnFont("Raleway-Bold", 2rem, none, $shade-800);
-                            }
                         }
                     }
                     span {
                         @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-600);
-                        margin: 0px;
-                        @media (max-width: 1200px) {
-                            @include fnFont("Raleway-Semibold", 2rem, none, $shade-600);
-                        }
                     }
                 }
                 &-lower {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 5rem;
-                    padding-bottom: 2rem;
+                    @include fnFlex(row, flex-start, flex-start, 5rem);
                     padding: 0px 5rem;
+                    padding-bottom: 2rem;
                     @media (max-width: 1200px) {
-                        flex-direction: column;
-                        align-items: center;
-                        gap: 2rem;
+                        @include fnFlex(column, center, center, 2rem);
                         padding: 0px;
                     }
                     &-bullets {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1rem;
+                        @include fnFlex(column, flex-start, flex-start, 1rem);
                         width: 100%;
                         h3 {
                             @include fnFont("Raleway-Regular", 1.4rem, none, $shade-800);
-                            margin: 0px;
-                            @media (max-width: 1200px) {
-                                @include fnFont("Raleway-Regular", 2rem, none, $shade-800);
-                            }
                         }
                         span {
                             @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-                            margin: 0px;
-                            @media (max-width: 1200px) {
-                                @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-                            }
                         }
                         #principal {
                             @include fnFont("Raleway-Semibold", 1.4rem, underline dotted, $shade-600);
-                            @media (max-width: 1200px) {
-                                @include fnFont("Raleway-Semibold", 2rem, underline dotted, $shade-600);
-                            }
                         }
                     }
                 }
@@ -1693,54 +1360,34 @@ footer {
 #context {
     span {
         @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-        }
-        margin: 0px;
     }
     .time-list {
-        display: flex;
-        flex-direction: row;
-        gap: 4rem;
+        @include fnFlex(row, center, center, 4rem);
         width: 100%;
         @media (max-width: 800px) {
-            flex-direction: column;
-            align-items: center;
+            @include fnFlex(column, center, center, 4rem);
         }
         .time-card {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            @include fnFlex(column, center, center, 2rem);
             width: 100%;
-            align-items: center;
             h4 {
                 @include fnFont("Raleway-Bold", 1.4rem, none, $shade-800);
-                margin: 0px;
-                @media (max-width: 1200px) {
-                    @include fnFont("Raleway-Bold", 2rem, none, $shade-800);
-                }
             }
             &-body {
-                display: flex;
-                flex-direction: row;
-                gap: 5rem;
-                width: calc(100% - 6rem);
+                @include fnFlex(row, center, center, 5rem);
+                width: calc(100% - 10rem);
                 border-radius: 1rem;
                 border-style: dotted;
                 border-width: 0.3rem;
-                padding: 3rem;
+                padding: 5rem;
                 @media (max-width: 800px) {
-                    flex-direction: column;
-                    align-items: center;
-                    width: calc(100% - 6rem);
+                    @include fnFlex(column, center, center, 5rem);
+                    width: calc(100% - 10rem);
                     border-width: 0.4rem;
                 }
                 &__item {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2rem;
+                    @include fnFlex(column, center, center, 2rem);
                     width: 100%;
-                    align-items: center;
                     img {
                         width: 5rem;
                         height: 5rem;
@@ -1750,33 +1397,19 @@ footer {
                         }
                     }
                     &-head {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        gap: 1rem;
+                        @include fnFlex(column, center, center, 1rem);
                         h5 {
                             @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-500);
-                            margin: 0px;
-                            @media (max-width: 1200px) {
-                                @include fnFont("Raleway-Semibold", 2rem, none, $shade-500);
-                            }
                         }
                         h6 {
                             @include fnFont("Raleway-Medium", 2rem, none, $shade-700);
                             text-align: center;
-                            margin: 0px;
-                            @media (max-width: 1200px) {
-                                @include fnFont("Raleway-Medium", 2.5rem, none, $shade-700);
-                            }
                         }
                     }
                     span {
                         @include fnFont("Raleway-Medium", 1.4rem, none, $shade-700);
-                        margin: 0px;
+
                         text-align: center;
-                        @media (max-width: 1200px) {
-                            @include fnFont("Raleway-Medium", 2rem, none, $shade-700);
-                        }
                     }
                 }
             }
@@ -1785,10 +1418,6 @@ footer {
     .bullet-point {
         &__title {
             @include fnFont("Raleway-Bold", 1.4rem, none, $shade-600);
-            margin: 0px;
-            @media (max-width: 1200px) {
-                @include fnFont("Raleway-Bold", 2rem, none, $shade-600);
-            }
         }
     }
 }
@@ -1797,71 +1426,35 @@ footer {
 #technologies-used {
     span {
         @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-        }
     }
     .tokens-list {
-        display: flex;
-        flex-direction: row;
-        gap: 3rem;
+        @include fnFlex(row, center, center, 3rem);
         width: 100%;
         @media (max-width: 800px) {
-            flex-direction: column;
-            align-items: center;
+            @include fnFlex(column, center, center, 3rem);
         }
         &__card {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-            background-color: #fff;
-            border-radius: 2rem;
-            padding: 2rem;
+            @include fnFlex(column, center, center, 3rem);
+            @include fnCard("m");
+            width: calc(100% - 4rem);
             @media (max-width: 800px) {
                 padding: 3rem;
             }
-            &:hover {
-                border-radius: 2rem;
-                box-shadow:
-                    2rem 2rem 4rem #d2d2d2,
-                    -2rem -2rem 4rem #ffffff;
-                transition: all 0.3s ease-in-out;
-                transform: scale(1.02);
-                .img-cover {
-                    display: none;
-                }
-                .gif-cover {
-                    display: block;
-                }
-            }
             &-header {
                 width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                @include fnFlex(row, space-between, center, 1rem);
                 padding-bottom: 2rem;
                 border-bottom: 0.2rem solid $shade-200;
                 span {
                     @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-700);
-                    @media (max-width: 800px) {
-                        @include fnFont("Raleway-Semibold", 2rem, none, $shade-700);
-                    }
-                    margin: 0px;
                 }
                 &-title {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 1rem;
+                    @include fnFlex(row, center, center, 1rem);
                     img {
                         width: 2rem;
                     }
                     span {
                         @include fnFont("Raleway-Semibold", 2rem, none, $shade-700);
-                        @media (max-width: 800px) {
-                            @include fnFont("Raleway-Semibold", 2.5rem, none, $shade-700);
-                        }
-                        margin: 0px;
                     }
                 }
             }
@@ -1886,27 +1479,19 @@ footer {
                 width: 100%;
             }
             .tokens-list__card-kpis {
-                display: flex;
-                flex-direction: row;
-                gap: 5rem;
+                @include fnFlex(row, center, center, 5rem);
                 &__column {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 3rem;
+                    @include fnFlex(column, center, center, 3rem);
                     width: 100%;
                 }
             }
         }
     }
     .kpis-list {
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
+        @include fnFlex(row, center, center, 2rem);
         width: 100%;
         @media (max-width: 800px) {
-            flex-direction: column;
-            align-items: center;
-            gap: 5rem;
+            @include fnFlex(column, center, center, 5rem);
         }
         img {
             width: 4rem;
@@ -1916,27 +1501,18 @@ footer {
             }
         }
         &__card {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
+            @include fnFlex(column, center, center, 3rem);
             width: 100%;
             &-header {
-                display: flex;
-                flex-direction: row;
-                gap: 1rem;
+                @include fnFlex(row, center, center, 1rem);
                 width: 100%;
-                justify-content: center;
-                align-items: center;
                 @media (max-width: 800px) {
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
+                    @include fnFlex(column, center, center, 1rem);
                 }
                 span {
                     @include fnFont("Raleway-Semibold", 2rem, none, $shade-700);
-                    margin: 0px;
+
                     @media (max-width: 800px) {
-                        @include fnFont("Raleway-Semibold", 2.5rem, none, $shade-700);
                         text-align: center;
                     }
                 }
@@ -1948,12 +1524,8 @@ footer {
                 }
             }
             &-body {
-                display: flex;
-                flex-direction: row;
+                @include fnFlex(row, center, center, 2rem);
                 flex-wrap: wrap;
-                align-items: center;
-                justify-content: center;
-                gap: 2rem;
                 width: 100%;
                 border-radius: 1rem;
                 .card-kpi {
@@ -1968,78 +1540,42 @@ footer {
 #improvement-of-inputs {
     span {
         @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-        }
     }
     .subtitle {
         @include fnFont("Raleway-Bold", 1.6rem, none, $shade-600);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Bold", 2.2rem, none, $shade-600);
-        }
     }
     .bullet {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        @include fnFlex(column, center, flex-start, 1rem);
+        width: 100%;
         &__body {
-            display: flex;
-            flex-direction: row;
-            gap: 5rem;
-            align-items: flex-start;
+            @include fnFlex(row, center, flex-start, 5rem);
             @media (max-width: 800px) {
                 flex-direction: column;
                 align-items: center;
             }
             &__card {
-                display: flex;
-                flex-direction: row;
-                padding: 2rem;
-                border-radius: 2rem;
-                background-color: $shade-0;
-                gap: 3rem;
+                @include fnFlex(row, center, center, 3rem);
+                @include fnCard("s");
                 width: 100%;
                 @media (max-width: 800px) {
                     width: calc(100% - 4rem);
-                    padding: 3rem;
-                }
-                &:hover {
-                    border-radius: 2rem;
-                    transition: all 0.3s ease-in-out;
-                    transform: scale(1.02);
-                    .img-cover {
-                        display: none;
-                    }
-                    .gif-cover {
-                        display: block;
-                    }
                 }
                 &-schema {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
+                    @include fnFlex(column, center, flex-start, 1rem);
                 }
                 &-title {
                     @include fnFont("Raleway-Bold", 2rem, none, $shade-700);
-                    @media (max-width: 1200px) {
-                        @include fnFont("Raleway-Bold", 2.5rem, none, $shade-700);
-                    }
                 }
             }
             li {
                 color: $shade-600;
                 @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-                @media (max-width: 1200px) {
-                    @include fnFont("Raleway-Medium", 1.8rem, none, $shade-600);
-                }
-                margin: 0px;
             }
         }
         &__carrousel {
-            display: flex;
-            flex-direction: row;
+            @include fnFlex(row, flex-start, center, 3rem);
             overflow-x: auto;
-            gap: 3rem;
+            clip-path: fill-box;
             width: calc(100% - 10rem);
             margin: 0rem 5rem;
             .bullet__body__card {
@@ -2056,93 +1592,53 @@ footer {
 #automatizacion-de-procesos,
 #automation-of-processes {
     span {
+        width: 100%;
         @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-        }
     }
     .subtitle {
+        width: 100%;
         @include fnFont("Raleway-Bold", 1.6rem, none, $shade-600);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Bold", 2.2rem, none, $shade-600);
-        }
     }
     .plugins {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
+        @include fnFlex(column, center, center, 2rem);
         width: 100%;
         &-carrousel {
-            display: flex;
-            flex-direction: row;
+            @include fnFlex(row, flex-start, center, 3rem);
             overflow-x: auto;
-            gap: 3rem;
             width: calc(100% - 10rem);
             margin: 0rem 5rem;
             &__card {
-                background-color: $shade-0;
-                border-radius: 2rem;
-                padding: 2rem;
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
+                @include fnFlex(column, center, center, 2rem);
+                @include fnCard("m");
                 min-width: 40%;
                 margin: 3rem 0px;
                 @media (max-width: 800px) {
                     min-width: 80%;
                     padding: 3rem;
                 }
-                &:hover {
-                    border-radius: 2rem;
-                    transition: all 0.3s ease-in-out;
-                    transform: scale(1.02);
-                    .img-cover {
-                        display: none;
-                    }
-                    .gif-cover {
-                        display: block;
-                    }
-                }
                 &-header {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
+                    @include fnFlex(row, flex-start, center, 0.5rem);
                     width: 100%;
-                    gap: 0.5rem;
                     &-title {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        gap: 0rem;
+                        @include fnFlex(column, center, flex-start, 0rem);
                         span {
                             @include fnFont("Raleway-Bold", 1.4rem, none, $shade-700);
                             text-transform: uppercase;
                             letter-spacing: 0.25rem;
-                            @media (max-width: 1200px) {
-                                @include fnFont("Raleway-Bold", 2.2rem, none, $shade-700);
-                            }
-                            margin: 0px;
                         }
                     }
                     &-tech {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        justify-content: flex-end;
-                        gap: 0rem;
+                        @include fnFlex(row, flex-end, center, 0rem);
                         width: 100%;
                     }
                 }
                 &-kpi-list {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 2rem;
+                    @include fnFlex(row, center, center, 2rem);
                     img {
                         width: 4rem;
                     }
                     @media (max-width: 1200px) {
-                        flex-direction: column;
-                        align-items: center;
+                        @include fnFlex(column, center, center, 2rem);
                         img {
                             transform: rotate(90deg);
                         }
@@ -2150,16 +1646,9 @@ footer {
                 }
                 li {
                     @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-                    @media (max-width: 1200px) {
-                        @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-                    }
                 }
                 .subtitle {
                     @include fnFont("Raleway-Semibold", 1.6rem, none, $shade-600);
-                    margin: 0px;
-                    @media (max-width: 1200px) {
-                        @include fnFont("Raleway-Semibold", 2.2rem, none, $shade-600);
-                    }
                 }
             }
         }
@@ -2172,9 +1661,7 @@ footer {
         padding: 3rem 0px;
         width: calc(100% - 10rem);
         @media (max-width: 800px) {
-            flex-direction: column;
-            align-items: center;
-            gap: 3rem;
+            @include fnFlex(column, center, center, 3rem);
         }
         .plugins-carrousel__card {
             width: calc(100% - 10rem);
@@ -2195,95 +1682,50 @@ footer {
 #future-steps {
     span {
         @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
-        }
     }
     .subtitle {
         @include fnFont("Raleway-Bold", 1.6rem, none, $shade-600);
-        @media (max-width: 1200px) {
-            @include fnFont("Raleway-Bold", 2.2rem, none, $shade-600);
-        }
+        width: 100%;
     }
     .bullet {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        @include fnFlex(column, center, center, 1rem);
+        width: 100%;
         &__body {
-            display: flex;
-            flex-direction: row;
-            gap: 5rem;
-            align-items: flex-start;
+            @include fnFlex(row, center, flex-start, 5rem);
             @media (max-width: 800px) {
-                flex-direction: column;
-                align-items: center;
+                @include fnFlex(column, center, center, 5rem);
             }
         }
-        img{
-            width: 100rem;
-            @media (max-width: 1200px) {
-                width: 80rem;
-            }
+        img {
+            width: 100%;
         }
     }
     .backlog {
-        display: flex;
-        flex-direction: row;
+        @include fnFlex(row, center, flex-start, 3rem);
         flex-wrap: wrap;
-        gap: 3rem;
-        align-items: flex-start;
-        justify-content: center;
-        justify-items: center;
         &__card {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            @include fnFlex(column, center, flex-start, 2rem);
+            @include fnCard("m");
             width: calc(calc(100% / 3) - 7rem);
-            align-items: flex-start;
-            background-color: $shade-0;
-            border-radius: 2rem;
-            padding: 2rem;
             @media (max-width: 1200px) {
                 width: calc(50% - 7rem);
             }
             @media (max-width: 800px) {
                 width: 100%;
             }
-            &:hover {
-                border-radius: 2rem;
-                box-shadow:
-                    20px 20px 40px #e6e6e6,
-                    -20px -20px 40px #e6e6e6;
-                transition: all 0.3s ease-in-out;
-                transform: scale(1.05);
-            }
             &-header {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
+                @include fnFlex(row, flex-start, center, 0.5rem);
                 width: 100%;
-                gap: 0.5rem;
                 &-title {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 0rem;
+                    @include fnFlex(column, center, flex-start, 0rem);
                     span {
                         @include fnFont("Raleway-Bold", 1.8rem, none, $shade-700);
                         text-transform: uppercase;
                         letter-spacing: 0.25rem;
-                        @media (max-width: 1200px) {
-                            @include fnFont("Raleway-Bold", 2.2rem, none, $shade-700);
-                        }
-                        margin: 0px;
                     }
                 }
                 &-tag {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: flex-start;
-                    justify-content: flex-end;
-                    gap: 0rem;
+                    @include fnFlex(row, flex-end, flex-start, 0rem);
                     width: 100%;
                     height: 100%;
                     span {
@@ -2291,9 +1733,6 @@ footer {
                         background-color: $shade-900;
                         padding: 0.3rem 0.6rem;
                         border-radius: 0.5rem;
-                        @media (max-width: 1200px) {
-                            @include fnFont("Raleway-Semibold", 1.6rem, none, $shade-0);
-                        }
                     }
                 }
             }

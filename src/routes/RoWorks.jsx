@@ -10,10 +10,23 @@ import { useLocation } from "react-router-dom";
 
 const RoWorks = () => {
 	const { setRuta, setAmplio } = useContext(MyContext);
-    const { language } = useContext(MyContext);
 	const location = useLocation();
+	const { language } = useContext(MyContext);
 
-	setRuta("/works");
+	let anclasWork = [
+		{
+			text: language == "ES" ? "Mis trabajos" : "My works",
+			id: language == "ES" ? "mis-trabajos" : "my-works",
+		},
+		{
+			text: language == "ES" ? "Línea del tiempo" : "Timeline",
+			id: language == "ES" ? "linea-del-tiempo" : "timeline",
+		},
+	];
+
+	useEffect(() => {
+		setRuta("/works");
+	}, []);
 
 	useEffect(() => {
 		setAmplio(false); // Reset amplio on route change
@@ -21,11 +34,11 @@ const RoWorks = () => {
 
 	return (
 		<>
-            <CoNavLeft />
 			<div>
 				<CoTrabajos />
 				<CoTimeline />
 			</div>
+			<CoNavLeft anclas={anclasWork} />
 		</>
 	);
 };

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../context/MyContext.js";
-import sign from "/Greysign.svg";
+import sign from "/sign.svg";
 import { Link } from "react-router-dom";
 
 let foots = [

@@ -11,29 +11,50 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const RoHome = () => {
-    const { setRuta, setAmplio } = useContext(MyContext);
-    const location = useLocation();
+	const { setRuta, setAmplio } = useContext(MyContext);
+	const location = useLocation();
+	const { language } = useContext(MyContext);
 
-    // Mover la actualización de estado a useEffect
-    useEffect(() => {
-        setRuta("/"); // Se ejecuta después del renderizado inicial
-    }, []); // Se ejecuta solo una vez al montar el componente
+	let anclasHome = [
+		{
+			text: language == "ES" ? "Hola" : "Hello",
+			id: language == "ES" ? "hola" : "hello",
+		},
+		{
+			text:
+				language == "ES" ? "Dónde he colaborado" : "Where I have collaborated",
+			id: language == "ES" ? "colab" : "colab",
+		},
+		{
+			text: language == "ES" ? "Mis trabajos destacados" : "My featured works",
+			id: language == "ES" ? "trabajos" : "works",
+		},
+		{
+			text: language == "ES" ? "Conozcámonos" : "Let's get in touch",
+			id: language == "ES" ? "conozcamonos" : "getInTouch",
+		},
+	];
 
-    useEffect(() => {
-        setAmplio(false); // Reset amplio on route change
-    }, [location.pathname]);
+	// Mover la actualización de estado a useEffect
+	useEffect(() => {
+		setRuta("/"); // Se ejecuta después del renderizado inicial
+	}, []); // Se ejecuta solo una vez al montar el componente
 
-    return (
-        <>
-            <CoNavLeft />
-            <div>
-                <CoHola />
-                <CoColab />
-                <CoTrabajos />
-                <CoConozca />
-            </div>
-        </>
-    );
+	useEffect(() => {
+		setAmplio(false); // Reset amplio on route change
+	}, [location.pathname]);
+
+	return (
+		<>
+			<div>
+				<CoHola />
+				<CoColab />
+				<CoTrabajos />
+				<CoConozca />
+			</div>
+			<CoNavLeft anclas={anclasHome} />
+		</>
+	);
 };
 
 export default RoHome;

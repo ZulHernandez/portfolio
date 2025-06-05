@@ -6,7 +6,7 @@ import liver from "../../assets/imgs/home/liverpool.svg";
 import grupoPm from "../../assets/imgs/home/grupoPM.svg";
 import marsoft from "../../assets/imgs/home/marsoft.svg";
 
-let colabs = [
+const colabs = [
 	{
 		name: "El puerto de Liverpool",
 		logo: liver,
