@@ -970,10 +970,10 @@ footer {
             width: 100%;
             @include fnFlex(column, center, center, 1mm);
             h1 {
-                @include fnFont("Raleway-Bold", 48px, none, $shade-700);
+                @include fnFont("Raleway-Bold", 32px, none, $shade-700);
             }
             h2 {
-                @include fnFont("Raleway-Bold", 16px, none, $shade-700);
+                @include fnFont("Raleway-Bold", 12px, none, $shade-700);
             }
             hr {
                 width: 100%;
@@ -992,16 +992,16 @@ footer {
                 &-card {
                     @include fnFlex(column, center, flex-start, 1mm);
                     h3 {
-                        @include fnFont("Raleway-Bold", 18px, none, $shade-700);
+                        @include fnFont("Raleway-Bold", 12px, none, $shade-700);
                     }
                     &__bullets {
                         @include fnFlex(column, center, flex-start, 0.8mm);
                         p {
-                            @include fnFont("Raleway-Medium", 11px, none, $shade-500);
+                            @include fnFont("Raleway-Medium", 10px, none, $shade-500);
                         }
                         a {
                             p {
-                                @include fnFont("Raleway-Medium", 11px, none, $shade-700);
+                                @include fnFont("Raleway-Medium", 10px, none, $shade-700);
                             }
                         }
                     }
@@ -1011,30 +1011,30 @@ footer {
                 width: 70%;
                 @include fnFlex(column, flex-start, flex-start, 5mm);
                 &-card {
-                    @include fnFlex(column, flex-start, flex-start, 2mm);
+                    @include fnFlex(column, flex-start, flex-start, 0mm);
                     h3 {
-                        @include fnFont("Raleway-Bold", 18px, none, $shade-700);
+                        @include fnFont("Raleway-Bold", 12px, none, $shade-700);
                     }
                     &-summary {
                         ul {
                             padding-left: 4mm;
-                            @include fnFont("Raleway-Medium", 11px, none, $shade-700);
+                            @include fnFont("Raleway-Medium", 10px, none, $shade-700);
                         }
                     }
                     &-experiencia {
                         padding: 2mm 0px 0px 0px;
                         h4 {
-                            @include fnFont("Raleway-Medium", 11px, none, $shade-700);
+                            @include fnFont("Raleway-Medium", 10px, none, $shade-700);
                         }
                         &__ubicacion {
-                            @include fnFont("Raleway-Medium", 11px, none, $shade-500);
+                            @include fnFont("Raleway-Medium", 10px, none, $shade-500);
 
                             padding-bottom: 5mm;
                         }
                         ul {
                             margin: 0;
                             padding-left: 4mm;
-                            @include fnFont("Raleway-Medium", 11px, none, $shade-500);
+                            @include fnFont("Raleway-Medium", 10px, none, $shade-500);
                         }
                     }
                 }
@@ -1747,5 +1747,28 @@ footer {
                 }
             }
         }
+    }
+}
+
+@media print {
+    .nav-header,
+    .tags-list,
+    .btn,
+    .secondary,
+    .resume__sheet,
+    .no-print{
+        display: none;
+    }
+
+    .container-fluid {
+        padding: 0;
+        margin: 0;
+    }
+
+    .printable {
+        display: block;
+        zoom: 2.05;
+        height: max-content;
+        width: 100%;
     }
 }

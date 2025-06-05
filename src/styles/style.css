@@ -1715,24 +1715,24 @@ footer img {
 }
 #resume .resume__sheet-header h1 {
   font-family: "Raleway-Bold", sans-serif;
-  font-size: 48px;
+  font-size: 32px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-header h1 {
-    font-size: 57.6px;
+    font-size: 38.4px;
   }
 }
 #resume .resume__sheet-header h2 {
   font-family: "Raleway-Bold", sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-header h2 {
-    font-size: 19.2px;
+    font-size: 14.4px;
   }
 }
 #resume .resume__sheet-header hr {
@@ -1767,13 +1767,13 @@ footer img {
 }
 #resume .resume__sheet-content__info-card h3 {
   font-family: "Raleway-Bold", sans-serif;
-  font-size: 18px;
+  font-size: 12px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__info-card h3 {
-    font-size: 21.6px;
+    font-size: 14.4px;
   }
 }
 #resume .resume__sheet-content__info-card__bullets {
@@ -1785,24 +1785,24 @@ footer img {
 }
 #resume .resume__sheet-content__info-card__bullets p {
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   text-decoration: none;
   color: #808080;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__info-card__bullets p {
-    font-size: 13.2px;
+    font-size: 12px;
   }
 }
 #resume .resume__sheet-content__info-card__bullets a p {
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__info-card__bullets a p {
-    font-size: 13.2px;
+    font-size: 12px;
   }
 }
 #resume .resume__sheet-content__body {
@@ -1818,29 +1818,29 @@ footer img {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 2mm;
+  gap: 0mm;
 }
 #resume .resume__sheet-content__body-card h3 {
   font-family: "Raleway-Bold", sans-serif;
-  font-size: 18px;
+  font-size: 12px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__body-card h3 {
-    font-size: 21.6px;
+    font-size: 14.4px;
   }
 }
 #resume .resume__sheet-content__body-card-summary ul {
   padding-left: 4mm;
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__body-card-summary ul {
-    font-size: 13.2px;
+    font-size: 12px;
   }
 }
 #resume .resume__sheet-content__body-card-experiencia {
@@ -1848,38 +1848,38 @@ footer img {
 }
 #resume .resume__sheet-content__body-card-experiencia h4 {
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__body-card-experiencia h4 {
-    font-size: 13.2px;
+    font-size: 12px;
   }
 }
 #resume .resume__sheet-content__body-card-experiencia__ubicacion {
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   text-decoration: none;
   color: #808080;
   padding-bottom: 5mm;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__body-card-experiencia__ubicacion {
-    font-size: 13.2px;
+    font-size: 12px;
   }
 }
 #resume .resume__sheet-content__body-card-experiencia ul {
   margin: 0;
   padding-left: 4mm;
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   text-decoration: none;
   color: #808080;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__body-card-experiencia ul {
-    font-size: 13.2px;
+    font-size: 12px;
   }
 }
 
@@ -3439,4 +3439,26 @@ footer img {
 }
 .work-list .work-card__body-foot .info__comp-imgs img {
   width: 2rem;
+}
+
+@media print {
+  .nav-header,
+  .tags-list,
+  .btn,
+  .secondary,
+  .resume__sheet,
+  .no-print {
+    display: none;
+  }
+  .container-fluid {
+    padding: 0;
+    margin: 0;
+  }
+  .printable {
+    display: block;
+    zoom: 2.05;
+    height: -moz-max-content;
+    height: max-content;
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -596,8 +596,7 @@ const generatePDF = (language) => {
 };
 
 const CoCardResume = ({ experiencia }) => {
-	const { language, filtroResumen } =
-		useContext(MyContext);
+	const { language, filtroResumen } = useContext(MyContext);
 
 	return (
 		<div className="resume__sheet-content__body-card-experiencia">
@@ -791,6 +790,8 @@ const RoResume = () => {
 										/>
 									</div>
 								))}
+							</div>
+							<div className="resume__sheet-content__body-card">
 								<h3>
 									{language == "ES"
 										? "Actividades y proyectos"
@@ -894,6 +895,8 @@ const RoResume = () => {
 										/>
 									</div>
 								))}
+							</div>
+							<div className="resume__sheet-content__body-card">
 								<h3>
 									{language == "ES"
 										? "Actividades y proyectos"

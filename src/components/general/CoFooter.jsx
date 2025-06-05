@@ -65,7 +65,7 @@ const CoFooter = () => {
 	const { ruta, setRuta } = useContext(MyContext);
 
 	return (
-		<footer className="container-fluid">
+		<footer className="container-fluid no-print">
 			<div className="footer__links">
 				{foots.map((foot, index) => {
 					return (
