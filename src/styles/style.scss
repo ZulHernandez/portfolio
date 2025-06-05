@@ -208,6 +208,7 @@ a {
 .btn {
     cursor: pointer;
     @include fnFlex(row, center, center, 1rem);
+    @include fnFont("Raleway-Bold", 1.4rem, none, $shade-0);
     border-width: 0.2rem;
     border-style: solid;
     transition: all 0.3s ease-in-out;
@@ -224,6 +225,7 @@ a {
             fill: $shade-800;
         }
         &:hover {
+            @include fnFont("Raleway-Bold", 1.4rem, underline dotted, $shade-0);
             background-color: $shade-800;
             color: $shade-0;
             #chevron {
@@ -239,8 +241,8 @@ a {
             fill: $shade-0;
         }
         &:hover {
+            @include fnFont("Raleway-Bold", 1.4rem, underline dotted, $shade-0);
             background-color: $shade-900;
-            @include fnFont("Raleway-Black", 1.4rem, underline, $shade-0);
         }
     }
 }

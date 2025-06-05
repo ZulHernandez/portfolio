@@ -222,11 +222,20 @@ a {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #fff;
   border-width: 0.2rem;
   border-style: solid;
   transition: all 0.3s ease-in-out;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media (max-width: 800px) {
+  .btn {
+    font-size: 1.68rem;
+  }
 }
 .btn svg {
   width: 2.4rem;
@@ -240,8 +249,18 @@ a {
   fill: #333333;
 }
 .btn.primary:hover {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.4rem;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  color: #fff;
   background-color: #333333;
   color: #fff;
+}
+@media (max-width: 800px) {
+  .btn.primary:hover {
+    font-size: 1.68rem;
+  }
 }
 .btn.primary:hover #chevron {
   fill: #fff;
@@ -255,11 +274,12 @@ a {
   fill: #fff;
 }
 .btn.secondary:hover {
-  background-color: #000000;
-  font-family: "Raleway-Black", sans-serif;
+  font-family: "Raleway-Bold", sans-serif;
   font-size: 1.4rem;
-  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   color: #fff;
+  background-color: #000000;
 }
 @media (max-width: 800px) {
   .btn.secondary:hover {
