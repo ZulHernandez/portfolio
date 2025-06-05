@@ -89,6 +89,18 @@
   font-family: "IBM Plex Mono";
   src: url(../assets/fonts/Home/IBMPlexMono-Bold.ttf);
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-size: 10px;
 }
@@ -150,7 +162,6 @@ a {
   font-size: 3.2rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   .div-title h2 {
@@ -207,17 +218,6 @@ a {
 .btn svg {
   width: 2.4rem;
   height: 2.4rem;
-}
-.btn span {
-  font-family: "Raleway-SemiBold", sans-serif;
-  font-size: 1.4rem;
-  text-decoration: none;
-  color: #fff;
-}
-@media (max-width: 800px) {
-  .btn span {
-    font-size: 1.68rem;
-  }
 }
 .btn.primary {
   border-color: #333333;
@@ -476,13 +476,13 @@ a {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-family: "Raleway-SemiBold", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #666666;
 }
 @media (max-width: 800px) {
   .nav-left span {
-    font-size: 1.44rem;
+    font-size: 1.68rem;
   }
 }
 .nav-left span:hover {
@@ -504,13 +504,13 @@ a {
   padding: 0.8rem 1.5rem;
   border-radius: 1rem;
   font-family: "Raleway-SemiBold", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #fff;
 }
 @media (max-width: 800px) {
   .work-card__body-info-tags span {
-    font-size: 1.44rem;
+    font-size: 1.68rem;
   }
 }
 
@@ -583,7 +583,6 @@ a {
   font-size: 2.4rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   .work-list .work-card__body-info-head h3 {
@@ -595,7 +594,6 @@ a {
   font-size: 1.4rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   .work-list .work-card__body-info-head span {
@@ -622,7 +620,6 @@ a {
   font-size: 1.4rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   .work-list .work-card__body-foot .info span {
@@ -648,14 +645,13 @@ a {
 }
 .work-list .work-card__body-foot .info__comp span {
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   .work-list .work-card__body-foot .info__comp span {
-    font-size: 1.8rem;
+    font-size: 1.68rem;
   }
 }
 
@@ -688,13 +684,13 @@ a {
 }
 .tags-list__tag span {
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #ff2079;
 }
 @media (max-width: 800px) {
   .tags-list__tag span {
-    font-size: 1.44rem;
+    font-size: 1.68rem;
   }
 }
 .tags-list__tag.active {
@@ -702,13 +698,13 @@ a {
 }
 .tags-list__tag.active span {
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #fff;
 }
 @media (max-width: 800px) {
   .tags-list__tag.active span {
-    font-size: 1.44rem;
+    font-size: 1.68rem;
   }
 }
 .tags-list__tag.active img {
@@ -741,7 +737,6 @@ a {
   font-size: 1.4rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   .card-kpi__header h4 {
@@ -753,7 +748,6 @@ a {
   font-size: 3.2rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   .card-kpi__header h5 {
@@ -765,7 +759,6 @@ a {
   font-size: 1.2rem;
   text-decoration: none;
   color: #808080;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   .card-kpi__header .desc {
@@ -882,7 +875,6 @@ a {
   font-size: 2rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #hola #hola-head h2,
@@ -897,7 +889,6 @@ a {
   text-decoration: none;
   color: #ff2079;
   padding-bottom: 1rem;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #hola #hola-head h1,
@@ -1064,7 +1055,6 @@ a {
   font-size: 2.4rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #colab .colab-card__head__text h3 {
@@ -1076,7 +1066,6 @@ a {
   font-size: 1.4rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #colab .colab-card__head__text span {
@@ -1084,7 +1073,6 @@ a {
   }
 }
 #colab .colab-card h4 {
-  margin: 0px;
   font-family: "Raleway-Semibold", sans-serif;
   font-size: 2rem;
   text-decoration: none;
@@ -1097,14 +1085,12 @@ a {
 }
 #colab .colab-card ul {
   padding-left: 3rem;
-  margin: 0px;
 }
 #colab .colab-card li {
   font-family: "Raleway-Medium", sans-serif;
   font-size: 1.6rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #colab .colab-card li {
@@ -1155,7 +1141,6 @@ a {
   font-size: 2.4rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #conozcamonos .contact-card__text p,
@@ -1188,7 +1173,6 @@ a {
   font-size: 2rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #conozcamonos .contact-card__text-link span,
@@ -1281,7 +1265,6 @@ footer .footer__links-card h4 {
   font-size: 2rem;
   text-decoration: none;
   color: #fff;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   footer .footer__links-card h4 {
@@ -1290,7 +1273,7 @@ footer .footer__links-card h4 {
 }
 footer .footer__links-card span {
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #fff;
   cursor: pointer;
@@ -1298,7 +1281,7 @@ footer .footer__links-card span {
 }
 @media (max-width: 800px) {
   footer .footer__links-card span {
-    font-size: 1.8rem;
+    font-size: 1.68rem;
   }
 }
 footer .footer__links-card span:hover {
@@ -1353,7 +1336,6 @@ footer img {
   text-decoration: none;
   color: #ff3c8a;
   padding-bottom: 1rem;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   .div-error h1 {
@@ -1396,15 +1378,14 @@ footer img {
 #mis-trabajos #span,
 #my-works #span {
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #mis-trabajos #span,
   #my-works #span {
-    font-size: 1.92rem;
+    font-size: 1.68rem;
   }
 }
 @media (max-width: 1200px) {
@@ -1452,14 +1433,14 @@ footer img {
 #linea-del-tiempo .time-line-filters__boton span,
 #timeline .time-line-filters__boton span {
   font-family: "Raleway-Bold", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #fff;
 }
 @media (max-width: 800px) {
   #linea-del-tiempo .time-line-filters__boton span,
   #timeline .time-line-filters__boton span {
-    font-size: 1.44rem;
+    font-size: 1.68rem;
   }
 }
 #linea-del-tiempo .time-line-filters__boton.active,
@@ -1469,14 +1450,14 @@ footer img {
 #linea-del-tiempo .time-line-filters__boton.active span,
 #timeline .time-line-filters__boton.active span {
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #fff;
 }
 @media (max-width: 800px) {
   #linea-del-tiempo .time-line-filters__boton.active span,
   #timeline .time-line-filters__boton.active span {
-    font-size: 1.44rem;
+    font-size: 1.68rem;
   }
 }
 #linea-del-tiempo .time-line-filters__boton.active img,
@@ -1563,7 +1544,7 @@ footer img {
   background-color: #333333;
   padding: 0.5rem 1rem;
   font-family: "Raleway-Bold", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #fff;
   border-radius: 0rem 1rem 1rem 1rem;
@@ -1577,7 +1558,7 @@ footer img {
 @media (max-width: 800px) {
   #linea-del-tiempo .time-line-squema__container-item span,
   #timeline .time-line-squema__container-item span {
-    font-size: 1.44rem;
+    font-size: 1.68rem;
   }
 }
 #linea-del-tiempo .time-line-squema__container-item:hover,
@@ -1680,7 +1661,6 @@ footer img {
   font-size: 2.4rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #linea-del-tiempo .time-line-info__card-head__text h2,
@@ -1694,7 +1674,6 @@ footer img {
   font-size: 1.4rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #linea-del-tiempo .time-line-info__card-head__text p,
@@ -1708,7 +1687,6 @@ footer img {
   font-size: 2rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
   height: -moz-max-content;
   height: max-content;
 }
@@ -1777,7 +1755,6 @@ footer img {
   font-size: 48px;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-header h1 {
@@ -1789,7 +1766,6 @@ footer img {
   font-size: 16px;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-header h2 {
@@ -1831,7 +1807,6 @@ footer img {
   font-size: 18px;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__info-card h3 {
@@ -1850,7 +1825,6 @@ footer img {
   font-size: 11px;
   text-decoration: none;
   color: #808080;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__info-card__bullets p {
@@ -1858,7 +1832,6 @@ footer img {
   }
 }
 #resume .resume__sheet-content__info-card__bullets a p {
-  margin: 0px;
   font-family: "Raleway-Medium", sans-serif;
   font-size: 11px;
   text-decoration: none;
@@ -1889,7 +1862,6 @@ footer img {
   font-size: 18px;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__body-card h3 {
@@ -1902,7 +1874,6 @@ footer img {
   font-size: 11px;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__body-card-summary ul {
@@ -1917,7 +1888,6 @@ footer img {
   font-size: 11px;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #resume .resume__sheet-content__body-card-experiencia h4 {
@@ -1929,7 +1899,6 @@ footer img {
   font-size: 11px;
   text-decoration: none;
   color: #808080;
-  margin: 0px;
   padding-bottom: 5mm;
 }
 @media (max-width: 800px) {
@@ -1968,15 +1937,14 @@ footer img {
 #esto-soy-yo #span,
 #this-is-me #span {
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #esto-soy-yo #span,
   #this-is-me #span {
-    font-size: 1.92rem;
+    font-size: 1.68rem;
   }
 }
 #esto-soy-yo .tab,
@@ -2036,15 +2004,14 @@ footer img {
 #esto-soy-yo .tab-buttons__item span,
 #this-is-me .tab-buttons__item span {
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #esto-soy-yo .tab-buttons__item span,
   #this-is-me .tab-buttons__item span {
-    font-size: 2.16rem;
+    font-size: 1.68rem;
   }
 }
 #esto-soy-yo .tab-buttons__item.active,
@@ -2102,22 +2069,20 @@ footer img {
   #esto-soy-yo .tab-body,
   #this-is-me .tab-body {
     width: calc(100% - 6rem);
-    margin: 0px;
   }
 }
 #esto-soy-yo .tab-body span,
 #this-is-me .tab-body span {
   color: #666666;
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #esto-soy-yo .tab-body span,
   #this-is-me .tab-body span {
-    font-size: 1.92rem;
+    font-size: 1.68rem;
   }
 }
 #esto-soy-yo .tab-content,
@@ -2174,7 +2139,6 @@ footer img {
   font-size: 2.4rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #esto-soy-yo .tab-content__info-text h2,
@@ -2188,7 +2152,6 @@ footer img {
   font-size: 1.8rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #esto-soy-yo .tab-content__info-text h4,
@@ -2312,7 +2275,6 @@ footer img {
   font-size: 1.6rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #esto-soy-yo .music-list .music-card__info p,
@@ -2397,7 +2359,6 @@ footer img {
   font-size: 1.6rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #esto-soy-yo .receipe__ingredients h3,
@@ -2443,7 +2404,6 @@ footer img {
   font-size: 1.6rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #esto-soy-yo .receipe__instructions h3,
@@ -2553,7 +2513,6 @@ footer img {
   font-size: 2.4rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #sumario .sumario-card__body-text-upper-head h2,
@@ -2567,7 +2526,6 @@ footer img {
   font-size: 1.4rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #sumario .sumario-card__body-text-upper-head span,
@@ -2581,7 +2539,6 @@ footer img {
   font-size: 1.4rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #sumario .sumario-card__body-text-upper span,
@@ -2625,7 +2582,6 @@ footer img {
   font-size: 1.4rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #sumario .sumario-card__body-text-lower-bullets h3,
@@ -2639,7 +2595,6 @@ footer img {
   font-size: 1.4rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #sumario .sumario-card__body-text-lower-bullets span,
@@ -2668,7 +2623,6 @@ footer img {
   font-size: 1.4rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #contexto span,
@@ -2710,7 +2664,6 @@ footer img {
   font-size: 1.4rem;
   text-decoration: none;
   color: #333333;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #contexto .time-list .time-card h4,
@@ -2778,7 +2731,6 @@ footer img {
   font-size: 1.4rem;
   text-decoration: none;
   color: #808080;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #contexto .time-list .time-card-body__item-head h5,
@@ -2793,7 +2745,6 @@ footer img {
   text-decoration: none;
   color: #4d4d4d;
   text-align: center;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #contexto .time-list .time-card-body__item-head h6,
@@ -2807,7 +2758,6 @@ footer img {
   font-size: 1.4rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
   text-align: center;
 }
 @media (max-width: 800px) {
@@ -2822,7 +2772,6 @@ footer img {
   font-size: 1.4rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #contexto .bullet-point__title,
@@ -2904,7 +2853,6 @@ footer img {
   font-size: 1.4rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #tecnologias-adoptadas .tokens-list__card-header span,
@@ -2930,7 +2878,6 @@ footer img {
   font-size: 2rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #tecnologias-adoptadas .tokens-list__card-header-title span,
@@ -3049,7 +2996,6 @@ footer img {
   font-size: 2rem;
   text-decoration: none;
   color: #4d4d4d;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #tecnologias-adoptadas .kpis-list__card-header span,
@@ -3191,7 +3137,6 @@ footer img {
   font-size: 1.4rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #mejora-de-insumos .bullet__body li,
@@ -3321,7 +3266,6 @@ footer img {
   color: #4d4d4d;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #automatizacion-de-procesos .plugins-carrousel__card-header-title span,
@@ -3383,7 +3327,6 @@ footer img {
   font-size: 1.6rem;
   text-decoration: none;
   color: #666666;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #automatizacion-de-procesos .plugins-carrousel__card .subtitle,
@@ -3550,7 +3493,6 @@ footer img {
   color: #4d4d4d;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
-  margin: 0px;
 }
 @media (max-width: 800px) {
   #futuros-pasos .backlog__card-header-title span,
