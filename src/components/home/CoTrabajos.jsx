@@ -75,12 +75,12 @@ const CoTrabajos = () => {
 									</div>
 									<div className="work-card__body-info-head">
 										<h3>{destacado.title[language == "ES" ? 0 : 1]}</h3>
-										<span>{destacado.des[language == "ES" ? 0 : 1]}</span>
+										<span className="text-normal">{destacado.des[language == "ES" ? 0 : 1]}</span>
 									</div>
 								</div>
 								<div className="work-card__body-foot">
 									<div className="info">
-										<span>{destacado.date[language == "ES" ? 0 : 1]}</span>
+										<span className="info-date">{destacado.date[language == "ES" ? 0 : 1]}</span>
 										<div className="info__comp">
 											<div className="info__comp-imgs">
 												{destacado.logo.map((logo, logoIndex) => (
@@ -91,7 +91,7 @@ const CoTrabajos = () => {
 													/>
 												))}
 											</div>
-											<span>{destacado.comp[language == "ES" ? 0 : 1]}</span>
+											<span className="text-normal">{destacado.comp[language == "ES" ? 0 : 1]}</span>
 										</div>
 									</div>
 									{destacado.link ? (

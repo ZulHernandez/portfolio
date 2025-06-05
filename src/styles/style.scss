@@ -165,6 +165,11 @@ a {
     color: inherit;
 }
 
+.text-normal {
+    @include fnFont("Raleway-Medium", 1.4rem, none, $shade-700);
+    background-color: greenyellow;
+}
+
 .div-title {
     @include fnFlex(row, flex-start, center, 2rem);
     width: 100%;
@@ -354,11 +359,12 @@ a {
 }
 
 .nav-left {
-    @include fnFlex(column, space-between, center, 0rem);
+    @include fnFlex(column, space-between, flex-start, 0rem);
     height: 70dvh;
     top: 15vh;
     width: 5rem;
     position: fixed;
+    left: 2rem;
     @media (max-width: 800px) {
         display: none;
     }
@@ -370,88 +376,8 @@ a {
         display: block !important;
         writing-mode: vertical-rl;
         transform: rotate(180deg);
-        @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-600);
         &:hover {
             text-decoration: dotted underline;
-        }
-    }
-}
-
-.work-card__body-info-tags {
-    @include fnFlex(row, flex-start, center, 1rem);
-    flex-wrap: wrap;
-    width: 100%;
-    span {
-        background-color: $shade-700;
-        padding: 0.8rem 1.5rem;
-        border-radius: 1rem;
-        @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-0);
-    }
-}
-
-.work-list {
-    @include fnFlex(row, flex-start, center, 3rem);
-    flex-wrap: wrap;
-    .work-card {
-        @include fnFlex(column, flex-start, flex-start, 2rem);
-        @include fnCard("m");
-        img {
-            height: min-content;
-            border-radius: 1rem;
-        }
-        .img-cover {
-            display: block;
-        }
-        .gif-cover {
-            display: none;
-        }
-        &:hover {
-            .img-cover {
-                display: none;
-            }
-            .gif-cover {
-                display: block;
-            }
-        }
-        &__body {
-            @include fnFlex(column, space-between, flex-start, 2rem);
-            width: 100%;
-            height: 100%;
-            &-info {
-                @include fnFlex(column, flex-start, flex-start, 1rem);
-                width: 100%;
-                &-head {
-                    @include fnFlex(column, flex-start, flex-start, 1rem);
-                    h3 {
-                        @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-800);
-                    }
-                    span {
-                        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-                    }
-                }
-            }
-            &-foot {
-                @include fnFlex(row, space-between, flex-start, 1rem);
-                width: 100%;
-                .info {
-                    @include fnFlex(column, flex-start, flex-start, 1rem);
-                    span {
-                        @include fnFont("Raleway-Bold", 1.4rem, none, $shade-800);
-                    }
-                    &__comp {
-                        @include fnFlex(row, flex-start, center, 0.5rem);
-                        &-imgs {
-                            @include fnFlex(row, flex-start, center, 0rem);
-                            img {
-                                width: 2rem;
-                            }
-                        }
-                        span {
-                            @include fnFont("Raleway-Medium", 1.4rem, none, $shade-800);
-                        }
-                    }
-                }
-            }
         }
     }
 }
@@ -504,7 +430,7 @@ a {
             @include fnFont("Raleway-Bold", 3.2rem, none, $shade-700);
         }
         .desc {
-            @include fnFont("Raleway-Medium", 1.2rem, none, $shade-500);
+            @include fnFont("Raleway-Medium", 1.4rem, none, $shade-500);
         }
     }
     &__img {
@@ -521,9 +447,6 @@ a {
             width: 7rem;
         }
     }
-    &__text {
-        @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-700);
-    }
 }
 
 .co-file {
@@ -533,10 +456,6 @@ a {
         @media (max-width: 1200px) {
             width: 3rem;
         }
-    }
-    span {
-        @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-700);
-        width: max-content;
     }
 }
 
@@ -642,9 +561,6 @@ a {
                 @include fnFlex(column, space-between, flex-start, 0.5rem);
                 h3 {
                     @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-700);
-                }
-                span {
-                    @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-700);
                 }
             }
         }
@@ -796,11 +712,79 @@ footer {
 #mis-trabajos,
 #my-works {
     padding: 10rem 15rem;
-    #span {
-        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-    }
     @media (max-width: 1200px) {
         padding: 15rem 10rem;
+    }
+    .work-card__body-info-tags {
+        @include fnFlex(row, flex-start, center, 1rem);
+        flex-wrap: wrap;
+        width: 100%;
+        span {
+            background-color: $shade-700;
+            padding: 0.8rem 1.5rem;
+            border-radius: 1rem;
+            @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-0);
+        }
+    }
+    .work-list {
+        @include fnFlex(row, flex-start, center, 3rem);
+        flex-wrap: wrap;
+        .work-card {
+            @include fnFlex(column, flex-start, flex-start, 2rem);
+            @include fnCard("m");
+            img {
+                height: min-content;
+                border-radius: 1rem;
+            }
+            .img-cover {
+                display: block;
+            }
+            .gif-cover {
+                display: none;
+            }
+            &:hover {
+                .img-cover {
+                    display: none;
+                }
+                .gif-cover {
+                    display: block;
+                }
+            }
+            &__body {
+                @include fnFlex(column, space-between, flex-start, 2rem);
+                width: 100%;
+                height: 100%;
+                &-info {
+                    @include fnFlex(column, flex-start, flex-start, 1rem);
+                    width: 100%;
+                    &-head {
+                        @include fnFlex(column, flex-start, flex-start, 1rem);
+                        h3 {
+                            @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-800);
+                        }
+                    }
+                }
+                &-foot {
+                    @include fnFlex(row, space-between, flex-start, 1rem);
+                    width: 100%;
+                    .info {
+                        @include fnFlex(column, flex-start, flex-start, 1rem);
+                        &-date {
+                            @include fnFont("Raleway-Bold", 1.4rem, none, $shade-500);
+                        }
+                        &__comp {
+                            @include fnFlex(row, flex-start, center, 0.5rem);
+                            &-imgs {
+                                @include fnFlex(row, flex-start, center, 0rem);
+                                img {
+                                    width: 2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -943,15 +927,11 @@ footer {
                         h2 {
                             @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-700);
                         }
-                        p {
-                            @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-                        }
                     }
                 }
             }
             h3 {
                 @include fnFont("Raleway-Semibold", 2rem, none, $shade-700);
-
                 height: max-content;
             }
             #cardUno,
@@ -1073,9 +1053,6 @@ footer {
     @media (max-width: 1200px) {
         padding: 15rem 10rem;
     }
-    #span {
-        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-    }
     .tab {
         @include fnFlex(row, center, center, 5rem);
         width: 100%;
@@ -1098,9 +1075,6 @@ footer {
                         width: 3rem;
                         height: 3rem;
                     }
-                }
-                span {
-                    @include fnFont("Raleway-Medium", 1.4rem, none, $shade-800);
                 }
                 &.active {
                     background-color: $shade-0;
@@ -1133,10 +1107,6 @@ footer {
             margin: 0px 5rem;
             @media (max-width: 800px) {
                 width: calc(100% - 6rem);
-            }
-            span {
-                color: $shade-600;
-                @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
             }
         }
         &-content {
@@ -1325,9 +1295,6 @@ footer {
                             @include fnFont("Raleway-Bold", 1.4rem, none, $shade-800);
                         }
                     }
-                    span {
-                        @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-600);
-                    }
                 }
                 &-lower {
                     @include fnFlex(row, flex-start, flex-start, 5rem);
@@ -1341,10 +1308,7 @@ footer {
                         @include fnFlex(column, flex-start, flex-start, 1rem);
                         width: 100%;
                         h3 {
-                            @include fnFont("Raleway-Regular", 1.4rem, none, $shade-800);
-                        }
-                        span {
-                            @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
+                            @include fnFont("Raleway-Bold", 1.4rem, none, $shade-800);
                         }
                         #principal {
                             @include fnFont("Raleway-Semibold", 1.4rem, underline dotted, $shade-600);
@@ -1358,9 +1322,6 @@ footer {
 
 #contexto,
 #context {
-    span {
-        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-    }
     .time-list {
         @include fnFlex(row, center, center, 4rem);
         width: 100%;
@@ -1407,8 +1368,6 @@ footer {
                         }
                     }
                     span {
-                        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-700);
-
                         text-align: center;
                     }
                 }
@@ -1424,9 +1383,6 @@ footer {
 
 #tecnologias-adoptadas,
 #technologies-used {
-    span {
-        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-    }
     .tokens-list {
         @include fnFlex(row, center, center, 3rem);
         width: 100%;
@@ -1445,9 +1401,6 @@ footer {
                 @include fnFlex(row, space-between, center, 1rem);
                 padding-bottom: 2rem;
                 border-bottom: 0.2rem solid $shade-200;
-                span {
-                    @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-700);
-                }
                 &-title {
                     @include fnFlex(row, center, center, 1rem);
                     img {
@@ -1538,9 +1491,6 @@ footer {
 
 #mejora-de-insumos,
 #improvement-of-inputs {
-    span {
-        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-    }
     .subtitle {
         @include fnFont("Raleway-Bold", 1.6rem, none, $shade-600);
     }
@@ -1567,10 +1517,6 @@ footer {
                     @include fnFont("Raleway-Bold", 2rem, none, $shade-700);
                 }
             }
-            li {
-                color: $shade-600;
-                @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-            }
         }
         &__carrousel {
             @include fnFlex(row, flex-start, center, 3rem);
@@ -1591,10 +1537,6 @@ footer {
 
 #automatizacion-de-procesos,
 #automation-of-processes {
-    span {
-        width: 100%;
-        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-    }
     .subtitle {
         width: 100%;
         @include fnFont("Raleway-Bold", 1.6rem, none, $shade-600);
@@ -1622,7 +1564,6 @@ footer {
                     &-title {
                         @include fnFlex(column, center, flex-start, 0rem);
                         span {
-                            @include fnFont("Raleway-Bold", 1.4rem, none, $shade-700);
                             text-transform: uppercase;
                             letter-spacing: 0.25rem;
                         }
@@ -1643,9 +1584,6 @@ footer {
                             transform: rotate(90deg);
                         }
                     }
-                }
-                li {
-                    @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
                 }
                 .subtitle {
                     @include fnFont("Raleway-Semibold", 1.6rem, none, $shade-600);
@@ -1680,9 +1618,6 @@ footer {
 
 #futuros-pasos,
 #future-steps {
-    span {
-        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
-    }
     .subtitle {
         @include fnFont("Raleway-Bold", 1.6rem, none, $shade-600);
         width: 100%;
@@ -1733,6 +1668,79 @@ footer {
                         background-color: $shade-900;
                         padding: 0.3rem 0.6rem;
                         border-radius: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.work-card__body-info-tags {
+    @include fnFlex(row, flex-start, center, 1rem);
+    flex-wrap: wrap;
+    width: 100%;
+    span {
+        background-color: $shade-700;
+        padding: 0.8rem 1.5rem;
+        border-radius: 1rem;
+        @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-0);
+    }
+}
+
+.work-list {
+    @include fnFlex(row, flex-start, center, 3rem);
+    flex-wrap: wrap;
+    .work-card {
+        @include fnFlex(column, flex-start, flex-start, 2rem);
+        @include fnCard("m");
+        img {
+            height: min-content;
+            border-radius: 1rem;
+        }
+        .img-cover {
+            display: block;
+        }
+        .gif-cover {
+            display: none;
+        }
+        &:hover {
+            .img-cover {
+                display: none;
+            }
+            .gif-cover {
+                display: block;
+            }
+        }
+        &__body {
+            @include fnFlex(column, space-between, flex-start, 2rem);
+            width: 100%;
+            height: 100%;
+            &-info {
+                @include fnFlex(column, flex-start, flex-start, 1rem);
+                width: 100%;
+                &-head {
+                    @include fnFlex(column, flex-start, flex-start, 1rem);
+                    h3 {
+                        @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-800);
+                    }
+                }
+            }
+            &-foot {
+                @include fnFlex(row, space-between, flex-start, 1rem);
+                width: 100%;
+                .info {
+                    @include fnFlex(column, flex-start, flex-start, 1rem);
+                    &-date {
+                        @include fnFont("Raleway-Bold", 1.4rem, none, $shade-500);
+                    }
+                    &__comp {
+                        @include fnFlex(row, flex-start, center, 0.5rem);
+                        &-imgs {
+                            @include fnFlex(row, flex-start, center, 0rem);
+                            img {
+                                width: 2rem;
+                            }
+                        }
                     }
                 }
             }

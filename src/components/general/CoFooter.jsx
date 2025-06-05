@@ -3,7 +3,7 @@ import { MyContext } from "../context/MyContext.js";
 import sign from "/sign.svg";
 import { Link } from "react-router-dom";
 
-let foots = [
+const foots = [
 	{
 		title: ["Otros espacios", "Other spaces"],
 		links: [

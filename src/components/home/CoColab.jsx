@@ -97,7 +97,7 @@ const CoColab = () => {
 								<img src={colab.logo} alt={colab.name} />
 								<div className="colab-card__head__text">
 									<h3>{colab.name}</h3>
-									<span>{colab.date[language == "ES" ? 0 : 1]}</span>
+									<span className="text-normal">{colab.date[language == "ES" ? 0 : 1]}</span>
 								</div>
 							</div>
 							<h4>{colab.rol[language == "ES" ? 0 : 1]}</h4>

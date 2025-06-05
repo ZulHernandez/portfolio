@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { MyContext } from "../components/context/MyContext.js";
 
+import PropTypes from "prop-types";
+
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useRef } from "react";
@@ -10,14 +12,14 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import CoBtn from "../components/general/CoBtn.jsx";
 
-let tipos = [
+const tipos = [
 	["General", "General"],
 	["Sistema_de_diseño", "Design_system"],
 	["Investigación", "Research"],
 	["Experiencia", "Experience"],
 ];
 
-let infos = [
+const infos = [
 	{
 		title: ["Portafolios", "Portfolios"],
 		bullets: [
@@ -95,7 +97,7 @@ let infos = [
 	},
 ];
 
-let habilidades = [
+const habilidades = [
 	[
 		["Storytelling", "Storytelling"],
 		["Design Thinking", "Design Thinking"],
@@ -133,7 +135,7 @@ let habilidades = [
 	],
 ];
 
-let Resumenes = [
+const Resumenes = [
 	[
 		[
 			"Diseñador de productos digitales con experiencia en Fintech y e-commerce, metodologías ágiles y comunicación con equipos multidisciplinarios.",
@@ -172,7 +174,7 @@ let Resumenes = [
 	],
 ];
 
-let experiencias = [
+const experiencias = [
 	{
 		empresa: "El Puerto de Liverpool",
 		rol: ["Diseñador UX/UI Senior", "Senior UX/UI Designer"],
@@ -415,7 +417,7 @@ let experiencias = [
 	},
 ];
 
-let proyectos = [
+const proyectos = [
 	{
 		empresa: "El Páramo de las bestias",
 		rol: ["Project manager / Diseñador web", "Project manager / Web designer"],
@@ -565,7 +567,7 @@ let proyectos = [
 	},
 ];
 
-const generatePDF = (language, filtro) => {
+const generatePDF = (language) => {
 	const printableElement = document.querySelector(".printable");
 	printableElement.style.display = "block"; // A4 width
 
@@ -574,7 +576,7 @@ const generatePDF = (language, filtro) => {
 		return;
 	}
 
-	html2canvas(printableElement, { 
+	html2canvas(printableElement, {
 		scale: 2,
 		windowWidth: printableElement.scrollWidth,
 		windowHeight: printableElement.scrollHeight,
@@ -583,7 +585,6 @@ const generatePDF = (language, filtro) => {
 		const pdf = new jsPDF("p", "mm", "a4");
 
 		const pdfWidth = pdf.internal.pageSize.getWidth();
-		const pdfHeight = pdf.internal.pageSize.getHeight();
 		const imgWidth = pdfWidth;
 		const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
@@ -595,7 +596,7 @@ const generatePDF = (language, filtro) => {
 };
 
 const CoCardResume = ({ experiencia }) => {
-	const { setRuta, language, filtroResumen, setFiltroResumen } =
+	const { language, filtroResumen } =
 		useContext(MyContext);
 
 	return (
@@ -621,6 +622,17 @@ const CoCardResume = ({ experiencia }) => {
 			</ul>
 		</div>
 	);
+};
+
+CoCardResume.propTypes = {
+	experiencia: PropTypes.shape({
+		empresa: PropTypes.string.isRequired,
+		rol: PropTypes.array.isRequired,
+		ubicacion: PropTypes.array.isRequired,
+		fecha: PropTypes.array.isRequired,
+		bullets: PropTypes.array.isRequired,
+		subbullets: PropTypes.any,
+	}).isRequired,
 };
 
 const RoResume = () => {
@@ -695,10 +707,7 @@ const RoResume = () => {
 					</div>
 				))}
 			</div>
-			<div
-				ref={contentRef}
-				className="resume__sheet printable"
-			>
+			<div ref={contentRef} className="resume__sheet printable">
 				<div className="resume__sheet-body">
 					<div className="resume__sheet-header">
 						<h1
@@ -900,7 +909,7 @@ const RoResume = () => {
 					</div>
 				</div>
 			</div>
-			<div onClick={() => generatePDF(language , filtroResumen)}>
+			<div onClick={() => generatePDF(language, filtroResumen)}>
 				<CoBtn
 					type={"secondary"}
 					text={language == "ES" ? "Descargar CV" : "Download Resume"}

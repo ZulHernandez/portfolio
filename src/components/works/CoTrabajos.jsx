@@ -40,7 +40,7 @@ const CoTrabajos = () => {
 			className="container-fluid"
 		>
 			<CoTitle titles={language == "ES" ? "Mis trabajos" : "My works"} />
-			<span id="span">
+			<span className="text-normal">
 				{language == "ES"
 					? "Elige aquello que te llame mas la atencion:"
 					: "Choose what catches your attention:"}
@@ -130,7 +130,7 @@ const CoTrabajos = () => {
 									</div>
 									<div className="work-card__body-info-head">
 										<h3>{destacado.title[language == "ES" ? 0 : 1]}</h3>
-										<span>{destacado.des[language == "ES" ? 0 : 1]}</span>
+										<span className="text-normal">{destacado.des[language == "ES" ? 0 : 1]}</span>
 									</div>
 								</div>
 								<div className="work-card__body-foot">
@@ -146,7 +146,7 @@ const CoTrabajos = () => {
 													/>
 												))}
 											</div>
-											<span>{destacado.comp[language == "ES" ? 0 : 1]}</span>
+											<span className="text-normal">{destacado.comp[language == "ES" ? 0 : 1]}</span>
 										</div>
 									</div>
 									{destacado.link ? (

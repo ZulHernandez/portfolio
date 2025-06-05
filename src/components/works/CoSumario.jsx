@@ -1,9 +1,9 @@
 import { useContext } from "react";
+import PropTypes from "prop-types";
 import { MyContext } from "../context/MyContext.js";
 
 const CoSumario = ({
 	foto,
-	company,
 	title,
 	date,
 	description,
@@ -26,21 +26,21 @@ const CoSumario = ({
 								<h2>{title}</h2>
 								<span>{date}</span>
 							</div>
-							<span>{description}</span>
+							<span className="text-normal">{description}</span>
 						</div>
 						<div className="sumario-card__body-text-lower">
 							<div className="sumario-card__body-text-lower-bullets">
 								<h3>Role</h3>
 								<span id="principal">{role[0]}</span>
-								<span>{role[1]}</span>
+								<span className="text-normal">{role[1]}</span>
 							</div>
 							<div className="sumario-card__body-text-lower-bullets">
 								<h3>Sector</h3>
-								<span>{sector}</span>
+								<span className="text-normal">{sector}</span>
 							</div>
 							<div className="sumario-card__body-text-lower-bullets">
 								<h3>Equipo</h3>
-								<span>{team}</span>
+								<span className="text-normal">{team}</span>
 							</div>
 						</div>
 					</div>
@@ -48,6 +48,15 @@ const CoSumario = ({
 			</div>
 		</div>
 	);
+};
+CoSumario.propTypes = {
+	foto: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	date: PropTypes.string.isRequired,
+	description: PropTypes.string.isRequired,
+	role: PropTypes.arrayOf(PropTypes.string).isRequired,
+	sector: PropTypes.string.isRequired,
+	team: PropTypes.string.isRequired
 };
 
 export default CoSumario;

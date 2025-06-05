@@ -38,7 +38,7 @@ const CoTech = () => {
 					language === "ES" ? "Tecnologías adoptadas" : "Technologies Used"
 				}
 			/>
-			<span>
+			<span className="text-normal">
 				{language === "ES"
 					? "Como parte de las actualizaciones que se vivieron en Figma, fue la integración de las Variables, lo que supuso un cambio en la forma de generar componentes y tokens dentro de sistema de diseño. Este proceso se llevo a cabo en dos fases, la beta y el primer release de la feature."
 					: "As part of the updates in Figma, the integration of Variables was introduced, which represented a change in how components and tokens are generated within the design system. This process was carried out in two phases: the beta phase and the first release of the feature."}
@@ -48,7 +48,7 @@ const CoTech = () => {
 					<div className="tokens-list__card-header">
 						<div className="tokens-list__card-header-title">
 							<img src={beta} alt="beta" />
-							<span>BETA</span>
+							<span className="text-normal">BETA</span>
 						</div>
 						<span>
 							{language === "ES"
@@ -188,7 +188,7 @@ const CoTech = () => {
 					</div>
 				</div>
 			</div>
-			<span>
+			<span className="text-normal">
 				{language === "ES"
 					? "Desde el momento de implementación hasta el día hoy se pudieron medir las siguientes mejoras:"
 					: "Since the implementation, the following improvements have been measured:"}

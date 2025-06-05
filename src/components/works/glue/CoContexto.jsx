@@ -9,6 +9,8 @@ import etapa3 from "../../../assets/imgs/works/glue/etapaTres.svg";
 import etapa4 from "../../../assets/imgs/works/glue/etapaCuatro.svg";
 import arrow from "../../../assets/imgs/vectores/arrow_outward.svg";
 
+import PropTypes from "prop-types";
+
 const CoTimeCard = ({ title, bullets, color, grey }) => {
 	return (
 		<div className="time-card">
@@ -25,12 +27,26 @@ const CoTimeCard = ({ title, bullets, color, grey }) => {
 							<h5>{bullet.step}</h5>
 							<h6>{bullet.title}</h6>
 						</div>
-						<span>{bullet.description}</span>
+						<span className="text-normal">{bullet.description}</span>
 					</div>
 				))}
 			</div>
 		</div>
 	);
+};
+
+CoTimeCard.propTypes = {
+	title: PropTypes.string.isRequired,
+	bullets: PropTypes.arrayOf(
+		PropTypes.shape({
+			icon: PropTypes.string.isRequired,
+			step: PropTypes.string.isRequired,
+			title: PropTypes.string.isRequired,
+			description: PropTypes.string.isRequired,
+		})
+	).isRequired,
+	color: PropTypes.string.isRequired,
+	grey: PropTypes.string.isRequired,
 };
 
 const CoContexto = () => {
@@ -147,7 +163,7 @@ const CoContexto = () => {
 			className="container-fluid grey"
 		>
 			<CoTitle titles={language === "ES" ? "El contexto" : "Context"} />
-			<span>
+			<span className="text-normal">
 				{language === "ES"
 					? "Desde la creación del departamento de Experiencia e Interfaz de Usuario dentro de la Dirección de Producto Digital, se han llevado a cabo diversos esfuerzos para desarrollar y formalizar un sistema de diseño. Estos esfuerzos se han vuelto recurrentes y han experimentado múltiples cambios debido a los avances tecnológicos y al crecimiento dinámico del equipo. En este contexto de evolución y mejora continua, la historia de GLUE (Global Liverpool User Experience) puede dividirse en cuatro grandes etapas."
 					: "Since the creation of the User Experience and Interface department within the Digital Product Management, various efforts have been made to develop and formalize a design system. These efforts have become recurrent and have undergone multiple changes due to technological advancements and the dynamic growth of the team. In this context of evolution and continuous improvement, the history of GLUE (Global Liverpool User Experience) can be divided into four major stages."}
@@ -164,7 +180,7 @@ const CoContexto = () => {
 				))}
 			</div>
 			<div>
-				<span>
+				<span className="text-normal">
 					{language === "ES"
 						? "Mi participación en GLUE se centra en cuatro áreas clave:"
 						: "My participation in GLUE focuses on four key areas:"}
@@ -188,7 +204,7 @@ const CoContexto = () => {
 							</div>
 						</a>
 						<br />
-						<span>{bullet.description}</span>
+						<span className="text-normal">{bullet.description}</span>
 						<br /><br />
 					</div>
 				))}
