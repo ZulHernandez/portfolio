@@ -567,7 +567,7 @@ const proyectos = [
 	},
 ];
 
-const generatePDF = (language) => {
+/* const generatePDF = (language) => {
 	const printableElement = document.querySelector(".printable");
 	printableElement.style.display = "block"; // A4 width
 
@@ -593,7 +593,8 @@ const generatePDF = (language) => {
 	});
 
 	printableElement.style.display = "none"; // A4 width
-};
+}; */
+
 
 const CoCardResume = ({ experiencia }) => {
 	const { language, filtroResumen } = useContext(MyContext);
@@ -810,7 +811,7 @@ const RoResume = () => {
 			<div
 				ref={contentRef}
 				className="resume__sheet"
-				style={{ zoom: width / 1000 }}
+				style={{ zoom: width / 1200 }}
 			>
 				<div className="resume__sheet-body">
 					<div className="resume__sheet-header">
@@ -912,7 +913,7 @@ const RoResume = () => {
 					</div>
 				</div>
 			</div>
-			<div onClick={() => generatePDF(language, filtroResumen)}>
+			<div onClick={() => window.print()}>
 				<CoBtn
 					type={"secondary"}
 					text={language == "ES" ? "Descargar CV" : "Download Resume"}

@@ -1684,11 +1684,9 @@ footer img {
   border-radius: 2rem;
   padding: 2rem;
   transition: all 0.3s ease-in-out;
-  width: 210mm;
-  height: 297mm;
+  width: 215mm;
   background: white;
   padding: 15mm;
-  box-sizing: border-box;
   border-radius: 3mm;
 }
 #resume .resume__sheet:hover {
@@ -1702,7 +1700,6 @@ footer img {
   align-items: center;
   gap: 5mm;
   width: 100%;
-  height: 100%;
   overflow: hidden;
 }
 #resume .resume__sheet-header {
@@ -3456,9 +3453,16 @@ footer img {
   }
   .printable {
     display: block;
-    zoom: 2.05;
+    zoom: 2.2;
     height: -moz-max-content;
     height: max-content;
     width: 100%;
+  }
+  @page {
+    margin: 0;
+    size: auto;
+  }
+  .resume__sheet-content__body {
+    width: 10%;
   }
 }/*# sourceMappingURL=style.css.map */
