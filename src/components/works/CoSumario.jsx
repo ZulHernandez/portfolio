@@ -30,16 +30,16 @@ const CoSumario = ({
 						</div>
 						<div className="sumario-card__body-text-lower">
 							<div className="sumario-card__body-text-lower-bullets">
-								<h3>Role</h3>
+								<h3>{language === "ES" ? "Rol" : "Role"}</h3>
 								<span id="principal">{role[0]}</span>
 								<span>{role[1]}</span>
 							</div>
 							<div className="sumario-card__body-text-lower-bullets">
-								<h3>Sector</h3>
+								<h3>{language === "ES" ? "Sector" : "Sector"}</h3>
 								<span>{sector}</span>
 							</div>
 							<div className="sumario-card__body-text-lower-bullets">
-								<h3>Equipo</h3>
+								<h3>{language === "ES" ? "Equipo" : "Team"}</h3>
 								<span>{team}</span>
 							</div>
 						</div>
