@@ -1,9 +1,6 @@
-import { useContext } from "react";
-import { MyContext } from "../context/MyContext.js";
+import PropTypes from "prop-types";
 
 const CoNavLeft = ({anclas}) => {
-	const { language } = useContext(MyContext);
-
 	return (
 		<div className="nav-left">
 			{anclas.map((ancla, index) => {
@@ -17,12 +14,21 @@ const CoNavLeft = ({anclas}) => {
 								.scrollIntoView({ behavior: "smooth" });
 						}}
 					>
-						<span>{ancla.text}</span>
+						<span className="text-normal">{ancla.text}</span>
 					</a>
 				);
 			})}
 		</div>
 	);
+};
+
+CoNavLeft.propTypes = {
+	anclas: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.string.isRequired,
+			text: PropTypes.string.isRequired,
+		})
+	).isRequired,
 };
 
 export default CoNavLeft;

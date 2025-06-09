@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { useContext } from "react";
 import { MyContext } from "../../../components/context/MyContext.js";
 
@@ -20,6 +21,8 @@ import render from "../../../assets/imgs/works/glue/render.svg";
 import insomnia from "../../../assets/imgs/works/glue/insomnia.svg";
 import cron from "../../../assets/imgs/works/glue/cron.svg";
 
+import PropTypes from "prop-types";
+
 const CoCardPlugin = ({
 	icon,
 	title,
@@ -35,11 +38,15 @@ const CoCardPlugin = ({
 			<div className="plugins-carrousel__card-header">
 				<img src={icon} alt={title} />
 				<div className="plugins-carrousel__card-header-title">
-					<span style={{ color: color }}>{title[0]}</span>
-					<span style={{ color: color }}>{title[1]}</span>
+					<span className="text-normal" style={{ color: color }}>
+						{title[0]}
+					</span>
+					<span className="text-normal" style={{ color: color }}>
+						{title[1]}
+					</span>
 				</div>
 			</div>
-			<span>{description}</span>
+			<span className="text-normal">{description}</span>
 			<hr
 				style={{
 					width: "100%",
@@ -87,7 +94,11 @@ const CoCardPlugin = ({
 			</span>
 			<div>
 				{capacidades.map((capacidad, index) => (
-					<li key={index} style={{ paddingLeft: capacidad.nivel * 2 + "rem" }}>
+					<li
+						className="text-normal"
+						key={index}
+						style={{ paddingLeft: capacidad.nivel * 2 + "rem" }}
+					>
 						{capacidad.text}
 					</li>
 				))}
@@ -96,15 +107,27 @@ const CoCardPlugin = ({
 	);
 };
 
+CoCardPlugin.propTypes = {
+	icon: PropTypes.string.isRequired,
+	title: PropTypes.arrayOf(PropTypes.string).isRequired,
+	description: PropTypes.string.isRequired,
+	kpi: PropTypes.array.isRequired,
+	color: PropTypes.string.isRequired,
+	capacidades: PropTypes.array.isRequired,
+};
+
 const CoCardServer = ({ icon, title, description, tech }) => {
-	const { language } = useContext(MyContext);
 	return (
 		<div id="server-card" className="plugins-carrousel__card">
 			<div className="plugins-carrousel__card-header">
 				<img src={icon} alt={title} />
 				<div className="plugins-carrousel__card-header-title">
-					<span style={{ color: "#4D4D4D" }}>{title[0]}</span>
-					<span style={{ color: "#4D4D4D" }}>{title[1]}</span>
+					<span className="text-normal" style={{ color: "#4D4D4D" }}>
+						{title[0]}
+					</span>
+					<span className="text-normal" style={{ color: "#4D4D4D" }}>
+						{title[1]}
+					</span>
 				</div>
 				<div className="plugins-carrousel__card-header-tech">
 					{tech.map((item, index) => (
@@ -126,9 +149,16 @@ const CoCardServer = ({ icon, title, description, tech }) => {
 					borderRadius: "0.5rem",
 				}}
 			/>
-			<span>{description}</span>
+			<span className="text-normal">{description}</span>
 		</div>
 	);
+};
+
+CoCardServer.propTypes = {
+	icon: PropTypes.string.isRequired,
+	title: PropTypes.arrayOf(PropTypes.string).isRequired,
+	description: PropTypes.string.isRequired,
+	tech: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 const CoAutoma = () => {
@@ -374,7 +404,7 @@ const CoAutoma = () => {
 						: "Automation of processes"
 				}
 			/>
-			<span>
+			<span className="text-normal">
 				{language === "ES"
 					? "Como parte de los esfuerzo para mejorar los procesos de diseño de los diseñadores UX se programaron 3 plugin para Figma más 2 servidores extra que permitieron aumentar la productividad del equipo:"
 					: "To improve the design processes of UX designers, 3 plugins for Figma and 2 additional servers were programmed, which increased the team's productivity:"}

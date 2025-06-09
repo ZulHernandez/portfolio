@@ -18,7 +18,7 @@ const CoCard = ({ icon, title, tag, description }) => {
 			<div className="backlog__card-header">
 				<img src={icon} alt={title.join(" ")} />
 				<div className="backlog__card-header-title">
-					<span>{title[0]}</span>
+					<span >{title[0]}</span>
 					<span>{title[1]}</span>
 				</div>
 				<div className="backlog__card-header-tag">
@@ -35,7 +35,7 @@ const CoCard = ({ icon, title, tag, description }) => {
 					borderRadius: "0.5rem",
 				}}
 			/>
-			<span>{description}</span>
+			<span className="text-normal">{description}</span>
 		</div>
 	);
 };
@@ -95,7 +95,7 @@ const CoFuture = () => {
 			className="container-fluid grey"
 		>
 			<CoTitle titles={language === "ES" ? "Futuros pasos" : "Future steps"} />
-			<span>
+			<span className="text-normal">
 				{language === "ES"
 					? "Desde la creación del departamento de Experiencia e Interfaz de Usuario dentro de la Dirección de Producto Digital, se han llevado a cabo diversos esfuerzos para desarrollar y formalizar un sistema de diseño. Estos esfuerzos se han vuelto recurrentes y han experimentado múltiples cambios debido a los avances tecnológicos y al crecimiento dinámico del equipo. En este contexto de evolución y mejora continua, la historia de GLUE (Global Liverpool User Experience) puede dividirse en cuatro grandes etapas."
 					: "Since the creation of the User Experience and Interface department within the Digital Product Management, various efforts have been made to develop and formalize a design system. These efforts have become recurrent and have undergone multiple changes due to technological advancements and the dynamic growth of the team. In this context of evolution and continuous improvement, the history of GLUE (Global Liverpool User Experience) can be divided into four major stages."}
@@ -105,7 +105,7 @@ const CoFuture = () => {
 					{language === "ES" ? "· Herramientas de diseño" : "· Design tools"}
 				</span>
 				<div className="bullet__body">
-					<span>
+					<span className="text-normal">
 						{language === "ES"
 							? "Se tiene en puerta la creación de al menos 4 plugins más que atenderán otras necesidades del proceso de diseño. También se plantea mejorara los que ya se tienen. De estas herramientas ya en desarrollo se tienen las siguientes."
 							: "At least 4 more plugins are planned to address other needs in the design process. There are also plans to improve the existing ones. The following tools are already in development."}
@@ -128,7 +128,7 @@ const CoFuture = () => {
 					{language === "ES" ? "· Procesos de hand-off" : "· Handoff processes"}
 				</span>
 				<div className="bullet__body">
-					<span>
+					<span className="text-normal">
 						{language === "ES"
 							? "De cara a procesos de entrega y distribución de frameworks de diseño más la integración de otros equipos de diseño como marketing, branding y otros se ha optado por la investigación de métodos de tokenización y distribucion de bibliotecas de diferentes formas a los equipos."
 							: "In order to improve handoff and distribution processes of design frameworks, as well as the integration of other design teams such as marketing, branding, and others, research has been conducted on methods for tokenization and distribution of libraries in various ways to the teams."}

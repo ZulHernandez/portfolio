@@ -54,7 +54,7 @@ const RoGLUE = () => {
 		},
 	};
 
-	let anclasGlue = [
+	const anclasGlue = [
 		{
 			text: language == "ES" ? "Sumario" : "Summary",
 			id: language == "ES" ? "sumario" : "summary",

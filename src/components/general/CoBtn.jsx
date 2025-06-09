@@ -1,5 +1,5 @@
-import chevron from "../../assets/imgs/general/chevron.svg";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 
 const CoBtn = ({ type, text, link, icon }) => {
@@ -51,6 +51,13 @@ const CoBtn = ({ type, text, link, icon }) => {
 			</div>
 		</Link>
 	);
+};
+
+CoBtn.propTypes = {
+	type: PropTypes.string,
+	text: PropTypes.string,
+	link: PropTypes.string,
+	icon: PropTypes.bool,
 };
 
 export default CoBtn;

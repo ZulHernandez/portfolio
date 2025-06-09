@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import { MyContext } from "../context/MyContext";
 import CoTitle from "../general/CoTitle";
-import dayjs, { Dayjs } from "dayjs";
+import dayjs from "dayjs";
 import { useState, useEffect } from "react";
 import useScreenSize from "../context/useScreenSize";
+import PropTypes from "prop-types";
 
 import CoBtn from "../general/CoBtn";
 
 import small from "../../assets/imgs/vectores/small.svg";
 import medium from "../../assets/imgs/vectores/medium.svg";
 import large from "../../assets/imgs/vectores/large.svg";
-
 import polilibro from "../../assets/imgs/works/polilibro.svg";
 import yalmalay from "../../assets/imgs/works/yalmalay.svg";
 import sedema from "../../assets/imgs/works/sedema.svg";
@@ -27,7 +27,7 @@ import typeMarsoft from "../../assets/imgs/works/type-marsoft.svg";
 import typeGrupopm from "../../assets/imgs/works/type-grupopm.svg";
 import typeLiverpool from "../../assets/imgs/works/type-liverpool.svg";
 
-let trabajos = [
+const trabajos = [
 	{
 		type: "Freelance",
 		icon: typeFreelance,
@@ -152,7 +152,6 @@ let sortedTrabajos = trabajos
 	.sort((a, b) => (dayjs(a.startDate).isBefore(dayjs(b.startDate)) ? -1 : 1));
 
 sortedTrabajos = [sortedTrabajos.pop(), ...sortedTrabajos];
-
 const CoWorkCard = ({ id, trabajo }) => {
 	const { language } = useContext(MyContext);
 
@@ -162,7 +161,7 @@ const CoWorkCard = ({ id, trabajo }) => {
 				<img src={trabajo.logo} alt={trabajo.name} />
 				<div className="time-line-info__card-head__text">
 					<h2>{trabajo.name}</h2>
-					<p>{trabajo.date[language === "ES" ? 0 : 1]}</p>
+					<p className="text-normal">{trabajo.date[language === "ES" ? 0 : 1]}</p>
 				</div>
 			</div>
 			<h3>{trabajo.rol[language == "ES" ? 0 : 1]}</h3>
@@ -170,10 +169,23 @@ const CoWorkCard = ({ id, trabajo }) => {
 	);
 };
 
+CoWorkCard.propTypes = {
+	id: PropTypes.string,
+	trabajo: PropTypes.shape({
+		name: PropTypes.string.isRequired,
+		logo: PropTypes.string.isRequired,
+		startDate: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+		endDate: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+		date: PropTypes.arrayOf(PropTypes.string).isRequired,
+		rol: PropTypes.arrayOf(PropTypes.string).isRequired,
+		top: PropTypes.string.isRequired,
+	}),
+};
+
 const CoTimeline = () => {
 	const [works, setWorks] = useState(sortedTrabajos);
 	const { language } = useContext(MyContext);
-    const { width, height } = useScreenSize();
+    const { width } = useScreenSize();
 	const [coeficiente, setCoeficiente] = useState(1);
 
 	useEffect(() => {
@@ -188,7 +200,7 @@ const CoTimeline = () => {
 		}
 	}, [width]);
 
-    function handleResize() {
+    /* function handleResize() {
         if (width >= 1400) {
             setCoeficiente(1.2);
         } else if (width >= 1200) {
@@ -198,7 +210,7 @@ const CoTimeline = () => {
         } else {
             setCoeficiente(0.5);
         }
-    }
+    } */
 
 	function scrollToAnchor(anchorId) {
 		const container = document.querySelector(".time-line");

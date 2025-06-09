@@ -226,7 +226,7 @@ const CoInsumos = () => {
 					language === "ES" ? "Mejora de insumos" : "Improvement of Inputs"
 				}
 			/>
-			<span>
+			<span className="text-normal">
 				{language === "ES"
 					? "Dentro de los procesos de HandOff de los proyectos se mejoraron diferentes dolencias que equipos como Desarrollo y Business Analyst lo que provoco una serie de trabajos para la atención a estos problemas:"
 					: "Within the HandOff processes of the projects, different pains were improved that teams such as Development and Business Analyst had, which led to a series of works to address these problems:"}
@@ -238,7 +238,7 @@ const CoInsumos = () => {
 						: "· Consolidation and care of fonts"}
 				</span>
 				<div className="bullet__body">
-					<span>
+					<span className="text-normal">
 						{language === "ES"
 							? "Se decidió por crear un repositorio donde se conglomeraran todas las tipografías que son utilizadas a los largo del e-commerce, herramientas internas y otros sitios pertenecientes a Liverpool. Este repositorio se genero en Drive y se construyo bajo las necesidades particulares del equipo de Ux  y los desarrolladores Front-End. Se genero una nomenclatura que sirviese para ambos equipos y se termino por documentar la misma dentro de la librería de variables de Figma."
 							: "A repository was created to consolidate all the fonts used throughout the e-commerce, internal tools, and other sites belonging to Liverpool. This repository was generated in Drive and built according to the specific needs of the UX team and Front-End developers. A nomenclature was created to serve both teams and was ultimately documented within the Figma variable library."}
@@ -266,23 +266,23 @@ const CoInsumos = () => {
 				</span>
 				<div className="bullet__body">
 					<div>
-						<span>
+						<span className="text-normal">
 							{language === "ES"
 								? "Producto de una serie de acercamientos, platicas y encuestas con equipos que consultan los documentos de Figma como parte de su flujo de trabajo de entre los que se incluyen Frontend devs, Business Analysts, Negocio y QA se genero una estructura dentro de los documentos de Figma que funcionaba para acomodar de forma correcta y en orden de prioridad aquellas paginas que lo fuesen, así se termino por crear una estructura que comprende los siguientes puntos."
 								: "As a result of a series of approaches, discussions, and surveys with teams that consult Figma documents as part of their workflow, including Frontend devs, Business Analysts, Business, and QA, a structure was generated within the Figma documents that worked to correctly accommodate and prioritize those pages that needed it. Thus, a structure was created that includes the following points."}
 						</span>
 						<ul>
-							<li>
+							<li className="text-normal">
 								{language === "ES"
 									? "Adición de emojis para mejorar la identificación de páginas"
 									: "Addition of emojis to improve page identification"}
 							</li>
-							<li>
+							<li className="text-normal">
 								{language === "ES"
 									? "Agrupación de paginas por semántica parecida"
 									: "Grouping of pages by similar semantics"}
 							</li>
-							<li>
+							<li className="text-normal">
 								{language === "ES"
 									? "Creación de tres tipos diferentes de documentos: proyectos Ux, research y herramientas internas"
 									: "Creation of three different types of documents: Ux projects, research, and internal tools"}

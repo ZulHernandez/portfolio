@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const CoKPI = ({ title, dato, desc, imgs, imgSize, pos, color }) => {
 	return (
 		<div className="card-kpi" style={{ alignItems: pos }}>
@@ -16,6 +18,16 @@ const CoKPI = ({ title, dato, desc, imgs, imgSize, pos, color }) => {
 			</div>
 		</div>
 	);
+};
+
+CoKPI.propTypes = {
+	title: PropTypes.string.isRequired,
+	dato: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	desc: PropTypes.string,
+	imgs: PropTypes.arrayOf(PropTypes.string).isRequired,
+	imgSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	pos: PropTypes.string,
+	color: PropTypes.string
 };
 
 export default CoKPI;

@@ -11,6 +11,7 @@ import CoBtn from "../components/general/CoBtn";
 const RoResume = () => {
 	const { language } = useContext(MyContext);
 	const { setAmplio } = useContext(MyContext);
+	const location = useLocation();
 
 	useEffect(() => {
 		setAmplio(false); // Reset amplio on route change

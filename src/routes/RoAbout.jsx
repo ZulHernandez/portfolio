@@ -57,6 +57,8 @@ import sal from "../assets/imgs/about/food/sal.svg";
 const API_KEY = "AIzaSyD786eN8Xt3Z-ItaSYVSDuZ4AVLrApAPD4";
 const PLAYLIST_ID = "PLC_vmjLKExTmybkcbAHXzqPsZuVH9Lc6I";
 
+import PropTypes from "prop-types";
+
 const CoCard = ({ cover, title, author, url }) => {
 	const iframeRef = useRef(null);
 	const [display, setDisplay] = useState(0);
@@ -115,13 +117,26 @@ const CoCard = ({ cover, title, author, url }) => {
 	);
 };
 
+CoCard.propTypes = {
+	cover: PropTypes.string,
+	title: PropTypes.string,
+	author: PropTypes.string,
+	url: PropTypes.string,
+};
+
 const CoTab = ({ status, icon, text }) => {
 	return (
 		<div className={`tab-buttons__item ${status}`}>
 			<img src={icon} alt={text} />
-			<span>{text}</span>
+			<span className="text-normal">{text}</span>
 		</div>
 	);
+};
+
+CoTab.propTypes = {
+	status: PropTypes.string,
+	icon: PropTypes.string,
+	text: PropTypes.string,
 };
 
 const CoSport = () => {
@@ -163,7 +178,7 @@ const CoSport = () => {
 							<h2>
 								{language == "ES" ? "Me encanta nadar" : "I love swimming"}
 							</h2>
-							<span>
+							<span className="text-normal">
 								{language == "ES"
 									? "Llevo nadando ya más de un año y no podría estar más enamorado de este deporte, es una sensación increíble el poder perderse en el agua después de un día de trabajo."
 									: "I have been swimming for more than a year now and I couldn't be more in love with this sport, it is an incredible feeling to be able to get lost in the water after a day of work."}
@@ -268,7 +283,7 @@ const CoMusic = () => {
 								? "Escuchar y tocar música es maravilloso"
 								: "Listening to and playing music is wonderful"}
 						</h2>
-						<span>
+						<span className="text-normal">
 							{language == "ES"
 								? "Me encanta escuchar música y no solo como parte del fondo mientras comino por la ciudad, realmente me encanta darme mi tiempo para sentarme y escuchar un buen álbum de PinkFloyd, Gorillaz o Joji."
 								: "I love listening to music and not just as background music while walking around the city, I really enjoy taking my time to sit down and listen to a good album by Pink Floyd, Gorillaz, or Joji."}
@@ -289,7 +304,7 @@ const CoMusic = () => {
 				</div>
 			</div>
 			<div style={{ width: "100%" }}>
-				<span>
+				<span className="text-normal">
 					{language == "ES"
 						? "Ultimamente he estado escuchando:"
 						: "Recently, I have been listening to:"}
@@ -348,7 +363,7 @@ const CoGames = () => {
 								? "Soy más de singleplayer..."
 								: "I prefer singleplayer games..."}
 						</h2>
-						<span>
+						<span className="text-normal">
 							{language == "ES"
 								? "Me gustan los juegos donde me encuentro solo descubriendo una gran historia. Diría que mis géneros favoritos son los walking simulators, los metroid-vania y los plataformeros clasicos. Definitivamente mi juego favorito es Hollowknight."
 								: "I like games where I find myself alone discovering a great story. I would say my favorite genres are walking simulators, metroidvanias, and classic platformers. Definitely, my favorite game is Hollow Knight."}
@@ -365,7 +380,7 @@ const CoGames = () => {
 								? "... pero me encantan los juegos de mesa"
 								: "... but i also like board games"}
 						</h4>
-						<span>
+						<span className="text-normal">
 							{language == "ES"
 								? "Últimamente he estado coleccionando y descubriendo juegos de mesas que me han encantado, no tengo muchos aún en mi colección pero pronto estare llenos de ellos"
 								: "Lately, I have been collecting and discovering board games that I have loved, I don't have many yet in my collection but soon I will be filled with them"}
@@ -468,7 +483,7 @@ const CoManga = () => {
 								? "Slices of live, terror y ¿mechas?"
 								: "Slices of life, terror and mechas?"}
 						</h2>
-						<span>
+						<span className="text-normal">
 							{language == "ES"
 								? "Soy más de leer manga que ver anime y asi he encontrado increíbles autores que me han hecho pasar buenos y malos momentos. Aquí esta mi top de mangas aunque, si es posible, deberías leer más sobre el autor."
 								: "I prefer reading manga over watching anime, and this has led me to discover incredible authors who have given me both good and bad moments. Here is my top manga, although if possible, you should read more about the author."}
@@ -490,7 +505,7 @@ const CoManga = () => {
 			<div className="tab-content">
 				<div className="tab-content__info">
 					<div className="tab-content__info-text">
-						<span>
+						<span className="text-normal">
 							{language == "ES"
 								? "A pesar de gustar más el formato manga, hay obras que definitivamente no podría más sino viéndolas a toda color y animadas. Te recomiendo mucho darles un vistazo, podrían gustarte bastante."
 								: "Despite preferring the manga format, there are definitely works that I couldn't enjoy as much if I didn't watch them in full color and animated. I highly recommend checking them out; you might like them a lot."}
@@ -638,7 +653,7 @@ const CoComida = () => {
 								? "Comida asiática, cocinar y una receta "
 								: "Asian food, cooking, and a recipe"}
 						</h2>
-						<span>
+						<span className="text-normal">
 							{language == "ES"
 								? "Me encanta comer pero también amo cocinar, de las cosas que mas suelo cocinar son comida asiática desde platillos salados como ramen, giozas u onigiris como también platillos dulces como el helado de matcha. La comida mexicana obviamente me encanta, hago una birria espectacular y justo les dejare una reseta de salsa verde cruda para que puedan comer con su familia."
 								: "I love eating but I also love cooking. Some of the things I cook the most are Asian food, from savory dishes like ramen, gyozas, or onigiris to sweet dishes like matcha ice cream. I obviously love Mexican food; I make a spectacular birria, and I will leave you a recipe for raw green salsa so you can enjoy it with your family."}
@@ -662,8 +677,8 @@ const CoComida = () => {
 												className="receipe__ingredients-list-item"
 												key={index}
 											>
-												<span>{item.cantidad}</span>
-												<span>{item.text}</span>
+												<span className="text-normal">{item.cantidad}</span>
+												<span className="text-normal">{item.text}</span>
 											</div>
 										))}
 									</div>
@@ -676,8 +691,8 @@ const CoComida = () => {
 												className="receipe__instructions-list-item"
 												key={index}
 											>
-												<span>{item.cantidad}</span>
-												<span>{item.text}</span>
+												<span className="text-normal">{item.cantidad}</span>
+												<span className="text-normal">{item.text}</span>
 											</div>
 										))}
 									</div>
@@ -696,7 +711,7 @@ const RoAbout = () => {
 	const location = useLocation();
 	const [filtro, setFiltro] = useState(2);
 
-	let anclasAbout = [
+	const anclasAbout = [
 		{
 			text: language == "ES" ? "Esto soy yo" : "This is me",
 			id: language == "ES" ? "esto-soy-yo" : "this-is-me",
@@ -729,7 +744,7 @@ const RoAbout = () => {
 							: "This is me"
 					}
 				/>
-				<span id="span">
+				<span className="text-normal">
 					{language == "ES"
 						? "Te dejo este apartado para que conozcas más sobre mi, más allá de mi trabajo hay otras cosas sobre mi que pueden ser interesantes."
 						: "I leave you this section so you can learn more about me, beyond my work there are other things about me that may be interesting."}

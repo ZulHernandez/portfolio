@@ -3,7 +3,7 @@ import { MyContext } from "../context/MyContext.js";
 import sign from "/sign.svg";
 import { Link } from "react-router-dom";
 
-let foots = [
+const foots = [
 	{
 		title: ["Otros espacios", "Other spaces"],
 		links: [
@@ -65,7 +65,7 @@ const CoFooter = () => {
 	const { ruta, setRuta } = useContext(MyContext);
 
 	return (
-		<footer className="container-fluid">
+		<footer className="container-fluid no-print">
 			<div className="footer__links">
 				{foots.map((foot, index) => {
 					return (

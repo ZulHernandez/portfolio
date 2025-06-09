@@ -12,7 +12,7 @@ import sketchfab from "../../assets/imgs/home/SketchFab.svg";
 import behance from "../../assets/imgs/home/Behance.svg";
 import linkedin from "../../assets/imgs/home/LinkedIn.svg";
 
-let opciones = [
+const opciones = [
 	{
 		id: 1,
 		name: "Home",
