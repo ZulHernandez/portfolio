@@ -1,6 +1,7 @@
 import CoNavLeft from "../components/general/CoNavLeft.jsx";
 import CoTrabajos from "../components/works/CoTrabajos.jsx";
 import CoTimeline from "../components/works/CoTimeline.jsx";
+import CoContexto from "../components/works/movilidad/CoContexto.jsx";
 
 import { useContext } from "react";
 import { MyContext } from "../components/context/MyContext.js";
@@ -19,7 +20,7 @@ const RoWorks = () => {
 			id: language == "ES" ? "mis-trabajos" : "my-works",
 		},
 		{
-			text: language == "ES" ? "Línea del tiempo" : "Timeline",
+			text: language == "ES" ? "Cronología" : "Timeline",
 			id: language == "ES" ? "linea-del-tiempo" : "timeline",
 		},
 	];
@@ -37,6 +38,7 @@ const RoWorks = () => {
 			<div>
 				<CoTrabajos />
 				<CoTimeline />
+				<CoContexto />
 			</div>
 			<CoNavLeft anclas={anclasWork} />
 		</>

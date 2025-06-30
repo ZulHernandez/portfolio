@@ -22,15 +22,15 @@ const RoHome = () => {
 		},
 		{
 			text:
-				language == "ES" ? "Dónde he colaborado" : "Where I have collaborated",
+				language == "ES" ? "Colaboraciones" : "Collaborations",
 			id: language == "ES" ? "colab" : "colab",
 		},
 		{
-			text: language == "ES" ? "Mis trabajos destacados" : "My featured works",
+			text: language == "ES" ? "Mis trabajos" : "My works",
 			id: language == "ES" ? "trabajos" : "works",
 		},
 		{
-			text: language == "ES" ? "Conozcámonos" : "Let's get in touch",
+			text: language == "ES" ? "Conozcámonos" : "Get in touch",
 			id: language == "ES" ? "conozcamonos" : "getInTouch",
 		},
 	];

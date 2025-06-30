@@ -2,15 +2,7 @@ import { useContext } from "react";
 import PropTypes from "prop-types";
 import { MyContext } from "../context/MyContext.js";
 
-const CoSumario = ({
-	foto,
-	title,
-	date,
-	description,
-	role,
-	sector,
-	team
-}) => {
+const CoSumario = ({ foto, title, date, description, role, sector, team }) => {
 	const { language } = useContext(MyContext);
 	return (
 		<div
@@ -18,7 +10,20 @@ const CoSumario = ({
 			className="container-fluid"
 		>
 			<div className="sumario-card">
-				<img className="sumario-card__photo" src={foto} alt={title} />
+				<video
+					className="sumario-card__photo"
+					src={foto}
+					autoPlay
+					loop
+					muted
+					playsInline
+					controls={false}
+					disablePictureInPicture
+					disableRemotePlayback
+					controlsList="nodownload"
+					alt={title}
+					style={{ borderRadius: "8px", objectFit: "cover"}}
+				/>
 				<div className="sumario-card__body">
 					<div className="sumario-card__body-text">
 						<div className="sumario-card__body-text-upper">
@@ -56,7 +61,7 @@ CoSumario.propTypes = {
 	description: PropTypes.string.isRequired,
 	role: PropTypes.arrayOf(PropTypes.string).isRequired,
 	sector: PropTypes.string.isRequired,
-	team: PropTypes.string.isRequired
+	team: PropTypes.string.isRequired,
 };
 
 export default CoSumario;

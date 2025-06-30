@@ -1,20 +1,20 @@
 import GLUE from "../../assets/imgs/home/GLUE.webp";
-import GLUEgif from "../../assets/imgs/gifs/GLUE.gif";
+import GLUEgif from "../../assets/imgs/gifs/GLUE.mp4";
 
 import MOVILIDAD from "../../assets/imgs/home/MOVILIDAD.webp";
-import MOVILIDADgif from "../../assets/imgs/gifs/MOVILIDAD.gif";
+import MOVILIDADgif from "../../assets/imgs/gifs/MOVILIDAD.mp4";
 
 import ACTIVA from "../../assets/imgs/home/ACTIVA.webp";
-import ACTIVAgif from "../../assets/imgs/gifs/ACTIVA.gif";
+import ACTIVAgif from "../../assets/imgs/gifs/ACTIVA.mp4";
 
 import HUBBUB from "../../assets/imgs/home/HUBBUB.webp";
-import HUBBUBgif from "../../assets/imgs/gifs/HUBBUB.gif";
+import HUBBUBgif from "../../assets/imgs/gifs/HUBBUB.mp4";
 
 import GALERIA from "../../assets/imgs/home/GALERIA.webp";
-import GALERIAgif from "../../assets/imgs/gifs/GALERIA.gif";
+import GALERIAgif from "../../assets/imgs/gifs/GALERIA.mp4";
 
 import GOOK from "../../assets/imgs/home/GOOK.webp";
-import GOOKgif from "../../assets/imgs/gifs/GOOK.gif";
+import GOOKgif from "../../assets/imgs/gifs/GOOK.mp4";
 
 import liver from "../../assets/imgs/home/liverpool.svg";
 import uam from "../../assets/imgs/home/uma.svg";
@@ -58,6 +58,7 @@ const varTrabajos = () => {
 			date: ["oct 2024 - may 2025", "oct 2024 - may 2025"],
 			logo: [liver],
 			comp: ["El Puerto de Liverpool", "El Puerto de Liverpool"],
+			link: "movilidad"
 		},
 		{
 			cover: ACTIVA,

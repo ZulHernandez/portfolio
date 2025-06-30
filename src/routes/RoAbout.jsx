@@ -717,7 +717,7 @@ const RoAbout = () => {
 			id: language == "ES" ? "esto-soy-yo" : "this-is-me",
 		},
 		{
-			text: language == "ES" ? "Conozcámonos" : "Let's get to know each other",
+			text: language == "ES" ? "Conozcámonos" : "Get in touch",
 			id: language == "ES" ? "conozcamonos" : "getInTouch",
 		},
 	];

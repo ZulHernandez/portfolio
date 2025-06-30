@@ -12,7 +12,7 @@ import CoInsumos from "../../components/works/glue/CoInsumos.jsx";
 import CoAutoma from "../../components/works/glue/CoAutoma.jsx";
 import CoFuture from "../../components/works/glue/CoFuture.jsx";
 
-import fotoGLUE from "../../assets/imgs/gifs/GLUE.gif";
+import fotoGLUE from "../../assets/imgs/gifs/GLUE.mp4";
 import liverpool from "../../assets/imgs/works/companies/liverpool.svg";
 
 const RoGLUE = () => {
@@ -64,15 +64,15 @@ const RoGLUE = () => {
 			id: language == "ES" ? "contexto" : "context",
 		},
 		{
-			text: language == "ES" ? "Tecnologias adoptadas" : "Technologies Used",
+			text: language == "ES" ? "Tecnologias" : "Technologies",
 			id: language == "ES" ? "tecnologias-adoptadas" : "technologies-used",
 		},
 		{
-			text: language == "ES" ? "Mejora de insumos" : "Improvement of Inputs",
+			text: language == "ES" ? "Insumos" : "Inputs",
 			id: language == "ES" ? "mejora-de-insumos" : "improvement-of-inputs",
 		},
 		{
-			text: language == "ES" ? "Automatización de procesos" : "Automation of Processes",
+			text: language == "ES" ? "Automatización" : "Automation",
 			id: language == "ES" ? "automatizacion-de-procesos" : "automation-of-processes",
 		},
 		{
