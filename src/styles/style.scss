@@ -2031,6 +2031,17 @@ footer {
                 }
             }
         }
+        &__screens{
+            @include fnFlex(row, flex-start, center, 1rem);
+            gap: 1rem;
+            width: 100%;
+            background-color: red;
+            img {
+                margin-top: 5rem;
+                width: 100%;
+                height: auto;
+            }
+        }
     }
 
     /* @media (max-width: 1800px) {

@@ -11,6 +11,10 @@ import noti from "../../../assets/imgs/works/movilidad/notifications/notificatio
 import island from "../../../assets/imgs/works/movilidad/notifications/dIsland.svg";
 import watch from "../../../assets/imgs/works/movilidad/notifications/watch.svg";
 
+import isla1 from "../../../assets/imgs/works/movilidad/notifications/isla1.svg";
+import isla2 from "../../../assets/imgs/works/movilidad/notifications/isla2.svg";
+import isla3 from "../../../assets/imgs/works/movilidad/notifications/isla3.svg";
+
 const CoAmbNoti = () => {
 	const { language } = useContext(MyContext);
 
@@ -19,7 +23,8 @@ const CoAmbNoti = () => {
 			id: 1,
 			text: language === "ES" ? "Isla Dinámica" : "Dynamic Island",
 			img: island,
-			screens: [],
+			screens: [isla1, isla2, isla3],
+			alt: "Dynamic Island",
 		},
 		{
 			id: 2,
@@ -202,6 +207,17 @@ const CoAmbNoti = () => {
 								</span>
 							</div>
 						</div>
+					</div>
+					<div className="example-container__screens">
+						{carruselIos[0].screens &&
+							carruselIos[0].screens.map((screen, index) => (
+								<img
+									key={index}
+									className="example-container__screens-item"
+									src={screen}
+									alt={carruselIos[0].alt}
+								/>
+							))}
 					</div>
 				</div>
 			</div>
