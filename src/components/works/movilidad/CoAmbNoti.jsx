@@ -11,218 +11,6 @@ import noti from "../../../assets/imgs/works/movilidad/notifications/notificatio
 import island from "../../../assets/imgs/works/movilidad/notifications/dIsland.svg";
 import watch from "../../../assets/imgs/works/movilidad/notifications/watch.svg";
 
-import watchFrame from "../../../assets/imgs/works/movilidad/notifications/watch.png";
-import charginCar from "../../../assets/imgs/works/movilidad/notifications/charginCar.svg";
-import tempo from "../../../assets/imgs/works/movilidad/notifications/tempo.svg";
-import crono from "../../../assets/imgs/works/movilidad/notifications/crono.svg";
-
-import icon1 from "../../../assets/imgs/works/movilidad/notifications/icon1.svg";
-import icon2 from "../../../assets/imgs/works/movilidad/notifications/icon2.svg";
-import icon3 from "../../../assets/imgs/works/movilidad/notifications/icon3.svg";
-
-const IOsWatch = () => {
-	return (
-		<>
-			<div id="frame1" className="example-container__frame">
-				<img src={watchFrame} alt="Watch Frame" />
-				<div className="div-notification watch">
-					<img src={charginCar} alt="" />
-					<div className="div-notification__text">
-						<div className="watch-time">
-							<span className="watch-time-title">Carga completa en:</span>
-							<span className="watch-time-subtitle">72 min</span>
-						</div>
-						<div className="watch-dato">
-							<span className="watch-dato-title">% total de la batería</span>
-							<span className="watch-dato-data">45%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="frame2" className="example-container__frame">
-				<img src={watchFrame} alt="Watch Frame" />
-				<div className="div-notification watch">
-					<img src={tempo} alt="" />
-					<div className="div-notification__text">
-						<div className="watch-dato">
-							<span className="watch-dato-title">25/08/2024 13:40</span>
-							<span
-								className="watch-dato-data"
-								style={{ fontSize: "0.48rem", color: "#fff" }}
-							>
-								Cuentas con 5 minutos para desconectar la pistola de carga del
-								automovil. Para evitar cargos por estancia
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="frame3" className="example-container__frame">
-				<img src={watchFrame} alt="Watch Frame" />
-				<div className="div-notification watch">
-					<img src={crono} alt="" />
-					<div className="div-notification__text">
-						<div className="watch-dato">
-							<span className="watch-dato-title">25/08/2024 13:40</span>
-							<span
-								className="watch-dato-data"
-								style={{ fontSize: "0.48rem", color: "#fff" }}
-							>
-								Desconecta tu carro de la estación de carga. Se cobrarán $20.75
-								por cada minuto de estancia dentro de la zona de carga.
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</>
-	);
-};
-
-const IOsIsland = () => {
-	return (
-		<>
-			<div id="frame1" className="example-container__frame">
-				<div className="div-notification island">
-					<img src={icon1} alt="" />
-					<div>
-						<span>231</span>
-						<span className="unity">
-							<sup>kW</sup>
-						</span>
-					</div>
-				</div>
-				<div className="div-notification island extended">
-					<img src={charginCar} alt="" />
-					<div className="extended-text">
-						<div className="extended-text__head">
-							<div className="extended-text__head-data">
-								<span className="extended-text__head-data-title">
-									Carga completa en:
-								</span>
-								<span className="extended-text__head-data-subtitle">
-									72 min
-								</span>
-							</div>
-							<div>
-								<span className="extended-text__head-data-status">
-									• Cargando
-								</span>
-							</div>
-						</div>
-						<div className="extended-text__body">
-							<div className="extended-text__body-dato">
-								<span className="extended-text__body-dato-title">
-									kW totales cargados
-								</span>
-								<span className="extended-text__body-dato-data">120kW</span>
-							</div>
-							<div className="extended-text__body-dato">
-								<span className="extended-text__body-dato-title">
-									kW totales cargados
-								</span>
-								<span className="extended-text__body-dato-data">120kW</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="frame2" className="example-container__frame">
-				<div className="div-notification island">
-					<img src={icon2} alt="" />
-					<span style={{ color: "#5493F8" }}>3:50</span>
-				</div>
-				<div className="div-notification island extended">
-					<img src={tempo} alt="" />
-					<div className="extended-text">
-						<div className="extended-text__head">
-							<span className="extended-text__body-dato-title">
-								25/08/2024 13:40
-							</span>
-							<div>
-								<span
-									className="extended-text__head-data-status"
-									style={{ color: "#5493F8" }}
-								>
-									• Desconecta tu auto
-								</span>
-							</div>
-						</div>
-						<div className="extended-text__body">
-							<span style={{ fontSize: "1rem", color: "#fff" }}>
-								Cuentas con 5 minutos para desconectar la pistola de carga del
-								automovil. Para evitar cargos por estancia
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="frame3" className="example-container__frame">
-				<div className="div-notification island">
-					<img src={icon3} alt="" />
-					<span style={{ color: "#EC9E00" }}>
-						5<sup>min</sup>
-					</span>
-				</div>
-				<div className="div-notification island extended">
-					<img src={crono} alt="" />
-					<div className="extended-text">
-						<div className="extended-text__head">
-							<span className="extended-text__body-dato-title">
-								25/08/2024 13:40
-							</span>
-							<div>
-								<span
-									className="extended-text__head-data-status"
-									style={{ color: "#EC9E00" }}
-								>
-									• Desconecta tu auto
-								</span>
-							</div>
-						</div>
-						<div className="extended-text__body">
-							<span style={{ fontSize: "1rem", color: "#fff" }}>
-								Desconecta tu carro de la estación de carga. Se cobrarán $20.75
-								por cada minuto de estancia dentro de la zona de carga.
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</>
-	);
-};
-
-const IOsNotification = () => {
-	return (
-		<>
-			<div id="frame1" className="example-container__frame">
-				<div className="div-notification cell">
-					<div className="cell-head">
-						<span>Liverpool Pocket</span>
-						<span
-							className="extended-text__head-data-status"
-							style={{ color: "#37ABC6" }}
-						>
-							• Cargando
-						</span>
-					</div>
-					<img src={charginCar} alt="" />
-					<div className="div-notification__text">
-						<div className="watch-time">
-							<span className="watch-time-title">Carga completa en:</span>
-							<span className="watch-time-subtitle">72 min</span>
-						</div>
-						<div className="watch-dato">
-							<span className="watch-dato-title">% total de la batería</span>
-							<span className="watch-dato-data">45%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</>
-	);
-};
 
 const CoAmbNoti = () => {
 	const { language } = useContext(MyContext);
@@ -232,6 +20,7 @@ const CoAmbNoti = () => {
 			id: 1,
 			text: language === "ES" ? "Isla Dinámica" : "Dynamic Island",
 			img: island,
+			screens: []
 		},
 		{
 			id: 2,
@@ -242,6 +31,19 @@ const CoAmbNoti = () => {
 			id: 3,
 			text: language === "ES" ? "Reloj" : "Watch",
 			img: watch,
+		},
+	]);
+
+	const [carruselAndroid, setCarruselAndroid] = useState([
+		{
+			id: 1,
+			text: language === "ES" ? "Reloj" : "Watch",
+			img: watch,
+		},
+		{
+			id: 2,
+			text: language === "ES" ? "Notificación" : "Notification",
+			img: noti,
 		},
 	]);
 
@@ -275,15 +77,26 @@ const CoAmbNoti = () => {
 		},
 	];
 
-	const rotateArray = () => {
-		setCarruselIos((prevWorks) => [...prevWorks.slice(1), prevWorks[0]]);
+	const rotateArray = (brand) => {
+		if (brand === "iOs") {
+			setCarruselIos((prevWorks) => [...prevWorks.slice(1), prevWorks[0]]);
+		} else if (brand === "Android") {
+			setCarruselAndroid((prevWorks) => [...prevWorks.slice(1), prevWorks[0]]);
+		}
 	};
 
-	const rotateReverse = () => {
-		setCarruselIos((prevWorks) => [
-			prevWorks[prevWorks.length - 1],
-			...prevWorks.slice(0, -1),
-		]);
+	const rotateReverse = (brand) => {
+		if (brand === "iOs") {
+			setCarruselIos((prevWorks) => [
+				prevWorks[prevWorks.length - 1],
+				...prevWorks.slice(0, -1),
+			]);
+		} else if (brand === "Android") {
+			setCarruselAndroid((prevWorks) => [
+				prevWorks[prevWorks.length - 1],
+				...prevWorks.slice(0, -1),
+			]);
+		}
 	};
 
 	return (
@@ -323,86 +136,131 @@ const CoAmbNoti = () => {
 					</div>
 				))}
 			</div>
-
-			<h2 className="subtitle">iOs</h2>
-			<div className="example-container">
-				<div className="example-container__control">
-					<div className="example-container__control-arrows">
-						<img
-							className="arrow"
-							src={up}
-							alt="Up arrow"
-							onClick={() => {
-								rotateReverse();
-							}}
-						/>
-						<img src={center} alt="Center arrow" />
-						<img
-							className="arrow"
-							src={down}
-							alt="Down arrow"
-							onClick={() => {
-								rotateArray();
-							}}
-						/>
-					</div>
-					<div className="example-container__control-buttons">
-						<div
-							id="uno"
-							key={carruselIos[0].id}
-							className="example-container__control-buttons-item"
-						>
+			<div>
+				<h2 className="subtitle">iOs</h2>
+				<div className="example-container">
+					<div className="example-container__control">
+						<div className="example-container__control-arrows">
 							<img
-								className="example-container__control-item-img"
-								src={carruselIos[0].img}
-								alt={carruselIos[0].text}
+								className="arrow"
+								src={up}
+								alt="Up arrow"
+								onClick={() => {
+									rotateReverse("iOs");
+								}}
 							/>
-							<span className="example-container__control-item-text">
-								{carruselIos[0].text}
-							</span>
+							<img src={center} alt="Center arrow" />
+							<img
+								className="arrow"
+								src={down}
+								alt="Down arrow"
+								onClick={() => {
+									rotateArray("iOs");
+								}}
+							/>
 						</div>
-						<div
-							id="dos"
-							key={carruselIos[1].id}
-							className="example-container__control-buttons-item"
-						>
-							<img
-								className="example-container__control-item-img"
-								src={carruselIos[1].img}
-								alt={carruselIos[1].text}
-							/>
-							<span className="example-container__control-item-text">
-								{carruselIos[1].text}
-							</span>
-						</div>
-						<div
-							id="tres"
-							key={carruselIos[2].id}
-							className="example-container__control-buttons-item"
-						>
-							<img
-								className="example-container__control-item-img"
-								src={carruselIos[2].img}
-								alt={carruselIos[2].text}
-							/>
-							<span className="example-container__control-item-text">
-								{carruselIos[2].text}
-							</span>
+						<div className="example-container__control-buttons">
+							<div
+								id="uno"
+								key={carruselIos[0].id}
+								className="example-container__control-buttons-item"
+							>
+								<img
+									className="example-container__control-item-img"
+									src={carruselIos[0].img}
+									alt={carruselIos[0].text}
+								/>
+								<span className="example-container__control-item-text">
+									{carruselIos[0].text}
+								</span>
+							</div>
+							<div
+								id="dos"
+								key={carruselIos[1].id}
+								className="example-container__control-buttons-item"
+							>
+								<img
+									className="example-container__control-item-img"
+									src={carruselIos[1].img}
+									alt={carruselIos[1].text}
+								/>
+								<span className="example-container__control-item-text">
+									{carruselIos[1].text}
+								</span>
+							</div>
+							<div
+								id="tres"
+								key={carruselIos[2].id}
+								className="example-container__control-buttons-item"
+							>
+								<img
+									className="example-container__control-item-img"
+									src={carruselIos[2].img}
+									alt={carruselIos[2].text}
+								/>
+								<span className="example-container__control-item-text">
+									{carruselIos[2].text}
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
-				{(() => {
-					switch (carruselIos[1].id) {
-						case 1:
-							return <IOsIsland />;
-						case 2:
-							return <IOsNotification />;
-						case 3:
-							return <IOsWatch />;
-						default:
-							return null;
-					}
-				})()}
+			</div>
+			<div>
+				<h2 className="subtitle">Android</h2>
+				<div className="example-container">
+					<div className="example-container__control">
+						<div className="example-container__control-arrows">
+							<img
+								className="arrow"
+								src={up}
+								alt="Up arrow"
+								onClick={() => {
+									rotateReverse("Android");
+								}}
+							/>
+							<img src={center} alt="Center arrow" />
+							<img
+								className="arrow"
+								src={down}
+								alt="Down arrow"
+								onClick={() => {
+									rotateArray("Android");
+								}}
+							/>
+						</div>
+						<div className="example-container__control-buttons">
+							<div
+								id="uno"
+								key={carruselAndroid[0].id}
+								className="example-container__control-buttons-item"
+							>
+								<img
+									className="example-container__control-item-img"
+									src={carruselAndroid[0].img}
+									alt={carruselAndroid[0].text}
+								/>
+								<span className="example-container__control-item-text">
+									{carruselAndroid[0].text}
+								</span>
+							</div>
+							<div
+								id="dos"
+								key={carruselAndroid[1].id}
+								className="example-container__control-buttons-item"
+							>
+								<img
+									className="example-container__control-item-img"
+									src={carruselAndroid[1].img}
+									alt={carruselAndroid[1].text}
+								/>
+								<span className="example-container__control-item-text">
+									{carruselAndroid[1].text}
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
