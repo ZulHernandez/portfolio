@@ -3977,6 +3977,23 @@ footer img {
   transform-origin: left;
   transform: scale(0.8);
 }
+#notificaciones .example-container__screens,
+#notifications .example-container__screens {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  gap: 1rem;
+  width: 100%;
+  background-color: red;
+}
+#notificaciones .example-container__screens img,
+#notifications .example-container__screens img {
+  margin-top: 5rem;
+  width: 100%;
+  height: auto;
+}
 
 @media print {
   .nav-header,
