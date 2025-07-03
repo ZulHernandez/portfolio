@@ -102,13 +102,24 @@ const CoTrabajos = () => {
 										width <= 800 ? "100%" : index % 3 == 0 ? "40%" : "100%",
 								}}
 							/>
-							<img
+							<video
 								className="gif-cover"
 								src={destacado.covergif}
+								autoPlay
+								loop
+								muted
+								playsInline
+								controls={false}
+								disablePictureInPicture
+								disableRemotePlayback
+								controlsList="nodownload"
+								poster={destacado.cover}
 								alt={language == "ES" ? destacado.title[0] : destacado.title[1]}
 								style={{
 									width:
 										width <= 800 ? "100%" : index % 3 == 0 ? "40%" : "100%",
+									borderRadius: "8px",
+									objectFit: "cover",
 								}}
 							/>
 							<div className="work-card__body">
@@ -129,8 +140,11 @@ const CoTrabajos = () => {
 										)}
 									</div>
 									<div className="work-card__body-info-head">
+										<br />
 										<h3>{destacado.title[language == "ES" ? 0 : 1]}</h3>
-										<span className="text-normal">{destacado.des[language == "ES" ? 0 : 1]}</span>
+										<span className="text-normal">
+											{destacado.des[language == "ES" ? 0 : 1]}
+										</span>
 									</div>
 								</div>
 								<div className="work-card__body-foot">
@@ -146,7 +160,9 @@ const CoTrabajos = () => {
 													/>
 												))}
 											</div>
-											<span className="text-normal">{destacado.comp[language == "ES" ? 0 : 1]}</span>
+											<span className="text-normal">
+												{destacado.comp[language == "ES" ? 0 : 1]}
+											</span>
 										</div>
 									</div>
 									{destacado.link ? (

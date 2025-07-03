@@ -19,7 +19,7 @@ const RoWorks = () => {
 			id: language == "ES" ? "mis-trabajos" : "my-works",
 		},
 		{
-			text: language == "ES" ? "Línea del tiempo" : "Timeline",
+			text: language == "ES" ? "Cronología" : "Timeline",
 			id: language == "ES" ? "linea-del-tiempo" : "timeline",
 		},
 	];

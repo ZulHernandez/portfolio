@@ -8,8 +8,6 @@ import { useLocation } from "react-router-dom";
 import { useRef } from "react";
 import useScreenSize from "../components/context/useScreenSize.js";
 
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
 import CoBtn from "../components/general/CoBtn.jsx";
 
 const tipos = [
