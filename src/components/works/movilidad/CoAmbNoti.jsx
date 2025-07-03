@@ -11,7 +11,6 @@ import noti from "../../../assets/imgs/works/movilidad/notifications/notificatio
 import island from "../../../assets/imgs/works/movilidad/notifications/dIsland.svg";
 import watch from "../../../assets/imgs/works/movilidad/notifications/watch.svg";
 
-
 const CoAmbNoti = () => {
 	const { language } = useContext(MyContext);
 
@@ -20,7 +19,7 @@ const CoAmbNoti = () => {
 			id: 1,
 			text: language === "ES" ? "Isla Dinámica" : "Dynamic Island",
 			img: island,
-			screens: []
+			screens: [],
 		},
 		{
 			id: 2,
