@@ -40,7 +40,7 @@ $shade-0: #fff;
     gap: $gap;
 }
 
-@mixin fnCard($size) {
+@mixin fnCard() {
     background-color: $shade-0;
     border-radius: 2rem;
     padding: 2rem;
@@ -113,6 +113,18 @@ $fonts: (
     font-display: swap;
     font-family: "IBM Plex Mono";
     src: url(../assets/fonts/Home/IBMPlexMono-Bold.ttf);
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "SF Pro Regular";
+    src: url(../assets/fonts/SFPro/SF-Pro-Text-Regular.otf);
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "SF Pro SemiBold";
+    src: url(../assets/fonts/SFPro/SF-Pro-Text-SemiBold.otf);
 }
 
 h1,
@@ -190,7 +202,7 @@ a {
     justify-items: center;
     align-items: flex-start;
     gap: 5rem;
-    padding: 7.5rem 15rem 5rem 15rem;
+    padding: 7.5rem 20rem 5rem 20rem;
     @media (max-width: 1200px) {
         padding: 7.5rem 10rem 5rem 10rem;
     }
@@ -198,7 +210,7 @@ a {
         background-image: url("../assets/imgs/general/noise.webp");
         background-repeat: repeat;
         background-size: 100%;
-        padding: 7.5rem 15rem 7.5rem 15rem;
+        padding: 7.5rem 20rem 7.5rem 20rem;
         @media (max-width: 1200px) {
             padding: 7.5rem 10rem 5rem 10rem;
         }
@@ -465,7 +477,7 @@ a {
 #hola,
 #hello {
     @include fnFlex(column, center, flex-start, 8rem);
-    padding: 20rem 15rem 10rem 15rem;
+    padding: 20rem 20rem 10rem 20rem;
     @media (max-width: 1200px) {
         @include fnFlex(column, center, center, 8rem);
         padding: 20rem 10rem 10rem 10rem;
@@ -733,7 +745,7 @@ footer {
         flex-wrap: wrap;
         .work-card {
             @include fnFlex(column, flex-start, flex-start, 2rem);
-            @include fnCard("m");
+            @include fnCard();
             img {
                 height: min-content;
                 border-radius: 1rem;
@@ -953,7 +965,7 @@ footer {
     padding-top: 10rem;
     align-items: center;
     .resume__sheet {
-        @include fnCard("s");
+        @include fnCard();
         width: 215mm;
         background: white;
         padding: 15mm;
@@ -1060,7 +1072,7 @@ footer {
             width: 100%;
             &__item {
                 @include fnFlex(row, center, center, 1rem);
-                @include fnCard("m");
+                @include fnCard();
                 padding: 1rem 2rem;
                 cursor: pointer;
                 transition: all 0.3s ease-in-out;
@@ -1098,7 +1110,7 @@ footer {
         }
         &-body {
             @include fnFlex(column, flex-start, flex-start, 5rem);
-            @include fnCard("m");
+            @include fnCard();
             width: 100%;
             background-color: $shade-0;
             width: calc(100% - 16rem);
@@ -1168,7 +1180,7 @@ footer {
 
         .music-card {
             @include fnFlex(column, center, center, 1rem);
-            @include fnCard("m");
+            @include fnCard();
             max-width: 30rem;
             width: 100%;
             min-width: 20rem;
@@ -1263,7 +1275,7 @@ footer {
     padding-top: 15rem;
     .sumario-card {
         @include fnFlex(row, flex-start, flex-start, 3rem);
-        @include fnCard("m");
+        @include fnCard();
         width: calc(100% - 4rem);
         @media (max-width: 800px) {
             @include fnFlex(column, center, center, 3rem);
@@ -1373,10 +1385,11 @@ footer {
             }
         }
     }
-    .bullet-point {
-        &__title {
-            @include fnFont("Raleway-Bold", 1.4rem, none, $shade-600);
-        }
+}
+
+.bullet-point {
+    &__title {
+        @include fnFont("Raleway-Bold", 1.4rem, none, $shade-600);
     }
 }
 
@@ -1390,7 +1403,7 @@ footer {
         }
         &__card {
             @include fnFlex(column, center, center, 3rem);
-            @include fnCard("m");
+            @include fnCard();
             width: calc(100% - 4rem);
             @media (max-width: 800px) {
                 padding: 3rem;
@@ -1488,6 +1501,11 @@ footer {
     }
 }
 
+.subtitle {
+    width: 100%;
+    @include fnFont("Raleway-Bold", 1.6rem, none, $shade-600);
+}
+
 #mejora-de-insumos,
 #improvement-of-inputs {
     .subtitle {
@@ -1504,7 +1522,7 @@ footer {
             }
             &__card {
                 @include fnFlex(row, center, center, 3rem);
-                @include fnCard("s");
+                @include fnCard();
                 width: 100%;
                 @media (max-width: 800px) {
                     width: calc(100% - 4rem);
@@ -1536,10 +1554,6 @@ footer {
 
 #automatizacion-de-procesos,
 #automation-of-processes {
-    .subtitle {
-        width: 100%;
-        @include fnFont("Raleway-Bold", 1.6rem, none, $shade-600);
-    }
     .plugins {
         @include fnFlex(column, center, center, 2rem);
         width: 100%;
@@ -1550,7 +1564,7 @@ footer {
             margin: 0rem 5rem;
             &__card {
                 @include fnFlex(column, center, center, 2rem);
-                @include fnCard("m");
+                @include fnCard();
                 min-width: 40%;
                 margin: 3rem 0px;
                 @media (max-width: 800px) {
@@ -1639,7 +1653,7 @@ footer {
         flex-wrap: wrap;
         &__card {
             @include fnFlex(column, center, flex-start, 2rem);
-            @include fnCard("m");
+            @include fnCard();
             width: calc(calc(100% / 3) - 7rem);
             @media (max-width: 1200px) {
                 width: calc(50% - 7rem);
@@ -1691,7 +1705,7 @@ footer {
     flex-wrap: wrap;
     .work-card {
         @include fnFlex(column, flex-start, flex-start, 2rem);
-        @include fnCard("m");
+        @include fnCard();
         img {
             height: min-content;
             border-radius: 1rem;
@@ -1916,17 +1930,33 @@ footer {
         @include fnFlex(column, center, center, 3rem);
         width: 100%;
         &__imgs {
-            @include fnFlex(row, space-center, center, 5rem);
-            gap: 0rem   ;
+            @include fnFlex(row, center, center, 5rem);
+            gap: 0rem;
             justify-content: space-between;
             width: 60%;
             @media (max-width: 800px) {
                 width: 80%;
+                justify-content: center;
             }
             img {
                 width: 7.5rem;
                 @media (max-width: 800px) {
                     width: 9rem;
+                }
+            }
+            #screen1,
+            #screen2,
+            #wordMap {
+                height: 20rem;
+                width: auto;
+            }
+            @media (max-width: 1200px) {
+                #screen1,
+                #screen2 {
+                    display: none;
+                }
+                #wordMap {
+                    width: 100%;
                 }
             }
         }
@@ -1948,6 +1978,202 @@ footer {
                     }
                 }
             }
+        }
+    }
+}
+
+#notificaciones,
+#notifications {
+    .example-container {
+        @include fnFlex(row, space-between, center, 5rem);
+        width: 100%;
+        &__control {
+            @include fnFlex(row, center, center, 1rem);
+            height: 15rem;
+            clip-path: fill-box;
+            &-arrows {
+                @include fnFlex(column, space-between, center, 1rem);
+                height: 100%;
+                img {
+                    width: 4rem;
+                    height: 4rem;
+                    transition: all 0.3s ease-in-out;
+                }
+                .arrow {
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+            &-buttons {
+                @include fnFlex(column, center, flex-start, 1rem);
+                &-item {
+                    @include fnFlex(row, flex-start, center, 1rem);
+                    background-color: $shade-0;
+                    border-radius: 0.5rem;
+                    padding: 1.5rem 1.5rem;
+                    width: 100%;
+                    //transition: all 0.3s ease-in-out;
+                    img {
+                        width: 2.4rem;
+                        height: 2.4rem;
+                    }
+                    span {
+                        @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-800);
+                    }
+                }
+                #uno,
+                #tres {
+                    opacity: 0.5;
+                    transform-origin: left;
+                    transform: scale(0.8);
+                }
+            }
+        }
+        &__frame {
+            @include fnFlex(column, center, center, 2rem);
+            width: 40rem;
+            height: 40rem;
+            img {
+                height: 30rem;
+                width: auto;
+            }
+            .div-notification {
+                @include fnFlex(row, flex-start, center, 1rem);
+                transition: all 0.3s ease-in-out;
+                padding: 1.2rem;
+                height: 3.6rem;
+                width: 11.6rem;
+                margin-right: 0.6rem;
+                margin-top: 5.25rem;
+                position: absolute;
+                border-radius: 1.45rem;
+                box-shadow: 0px 0.5rem 0.5rem 0px rgba(0, 0, 0, 0.25);
+                background: rgba(37, 37, 37, 0.95);
+                background-blend-mode: overlay, normal;
+                backdrop-filter: blur(0.2rem);
+                &__text {
+                    @include fnFlex(column, center, flex-start, 0.5rem);
+                }
+            }
+            .watch {
+                img {
+                    width: 3.5rem;
+                }
+                &-time {
+                    @include fnFlex(column, center, flex-start, 0rem);
+                    &-title {
+                        @include fnFont("SF Pro Regular", 0.48rem, none, $shade-0);
+                    }
+                    &-subtitle {
+                        @include fnFont("SF Pro Semibold", 0.84rem, none, $shade-0);
+                    }
+                }
+                &-dato {
+                    @include fnFlex(column, center, flex-start, 0rem);
+                    &-title {
+                        @include fnFont("SF Pro Regular", 0.36rem, none, $shade-300);
+                        margin-bottom: 0px;
+                    }
+                    &-data {
+                        @include fnFont("SF Pro Semibold", 0.6rem, none, $shade-300);
+                    }
+                }
+            }
+            .island {
+                @include fnFlex(row, space-between, center, 11.9rem);
+                width: 21.1rem;
+                height: 2.1rem;
+                background-color: $shade-900;
+                box-shadow: 0px 6px 12px 0px rgba(21, 21, 21, 0.12);
+                padding: 0.7rem;
+                border-radius: 5rem;
+                margin: 0px;
+                position: relative;
+                img {
+                    width: 2.1rem;
+                    height: 2.1rem;
+                }
+                span {
+                    @include fnFont("SF Pro Semibold", 1.4rem, none, #37abc6);
+                }
+            }
+            .extended {
+                @include fnFlex(row, flex-start, center, 2rem);
+                width: 30.5rem;
+                height: 8.5rem;
+                padding: 2rem 3rem 2rem 2rem;
+                img {
+                    width: 8.5rem;
+                    height: 8.5rem;
+                }
+                &-text {
+                    @include fnFlex(column, center, flex-start, 1rem);
+                    width: 100%;
+                    &__head {
+                        @include fnFlex(row, space-between, flex-start, 0rem);
+                        width: 100% !important;
+                        &-data {
+                            @include fnFlex(column, center, flex-start, 0rem);
+                            &-title {
+                                font-size: 1rem !important;
+                                font-family: "SF Pro Regular" !important;
+                                color: $shade-0 !important;
+                            }
+                            &-subtitle {
+                                font-size: 1.6rem !important;
+                                font-family: "SF Pro Semibold" !important;
+                                color: $shade-0 !important;
+                            }
+                            &-status {
+                                font-size: 1rem !important;
+                                font-family: "SF Pro Semibold" !important;
+                            }
+                        }
+                    }
+                    &__body {
+                        @include fnFlex(row, flex-start, center, 2rem);
+                        width: 100%;
+                        &-dato {
+                            @include fnFlex(column, center, flex-start, 0rem);
+                            &-title {
+                                font-size: 0.8rem !important;
+                                font-family: "SF Pro Regular" !important;
+                                color: $shade-200 !important;
+                            }
+                            &-data {
+                                font-size: 1.4rem !important;
+                                font-family: "SF Pro Semibold" !important;
+                                color: $shade-200 !important;
+                            }
+                        }
+                    }
+                }
+            }
+            .cell {
+                @include fnFlex(column, space-between, center, 0rem);
+                padding: 2rem;
+                width: 31.3rem;
+                height: 10.7rem;
+                &-head{
+                    @include fnFlex(row, space-between, center, 0rem);
+                    width: 100%;
+                    span{
+                        @include fnFont("SF Pro Semibold", 1rem, none, $shade-0);
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1800px) {
+        #frame3 {
+            display: none;
+        }
+    }
+    @media (max-width: 1000px) {
+        #frame2 {
+            display: none;
         }
     }
 }

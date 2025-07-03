@@ -89,6 +89,16 @@
   font-family: "IBM Plex Mono";
   src: url(../assets/fonts/Home/IBMPlexMono-Bold.ttf);
 }
+@font-face {
+  font-display: swap;
+  font-family: "SF Pro Regular";
+  src: url(../assets/fonts/SFPro/SF-Pro-Text-Regular.otf);
+}
+@font-face {
+  font-display: swap;
+  font-family: "SF Pro SemiBold";
+  src: url(../assets/fonts/SFPro/SF-Pro-Text-SemiBold.otf);
+}
 h1,
 h2,
 h3,
@@ -196,7 +206,7 @@ a {
   justify-items: center;
   align-items: flex-start;
   gap: 5rem;
-  padding: 7.5rem 15rem 5rem 15rem;
+  padding: 7.5rem 20rem 5rem 20rem;
 }
 @media (max-width: 1200px) {
   .container-fluid {
@@ -207,7 +217,7 @@ a {
   background-image: url("../assets/imgs/general/noise.webp");
   background-repeat: repeat;
   background-size: 100%;
-  padding: 7.5rem 15rem 7.5rem 15rem;
+  padding: 7.5rem 20rem 7.5rem 20rem;
 }
 @media (max-width: 1200px) {
   .container-fluid.grey {
@@ -673,7 +683,7 @@ a {
   justify-content: center;
   align-items: flex-start;
   gap: 8rem;
-  padding: 20rem 15rem 10rem 15rem;
+  padding: 20rem 20rem 10rem 20rem;
 }
 @media (max-width: 1200px) {
   #hola,
@@ -2637,16 +2647,15 @@ footer img {
 #context .time-list .time-card-body__item span {
   text-align: center;
 }
-#contexto .bullet-point__title,
-#context .bullet-point__title {
+
+.bullet-point__title {
   font-family: "Raleway-Bold", sans-serif;
   font-size: 1.4rem;
   text-decoration: none;
   color: #666666;
 }
 @media (max-width: 800px) {
-  #contexto .bullet-point__title,
-  #context .bullet-point__title {
+  .bullet-point__title {
     font-size: 1.68rem;
   }
 }
@@ -2880,6 +2889,19 @@ footer img {
   width: 20rem;
 }
 
+.subtitle {
+  width: 100%;
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #666666;
+}
+@media (max-width: 800px) {
+  .subtitle {
+    font-size: 1.92rem;
+  }
+}
+
 #mejora-de-insumos .subtitle,
 #improvement-of-inputs .subtitle {
   font-family: "Raleway-Bold", sans-serif;
@@ -2985,20 +3007,6 @@ footer img {
   min-width: 30rem;
 }
 
-#automatizacion-de-procesos .subtitle,
-#automation-of-processes .subtitle {
-  width: 100%;
-  font-family: "Raleway-Bold", sans-serif;
-  font-size: 1.6rem;
-  text-decoration: none;
-  color: #666666;
-}
-@media (max-width: 800px) {
-  #automatizacion-de-procesos .subtitle,
-  #automation-of-processes .subtitle {
-    font-size: 1.92rem;
-  }
-}
 #automatizacion-de-procesos .plugins,
 #automation-of-processes .plugins {
   display: flex;
@@ -3770,7 +3778,7 @@ footer img {
 #interface .exercise__imgs {
   display: flex;
   flex-direction: row;
-  justify-content: space-center;
+  justify-content: center;
   align-items: center;
   gap: 5rem;
   gap: 0rem;
@@ -3781,6 +3789,7 @@ footer img {
   #interfaz .exercise__imgs,
   #interface .exercise__imgs {
     width: 80%;
+    justify-content: center;
   }
 }
 #interfaz .exercise__imgs img,
@@ -3791,6 +3800,27 @@ footer img {
   #interfaz .exercise__imgs img,
   #interface .exercise__imgs img {
     width: 9rem;
+  }
+}
+#interfaz .exercise__imgs #screen1,
+#interfaz .exercise__imgs #screen2,
+#interfaz .exercise__imgs #wordMap,
+#interface .exercise__imgs #screen1,
+#interface .exercise__imgs #screen2,
+#interface .exercise__imgs #wordMap {
+  height: 20rem;
+  width: auto;
+}
+@media (max-width: 1200px) {
+  #interfaz .exercise__imgs #screen1,
+  #interfaz .exercise__imgs #screen2,
+  #interface .exercise__imgs #screen1,
+  #interface .exercise__imgs #screen2 {
+    display: none;
+  }
+  #interfaz .exercise__imgs #wordMap,
+  #interface .exercise__imgs #wordMap {
+    width: 100%;
   }
 }
 #interfaz .exercise__text,
@@ -3845,6 +3875,377 @@ footer img {
   #interfaz .exercise__text-column__item h3,
   #interface .exercise__text-column__item h3 {
     font-size: 1.8rem;
+  }
+}
+
+#notificaciones .example-container,
+#notifications .example-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+  width: 100%;
+}
+#notificaciones .example-container__control,
+#notifications .example-container__control {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 15rem;
+  -webkit-clip-path: fill-box;
+          clip-path: fill-box;
+}
+#notificaciones .example-container__control-arrows,
+#notifications .example-container__control-arrows {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+#notificaciones .example-container__control-arrows img,
+#notifications .example-container__control-arrows img {
+  width: 4rem;
+  height: 4rem;
+  transition: all 0.3s ease-in-out;
+}
+#notificaciones .example-container__control-arrows .arrow:hover,
+#notifications .example-container__control-arrows .arrow:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+#notificaciones .example-container__control-buttons,
+#notifications .example-container__control-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+#notificaciones .example-container__control-buttons-item,
+#notifications .example-container__control-buttons-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem 1.5rem;
+  width: 100%;
+}
+#notificaciones .example-container__control-buttons-item img,
+#notifications .example-container__control-buttons-item img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+#notificaciones .example-container__control-buttons-item span,
+#notifications .example-container__control-buttons-item span {
+  font-family: "Raleway-Semibold", sans-serif;
+  font-size: 2.4rem;
+  text-decoration: none;
+  color: #333333;
+}
+@media (max-width: 800px) {
+  #notificaciones .example-container__control-buttons-item span,
+  #notifications .example-container__control-buttons-item span {
+    font-size: 2.88rem;
+  }
+}
+#notificaciones .example-container__control-buttons #uno,
+#notificaciones .example-container__control-buttons #tres,
+#notifications .example-container__control-buttons #uno,
+#notifications .example-container__control-buttons #tres {
+  opacity: 0.5;
+  transform-origin: left;
+  transform: scale(0.8);
+}
+#notificaciones .example-container__frame,
+#notifications .example-container__frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 40rem;
+  height: 40rem;
+}
+#notificaciones .example-container__frame img,
+#notifications .example-container__frame img {
+  height: 30rem;
+  width: auto;
+}
+#notificaciones .example-container__frame .div-notification,
+#notifications .example-container__frame .div-notification {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease-in-out;
+  padding: 1.2rem;
+  height: 3.6rem;
+  width: 11.6rem;
+  margin-right: 0.6rem;
+  margin-top: 5.25rem;
+  position: absolute;
+  border-radius: 1.45rem;
+  box-shadow: 0px 0.5rem 0.5rem 0px rgba(0, 0, 0, 0.25);
+  background: rgba(37, 37, 37, 0.95);
+  background-blend-mode: overlay, normal;
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+}
+#notificaciones .example-container__frame .div-notification__text,
+#notifications .example-container__frame .div-notification__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+#notificaciones .example-container__frame .watch img,
+#notifications .example-container__frame .watch img {
+  width: 3.5rem;
+}
+#notificaciones .example-container__frame .watch-time,
+#notifications .example-container__frame .watch-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0rem;
+}
+#notificaciones .example-container__frame .watch-time-title,
+#notifications .example-container__frame .watch-time-title {
+  font-family: "SF Pro Regular", sans-serif;
+  font-size: 0.48rem;
+  text-decoration: none;
+  color: #fff;
+}
+@media (max-width: 800px) {
+  #notificaciones .example-container__frame .watch-time-title,
+  #notifications .example-container__frame .watch-time-title {
+    font-size: 0.576rem;
+  }
+}
+#notificaciones .example-container__frame .watch-time-subtitle,
+#notifications .example-container__frame .watch-time-subtitle {
+  font-family: "SF Pro Semibold", sans-serif;
+  font-size: 0.84rem;
+  text-decoration: none;
+  color: #fff;
+}
+@media (max-width: 800px) {
+  #notificaciones .example-container__frame .watch-time-subtitle,
+  #notifications .example-container__frame .watch-time-subtitle {
+    font-size: 1.008rem;
+  }
+}
+#notificaciones .example-container__frame .watch-dato,
+#notifications .example-container__frame .watch-dato {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0rem;
+}
+#notificaciones .example-container__frame .watch-dato-title,
+#notifications .example-container__frame .watch-dato-title {
+  font-family: "SF Pro Regular", sans-serif;
+  font-size: 0.36rem;
+  text-decoration: none;
+  color: #b3b3b3;
+  margin-bottom: 0px;
+}
+@media (max-width: 800px) {
+  #notificaciones .example-container__frame .watch-dato-title,
+  #notifications .example-container__frame .watch-dato-title {
+    font-size: 0.432rem;
+  }
+}
+#notificaciones .example-container__frame .watch-dato-data,
+#notifications .example-container__frame .watch-dato-data {
+  font-family: "SF Pro Semibold", sans-serif;
+  font-size: 0.6rem;
+  text-decoration: none;
+  color: #b3b3b3;
+}
+@media (max-width: 800px) {
+  #notificaciones .example-container__frame .watch-dato-data,
+  #notifications .example-container__frame .watch-dato-data {
+    font-size: 0.72rem;
+  }
+}
+#notificaciones .example-container__frame .island,
+#notifications .example-container__frame .island {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 11.9rem;
+  width: 21.1rem;
+  height: 2.1rem;
+  background-color: #000000;
+  box-shadow: 0px 6px 12px 0px rgba(21, 21, 21, 0.12);
+  padding: 0.7rem;
+  border-radius: 5rem;
+  margin: 0px;
+  position: relative;
+}
+#notificaciones .example-container__frame .island img,
+#notifications .example-container__frame .island img {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+#notificaciones .example-container__frame .island span,
+#notifications .example-container__frame .island span {
+  font-family: "SF Pro Semibold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #37abc6;
+}
+@media (max-width: 800px) {
+  #notificaciones .example-container__frame .island span,
+  #notifications .example-container__frame .island span {
+    font-size: 1.68rem;
+  }
+}
+#notificaciones .example-container__frame .extended,
+#notifications .example-container__frame .extended {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  width: 30.5rem;
+  height: 8.5rem;
+  padding: 2rem 3rem 2rem 2rem;
+}
+#notificaciones .example-container__frame .extended img,
+#notifications .example-container__frame .extended img {
+  width: 8.5rem;
+  height: 8.5rem;
+}
+#notificaciones .example-container__frame .extended-text,
+#notifications .example-container__frame .extended-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+#notificaciones .example-container__frame .extended-text__head,
+#notifications .example-container__frame .extended-text__head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0rem;
+  width: 100% !important;
+}
+#notificaciones .example-container__frame .extended-text__head-data,
+#notifications .example-container__frame .extended-text__head-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0rem;
+}
+#notificaciones .example-container__frame .extended-text__head-data-title,
+#notifications .example-container__frame .extended-text__head-data-title {
+  font-size: 1rem !important;
+  font-family: "SF Pro Regular" !important;
+  color: #fff !important;
+}
+#notificaciones .example-container__frame .extended-text__head-data-subtitle,
+#notifications .example-container__frame .extended-text__head-data-subtitle {
+  font-size: 1.6rem !important;
+  font-family: "SF Pro Semibold" !important;
+  color: #fff !important;
+}
+#notificaciones .example-container__frame .extended-text__head-data-status,
+#notifications .example-container__frame .extended-text__head-data-status {
+  font-size: 1rem !important;
+  font-family: "SF Pro Semibold" !important;
+}
+#notificaciones .example-container__frame .extended-text__body,
+#notifications .example-container__frame .extended-text__body {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+#notificaciones .example-container__frame .extended-text__body-dato,
+#notifications .example-container__frame .extended-text__body-dato {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0rem;
+}
+#notificaciones .example-container__frame .extended-text__body-dato-title,
+#notifications .example-container__frame .extended-text__body-dato-title {
+  font-size: 0.8rem !important;
+  font-family: "SF Pro Regular" !important;
+  color: #cccccc !important;
+}
+#notificaciones .example-container__frame .extended-text__body-dato-data,
+#notifications .example-container__frame .extended-text__body-dato-data {
+  font-size: 1.4rem !important;
+  font-family: "SF Pro Semibold" !important;
+  color: #cccccc !important;
+}
+#notificaciones .example-container__frame .cell,
+#notifications .example-container__frame .cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0rem;
+  padding: 2rem;
+  width: 31.3rem;
+  height: 10.7rem;
+}
+#notificaciones .example-container__frame .cell-head,
+#notifications .example-container__frame .cell-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0rem;
+  width: 100%;
+}
+#notificaciones .example-container__frame .cell-head span,
+#notifications .example-container__frame .cell-head span {
+  font-family: "SF Pro Semibold", sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+}
+@media (max-width: 800px) {
+  #notificaciones .example-container__frame .cell-head span,
+  #notifications .example-container__frame .cell-head span {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 1800px) {
+  #notificaciones #frame3,
+  #notifications #frame3 {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  #notificaciones #frame2,
+  #notifications #frame2 {
+    display: none;
   }
 }
 

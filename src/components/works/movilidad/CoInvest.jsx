@@ -65,7 +65,10 @@ import option3 from "../../../assets/imgs/works/movilidad/option3.svg";
 import option4 from "../../../assets/imgs/works/movilidad/option4.svg";
 import option5 from "../../../assets/imgs/works/movilidad/option5.svg";
 
-
+import screen1 from "../../../assets/imgs/works/movilidad/exHome1.png";
+import screen2 from "../../../assets/imgs/works/movilidad/exHome2.png";
+import wordMapES from "../../../assets/imgs/works/movilidad/wordMapES.svg";
+import wordMapEN from "../../../assets/imgs/works/movilidad/wordMapEN.svg";
 
 const CoInvest = () => {
 	const { language } = useContext(MyContext);
@@ -176,8 +179,27 @@ const CoInvest = () => {
 					? "La Navegación, que implica la capacidad del usuario para usar el mapa y el resto de actividades del aplicativo aparece como complementario a la exploración y, por consecuente, permanece en relevancia."
 					: "Navigation, which involves the user's ability to use the map and the rest of the application's activities, appears as complementary to exploration and, consequently, remains relevant.",
 				language === "ES"
-					? "El Monedero se vuelven la tercer opción fundamental del aplicativo al habilitar al usuario para generar pagos y, por consecuencia, completar la . última parte del journey principal"
+					? "El Monedero se vuelven la tercer opción fundamental del aplicativo al habilitar al usuario para generar pagos y, por consecuencia, completar la última parte del journey principal"
 					: "The Wallet becomes the third fundamental option of the application by enabling the user to make payments and, consequently, complete the last part of the main journey.",
+			],
+		},
+		{
+			ejercicio:
+				language === "ES"
+					? "Se pide al usuario elegir cual de las dos opciones le parece más apropiada para poder acceder a las diferentes opciones que ofrece el aplicativo además de complementar su elección con una pregunta abierta para que exprese sus razones."
+					: "The user is asked to choose which of the two options seems more appropriate to access the different options offered by the application, in addition to complementing their choice with an open question to express their reasons.",
+			objetivo:
+				language === "ES"
+					? "Orientar la interfaz a una opción que satisfaga funcional y estéticamente las necesidades de nuestro usuario además de recopilar información cualitativa de su elección"
+					: "To guide the interface towards an option that functionally and aesthetically meets the needs of our user, in addition to gathering qualitative information about their choice.",
+			resultado:
+				language === "ES"
+					? "La pantalla más elegida fue la número uno teniendo una preferencia del 69% de los encuestados"
+					: "The most chosen screen was number one, with a preference of 69% of respondents.",
+			conclusiones: [
+				language === "ES"
+					? "Mayoritariamente los usuario expresaron una inclinación para la pantalla numero 1 acompañado de comentarios destacando una interfaz limpia, una navegación más sencilla pensada incluso en la posición de la píldora de opciones."
+					: "Majority of users expressed a preference for screen number 1, accompanied by comments highlighting a clean interface and simpler navigation, even considering the position of the options pill.",
 			],
 		},
 	];
@@ -322,7 +344,7 @@ const CoInvest = () => {
 								key={index}
 								src={options[index]}
 								alt={`Diamond ${index + 1}`}
-								style={{ transform: `scale(${1 - index / 10})` }}
+								style={{ width: "10rem", transform: `scale(${1 - index / 7})` }}
 							/>
 						);
 					})}
@@ -354,39 +376,33 @@ const CoInvest = () => {
 					</div>
 				</div>
 			</div>
+			<br /><br />
             <div className="exercise">
 				<div className="exercise__imgs">
-					{Array.from({ length: 5 }, (_, index) => {
-						const options = [option1, option2, option3, option4, option5];
-						return (
-							<img
-								key={index}
-								src={options[index]}
-								alt={`Diamond ${index + 1}`}
-								style={{ transform: `scale(${1 - index / 10})` }}
-							/>
-						);
-					})}
+					<img id="screen1" src={screen1} alt="" />
+					<img id="wordMap" src={language === "ES" ? wordMapES : wordMapEN} alt="Word Map" />
+					<img id="screen2" src={screen2} alt="" />
 				</div>
+				<br />
 				<div className="exercise__text">
 					<div className="exercise__text-column">
 						<div className="exercise__text-column__item">
 							<h3>{language === "ES" ? "Ejercicio" : "Exercise"}</h3>
-							<span className="text-normal">{ejercicios[0].ejercicio}</span>
+							<span className="text-normal">{ejercicios[1].ejercicio}</span>
 						</div>
 						<div className="exercise__text-column__item">
 							<h3>{language === "ES" ? "Objetivo" : "Objective"}</h3>
-							<span className="text-normal">{ejercicios[0].objetivo}</span>
-						</div>
-						<div className="exercise__text-column__item">
-							<h3>{language === "ES" ? "Resultado" : "Result"}</h3>
-							<span className="text-normal">{ejercicios[0].resultado}</span>
+							<span className="text-normal">{ejercicios[1].objetivo}</span>
 						</div>
 					</div>
 					<div className="exercise__text-column">
 						<div className="exercise__text-column__item">
+							<h3>{language === "ES" ? "Resultado" : "Result"}</h3>
+							<span className="text-normal">{ejercicios[1].resultado}</span>
+						</div>
+						<div className="exercise__text-column__item">
 							<h3>{language === "ES" ? "Conclusiones" : "Conclusions"}</h3>
-							{ejercicios[0].conclusiones.map((conclusion, index) => (
+							{ejercicios[1].conclusiones.map((conclusion, index) => (
 								<span key={index} className="text-normal">
 									{conclusion}
 								</span>
