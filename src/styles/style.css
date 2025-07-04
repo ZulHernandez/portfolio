@@ -3962,6 +3962,8 @@ footer img {
   font-size: 2.4rem;
   text-decoration: none;
   color: #333333;
+  width: -moz-max-content;
+  width: max-content;
 }
 @media (max-width: 800px) {
   #notificaciones .example-container__control-buttons-item span,

@@ -12,17 +12,24 @@ import island from "../../../assets/imgs/works/movilidad/notifications/dIsland.s
 import watch from "../../../assets/imgs/works/movilidad/notifications/watch.svg";
 import stand from "../../../assets/imgs/works/movilidad/notifications/stand.svg";
 
-import isla1 from "../../../assets/imgs/works/movilidad/notifications/isla1.svg";
-import isla2 from "../../../assets/imgs/works/movilidad/notifications/isla2.svg";
-import isla3 from "../../../assets/imgs/works/movilidad/notifications/isla3.svg";
-import iOsNoti1 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti1.svg";
-import iOsNoti2 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti2.svg";
-import iOsNoti3 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti3.svg";
+import isla1 from "../../../assets/imgs/works/movilidad/notifications/isla1.png";
+import isla2 from "../../../assets/imgs/works/movilidad/notifications/isla2.png";
+import isla3 from "../../../assets/imgs/works/movilidad/notifications/isla3.png";
+import iOsNoti1 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti1.png";
+import iOsNoti2 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti2.png";
+import iOsNoti3 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti3.png";
 import iWatch1 from "../../../assets/imgs/works/movilidad/notifications/iWatch1.png";
 import iWatch2 from "../../../assets/imgs/works/movilidad/notifications/iWatch2.png";
 import iWatch3 from "../../../assets/imgs/works/movilidad/notifications/iWatch3.png";
 import standBy1 from "../../../assets/imgs/works/movilidad/notifications/standBy1.png";
 import standBy2 from "../../../assets/imgs/works/movilidad/notifications/standBy2.png";
+
+import anNoti1 from "../../../assets/imgs/works/movilidad/notifications/anNoti1.png";
+import anNoti2 from "../../../assets/imgs/works/movilidad/notifications/anNoti2.png";
+import anNoti3 from "../../../assets/imgs/works/movilidad/notifications/anNoti3.png";
+import wear1 from "../../../assets/imgs/works/movilidad/notifications/wear1.png";
+import wear2 from "../../../assets/imgs/works/movilidad/notifications/wear2.png";
+import wear3 from "../../../assets/imgs/works/movilidad/notifications/wear3.png";
 
 const CoAmbNoti = () => {
 	const { language } = useContext(MyContext);
@@ -63,11 +70,29 @@ const CoAmbNoti = () => {
 			id: 1,
 			text: language === "ES" ? "Reloj" : "Watch",
 			img: watch,
+			screens: [wear1, wear2, wear3],
+			alt: "Watch",
 		},
 		{
 			id: 2,
 			text: language === "ES" ? "Notificación" : "Notification",
 			img: noti,
+			screens: [anNoti1, anNoti2, anNoti3],
+			alt: "Notification",
+		},
+		{
+			id: 3,
+			text: language === "ES" ? "Reloj" : "Watch",
+			img: watch,
+			screens: [wear1, wear2, wear3],
+			alt: "Watch",
+		},
+		{
+			id: 4,
+			text: language === "ES" ? "Notificación" : "Notification",
+			img: noti,
+			screens: [anNoti1, anNoti2, anNoti3],
+			alt: "Notification",
 		},
 	]);
 
@@ -233,7 +258,7 @@ const CoAmbNoti = () => {
 							carruselIos[1].screens.map((screen, index) => (
 								<img
 									key={index}
-									className="example-container__screens-item"
+									className={carruselIos[1].alt}
 									src={screen}
 									alt={carruselIos[1].alt}
 								/>
@@ -293,7 +318,32 @@ const CoAmbNoti = () => {
 									{carruselAndroid[1].text}
 								</span>
 							</div>
+							<div
+								id="tres"
+								key={carruselAndroid[2].id}
+								className="example-container__control-buttons-item"
+							>
+								<img
+									className="example-container__control-item-img"
+									src={carruselAndroid[2].img}
+									alt={carruselAndroid[2].text}
+								/>
+								<span className="example-container__control-item-text">
+									{carruselAndroid[2].text}
+								</span>
+							</div>
 						</div>
+					</div>
+					<div className="example-container__screens">
+						{carruselAndroid[1].screens &&
+							carruselAndroid[1].screens.map((screen, index) => (
+								<img
+									key={index}
+									className={carruselAndroid[1].alt}
+									src={screen}
+									alt={carruselAndroid[1].alt}
+								/>
+							))}
 					</div>
 				</div>
 			</div>

@@ -2021,6 +2021,7 @@ footer {
                     }
                     span {
                         @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-800);
+                        width: max-content;
                     }
                 }
                 #uno,
