@@ -3891,6 +3891,10 @@ footer img {
       }
   } */
 }
+#notificaciones .example,
+#notifications .example {
+  width: 100%;
+}
 #notificaciones .example-container,
 #notifications .example-container {
   display: flex;
@@ -3971,6 +3975,12 @@ footer img {
     font-size: 2.88rem;
   }
 }
+@media (max-width: 1200px) {
+  #notificaciones .example-container__control-buttons-item span,
+  #notifications .example-container__control-buttons-item span {
+    display: none;
+  }
+}
 #notificaciones .example-container__control-buttons #uno,
 #notificaciones .example-container__control-buttons #tres,
 #notifications .example-container__control-buttons #uno,
@@ -3983,16 +3993,44 @@ footer img {
 #notifications .example-container__screens {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
-  gap: 1rem;
+  gap: 3rem;
   width: 100%;
+  height: 34rem;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+  -webkit-clip-path: fill-box;
+          clip-path: fill-box;
+  overflow-y: hidden;
 }
 #notificaciones .example-container__screens img,
 #notifications .example-container__screens img {
-  margin-top: 5rem;
   height: 20rem;
   width: auto;
+  padding: 2rem 0px;
+}
+#notificaciones .example-container__screens .arrow,
+#notifications .example-container__screens .arrow {
+  display: none;
+}
+#notificaciones .example .iOsIsland, #notificaciones .example .iOsNotification,
+#notifications .example .iOsIsland,
+#notifications .example .iOsNotification {
+  width: 40rem;
+  height: auto;
+}
+#notificaciones .example .iWatch, #notificaciones .example .standBy, #notificaciones .example .wear,
+#notifications .example .iWatch,
+#notifications .example .standBy,
+#notifications .example .wear {
+  height: 30rem;
+  width: auto;
+}
+#notificaciones .example .noti,
+#notifications .example .noti {
+  width: 30rem;
+  height: auto;
 }
 
 @media print {

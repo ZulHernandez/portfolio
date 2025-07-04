@@ -40,28 +40,28 @@ const CoAmbNoti = () => {
 			text: language === "ES" ? "Isla Dinámica" : "Dynamic Island",
 			img: island,
 			screens: [isla1, isla2, isla3],
-			alt: "Dynamic Island",
+			alt: "iOsIsland",
 		},
 		{
 			id: 2,
 			text: language === "ES" ? "Notificación" : "Notification",
 			img: noti,
 			screens: [iOsNoti1, iOsNoti2, iOsNoti3],
-			alt: "Notification",
+			alt: "iOsNotification",
 		},
 		{
 			id: 3,
 			text: language === "ES" ? "Reloj" : "Watch",
 			img: watch,
 			screens: [iWatch1, iWatch2, iWatch3],
-			alt: "Watch",
+			alt: "iWatch",
 		},
 		{
 			id: 4,
 			text: language === "ES" ? "StandBy" : "StandBy",
 			img: stand,
 			screens: [standBy1, standBy2],
-			alt: "StandBy",
+			alt: "standBy",
 		}
 	]);
 
@@ -71,28 +71,28 @@ const CoAmbNoti = () => {
 			text: language === "ES" ? "Reloj" : "Watch",
 			img: watch,
 			screens: [wear1, wear2, wear3],
-			alt: "Watch",
+			alt: "wear",
 		},
 		{
 			id: 2,
 			text: language === "ES" ? "Notificación" : "Notification",
 			img: noti,
 			screens: [anNoti1, anNoti2, anNoti3],
-			alt: "Notification",
+			alt: "noti",
 		},
 		{
 			id: 3,
 			text: language === "ES" ? "Reloj" : "Watch",
 			img: watch,
 			screens: [wear1, wear2, wear3],
-			alt: "Watch",
+			alt: "wear",
 		},
 		{
 			id: 4,
 			text: language === "ES" ? "Notificación" : "Notification",
 			img: noti,
 			screens: [anNoti1, anNoti2, anNoti3],
-			alt: "Notification",
+			alt: "noti",
 		},
 	]);
 
@@ -185,7 +185,7 @@ const CoAmbNoti = () => {
 					</div>
 				))}
 			</div>
-			<div>
+			<div className="example">
 				<h2 className="subtitle">iOs</h2>
 				<div className="example-container">
 					<div className="example-container__control">
@@ -266,7 +266,7 @@ const CoAmbNoti = () => {
 					</div>
 				</div>
 			</div>
-			<div>
+			<div className="example">
 				<h2 className="subtitle">Android</h2>
 				<div className="example-container">
 					<div className="example-container__control">

@@ -1984,62 +1984,88 @@ footer {
 
 #notificaciones,
 #notifications {
-    .example-container {
-        @include fnFlex(row, space-between, center, 5rem);
+    .example {
         width: 100%;
-        &__control {
-            @include fnFlex(row, center, center, 1rem);
-            height: 15rem;
-            clip-path: fill-box;
-            &-arrows {
-                @include fnFlex(column, space-between, center, 1rem);
-                height: 100%;
-                img {
-                    width: 4rem;
-                    height: 4rem;
-                    transition: all 0.3s ease-in-out;
+        &-container {
+            @include fnFlex(row, space-between, center, 5rem);
+            width: 100%;
+            &__control {
+                @include fnFlex(row, center, center, 1rem);
+                height: 15rem;
+                clip-path: fill-box;
+                &-arrows {
+                    @include fnFlex(column, space-between, center, 1rem);
+                    height: 100%;
+                    img {
+                        width: 4rem;
+                        height: 4rem;
+                        transition: all 0.3s ease-in-out;
+                    }
+                    .arrow {
+                        &:hover {
+                            cursor: pointer;
+                            transform: scale(1.2);
+                        }
+                    }
                 }
-                .arrow {
-                    &:hover {
-                        cursor: pointer;
-                        transform: scale(1.2);
+                &-buttons {
+                    @include fnFlex(column, center, flex-start, 1rem);
+                    &-item {
+                        @include fnFlex(row, flex-start, center, 1rem);
+                        background-color: $shade-0;
+                        border-radius: 0.5rem;
+                        padding: 1.5rem 1.5rem;
+                        width: 100%;
+                        //transition: all 0.3s ease-in-out;
+                        img {
+                            width: 2.4rem;
+                            height: 2.4rem;
+                        }
+                        span {
+                            @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-800);
+                            width: max-content;
+                            @media (max-width: 1200px) {
+                                display: none;
+                            }
+                        }
+                    }
+                    #uno,
+                    #tres {
+                        opacity: 0.5;
+                        transform-origin: left;
+                        transform: scale(0.8);
                     }
                 }
             }
-            &-buttons {
-                @include fnFlex(column, center, flex-start, 1rem);
-                &-item {
-                    @include fnFlex(row, flex-start, center, 1rem);
-                    background-color: $shade-0;
-                    border-radius: 0.5rem;
-                    padding: 1.5rem 1.5rem;
-                    width: 100%;
-                    //transition: all 0.3s ease-in-out;
-                    img {
-                        width: 2.4rem;
-                        height: 2.4rem;
-                    }
-                    span {
-                        @include fnFont("Raleway-Semibold", 2.4rem, none, $shade-800);
-                        width: max-content;
-                    }
+            &__screens {
+                @include fnFlex(row, space-around, center, 3rem);
+                width: 100%;
+                height: 34rem;
+                scroll-behavior: smooth;
+                overflow-x: scroll;
+                clip-path: fill-box;
+                overflow-y: hidden;
+                img {
+                    height: 20rem;
+                    width: auto;
+                    padding: 2rem 0px;
                 }
-                #uno,
-                #tres {
-                    opacity: 0.5;
-                    transform-origin: left;
-                    transform: scale(0.8);
+                .arrow {
+                    display: none;
                 }
             }
         }
-        &__screens{
-            @include fnFlex(row, flex-start, center, 1rem);
-            width: 100%;
-            img {
-                margin-top: 5rem;
-                height: 20rem;
-                width: auto;
-            }
+        .iOsIsland, .iOsNotification {
+            width: 40rem;
+            height: auto;
+        }
+        .iWatch, .standBy, .wear {
+            height: 30rem;
+            width: auto;
+        }
+        .noti{
+            width: 30rem;
+            height: auto;
         }
     }
 

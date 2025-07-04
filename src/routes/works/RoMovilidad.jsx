@@ -9,6 +9,7 @@ import CoSumario from "../../components/works/CoSumario.jsx";
 import CoContexto from "../../components/works/movilidad/CoContexto.jsx";
 import CoInvest from "../../components/works/movilidad/CoInvest.jsx";
 import CoAmbNoti from "../../components/works/movilidad/CoAmbNoti.jsx";
+import CoFlow from "../../components/works/movilidad/CoFlow.jsx";
 
 import fotoGLUE from "../../assets/imgs/gifs/MOVILIDAD.mp4";
 import liverpool from "../../assets/imgs/works/companies/liverpool.svg";
@@ -99,6 +100,10 @@ const RoMovilidad = () => {
 					<hr style={{ border: "0.2rem solid #ccc", margin: "1rem 0", width: "80%", borderRadius: "5rem"}} />
 				</center>
 				<CoAmbNoti />
+				<center>
+					<hr style={{ border: "0.2rem solid #ccc", margin: "1rem 0", width: "80%", borderRadius: "5rem"}} />
+				</center>
+				<CoFlow />
 			</div>
 		</>
 	);
