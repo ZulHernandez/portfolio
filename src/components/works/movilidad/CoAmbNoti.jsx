@@ -10,10 +10,19 @@ import down from "../../../assets/imgs/works/movilidad/notifications/down.svg";
 import noti from "../../../assets/imgs/works/movilidad/notifications/notification.svg";
 import island from "../../../assets/imgs/works/movilidad/notifications/dIsland.svg";
 import watch from "../../../assets/imgs/works/movilidad/notifications/watch.svg";
+import stand from "../../../assets/imgs/works/movilidad/notifications/stand.svg";
 
 import isla1 from "../../../assets/imgs/works/movilidad/notifications/isla1.svg";
 import isla2 from "../../../assets/imgs/works/movilidad/notifications/isla2.svg";
 import isla3 from "../../../assets/imgs/works/movilidad/notifications/isla3.svg";
+import iOsNoti1 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti1.svg";
+import iOsNoti2 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti2.svg";
+import iOsNoti3 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti3.svg";
+import iWatch1 from "../../../assets/imgs/works/movilidad/notifications/iWatch1.png";
+import iWatch2 from "../../../assets/imgs/works/movilidad/notifications/iWatch2.png";
+import iWatch3 from "../../../assets/imgs/works/movilidad/notifications/iWatch3.png";
+import standBy1 from "../../../assets/imgs/works/movilidad/notifications/standBy1.png";
+import standBy2 from "../../../assets/imgs/works/movilidad/notifications/standBy2.png";
 
 const CoAmbNoti = () => {
 	const { language } = useContext(MyContext);
@@ -30,12 +39,23 @@ const CoAmbNoti = () => {
 			id: 2,
 			text: language === "ES" ? "Notificación" : "Notification",
 			img: noti,
+			screens: [iOsNoti1, iOsNoti2, iOsNoti3],
+			alt: "Notification",
 		},
 		{
 			id: 3,
 			text: language === "ES" ? "Reloj" : "Watch",
 			img: watch,
+			screens: [iWatch1, iWatch2, iWatch3],
+			alt: "Watch",
 		},
+		{
+			id: 4,
+			text: language === "ES" ? "StandBy" : "StandBy",
+			img: stand,
+			screens: [standBy1, standBy2],
+			alt: "StandBy",
+		}
 	]);
 
 	const [carruselAndroid, setCarruselAndroid] = useState([
@@ -209,13 +229,13 @@ const CoAmbNoti = () => {
 						</div>
 					</div>
 					<div className="example-container__screens">
-						{carruselIos[0].screens &&
-							carruselIos[0].screens.map((screen, index) => (
+						{carruselIos[1].screens &&
+							carruselIos[1].screens.map((screen, index) => (
 								<img
 									key={index}
 									className="example-container__screens-item"
 									src={screen}
-									alt={carruselIos[0].alt}
+									alt={carruselIos[1].alt}
 								/>
 							))}
 					</div>

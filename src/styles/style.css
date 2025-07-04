@@ -3984,15 +3984,13 @@ footer img {
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  gap: 1rem;
   width: 100%;
-  background-color: red;
 }
 #notificaciones .example-container__screens img,
 #notifications .example-container__screens img {
   margin-top: 5rem;
-  width: 100%;
-  height: auto;
+  height: 20rem;
+  width: auto;
 }
 
 @media print {
