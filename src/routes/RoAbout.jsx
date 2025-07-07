@@ -1,10 +1,17 @@
 import { useContext, useEffect, useState, useRef } from "react";
 import { MyContext } from "../components/context/MyContext.js";
 import { useLocation } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
 import CoTitle from "../components/general/CoTitle.jsx";
 import CoConozca from "../components/general/CoConozca.jsx";
 import CoNavLeft from "../components/general/CoNavLeft.jsx";
+import RoCarga from "../routes/RoCarga.jsx";
+
+const RoSport = lazy(() => import("./about/RoSport.jsx"));
+const RoGames = lazy(() => import("./about/RoGames.jsx"));
+const RoManga = lazy(() => import("./about/RoManga.jsx"));
+const RoComida = lazy(() => import("./about/RoComida.jsx"));
 
 import sport from "../assets/imgs/about/sport.svg";
 import music from "../assets/imgs/about/music.svg";
@@ -12,47 +19,12 @@ import games from "../assets/imgs/about/games.svg";
 import manga from "../assets/imgs/about/manga.svg";
 import food from "../assets/imgs/about/food.svg";
 
-import imgSport from "../assets/imgs/about/sport/foto.webp";
-import apnea from "../assets/imgs/about/sport/apnea.svg";
-import back from "../assets/imgs/about/sport/back.svg";
-import breast from "../assets/imgs/about/sport/breast.svg";
-import fly from "../assets/imgs/about/sport/fly.svg";
-import free from "../assets/imgs/about/sport/free.svg";
-
 import imgMusic from "../assets/imgs/about/music/foto.webp";
 import amp from "../assets/imgs/about/music/amp.svg";
 import electric from "../assets/imgs/about/music/electric.svg";
 import guitar from "../assets/imgs/about/music/guitar.svg";
 import melodic from "../assets/imgs/about/music/melodic.svg";
 import microphone from "../assets/imgs/about/music/microphone.svg";
-
-import f1 from "../assets/imgs/about/games/f1.webp";
-import f2 from "../assets/imgs/about/games/f2.webp";
-import f3 from "../assets/imgs/about/games/f3.webp";
-import f4 from "../assets/imgs/about/games/f4.webp";
-import f5 from "../assets/imgs/about/games/f5.webp";
-import f6 from "../assets/imgs/about/games/f6.webp";
-import f7 from "../assets/imgs/about/games/f7.webp";
-import f8 from "../assets/imgs/about/games/f8.webp";
-
-import oyasumi from "../assets/imgs/about/manga/oyasumi.webp";
-import uzumaki from "../assets/imgs/about/manga/uzumaki.webp";
-import gakko from "../assets/imgs/about/manga/gakko.webp";
-import bibliomania from "../assets/imgs/about/manga/bibliomania.webp";
-import eri from "../assets/imgs/about/manga/eri.webp";
-import evangelion from "../assets/imgs/about/manga/evangelion.webp";
-import cowboy from "../assets/imgs/about/manga/cowboy.webp";
-import madoka from "../assets/imgs/about/manga/madoka.webp";
-import perfect from "../assets/imgs/about/manga/perfect.webp";
-import jujutsu from "../assets/imgs/about/manga/jujutsu.webp";
-
-import apio from "../assets/imgs/about/food/apio.svg";
-import tomate from "../assets/imgs/about/food/tomate.svg";
-import hierbabuena from "../assets/imgs/about/food/hierbabuena.svg";
-import chile from "../assets/imgs/about/food/chile.svg";
-import naranja from "../assets/imgs/about/food/naranja.svg";
-import limon from "../assets/imgs/about/food/limon.svg";
-import sal from "../assets/imgs/about/food/sal.svg";
 
 const API_KEY = "AIzaSyD786eN8Xt3Z-ItaSYVSDuZ4AVLrApAPD4";
 const PLAYLIST_ID = "PLC_vmjLKExTmybkcbAHXzqPsZuVH9Lc6I";
@@ -137,75 +109,6 @@ CoTab.propTypes = {
 	status: PropTypes.string,
 	icon: PropTypes.string,
 	text: PropTypes.string,
-};
-
-const CoSport = () => {
-	const { language } = useContext(MyContext);
-
-	const styles = [
-		{
-			icon: apnea,
-			text: language == "ES" ? "Apnea" : "Apnea",
-		},
-		{
-			icon: back,
-			text: language == "ES" ? "Dorso" : "Backstroke",
-		},
-		{
-			icon: free,
-			text: language == "ES" ? "Libre" : "Free",
-		},
-		{
-			icon: breast,
-			text: language == "ES" ? "Pecho" : "Breaststroke",
-		},
-		{
-			icon: fly,
-			text: language == "ES" ? "Mariposa" : "Butterfly",
-		},
-	];
-
-	return (
-		<div className="tab-body">
-			<div className="tab-content">
-				<div
-					className="div-img"
-					style={{ backgroundImage: "url(" + imgSport + ")" }}
-				></div>
-				<div className="tab-content__body">
-					<div className="tab-content__info">
-						<div className="tab-content__info-text">
-							<h2>
-								{language == "ES" ? "Me encanta nadar" : "I love swimming"}
-							</h2>
-							<span className="text-normal">
-								{language == "ES"
-									? "Llevo nadando ya más de un año y no podría estar más enamorado de este deporte, es una sensación increíble el poder perderse en el agua después de un día de trabajo."
-									: "I have been swimming for more than a year now and I couldn't be more in love with this sport, it is an incredible feeling to be able to get lost in the water after a day of work."}
-								<br />
-								<br />
-								{language == "ES"
-									? "Si tuviera que calificar que hacer un tier-list de que estilo me gusta más..."
-									: "If I had to rate what style I like the most..."}
-							</span>
-							<div className="tab-content__info-text__list">
-								{styles.map((style, index) => (
-									<div
-										key={index}
-										className="tab-content__info-text__list-item"
-										style={{ opacity: 1 - index * 0.2 }}
-									>
-										<img loading="lazy" src={style.icon} alt={style.text} />
-										<span>{style.text}</span>
-									</div>
-								))}
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
 };
 
 const CoMusic = () => {
@@ -296,7 +199,11 @@ const CoMusic = () => {
 						<div className="tab-content__info-text__list">
 							{instruments.map((instrument, index) => (
 								<div key={index} className="tab-content__info-text__list-item">
-									<img loading="lazy" src={instrument.icon} alt={instrument.text} />
+									<img
+										loading="lazy"
+										src={instrument.icon}
+										alt={instrument.text}
+									/>
 								</div>
 							))}
 						</div>
@@ -322,402 +229,6 @@ const CoMusic = () => {
 							url={song.url}
 						/>
 					))}
-				</div>
-			</div>
-		</div>
-	);
-};
-
-const CoGames = () => {
-	const { language } = useContext(MyContext);
-
-	const [opacities, setOpacities] = useState([
-		1, 0, 0, 0, 0.05, 0.1, 0.15, 0.2,
-	]);
-
-	const frames = [f1, f2, f3, f4, f5, f6, f7, f8];
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setOpacities((prev) => {
-				const newArray = [
-					prev[prev.length - 1],
-					...prev.slice(0, prev.length - 1),
-				]; // Moves last element to the front
-				return newArray;
-			});
-		}, 41 * 10);
-
-		return () => clearInterval(interval); // Cleanup on unmount
-	}, []);
-
-	return (
-		<div className="tab-body">
-			<div className="tab-content">
-				<div className="tab-content__info">
-					<div className="tab-content__info-text">
-						<h2>
-							{language == "ES"
-								? "Soy más de singleplayer..."
-								: "I prefer singleplayer games..."}
-						</h2>
-						<span className="text-normal">
-							{language == "ES"
-								? "Me gustan los juegos donde me encuentro solo descubriendo una gran historia. Diría que mis géneros favoritos son los walking simulators, los metroid-vania y los plataformeros clasicos. Definitivamente mi juego favorito es Hollowknight."
-								: "I like games where I find myself alone discovering a great story. I would say my favorite genres are walking simulators, metroidvanias, and classic platformers. Definitely, my favorite game is Hollow Knight."}
-							<br />
-							<br />
-							<b>
-								{language == "ES"
-									? "P.D. Silk Song es real!"
-									: "P.S. Silk Song is real!"}
-							</b>
-						</span>
-						<h4>
-							{language == "ES"
-								? "... pero me encantan los juegos de mesa"
-								: "... but i also like board games"}
-						</h4>
-						<span className="text-normal">
-							{language == "ES"
-								? "Últimamente he estado coleccionando y descubriendo juegos de mesas que me han encantado, no tengo muchos aún en mi colección pero pronto estare llenos de ellos"
-								: "Lately, I have been collecting and discovering board games that I have loved, I don't have many yet in my collection but soon I will be filled with them"}
-						</span>
-					</div>
-				</div>
-			</div>
-			<div className="frame-container">
-				{frames.map((frame, i) => (
-					<div key={i}>
-						<img
-							src={frame}
-							alt={`Frame ${i + 1}`}
-							style={{ zIndex: i + 1, opacity: opacities[i] }}
-						/>
-					</div>
-				))}
-			</div>
-		</div>
-	);
-};
-
-const CoManga = () => {
-	const { language } = useContext(MyContext);
-
-	const mangas = [
-		{
-			cover: oyasumi,
-			title: "Oyasumi Punpun",
-			author: "Inio Asano",
-			url: null,
-		},
-		{
-			cover: eri,
-			title: "Sayonara Eri",
-			author: "Tatsuki Fujimoto",
-			url: null,
-		},
-		{
-			cover: uzumaki,
-			title: "Uzumaki",
-			author: "Junji Ito",
-			url: null,
-		},
-		{
-			cover: gakko,
-			title: "Gakkō Gurashi!",
-			author: "Norimitsu Kaihō",
-			url: null,
-		},
-
-		{
-			cover: bibliomania,
-			title: "Bibliomania",
-			author: "Orval, Macchiro",
-			url: null,
-		},
-	];
-
-	const animes = [
-		{
-			cover: evangelion,
-			title: "Neon Genesis Evangelion",
-			author: "Hideaki Anno",
-			url: null,
-		},
-		{
-			cover: cowboy,
-			title: "Cowboy Bebop",
-			author: "Shinichirō Watanabe",
-			url: null,
-		},
-		{
-			cover: madoka,
-			title: "Puella Magi Madoka Magica",
-			author: "Gen Urobuchi",
-			url: null,
-		},
-		{
-			cover: perfect,
-			title: "Perfect Blue",
-			author: "Satoshi Kon",
-			url: null,
-		},
-		{
-			cover: jujutsu,
-			title: "Jujutsu Kaisen",
-			author: "Gege Akutami",
-			url: null,
-		},
-	];
-
-	return (
-		<div className="tab-body">
-			<div className="tab-content">
-				<div className="tab-content__info">
-					<div className="tab-content__info-text">
-						<h2>
-							{language == "ES"
-								? "Slices of live, terror y ¿mechas?"
-								: "Slices of life, terror and mechas?"}
-						</h2>
-						<span className="text-normal">
-							{language == "ES"
-								? "Soy más de leer manga que ver anime y asi he encontrado increíbles autores que me han hecho pasar buenos y malos momentos. Aquí esta mi top de mangas aunque, si es posible, deberías leer más sobre el autor."
-								: "I prefer reading manga over watching anime, and this has led me to discover incredible authors who have given me both good and bad moments. Here is my top manga, although if possible, you should read more about the author."}
-						</span>
-					</div>
-				</div>
-			</div>
-			<div className="music-list">
-				{mangas.map((manga, index) => (
-					<CoCard
-						key={index}
-						cover={manga.cover}
-						title={manga.title}
-						author={manga.author}
-						url={manga.url}
-					/>
-				))}
-			</div>
-			<div className="tab-content">
-				<div className="tab-content__info">
-					<div className="tab-content__info-text">
-						<span className="text-normal">
-							{language == "ES"
-								? "A pesar de gustar más el formato manga, hay obras que definitivamente no podría más sino viéndolas a toda color y animadas. Te recomiendo mucho darles un vistazo, podrían gustarte bastante."
-								: "Despite preferring the manga format, there are definitely works that I couldn't enjoy as much if I didn't watch them in full color and animated. I highly recommend checking them out; you might like them a lot."}
-						</span>
-					</div>
-				</div>
-			</div>
-			<div className="music-list">
-				{animes.map((anime, index) => (
-					<CoCard
-						key={index}
-						cover={anime.cover}
-						title={anime.title}
-						author={anime.author}
-						url={anime.url}
-					/>
-				))}
-			</div>
-		</div>
-	);
-};
-
-const CoComida = () => {
-	const { language } = useContext(MyContext);
-
-	const ingredientes = [
-		{
-			icon: apio,
-			text: language == "ES" ? "Apio" : "Celery",
-		},
-		{
-			icon: tomate,
-			text: language == "ES" ? "Tomate" : "Tomato",
-		},
-		{
-			icon: hierbabuena,
-			text: language == "ES" ? "Hierbabuena" : "Mint",
-		},
-		{
-			icon: chile,
-			text: language == "ES" ? "Chile serrano" : "Serrano pepper",
-		},
-		{
-			icon: naranja,
-			text: language == "ES" ? "Naranja" : "Orange",
-		},
-		{
-			icon: limon,
-			text: language == "ES" ? "Limón" : "Lemon",
-		},
-		{
-			icon: sal,
-			text: language == "ES" ? "Sal" : "Salt",
-		},
-	];
-
-	const ingredienteItems = [
-		{
-			cantidad: "1",
-			text: language == "ES" ? "Rama de apio" : "Celery stalk",
-		},
-		{
-			cantidad: "2",
-			text:
-				language == "ES"
-					? "Tomates (Jitomate verde)"
-					: "Tomatoes (Green tomato)",
-		},
-		{
-			cantidad: "3",
-			text: language == "ES" ? "Hojas de hierbabuena" : "Mint leaves",
-		},
-		{
-			cantidad: "1",
-			text: language == "ES" ? "Chile serrano" : "Serrano peppers",
-		},
-		{
-			cantidad: "1",
-			text: language == "ES" ? "Naranja" : "Orange",
-		},
-		{
-			cantidad: "1",
-			text:
-				language == "ES" ? "Limón verde sin semilla" : "Seedless green lemon",
-		},
-		{
-			cantidad: "-",
-			text: language == "ES" ? "Sal" : "Salt",
-		},
-		{
-			cantidad: "-",
-			text: language == "ES" ? "Oregano" : "Oregano",
-		},
-		{
-			cantidad: "-",
-			text: language == "ES" ? "Agua" : "Water",
-		},
-	];
-
-	const steps = [
-		{
-			cantidad: "1",
-			text:
-				language == "ES"
-					? "Picamos la rama de apio, los tomates, las hojas de hierbabuena y el chile serrano."
-					: "Chop the celery stalk, tomatoes, mint leaves, and serrano pepper.",
-		},
-		{
-			cantidad: "2",
-			text:
-				language == "ES"
-					? "Exprimimos el jugo del limón y el de naranja, reservamos."
-					: "Juice the lemon and orange, set aside.",
-		},
-		{
-			cantidad: "3",
-			text:
-				language == "ES"
-					? "Molcajeteamos o procesamos con la licuadora y agregamos la sal y el orégano al gusto."
-					: "Grind in a mortar or blender and add salt and oregano to taste.",
-		},
-		{
-			cantidad: "4",
-			text:
-				language == "ES"
-					? "Si lo requiere la licuadora o tu en el molcajete puedes agregar agua poco a poco hasta lograr la consistencia que más te guste, yo la prefiero un poco más pastosa."
-					: "If the blender requires it or you in the mortar, you can add water little by little until you achieve the consistency you like best; I prefer it a little thicker.",
-		},
-		{
-			cantidad: "5",
-			text:
-				language == "ES"
-					? "Acompaña con totopos o para unos taquitos."
-					: "Serve with tortilla chips or tacos.",
-		},
-	];
-
-	return (
-		<div className="tab-body">
-			<div className="tab-content">
-				<div className="tab-content__info">
-					<div className="tab-content__info-text">
-						<h2>
-							{language == "ES"
-								? "Comida asiática, cocinar y una receta "
-								: "Asian food, cooking, and a recipe"}
-						</h2>
-						<span className="text-normal">
-							{language == "ES"
-								? "Me encanta comer pero también amo cocinar, de las cosas que mas suelo cocinar son comida asiática desde platillos salados como ramen, giozas u onigiris como también platillos dulces como el helado de matcha. La comida mexicana obviamente me encanta, hago una birria espectacular y justo les dejare una reseta de salsa verde cruda para que puedan comer con su familia."
-								: "I love eating but I also love cooking. Some of the things I cook the most are Asian food, from savory dishes like ramen, gyozas, or onigiris to sweet dishes like matcha ice cream. I obviously love Mexican food; I make a spectacular birria, and I will leave you a recipe for raw green salsa so you can enjoy it with your family."}
-						</span>
-						<div className="tab-content__info-text__list">
-							{ingredientes.map((ingrediente, index) => (
-								<div key={index} className="tab-content__info-text__list-item">
-									<img loading="lazy" src={ingrediente.icon} alt={ingrediente.text} />
-								</div>
-							))}
-						</div>
-						<br />
-						<br />
-						<center>
-							<div className="receipe">
-								<div className="receipe__ingredients">
-									<h3>{language == "ES" ? "Ingredientes" : "Ingredients"}</h3>
-									<div className="receipe__ingredients-list">
-										{ingredienteItems.map((item, index) => (
-											<div
-												className="receipe__ingredients-list-item"
-												key={index}
-											>
-												<span
-													className="text-normal"
-													style={{ width: "min-content" }}
-												>
-													{item.cantidad}
-												</span>
-												<span
-													className="text-normal"
-													style={{ paddingLeft: "2rem" }}
-												>
-													{item.text}
-												</span>
-											</div>
-										))}
-									</div>
-								</div>
-								<div className="receipe__instructions">
-									<h3>{language == "ES" ? "Instrucciones" : "Instructions"}</h3>
-									<div className="receipe__instructions-list">
-										{steps.map((item, index) => (
-											<div
-												className="receipe__instructions-list-item"
-												key={index}
-											>
-												<span
-													className="text-normal"
-													style={{ width: "min-content" }}
-												>
-													{item.cantidad}
-												</span>
-												<span
-													className="text-normal"
-													style={{ paddingLeft: "2rem" }}
-												>
-													{item.text}
-												</span>
-											</div>
-										))}
-									</div>
-								</div>
-							</div>
-						</center>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -800,11 +311,15 @@ const RoAbout = () => {
 						</span>
 					</div>
 				</div>
-				{filtro === 1 && <CoSport />}
-				{filtro === 2 && <CoMusic />}
-				{filtro === 3 && <CoGames />}
-				{filtro === 4 && <CoManga />}
-				{filtro === 5 && <CoComida />}
+				<Suspense
+					fallback={<RoCarga/>}
+				>
+					{filtro === 1 && <RoSport />}
+					{filtro === 2 && <CoMusic />}
+					{filtro === 3 && <RoGames />}
+					{filtro === 4 && <RoManga />}
+					{filtro === 5 && <RoComida />}
+				</Suspense>
 			</div>
 			<CoConozca></CoConozca>
 			<CoNavLeft anclas={anclasAbout} />
