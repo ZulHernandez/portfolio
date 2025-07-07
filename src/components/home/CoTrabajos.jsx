@@ -42,7 +42,7 @@ const CoTrabajos = () => {
 									? "calc(100% - 5rem)"
 									: index % 3 === 0
 									? "100%"
-									: "calc(50% - 5.5rem)",
+									: "calc(50% - 6.5rem)",
 						}}
 					>
 						<img

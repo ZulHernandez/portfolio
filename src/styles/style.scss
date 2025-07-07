@@ -43,7 +43,7 @@ $shade-0: #fff;
 @mixin fnCard() {
     background-color: $shade-0;
     border-radius: 2rem;
-    padding: 2rem;
+    padding: 2.5rem;
     transition: all 0.3s ease-in-out;
     &:hover {
         box-shadow:
@@ -178,7 +178,7 @@ a {
 }
 
 .text-normal {
-    @include fnFont("Raleway-Medium", 1.4rem, none, $shade-700);
+    @include fnFont("Raleway-Medium", 1.8rem, none, $shade-700);
     width: 100%;
 }
 
@@ -273,7 +273,7 @@ a {
     -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
     border-radius: 1rem;
-    transition: all 300ms ease-in-out;
+    transition: all 100ms ease-in-out;
     @media (max-width: 800px) {
         @include fnFlex(column, flex-start, center, 0rem);
         transition: all 1s ease-in-out;
@@ -314,7 +314,7 @@ a {
                 @include fnFont("Raleway-SemiBold", 7rem, none, $shade-800);
             }
             cursor: pointer;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.1s ease-in-out;
             &:hover {
                 text-decoration: underline;
             }
@@ -525,8 +525,11 @@ a {
 
         img {
             width: 20rem;
+            border-radius: 50%;
+            transition: all 0.3s ease-in-out;
             @media (max-width: 1200px) {
                 width: 25rem;
+                border-radius: 50%;
             }
             &:hover {
                 border-radius: 50%;
@@ -1152,7 +1155,7 @@ footer {
                     &__list {
                         @include fnFlex(row, space-between, space-between, 0rem);
                         padding: 2rem 5rem 0px 5rem;
-                        width: calc(100% - 5rem);
+                        width: calc(100% - 10rem);
                         &-item {
                             @include fnFlex(column, center, center, 0.5rem);
                             img {
@@ -1222,6 +1225,7 @@ footer {
             display: flex;
             img {
                 width: 30rem;
+                transition: all 0.3s ease-in-out;
             }
         }
     }
@@ -1262,7 +1266,7 @@ footer {
             &-list {
                 @include fnFlex(column, flex-start, flex-start, 1rem);
                 &-item {
-                    @include fnFlex(row, center, flex-start, 1rem);
+                    @include fnFlex(row, center, flex-start, 0rem);
                 }
             }
         }
@@ -1322,7 +1326,7 @@ footer {
                             @include fnFont("Raleway-Bold", 1.4rem, none, $shade-800);
                         }
                         #principal {
-                            @include fnFont("Raleway-Semibold", 1.4rem, underline dotted, $shade-600);
+                            @include fnFont("Raleway-Semibold", 1.8rem, underline dotted, $shade-600);
                         }
                     }
                 }
@@ -1342,9 +1346,6 @@ footer {
         .time-card {
             @include fnFlex(column, center, center, 2rem);
             width: 100%;
-            h4 {
-                @include fnFont("Raleway-Bold", 1.4rem, none, $shade-800);
-            }
             &-body {
                 @include fnFlex(row, center, center, 5rem);
                 width: calc(100% - 10rem);
@@ -1389,14 +1390,14 @@ footer {
 
 .bullet-point {
     &__title {
-        @include fnFont("Raleway-Bold", 1.4rem, none, $shade-600);
+        @include fnFont("Raleway-Bold", 1.8rem, none, $shade-600);
     }
 }
 
 #tecnologias-adoptadas,
 #technologies-used {
     .tokens-list {
-        @include fnFlex(row, center, center, 3rem);
+        @include fnFlex(row, flex-start, center, 3rem);
         width: 100%;
         @media (max-width: 800px) {
             @include fnFlex(column, center, center, 3rem);
@@ -1446,7 +1447,7 @@ footer {
             .tokens-list__card-kpis {
                 @include fnFlex(row, center, center, 5rem);
                 &__column {
-                    @include fnFlex(column, center, center, 3rem);
+                    @include fnFlex(column, center, flex-start, 3rem);
                     width: 100%;
                 }
             }
@@ -1499,11 +1500,6 @@ footer {
             }
         }
     }
-}
-
-.subtitle {
-    width: 100%;
-    @include fnFont("Raleway-Bold", 1.6rem, none, $shade-600);
 }
 
 #mejora-de-insumos,
@@ -1662,8 +1658,11 @@ footer {
                 width: 100%;
             }
             &-header {
-                @include fnFlex(row, flex-start, center, 0.5rem);
+                @include fnFlex(row, space-between, center, 1.5rem);
                 width: 100%;
+                img{
+                    width: 6rem;
+                }
                 &-title {
                     @include fnFlex(column, center, flex-start, 0rem);
                     span {
@@ -1677,7 +1676,7 @@ footer {
                     width: 100%;
                     height: 100%;
                     span {
-                        @include fnFont("Raleway-Semibold", 0.8rem, none, $shade-0);
+                        @include fnFont("Raleway-Semibold", 1.4rem, none, $shade-0);
                         background-color: $shade-900;
                         padding: 0.3rem 0.6rem;
                         border-radius: 0.5rem;
@@ -1819,10 +1818,6 @@ footer {
                 flex-wrap: wrap;
                 img {
                     height: 25rem;
-                    transition: all 0.3s ease-in-out;
-                    &:hover {
-                        transform: scale(1.05);
-                    }
                 }
             }
         }
@@ -1931,7 +1926,6 @@ footer {
         width: 100%;
         &__imgs {
             @include fnFlex(row, center, center, 5rem);
-            gap: 0rem;
             justify-content: space-between;
             width: 60%;
             @media (max-width: 800px) {
@@ -2055,30 +2049,108 @@ footer {
                 }
             }
         }
-        .iOsIsland, .iOsNotification {
+        .iOsIsland,
+        .iOsNotification {
             width: 40rem;
             height: auto;
         }
-        .iWatch, .standBy, .wear {
+        .iWatch,
+        .standBy,
+        .wear {
             height: 30rem;
             width: auto;
         }
-        .noti{
+        .noti {
             width: 30rem;
             height: auto;
         }
     }
+}
 
-    /* @media (max-width: 1800px) {
-        #frame3 {
-            display: none;
+#flujo-y-metodos,
+#flow-and-methods {
+    .flow-schema {
+        @include fnFlex(row, space-between, center, 3rem);
+        width: 100%;
+        height: 15rem;
+        overflow-x: auto;
+        img {
+            width: 4rem;
+            height: 4rem;
+        }
+        &-item {
+            @include fnFlex(column, center, center, 0.5rem);
+            cursor: pointer;
+            width: 10rem;
+            transition: all 0.3s ease-in-out;
+            img {
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+            span {
+                @include fnFont("Raleway-Semibold", 1.2rem, none, $red-800);
+                text-align: center;
+                width: 100%;
+            }
         }
     }
-    @media (max-width: 1000px) {
-        #frame2 {
-            display: none;
+    .flow-description {
+        @include fnFlex(row, space-between, center, 5rem);
+        width: 100%;
+        @media (max-width: 800px) {
+            @include fnFlex(row, space-between, center, 5rem);
+            width: 100%;
         }
-    } */
+        img {
+            height: 45rem;
+            width: auto;
+        }
+        &-text {
+            @include fnFlex(column, center, flex-start, 2rem);
+            width: 100%;
+            .subtitle {
+                text-align: left;
+            }
+            span {
+                text-align: left;
+                width: max-content;
+            }
+        }
+        &-content {
+            @include fnFlex(column, center, center, 2rem);
+            width: 100%;
+            .flow-schema {
+                @include fnFlex(row, space-between, center, 3rem);
+                width: 100%;
+                height: 15rem;
+                overflow-x: auto;
+                img {
+                    width: 4rem;
+                    height: 4rem;
+                }
+                &-item {
+                    @include fnFlex(column, center, center, 0.5rem);
+                    cursor: pointer;
+                    width: 10rem;
+                    transition: all 0.3s ease-in-out;
+                    img {
+                        width: 3.5rem;
+                        height: 3.5rem;
+                    }
+                    span {
+                        @include fnFont("Raleway-Semibold", 1.2rem, none, $red-800);
+                        text-align: center;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.subtitle {
+    width: 100%;
+    @include fnFont("Raleway-Bold", 2rem, none, $shade-600);
 }
 
 @media print {

@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
 const CoTimeCard = ({ title, bullets, color, grey }) => {
 	return (
 		<div className="time-card">
-			<h4 style={{ color: color }}>{title}</h4>
+			<h4 style={{ color: color, textAlign: "center" }} className="subtitle">{title}</h4>
 			<div className="time-card-body" style={{ borderColor: color }}>
 				{bullets.map((bullet, index) => (
 					<div key={index} className="time-card-body__item">

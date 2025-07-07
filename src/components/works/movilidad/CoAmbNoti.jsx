@@ -347,6 +347,11 @@ const CoAmbNoti = () => {
 					</div>
 				</div>
 			</div>
+			<span className="text-normal">
+					{language === "ES"
+						? "Toda la integración del ambiente de notificaciones no solo implico la creación de estos modos de notificación, también provoco la investigación y documentación de estándares de diseño venidos de Material Design por parte de Android y la Human Interface de Apple. Esto se reflejo dentro de la documentación del sistema de diseño de liverpool en la adición de materiales, efectos y animaciones."
+						: "The entire integration of the notification environment not only involved the creation of these notification modes but also prompted the research and documentation of design standards from Material Design by Android and the Human Interface by Apple. This was reflected in the documentation of Liverpool's design system with the addition of materials, effects, and animations."}
+				</span>
 		</div>
 	);
 };

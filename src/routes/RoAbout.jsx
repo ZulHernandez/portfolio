@@ -9,7 +9,7 @@ import CoNavLeft from "../components/general/CoNavLeft.jsx";
 import sport from "../assets/imgs/about/sport.svg";
 import music from "../assets/imgs/about/music.svg";
 import games from "../assets/imgs/about/games.svg";
-import manga from "../assets/imgs/about/manga.svg";	
+import manga from "../assets/imgs/about/manga.svg";
 import food from "../assets/imgs/about/food.svg";
 
 import imgSport from "../assets/imgs/about/sport/foto.webp";
@@ -335,9 +335,7 @@ const CoGames = () => {
 		1, 0, 0, 0, 0.05, 0.1, 0.15, 0.2,
 	]);
 
-	const frames = [
-		f1, f2, f3, f4, f5, f6, f7, f8,
-	];
+	const frames = [f1, f2, f3, f4, f5, f6, f7, f8];
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -677,8 +675,18 @@ const CoComida = () => {
 												className="receipe__ingredients-list-item"
 												key={index}
 											>
-												<span className="text-normal">{item.cantidad}</span>
-												<span className="text-normal">{item.text}</span>
+												<span
+													className="text-normal"
+													style={{ width: "min-content" }}
+												>
+													{item.cantidad}
+												</span>
+												<span
+													className="text-normal"
+													style={{ paddingLeft: "2rem" }}
+												>
+													{item.text}
+												</span>
 											</div>
 										))}
 									</div>
@@ -691,8 +699,18 @@ const CoComida = () => {
 												className="receipe__instructions-list-item"
 												key={index}
 											>
-												<span className="text-normal">{item.cantidad}</span>
-												<span className="text-normal">{item.text}</span>
+												<span
+													className="text-normal"
+													style={{ width: "min-content" }}
+												>
+													{item.cantidad}
+												</span>
+												<span
+													className="text-normal"
+													style={{ paddingLeft: "2rem" }}
+												>
+													{item.text}
+												</span>
 											</div>
 										))}
 									</div>
@@ -723,8 +741,8 @@ const RoAbout = () => {
 	];
 
 	useEffect(() => {
-        setRuta("/about-me"); // Se ejecuta después del renderizado inicial
-    }, []);
+		setRuta("/about-me"); // Se ejecuta después del renderizado inicial
+	}, []);
 
 	useEffect(() => {
 		setAmplio(false); // Reset amplio on route change
@@ -737,13 +755,7 @@ const RoAbout = () => {
 				className="container-fluid"
 				style={{ minHeight: "50vh" }}
 			>
-				<CoTitle
-					titles={
-						language == "ES"
-							? "Este soy yo"
-							: "This is me"
-					}
-				/>
+				<CoTitle titles={language == "ES" ? "Este soy yo" : "This is me"} />
 				<span className="text-normal">
 					{language == "ES"
 						? "Te dejo este apartado para que conozcas más sobre mi, más allá de mi trabajo hay otras cosas sobre mi que pueden ser interesantes."

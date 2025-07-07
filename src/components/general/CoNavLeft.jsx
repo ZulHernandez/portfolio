@@ -14,7 +14,7 @@ const CoNavLeft = ({anclas}) => {
 								.scrollIntoView({ behavior: "smooth" });
 						}}
 					>
-						<span className="text-normal">{ancla.text}</span>
+						<span className="text-normal" style={{fontSize: "1.4rem"}}>{ancla.text}</span>
 					</a>
 				);
 			})}

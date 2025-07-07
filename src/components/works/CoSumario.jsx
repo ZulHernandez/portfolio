@@ -41,11 +41,11 @@ const CoSumario = ({ foto, title, date, description, role, sector, team }) => {
 							</div>
 							<div className="sumario-card__body-text-lower-bullets">
 								<h3>{language === "ES" ? "Sector" : "Sector"}</h3>
-								<span>{sector}</span>
+								<span className="text-normal">{sector}</span>
 							</div>
 							<div className="sumario-card__body-text-lower-bullets">
 								<h3>{language === "ES" ? "Equipo" : "Team"}</h3>
-								<span>{team}</span>
+								<span className="text-normal">{team}</span>
 							</div>
 						</div>
 					</div>
