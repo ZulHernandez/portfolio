@@ -158,7 +158,7 @@ const CoWorkCard = ({ id, trabajo }) => {
 	return (
 		<div id={id} className="time-line-info__card">
 			<div className="time-line-info__card-head">
-				<img src={trabajo.logo} alt={trabajo.name} />
+				<img loading="lazy" src={trabajo.logo} alt={trabajo.name} />
 				<div className="time-line-info__card-head__text">
 					<h2>{trabajo.name}</h2>
 					<p className="text-normal">{trabajo.date[language === "ES" ? 0 : 1]}</p>
@@ -287,7 +287,7 @@ const CoTimeline = () => {
 										: "#FF904B",
 							}}
 						>
-							<img src={trabajo.icon} alt={trabajo.type} />
+							<img loading="lazy" src={trabajo.icon} alt={trabajo.type} />
 							<span>{trabajo.type.replace("-", " ")}</span>
 						</div>
 					);

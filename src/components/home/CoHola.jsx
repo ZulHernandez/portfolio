@@ -14,7 +14,7 @@ const CoHola = () => {
 	return (
 		<div id={language == "ES" ? "hola" : "hello"} className="container-fluid">
 			<div id="hola-head">
-				<img src={perfil} alt="Saúl Ulises Hernández Cruz" />
+				<img loading="lazy" src={perfil} alt="Saúl Ulises Hernández Cruz" />
 				<div id="hola-head__text">
 					<h2>{language == "ES" ? "Hola, yo soy" : "Hello, I'm"}</h2>
 					<h1>Saúl Hernández</h1>

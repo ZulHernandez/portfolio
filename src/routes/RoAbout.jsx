@@ -127,7 +127,7 @@ CoCard.propTypes = {
 const CoTab = ({ status, icon, text }) => {
 	return (
 		<div className={`tab-buttons__item ${status}`}>
-			<img src={icon} alt={text} />
+			<img loading="lazy" src={icon} alt={text} />
 			<span className="text-normal">{text}</span>
 		</div>
 	);
@@ -195,7 +195,7 @@ const CoSport = () => {
 										className="tab-content__info-text__list-item"
 										style={{ opacity: 1 - index * 0.2 }}
 									>
-										<img src={style.icon} alt={style.text} />
+										<img loading="lazy" src={style.icon} alt={style.text} />
 										<span>{style.text}</span>
 									</div>
 								))}
@@ -296,7 +296,7 @@ const CoMusic = () => {
 						<div className="tab-content__info-text__list">
 							{instruments.map((instrument, index) => (
 								<div key={index} className="tab-content__info-text__list-item">
-									<img src={instrument.icon} alt={instrument.text} />
+									<img loading="lazy" src={instrument.icon} alt={instrument.text} />
 								</div>
 							))}
 						</div>
@@ -659,7 +659,7 @@ const CoComida = () => {
 						<div className="tab-content__info-text__list">
 							{ingredientes.map((ingrediente, index) => (
 								<div key={index} className="tab-content__info-text__list-item">
-									<img src={ingrediente.icon} alt={ingrediente.text} />
+									<img loading="lazy" src={ingrediente.icon} alt={ingrediente.text} />
 								</div>
 							))}
 						</div>

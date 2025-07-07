@@ -16,7 +16,7 @@ const CoCard = ({ icon, title, tag, description }) => {
 	return (
 		<div className="backlog__card">
 			<div className="backlog__card-header">
-				<img src={icon} alt={title.join(" ")} />
+				<img loading="lazy" src={icon} alt={title.join(" ")} />
 				<div className="backlog__card-header-title">
 					<span >{title[0]}</span>
 					<span>{title[1]}</span>
@@ -135,7 +135,7 @@ const CoFuture = () => {
 					</span>
 				</div>
 				<center>
-					<img className="schema-hand-off" src={language === "ES" ? EShandOff : ENhandOff} alt="" />
+					<img loading="lazy" className="schema-hand-off" src={language === "ES" ? EShandOff : ENhandOff} alt="" />
 				</center>
 			</div>
 		</div>

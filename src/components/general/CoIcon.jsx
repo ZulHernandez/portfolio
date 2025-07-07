@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const CoIcon = ({ icon, text }) => {
     return (
         <div className="co-icon">
-            <img src={icon} alt="Icon" />
+            <img loading="lazy" src={icon} alt="Icon" />
             <span className="co-icon__text text-normal">{text}</span>
         </div>
     );

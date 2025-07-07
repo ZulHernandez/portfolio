@@ -73,7 +73,7 @@ const CoConozca = () => {
 					{contactos.map((contact, index) => (
 						<a key={index} href={contact.url} className="contact-card__link">
 							<div className="contact-card__text-link">
-								<img src={contact.icon} alt={contact.text} />
+								<img loading="lazy" src={contact.icon} alt={contact.text} />
 								<span>{contact.text}</span>
 							</div>
 						</a>
@@ -83,7 +83,7 @@ const CoConozca = () => {
 					{redes.map((red, index) => (
 						<a key={index} href={red.url} target="_blank" rel="noreferrer" className="contact-card__link">
 							<div className="contact-card__redes">
-								<img src={red.icon} alt={red.text} />
+								<img loading="lazy" src={red.icon} alt={red.text} />
 							</div>
 						</a>
 					))}

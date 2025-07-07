@@ -65,7 +65,7 @@ const CoTrabajos = () => {
 						key={index}
 					>
 						<span>{tag}</span>
-						<img src={close} alt="Cerrar" />
+						<img loading="lazy" src={close} alt="Cerrar" />
 					</div>
 				))}
 			</div>

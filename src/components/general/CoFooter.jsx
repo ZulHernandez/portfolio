@@ -111,7 +111,7 @@ const CoFooter = () => {
 					</div>
 				</div>
 			</div>
-			<img src={sign} alt="Home" />
+			<img loading="lazy" src={sign} alt="Home" />
 		</footer>
 	);
 };

@@ -12,24 +12,24 @@ import island from "../../../assets/imgs/works/movilidad/notifications/dIsland.s
 import watch from "../../../assets/imgs/works/movilidad/notifications/watch.svg";
 import stand from "../../../assets/imgs/works/movilidad/notifications/stand.svg";
 
-import isla1 from "../../../assets/imgs/works/movilidad/notifications/isla1.png";
-import isla2 from "../../../assets/imgs/works/movilidad/notifications/isla2.png";
-import isla3 from "../../../assets/imgs/works/movilidad/notifications/isla3.png";
-import iOsNoti1 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti1.png";
-import iOsNoti2 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti2.png";
-import iOsNoti3 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti3.png";
-import iWatch1 from "../../../assets/imgs/works/movilidad/notifications/iWatch1.png";
-import iWatch2 from "../../../assets/imgs/works/movilidad/notifications/iWatch2.png";
-import iWatch3 from "../../../assets/imgs/works/movilidad/notifications/iWatch3.png";
-import standBy1 from "../../../assets/imgs/works/movilidad/notifications/standBy1.png";
-import standBy2 from "../../../assets/imgs/works/movilidad/notifications/standBy2.png";
+import isla1 from "../../../assets/imgs/works/movilidad/notifications/isla1.webp";
+import isla2 from "../../../assets/imgs/works/movilidad/notifications/isla2.webp";
+import isla3 from "../../../assets/imgs/works/movilidad/notifications/isla3.webp";
+import iOsNoti1 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti1.webp";
+import iOsNoti2 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti2.webp";
+import iOsNoti3 from "../../../assets/imgs/works/movilidad/notifications/iOsNoti3.webp";
+import iWatch1 from "../../../assets/imgs/works/movilidad/notifications/iWatch1.webp";
+import iWatch2 from "../../../assets/imgs/works/movilidad/notifications/iWatch2.webp";
+import iWatch3 from "../../../assets/imgs/works/movilidad/notifications/iWatch3.webp";
+import standBy1 from "../../../assets/imgs/works/movilidad/notifications/standBy1.webp";
+import standBy2 from "../../../assets/imgs/works/movilidad/notifications/standBy2.webp";
 
-import anNoti1 from "../../../assets/imgs/works/movilidad/notifications/anNoti1.png";
-import anNoti2 from "../../../assets/imgs/works/movilidad/notifications/anNoti2.png";
-import anNoti3 from "../../../assets/imgs/works/movilidad/notifications/anNoti3.png";
-import wear1 from "../../../assets/imgs/works/movilidad/notifications/wear1.png";
-import wear2 from "../../../assets/imgs/works/movilidad/notifications/wear2.png";
-import wear3 from "../../../assets/imgs/works/movilidad/notifications/wear3.png";
+import anNoti1 from "../../../assets/imgs/works/movilidad/notifications/anNoti1.webp";
+import anNoti2 from "../../../assets/imgs/works/movilidad/notifications/anNoti2.webp";
+import anNoti3 from "../../../assets/imgs/works/movilidad/notifications/anNoti3.webp";
+import wear1 from "../../../assets/imgs/works/movilidad/notifications/wear1.webp";
+import wear2 from "../../../assets/imgs/works/movilidad/notifications/wear2.webp";
+import wear3 from "../../../assets/imgs/works/movilidad/notifications/wear3.webp";
 
 const CoAmbNoti = () => {
 	const { language } = useContext(MyContext);
@@ -198,7 +198,7 @@ const CoAmbNoti = () => {
 									rotateReverse("iOs");
 								}}
 							/>
-							<img src={center} alt="Center arrow" />
+							<img loading="lazy" src={center} alt="Center arrow" />
 							<img
 								className="arrow"
 								src={down}
@@ -279,7 +279,7 @@ const CoAmbNoti = () => {
 									rotateReverse("Android");
 								}}
 							/>
-							<img src={center} alt="Center arrow" />
+							<img loading="lazy" src={center} alt="Center arrow" />
 							<img
 								className="arrow"
 								src={down}

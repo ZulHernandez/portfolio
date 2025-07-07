@@ -13,7 +13,7 @@ const CoKPI = ({ title, dato, desc, imgs, imgSize, pos, color }) => {
 			</div>
 			<div className="card-kpi__img" style={{ justifyContent: pos }}>
 				{imgs.map((img, index) => (
-					<img key={index} src={img} alt={title} style={{ height: imgSize, display: img ? "block" : "none" }} />
+					<img loading="lazy" key={index} src={img} alt={title} style={{ height: imgSize, display: img ? "block" : "none" }} />
 				))}
 			</div>
 		</div>

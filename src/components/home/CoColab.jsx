@@ -94,7 +94,7 @@ const CoColab = () => {
 					return (
 						<div key={index} className="colab-card">
 							<div className="colab-card__head">
-								<img src={colab.logo} alt={colab.name} />
+								<img loading="lazy" src={colab.logo} alt={colab.name} />
 								<div className="colab-card__head__text">
 									<h3>{colab.name}</h3>
 									<span className="text-normal">{colab.date[language == "ES" ? 0 : 1]}</span>

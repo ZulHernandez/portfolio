@@ -47,7 +47,7 @@ const CoTech = () => {
 				<div className="tokens-list__card" id="beta">
 					<div className="tokens-list__card-header">
 						<div className="tokens-list__card-header-title">
-							<img src={beta} alt="beta" />
+							<img loading="lazy" src={beta} alt="beta" />
 							<span className="text-normal">BETA</span>
 						</div>
 						<span>
@@ -88,7 +88,7 @@ const CoTech = () => {
 				<div className="tokens-list__card" id="release">
 					<div className="tokens-list__card-header">
 						<div className="tokens-list__card-header-title">
-							<img src={release} alt="release" />
+							<img loading="lazy" src={release} alt="release" />
 							<span>Release</span>
 						</div>
 						<span>
@@ -196,7 +196,7 @@ const CoTech = () => {
 			<div className="kpis-list">
 				<div className="kpis-list__card">
 					<div className="kpis-list__card-header">
-						<img src={styleLib} alt="" />
+						<img loading="lazy" src={styleLib} alt="" />
 						<span>
 							{language === "ES"
 								? "Libreria basada en estilos"
@@ -261,10 +261,10 @@ const CoTech = () => {
 						/>
 					</div>
 				</div>
-				<img src={arrow} alt="" />
+				<img loading="lazy" src={arrow} alt="" />
 				<div className="kpis-list__card">
 					<div className="kpis-list__card-header">
-						<img src={varLib} alt="" />
+						<img loading="lazy" src={varLib} alt="" />
 						<span style={{ color: "#FF2079" }}>
 							{language === "ES"
 								? "Libreria basada en variables"

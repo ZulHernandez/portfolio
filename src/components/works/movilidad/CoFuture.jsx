@@ -13,7 +13,7 @@ const CoCard = ({ icon, title, tag, description }) => {
 	return (
 		<div className="backlog__card">
 			<div className="backlog__card-header">
-				<img src={icon} alt={title.join(" ")} />
+				<img loading="lazy" src={icon} alt={title.join(" ")} />
 				<div className="backlog__card-header-title">
 					<span >{title[0]}</span>
 					<span>{title[1]}</span>
