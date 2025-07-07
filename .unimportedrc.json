@@ -1,0 +1,26 @@
+{
+  "ignoreUnresolved": [
+    [
+      "/Greysign.svg",
+      [
+        "src\\components\\general\\CoNav.jsx"
+      ]
+    ],
+    [
+      "/sign.svg",
+      [
+        "src\\components\\general\\CoNav.jsx",
+        "src\\components\\general\\CoFooter.jsx",
+        "src\\routes\\RoCarga.jsx",
+        "src\\routes\\RoError.jsx"
+      ]
+    ]
+  ],
+  "ignoreUnused": [
+    "@emailjs/browser",
+    "html2pdf.js",
+    "jspdf",
+    "react-to-print"
+  ],
+  "ignoreUnimported": []
+}
