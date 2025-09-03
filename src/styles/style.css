@@ -1392,8 +1392,7 @@ footer img {
   align-items: flex-start;
   gap: 2rem;
   width: 100%;
-  -webkit-clip-path: fill-box;
-          clip-path: fill-box;
+  clip-path: fill-box;
   overflow-x: scroll;
 }
 #linea-del-tiempo .time-line-filters,
@@ -1467,8 +1466,7 @@ footer img {
   justify-content: flex-start;
   align-items: flex-end;
   gap: 1.2rem;
-  -webkit-clip-path: fill-box;
-          clip-path: fill-box;
+  clip-path: fill-box;
   overflow-x: scroll;
 }
 @media (max-width: 1400px) {
@@ -2143,8 +2141,7 @@ footer img {
   align-items: flex-start;
   gap: 3rem;
   width: 100%;
-  -webkit-clip-path: fill-box;
-          clip-path: fill-box;
+  clip-path: fill-box;
   overflow-x: scroll;
 }
 #esto-soy-yo .music-list .music-card,
@@ -2240,8 +2237,7 @@ footer img {
 #esto-soy-yo .frame-container div,
 #this-is-me .frame-container div {
   width: calc((100% - 7rem) / 8);
-  -webkit-clip-path: none;
-          clip-path: none;
+  clip-path: none;
   align-items: center !important;
   justify-content: center !important;
   display: flex;
@@ -2970,8 +2966,7 @@ footer img {
   align-items: center;
   gap: 3rem;
   overflow-x: auto;
-  -webkit-clip-path: fill-box;
-          clip-path: fill-box;
+  clip-path: fill-box;
   width: calc(100% - 10rem);
   margin: 0rem 5rem;
 }
@@ -3105,8 +3100,7 @@ footer img {
 #automation-of-processes #server {
   overflow-x: unset;
   gap: 3rem;
-  -webkit-clip-path: none;
-          clip-path: none;
+  clip-path: none;
   padding: 3rem 0px;
   width: calc(100% - 10rem);
 }
@@ -3436,8 +3430,7 @@ footer img {
   justify-content: flex-start;
   align-items: center;
   gap: 5rem;
-  -webkit-clip-path: fill-box;
-          clip-path: fill-box;
+  clip-path: fill-box;
   overflow-x: scroll;
 }
 #contexto .context-data__uno,
@@ -3459,6 +3452,10 @@ footer img {
   gap: 1rem;
   width: 100%;
 }
+#contexto .context-data__uno img,
+#context .context-data__uno img {
+  height: 15rem;
+}
 #contexto .context-data__dos,
 #context .context-data__dos {
   display: flex;
@@ -3468,6 +3465,10 @@ footer img {
   gap: 2rem;
   padding: 0px 5rem;
   padding-bottom: 5rem;
+}
+#contexto .context-data__dos img,
+#context .context-data__dos img {
+  height: 10rem;
 }
 #contexto .context-data__dos-pistolas,
 #context .context-data__dos-pistolas {
@@ -3645,8 +3646,7 @@ footer img {
   gap: 0rem;
   width: 100%;
   border-radius: 0.5rem;
-  -webkit-clip-path: fill-box;
-          clip-path: fill-box;
+  clip-path: fill-box;
 }
 #interfaz .questions__item-grafica img,
 #interface .questions__item-grafica img {
@@ -3875,8 +3875,7 @@ footer img {
   align-items: center;
   gap: 1rem;
   height: 15rem;
-  -webkit-clip-path: fill-box;
-          clip-path: fill-box;
+  clip-path: fill-box;
 }
 #notificaciones .example-container__control-arrows,
 #notifications .example-container__control-arrows {
@@ -3963,8 +3962,7 @@ footer img {
   height: 34rem;
   scroll-behavior: smooth;
   overflow-x: scroll;
-  -webkit-clip-path: fill-box;
-          clip-path: fill-box;
+  clip-path: fill-box;
   overflow-y: hidden;
 }
 #notificaciones .example-container__screens img,
