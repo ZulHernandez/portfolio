@@ -100,6 +100,7 @@ const varTrabajos = () => {
 				"Laboratorio de Diseño Acústico - UAM Azcapotzalco",
 				"Laboratory of Acoustic Design - UAM Azcapotzalco",
 			],
+			link: "hubbub"
 		},
 		{
 			cover: GALERIA,

@@ -1776,10 +1776,16 @@ footer {
                 width: 100%;
             }
             padding-bottom: 5rem;
+            img{
+                height: 15rem;
+            }
         }
         &__dos {
             @include fnFlex(column, center, center, 2rem);
             padding: 0px 5rem;
+            img{
+                height: 10rem;
+            }
             &-pistolas {
                 @include fnFlex(row, flex-start, center, 1.5rem);
                 padding: 0px;
@@ -2147,6 +2153,10 @@ footer {
         }
     }
 }
+
+
+
+
 
 .subtitle {
     width: 100%;
