@@ -17,13 +17,13 @@ import flow9 from "../../../assets/imgs/works/movilidad/flow/flow9.svg";
 import flow10 from "../../../assets/imgs/works/movilidad/flow/flow10.svg";
 import arrow from "../../../assets/imgs/works/movilidad/flow/arrow.svg";
 
-import screen1 from "../../../assets/imgs/works/movilidad/flow/screen1.png";
-import screen2 from "../../../assets/imgs/works/movilidad/flow/screen2.png";
-import screen3 from "../../../assets/imgs/works/movilidad/flow/screen3.png";
-import screen4 from "../../../assets/imgs/works/movilidad/flow/screen4.png";
-import screen5 from "../../../assets/imgs/works/movilidad/flow/screen5.png";
-import screen6 from "../../../assets/imgs/works/movilidad/flow/screen6.png";
-import screen7 from "../../../assets/imgs/works/movilidad/flow/screen7.png";
+import screen1 from "../../../assets/imgs/works/movilidad/flow/screen1.webp";
+import screen2 from "../../../assets/imgs/works/movilidad/flow/screen2.webp";
+import screen3 from "../../../assets/imgs/works/movilidad/flow/screen3.webp";
+import screen4 from "../../../assets/imgs/works/movilidad/flow/screen4.webp";
+import screen5 from "../../../assets/imgs/works/movilidad/flow/screen5.webp";
+import screen6 from "../../../assets/imgs/works/movilidad/flow/screen6.webp";
+import screen7 from "../../../assets/imgs/works/movilidad/flow/screen7.webp";
 
 const CoAmbNoti = () => {
 	const { language } = useContext(MyContext);
@@ -287,7 +287,7 @@ const CoAmbNoti = () => {
 			<div className="flow-schema">
 				{flujo.map((item, index) => (
 					<>
-						{index != 0 && <img src={arrow} alt="arrow" />}
+						{index != 0 && <img loading="lazy" src={arrow} alt="arrow" />}
 						<a
 							key={index}
 							className="flow-schema-item"
@@ -296,7 +296,7 @@ const CoAmbNoti = () => {
 							}}
 							onClick={() => setStep(index)}
 						>
-							<img src={item.icon} alt={item.text} />
+							<img loading="lazy" src={item.icon} alt={item.text} />
 							<span>{item.text}</span>
 						</a>
 					</>
@@ -310,7 +310,7 @@ const CoAmbNoti = () => {
 					>
 						<CoBtn type={"primary"} text={""} link={""} />
 					</div>
-					<img src={screens[step].img} alt={screens[step].title} />
+					<img loading="lazy" src={screens[step].img} alt={screens[step].title} />
 					<div className="flow-description-text">
 						<h2 className="subtitle">{screens[step].title}</h2>
 						{screens[step].text.map((text, index) => (
@@ -347,13 +347,13 @@ const CoAmbNoti = () => {
 						<div className="flow-schema">
 							{flujoPruebas[flow].steps.map((step, index) => (
 								<>
-									{index != 0 && <img src={arrow} alt="arrow" />}
+									{index != 0 && <img loading="lazy" src={arrow} alt="arrow" />}
 									<div
 										key={index}
 										className="flow-schema-item"
 										onClick={() => setStep(index)}
 									>
-										<img src={step.icon} alt={step.title} />
+										<img loading="lazy" src={step.icon} alt={step.title} />
 										<span>{step.title}</span>
 									</div>
 								</>

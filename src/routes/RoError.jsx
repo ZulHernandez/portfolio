@@ -19,7 +19,7 @@ const RoResume = () => {
 
 	return (
 		<div className="div-error">
-			<img src={sign} />
+			<img loading="lazy" src={sign} />
 			<div className="div-error-text">
 				<h1>{language == "EN" ? "Wrong way" : "Por aquí no"}</h1>
 				<p>

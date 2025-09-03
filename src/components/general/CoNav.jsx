@@ -165,7 +165,7 @@ const CoNav = () => {
 						{redes.map((red, index) => (
 							<a key={index} href={red.url} className="contact-card__link">
 								<div className="contact-card__redes">
-									<img src={red.icon} alt={red.text} />
+									<img loading="lazy" src={red.icon} alt={red.text} />
 								</div>
 							</a>
 						))}

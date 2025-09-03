@@ -66,7 +66,7 @@ const CoContexto = () => {
 			</span>
 			<div className="context-data">
 				<div className="context-data__uno">
-					<img src={map} alt="" />
+					<img loading="lazy" src={map} alt="" />
 					<div className="context-data__uno-mapa">
 						<CoKPI
 							title={""}
@@ -100,7 +100,7 @@ const CoContexto = () => {
 					<div className="context-data__dos-pistolas">
 						{[pistola1, pistola2, pistola3, pistola4, pistola5, pistola6].map(
 							(pistolaImg, i) => (
-								<img src={pistolaImg} alt={`Pistola ${i + 1}`} key={i + 1} />
+								<img loading="lazy" src={pistolaImg} alt={`Pistola ${i + 1}`} key={i + 1} />
 							)
 						)}
 					</div>
@@ -113,7 +113,7 @@ const CoContexto = () => {
 					</span>
 				</div>
 				<div className="context-data__dos">
-					<img id="brandColab" src={brandColab} alt="" />
+					<img loading="lazy" id="brandColab" src={brandColab} alt="" />
 					<span className="text-normal">
 						<center>
 							{language === "ES"

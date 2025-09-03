@@ -36,7 +36,7 @@ const CoCardPlugin = ({
 	return (
 		<div className="plugins-carrousel__card">
 			<div className="plugins-carrousel__card-header">
-				<img src={icon} alt={title} />
+				<img loading="lazy" src={icon} alt={title} />
 				<div className="plugins-carrousel__card-header-title">
 					<span className="text-normal" style={{ color: color }}>
 						{title[0]}
@@ -77,7 +77,7 @@ const CoCardPlugin = ({
 							color="#4D4D4D"
 							pos="center"
 						/>
-						<img src={arrow} alt="" />
+						<img loading="lazy" src={arrow} alt="" />
 						<CoKPI
 							title=""
 							dato={kpi[1].dato}
@@ -120,7 +120,7 @@ const CoCardServer = ({ icon, title, description, tech }) => {
 	return (
 		<div id="server-card" className="plugins-carrousel__card">
 			<div className="plugins-carrousel__card-header">
-				<img src={icon} alt={title} />
+				<img loading="lazy" src={icon} alt={title} />
 				<div className="plugins-carrousel__card-header-title">
 					<span className="text-normal" style={{ color: "#4D4D4D" }}>
 						{title[0]}

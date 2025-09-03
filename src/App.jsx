@@ -1,6 +1,8 @@
-import { MyContext } from "./components/context/MyContext";
-import { useState } from "react";
+import React from "react";
+import { useState, useEffect, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+import { MyContext } from "./components/context/MyContext";
+import { preloadable } from "./utils/preloadable";
 
 import RoHome from "./routes/RoHome";
 import RoWorks from "./routes/RoWorks";
@@ -13,6 +15,18 @@ import RoHUBBUB from "./routes/works/RoHUBBUB";
 
 import CoNav from "./components/general/CoNav";
 import CoFooter from "./components/general/CoFooter";
+import RoHome from "./routes/RoHome"; // opción: también puede ser preloadable
+import RoCarga from "./routes/RoCarga"; // Carga inicial
+
+// 🎯 Precargado (por demanda + anticipación)
+const RoWorks = preloadable(() => import("./routes/RoWorks"));
+
+// 🌀 Cargado bajo demanda
+const RoResume = React.lazy(() => import("./routes/RoResume"));
+const RoAbout = React.lazy(() => import("./routes/RoAbout"));
+const RoError = React.lazy(() => import("./routes/RoError"));
+const RoGLUE = React.lazy(() => import("./routes/works/RoGLUE"));
+const RoMovilidad = React.lazy(() => import("./routes/works/RoMovilidad"));
 
 import "./styles/style.css";
 
