@@ -149,7 +149,7 @@ const CoTrabajos = () => {
 								</div>
 								<div className="work-card__body-foot">
 									<div className="info">
-										<span>{destacado.date[language == "ES" ? 0 : 1]}</span>
+										<span className="info-date">{destacado.date[language == "ES" ? 0 : 1]}</span>
 										<div className="info__comp">
 											<div className="info__comp-imgs">
 												{destacado.logo.map((logo, logoIndex) => (
