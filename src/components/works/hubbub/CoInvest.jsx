@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { MyContext } from "../../context/MyContext.js";
 
 import CoTitle from "../../../components/general/CoTitle.jsx";
-import CoKPI from "../../../components/general/CoKPI.jsx";
 
 import step1 from "../../../assets/imgs/works/hubbub/step1.svg";
 import noise from "../../../assets/imgs/works/hubbub/noise.svg";
@@ -22,7 +21,7 @@ import mus from "../../../assets/imgs/works/hubbub/simbolos/mus.svg";
 import mic from "../../../assets/imgs/works/hubbub/simbolos/mic.svg";
 import pod from "../../../assets/imgs/works/hubbub/simbolos/pod.svg";
 
-import con from "../../../assets/imgs/works/hubbub/simbolos/con.svg";
+import con from "../../../assets/imgs/works/hubbub/simbolos/cons.svg";
 import cau from "../../../assets/imgs/works/hubbub/simbolos/cau.svg";
 import est from "../../../assets/imgs/works/hubbub/simbolos/est.svg";
 import sol from "../../../assets/imgs/works/hubbub/simbolos/sol.svg";
