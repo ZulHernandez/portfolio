@@ -2,15 +2,40 @@ import { useContext } from "react";
 import { MyContext } from "../context/MyContext";
 import CoTitle from "../general/CoTitle";
 
+import galileo from "../../assets/imgs/home/galileo.svg";
 import liver from "../../assets/imgs/home/liverpool.svg";
 import grupoPm from "../../assets/imgs/home/grupoPM.svg";
 import marsoft from "../../assets/imgs/home/marsoft.svg";
 
 const colabs = [
 	{
+		name: "Galileo | Ben&Frank - Bombavista",
+		logo: galileo,
+		date: ["2025 - actualidad", "2025 - present"],
+		rol: ["Product Design Chapter Lead", "Product Design Chapter Lead"],
+		des: [
+			[
+				"Liderazgo de proyectos de arte en marketing digital y UX",
+				"Implementación de marcos ágiles (Design Ops, Scrum, Kanban)",
+				"Automatización de flujos de trabajo en diseño y desarrollo web",
+				"Construcción de un sistema de diseño escalable y multicanal",
+				"Facilitación de la gobernanza de la experiencia gráfica más allá de los equipos de diseño",
+				"Colaboración entre los equipos de diseño, desarrollo y marketing",
+			],
+			[
+				"Leadership of art projects in digital marketing and UX",
+				"Implementation of agile frameworks (Design Ops, Scrum, Kanban)",
+				"Automation of workflows in design and web development",
+				"Building a scalable and multichannel design system",
+				"Facilitation of graphic experience governance beyond design teams",
+				"Collaboration between design, development and marketing teams",
+			]
+		],
+	},
+	{
 		name: "El puerto de Liverpool",
 		logo: liver,
-		date: ["2023 - actualidad", "2023 - present"],
+		date: ["2023 - 2025", "2023 - 2025"],
 		rol: ["Diseñador UX/UI senior", "Senior UX/UI Designer"],
 		des: [
 			[

@@ -6,14 +6,8 @@ import CoKPI from "../../../components/general/CoKPI.jsx";
 
 import hubbubApp from "../../../assets/imgs/works/hubbub/hubbubApp.svg";
 import maps from "../../../assets/imgs/works/hubbub/maps.png";
+import atr from "../../../assets/imgs/works/hubbub/atr.svg";
 
-import pistola1 from "../../../assets/imgs/works/movilidad/ccs1.svg";
-import pistola2 from "../../../assets/imgs/works/movilidad/gb.svg";
-import pistola3 from "../../../assets/imgs/works/movilidad/j1772.svg";
-import pistola4 from "../../../assets/imgs/works/movilidad/TAC.svg";
-import pistola5 from "../../../assets/imgs/works/movilidad/tesla.svg";
-import pistola6 from "../../../assets/imgs/works/movilidad/type2.svg";
-import brandColab from "../../../assets/imgs/works/movilidad/brandColab.svg";
 import arrow from "../../../assets/imgs/vectores/arrow_outward.svg";
 
 const CoContexto = () => {
@@ -23,34 +17,34 @@ const CoContexto = () => {
 		{
 			title:
 				language === "ES"
-					? "1. Investigación y definición de interfaz"
-					: "1. Research and definition of interface",
+					? "1. Investigación"
+					: "1. Research",
 			description:
 				language === "ES"
-					? "Benchamarks e investigación directa con usuarios para la definición del flujo principal del usuario."
-					: "Benchmarks and direct user research to define the main user flow.",
+					? "Análisis de la problemática, generación y entendimiento de conceptos y research de usuarios y proyectos."
+					: "Analysis of the problem, generation and understanding of concepts, and user and project research.",
 			ref: language === "ES" ? "#interfaz" : "#interface",
 		},
 		{
 			title:
 				language === "ES"
-					? "2. Ambiente de notificaciones"
-					: "2. Notification environment",
+					? "2. Diseño"
+					: "2. Design",
 			description:
 				language === "ES"
-					? "Integración de actividades en tiempo real más estatus para el usuario más allá del aplicativo y ambiente de Liverpool"
-					: "Integration of real-time activities and status for the user beyond the application and Liverpool environment.",
+					? "Definición de propuesta e identidad gráfica, sketching de ideas y prototipado del proyecto."
+					: "Definition of proposal and graphic identity, sketching of ideas and prototyping of the project.",
 			ref: language === "ES" ? "#notificaciones" : "#notifications",
 		},
 		{
 			title:
 				language === "ES"
-					? "3. Flujo transaccional y métodos de pago"
-					: "3. Transaction flow and payment methods",
+					? "3. Programación"
+					: "3. Programming",
 			description:
 				language === "ES"
-					? "Modificación y adaptación constante del flujo transaccional mas la exploración de métodos de pago que influenciaron directamente el flujo del usuario"
-					: "Modification and constant adaptation of the transactional flow, as well as the exploration of payment methods that directly influenced the user's flow.",
+					? "Planeación de ejecución, codificación y desarrollo"
+					: "Planning, coding and development",
 			ref: language === "ES" ? "#flujo-y-metodos" : "#flow-and-methods",
 		},
 	];
@@ -115,14 +109,14 @@ const CoContexto = () => {
 					/>
 				</div>
 				<div className="context-data__dos" style={{minWidth: "auto"}}>
-					<img src={maps} alt="" />
+					<img src={atr} alt="" />
 					<CoKPI
 						title={""}
-						dato={language === "ES" ? "+6 mapas" : "+6 maps"}
+						dato={language === "ES" ? "Equipo Multidisciplinar" : "Multidisciplinary Team"}
 						desc={
 							language === "ES"
-								? "Incluyendo uno general de la ciudad más otras vías"
-								: "Including one general map of the city and other routes"
+								? "Incluyendo desarrolladores, arquitectos y diseñadores"
+								: "Including developers, architects and designers"
 						}
 						imgs={[""]}
 						imgSize="2.4rem"
@@ -134,8 +128,8 @@ const CoContexto = () => {
 			<div>
 				<span className="text-normal">
 					{language === "ES"
-						? "Los temas de desarrollo del proyecto dentro del enfoque de UX que fueron mas interesantes serian estos cuatro:"
-						: "The project development topics within the UX approach that were most interesting would be these four:"}
+						? "MI participación dentro del equipo era bajo el cumplimiento de una necesidad puntual, el diseño de un espacio de divulgación para los datos y conceptos del fenómeno más dashboards con diferentes vistas e intencionalidades para los datos de reportes de la aplicación. Todo el proceso de diseño de solución corrio por mi cuenta y se concreto en 3 fases:"
+						: "My participation in the team was to fulfill a specific need: the design of a dissemination space for the data and concepts of the phenomenon, as well as dashboards with different views and intentions for the application report data. The entire solution design process was carried out by me and was completed in 3 phases:"}
 				</span>
 				<br />
 				<br />

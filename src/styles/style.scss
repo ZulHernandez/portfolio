@@ -197,11 +197,7 @@ a {
 }
 
 .container-fluid {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: flex-start;
-    gap: 5rem;
+    @include fnFlex(column, center, center, 5rem);
     padding: 7.5rem 20rem 5rem 20rem;
     @media (max-width: 1200px) {
         padding: 7.5rem 10rem 5rem 10rem;
@@ -1660,7 +1656,7 @@ footer {
             &-header {
                 @include fnFlex(row, space-between, center, 1.5rem);
                 width: 100%;
-                img{
+                img {
                     width: 6rem;
                 }
                 &-title {
@@ -1776,14 +1772,14 @@ footer {
                 width: 100%;
             }
             padding-bottom: 5rem;
-            img{
+            img {
                 height: 15rem;
             }
         }
         &__dos {
             @include fnFlex(column, center, center, 2rem);
             padding: 0px 5rem;
-            img{
+            img {
                 height: 10rem;
             }
             &-pistolas {
@@ -2154,13 +2150,204 @@ footer {
     }
 }
 
+.step-image {
+    width: 80%;
+    height: auto;
+}
 
+.step-columns {
+    @include fnFlex(row, center, flex-start, 5rem);
+    width: 90%;
+    padding: 0px 5%;
+    @media (max-width: 800px) {
+        @include fnFlex(column, center, center, 10rem);
+        width: 100%;
+        padding: 0px;
+    }
+    &__item {
+        @include fnFlex(column, center, center, 2rem);
+        h3 {
+            width: 100%;
+            text-align: center;
+        }
+        &-graph {
+            @include fnFlex(row, center, center, 1rem);
+            flex-wrap: wrap;
+            @media (max-width: 1200px) {
+                @include fnFlex(row, center, center, 2rem);
+            }
+            img {
+                width: calc((100% - 11rem) / 10);
+                @media (max-width: 1200px) {
+                    width: calc((100% - 18rem) / 10);
+                }
+            }
+        }
+        &-legend {
+            @include fnFlex(row, flex-start, center, 1rem);
+            flex-wrap: wrap;
+            div {
+                @include fnFlex(row, center, center, 1rem);
+                width: calc((100% - 2rem) / 3);
+                @media (max-width: 800px) {
+                    @include fnFlex(row, center, center, 2rem);
+                }
+                img {
+                    width: 1.5rem;
+                    @media (max-width: 800px) {
+                        width: 2.5rem;
+                    }
+                }
+                span {
+                    @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
+                }
+            }
+        }
+        &-legendList {
+            @include fnFlex(column, flex-start, center, 1rem);
+            width: 100%;
+            div {
+                @include fnFlex(row, center, center, 1rem);
+                width: 100%;
+                @media (max-width: 800px) {
+                    @include fnFlex(row, center, center, 2rem);
+                }
+                img {
+                    width: 1.5rem;
+                    @media (max-width: 800px) {
+                        width: 2.5rem;
+                    }
+                }
+                span {
+                    @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
+                }
+            }
+        }
+        &-barra{
+            @include fnFlex(column, flex-start, center, 1rem);
+            width: 100%;
+            .barra-data{
+                @include fnFlex(row, flex-start, center, 1rem);
+                width: 100%;
+                img {
+                    width: 2rem;
+                    @media (max-width: 800px) {
+                        width: 2.5rem;
+                    }
+                }
+                &__bar{
+                    width: 100%;
+                    height: 2rem;
+                    background-color: $red-100;
+                    border-radius: 0.5rem;
+                    overflow: hidden;
+                    position: relative;
+                    .barra-data__bar-fill {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        background-color: $red-800;
+                    }
+                }
+            }
+        }
+    }
+}
 
+.three-columns {
+    width: calc((100% - 10rem) / 3);
+    @media (max-width: 1200px) {
+        width: 100%;
+    }
+}
 
+.two-columns {
+    width: calc((100% - 10rem) / 2);
+    @media (max-width: 1200px) {
+        width: 100%;
+    }
+}
 
 .subtitle {
     width: 100%;
     @include fnFont("Raleway-Bold", 2rem, none, $shade-600);
+}
+
+iframe {
+    border: none;
+    border-radius: 1rem;
+    width: 100%;
+    height: 80rem;
+    mix-blend-mode: multiply;
+}
+
+.screens{
+    @include fnFlex(row, center, center, 5rem);
+    width: 100%;
+    img{
+        width: calc((100% - 40rem) / 5);
+        height: auto;
+    }
+}
+
+.design-space{
+    @include fnFlex(row, center, center, 5rem);
+    width: 80%;
+    .first-column{
+        @include fnFlex(column, space between, space-between, 3rem);
+        height: 100&;
+    }
+    .second-column{
+        @include fnFlex(column, flex-start, flex-start, 3rem);
+        width: 100%;
+        .title{
+            @include fnFont("Raleway-Bold", 2.4rem, none, $shade-800);
+            text-align: left;
+        }
+        .typo{
+            @include fnFont("Raleway-Regular", 2.4rem, none, $shade-600);
+            text-align: left;
+        }
+        .icons{
+            @include fnFlex(row, space-between, center, 2rem);
+            width: 100%;
+        }
+        .colours{
+            @include fnFlex(row, space-between, center, 0rem);
+            width: 100%;
+            div{
+                @include fnFlex(column, center, center, 1rem);
+                width: 100%;
+                padding: 2rem 0rem;
+                span{
+                    width: 100%;
+                    text-align: center;
+                    @include fnFont("Raleway-bold", 2rem, none, $shade-600);
+                    mix-blend-mode: multiply;
+                }
+            }
+        }
+    }
+}
+
+.sketches{
+    @include fnFlex(column, center, center, 2rem);
+    width: 80%;
+    .sketch-row1, .sketch-row2{
+        @include fnFlex(row, center, center, 2rem);
+        width: 100%;
+    }
+    .sketch-row1{
+        img{
+            width: calc((100% - 4rem) / 3);
+        }
+    }
+    .sketch-row2{
+        img{
+            width: calc((100% - 8rem) / 5);
+        }
+    }
 }
 
 @media print {

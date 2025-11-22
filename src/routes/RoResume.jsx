@@ -174,10 +174,107 @@ const Resumenes = [
 
 const experiencias = [
 	{
+		empresa: "Galileo | Ben&Frank - Bombavista",
+		rol: ["Product Design Chapter Lead", "Product Design Chapter Lead"],
+		ubicacion: ["Ciudad de México", "Mexico City"],
+		fecha: ["sep 2025 - Actualidad", "sep 2023 - Present"],
+		bullets: [
+			[
+				[
+					"Coordinación de proyectos de arte enfocados en marketing digital y UX.",
+					"Coordination of art projects focused on digital marketing and UX.",
+				],
+				[
+					"Aplicación de metodologías ágiles para gestión creativa eficiente.",
+					"Application of agile methodologies for efficient creative management.",
+				],
+				[
+					"Automatización avanzada de flujos en diseño web y desarrollo.",
+					"Advanced automation of workflows in web design and development.",
+				],
+				[
+					"Estructuración de sistema de diseño escalable y desacoplado.",
+					"Structuring of a scalable and decoupled design system.",
+				],
+				[
+					"Colaboración transversal para consistencia visual y funcional.",
+					"Cross-functional collaboration for visual and functional consistency.",
+				],
+			],
+			[
+				[
+					"Coordinación de proyectos de arte enfocados en marketing digital y UX.",
+					"Coordination of art projects focused on digital marketing and UX.",
+				],
+				[
+					"Aplicación de metodologías ágiles para gestión creativa eficiente.",
+					"Application of agile methodologies for efficient creative management.",
+				],
+				[
+					"Automatización avanzada de flujos en diseño web y desarrollo.",
+					"Advanced automation of workflows in web design and development.",
+				],
+				[
+					"Estructuración de sistema de diseño escalable y desacoplado.",
+					"Structuring of a scalable and decoupled design system.",
+				],
+				[
+					"Colaboración transversal para consistencia visual y funcional.",
+					"Cross-functional collaboration for visual and functional consistency.",
+				],
+			],
+			[
+				[
+					"Coordinación de proyectos de arte enfocados en marketing digital y UX.",
+					"Coordination of art projects focused on digital marketing and UX.",
+				],
+				[
+					"Aplicación de metodologías ágiles para gestión creativa eficiente.",
+					"Application of agile methodologies for efficient creative management.",
+				],
+				[
+					"Automatización avanzada de flujos en diseño web y desarrollo.",
+					"Advanced automation of workflows in web design and development.",
+				],
+				[
+					"Estructuración de sistema de diseño escalable y desacoplado.",
+					"Structuring of a scalable and decoupled design system.",
+				],
+				[
+					"Colaboración transversal para consistencia visual y funcional.",
+					"Cross-functional collaboration for visual and functional consistency.",
+				],
+			],
+			[
+				[
+					"Coordinación de proyectos de arte enfocados en marketing digital y UX.",
+					"Coordination of art projects focused on digital marketing and UX.",
+				],
+				[
+					"Aplicación de metodologías ágiles para gestión creativa eficiente.",
+					"Application of agile methodologies for efficient creative management.",
+				],
+				[
+					"Automatización avanzada de flujos en diseño web y desarrollo.",
+					"Advanced automation of workflows in web design and development.",
+				],
+				[
+					"Estructuración de sistema de diseño escalable y desacoplado.",
+					"Structuring of a scalable and decoupled design system.",
+				],
+				[
+					"Colaboración transversal para consistencia visual y funcional.",
+					"Cross-functional collaboration for visual and functional consistency.",
+				],
+			],
+		],
+		subbullets: null,
+	},
+	{
 		empresa: "El Puerto de Liverpool",
 		rol: ["Diseñador UX/UI Senior", "Senior UX/UI Designer"],
 		ubicacion: ["Ciudad de México", "Mexico City"],
-		fecha: ["feb 2023 - Actualidad", "feb 2023 - Present"],
+		fecha: ["feb 2023 - sep 2025", "feb 2023 - sep 2025"],
 		bullets: [
 			[
 				[
@@ -349,8 +446,7 @@ const experiencias = [
 				[
 					"Comunicación directa y gestión de repositorios con clientes.",
 					"Direct communication and management of repositories with clients.",
-				],
-				["Atención a proyectos variados:", "Attention to various projects:"],
+				]
 			],
 			[
 				[
@@ -376,7 +472,6 @@ const experiencias = [
 					"Comunicación directa y gestión de repositorios con clientes.",
 					"Direct communication and management of repositories with clients.",
 				],
-				["Atención a proyectos variados:", "Attention to various projects:"],
 			],
 			[
 				[
@@ -395,23 +490,9 @@ const experiencias = [
 					"Comunicación directa y gestión de repositorios con clientes.",
 					"Direct communication and management of repositories with clients.",
 				],
-				["Atención a proyectos variados:", "Attention to various projects:"],
 			],
 		],
-		subbullets: [
-			[
-				"GOOK Óptica: comercio electrónico y gestión de inventario para productos de salud visual.",
-				"GOOK Optics: e-commerce and inventory management for visual health products.",
-			],
-			[
-				"IDEA: diseño y desarrollo de página web para ingeniería alimentaria.",
-				"IDEA: design and development of a website for food engineering.",
-			],
-			[
-				"Combucar: diseño y desarrollo de página web para una empresa de instalación de gas natural.",
-				"Combucar: design and development of a website for a natural gas installation company.",
-			],
-		],
+		subbullets: null
 	},
 ];
 

@@ -21,18 +21,20 @@ import idea from "../../assets/imgs/works/idea.svg";
 import gook from "../../assets/imgs/works/gook.svg";
 import grupopm from "../../assets/imgs/works/grupopm.svg";
 import liverpool from "../../assets/imgs/works/liverpool.svg";
+import galileo from "../../assets/imgs/works/galileo.svg";
 
 import typeFreelance from "../../assets/imgs/works/type-freelance.svg";
 import typeMarsoft from "../../assets/imgs/works/type-marsoft.svg";
 import typeGrupopm from "../../assets/imgs/works/type-grupopm.svg";
 import typeLiverpool from "../../assets/imgs/works/type-liverpool.svg";
+import typeGalileo from "../../assets/imgs/works/type-galileo.svg";
 
 const trabajos = [
 	{
 		type: "Freelance",
 		icon: typeFreelance,
 		works: [
-			{
+			/* 			{
 				name: "Polilibro",
 				logo: polilibro,
 				startDate: "2016-11-01",
@@ -49,7 +51,7 @@ const trabajos = [
 				date: ["may 2017 - oct 2017", "may 2017 - oct 2017"],
 				rol: ["Desarrollador y diseñador web", "Web developer and designer"],
 				top: "0",
-			},
+			}, */
 			{
 				name: "SEDEMA",
 				logo: sedema,
@@ -138,9 +140,24 @@ const trabajos = [
 				name: "Liverpool",
 				logo: liverpool,
 				startDate: "2023-02-01",
-				endDate: dayjs(),
+				endDate: "2025-09-01",
 				date: ["feb 2023 - actualidad", "feb 2023 - present"],
 				rol: ["Diseñador UX/UI Senior", "Senior UX/UI designer"],
+				top: "0",
+			},
+		],
+	},
+	{
+		type: "Galileo",
+		icon: typeGalileo,
+		works: [
+			{
+				name: "Galileo",
+				logo: galileo,
+				startDate: "2025-09-01",
+				endDate: dayjs(),
+				date: ["sep 2025 - actualidad", "sep 2025 - present"],
+				rol: ["Product Design Chapter Lead", "Product Design Chapter Lead"],
 				top: "0",
 			},
 		],
@@ -161,7 +178,9 @@ const CoWorkCard = ({ id, trabajo }) => {
 				<img loading="lazy" src={trabajo.logo} alt={trabajo.name} />
 				<div className="time-line-info__card-head__text">
 					<h2>{trabajo.name}</h2>
-					<p className="text-normal">{trabajo.date[language === "ES" ? 0 : 1]}</p>
+					<p className="text-normal">
+						{trabajo.date[language === "ES" ? 0 : 1]}
+					</p>
 				</div>
 			</div>
 			<h3>{trabajo.rol[language == "ES" ? 0 : 1]}</h3>
@@ -174,8 +193,10 @@ CoWorkCard.propTypes = {
 	trabajo: PropTypes.shape({
 		name: PropTypes.string.isRequired,
 		logo: PropTypes.string.isRequired,
-		startDate: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
-		endDate: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+		startDate: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+			.isRequired,
+		endDate: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+			.isRequired,
 		date: PropTypes.arrayOf(PropTypes.string).isRequired,
 		rol: PropTypes.arrayOf(PropTypes.string).isRequired,
 		top: PropTypes.string.isRequired,
@@ -185,7 +206,7 @@ CoWorkCard.propTypes = {
 const CoTimeline = () => {
 	const [works, setWorks] = useState(sortedTrabajos);
 	const { language } = useContext(MyContext);
-    const { width } = useScreenSize();
+	const { width } = useScreenSize();
 	const [coeficiente, setCoeficiente] = useState(1);
 
 	useEffect(() => {
@@ -200,7 +221,7 @@ const CoTimeline = () => {
 		}
 	}, [width]);
 
-    /* function handleResize() {
+	/* function handleResize() {
         if (width >= 1400) {
             setCoeficiente(1.2);
         } else if (width >= 1200) {
@@ -260,7 +281,7 @@ const CoTimeline = () => {
 		return months;
 	}
 
-	let startDate = dayjs(trabajos[0].works[0].startDate).subtract(2, "month");
+	let startDate = dayjs(trabajos[1].works[0].startDate).subtract(2, "month");
 	let currentDate = dayjs().add(2, "month");
 	const monthsArray = getMonthsBetween(startDate, currentDate);
 
@@ -279,12 +300,14 @@ const CoTimeline = () => {
 							style={{
 								backgroundColor:
 									trabajo.type === "Freelance"
-										? "#FF6CA7"
+										? "#FF904B"
 										: trabajo.type === "Marsoft"
 										? "#2088FF"
 										: trabajo.type === "Grupo-PM"
 										? "#7220FF"
-										: "#FF904B",
+										: trabajo.type === "Liverpool"
+										? "#FF2079"
+										: "#333333	",
 							}}
 						>
 							<img loading="lazy" src={trabajo.icon} alt={trabajo.type} />
@@ -333,12 +356,14 @@ const CoTimeline = () => {
 											style={{
 												backgroundColor:
 													trabajo.type === "Freelance"
-														? "#FF6CA7"
+														? "#FF904B"
 														: trabajo.type === "Marsoft"
 														? "#2088FF"
 														: trabajo.type === "Grupo-PM"
 														? "#7220FF"
-														: "#FF904B",
+														: trabajo.type === "Liverpool"
+														? "#FF2079"
+														: "#333333	",
 												width: `calc(${
 													dayjs(work.endDate).diff(
 														dayjs(work.startDate),

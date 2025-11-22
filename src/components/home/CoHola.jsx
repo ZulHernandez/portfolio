@@ -10,7 +10,6 @@ const CoHola = () => {
 	let startDate = dayjs("2016-04-01");
 	let currentDate = dayjs();
 	let diff = currentDate.diff(startDate, "year");
-
 	return (
 		<div id={language == "ES" ? "hola" : "hello"} className="container-fluid">
 			<div id="hola-head">
@@ -18,15 +17,16 @@ const CoHola = () => {
 				<div id="hola-head__text">
 					<h2>{language == "ES" ? "Hola, yo soy" : "Hello, I'm"}</h2>
 					<h1>Saúl Hernández</h1>
-					<div id="hola-head__text__pointer">
-						<div id="pd">Product Designer</div>
+					<div id="pd" style={{ width: "100%" }}>Product Design Chapter Lead</div>
+					{/* <div id="hola-head__text__pointer">
+						<div id="pd">Product Design Chapter Lead</div>
 						<div id="point">•</div>
 						<div id="sd">
 							{language == "ES"
 								? "Desarrollador de Software"
 								: "Software Developer"}
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 			<div id="hola-text">

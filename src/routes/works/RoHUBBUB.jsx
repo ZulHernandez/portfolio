@@ -7,8 +7,9 @@ import { useLocation } from "react-router-dom";
 import CoNavLeft from "../../components/general/CoNavLeft.jsx";
 import CoSumario from "../../components/works/CoSumario.jsx";
 import CoContexto from "../../components/works/hubbub/CoContexto.jsx";
+import CoInvest from "../../components/works/hubbub/CoInvest.jsx";
+import CoDesign from "../../components/works/hubbub/CoDesign.jsx";
 
-import CoInvest from "../../components/works/movilidad/CoInvest.jsx";
 import CoAmbNoti from "../../components/works/movilidad/CoAmbNoti.jsx";
 import CoFlow from "../../components/works/movilidad/CoFlow.jsx";
 import CoFuture from "../../components/works/movilidad/CoFuture.jsx";
@@ -101,12 +102,7 @@ const RoMovilidad = () => {
 				<center>
 					<hr style={{ border: "0.2rem solid #ccc", margin: "1rem 0", width: "80%", borderRadius: "5rem"}} />
 				</center>
-				<CoAmbNoti />
-				<center>
-					<hr style={{ border: "0.2rem solid #ccc", margin: "1rem 0", width: "80%", borderRadius: "5rem"}} />
-				</center>
-				<CoFlow />
-				<CoFuture />
+				<CoDesign />
 			</div>
 		</>
 	);
