@@ -17,7 +17,9 @@ const CoHola = () => {
 				<div id="hola-head__text">
 					<h2>{language == "ES" ? "Hola, yo soy" : "Hello, I'm"}</h2>
 					<h1>Saúl Hernández</h1>
-					<div id="pd" style={{ width: "100%" }}>Product Design Chapter Lead</div>
+					<div id="pd" style={{ width: "100%" }}>
+						Product Design Chapter Lead
+					</div>
 					{/* <div id="hola-head__text__pointer">
 						<div id="pd">Product Design Chapter Lead</div>
 						<div id="point">•</div>
@@ -33,42 +35,39 @@ const CoHola = () => {
 				{language == "ES" ? (
 					<>
 						<p>
-							Soy un diseñador de experiencias e interfaces de usuario con{" "}
-							<b>más de {diff} años de experiencia</b> transformando ideas en
-							productos impactantes. He colaborado en proyectos innovadores
-							dentro de <b>industrias como e-commerce y fintech</b>, adaptándome
-							a distintos retos y enfoques.
+							Product Design Chapter Lead con <b>{diff} años de experiencia</b>.
 						</p>
+						<br />
 						<p>
-							Me apasiona crear <b>sistemas de diseño</b> sólidos, optimizar{" "}
-							<b>procesos complejos</b> y desarrollar{" "}
-							<b>metodologías efectivas</b> que impulsen el éxito de los
-							productos.
+							Me especializo en el desarrollo de <b>sistemas de diseño escalables</b> y
+							la automatización de flujos de trabajo para equipos de producto.
+							He trabajado en <b>sectores de e-commerce y fintech</b>, enfocándome en
+							la intersección entre diseño, metodologías ágiles y eficiencia
+							técnica.
 						</p>
+						<br />
 						<p>
-							También disfruto diseñando herramientas tecnológicas como{" "}
-							<b>plug-ins</b> y soluciones personalizadas que potencian la
-							productividad y el impacto del equipo.
+							Mi enfoque actual se centra en estructurar <b>sistemas desacoplados</b> y
+							<b> soluciones personalizadas</b> que optimizan la <b>producción visual</b> y
+							<b> funcional</b>.
 						</p>
 					</>
 				) : (
 					<>
 						<p>
-							An experience and user interface designer with{" "}
-							<b>over {diff} years of experience</b> transforming ideas into
-							impactful products. I have collaborated on innovative projects
-							within <b>industries such as e-commerce and fintech</b>, adapting
-							to different challenges and approaches.
+							Product Design Chapter Lead with <b>{diff} years of experience</b>.
 						</p>
+						<br />
 						<p>
-							I am passionate about creating solid <b>design systems</b>,
-							optimizing
-							<b> complex processes</b>, and developing{" "}
-							<b>effective methodologies</b> that drive product success.
+							I specialize in developing <b>scalable design systems</b> and automating
+							<b> workflows</b> for product teams. I've worked in <b>e-commerce and fintech
+							sectors</b>, focusing on the intersection of design, agile methodologies,
+							and technical efficiency.
 						</p>
+						<br />
 						<p>
-							I also enjoy designing technological tools such as <b>plug-ins</b>{" "}
-							and custom solutions that enhance team productivity and impact.
+							My current focus is on structuring <b>decoupled systems</b> and
+							<b> customized solutions</b> that optimize <b>visual</b> and <b>functional production</b>.
 						</p>
 					</>
 				)}

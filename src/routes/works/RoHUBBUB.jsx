@@ -9,10 +9,8 @@ import CoSumario from "../../components/works/CoSumario.jsx";
 import CoContexto from "../../components/works/hubbub/CoContexto.jsx";
 import CoInvest from "../../components/works/hubbub/CoInvest.jsx";
 import CoDesign from "../../components/works/hubbub/CoDesign.jsx";
-
-import CoAmbNoti from "../../components/works/movilidad/CoAmbNoti.jsx";
-import CoFlow from "../../components/works/movilidad/CoFlow.jsx";
-import CoFuture from "../../components/works/movilidad/CoFuture.jsx";
+import CoProgra from "../../components/works/hubbub/CoProgra.jsx";
+import CoFuture from "../../components/works/hubbub/CoFuture.jsx";
 
 import fotoHUBBUB from "../../assets/imgs/gifs/HUBBUB.mp4";
 import liverpool from "../../assets/imgs/works/companies/liverpool.svg";
@@ -32,7 +30,10 @@ const RoMovilidad = () => {
 	const sumario = {
 		foto: fotoHUBBUB,
 		company: liverpool,
-		title: language === "ES" ? "HUBBUB y la visualización del ruido en la CDMX" : "HUBBUB and the visualization of noise in Mexico City",
+		title:
+			language === "ES"
+				? "HUBBUB y la visualización del ruido en la CDMX"
+				: "HUBBUB and the visualization of noise in Mexico City",
 		date: language === "ES" ? "may 2022 - actualidad" : "may 2022 - present",
 		description:
 			language === "ES"
@@ -49,10 +50,7 @@ const RoMovilidad = () => {
 				language === "ES"
 					? "Investigación, divulgación científica, data visualization"
 					: "Research, scientific dissemination, data visualization",
-			team:
-				language === "ES"
-					? "Investigadores"
-					: "Researchers",
+			team: language === "ES" ? "Investigadores" : "Researchers",
 		},
 	};
 
@@ -78,7 +76,10 @@ const RoMovilidad = () => {
 			id: language == "ES" ? "programacion" : "programming",
 		},
 		{
-			text: language == "ES" ? "Otros medios y futuros pasos" : "Other media and future steps",
+			text:
+				language == "ES"
+					? "Otros medios y futuros pasos"
+					: "Other media and future steps",
 			id: language == "ES" ? "futuros-pasos" : "future-steps",
 		},
 	];
@@ -100,9 +101,28 @@ const RoMovilidad = () => {
 				<CoContexto />
 				<CoInvest />
 				<center>
-					<hr style={{ border: "0.2rem solid #ccc", margin: "1rem 0", width: "80%", borderRadius: "5rem"}} />
+					<hr
+						style={{
+							border: "0.2rem solid #ccc",
+							margin: "1rem 0",
+							width: "80%",
+							borderRadius: "5rem",
+						}}
+					/>
 				</center>
 				<CoDesign />
+				<center>
+					<hr
+						style={{
+							border: "0.2rem solid #ccc",
+							margin: "1rem 0",
+							width: "80%",
+							borderRadius: "5rem",
+						}}
+					/>
+				</center>
+				<CoProgra />
+				<CoFuture />
 			</div>
 		</>
 	);

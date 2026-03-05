@@ -21,7 +21,7 @@ const CoKPI = ({ title, dato, desc, imgs, imgSize, pos, color }) => {
 };
 
 CoKPI.propTypes = {
-	title: PropTypes.string.isRequired,
+	title: PropTypes.string,
 	dato: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	desc: PropTypes.string,
 	imgs: PropTypes.arrayOf(PropTypes.string).isRequired,

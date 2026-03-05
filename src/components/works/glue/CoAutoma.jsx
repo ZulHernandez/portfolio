@@ -92,12 +92,12 @@ const CoCardPlugin = ({
 			<span className="subtitle">
 				{language === "ES" ? "Capacidades" : "Capabilities"}
 			</span>
-			<div>
+			<div style={{paddingLeft: "2rem"}}>
 				{capacidades.map((capacidad, index) => (
 					<li
 						className="text-normal"
 						key={index}
-						style={{ paddingLeft: capacidad.nivel * 2 + "rem" }}
+						style={{ marginLeft: capacidad.nivel * 2 + "rem" }}
 					>
 						{capacidad.text}
 					</li>
@@ -185,11 +185,11 @@ const CoAutoma = () => {
 					desc:
 						language === "ES"
 							? "Se reduce el tiempo en un " +
-							  Math.round(100 - (30 * 100) / 1800) +
-							  "% sin necesidad de un ajuste manual concreto pues el plugin permite presetearlo"
+								Math.round(100 - (30 * 100) / 1800) +
+								"% sin necesidad de un ajuste manual concreto pues el plugin permite presetearlo"
 							: "Time is reduced by " +
-							  Math.round(100 - (30 * 100) / 1800) +
-							  "% without the need for specific manual adjustments, as the plugin allows presetting.",
+								Math.round(100 - (30 * 100) / 1800) +
+								"% without the need for specific manual adjustments, as the plugin allows presetting.",
 				},
 			],
 			color: "#FF3C8A",
@@ -272,11 +272,11 @@ const CoAutoma = () => {
 					desc:
 						language === "ES"
 							? `Se reduce el tiempo en un ${Math.round(
-									100 - (30 * 100) / 3600
-							  )}% con el mero esfuerzo de un texto y un click`
+									100 - (30 * 100) / 3600,
+								)}% con el mero esfuerzo de un texto y un click`
 							: `Time is reduced by ${Math.round(
-									100 - (30 * 100) / 3600
-							  )}% with the mere effort of a text and a click.`,
+									100 - (30 * 100) / 3600,
+								)}% with the mere effort of a text and a click.`,
 				},
 			],
 			color: "#5010F3",

@@ -303,27 +303,46 @@ const CoAmbNoti = () => {
 				))}
 			</div>
 			<center style={{ width: "100%" }}>
-				<div className="flow-description">
+				<div
+					style={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "flex-start",
+						gap: "4rem",
+						width: "100%",
+						maxWidth: "1200px",
+						margin: "0 auto",
+					}}
+				>
 					<div
-						style={{ transform: "rotate(180deg)" }}
+						style={{ transform: "rotate(180deg)", marginTop: "20rem" }}
 						onClick={() => setStep(step == 0 ? 6 : step - 1)}
 					>
 						<CoBtn type={"primary"} text={""} link={""} />
 					</div>
-					<img loading="lazy" src={screens[step].img} alt={screens[step].title} />
-					<div className="flow-description-text">
-						<h2 className="subtitle">{screens[step].title}</h2>
-						{screens[step].text.map((text, index) => (
-							<span
-								key={index}
-								className="text-normal"
-								style={{ width: "100%" }}
-							>
-								{text}
-							</span>
-						))}
+					<div className="flow-description">
+						<img
+							loading="lazy"
+							src={screens[step].img}
+							alt={screens[step].title}
+						/>
+						<div className="flow-description-text">
+							<h2 className="subtitle">{screens[step].title}</h2>
+							{screens[step].text.map((text, index) => (
+								<span
+									key={index}
+									className="text-normal"
+									style={{ width: "100%" }}
+								>
+									{text}
+								</span>
+							))}
+						</div>
 					</div>
-					<div onClick={() => setStep(step == 6 ? 0 : step + 1)}>
+					<div
+						style={{ transform: "rotate(0deg)", marginTop: "20rem" }}
+						onClick={() => setStep(step == 6 ? 0 : step + 1)}
+					>
 						<CoBtn type={"primary"} text={""} link={""} />
 					</div>
 				</div>
@@ -334,17 +353,28 @@ const CoAmbNoti = () => {
 					? "Este flujo tuvo diferentes modificaciones basadas en la formas de pago y el tipo de pasarela de pago que se podía implementar dentro del mismo lo que provoco una serie de iteraciones dentro del mismo, un resumen del tipo de flujos que se propusieron fueron los siguientes:"
 					: "This flow underwent different modifications based on the payment methods and the type of payment gateway that could be implemented within the flow, which led to a series of iterations. A summary of the types of flows proposed is as follows:"}
 			</span>
-			<center style={{ width: "100%" }}>
+			<div
+				style={{
+					width: "80%",
+					display: "flex",
+					flexDirection: "row",
+					alignItems: "center",
+					justifyContent: "center",
+				}}
+			>
+				<div
+					style={{ transform: "rotate(180deg)", marginTop: "10rem" }}
+					onClick={() => setFlow(flow == 0 ? 2 : flow - 1)}
+				>
+					<CoBtn type={"primary"} text={""} link={""} />
+				</div>
 				<div className="flow-description">
-					<div
-						style={{ transform: "rotate(180deg)" }}
-						onClick={() => setFlow(flow == 0 ? 2 : flow - 1)}
-					>
-						<CoBtn type={"primary"} text={""} link={""} />
-					</div>
 					<div className="flow-description-content">
 						<span className="subtitle">{flujoPruebas[flow].title}</span>
-						<div className="flow-schema">
+						<div
+							className="flow-schema"
+							style={{ justifyContent: "flex-start", width: "80%" }}
+						>
 							{flujoPruebas[flow].steps.map((step, index) => (
 								<>
 									{index != 0 && <img loading="lazy" src={arrow} alt="arrow" />}
@@ -360,13 +390,16 @@ const CoAmbNoti = () => {
 							))}
 						</div>
 					</div>
-					<div onClick={() => setFlow(flow == 2 ? 0 : flow + 1)}>
-						<CoBtn type={"primary"} text={""} link={""} />
-					</div>
 				</div>
-				<center style={{ width: "90%" }}>
-					<span className="text-normal">{flujoPruebas[flow].text}</span>
-				</center>
+				<div
+					style={{ marginTop: "10rem" }}
+					onClick={() => setFlow(flow == 2 ? 0 : flow + 1)}
+				>
+					<CoBtn type={"primary"} text={""} link={""} />
+				</div>
+			</div>
+			<center style={{ width: "90%" }}>
+				<span className="text-normal">{flujoPruebas[flow].text}</span>
 			</center>
 		</div>
 	);

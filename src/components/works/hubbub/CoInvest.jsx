@@ -1,9 +1,12 @@
-import { useContext } from "react";
+import React, { useContext, useRef } from "react";
+import PropTypes from "prop-types";
 import { MyContext } from "../../context/MyContext.js";
+import HTMLFlipBook from "react-pageflip";
 
 import CoTitle from "../../../components/general/CoTitle.jsx";
 
 import step1 from "../../../assets/imgs/works/hubbub/step1.svg";
+import step1Mov from "../../../assets/imgs/works/hubbub/step1-mov.svg";
 import noise from "../../../assets/imgs/works/hubbub/noise.svg";
 import data from "../../../assets/imgs/works/hubbub/data.svg";
 import sound from "../../../assets/imgs/works/hubbub/sound.svg";
@@ -25,6 +28,59 @@ import con from "../../../assets/imgs/works/hubbub/simbolos/cons.svg";
 import cau from "../../../assets/imgs/works/hubbub/simbolos/cau.svg";
 import est from "../../../assets/imgs/works/hubbub/simbolos/est.svg";
 import sol from "../../../assets/imgs/works/hubbub/simbolos/sol.svg";
+
+const tesisImgs = Object.values(
+	import.meta.glob("../../../assets/imgs/works/hubbub/tesis/*.webp", {
+		eager: true,
+	}),
+);
+
+// 1. Definimos el componente de la página con forwardRef
+const CoPage = React.forwardRef((props, ref) => {
+	return (
+		<div
+			className="page"
+			ref={ref}
+		>
+			<img src={tesisImgs[props.number - 1].default} alt={`Page ${props.number}`} />
+		</div>
+	);
+});
+
+CoPage.displayName = "CoPage";
+
+const CoMyBook = () => {
+	/* const bookRef = useRef();
+
+	// Función para pasar página por botón
+	const nextButtonClick = () => {
+		bookRef.current.pageFlip().flipNext();
+	};
+
+	const prevButtonClick = () => {
+		bookRef.current.pageFlip().flipPrev();
+	};
+ */
+
+	return (
+		<HTMLFlipBook
+			width={110} // Ancho de UNA página
+			height={85} // Alto de la página (proporción habitual A4)
+			minWidth={110*2}
+			size="stretch" // Permite que el libro se adapte al contenedor
+			drawShadow={false} // Sombra para dar efecto 3D
+			flippingTime={500}
+			usePortrait={true} // Orientación vertical
+			autoSize={true} // Ajusta el tamaño automáticamente
+			showCover={true} // Muestra la portada
+			className="my-book"
+		>
+			{tesisImgs.map((img, index) => (
+				<CoPage key={index} number={index + 1} />
+			))}
+		</HTMLFlipBook>
+	);
+};
 
 const CoInvest = () => {
 	const { language } = useContext(MyContext);
@@ -247,8 +303,9 @@ const CoInvest = () => {
 					? "Dentro de la etapa de investigación se realizaron diferentes esfuerzo no solamente relacionados con la parte de interfaz y experiencia, también se tuvieron que realizar marcos teóricos y un profundo entendimiento de los conceptos que se verterían dentro del proyecto. Inclusive una etapa de definición de solución se dio dentro esto siendo, de forma muy sintetizada, una etapa compuesta por tres partes."
 					: "Within the research stage, different efforts were made not only related to the interface and experience part, but also theoretical frameworks and a deep understanding of the concepts that would be poured into the project were required. Even a solution definition stage took place within this, being, in a very synthesized way, a stage composed of three parts."}
 			</span>
-			<center style={{ width: "100%" }}>
+			<center style={{ width: "100%"}}>
 				<img className="step-image" loading="lazy" src={step1} alt="step 1" />
+				<img className="step-image-mov" loading="lazy" src={step1Mov} alt="step 2" />
 			</center>
 			<div className="step-columns">
 				{stepColumns.map((col, index) => (
@@ -302,7 +359,7 @@ const CoInvest = () => {
 										src={dataPoint.simbolo}
 										alt={dataPoint.name + " " + idx}
 									/>
-								))
+								)),
 							)}
 						</div>
 						<br />
@@ -422,12 +479,18 @@ const CoInvest = () => {
 						: "As part of the understanding and appropriation of concepts, an entire investigation was generated, which is covered in chapters 1, 2, and 3 of the thesis SEE THE NOISE “An exercise in information visualization for the noise of Mexico City”"}
 				</span>
 			</div>
-			<iframe
-				allowfullscreen
-				src="https://free.relayto.com/saul-hernandez/ver-el-ruido-un-ejercicio-de-visualizacion-de-la-informacion-para-el-ruido-de-la-ciudad-de-mexico-otxc8jwj5vnqe?embed=1"
-				width="100%"
-				height="100%"
-			></iframe>
+			<div
+				style={{
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					width: "100%",
+					clipPath: "inset(0% round 1rem)",
+					borderRadius: "1rem",
+					boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+				}}>
+				<CoMyBook />
+			</div>
 		</div>
 	);
 };

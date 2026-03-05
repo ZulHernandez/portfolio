@@ -4,15 +4,16 @@ import { MyContext } from "../../context/MyContext.js";
 import CoTitle from "../../general/CoTitle.jsx";
 
 import step2 from "../../../assets/imgs/works/hubbub/step2.svg";
+import step2Mov from "../../../assets/imgs/works/hubbub/step2-mov.svg";
 import noise from "../../../assets/imgs/works/hubbub/noise.svg";
 import data from "../../../assets/imgs/works/hubbub/data.svg";
 import sound from "../../../assets/imgs/works/hubbub/sound.svg";
 
-import hubbub1 from "../../../assets/imgs/works/hubbub/HUBBUB1.png";
-import hubbub2 from "../../../assets/imgs/works/hubbub/HUBBUB2.png";
-import hubbub3 from "../../../assets/imgs/works/hubbub/HUBBUB3.png";
-import hubbub4 from "../../../assets/imgs/works/hubbub/HUBBUB4.png";
-import hubbub5 from "../../../assets/imgs/works/hubbub/HUBBUB5.png";
+import hubbub1 from "../../../assets/imgs/works/hubbub/HUBBUB1.webp";
+import hubbub2 from "../../../assets/imgs/works/hubbub/HUBBUB2.webp";
+import hubbub3 from "../../../assets/imgs/works/hubbub/HUBBUB3.webp";
+import hubbub4 from "../../../assets/imgs/works/hubbub/HUBBUB4.webp";
+import hubbub5 from "../../../assets/imgs/works/hubbub/HUBBUB5.webp";
 
 import face1 from "../../../assets/imgs/works/hubbub/face1.svg";
 import face2 from "../../../assets/imgs/works/hubbub/face2.svg";
@@ -30,14 +31,14 @@ import i9 from "../../../assets/imgs/works/hubbub/i9.svg";
 import i10 from "../../../assets/imgs/works/hubbub/i10.svg";
 import i11 from "../../../assets/imgs/works/hubbub/i11.svg";
 
-import s1 from "../../../assets/imgs/works/hubbub/sketch/sketch1.png";
-import s2 from "../../../assets/imgs/works/hubbub/sketch/sketch2.png";
-import s3 from "../../../assets/imgs/works/hubbub/sketch/sketch3.png";
-import s4 from "../../../assets/imgs/works/hubbub/sketch/sketch4.png";
-import s5 from "../../../assets/imgs/works/hubbub/sketch/sketch5.png";
-import s6 from "../../../assets/imgs/works/hubbub/sketch/sketch6.png";
-import s7 from "../../../assets/imgs/works/hubbub/sketch/sketch7.png";
-import s8 from "../../../assets/imgs/works/hubbub/sketch/sketch8.png";
+import s1 from "../../../assets/imgs/works/hubbub/sketch/sketch1.webp";
+import s2 from "../../../assets/imgs/works/hubbub/sketch/sketch2.webp";
+import s3 from "../../../assets/imgs/works/hubbub/sketch/sketch3.webp";
+import s4 from "../../../assets/imgs/works/hubbub/sketch/sketch4.webp";
+import s5 from "../../../assets/imgs/works/hubbub/sketch/sketch5.webp";
+import s6 from "../../../assets/imgs/works/hubbub/sketch/sketch6.webp";
+import s7 from "../../../assets/imgs/works/hubbub/sketch/sketch7.webp";
+import s8 from "../../../assets/imgs/works/hubbub/sketch/sketch8.webp";
 
 import sign1 from "../../../assets/imgs/works/hubbub/simbolos/sign1.svg";
 import sign2 from "../../../assets/imgs/works/hubbub/simbolos/sign2.svg";
@@ -56,6 +57,8 @@ import con from "../../../assets/imgs/works/hubbub/simbolos/cons.svg";
 import cau from "../../../assets/imgs/works/hubbub/simbolos/cau.svg";
 import est from "../../../assets/imgs/works/hubbub/simbolos/est.svg";
 import sol from "../../../assets/imgs/works/hubbub/simbolos/sol.svg";
+
+import hus from "../../../assets/imgs/works/hubbub/hus.svg";
 
 const CoDesign = () => {
 	const { language } = useContext(MyContext);
@@ -280,6 +283,12 @@ const CoDesign = () => {
 			</span>
 			<center style={{ width: "100%" }}>
 				<img className="step-image" loading="lazy" src={step2} alt="step 2" />
+				<img
+					className="step-image-mov"
+					loading="lazy"
+					src={step2Mov}
+					alt="step 2 mov"
+				/>
 			</center>
 			<div className="step-columns">
 				{stepColumns.map((col, index) => (
@@ -305,7 +314,12 @@ const CoDesign = () => {
 			</div>
 			<div className="screens">
 				{[hubbub1, hubbub2, hubbub3, hubbub4, hubbub5].map((image, index) => (
-					<img key={index} src={image} alt={`HUBBUB ${index + 1}`} />
+					<img
+						id={`hubbub-${index + 1}`}
+						key={index}
+						src={image}
+						alt={`HUBBUB ${index + 1}`}
+					/>
 				))}
 			</div>
 			<span className="text-normal">
@@ -342,22 +356,27 @@ const CoDesign = () => {
 											index === 0
 												? "1rem 0rem 0rem 1rem"
 												: index === 3
-												? "0rem 1rem 1rem 0rem"
-												: "0rem",
+													? "0rem 1rem 1rem 0rem"
+													: "0rem",
 									}}
 								>
-									<span>{color}</span>
+									<span
+										style={{
+											color: index === 3 ? "#ffffff" : "#333333",
+											mixBlendMode: index === 3 ? "difference" : "normal",
+										}}
+									>
+										{color}
+									</span>
 								</div>
-							)
+							),
 						)}
 					</div>
 				</div>
 			</div>
 			<div style={{ width: "100%" }}>
 				<h3 className="subtitle">
-					{language === "ES"
-						? "Apartado de sketching"
-						: "Sketching section"}
+					{language === "ES" ? "Apartado de sketching" : "Sketching section"}
 				</h3>
 				<br />
 				<span className="text-normal">
@@ -366,7 +385,7 @@ const CoDesign = () => {
 						: "For the sketching, a series of paper sketches were made that not only allowed for quick exploration of interaction and composition ideas but also involved non-designer teams (such as laboratory members) in the idea construction process. These sketches also allowed for rapid iteration between components and identification of the types of data we wanted to display."}
 				</span>
 			</div>
-			<div className="sketches">
+			<div id="sketches" className="sketches">
 				<div className="sketch-row1">
 					{[s1, s2, s3].map((sketch, index) => (
 						<img key={index} src={sketch} alt={`sketch ${index + 1}`} />
@@ -377,6 +396,36 @@ const CoDesign = () => {
 						<img key={index} src={sketch} alt={`sketch ${index + 5}`} />
 					))}
 				</div>
+			</div>
+			<div id="sketches-mov" className="sketches">
+				{[s1, s2, s3, s4, s5, s6, s7, s8].map((sketch, index) => (
+					<img key={index} src={sketch} alt={`sketch ${index + 1}`} />
+				))}
+			</div>
+			<div style={{ width: "100%" }}>
+				<h3 className="subtitle">
+					{language === "ES" ? "Apartado de maquetado" : "Mockup section"}
+				</h3>
+				<br />
+				<span className="text-normal">
+					{language === "ES"
+						? "Una vez que se termino la fase de exploración de ideas alimentada de los comentarios del equipo se paso a la fase de maquetado fino, allí se generaron componentes y todas las pantallas necesarias para ambas partes de la experiencia, todo este trabajo se realizo en figma y, de igual forma, se sometió a diferentes presentaciones con los involucrados para realizar ajustes  puntuales como en navegadores y visualizadores."
+						: "Once the idea exploration phase, fueled by team feedback, was completed, we moved on to the fine mockup phase. In this phase, components and all necessary screens for both parts of the experience were created. All this work was done in Figma and, similarly, subjected to various presentations with stakeholders to make specific adjustments, such as in browsers and viewers."}
+				</span>
+			</div>
+			<iframe
+				width="800"
+				height="450"
+				src="https://embed.figma.com/design/DCKDjbG9VOColuADoF4xsS/HUBBUB?node-id=0-1&embed-host=share"
+				allowFullScreen
+			></iframe>
+			<span className="text-normal">
+				{language === "ES"
+					? "Sumado a la maquetación de experiencia realizado en Figma , también se bajo a documentación un documento de historias de usuario e historias técnicas que ayudarían a una implementación rápida en la etapa de desarrollo. Estas historias fueron vaciadas en este siguiente documento."
+					: "In addition to the experience mockup done in Figma, a document of user stories and technical stories was also created to facilitate rapid implementation during the development phase. These stories were documented in the following document."}
+			</span>
+			<div id="hus">
+				<img src={hus} alt="User Stories Document" />
 			</div>
 		</div>
 	);

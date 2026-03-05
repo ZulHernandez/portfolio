@@ -5,7 +5,7 @@ import CoTitle from "../../../components/general/CoTitle.jsx";
 import CoKPI from "../../../components/general/CoKPI.jsx";
 
 import hubbubApp from "../../../assets/imgs/works/hubbub/hubbubApp.svg";
-import maps from "../../../assets/imgs/works/hubbub/maps.png";
+import maps from "../../../assets/imgs/works/hubbub/maps.webp";
 import atr from "../../../assets/imgs/works/hubbub/atr.svg";
 
 import arrow from "../../../assets/imgs/vectores/arrow_outward.svg";

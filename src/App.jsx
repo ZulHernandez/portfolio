@@ -4,7 +4,6 @@ import { MyContext } from "./components/context/MyContext";
 import { preloadable } from "./utils/preloadable";
 
 import RoHome from "./routes/RoHome";
-import RoHUBBUB from "./routes/works/RoHUBBUB";
 
 import CoNav from "./components/general/CoNav";
 import CoFooter from "./components/general/CoFooter";
@@ -19,6 +18,7 @@ const RoAbout = React.lazy(() => import("./routes/RoAbout"));
 const RoError = React.lazy(() => import("./routes/RoError"));
 const RoGLUE = React.lazy(() => import("./routes/works/RoGLUE"));
 const RoMovilidad = React.lazy(() => import("./routes/works/RoMovilidad"));
+const RoHUBBUB = React.lazy(() => import("./routes/works/RoHUBBUB"));
 
 import "./styles/style.css";
 

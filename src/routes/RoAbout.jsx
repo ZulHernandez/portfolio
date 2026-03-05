@@ -70,7 +70,6 @@ const CoCard = ({ cover, title, author, url }) => {
 				>
 					<iframe
 						ref={iframeRef}
-						className="music-card__cover"
 						src={`https://www.youtube.com/embed/${
 							url.split("v=")[1]
 						}?enablejsapi=1&origin=http://localhost:5173`}
