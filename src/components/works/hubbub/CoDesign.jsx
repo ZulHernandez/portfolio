@@ -31,6 +31,8 @@ import i9 from "../../../assets/imgs/works/hubbub/i9.svg";
 import i10 from "../../../assets/imgs/works/hubbub/i10.svg";
 import i11 from "../../../assets/imgs/works/hubbub/i11.svg";
 
+const icons = [i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11];
+
 import s1 from "../../../assets/imgs/works/hubbub/sketch/sketch1.webp";
 import s2 from "../../../assets/imgs/works/hubbub/sketch/sketch2.webp";
 import s3 from "../../../assets/imgs/works/hubbub/sketch/sketch3.webp";
@@ -340,8 +342,8 @@ const CoDesign = () => {
 						Xx Yy Zz 1 2 3 4 5 6 7 8 9 0
 					</span>
 					<div className="icons">
-						{Array.from({ length: 11 }, (_, i) => (
-							<img key={i} src={eval(`i${i + 1}`)} alt={`icon ${i + 1}`} />
+						{icons.map((icon, index) => (
+							<img key={index} src={icon} alt={`icon ${index + 1}`} />
 						))}
 					</div>
 					<div className="colours">
