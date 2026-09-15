@@ -16,7 +16,10 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # jsdom 30's undici dependency necesita el webidl cache que Node
+          # incorporó en 22.10+ (en Node 20 falla con "webidl.util.
+          # markAsUncloneable is not a function" al correr los tests).
+          node-version: 22
           cache: npm
 
       - name: Install dependencies

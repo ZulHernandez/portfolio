@@ -16,7 +16,7 @@ import express from "../../../assets/imgs/works/glue/express.svg";
 import puppeteer from "../../../assets/imgs/works/glue/puppeteer.svg";
 import js from "../../../assets/imgs/works/glue/js.svg";
 import render from "../../../assets/imgs/works/glue/render.svg";
-import insomnia from "../../../assets/imgs/works/glue/insomnia.svg";
+import insomnia from "../../../assets/imgs/works/glue/Insomnia.svg";
 import cron from "../../../assets/imgs/works/glue/cron.svg";
 
 interface KPIData {
