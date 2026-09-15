@@ -1,0 +1,48 @@
+name: Deploy to Hostinger
+
+# Corre solo en pushes a main (no en PRs, para no publicar código sin
+# revisar) — ajusta el nombre de la rama abajo si tu rama por defecto es
+# otra (p. ej. "master").
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Build and deploy dist/ over FTPS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Rebuild CSS from Sass partials
+        run: npm run build:css
+
+      - name: Build (incluye la generación de HTML estático por ruta)
+        run: npm run build
+
+      - name: Deploy to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_FTP_SERVER }}
+          username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./dist/
+          # Cambia esto si tu dominio no es el principal de la cuenta (por
+          # ejemplo, un addon domain suele vivir en
+          # ./domains/tu-dominio.com/public_html/ en vez de ./public_html/).
+          server-dir: ./public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**

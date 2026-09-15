@@ -1,0 +1,238 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+//main Works
+#mis-trabajos,
+#my-works {
+    padding: 10rem 15rem;
+    @include tablet {
+        padding: 15rem 10rem;
+    }
+    .work-card__body-info-tags {
+        @include fnFlex(row, flex-start, center, 1rem);
+        flex-wrap: wrap;
+        width: 100%;
+        span {
+            background-color: $shade-700;
+            padding: 0.8rem 1.5rem;
+            border-radius: 1rem;
+            @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-0);
+        }
+    }
+    .work-list {
+        @include fnFlex(row, flex-start, center, 3rem);
+        flex-wrap: wrap;
+        .work-card {
+            @include fnFlex(column, flex-start, flex-start, 2rem);
+            @include fnCard();
+            img {
+                height: min-content;
+                border-radius: 1rem;
+            }
+            .img-cover {
+                display: block;
+            }
+            .gif-cover {
+                display: none;
+            }
+            &:hover {
+                .img-cover {
+                    display: none;
+                }
+                .gif-cover {
+                    display: block;
+                }
+            }
+            &__body {
+                @include fnFlex(column, space-between, flex-start, 2rem);
+                width: 100%;
+                height: 100%;
+                &-info {
+                    @include fnFlex(column, flex-start, flex-start, 1rem);
+                    width: 100%;
+                    &-head {
+                        @include fnFlex(column, flex-start, flex-start, 1rem);
+                        h3 {
+                            @include fnFont("Raleway-SemiBold", 2.4rem, none, $shade-800);
+                        }
+                    }
+                }
+                &-foot {
+                    @include fnFlex(row, space-between, flex-start, 1rem);
+                    width: 100%;
+                    .info {
+                        @include fnFlex(column, flex-start, flex-start, 1rem);
+                        &-date {
+                            @include fnFont("Raleway-Bold", 1.4rem, none, $shade-500);
+                        }
+                        &__comp {
+                            @include fnFlex(row, flex-start, center, 0.5rem);
+                            &-imgs {
+                                @include fnFlex(row, flex-start, center, 0rem);
+                                img {
+                                    width: 2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#linea-del-tiempo,
+#timeline {
+    .time-line {
+        @include fnFlex(column, center, flex-start, 2rem);
+        width: 100%;
+        clip-path: fill-box;
+        overflow-x: scroll;
+        &-filters {
+            @include fnFlex(row, flex-start, center, 2rem);
+            width: 100%;
+            flex-wrap: wrap;
+            &__boton {
+                border-width: 0.2rem;
+                padding: 0.8rem 1.5rem;
+                border-radius: 1rem;
+                gap: 1rem;
+                @include fnFlex(row, center, center, 1rem);
+                transition: all 0.3s ease-in-out;
+                span {
+                    @include fnFont("Raleway-Bold", 1.4rem, none, $shade-0);
+                }
+                &.active {
+                    background-color: $red-800;
+                    span {
+                        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-0);
+                    }
+                    img {
+                        display: block;
+                        width: 1.5rem;
+                        @include tablet {
+                            width: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        &-measure {
+            @include fnFlex(row, flex-start, flex-end, 1.2rem);
+            @include breakpoint(1400px) {
+                gap: 1rem;
+            }
+            @include tablet {
+                gap: 0.8rem;
+            }
+            @include breakpoint(900px) {
+                gap: 0.5rem;
+            }
+            clip-path: fill-box;
+            overflow-x: scroll;
+            &__line {
+                @include fnFlex(column, center, center, 1rem);
+                width: 4px;
+                span {
+                    @include fnFont("Raleway-Bold", 1.4rem, none, $shade-600);
+                }
+            }
+        }
+        &-squema {
+            width: 100%;
+            padding-bottom: 2.5rem;
+            &__container {
+                padding-bottom: 1.5rem;
+                position: relative;
+                &-item {
+                    height: 1.5rem;
+                    border-radius: 0.75rem;
+                    position: relative;
+                    transition: all 0.3s ease-in-out;
+                    span {
+                        background-color: $shade-800;
+                        padding: 0.5rem 1rem;
+                        @include fnFont("Raleway-Bold", 1.4rem, none, $shade-0);
+                        border-radius: 0rem 1rem 1rem 1rem;
+                        filter: drop-shadow(0px 2px 0.5rem $shade-500);
+                        display: none;
+                        position: absolute;
+                        z-index: 10;
+                        top: 1.7rem;
+                        left: 1.7rem;
+                    }
+                    &:hover {
+                        background-color: $red-800;
+                        @include softShadow(2px, 4px, #c4c4c4, $shade-0);
+                        transform: scale(1.1);
+                        cursor: pointer;
+                        span {
+                            display: initial;
+                        }
+                    }
+                }
+                &#Freelance {
+                    height: 1.5rem;
+                    z-index: 9;
+                }
+                &#Marsoft {
+                    height: 7.5rem;
+                    z-index: 8;
+                }
+                &#Grupo-PM {
+                    height: 1.5rem;
+                    z-index: 7;
+                }
+                &#Liverpool {
+                    height: 1.5rem;
+                    z-index: 6;
+                }
+            }
+        }
+        &-info {
+            @include fnFlex(row, center, center, 5rem);
+            width: 100%;
+            &__card {
+                transition: all 0.3s ease-in-out;
+                width: 100%;
+                @include fnFlex(column, center, center, 2rem);
+                text-align: center;
+                height: 12rem;
+                @include tablet {
+                    height: 25rem;
+                }
+                &-head {
+                    @include fnFlex(row, center, center, 2rem);
+                    width: 100%;
+                    @include tablet {
+                        @include fnFlex(column, center, center, 1rem);
+                        text-align: center;
+                    }
+                    &__text {
+                        @include fnFlex(column, space-between, flex-start, 0.5rem);
+                        text-align: left;
+                        @include tablet {
+                            align-items: center;
+                            text-align: center;
+                        }
+                        h2 {
+                            @include fnFont("Raleway-SemiBold", 2.4rem, none, $shade-700);
+                        }
+                    }
+                }
+            }
+            h3 {
+                @include fnFont("Raleway-SemiBold", 2rem, none, $shade-700);
+                height: max-content;
+            }
+            #cardUno,
+            #cardTres {
+                opacity: 0.5;
+                transform: scale(0.8);
+                @include mobile {
+                    display: none;
+                }
+            }
+        }
+    }
+}

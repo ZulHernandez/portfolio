@@ -1,0 +1,30 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+//main Error
+.div-error {
+    @include fnFlex(row, center, center, 5rem);
+    height: 80vh;
+    padding: 0rem 15rem 0rem 15rem;
+    @include tablet {
+        @include fnFlex(column, center, center, 10rem);
+        text-align: center;
+    }
+    img {
+        width: 30rem;
+    }
+    h1 {
+        @include fnFont("Raleway-Bold", 4rem, none, $red-700);
+        padding-bottom: 1rem;
+    }
+    p {
+        @include fnFont("Raleway-Medium", 2rem, none, $shade-600);
+    }
+    .work__cta {
+        @include fnFlex(row, flex-start, center, 1rem);
+        width: 100%;
+        @include tablet {
+            @include fnFlex(column, center, center, 1rem);
+        }
+    }
+}

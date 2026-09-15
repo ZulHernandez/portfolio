@@ -16,11 +16,6 @@
       ]
     ]
   ],
-  "ignoreUnused": [
-    "@emailjs/browser",
-    "html2pdf.js",
-    "jspdf",
-    "react-to-print"
-  ],
+  "ignoreUnused": [],
   "ignoreUnimported": []
 }

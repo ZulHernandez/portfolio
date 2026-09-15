@@ -6,32 +6,48 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "build": "tsc -b && vite build",
+    "postbuild": "node scripts/generate-seo-html.mjs",
+    "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
+    "test": "vitest",
     "analyze": "source-map-explorer 'dist/assets/*.js' --html dist/sourcemap-report.html",
-    "optimize:svg": "svgo --folder src/assets/imgs --recursive"
+    "optimize:svg": "svgo --folder src/assets/imgs --recursive",
+    "build:css": "sass src/styles/style.scss src/styles/style.css --no-source-map && postcss src/styles/style.css -o src/styles/style.css --map",
+    "watch:css": "sass --watch src/styles/style.scss src/styles/style.css"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.11.0",
     "dayjs": "^1.11.13",
-    "html2pdf.js": "^0.14.0",
-    "jspdf": "^4.2.0",
+    "i18next": "^26.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet-async": "^3.0.0",
+    "react-i18next": "^17.0.14",
     "react-pageflip": "^2.0.3",
-    "react-router-dom": "^6.16.0",
-    "react-to-print": "^3.1.0"
+    "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/node": "^22.10.2",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "jsdom": "^30.0.1",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.104.1",
     "source-map-explorer": "^2.5.3",
-    "vite": "^6.3.4"
+    "typescript": "^5.6.3",
+    "vite": "^6.3.4",
+    "vitest": "^5.0.1"
   }
 }

@@ -1,0 +1,1464 @@
+{
+	"nav": {
+		"home": "Home",
+		"works": "Trabajos",
+		"resume": "Currículo",
+		"about": "Sobre mí",
+		"menuAlt": "Menú"
+	},
+	"footer": {
+		"otherSpaces": "Otros espacios",
+		"siteMap": "Mapa del sitio",
+		"options": "Opciones"
+	},
+	"getInTouch": {
+		"title": "Conozcámonos",
+		"subtitle": "Hablemos de trabajo o quizá solo un ¡Hola!"
+	},
+	"home": {
+		"anchors": {
+			"hola": { "id": "hola", "label": "Hola" },
+			"colab": { "id": "colab", "label": "Colaboraciones" },
+			"trabajos": { "id": "trabajos", "label": "Mis trabajos" },
+			"conozca": { "id": "conozcamonos", "label": "Conozcámonos" }
+		},
+		"hola": {
+			"greeting": "Hola, yo soy",
+			"p1": "Product Design Chapter Lead con <b>{{years}} años de experiencia</b>.",
+			"p2": "Me especializo en el desarrollo de <b>sistemas de diseño escalables</b> y la automatización de flujos de trabajo para equipos de producto. He trabajado en <b>sectores de e-commerce y fintech</b>, enfocándome en la intersección entre diseño, metodologías ágiles y eficiencia técnica.",
+			"p3": "Mi enfoque actual se centra en estructurar <b>sistemas desacoplados</b> y <b>soluciones personalizadas</b> que optimizan la <b>producción visual</b> y <b>funcional</b>."
+		},
+		"colab": {
+			"title": "Dónde he colaborado",
+			"items": {
+				"galileo": {
+					"date": "2025 - actualidad",
+					"role": "Product Design Chapter Lead",
+					"bullets": [
+						"Liderazgo de proyectos de arte en marketing digital y UX",
+						"Implementación de marcos ágiles (Design Ops, Scrum, Kanban)",
+						"Automatización de flujos de trabajo en diseño y desarrollo web",
+						"Construcción de un sistema de diseño escalable y multicanal",
+						"Facilitación de la gobernanza de la experiencia gráfica más allá de los equipos de diseño",
+						"Colaboración entre los equipos de diseño, desarrollo y marketing"
+					]
+				},
+				"liverpool": {
+					"date": "2023 - 2025",
+					"role": "Diseñador UX/UI senior",
+					"bullets": [
+						"Agilización de procesos de diseño",
+						"Mantenimiento y modernización del sistema de diseño",
+						"Dirección de equipos medianos para proyectos digitales",
+						"Diseño omnicanal web, wap y app",
+						"Research de primer y segundo nivel",
+						"Mejora continua"
+					]
+				},
+				"grupoPm": {
+					"date": "2021 - 2023",
+					"role": "Diseñador UX/UI senior",
+					"bullets": [
+						"Redacción y ejecución de Historias de usuario",
+						"Software as a Service (SaaS)",
+						"Coordinación de equipos multidisciplinarios",
+						"Prototipado de alto nivel",
+						"Generación de recursos gráficos",
+						"Mejora de insumos"
+					]
+				},
+				"marsoft": {
+					"date": "2018 - 2021",
+					"role": "Cofundador/Diseñador UI-UX",
+					"bullets": [
+						"Levantamiento de requerimientos",
+						"Diseñador y desarrollador de interfaz y experiencia",
+						"Administración de equipos de diseño y desarrollo",
+						"Desarrollo de proyectos SaaS, e-commerce y landing pages"
+					]
+				}
+			}
+		}
+	},
+	"homeWorks": {
+		"title": "Mis trabajos destacados",
+		"cta": "Conoce más trabajos"
+	},
+	"works": {
+		"id": "mis-trabajos",
+		"heading": "Mis trabajos",
+		"timelineAnchorLabel": "Cronología",
+		"chooseTag": "Elige aquello que te llame más la atención:",
+		"closeAlt": "Cerrar",
+		"viewCaseStudyAlt": "Ver caso de estudio de {{title}}",
+		"items": {
+			"glue": {
+				"tags": ["Desarrollo", "Sistema de Diseño"],
+				"title": "GLUE y DesignOps",
+				"des": "Automatización, tokenización y mantenimiento de un Sistema de Diseño",
+				"date": "feb 2023 - actualidad",
+				"comp": "El Puerto de Liverpool"
+			},
+			"movilidad": {
+				"tags": ["Experiencia", "Interfaz", "Investigación", "Servicios"],
+				"title": "Sistema de electrolineras, MoviLidad",
+				"des": "Aplicativo para el ofrecimiento de centro de carga para automóviles eléctricos",
+				"date": "oct 2024 - may 2025",
+				"comp": "El Puerto de Liverpool"
+			},
+			"activa": {
+				"tags": ["Experiencia", "Interfaz", "Investigación", "Fintech"],
+				"title": "Activa, un producto de ahorro e inversión",
+				"des": "Proyecto de fintech en colaboración con Actinver sobre ahorro e inversión para usuarios Liverpool",
+				"date": "mar 2023 - actualidad",
+				"comp": "El Puerto de Liverpool"
+			},
+			"hubbub": {
+				"tags": ["Desarrollo", "Experiencia", "Interfaz", "Investigación", "Visualización de datos"],
+				"title": "HUBBUB y la visualización del ruido en la CDMX",
+				"des": "Sitio web para el despliegue de datos sobre el fenómeno del ruido en la CDMX y su área metropolitana",
+				"date": "feb 2023 - actualidad",
+				"comp": "Laboratorio de Diseño Acústico - UAM Azcapotzalco"
+			},
+			"galeria": {
+				"tags": ["Experiencia", "Interfaz", "Investigación", "Rediseño"],
+				"title": "Un rediseño completo de imagen",
+				"des": "Rediseño completo para el sitio de Galerias.com, cadena de centros comerciales pertenecientes a El Puerto de Liverpool",
+				"date": "mar 2024 - oct 2024",
+				"comp": "El Puerto de Liverpool"
+			},
+			"gook": {
+				"tags": ["Experiencia", "Interfaz", "Investigación", "E-commerce"],
+				"title": "Vendamos y organicemos lentes",
+				"des": "Desarrollo de E-commerce más CRM con administración de inventarios para una tienda de óptica",
+				"date": "ago 2020 - sep 2021",
+				"comp": "Marsoft × Gook Óptica"
+			}
+		}
+	},
+	"timeline": {
+		"heading": "Línea del tiempo",
+		"id": "linea-del-tiempo",
+		"previousAlt": "Mostrar experiencia anterior",
+		"nextAlt": "Mostrar siguiente experiencia",
+		"items": {
+			"sedema": { "date": "may 2021 - nov 2021", "role": "Diseñador web" },
+			"hubbub": { "date": "may 2022 - actualidad", "role": "Desarrollador web" },
+			"marsoft": { "date": "abr 2018 - nov 2021", "role": "Cofundador y Director de diseño" },
+			"combucar": { "date": "nov 2018 - feb 2019", "role": "Diseñador web" },
+			"idea": { "date": "nov 2018 - mar 2019", "role": "Diseñador web" },
+			"gook": { "date": "ago 2020 - sep 2021", "role": "Diseñador UI/UX" },
+			"grupoPm": { "date": "nov 2021 - feb 2023", "role": "Diseñador UX/UI Senior" },
+			"liverpool": { "date": "feb 2023 - actualidad", "role": "Diseñador UX/UI Senior" },
+			"galileo": { "date": "sep 2025 - actualidad", "role": "Product Design Chapter Lead" }
+		}
+	},
+	"caseStudy": {
+		"summary": { "id": "sumario", "label": "Sumario" },
+		"role": "Rol",
+		"sector": "Sector",
+		"team": "Equipo"
+	},
+	"glue": {
+		"summary": {
+			"title": "GLUE y DesignOps",
+			"dateRange": "feb 2023 - actualidad",
+			"description": "Como parte de la evolución y mejora constante del sistema de diseño en Liverpool, se decidió integrar herramientas de automatización de tareas, adoptar nuevas tecnologías, como las variables en Figma, y optimizar los procesos de auditoría y administración del sistema.",
+			"role": ["Ingeniero de tokens", "Desarrollador, diseñador UI y administrador"],
+			"sector": "Design Ops, sistema de diseño, servicios internos, e-commerce",
+			"team": "Desarrolladores front y back, diseñadores UX/UI y researchers"
+		},
+		"anchors": {
+			"context": { "id": "contexto", "label": "El contexto" },
+			"tech": { "id": "tecnologias-adoptadas", "label": "Tecnologías" },
+			"insumos": { "id": "mejora-de-insumos", "label": "Insumos" },
+			"automa": { "id": "automatizacion-de-procesos", "label": "Automatización" },
+			"future": { "id": "futuros-pasos", "label": "Futuros pasos" }
+		},
+		"context": {
+			"heading": "El contexto",
+			"intro": "Desde la creación del departamento de Experiencia e Interfaz de Usuario dentro de la Dirección de Producto Digital, se han llevado a cabo diversos esfuerzos para desarrollar y formalizar un sistema de diseño. Estos esfuerzos se han vuelto recurrentes y han experimentado múltiples cambios debido a los avances tecnológicos y al crecimiento dinámico del equipo. En este contexto de evolución y mejora continua, la historia de GLUE (Global Liverpool User Experience) puede dividirse en cuatro grandes etapas.",
+			"before": {
+				"groupTitle": "Previas a mi entrada",
+				"stage1": {
+					"step": "Etapa 1",
+					"title": "Fundación y primeros pasos",
+					"description": "El proyecto nació como una librería distribuida a equipos mediante Sketch y documentada en Zeplin, diseñada por consultores UX en colaboración con Marketing."
+				},
+				"stage2": {
+					"step": "Etapa 2",
+					"title": "Diseño atómico y UI Kits",
+					"description": "Se adoptó Atomic Design para la creación de componentes, facilitando la integración de UI Kits y la estandarización de documentos de diseño. Como parte de esta evolución, la librería migró a Figma."
+				}
+			},
+			"myPart": {
+				"groupTitle": "Aquí está mi participación",
+				"stage3": {
+					"step": "Etapa 3",
+					"title": "Documentación y comunicación",
+					"description": "Comienza una documentación detallada de los componentes, mientras un equipo interno de UX asume el mantenimiento del sistema y se difunden los logros de GLUE."
+				},
+				"stage4": {
+					"step": "Etapa 4 (Actualidad)",
+					"title": "Design Ops e ingeniería",
+					"description": "Se implementa la tokenización del sistema, mejorando la comunicación con desarrollo y automatizando procesos de diseño para optimizar tareas y eficiencia."
+				}
+			},
+			"participationIntro": "Mi participación en GLUE se centra en cuatro áreas clave:",
+			"bullets": [
+				{
+					"title": "1. Tecnologías adoptadas.",
+					"description": "Busco desarrollar e integrar herramientas tecnológicas en el entorno de trabajo, con el objetivo de optimizar los flujos de trabajo, proporcionar recursos de diseño innovadores para los UXers y modernizar la administración y los procesos de diseño."
+				},
+				{
+					"title": "2. Mejora de insumos.",
+					"description": "A través de auditorías y la definición de estándares de calidad en los procesos de diseño, trabajo para fortalecer la gobernabilidad del sistema de diseño, facilitando su uso."
+				},
+				{
+					"title": "3. Automatización de procesos.",
+					"description": "Analizo y detecto procesos susceptibles de automatización con el fin de mejorar el rendimiento general y la eficiencia operativa."
+				}
+			],
+			"goToAlt": "Ir a ({{title}})"
+		},
+		"tech": {
+			"title": "Tecnologías adoptadas",
+			"intro": "Como parte de las actualizaciones que se vivieron en Figma, fue la integración de las Variables, lo que supuso un cambio en la forma de generar componentes y tokens dentro de sistema de diseño. Este proceso se llevó a cabo en dos fases, la beta y el primer release de la feature.",
+			"beta": {
+				"dateRange": "jun 2023 - feb 2025",
+				"brandsAdded": {
+					"title": "Marcas agregadas",
+					"value": "3 marcas",
+					"desc": "(Representando las 3 principales variaciones de marca: Liverpool, Suburbia y El Puerto de Liverpool)"
+				},
+				"tokenizedColors": {
+					"title": "Colores tokenizados",
+					"value": "139 colores",
+					"desc": "(Normalizados al estándar de MD3 sustituyendo 3 UIKit a 3 modos organizados de variables)"
+				}
+			},
+			"release": {
+				"dateRange": "feb 2025 - actualidad",
+				"brandsAdded": {
+					"title": "Marcas agregadas",
+					"value": "+13 marcas",
+					"desc": "(Se agregaron 13 modos nuevos evitando así la creación de 8 UiKits)"
+				},
+				"tokenizedColors": {
+					"title": "Colores tokenizados",
+					"value": "+275 colores",
+					"desc": "(Se agregaron 275 colores más agregando modificadores a colores auxiliares)"
+				},
+				"fontsAdded": {
+					"title": "Tipografías agregadas",
+					"value": "20 familias",
+					"desc": "(Agregadas y asociadas a las marcas)"
+				},
+				"textDecorations": {
+					"title": "Decoraciones de texto",
+					"value": "8 estilos",
+					"desc": "(Como base para la aplicación de modos y variables a textos en figma)"
+				},
+				"textSizes": {
+					"title": "Tamaños de texto",
+					"value": "18 tamaños",
+					"desc": "(Basados en rem y normalizados para alta legibilidad)"
+				}
+			},
+			"improvementsIntro": "Desde el momento de implementación hasta el día de hoy se pudieron medir las siguientes mejoras:",
+			"styleLib": {
+				"label": "Librería basada en estilos",
+				"designAtoms": { "title": "Átomos de diseño", "value": "10 kits", "desc": "(Se tenían uno por marca)" },
+				"brandRegistry": { "title": "Registro de marca", "value": "2 hrs", "desc": "(En generar los átomos de una nueva marca)" },
+				"layouting": { "title": "Maquetado", "value": "6 semanas", "desc": "(En crear un nuevo multisitio)" }
+			},
+			"varLib": {
+				"label": "Librería basada en variables",
+				"designAtoms": { "title": "Átomos de diseño", "value": "2 kits", "descTemplate": "(Reduce la complejidad de mantenimiento en un {{percent}}%)" },
+				"brandRegistry": { "title": "Registro de marca", "value": "30 min", "descTemplate": "(Se reduce el tiempo en un {{percent}}%)" },
+				"layouting": { "title": "Maquetado", "value": "2 semanas", "descTemplate": "(Se reduce el tiempo en un {{percent}}%)" }
+			}
+		},
+		"insumos": {
+			"title": "Mejora de insumos",
+			"intro": "Dentro de los procesos de HandOff de los proyectos se mejoraron diferentes dolencias que tenían equipos como Desarrollo y Business Analyst, lo que provocó una serie de trabajos para la atención a estos problemas:",
+			"fonts": {
+				"subtitle": "· Conglomeración y cuidado de tipografías",
+				"intro": "Se decidió crear un repositorio donde se conglomeraran todas las tipografías que son utilizadas a lo largo del e-commerce, herramientas internas y otros sitios pertenecientes a Liverpool. Este repositorio se generó en Drive y se construyó bajo las necesidades particulares del equipo de UX y los desarrolladores Front-End. Se generó una nomenclatura que sirviera para ambos equipos y se terminó por documentar la misma dentro de la librería de variables de Figma.",
+				"driveLabel": "Drive",
+				"files": ["Tipografías", "FontFamily-Marca1,MarcaN", "FontFamily-FontWeight.otf"]
+			},
+			"structure": {
+				"subtitle": "· Estructura de documentos en Figma",
+				"intro": "Producto de una serie de acercamientos, pláticas y encuestas con equipos que consultan los documentos de Figma como parte de su flujo de trabajo, entre los que se incluyen Frontend devs, Business Analysts, Negocio y QA, se generó una estructura dentro de los documentos de Figma que funcionaba para acomodar de forma correcta y en orden de prioridad aquellas páginas que lo requirieran. Así se terminó por crear una estructura que comprende los siguientes puntos.",
+				"points": [
+					"Adición de emojis para mejorar la identificación de páginas",
+					"Agrupación de páginas por semántica parecida",
+					"Creación de tres tipos diferentes de documentos: proyectos UX, research y herramientas internas"
+				],
+				"projects": {
+					"ux": {
+						"title": "Proyecto UX",
+						"bullets": ["🖼️ Cover", "🖍️ Ui / Ready for BA + DEV", "📲 App", "🖥️ Desktop", "💊 Tablet", "📱 Mobile", "---", "🤖 Prototype", "---", "📕 Historial de versiones", "🔎 Business + Research", "🧠 UX", "---", "🏝 Sandbox", "🛠 Local Components + Tools"]
+					},
+					"internal": {
+						"title": "Proyecto Interno",
+						"bullets": ["🖼️ Cover", "🏬 Business", "🏝 Sandbox", "🧠 Brainstorming", "🗺️ Sitemap", "📕 Historial de versiones", "Benchmark", "Interviews", "👁️ Visuales", "🛠 Local Components + Tools"]
+					},
+					"research": {
+						"title": "Research",
+						"bullets": ["🖼️ Cover", "🤖 Prototype", "---", "📕 Historial de versiones", "🧠 UX", "---", "🏝 Sandbox", "🛠 Local Components + Tools"]
+					}
+				}
+			}
+		},
+		"automa": {
+			"title": "Automatización de procesos",
+			"intro": "Como parte de los esfuerzos para mejorar los procesos de diseño de los diseñadores UX se programaron 3 plugins para Figma más 2 servidores extra que permitieron aumentar la productividad del equipo:",
+			"pluginsLabel": "PlugIns (3 herramientas)",
+			"capabilitiesLabel": "Capacidades",
+			"serversLabel": "Servidores (2 herramientas)",
+			"plugins": {
+				"projectSetter": {
+					"title": ["PROJECT", "SETTER"],
+					"description": "Genera un proyecto con la estructura de páginas estandarizada de acuerdo al tipo de proyecto deseado",
+					"kpi1Value": "30 min",
+					"kpi1Desc": "Proceso que comprendía copiar el témplate, generar una portada y ajustar el archivo manualmente de ser necesario",
+					"kpi2Value": "30 seg",
+					"kpi2DescTemplate": "Se reduce el tiempo en un {{percent}}% sin necesidad de un ajuste manual concreto, pues el plugin permite presetearlo",
+					"capabilities": [
+						"Se requiere de credenciales para utilizar el plugin",
+						"Se puede editar información directa del proyecto para la portada como nombre del proyecto, coordinación del proyecto y si es o no un proyecto que involucra más coordinaciones",
+						"Inicialización de 4 tipos de proyectos:",
+						"Proyecto completo estándar de UX",
+						"Proyecto de research para investigaciones",
+						"Proyecto de herramienta de ventas para desarrollos internos",
+						"Proyecto personalizado que permite seleccionar qué páginas se busca insertar",
+						"Insertar páginas dentro de la estructura de páginas"
+					]
+				},
+				"plpFiller": {
+					"title": ["PLP", "FILLER"],
+					"description": "Pensado para generar la vista de un PLP completo de forma rápida y con información real obtenida directamente del productivo del e-commerce",
+					"kpi1Value": "2 hrs",
+					"kpi1Desc": "Proceso que comprendía ajustar manualmente la información de un PLP con datos reales del productivo",
+					"kpi2Value": "30 seg",
+					"kpi2DescTemplate": "Se reduce el tiempo en un {{percent}}% con el mero esfuerzo de un texto y un click",
+					"capabilities": [
+						"Se obtiene la información directamente del productivo del e-commerce de Liverpool",
+						"Dicha información se pinta directamente en un componente tipo card PLP",
+						"Solo se requiere de un texto válido."
+					]
+				},
+				"frameReferencer": {
+					"title": ["FRAME", "REFERENCER"],
+					"description": "Permite conectar a través de hipervínculos y flechas dos frames con el objetivo de enlazarlos de alguna forma.",
+					"kpi1Value": "Navegación y peso",
+					"kpi1Desc": "Permite una navegación dentro de documentos grandes mucho más ligera gracias a los hipervínculos y flechas. La duplicación en png de frames aligera el peso del documento.",
+					"capabilities": [
+						"Puedes modificar el color de las referencias e hipervínculos",
+						"Puedes activar o desactivar las siguientes opciones:",
+						"Generar una copia del frame en PNG",
+						"Generar hipervínculos",
+						"Crear conectores entre dos frames",
+						"Se pueden generar esas interacciones entre dos frames seleccionando un frame y después seleccionando otro con la tecla SHIFT"
+					]
+				}
+			},
+			"servers": {
+				"credential": {
+					"title": ["CREDENTIAL", "SERVER"],
+					"description": "Servidor dedicado a validar y verificar credenciales"
+				},
+				"crawler": {
+					"title": ["CRAWLER", "SERVER"],
+					"description": "Servidor dedicado a validar y verificar credenciales"
+				}
+			}
+		},
+		"future": {
+			"title": "Futuros pasos",
+			"intro": "Desde la creación del departamento de Experiencia e Interfaz de Usuario dentro de la Dirección de Producto Digital, se han llevado a cabo diversos esfuerzos para desarrollar y formalizar un sistema de diseño. Estos esfuerzos se han vuelto recurrentes y han experimentado múltiples cambios debido a los avances tecnológicos y al crecimiento dinámico del equipo. En este contexto de evolución y mejora continua, la historia de GLUE (Global Liverpool User Experience) puede dividirse en cuatro grandes etapas.",
+			"toolsLabel": "· Herramientas de diseño",
+			"toolsIntro": "Se tiene en puerta la creación de al menos 4 plugins más que atenderán otras necesidades del proceso de diseño. También se plantea mejorar los que ya se tienen. De estas herramientas ya en desarrollo se tienen las siguientes.",
+			"steps": {
+				"superapp": { "title": ["SUPER", "APP"], "tag": "nuevo", "description": "App pensada para la agrupación completa de todos los sub-plugins involucrados en el proceso de diseño" },
+				"bolito": { "title": ["BOLITO", "WRITTER"], "tag": "nuevo", "description": "Implementación de un LLM (Llama) como asistente de copy writing, voz y tono, redacción y más" },
+				"audit": { "title": ["AUDIT", "ASSISTANT"], "tag": "nuevo", "description": "Asistente de auditorías automático para componentes, tokens e instancias" },
+				"ecommerce": { "title": ["E-COMMERCE", "FILLER"], "tag": "mejora", "description": "Mejora del PDP filler integrando PDP y otros espacios del e-commerce" }
+			},
+			"handoffLabel": "· Procesos de hand-off",
+			"handoffIntro": "De cara a procesos de entrega y distribución de frameworks de diseño, más la integración de otros equipos de diseño como marketing, branding y otros, se ha optado por la investigación de métodos de tokenización y distribución de bibliotecas de diferentes formas a los equipos."
+		}
+	},
+	"hubbub": {
+		"summary": {
+			"title": "HUBBUB y la visualización del ruido en la CDMX",
+			"dateRange": "may 2022 - actualidad",
+			"description": "Sitio web para el despliegue de data sobre el fenómeno del ruido en la CDMX y área Metropolitana",
+			"role": [
+				"Desarrollador UX / UI",
+				"Product designer, BA, developer, project manager"
+			],
+			"sector": "Investigación, divulgación científica, data visualization",
+			"team": "Investigadores"
+		},
+		"anchors": {
+			"context": {
+				"id": "contexto",
+				"label": "El contexto"
+			},
+			"invest": {
+				"id": "investigacion",
+				"label": "Investigación"
+			},
+			"design": {
+				"id": "diseno",
+				"label": "Diseño"
+			},
+			"progra": {
+				"id": "programacion",
+				"label": "Programación"
+			},
+			"future": {
+				"id": "futuros-pasos",
+				"label": "Otros medios y futuros pasos"
+			}
+		},
+		"context": {
+			"title": "El contexto",
+			"intro": "El Laboratorio de Diseño Acústico de la Universidad Autónoma Metropolitana lleva más de 6 años investigando y haciendo estudios sobre el fenómeno del ruido dentro de la Ciudad de México y su Área Metropolitana, lo que provocó una serie de necesidades y desarrollos que se fueron implementando a lo largo del proyecto. Para el momento de mi integración dentro del equipo se contaba con lo siguiente:",
+			"kpis": {
+				"app": {
+					"value": "1 aplicación",
+					"desc": "(Funcionando para Android y iOS)"
+				},
+				"reports": {
+					"value": "51 reportes",
+					"desc": "(Para el corte de datos en abril de 2022)"
+				},
+				"maps": {
+					"value": "+6 mapas",
+					"desc": "Incluyendo uno general de la ciudad más otras vías"
+				},
+				"team": {
+					"value": "Equipo Multidisciplinar",
+					"desc": "Incluyendo desarrolladores, arquitectos y diseñadores"
+				}
+			},
+			"participationIntro": "Mi participación dentro del equipo era el cumplimiento de una necesidad puntual: el diseño de un espacio de divulgación para los datos y conceptos del fenómeno, más dashboards con diferentes vistas e intencionalidades para los datos de reportes de la aplicación. Todo el proceso de diseño de solución corrió por mi cuenta y se concretó en 3 fases:",
+			"bullets": {
+				"research": {
+					"title": "1. Investigación",
+					"description": "Análisis de la problemática, generación y entendimiento de conceptos y research de usuarios y proyectos."
+				},
+				"design": {
+					"title": "2. Diseño",
+					"description": "Definición de propuesta e identidad gráfica, sketching de ideas y prototipado del proyecto."
+				},
+				"programming": {
+					"title": "3. Programación",
+					"description": "Planeación de ejecución, codificación y desarrollo"
+				}
+			},
+			"goToAlt": "Ir a ({{title}})"
+		},
+		"invest": {
+			"title": "Investigación",
+			"intro": "Dentro de la etapa de investigación se realizaron diferentes esfuerzos no solamente relacionados con la parte de interfaz y experiencia; también se tuvieron que realizar marcos teóricos y un profundo entendimiento de los conceptos que se verterían dentro del proyecto. Incluso una etapa de definición de solución se dio dentro de esto, siendo, de forma muy sintetizada, una etapa compuesta por tres partes.",
+			"steps": {
+				"analysis": {
+					"title": "Análisis",
+					"text": "Reconocimiento de la problemática, objetivos del equipo de Diseño Acústico con su proyecto de HUBBUB y delimitación del marco teórico a presentar dentro del tema."
+				},
+				"research": {
+					"title": "Investigación",
+					"text": "Investigación sobre las necesidades del usuario, espacios de comunicación, benchmarks y guías de diseño del producto."
+				},
+				"concepts": {
+					"title": "Conceptos",
+					"text": "Investigación sobre el fenómeno del ruido y visualización de datos, así como el diseño centrado en el usuario abarcando conceptos, teoremas y filosofía."
+				}
+			},
+			"analysisSection": {
+				"heading": "Apartado de análisis",
+				"intro": "Se realizaron dos ejercicios en paralelo para la obtención y primer acercamiento a hipótesis. El primero de estos fueron entrevistas al Laboratorio de Diseño Acústico, quienes ya tenían una serie de datos que apoyaban la construcción de una serie de necesidades primarias para el proyecto, las cuales se ven reflejadas en tres pilares que terminarían orientando las posteriores etapas de investigación."
+			},
+			"analysisCards": {
+				"noise": {
+					"title": "Sobre el ruido",
+					"text": "El ruido es un fenómeno altamente estudiado pero pocas veces difundido dentro de la cultura mexicana, lo que ha provocado un desconocimiento de conceptos que permitiría acercar y orientar a las personas para el entendimiento del mismo."
+				},
+				"harmlessData": {
+					"title": "Datos inocuos",
+					"text": "Los datos inocuos son aquellos que no causan daño ni afectan negativamente a las personas o al medio ambiente. En el contexto del ruido, es fundamental identificar y utilizar datos inocuos para garantizar un diseño responsable y sostenible."
+				},
+				"nonProfessionals": {
+					"title": "Alcance con no profesionales",
+					"text": "Sumado a lo comentado de los datos inocuos, no solo se delimita la necesidad de encontrar espacios de acceso público a esta información, también es importante establecer un nivel apropiado de lenguaje para que cualquier interesado pueda hacer suyos estos conceptos e información."
+				}
+			},
+			"researchSection": {
+				"heading": "Apartado de research",
+				"intro": "Identificadas las problemáticas, objetivos y alcance del proyecto, se procedió a delimitar una solución de diseño bajo un enfoque de User Centred Design, por lo que se realizaron una serie de encuestas y acercamientos a interesados. Los resultados obtenidos se pueden ver en las siguientes gráficas."
+			},
+			"areaCharts": {
+				"ageRange": {
+					"title": "Rango de edad",
+					"data": [
+						"<15 años",
+						"15-24 años",
+						"25-34 años",
+						"35-44 años",
+						"45+ años"
+					]
+				},
+				"interestImportant": {
+					"title": "¿Te interesa y crees importante conocer el fenómeno del ruido?",
+					"data": [
+						"Es importante y me es interesante",
+						"Es importante pero no me interesa",
+						"Me es indiferente"
+					]
+				},
+				"heardAbout": {
+					"title": "¿Has escuchado sobre el fenómeno del ruido?",
+					"data": [
+						"Sí lo he escuchado",
+						"No, nunca lo he escuchado"
+					]
+				}
+			},
+			"barCharts": {
+				"learnMethod": {
+					"title": "¿Cómo te gusta conocer nuevos temas?",
+					"data": [
+						"Videos",
+						"Artículos",
+						"Sitios web",
+						"Museos",
+						"Conferencias",
+						"Podcasts"
+					]
+				},
+				"wantToKnow": {
+					"title": "¿Qué te gustaría conocer?",
+					"data": [
+						"Consecuencias",
+						"Causas",
+						"Estadísticas",
+						"Soluciones"
+					]
+				}
+			},
+			"conclusionsIntro": "De todas estas encuestas se pudieron obtener las siguientes conclusiones:",
+			"conclusions": [
+				"La comunidad realmente encuentra importante e interesante hablar sobre un fenómeno como el ruido.",
+				"Prácticamente la mitad de los encuestados no conoce nada del fenómeno.",
+				"Los videos son el medio preferido para conocer nuevos temas, seguidos de artículos y sitios web.",
+				"Los tres principales medios bajo los cuales a la gente le gusta informarse son videos, artículos y sitios web; es decir, los medios digitales son en general los preferidos.",
+				"Existe un mayor interés por las consecuencias que trae el ruido, seguido de aquello que lo provoca y, después, estadísticas o datos informativos del mismo."
+			],
+			"solutionParagraph": "Esto ya ayuda a determinar como diseño de solución un sitio web que vacíe la información de los artículos publicados por el laboratorio: generar dos espacios dentro del sitio web, uno enfocado a contextos, marcos teóricos e incluso consecuencias, y el segundo como un dashboard organizado de consulta sobre los reportes obtenidos a través de la aplicación.",
+			"conceptsSection": {
+				"heading": "Apartado de conceptos",
+				"intro": "Como parte del entendimiento y apropiación de conceptos se generó toda una investigación, misma que se abarca en los capítulos 1, 2 y 3 de la tesina VER EL RUIDO, “Un ejercicio de visualización de la información para el ruido de la Ciudad de México”"
+			}
+		},
+		"design": {
+			"title": "Diseño",
+			"intro": "Toda la etapa de diseño agrupó los esfuerzos de diseño de solución, es decir, que implica diferentes procesos de diseño gráfico, experiencia de usuario, benchmarking e interfaz; todos estos procesos se pueden vaciar en tres espacios.",
+			"steps": {
+				"understanding": {
+					"title": "Entendiendo HUBBUB",
+					"text": "Comprensión y entendimiento completo de la identidad gráfica actual del proyecto, incluye la formación de una identidad gráfica para el sitio."
+				},
+				"sketching": {
+					"title": "Sketching",
+					"text": "Exteriorización de ideas, paper prototyping y exploración de diferentes visualizadores gráficos."
+				},
+				"mockup": {
+					"title": "Maquetado",
+					"text": "Refinamiento de ideas, creación de la experiencia y bajada de interfaz a prototipo de alta fidelidad"
+				}
+			},
+			"understandingSection": {
+				"heading": "Apartado de entendimiento sobre HUBBUB",
+				"intro1": "Para el momento en el que el proyecto comenzó, HUBBUB ya contaba con una serie de canales donde mostraba una cierta estética.",
+				"intro2": "De todo esto se destacó la paleta de colores, el estilo iconográfico, tipografías, y voz y tono. También se rescataron ciertos términos y assets como íconos y logotipos. Todos estos recursos gráficos se vaciaron en una nueva UI creada para el canal del sitio web que nosotros desarrollaríamos, además de mejorar iconografía, señalética y otros aspectos de la interfaz."
+			},
+			"sketchingSection": {
+				"heading": "Apartado de sketching",
+				"intro": "Para el sketching se realizaron una serie de bocetos en papel que no solamente permitieron explorar ideas de interacción y composición de forma rápida, sino que también permitieron involucrar a equipos de no diseñadores (como los integrantes del laboratorio) en el proceso de construcción de la idea. Estos bocetos también permitieron iterar rápidamente entre componentes e identificar qué clase de datos queríamos mostrar."
+			},
+			"mockupSection": {
+				"heading": "Apartado de maquetado",
+				"intro1": "Una vez que se terminó la fase de exploración de ideas, alimentada de los comentarios del equipo, se pasó a la fase de maquetado fino; allí se generaron componentes y todas las pantallas necesarias para ambas partes de la experiencia. Todo este trabajo se realizó en Figma y, de igual forma, se sometió a diferentes presentaciones con los involucrados para realizar ajustes puntuales, como en navegadores y visualizadores.",
+				"intro2": "Sumado a la maquetación de experiencia realizada en Figma, también se bajó a documentación un documento de historias de usuario e historias técnicas que ayudarían a una implementación rápida en la etapa de desarrollo. Estas historias fueron vaciadas en el siguiente documento."
+			}
+		},
+		"progra": {
+			"title": "Programación",
+			"intro": "La etapa de programación comprende todo el proceso de codificación y planificación de esfuerzos.",
+			"steps": {
+				"planning": {
+					"title": "Planeación",
+					"text": "Definición de módulos a programar, planificación de tiempo en sprints y selección de tecnologías."
+				},
+				"coding": {
+					"title": "Codificación",
+					"text": "Programación de funcionalidades, creación de componentes y conexión a base de datos."
+				},
+				"implementation": {
+					"title": "Implementación*",
+					"text": "Ejecución, QA y evaluación del sistema. Salida a productivo dentro de servidores de la universidad."
+				}
+			},
+			"implementationNote": "* Esta última etapa no se ha llevado a cabo pues continúa en espera del lado de negocio",
+			"planningSection": {
+				"heading": "Apartado de planeación",
+				"intro": "Partiendo de lo vaciado dentro de las Historias de Usuario, se pudo identificar sin problemas cuáles eran los módulos a trabajar, y así se pudo distribuir el esfuerzo a lo largo de sprints de dos semanas con juntas semanales para revisiones y entregas oficiales. Se distribuyó todo de la siguiente forma."
+			},
+			"planLegend": {
+				"general": {
+					"title": "Funciones generales",
+					"bullets": [
+						"Navegador Izquierdo",
+						"Navegador Derecho",
+						"Footer",
+						"Nosotros (Swal)",
+						"Legales",
+						"Acciones de accesibilidad",
+						"Hero image"
+					]
+				},
+				"noise": {
+					"title": "El ruido (página del sitio)",
+					"bullets": [
+						"El oído",
+						"Clasificación del ruido",
+						"Legislación del ruido",
+						"Componentes del ruido",
+						"Efectos de la salud",
+						"Cómo se mide el ruido",
+						"Áreas de estudio",
+						"Artículos HUBBUB",
+						"Referencias"
+					]
+				},
+				"viewNoise": {
+					"title": "Ver el ruido (página del sitio)",
+					"bullets": [
+						"Introducción",
+						"Participación",
+						"Presión sonora",
+						"Variables",
+						"Fuentes emisoras",
+						"Alcaldías",
+						"Mapa de ruido"
+					]
+				}
+			},
+			"planKPI": {
+				"hours": {
+					"title": "461 hrs",
+					"desc": "93 hrs de diseño + 368 de codificación"
+				},
+				"modules": {
+					"title": "3 módulos",
+					"desc": "Reparten navegación y las dos páginas"
+				},
+				"weeks": {
+					"title": "18 semanas",
+					"desc": "aproximadamente 4 meses y medio de desarrollo"
+				}
+			},
+			"techIntro": "Además de la definición de tiempos y administración del proyecto, también se definieron las tecnologías que se involucrarían tanto en el desarrollo como en los repositorios y comunicación del equipo. En este sentido, se retoman espacios que se fueron creando naturalmente en etapas anteriores, y también se adjunta la información técnica.",
+			"codingSection": {
+				"heading": "Apartado de codificación",
+				"intro": "En un primer acercamiento al proyecto, se había realizado utilizando PHP como base, y allí se trabajaron por primera vez todos los visualizadores gráficos; sin embargo, pensando en la escalabilidad y modularidad del proyecto, se decidió crear una versión basada en React.js que funcionaría mucho mejor para su despliegue en web. Estas dos etapas del proyecto se realizaron en diferentes momentos del tiempo, y es con la versión de React.js con la que se ha estado trabajando últimamente. Aquí se tienen algunas características de estas dos versiones"
+			},
+			"versions": {
+				"php": {
+					"dateRange": "jun 2022 - sep 2023",
+					"description": "Primera versión realizada para correr en PHP, sirvió como base para el rediseño en React.js",
+					"techLabel": "3 tecnologías",
+					"techDesc": "Destaca: JavaScript, PHP, SCSS",
+					"branchLabel": "2 ramas",
+					"branchDesc": "La principal y una versión responsiva para móviles"
+				},
+				"react": {
+					"dateRange": "sep 2024 - actualidad",
+					"description": "Segunda versión del sitio con mejoras en componentes e integración completa con React.js",
+					"techLabel": "3 tecnologías",
+					"techDesc": "Destaca: JavaScript, HTML, SCSS",
+					"branchLabel": "2 ramas",
+					"branchDesc": "La principal y una versión dedicada a la implementación de iframes"
+				}
+			},
+			"vizIntro": "Muchos de los visualizadores gráficos se apoyan en librerías de JavaScript como p5, noise, charts o integraciones a APIs como la de Sketchfab. Estos son ejemplos de visualizadores que ya se encuentran programados:"
+		},
+		"future": {
+			"title": "Otros medios y futuros pasos",
+			"intro": "Más allá de la salida a productivo del proyecto, al representar una investigación científica universitaria, ha permeado otros canales desde los cuales se plantea dar seguimiento o se pretende desarrollar aún más su alcance. De esto ya se han dado algunos eventos y otros se encuentran en camino.",
+			"steps": {
+				"coloquio": {
+					"title": [
+						"Coloquio",
+						"Internacional"
+					],
+					"tag": "1er y 2da edición",
+					"description": "Siendo expositor en las dos últimas ediciones del “Coloquio internacional de paisaje sonoro” organizadas por instituciones como la Universidad Autónoma Metropolitana, la Benemérita Universidad Autónoma de Puebla y otras universidades públicas."
+				},
+				"implementation": {
+					"title": [
+						"Implementación",
+						"en otras localidades"
+					],
+					"tag": "amplificación",
+					"description": "Gracias a la exposición que ha tenido el proyecto dentro de eventos, coloquios y espacios internacionales, este proyecto se está planeando replicar en otros estados de la república y en otros países iberoamericanos."
+				},
+				"articles": {
+					"title": [
+						"Artículos",
+						"y patentes"
+					],
+					"tag": "en proceso",
+					"description": "La Universidad Autónoma Metropolitana, en conjunto con diferentes instituciones gubernamentales y prensa científica, busca la aprobación de artículos relacionados con la investigación, más el registro del sitio y la metodología de obtención de datos como patente"
+				}
+			}
+		}
+	},
+	"movilidad": {
+		"summary": {
+			"title": "Sistema de electrolineras, MoviLidad",
+			"dateRange": "oct 2024 - actualidad",
+			"description": "Aplicativo para el ofrecimiento de centro de carga para automóviles eléctricos",
+			"role": [
+				"Diseñador UX / UI",
+				"Product designer, service designer, BA"
+			],
+			"sector": "Automotriz, fuentes alternativas, servicios",
+			"team": "Desarrolladores Front y Back, negocio automotriz, business analist, project manager"
+		},
+		"anchors": {
+			"context": {
+				"id": "contexto",
+				"label": "El contexto"
+			},
+			"invest": {
+				"id": "interfaz",
+				"label": "Interfaz"
+			},
+			"ambNoti": {
+				"id": "notificaciones",
+				"label": "Notificaciones"
+			},
+			"flow": {
+				"id": "flujo-y-metodos",
+				"label": "Flujo y métodos"
+			},
+			"future": {
+				"id": "futuros-pasos",
+				"label": "Futuros pasos"
+			}
+		},
+		"context": {
+			"title": "El contexto",
+			"intro": "Producto de la colaboración entre BYD y Liverpool, más el creciente mercado de carros eléctricos dentro de territorio mexicano, provocó la necesidad de la instalación y ofrecimiento de puntos de carga en espacios estratégicos. El Puerto de Liverpool, gracias a su división inmobiliaria, genera una serie de espacios dentro de centros comerciales como las Galerías y otros más donde Liverpool tiene presencia, para la instalación de electrolineras dentro de la Ciudad de México.",
+			"kpis": {
+				"stations": {
+					"value": "17 estaciones",
+					"desc": "(Distribuidas en la zona norte de la CDMX)"
+				},
+				"chargers": {
+					"value": "139 cargadores",
+					"desc": "(Ubicados en estaciones de carga especializadas y centros comerciales)"
+				}
+			},
+			"chargerTypesLabel": "6 tipos diferentes de cargadores",
+			"collabLabel": "Colaboración directa con QiOn para la infraestructura y Openpay para pagos",
+			"topicsIntro": "Los temas de desarrollo del proyecto dentro del enfoque de UX que fueron más interesantes serían estos tres:",
+			"bullets": {
+				"research": {
+					"title": "1. Investigación y definición de interfaz",
+					"description": "Benchmarks e investigación directa con usuarios para la definición del flujo principal del usuario."
+				},
+				"notifications": {
+					"title": "2. Ambiente de notificaciones",
+					"description": "Integración de actividades en tiempo real más estatus para el usuario más allá del aplicativo y ambiente de Liverpool"
+				},
+				"transactionFlow": {
+					"title": "3. Flujo transaccional y métodos de pago",
+					"description": "Modificación y adaptación constante del flujo transaccional, más la exploración de métodos de pago que influenciaron directamente el flujo del usuario"
+				}
+			},
+			"goToAlt": "Ir a ({{title}})"
+		},
+		"invest": {
+			"title": "Investigación y definición de interfaz",
+			"intro1": "Una de las partes más importantes del diseño del aplicativo era la interfaz y la forma en que el usuario tendría que aprender a usarla, pues quienes utilizarían este apartado de red de carga serían usuarios que actualmente ya estuviesen familiarizados o, en su defecto, se tendrían que familiarizar con el ambiente de Pocket, la aplicación de Liverpool.",
+			"intro2": "No solo se trataba de usar componentes y lenguaje gráfico previamente utilizado dentro de Pocket, también se tendría que acercar a lo que otras aplicaciones del mismo giro ya ofrecía al cliente. Con esto en mente, los primeros pasos fueron generar los benchmarks de múltiples empresas.",
+			"legends": {
+				"mainFlow": "Flujo principal",
+				"secondaryActions": "Acciones secundarias",
+				"deprecatedFlow": "Flujo deprecado",
+				"externalFlow": "Flujo externo",
+				"directSequence": "Secuencia directa",
+				"alternateSequence": "Secuencia alterna"
+			},
+			"mapIntro": "Una vez establecidos puntos importantes como el mapa a modo de pantalla principal, filtrado de resultados y flujos transaccionales prepago, se decidió maquetar una experiencia que se acercara a esta estructura y, al mismo tiempo, incluyese todas las ofertas y accionables que ofrecía la misma app. Esto derivó en un mapa como el siguiente:",
+			"testIntro": "Como última parte de la investigación y producto de algunos comentarios del lado de negocio, también se decidió poner a prueba la página home del aplicativo. Esto se realizó mediante una encuesta en Maze y los resultados fueron los siguientes.",
+			"women": "50% mujeres",
+			"men": "47% hombres",
+			"participants": {
+				"value": "30 participantes",
+				"desc": "(En un plazo de 3 semanas)"
+			},
+			"questionsKpi": {
+				"value": "9 preguntas",
+				"desc": "(Combinando diferentes tipos de instrumentos)"
+			},
+			"introQuestions": "Introductorias",
+			"hierarchyQuestions": "Jerarquía y opciones",
+			"aestheticsQuestions": "Estética y accesibilidad",
+			"finalQuestions": "Final",
+			"labels": {
+				"exercise": "Ejercicio",
+				"objective": "Objetivo",
+				"result": "Resultado",
+				"conclusions": "Conclusiones"
+			},
+			"exercises": {
+				"first": {
+					"task": "Se pide al usuario ordenar las opciones de arriba de acuerdo con la importancia que tengan para él",
+					"objective": "Conocer cuáles son las prioridades y expectativas del usuario respecto a las capacidades del aplicativo",
+					"result": "En orden de relevancia las opciones fueron ordenadas: Mapa, Navegación, Monedero, Histórico y Ayuda",
+					"conclusions": [
+						"El Mapa se vuelve fundamental para el usuario pues describe un flujo natural para la ubicación de electrolineras que, posteriormente, habilitará el resto del flujo de transacción, el cual, finalmente, es la tarea principal a realizar.",
+						"La Navegación, que implica la capacidad del usuario para usar el mapa y el resto de actividades del aplicativo, aparece como complementaria a la exploración y, por consecuencia, permanece en relevancia.",
+						"El Monedero se vuelve la tercera opción fundamental del aplicativo al habilitar al usuario para generar pagos y, por consecuencia, completar la última parte del journey principal"
+					]
+				},
+				"second": {
+					"task": "Se pide al usuario elegir cuál de las dos opciones le parece más apropiada para poder acceder a las diferentes opciones que ofrece el aplicativo, además de complementar su elección con una pregunta abierta para que exprese sus razones.",
+					"objective": "Orientar la interfaz hacia una opción que satisfaga funcional y estéticamente las necesidades de nuestro usuario, además de recopilar información cualitativa de su elección",
+					"result": "La pantalla más elegida fue la número uno, con una preferencia del 69% de los encuestados",
+					"conclusions": [
+						"Mayoritariamente los usuarios expresaron una inclinación por la pantalla número 1, acompañado de comentarios que destacaban una interfaz limpia y una navegación más sencilla, pensada incluso en la posición de la píldora de opciones."
+					]
+				}
+			}
+		},
+		"ambNoti": {
+			"title": "Ambiente de notificaciones",
+			"intro1": "Otro de los esfuerzos realizados para este proyecto, y que implicó la implementación de una tecnología que nunca se había utilizado dentro de Pocket, fueron las actividades en tiempo real. Por primera vez se presentaba la necesidad de desplegar información con tracking en tiempo real que pudiese sumar valor a la experiencia del cliente, sumado a las capacidades técnicas que entregaba el CMS de QiOn.",
+			"intro2": "Se identificaron 3 espacios específicos donde utilizar estas actividades sería muy provechoso:",
+			"bullets": {
+				"charging": {
+					"title": "1. Carga en curso",
+					"description": "Se muestra información como el total de tiempo de carga, kilowatts cargados y porcentaje de batería actual del carro. El componente principal animado muestra el avance de la carga."
+				},
+				"completed": {
+					"title": "2. Carga finalizada",
+					"description": "Despliega instrucciones para la desconexión del carro y ocupa un temporizador para mostrar el tiempo que falta para comenzar a cobrar la tarifa por estancia."
+				},
+				"fee": {
+					"title": "3. Cargo por estancia",
+					"description": "Se pueden visualizar las mismas instrucciones anteriores de desconexión, más el costo de la tarifa por estancia. El componente animado cambia a un cronómetro."
+				}
+			},
+			"labels": {
+				"island": "Isla Dinámica",
+				"notification": "Notificación",
+				"watch": "Reloj",
+				"standby": "StandBy"
+			},
+			"outro": "Toda la integración del ambiente de notificaciones no solo implicó la creación de estos modos de notificación, también provocó la investigación y documentación de estándares de diseño venidos de Material Design por parte de Android y la Human Interface de Apple. Esto se reflejó dentro de la documentación del sistema de diseño de Liverpool en la adición de materiales, efectos y animaciones."
+		},
+		"flow": {
+			"title": "Flujo transaccional y métodos de pagos",
+			"intro": "De entre todos los flujos que componen al aplicativo de red de carga, el principal y más importante es el transaccional, es decir, aquel que permitía llevar la carga del vehículo y generar el cobro por el servicio.",
+			"stepPreviousAlt": "Paso anterior",
+			"stepNextAlt": "Paso siguiente",
+			"flowPreviousAlt": "Flujo de prueba anterior",
+			"flowNextAlt": "Flujo de prueba siguiente",
+			"steps": {
+				"map": {
+					"label": "Mapa"
+				},
+				"qr": {
+					"label": "Lectura de QR"
+				},
+				"config": {
+					"label": "Configuración de carga"
+				},
+				"status1": {
+					"label": "Estatus 1: Cargando"
+				},
+				"status2": {
+					"label": "Estatus 2: Carga finalizada"
+				},
+				"status3": {
+					"label": "Estatus 3: Cargo por estancia"
+				},
+				"thanks": {
+					"label": "Página de agradecimiento"
+				}
+			},
+			"screens": {
+				"map": {
+					"text": [
+						"Esta es la página principal del aplicativo; de esta se desprenden todas las acciones secundarias para manipular la información que se refleja en el mapa y, al mismo tiempo, permite acceder a otras secciones del aplicativo.",
+						"En esta pantalla se puede ver el mapa de la ciudad, con las estaciones. Su objetivo es permitir identificar dónde están ubicadas las estaciones de carga, información sobre la misma, y comenzar el flujo transaccional bajo la lectura del QR adjunto al tótem de carga."
+					]
+				},
+				"qr": {
+					"text": [
+						"Se activa la cámara del dispositivo y se realiza la lectura del código impreso en el tótem de carga.",
+						"En ese momento se carga la información de esa pistola de carga y se procede a la configuración de carga."
+					]
+				},
+				"config": {
+					"text": [
+						"Se carga la información de la pistola de carga, lo cual incluye: identificador, nombre de la estación, tipo de cargador, velocidad de carga, tarifa por carga y tarifa por estancia. Además de esta información, se permite configurar por 3 tipos de input, los cuales pueden ser por cantidad de dinero que se desea recargar, porcentaje final al que se quiere dejar el vehículo, o la cantidad de kilowatts que se buscan cargar.",
+						"Una vez configurada la carga, se procede a iniciar el flujo transaccional. El resto de información es para la selección del método de pago, dando opción a la selección de alguno de los métodos que tenga ya guardados dentro de su billetera Liverpool o el registro de uno nuevo, más la adición de usar el saldo que posea dentro de su monedero digital.",
+						"Mucha de esta configuración depende de la forma en que se comportaba ya actualmente el checkout de e-commerce."
+					]
+				},
+				"status1": {
+					"text": [
+						"Esta página muestra resumidamente el avance de la carga del automóvil, así como información para cualquier problema que pueda suscitarse, desde información del cargador hasta un botón para la interrupción de la carga.",
+						"Se ve acompañado de una actividad en tiempo real que refleja la misma experiencia."
+					]
+				},
+				"status2": {
+					"text": [
+						"Ya finalizada o interrumpida la carga, esta pasa al estatus de carga finalizada, donde se pide al usuario desconectar su coche y abandonar el área de carga; de lo contrario, se comenzará a cobrar la estancia.",
+						"Este mensaje también se acompaña de una actividad en tiempo real que advierte la cantidad de tiempo que le queda al usuario antes de comenzar el cobro por estancia."
+					]
+				},
+				"status3": {
+					"text": [
+						"Aquí el aplicativo comienza a sumar una tarifa por minuto de estancia del coche dentro del área de carga. Se acompaña de una actividad en tiempo real que va sumando los minutos que han pasado y su equivalente en tarifa."
+					]
+				},
+				"thanks": {
+					"text": [
+						"Finalizado todo el proceso de carga y, de no haberse suscitado ningún problema, se muestra un resumen del cobro por toda la actividad realizada y se realiza el cobro automáticamente."
+					]
+				}
+			},
+			"testFlowsIntro": "Este flujo tuvo diferentes modificaciones basadas en las formas de pago y el tipo de pasarela de pago que se podía implementar dentro del mismo, lo que provocó una serie de iteraciones. Un resumen del tipo de flujos que se propusieron fue el siguiente:",
+			"testFlows": {
+				"autoCharge": {
+					"title": "Flujo con cobro automático",
+					"steps": [
+						"Configuración de carga",
+						"Selección de tarjeta e ingreso de licencias",
+						"Proceso de carga",
+						"Cobro automático"
+					],
+					"text": "En esta propuesta se pueden almacenar las licencias durante el proceso de carga, lo que permite que, al final del cobro, simplemente se realice el cargo a la tarjeta seleccionada al principio y se muestre el thank you page"
+				},
+				"doubleAuth": {
+					"title": "Flujo con doble autenticación",
+					"steps": [
+						"Configuración de carga",
+						"Selección de tarjeta, ingreso de licencias y precobro de carga",
+						"Proceso de carga",
+						"Reingreso de credenciales y ajuste de cobro"
+					],
+					"text": "Aquí se pretende hacer un cobro basado exclusivamente en el monto de carga configurado; al final se pide al cliente volverse a identificar para hacer el ajuste del saldo, ya sea cobrando o reembolsando"
+				},
+				"refund": {
+					"title": "Flujo con devolución",
+					"steps": [
+						"Configuración de carga",
+						"Selección de tarjeta, ingreso de licencias y precobro de monto excedente",
+						"Proceso de carga",
+						"Devolución del sobrante"
+					],
+					"text": "Con este flujo se pretende cobrar una cantidad excedente de dinero que asegure el cobro de todo tipo de conceptos y, posteriormente, se genera la devolución."
+				}
+			}
+		},
+		"future": {
+			"title": "Futuros pasos",
+			"intro": "Se pretende que los siguientes pasos del producto caigan principalmente en tres mejoras puntuales con objetivos de negocio.",
+			"steps": {
+				"wallet": {
+					"tag": "segunda fase",
+					"description": "Implementación de recargas y venta de saldos físicos a forma de créditos para su uso dentro del aplicativo. Se comprendería como un nuevo método de pago."
+				},
+				"realtime": {
+					"tag": "segunda fase",
+					"description": "Integración de otras tecnologías de notificación como StandBy, notificación en WearOS y otros espacios"
+				},
+				"loyalty": {
+					"tag": "tercera fase",
+					"description": "Comprende cuponera, programa de recompensas, gamification y tratos especiales."
+				}
+			}
+		}
+	},
+	"resume": {
+		"categories": [
+			"General",
+			"Sistema de diseño",
+			"Investigación",
+			"Experiencia"
+		],
+		"labels": {
+			"skills": "Habilidades",
+			"summary": "Resumen",
+			"experience": "Experiencia",
+			"projects": "Actividades y proyectos",
+			"download": "Descargar CV",
+			"location": "Ciudad de México"
+		},
+		"header": {
+			"tagline": "{{role}} en {{company}}"
+		},
+		"infos": {
+			"portfolios": {
+				"title": "Portafolios",
+				"bullets": [
+					{
+						"text": "zulhernandez.com",
+						"link": "https://zulhernandez.com"
+					},
+					{
+						"text": "linkedin.com/in/saululises",
+						"link": "https://linkedin.com/in/saululises"
+					},
+					{
+						"text": "behance.net/zulhernndez",
+						"link": "https://behance.net/zulhernndez"
+					},
+					{
+						"text": "sketchfab.com/zulHernandez1912",
+						"link": "https://sketchfab.com/zulHernandez1912"
+					},
+					{
+						"text": "github.com/ZulHernandez",
+						"link": "https://github.com/ZulHernandez"
+					}
+				]
+			},
+			"contact": {
+				"title": "Contacto",
+				"bullets": [
+					{
+						"text": "+52 5565027645",
+						"link": "tel:+525565027645"
+					},
+					{
+						"text": "saululiseshernandezcruz@gmail.com",
+						"link": "mailto:saululiseshernandezcruz@gmail.com"
+					}
+				]
+			},
+			"education": {
+				"title": "Educación",
+				"bullets": [
+					{
+						"text": "Lic. en Diseño de la Comunicación Gráfica"
+					},
+					{
+						"text": "Tec. en Programación"
+					}
+				]
+			},
+			"languages": {
+				"title": "Idiomas",
+				"bullets": [
+					{
+						"text": "Español"
+					},
+					{
+						"text": "Inglés"
+					}
+				]
+			}
+		},
+		"skills": {
+			"categories": [
+				[
+					"Storytelling",
+					"Design Thinking",
+					"Liderazgo",
+					"Manejo de stakeholders",
+					"Dirección de equipos",
+					"Pensamiento crítico",
+					"Metodologías ágiles",
+					"Sistema de diseño"
+				],
+				[
+					"Automatización",
+					"Herramientas de diseño",
+					"Desarrollo",
+					"Actualización",
+					"Prototipos de alta fidelidad",
+					"Variables de Figma",
+					"UI Kits"
+				],
+				[
+					"Investigación cuantitativa",
+					"Investigación cualitativa",
+					"Historias de usuario",
+					"Observación directa",
+					"Análisis de datos",
+					"Prototipado",
+					"Testeo de usabilidad"
+				],
+				[
+					"Storytelling",
+					"Journey map",
+					"Rediseños",
+					"Gestión de proyectos",
+					"Proyectos simultáneos"
+				]
+			]
+		},
+		"summaries": {
+			"categories": [
+				[
+					"Diseñador de productos digitales con experiencia en Fintech y e-commerce, metodologías ágiles y comunicación con equipos multidisciplinarios.",
+					"Diseño, desarrollo y automatización de sistemas de diseño basados en Design Operations, integrando herramientas como plugins propios, UI Kits, plantillas, documentación y guías de estilo."
+				],
+				[
+					"Diseñador de productos digitales con experiencia en Fintech y e-commerce, especializado en sistemas de diseño y automatización.",
+					"Experto en Design Operations, integrando herramientas como plugins propios, UI Kits, plantillas, documentación y guías de estilo."
+				],
+				[
+					"Diseñador de productos digitales con sólidos conocimientos en investigación de usuarios para el diseño de experiencias e interfaces optimizadas.",
+					"Gestión de equipos y proyectos multidisciplinarios mientras conecta directamente con los usuarios."
+				],
+				[
+					"Diseñador UX/UI senior enfocado en la creación de journeys optimizados, historias de usuario impactantes y flujos intuitivos para sistemas de Fintech y comercio electrónico."
+				]
+			]
+		},
+		"experience": {
+			"items": {
+				"galileo": {
+					"rol": "Product Design Chapter Lead",
+					"fecha": "sep 2025 - Actualidad",
+					"bullets": [
+						[
+							"Coordinación de proyectos de arte enfocados en marketing digital y UX.",
+							"Aplicación de metodologías ágiles para gestión creativa eficiente.",
+							"Automatización avanzada de flujos en diseño web y desarrollo.",
+							"Estructuración de sistema de diseño escalable y desacoplado.",
+							"Colaboración transversal para consistencia visual y funcional."
+						],
+						[
+							"Coordinación de proyectos de arte enfocados en marketing digital y UX.",
+							"Aplicación de metodologías ágiles para gestión creativa eficiente.",
+							"Automatización avanzada de flujos en diseño web y desarrollo.",
+							"Estructuración de sistema de diseño escalable y desacoplado.",
+							"Colaboración transversal para consistencia visual y funcional."
+						],
+						[
+							"Coordinación de proyectos de arte enfocados en marketing digital y UX.",
+							"Aplicación de metodologías ágiles para gestión creativa eficiente.",
+							"Automatización avanzada de flujos en diseño web y desarrollo.",
+							"Estructuración de sistema de diseño escalable y desacoplado.",
+							"Colaboración transversal para consistencia visual y funcional."
+						],
+						[
+							"Coordinación de proyectos de arte enfocados en marketing digital y UX.",
+							"Aplicación de metodologías ágiles para gestión creativa eficiente.",
+							"Automatización avanzada de flujos en diseño web y desarrollo.",
+							"Estructuración de sistema de diseño escalable y desacoplado.",
+							"Colaboración transversal para consistencia visual y funcional."
+						]
+					]
+				},
+				"liverpool": {
+					"rol": "Diseñador UX/UI Senior",
+					"fecha": "feb 2023 - sep 2025",
+					"bullets": [
+						[
+							"Creación de archivos de diseño para equipos de desarrollo en iOS, Android y web.",
+							"Prototipado de alta fidelidad en Figma para grandes sistemas de comercio electrónico y fintech.",
+							"Gestión simultánea de 3 a 5 equipos y proyectos relacionados con UX/UI.",
+							"Rediseño de proyectos existentes para optimización y mejora de flujos de usuario."
+						],
+						[
+							"Desarrollo de herramientas de automatización para diseño basado en Figma, logrando una reducción del 90% en los tiempos de diseño.",
+							"Actualización de sistemas de diseño y kits de interfaz de usuario (UI Kits) con nuevas tecnologías, como variables en Figma.",
+							"Creación de archivos de diseño para equipos de desarrollo en iOS, Android y web."
+						],
+						[
+							"Creación de archivos de diseño para equipos de desarrollo en iOS, Android y web.",
+							"Prototipado de alta fidelidad en Figma para grandes sistemas de comercio electrónico y fintech.",
+							"Gestión simultánea de 3 a 5 equipos y proyectos relacionados con UX/UI.",
+							"Rediseño de proyectos existentes para optimización y mejora de flujos de usuario."
+						],
+						[
+							"Creación de archivos de diseño para equipos de desarrollo en iOS, Android y web.",
+							"Prototipado de alta fidelidad en Figma para grandes sistemas de comercio electrónico y fintech.",
+							"Gestión simultánea de 3 a 5 equipos y proyectos relacionados con UX/UI.",
+							"Rediseño de proyectos existentes para optimización y mejora de flujos de usuario."
+						]
+					]
+				},
+				"grupoPm": {
+					"rol": "Diseñador UX/UI Senior",
+					"fecha": "nov 2021 - feb 2023",
+					"bullets": [
+						[
+							"Diseño de sistemas de pago, inventario y administración de usuarios para el Instituto Mexicano del Seguro Social.",
+							"Redacción de historias de usuario y técnicas para journeys.",
+							"Gestión simultánea de 3 a 5 equipos y proyectos relacionados con UX/UI.",
+							"Creación de prototipos altamente interactivos utilizados en presentaciones gubernamentales y presidenciales."
+						],
+						[
+							"Diseño de sistemas de pago, inventario y administración de usuarios para el Instituto Mexicano del Seguro Social.",
+							"Gestión simultánea de 3 a 5 equipos y proyectos relacionados con UX/UI.",
+							"Creación de prototipos altamente interactivos utilizados en presentaciones gubernamentales y presidenciales."
+						],
+						[
+							"Diseño de sistemas de pago, inventario y administración de usuarios para el Instituto Mexicano del Seguro Social.",
+							"Redacción de historias de usuario y técnicas para journeys.",
+							"Gestión simultánea de 3 a 5 equipos y proyectos relacionados con UX/UI.",
+							"Creación de prototipos altamente interactivos utilizados en presentaciones gubernamentales y presidenciales."
+						],
+						[
+							"Diseño de sistemas de pago, inventario y administración de usuarios para el Instituto Mexicano del Seguro Social.",
+							"Redacción de historias de usuario y técnicas para journeys.",
+							"Gestión simultánea de 3 a 5 equipos y proyectos relacionados con UX/UI.",
+							"Creación de prototipos altamente interactivos utilizados en presentaciones gubernamentales y presidenciales."
+						]
+					]
+				},
+				"marsoft": {
+					"rol": "Cofundador y Director de diseño",
+					"fecha": "abr 2018 - nov 2021",
+					"bullets": [
+						[
+							"Investigación de soluciones de experiencia e interfaz para diversas industrias y propósitos.",
+							"Prototipado de alta fidelidad en Figma y Adobe XD.",
+							"Investigación de requisitos suaves y duros directamente con usuarios finales y empresas.",
+							"Comunicación directa y gestión de repositorios con clientes."
+						],
+						[
+							"Investigación de soluciones de experiencia e interfaz para diversas industrias y propósitos.",
+							"Prototipado de alta fidelidad en Figma y Adobe XD.",
+							"Atención a proyectos variados:"
+						],
+						[
+							"Investigación de soluciones de experiencia e interfaz para diversas industrias y propósitos.",
+							"Investigación de requisitos suaves y duros directamente con usuarios finales y empresas.",
+							"Comunicación directa y gestión de repositorios con clientes."
+						],
+						[
+							"Investigación de soluciones de experiencia e interfaz para diversas industrias y propósitos.",
+							"Prototipado de alta fidelidad en Figma y Adobe XD.",
+							"Investigación de requisitos suaves y duros directamente con usuarios finales y empresas.",
+							"Comunicación directa y gestión de repositorios con clientes."
+						]
+					]
+				}
+			}
+		},
+		"projects": {
+			"items": {
+				"paramo": {
+					"rol": "Project manager / Diseñador web",
+					"fecha": "oct 2023 - Actualidad",
+					"bullets": [
+						[
+							"Gestión de equipos de diseño para la creación de un libro web animado e interactivo sobre animales mitológicos mexicanos.",
+							"Diseño y desarrollo del sitio utilizando React, JS y Figma."
+						],
+						[
+							"Gestión de equipos de diseño para la creación de un libro web animado e interactivo sobre animales mitológicos mexicanos.",
+							"Diseño y desarrollo del sitio utilizando React, JS y Figma."
+						],
+						[
+							"Gestión de equipos de diseño para la creación de un libro web animado e interactivo sobre animales mitológicos mexicanos.",
+							"Diseño y desarrollo del sitio utilizando React, JS y Figma."
+						],
+						[
+							"Gestión de equipos de diseño para la creación de un libro web animado e interactivo sobre animales mitológicos mexicanos.",
+							"Diseño y desarrollo del sitio utilizando React, JS y Figma."
+						]
+					]
+				},
+				"uamAzcapotzalco": {
+					"rol": "Desarrollador UX/UI",
+					"fecha": "may 2022 - Actualidad",
+					"bullets": [
+						[
+							"Diseño y desarrollo de un sitio web de visualización de datos sobre el fenómeno del ruido en la Ciudad de México y el Área Metropolitana.",
+							"Desarrollado utilizando JS, Processing y SASS, con repositorios alojados en GitHub."
+						],
+						[
+							"Diseño y desarrollo de un sitio web de visualización de datos sobre el fenómeno del ruido en la Ciudad de México y el Área Metropolitana.",
+							"Desarrollado utilizando JS, Processing y SASS, con repositorios alojados en GitHub."
+						],
+						[
+							"Diseño y desarrollo de un sitio web de visualización de datos sobre el fenómeno del ruido en la Ciudad de México y el Área Metropolitana.",
+							"Desarrollado utilizando JS, Processing y SASS, con repositorios alojados en GitHub."
+						],
+						[
+							"Diseño y desarrollo de un sitio web de visualización de datos sobre el fenómeno del ruido en la Ciudad de México y el Área Metropolitana.",
+							"Desarrollado utilizando JS, Processing y SASS, con repositorios alojados en GitHub."
+						]
+					]
+				},
+				"hultzPrice": {
+					"rol": "Comité y experto en UX/UI",
+					"fecha": "ene 2022 - jun 2023",
+					"bullets": [
+						[
+							"Participación en el comité organizador, diseñando banners, videos y recursos gráficos.",
+							"Expositor en temas de UI/UX y branding."
+						],
+						[
+							"Participación en el comité organizador, diseñando banners, videos y recursos gráficos.",
+							"Expositor en temas de UI/UX y branding."
+						],
+						[
+							"Participación en el comité organizador, diseñando banners, videos y recursos gráficos.",
+							"Expositor en temas de UI/UX y branding."
+						],
+						[
+							"Participación en el comité organizador, diseñando banners, videos y recursos gráficos.",
+							"Expositor en temas de UI/UX y branding."
+						]
+					]
+				}
+			}
+		}
+	},
+	"error": {
+		"title": "Por aquí no",
+		"description1": "Parece que no fuimos capaces de encontrar aquello que estabas buscando.",
+		"description2": "Siéntete libre de explorar el resto del sitio.",
+		"cta": "Ir al inicio del sitio"
+	},
+	"about": {
+		"anchors": {
+			"intro": { "id": "esto-soy-yo", "label": "Esto soy yo" }
+		},
+		"intro": {
+			"title": "Este soy yo",
+			"subtitle": "Te dejo este apartado para que conozcas más sobre mí; más allá de mi trabajo hay otras cosas sobre mí que pueden ser interesantes."
+		},
+		"tabs": {
+			"music": "Música",
+			"manga": "Manga",
+			"games": "Juegos",
+			"sport": "Deporte",
+			"food": "Comida"
+		},
+		"music": {
+			"title": "Escuchar y tocar música es maravilloso",
+			"p1": "Me encanta escuchar música y no solo como fondo mientras camino por la ciudad; realmente me encanta darme mi tiempo para sentarme y escuchar un buen álbum de Pink Floyd, Gorillaz o Joji.",
+			"p2": "También toco y canto; me gusta mucho tomar mi guitarra, mi melódica o la guitarra eléctrica, prender el amplificador y tocar por horas y horas.",
+			"instruments": {
+				"guitar": "Guitarra",
+				"electricGuitar": "Guitarra eléctrica",
+				"melodica": "Melódica",
+				"voice": "Voz",
+				"amplifier": "Amplificador"
+			},
+			"recentlyListening": "Últimamente he estado escuchando:"
+		},
+		"sport": {
+			"title": "Me encanta nadar",
+			"p1": "Llevo nadando ya más de un año y no podría estar más enamorado de este deporte; es una sensación increíble poder perderme en el agua después de un día de trabajo.",
+			"p2": "Si tuviera que hacer un tier-list de qué estilo me gusta más...",
+			"styles": {
+				"apnea": "Apnea",
+				"backstroke": "Dorso",
+				"free": "Libre",
+				"breaststroke": "Pecho",
+				"butterfly": "Mariposa"
+			}
+		},
+		"games": {
+			"title": "Soy más de singleplayer...",
+			"p1": "Me gustan los juegos donde me encuentro solo descubriendo una gran historia. Diría que mis géneros favoritos son los walking simulators, los metroidvania y los plataformeros clásicos. Definitivamente mi juego favorito es Hollow Knight.",
+			"silksong": "P.D. ¡Silksong es real!",
+			"boardTitle": "...pero me encantan los juegos de mesa",
+			"boardParagraph": "Últimamente he estado coleccionando y descubriendo juegos de mesa que me han encantado; no tengo muchos aún en mi colección, pero pronto estaré rodeado de ellos."
+		},
+		"food": {
+			"title": "Comida asiática, cocinar y una receta",
+			"p1": "Me encanta comer, pero también amo cocinar. De las cosas que más suelo cocinar está la comida asiática, desde platillos salados como ramen, gyozas u onigiris, hasta platillos dulces como el helado de matcha. La comida mexicana obviamente me encanta también; hago una birria espectacular, y aquí les dejo una receta de salsa verde cruda para que puedan disfrutarla con su familia.",
+			"ingredients": {
+				"celery": "Apio",
+				"tomato": "Tomate",
+				"mint": "Hierbabuena",
+				"serranoPepper": "Chile serrano",
+				"orange": "Naranja",
+				"lemon": "Limón",
+				"salt": "Sal"
+			},
+			"ingredientsHeading": "Ingredientes",
+			"instructionsHeading": "Instrucciones",
+			"recipeIngredients": [
+				"Rama de apio",
+				"Tomates (jitomate verde)",
+				"Hojas de hierbabuena",
+				"Chiles serranos",
+				"Naranja",
+				"Limón verde sin semilla",
+				"Sal",
+				"Orégano",
+				"Agua"
+			],
+			"recipeSteps": [
+				"Picamos la rama de apio, los tomates, las hojas de hierbabuena y el chile serrano.",
+				"Exprimimos el jugo del limón y el de naranja; reservamos.",
+				"Molcajeteamos o procesamos con la licuadora y agregamos la sal y el orégano al gusto.",
+				"Si lo requiere la licuadora o el molcajete, puedes agregar agua poco a poco hasta lograr la consistencia que más te guste; yo la prefiero un poco más espesa.",
+				"Acompaña con totopos o para unos taquitos."
+			]
+		},
+		"manga": {
+			"title": "Slices of life, terror ¿y mechas?",
+			"p1": "Soy más de leer manga que de ver anime, y así he encontrado autores increíbles que me han hecho pasar buenos y malos momentos. Aquí está mi top de mangas, aunque, si es posible, deberías leer más sobre el autor.",
+			"animeIntro": "A pesar de que prefiero el formato manga, hay obras que definitivamente no podría disfrutar sino viéndolas a todo color y animadas. Te recomiendo mucho darles un vistazo; podrían gustarte bastante."
+		}
+	},
+	"seo": {
+		"home": {
+			"title": "Saúl Hernández | Portafolio de diseño UI/UX",
+			"description": "Diseñador UI/UX con más de 9 años de experiencia en e-commerce y fintech. Apasionado por los sistemas de diseño, la optimización de procesos y la creación de herramientas innovadoras."
+		},
+		"works": {
+			"title": "Trabajos | Saúl Hernández",
+			"description": "Una colección de casos de estudio de diseño UI/UX en e-commerce, fintech y sistemas de diseño, además de una línea de tiempo de experiencia profesional."
+		},
+		"resume": {
+			"title": "Currículum | Saúl Hernández",
+			"description": "Currículum y experiencia laboral de Saúl Hernández, diseñador UI/UX especializado en sistemas de diseño, investigación y diseño de producto."
+		},
+		"about": {
+			"title": "Sobre mí | Saúl Hernández",
+			"description": "Conoce a Saúl Hernández más allá del diseño: música, deportes, videojuegos, manga y comida."
+		},
+		"glue": {
+			"title": "GLUE y DesignOps | Caso de estudio",
+			"description": "Como parte de la evolución del sistema de diseño en Liverpool, integramos herramientas de automatización, adoptamos variables de Figma y optimizamos la auditoría y administración del sistema."
+		},
+		"movilidad": {
+			"title": "MoviLidad — Red de carga para autos eléctricos | Caso de estudio",
+			"description": "Aplicativo para el ofrecimiento de centros de carga para automóviles eléctricos, incluyendo el flujo transaccional y el diseño de métodos de pago."
+		},
+		"hubbub": {
+			"title": "HUBBUB — Visualización del ruido en la CDMX | Caso de estudio",
+			"description": "Sitio web para el despliegue de data sobre el fenómeno del ruido en la CDMX y área Metropolitana."
+		},
+		"notFound": {
+			"title": "Página no encontrada | Saúl Hernández",
+			"description": "La página que buscas no existe. Regresa a la página principal del portafolio."
+		}
+	}
+}

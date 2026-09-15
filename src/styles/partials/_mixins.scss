@@ -1,0 +1,77 @@
+@use "variables" as *;
+
+@mixin fnFont($font, $size, $decoration, $color) {
+    font-family: $font, sans-serif;
+    font-size: $size;
+    text-decoration: $decoration;
+    color: $color;
+    @include mobile {
+        font-size: calc($size * 1.2);
+    }
+}
+
+@mixin fnFlex($direction, $justify, $align, $gap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+// Breakpoints: 860px (mobile) and 1200px (tablet) cover the vast majority of
+// this file's responsive rules. breakpoint($max-width) covers the rest.
+@mixin mobile {
+    @media (max-width: 860px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin breakpoint($max-width) {
+    @media (max-width: $max-width) {
+        @content;
+    }
+}
+
+// Shared neumorphic "soft shadow" hover effect (used by fnCard and a few
+// one-off hover states with different offsets/blur/colors).
+@mixin softShadow($offset, $blur, $color1, $color2) {
+    box-shadow:
+        $offset $offset $blur $color1,
+        (-$offset) (-$offset) $blur $color2;
+}
+
+// Social icon row used by both .contact-card__redes instances (nav header
+// and the "get in touch" section) — identical markup/behavior in both.
+@mixin socialIcons() {
+    @include fnFlex(row, center, center, 2rem);
+    img {
+        width: 4rem;
+        height: 4rem;
+        @include tablet {
+            width: 5rem;
+            height: 5rem;
+        }
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+@mixin fnCard() {
+    background-color: $shade-0;
+    border-radius: 2rem;
+    padding: 2.5rem;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        @include softShadow(2rem, 4rem, #d2d2d2, $shade-0);
+        transform: scale(1.02);
+    }
+}

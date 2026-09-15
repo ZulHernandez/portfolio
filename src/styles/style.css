@@ -444,25 +444,30 @@ a {
 .nav-header__links span.active {
   text-decoration: none;
 }
-.nav-header__options span {
+.nav-header__options span,
+.nav-header__options button {
   font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.4rem;
   text-decoration: none;
   color: #333333;
 }
 @media (max-width: 860px) {
-  .nav-header__options span {
+  .nav-header__options span,
+  .nav-header__options button {
     font-size: 1.68rem;
   }
 }
-.nav-header__options span {
+.nav-header__options span,
+.nav-header__options button {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.nav-header__options span:hover {
+.nav-header__options span:hover,
+.nav-header__options button:hover {
   text-decoration: underline;
 }
-.nav-header__options span.active {
+.nav-header__options span.active,
+.nav-header__options button.active {
   color: #ff2079;
   text-decoration: none;
 }
@@ -621,7 +626,7 @@ a {
   width: 100%;
 }
 .card-kpi__header h4 {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.4rem;
   text-decoration: none;
   color: #333333;
@@ -932,7 +937,7 @@ a {
   gap: 0.5rem;
 }
 #colab .colab-card__head__text h3 {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 2.4rem;
   text-decoration: none;
   color: #4d4d4d;
@@ -943,7 +948,7 @@ a {
   }
 }
 #colab .colab-card h4 {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 2rem;
   text-decoration: none;
   color: #4d4d4d;
@@ -1309,7 +1314,7 @@ footer img {
 }
 #mis-trabajos .work-list .work-card:hover,
 #my-works .work-list .work-card:hover {
-  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
   transform: scale(1.02);
 }
 #mis-trabajos .work-list .work-card img,
@@ -1363,7 +1368,7 @@ footer img {
 }
 #mis-trabajos .work-list .work-card__body-info-head h3,
 #my-works .work-list .work-card__body-info-head h3 {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 2.4rem;
   text-decoration: none;
   color: #333333;
@@ -1598,7 +1603,7 @@ footer img {
 #linea-del-tiempo .time-line-squema__container-item:hover,
 #timeline .time-line-squema__container-item:hover {
   background-color: #ff2079;
-  box-shadow: 2px 2px 4px #c4c4c4, -2px -2px 4px #ffffff;
+  box-shadow: 2px 2px 4px #c4c4c4, -2px -2px 4px #fff;
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -1691,7 +1696,7 @@ footer img {
 }
 #linea-del-tiempo .time-line-info__card-head__text h2,
 #timeline .time-line-info__card-head__text h2 {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 2.4rem;
   text-decoration: none;
   color: #4d4d4d;
@@ -1704,7 +1709,7 @@ footer img {
 }
 #linea-del-tiempo .time-line-info h3,
 #timeline .time-line-info h3 {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 2rem;
   text-decoration: none;
   color: #4d4d4d;
@@ -1778,7 +1783,7 @@ footer img {
 }
 #esto-soy-yo .tab-buttons__item:hover,
 #this-is-me .tab-buttons__item:hover {
-  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
   transform: scale(1.02);
 }
 #esto-soy-yo .tab-buttons__item,
@@ -1846,7 +1851,7 @@ footer img {
 }
 #esto-soy-yo .tab-body:hover,
 #this-is-me .tab-body:hover {
-  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
   transform: scale(1.02);
 }
 #esto-soy-yo .tab-body,
@@ -1913,7 +1918,7 @@ footer img {
 }
 #esto-soy-yo .tab-content__info-text h2,
 #this-is-me .tab-content__info-text h2 {
-  font-family: "Raleway-semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 2.4rem;
   text-decoration: none;
   color: #333333;
@@ -1926,7 +1931,7 @@ footer img {
 }
 #esto-soy-yo .tab-content__info-text h4,
 #this-is-me .tab-content__info-text h4 {
-  font-family: "Raleway-semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.8rem;
   text-decoration: none;
   color: #333333;
@@ -1969,7 +1974,7 @@ footer img {
 }
 #esto-soy-yo .tab-content__info-text__list-item span,
 #this-is-me .tab-content__info-text__list-item span {
-  font-family: "Raleway-semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.4rem;
   text-decoration: none;
   color: #333333;
@@ -2005,7 +2010,7 @@ footer img {
 }
 #esto-soy-yo .music-list .music-card:hover,
 #this-is-me .music-list .music-card:hover {
-  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
   transform: scale(1.02);
 }
 #esto-soy-yo .music-list .music-card,
@@ -2061,7 +2066,7 @@ footer img {
 }
 #esto-soy-yo .music-list .music-card__info p,
 #this-is-me .music-list .music-card__info p {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.6rem;
   text-decoration: none;
   color: #666666;
@@ -2145,7 +2150,7 @@ footer img {
 }
 #esto-soy-yo .receipe__ingredients h3,
 #this-is-me .receipe__ingredients h3 {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.6rem;
   text-decoration: none;
   color: #333333;
@@ -2190,7 +2195,7 @@ footer img {
 }
 #esto-soy-yo .receipe__instructions h3,
 #this-is-me .receipe__instructions h3 {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.6rem;
   text-decoration: none;
   color: #333333;
@@ -2236,7 +2241,7 @@ footer img {
 }
 #sumario .sumario-card:hover,
 #summary .sumario-card:hover {
-  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
   transform: scale(1.02);
 }
 #sumario .sumario-card,
@@ -2302,7 +2307,7 @@ footer img {
 }
 #sumario .sumario-card__body-text-upper-head h2,
 #summary .sumario-card__body-text-upper-head h2 {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 2.4rem;
   text-decoration: none;
   color: #333333;
@@ -2371,7 +2376,7 @@ footer img {
 }
 #sumario .sumario-card__body-text-lower-bullets #principal,
 #summary .sumario-card__body-text-lower-bullets #principal {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.8rem;
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted;
@@ -2468,7 +2473,7 @@ footer img {
 }
 #contexto .time-list .time-card-body__item-head h5,
 #context .time-list .time-card-body__item-head h5 {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.4rem;
   text-decoration: none;
   color: #808080;
@@ -2542,7 +2547,7 @@ footer img {
   transition: all 0.3s ease-in-out;
 }
 .tokens-list__card:hover {
-  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
   transform: scale(1.02);
 }
 .tokens-list__card {
@@ -2574,7 +2579,7 @@ footer img {
   width: 2rem;
 }
 .tokens-list__card-header-title span {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 2rem;
   text-decoration: none;
   color: #4d4d4d;
@@ -2676,7 +2681,7 @@ footer img {
   }
 }
 .kpis-list__card-header span {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 2rem;
   text-decoration: none;
   color: #4d4d4d;
@@ -2764,7 +2769,7 @@ footer img {
 }
 #mejora-de-insumos .bullet__body__card:hover,
 #improvement-of-inputs .bullet__body__card:hover {
-  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
   transform: scale(1.02);
 }
 #mejora-de-insumos .bullet__body__card,
@@ -2854,7 +2859,7 @@ footer img {
 }
 #automatizacion-de-procesos .plugins-carrousel__card:hover,
 #automation-of-processes .plugins-carrousel__card:hover {
-  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
   transform: scale(1.02);
 }
 #automatizacion-de-procesos .plugins-carrousel__card,
@@ -2934,7 +2939,7 @@ footer img {
 }
 #automatizacion-de-procesos .plugins-carrousel__card .subtitle,
 #automation-of-processes .plugins-carrousel__card .subtitle {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.6rem;
   text-decoration: none;
   color: #666666;
@@ -3052,7 +3057,7 @@ footer img {
 }
 #futuros-pasos .backlog__card:hover,
 #future-steps .backlog__card:hover {
-  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
   transform: scale(1.02);
 }
 #futuros-pasos .backlog__card,
@@ -3122,7 +3127,7 @@ footer img {
 }
 #futuros-pasos .backlog__card-header-tag span,
 #future-steps .backlog__card-header-tag span {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.4rem;
   text-decoration: none;
   color: #fff;
@@ -3184,7 +3189,7 @@ footer img {
   transition: all 0.3s ease-in-out;
 }
 .work-list .work-card:hover {
-  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
   transform: scale(1.02);
 }
 .work-list .work-card img {
@@ -3229,7 +3234,7 @@ footer img {
   gap: 1rem;
 }
 .work-list .work-card__body-info-head h3 {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 2.4rem;
   text-decoration: none;
   color: #333333;
@@ -3540,7 +3545,7 @@ footer img {
 }
 #interfaz .questions__item-grafica-preg span,
 #interface .questions__item-grafica-preg span {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.5rem;
   text-decoration: none;
   color: #ff2079;
@@ -3555,7 +3560,7 @@ footer img {
 #interface .questions__item-grafica-preg {
   width: 100%;
   text-align: center;
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.25rem;
   text-decoration: none;
   color: #ff2079;
@@ -3712,7 +3717,7 @@ footer img {
 }
 #interfaz .exercise__text-column__item h3,
 #interface .exercise__text-column__item h3 {
-  font-family: "Raleway-bold", sans-serif;
+  font-family: "Raleway-Bold", sans-serif;
   font-size: 1.5rem;
   text-decoration: none;
   color: #333333;
@@ -3794,7 +3799,7 @@ footer img {
 }
 #notificaciones .example-container__control-buttons-item span,
 #notifications .example-container__control-buttons-item span {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 2.4rem;
   text-decoration: none;
   color: #333333;
@@ -3904,7 +3909,7 @@ footer img {
 }
 #flujo-y-metodos .flow-schema-item span,
 #flow-and-methods .flow-schema-item span {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.2rem;
   text-decoration: none;
   color: #ff2079;
@@ -4007,7 +4012,7 @@ footer img {
 }
 #flujo-y-metodos .flow-description-content .flow-schema-item span,
 #flow-and-methods .flow-description-content .flow-schema-item span {
-  font-family: "Raleway-Semibold", sans-serif;
+  font-family: "Raleway-SemiBold", sans-serif;
   font-size: 1.2rem;
   text-decoration: none;
   color: #ff2079;
@@ -4318,10 +4323,10 @@ iframe {
 .design-space .first-column {
   display: flex;
   flex-direction: column;
-  justify-content: space between;
+  justify-content: space-between;
   align-items: space-between;
   gap: 3rem;
-  height: 100 .design-space .first-column;
+  height: 100%;
 }
 @media (max-width: 860px) {
   .design-space .first-column {
@@ -4418,7 +4423,7 @@ iframe {
 .design-space .second-column .colours div span {
   width: 100%;
   text-align: center;
-  font-family: "Raleway-bold", sans-serif;
+  font-family: "Raleway-Bold", sans-serif;
   font-size: 2rem;
   text-decoration: none;
   color: #666666;
@@ -4611,7 +4616,7 @@ iframe {
   transition: all 0.3s ease-in-out;
 }
 #resume .resume__sheet:hover {
-  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #ffffff;
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
   transform: scale(1.02);
 }
 #resume .resume__sheet {
@@ -4840,4 +4845,4 @@ iframe {
   .resume__sheet-content__body {
     width: 100%;
   }
-}/*# sourceMappingURL=style.css.map */
+}

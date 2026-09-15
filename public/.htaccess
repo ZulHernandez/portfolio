@@ -1,0 +1,23 @@
+# Portafolio de Saúl Hernández — SPA (React Router, BrowserRouter) servida
+# como archivos estáticos en hosting compartido (Hostinger).
+#
+# Sin esto, entrar directo a una ruta como /works/glue (o refrescar la
+# página ahí) devuelve 404, porque en el servidor no existe ningún archivo
+# real con ese nombre — React Router solo la entiende del lado del cliente.
+#
+# scripts/generate-seo-html.mjs SÍ genera un archivo real en build time para
+# cada ruta conocida (works/glue/index.html, resume/index.html, etc.) con su
+# propio <title>/meta description/og:* — pensado para bots que no ejecutan
+# JavaScript (Facebook, X/Twitter, WhatsApp, Slack...). Por eso el rewrite de
+# abajo primero revisa si la ruta pedida ya existe como archivo o carpeta
+# real, y solo cae al index.html genérico (el shell de la SPA) si no.
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+
+	RewriteCond %{REQUEST_FILENAME} -f [OR]
+	RewriteCond %{REQUEST_FILENAME} -d
+	RewriteRule ^ - [L]
+
+	RewriteRule ^ index.html [L]
+</IfModule>

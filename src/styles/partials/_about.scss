@@ -1,0 +1,222 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+//main About
+
+#esto-soy-yo,
+#this-is-me {
+    padding: 10rem 15rem;
+    @include tablet {
+        padding: 15rem 10rem;
+    }
+    .tab {
+        @include fnFlex(row, center, center, 5rem);
+        width: 100%;
+        &-buttons {
+            @include fnFlex(row, space-between, center, 1rem);
+            width: 100%;
+            &__item {
+                @include fnFlex(row, center, center, 1rem);
+                @include fnCard();
+                padding: 1rem 2rem;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    text-decoration: underline;
+                }
+                img {
+                    width: 2rem;
+                    height: 2rem;
+                    @include tablet {
+                        width: 3rem;
+                        height: 3rem;
+                    }
+                }
+                &.active {
+                    background-color: $shade-0;
+                    border-radius: 5px;
+                    span {
+                        display: block;
+                        @include tablet {
+                            display: none;
+                        }
+                    }
+                }
+                &.inactive {
+                    opacity: 25%;
+                    span {
+                        display: block;
+                        @include tablet {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        &-body {
+            @include fnFlex(column, flex-start, flex-start, 5rem);
+            @include fnCard();
+            width: 100%;
+            background-color: $shade-0;
+            width: calc(100% - 16rem);
+            padding: 3rem;
+            margin: 0px 5rem;
+            @include mobile {
+                width: calc(100% - 6rem);
+            }
+        }
+        &-content {
+            @include fnFlex(row, center, flex-start, 3rem);
+            width: 100%;
+            @include mobile {
+                @include fnFlex(column, center, center, 3rem);
+            }
+            .div-img {
+                height: 20rem;
+                aspect-ratio: 1/1;
+                border-radius: 1rem;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                @include mobile {
+                    width: 100%;
+                    border-radius: 2rem;
+                }
+            }
+            &__info {
+                width: 100%;
+                &-text {
+                    @include fnFlex(column, flex-start, flex-start, 2rem);
+                    width: 100%;
+                    h2 {
+                        @include fnFont("Raleway-SemiBold", 2.4rem, none, $shade-800);
+                    }
+                    h4 {
+                        @include fnFont("Raleway-SemiBold", 1.8rem, none, $shade-800);
+                    }
+                    &__list {
+                        @include fnFlex(row, space-between, space-between, 0rem);
+                        padding: 2rem 5rem 0px 5rem;
+                        width: calc(100% - 10rem);
+                        &-item {
+                            @include fnFlex(column, center, center, 0.5rem);
+                            img {
+                                width: 3rem;
+                                height: 3rem;
+                                @include tablet {
+                                    width: 4rem;
+                                    height: 4rem;
+                                }
+                            }
+                            span {
+                                @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-800);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .music-list {
+        @include fnFlex(row, flex-start, flex-start, 3rem);
+        width: 100%;
+        clip-path: fill-box;
+        overflow-x: scroll;
+
+        .music-card {
+            @include fnFlex(column, center, center, 1rem);
+            @include fnCard();
+            max-width: 30rem;
+            width: 100%;
+            min-width: 20rem;
+            background-color: $shade-25;
+            margin: 0rem 0px 5rem 0px;
+            display: block;
+            &__cover {
+                width: 100%;
+                aspect-ratio: 1/1;
+                display: block;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                iframe {
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 1/1;
+                    border-radius: 0px;
+                }
+            }
+            &__info {
+                @include fnFlex(column, center, flex-start, 1rem);
+                width: 100%;
+                h3 {
+                    @include fnFont("Raleway-Black", 3rem, none, $shade-800);
+                    margin-bottom: 1rem;
+                }
+                p {
+                    @include fnFont("Raleway-SemiBold", 1.6rem, none, $shade-600);
+                }
+                #year {
+                    @include fnFont("Raleway-Regular", 1.6rem, none, $shade-600);
+                }
+            }
+        }
+    }
+    .frame-container {
+        @include fnFlex(row, center, center, 0rem);
+        width: 100%;
+        div {
+            width: calc((100% - 1rem * 7) / 8);
+            clip-path: none;
+            align-items: center !important;
+            justify-content: center !important;
+            display: flex;
+            img {
+                width: 30rem;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+    .receipe {
+        @include fnFlex(row, center, center, 5rem);
+        width: 80%;
+        text-align: left;
+        @include mobile {
+            @include fnFlex(column, center, flex-start, 5rem);
+            width: 80%;
+        }
+        &__ingredients {
+            @include fnFlex(column, center, flex-start, 2rem);
+            width: 40%;
+            @include mobile {
+                width: 100%;
+            }
+            h3 {
+                @include fnFont("Raleway-SemiBold", 1.6rem, none, $shade-800);
+            }
+            &-list {
+                @include fnFlex(column, flex-start, flex-start, 1rem);
+                &-item {
+                    @include fnFlex(row, center, center, 1rem);
+                }
+            }
+        }
+        &__instructions {
+            @include fnFlex(column, center, flex-start, 2rem);
+            gap: 2rem;
+            width: 60%;
+            @include mobile {
+                width: 100%;
+            }
+            h3 {
+                @include fnFont("Raleway-SemiBold", 1.6rem, none, $shade-800);
+            }
+            &-list {
+                @include fnFlex(column, flex-start, flex-start, 1rem);
+                &-item {
+                    @include fnFlex(row, center, flex-start, 0rem);
+                }
+            }
+        }
+    }
+}
