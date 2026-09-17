@@ -7,34 +7,34 @@ import CoWorkList from "../general/CoWorkList";
 import close from "../../assets/imgs/vectores/close.svg";
 
 import useScreenSize from "../context/useScreenSize";
-import varTrabajos from "../context/varTrabajos";
+import useWorksData from "../context/useWorksData";
+import { toTrabajoItem } from "../../utils/worksData";
+import { resolveLang } from "../../utils/experienceData";
 
 const CoTrabajos = () => {
 	const { t, i18n } = useTranslation();
 	const { width } = useScreenSize();
-	const { trabajos } = varTrabajos();
+	const { data } = useWorksData();
+	const lang = resolveLang(i18n.language);
 
-	const tags = trabajos.map(
-		(trabajo) =>
-			t(`works.items.${trabajo.slug}.tags`, { returnObjects: true }) as string[]
+	// Ya resueltos al idioma activo — se recalcula solo cuando cambian los
+	// datos o el idioma, no en cada render (toTrabajoItem crea objetos nuevos).
+	const trabajos = useMemo(
+		() => (data?.works ?? []).map((work) => toTrabajoItem(work, lang)),
+		[data, lang]
 	);
-	const tagsUnicos = [...new Set(tags.flat())].sort();
+
+	const tagsUnicos = useMemo(
+		() => [...new Set(trabajos.flatMap((trabajo) => trabajo.tags))].sort(),
+		[trabajos]
+	);
 
 	const [filtro, setFiltro] = useState("");
 
-	// Antes esto era un segundo useState ("destacados") actualizado a mano en
-	// cada click, lo que lo dejaba desincronizado del idioma (cambiar de EN a
-	// ES con un filtro activo mostraba resultados del idioma anterior).
-	// Al derivarlo con useMemo siempre queda consistente con filtro + idioma.
-	// Depende de `i18n.language` (no de `t`, que es una función nueva cada
-	// render) para recalcular solo cuando el idioma realmente cambia.
 	const destacados = useMemo(() => {
 		if (filtro === "") return trabajos;
-		return trabajos.filter((trabajo) =>
-			(t(`works.items.${trabajo.slug}.tags`, { returnObjects: true }) as string[]).includes(filtro)
-		);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [filtro, trabajos, i18n.language]);
+		return trabajos.filter((trabajo) => trabajo.tags.includes(filtro));
+	}, [filtro, trabajos]);
 
 	return (
 		<div id={t("works.id")} className="container-fluid">

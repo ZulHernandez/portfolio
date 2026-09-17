@@ -13,13 +13,12 @@ interface CoWorkCardProps {
 
 // Tarjeta de un trabajo destacado, compartida entre Home (CoTrabajos) y
 // Works (CoTrabajos). Antes vivía duplicada casi al 100% en ambos archivos.
-// El contenido bilingüe se busca por `trabajo.slug` en works.items.<slug> del
-// JSON de traducciones (ver varTrabajos.ts).
+// El contenido bilingüe ya viene resuelto al idioma activo en `trabajo`
+// (ver public/data/works.json y utils/worksData.ts#toTrabajoItem); aquí solo
+// quedan los textos puramente de interfaz (aria-label del botón).
 const CoWorkCard = ({ trabajo, width, index, activeTag, widthOffsetRem = 6.5 }: CoWorkCardProps) => {
 	const { t } = useTranslation();
-	const base = `works.items.${trabajo.slug}`;
-	const title = t(`${base}.title`);
-	const tags = t(`${base}.tags`, { returnObjects: true }) as string[];
+	const { title, tags } = trabajo;
 	const isFullRow = width > MOBILE_BREAKPOINT && index % 3 === 0;
 
 	return (
@@ -81,19 +80,19 @@ const CoWorkCard = ({ trabajo, width, index, activeTag, widthOffsetRem = 6.5 }: 
 					<br />
 					<div className="work-card__body-info-head">
 						<h3>{title}</h3>
-						<span className="text-normal">{t(`${base}.des`)}</span>
+						<span className="text-normal">{trabajo.description}</span>
 					</div>
 				</div>
 				<div className="work-card__body-foot">
 					<div className="info">
-						<span className="info-date">{t(`${base}.date`)}</span>
+						<span className="info-date">{trabajo.dateLabel}</span>
 						<div className="info__comp">
 							<div className="info__comp-imgs">
 								{trabajo.logo.map((logo, logoIndex) => (
-									<img loading="lazy" key={logoIndex} src={logo} alt={t(`${base}.comp`)} />
+									<img loading="lazy" key={logoIndex} src={logo} alt={trabajo.company} />
 								))}
 							</div>
-							<span className="text-normal">{t(`${base}.comp`)}</span>
+							<span className="text-normal">{trabajo.company}</span>
 						</div>
 					</div>
 					{trabajo.link ? (

@@ -24,7 +24,7 @@
 		},
 		"hola": {
 			"greeting": "Hello, I'm",
-			"p1": "Product Design Chapter Lead with <b>{{years}} years of experience</b>.",
+			"p1": "{{title}} with <b>{{years}} years of experience</b>.",
 			"p2": "I specialize in developing <b>scalable design systems</b> and automating <b>workflows</b> for product teams. I've worked in <b>e-commerce and fintech sectors</b>, focusing on the intersection of design, agile methodologies, and technical efficiency.",
 			"p3": "My current focus is on structuring <b>decoupled systems</b> and <b>customized solutions</b> that optimize <b>visual</b> and <b>functional production</b>."
 		},
@@ -42,51 +42,7 @@
 		"timelineAnchorLabel": "Timeline",
 		"chooseTag": "Choose what catches your attention:",
 		"closeAlt": "Close",
-		"viewCaseStudyAlt": "View {{title}} case study",
-		"items": {
-			"glue": {
-				"tags": ["Development", "Design system"],
-				"title": "GLUE & DesignOps",
-				"des": "Design system automation, tokenization, and maintenance",
-				"date": "feb 2023 - present",
-				"comp": "El Puerto de Liverpool"
-			},
-			"movilidad": {
-				"tags": ["Experience", "Interface", "Research", "Services"],
-				"title": "Electrolineras system, MoviLidad",
-				"des": "Application for the offering of charging centers for electric cars",
-				"date": "oct 2024 - may 2025",
-				"comp": "El Puerto de Liverpool"
-			},
-			"activa": {
-				"tags": ["Experience", "Interface", "Research", "Fintech"],
-				"title": "Activa, a savings and investment product",
-				"des": "Fintech project in collaboration with Actinver on savings and investment for Liverpool users",
-				"date": "mar 2023 - present",
-				"comp": "El Puerto de Liverpool"
-			},
-			"hubbub": {
-				"tags": ["Development", "Experience", "Interface", "Research", "Data visualization"],
-				"title": "HUBBUB and the visualization of noise in Mexico City",
-				"des": "Website for the deployment of data on the phenomenon of noise in Mexico City and its metropolitan area",
-				"date": "feb 2023 - present",
-				"comp": "Laboratorio de Diseño Acústico - UAM Azcapotzalco"
-			},
-			"galeria": {
-				"tags": ["Experience", "Interface", "Research", "Redesign"],
-				"title": "A complete image redesign",
-				"des": "Complete redesign for the Galerias.com site, a chain of shopping centers belonging to El Puerto de Liverpool",
-				"date": "mar 2024 - oct 2024",
-				"comp": "El Puerto de Liverpool"
-			},
-			"gook": {
-				"tags": ["Experience", "Interface", "Research", "E-commerce"],
-				"title": "Let's sell and organize glasses",
-				"des": "Development of an e-commerce site plus CRM with inventory management for an optical store",
-				"date": "aug 2020 - sep 2021",
-				"comp": "Marsoft × Gook Óptica"
-			}
-		}
+		"viewCaseStudyAlt": "View {{title}} case study"
 	},
 	"timeline": {
 		"heading": "Timeline",

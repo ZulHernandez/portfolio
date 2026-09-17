@@ -5,14 +5,17 @@ import "../../i18n";
 import CoTrabajos from "./CoTrabajos";
 
 describe("CoTrabajos", () => {
-	it("filters the work list when a tag is clicked, and clears on a second click", () => {
+	it("filters the work list when a tag is clicked, and clears on a second click", async () => {
 		render(
 			<MemoryRouter>
 				<CoTrabajos />
 			</MemoryRouter>
 		);
 
-		const tagButtons = screen.getAllByRole("button");
+		// Los tags salen de /data/works.json, que ahora se pide en runtime
+		// (useWorksData) en vez de venir ya en el bundle — hay que esperar a
+		// que resuelva el fetch antes de que existan los botones.
+		const tagButtons = await screen.findAllByRole("button");
 		expect(tagButtons.length).toBeGreaterThan(0);
 
 		const firstTag = tagButtons[0];

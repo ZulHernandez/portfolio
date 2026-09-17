@@ -60,15 +60,49 @@ export interface ExperienceGroupMeta {
 /** Forma completa de public/data/experience.json. */
 export interface ExperienceData {
 	location: Bilingual;
+	/** Fecha real de inicio de carrera (usada por CoHola para "X años de experiencia") — no
+	 * necesariamente igual al `startDate` del job más antiguo en `jobs` (puede haber trabajo
+	 * freelance/autodidacta previo que no está dado de alta como job individual). */
+	careerStartDate: string;
 	groups: ExperienceGroupMeta[];
 	jobs: ExperienceJob[];
 }
 
-/** Un caso de portafolio mostrado en home (CoTrabajos/CoWorkList/CoWorkCard). */
+/**
+ * Un caso de portafolio, la unidad de dato de public/data/works.json — la
+ * fuente única que alimenta CoTrabajos (home y works). `hasDetail` indica si
+ * existe una página de caso de estudio propia en /works/<slug> (su contenido
+ * profundo vive aparte, en código + i18n bajo la llave `<slug>.*`, no aquí).
+ */
+export interface WorkEntry {
+	slug: string;
+	title: Bilingual;
+	description: Bilingual;
+	tags: Bilingual<string[]>;
+	company: string;
+	startDate: string;
+	endDate: string | null;
+	hasDetail: boolean;
+}
+
+/** Forma completa de public/data/works.json. */
+export interface WorksData {
+	works: WorkEntry[];
+}
+
+/**
+ * Un caso de portafolio ya resuelto al idioma activo, listo para mostrarse
+ * (CoTrabajos/CoWorkList/CoWorkCard) — ver utils/worksData.ts#toTrabajoItem.
+ */
 export interface TrabajoItem {
 	slug: string;
 	cover: string;
 	covergif: string;
 	logo: string[];
 	link?: string;
+	title: string;
+	description: string;
+	tags: string[];
+	dateLabel: string;
+	company: string;
 }

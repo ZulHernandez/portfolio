@@ -24,7 +24,7 @@
 		},
 		"hola": {
 			"greeting": "Hola, yo soy",
-			"p1": "Product Design Chapter Lead con <b>{{years}} años de experiencia</b>.",
+			"p1": "{{title}} con <b>{{years}} años de experiencia</b>.",
 			"p2": "Me especializo en el desarrollo de <b>sistemas de diseño escalables</b> y la automatización de flujos de trabajo para equipos de producto. He trabajado en <b>sectores de e-commerce y fintech</b>, enfocándome en la intersección entre diseño, metodologías ágiles y eficiencia técnica.",
 			"p3": "Mi enfoque actual se centra en estructurar <b>sistemas desacoplados</b> y <b>soluciones personalizadas</b> que optimizan la <b>producción visual</b> y <b>funcional</b>."
 		},
@@ -42,51 +42,7 @@
 		"timelineAnchorLabel": "Cronología",
 		"chooseTag": "Elige aquello que te llame más la atención:",
 		"closeAlt": "Cerrar",
-		"viewCaseStudyAlt": "Ver caso de estudio de {{title}}",
-		"items": {
-			"glue": {
-				"tags": ["Desarrollo", "Sistema de Diseño"],
-				"title": "GLUE y DesignOps",
-				"des": "Automatización, tokenización y mantenimiento de un Sistema de Diseño",
-				"date": "feb 2023 - actualidad",
-				"comp": "El Puerto de Liverpool"
-			},
-			"movilidad": {
-				"tags": ["Experiencia", "Interfaz", "Investigación", "Servicios"],
-				"title": "Sistema de electrolineras, MoviLidad",
-				"des": "Aplicativo para el ofrecimiento de centro de carga para automóviles eléctricos",
-				"date": "oct 2024 - may 2025",
-				"comp": "El Puerto de Liverpool"
-			},
-			"activa": {
-				"tags": ["Experiencia", "Interfaz", "Investigación", "Fintech"],
-				"title": "Activa, un producto de ahorro e inversión",
-				"des": "Proyecto de fintech en colaboración con Actinver sobre ahorro e inversión para usuarios Liverpool",
-				"date": "mar 2023 - actualidad",
-				"comp": "El Puerto de Liverpool"
-			},
-			"hubbub": {
-				"tags": ["Desarrollo", "Experiencia", "Interfaz", "Investigación", "Visualización de datos"],
-				"title": "HUBBUB y la visualización del ruido en la CDMX",
-				"des": "Sitio web para el despliegue de datos sobre el fenómeno del ruido en la CDMX y su área metropolitana",
-				"date": "feb 2023 - actualidad",
-				"comp": "Laboratorio de Diseño Acústico - UAM Azcapotzalco"
-			},
-			"galeria": {
-				"tags": ["Experiencia", "Interfaz", "Investigación", "Rediseño"],
-				"title": "Un rediseño completo de imagen",
-				"des": "Rediseño completo para el sitio de Galerias.com, cadena de centros comerciales pertenecientes a El Puerto de Liverpool",
-				"date": "mar 2024 - oct 2024",
-				"comp": "El Puerto de Liverpool"
-			},
-			"gook": {
-				"tags": ["Experiencia", "Interfaz", "Investigación", "E-commerce"],
-				"title": "Vendamos y organicemos lentes",
-				"des": "Desarrollo de E-commerce más CRM con administración de inventarios para una tienda de óptica",
-				"date": "ago 2020 - sep 2021",
-				"comp": "Marsoft × Gook Óptica"
-			}
-		}
+		"viewCaseStudyAlt": "Ver caso de estudio de {{title}}"
 	},
 	"timeline": {
 		"heading": "Línea del tiempo",

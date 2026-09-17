@@ -1,0 +1,176 @@
+{
+  "works": [
+    {
+      "slug": "glue",
+      "title": {
+        "en": "GLUE & DesignOps",
+        "es": "GLUE y DesignOps"
+      },
+      "description": {
+        "en": "Design system automation, tokenization, and maintenance",
+        "es": "Automatización, tokenización y mantenimiento de un Sistema de Diseño"
+      },
+      "tags": {
+        "en": [
+          "Development",
+          "Design system"
+        ],
+        "es": [
+          "Desarrollo",
+          "Sistema de Diseño"
+        ]
+      },
+      "company": "El Puerto de Liverpool",
+      "startDate": "2023-02-01",
+      "endDate": null,
+      "hasDetail": true
+    },
+    {
+      "slug": "movilidad",
+      "title": {
+        "en": "Electrolineras system, MoviLidad",
+        "es": "Sistema de electrolineras, MoviLidad"
+      },
+      "description": {
+        "en": "Application for the offering of charging centers for electric cars",
+        "es": "Aplicativo para el ofrecimiento de centro de carga para automóviles eléctricos"
+      },
+      "tags": {
+        "en": [
+          "Experience",
+          "Interface",
+          "Research",
+          "Services"
+        ],
+        "es": [
+          "Experiencia",
+          "Interfaz",
+          "Investigación",
+          "Servicios"
+        ]
+      },
+      "company": "El Puerto de Liverpool",
+      "startDate": "2024-10-01",
+      "endDate": "2025-05-01",
+      "hasDetail": true
+    },
+    {
+      "slug": "activa",
+      "title": {
+        "en": "Activa, a savings and investment product",
+        "es": "Activa, un producto de ahorro e inversión"
+      },
+      "description": {
+        "en": "Fintech project in collaboration with Actinver on savings and investment for Liverpool users",
+        "es": "Proyecto de fintech en colaboración con Actinver sobre ahorro e inversión para usuarios Liverpool"
+      },
+      "tags": {
+        "en": [
+          "Experience",
+          "Interface",
+          "Research",
+          "Fintech"
+        ],
+        "es": [
+          "Experiencia",
+          "Interfaz",
+          "Investigación",
+          "Fintech"
+        ]
+      },
+      "company": "El Puerto de Liverpool",
+      "startDate": "2023-03-01",
+      "endDate": null,
+      "hasDetail": false
+    },
+    {
+      "slug": "hubbub",
+      "title": {
+        "en": "HUBBUB and the visualization of noise in Mexico City",
+        "es": "HUBBUB y la visualización del ruido en la CDMX"
+      },
+      "description": {
+        "en": "Website for the deployment of data on the phenomenon of noise in Mexico City and its metropolitan area",
+        "es": "Sitio web para el despliegue de datos sobre el fenómeno del ruido en la CDMX y su área metropolitana"
+      },
+      "tags": {
+        "en": [
+          "Development",
+          "Experience",
+          "Interface",
+          "Research",
+          "Data visualization"
+        ],
+        "es": [
+          "Desarrollo",
+          "Experiencia",
+          "Interfaz",
+          "Investigación",
+          "Visualización de datos"
+        ]
+      },
+      "company": "Acoustic Design Laboratory - UAM Azcapotzalco",
+      "startDate": "2023-02-01",
+      "endDate": null,
+      "hasDetail": true
+    },
+    {
+      "slug": "galeria",
+      "title": {
+        "en": "A complete image redesign",
+        "es": "Un rediseño completo de imagen"
+      },
+      "description": {
+        "en": "Complete redesign for the Galerias.com site, a chain of shopping centers belonging to El Puerto de Liverpool",
+        "es": "Rediseño completo para el sitio de Galerias.com, cadena de centros comerciales pertenecientes a El Puerto de Liverpool"
+      },
+      "tags": {
+        "en": [
+          "Experience",
+          "Interface",
+          "Research",
+          "Redesign"
+        ],
+        "es": [
+          "Experiencia",
+          "Interfaz",
+          "Investigación",
+          "Rediseño"
+        ]
+      },
+      "company": "El Puerto de Liverpool",
+      "startDate": "2024-03-01",
+      "endDate": "2024-10-01",
+      "hasDetail": false
+    },
+    {
+      "slug": "gook",
+      "title": {
+        "en": "Let's sell and organize glasses",
+        "es": "Vendamos y organicemos lentes"
+      },
+      "description": {
+        "en": "Development of an e-commerce site plus CRM with inventory management for an optical store",
+        "es": "Desarrollo de E-commerce más CRM con administración de inventarios para una tienda de óptica"
+      },
+      "tags": {
+        "en": [
+          "Experience",
+          "Interface",
+          "Research",
+          "E-commerce"
+        ],
+        "es": [
+          "Experiencia",
+          "Interfaz",
+          "Investigación",
+          "E-commerce"
+        ]
+      },
+      "company": "Marsoft × Gook Óptica",
+      "startDate": "2020-08-01",
+      "endDate": "2021-09-01",
+      "hasDetail": false
+    }
+  ]
+}
