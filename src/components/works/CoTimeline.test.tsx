@@ -4,15 +4,18 @@ import userEvent from "@testing-library/user-event";
 import "../../i18n";
 import CoTimeline from "./CoTimeline";
 
-const visibleNames = () =>
-	screen.getAllByRole("heading", { level: 2 }).slice(1).map((el) => el.textContent);
+// CoTimeline pide su data por fetch (ver useExperienceData.ts) en vez de
+// tenerla ya lista al montar, así que las 3 tarjetas tardan un tick en
+// aparecer — findAllByRole espera en vez de leer sincrónicamente.
+const visibleNames = async () =>
+	(await screen.findAllByRole("heading", { level: 2 })).slice(1).map((el) => el.textContent);
 
 describe("CoTimeline", () => {
 	it("rotates the visible 3-card window forward and back to the original state", async () => {
 		const user = userEvent.setup();
 		render(<CoTimeline />);
 
-		const initial = visibleNames();
+		const initial = await visibleNames();
 		expect(initial).toHaveLength(3);
 
 		// Select the rotate arrows by their accessible name rather than by
@@ -23,11 +26,11 @@ describe("CoTimeline", () => {
 		const nextButton = screen.getByRole("button", { name: "Show next experience" });
 
 		await user.click(nextButton);
-		const afterNext = visibleNames();
+		const afterNext = await visibleNames();
 		expect(afterNext).not.toEqual(initial);
 
 		await user.click(prevButton);
-		const afterPrev = visibleNames();
+		const afterPrev = await visibleNames();
 		expect(afterPrev).toEqual(initial);
 	});
 });

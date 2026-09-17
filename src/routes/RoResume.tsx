@@ -8,6 +8,9 @@ import useScreenSize from "../components/context/useScreenSize";
 import CoBtn from "../components/general/CoBtn";
 import CoSeo from "../components/general/CoSeo";
 import { ACCENT_COLORS } from "../utils/accentColors";
+import { formatDateRange, resolveLang, type Lang } from "../utils/experienceData";
+import useExperienceData from "../components/context/useExperienceData";
+import type { ExperienceJob } from "../types";
 
 // Antes cada uno de los 4 puntos donde se pinta la categoría activa repetía
 // la misma cadena de ternarios con los hex a mano (4 veces en este archivo).
@@ -18,23 +21,15 @@ const RESUME_CATEGORY_COLORS = [
 	ACCENT_COLORS.orange,
 ];
 
-// Nombres propios (empresas/instituciones) no se traducen; viven aquí y se
-// cruzan con el texto traducido de resume.experience.items / resume.projects.items
-// / resume.infos.education (mismo orden = mismo índice/slug).
-const EXPERIENCE_SLUGS = ["galileo", "liverpool", "grupoPm", "marsoft"] as const;
-const EXPERIENCE_COMPANIES: Record<(typeof EXPERIENCE_SLUGS)[number], string> = {
-	galileo: "Galileo | Ben&Frank - Bombavista",
-	liverpool: "El Puerto de Liverpool",
-	grupoPm: "Grupo People Media",
-	marsoft: "Marsoft",
-};
-
-const PROJECT_SLUGS = ["paramo", "uamAzcapotzalco", "hultzPrice"] as const;
-const PROJECT_COMPANIES: Record<(typeof PROJECT_SLUGS)[number], string> = {
-	paramo: "El Páramo de las bestias",
-	uamAzcapotzalco: "UAM Azcapotzalco",
-	hultzPrice: "Hultz Price at UAM",
-};
+// El puesto/proyecto (empresa, rol, fechas, bullets) ahora vive en
+// public/data/experience.json (jobs con presence.resume === "experience" o
+// "projects"), no aquí — ver ese archivo para dar de alta o editar uno.
+//
+// Antes cada empresa tenía 4 variantes de bullets (una por categoría del
+// filtro de arriba); se simplificó a una sola lista por puesto porque en la
+// práctica la mayoría de las variantes eran copias idénticas entre sí. El
+// filtro de categorías sigue afectando el Resumen y las Habilidades (ver
+// `resumenes`/`habilidades` abajo, que sí siguen viniendo de i18n).
 
 // Instituciones educativas, mismo orden que resume.infos.education.bullets.
 const EDUCATION_SUBTEXTS = [
@@ -76,16 +71,15 @@ interface ResumeItem {
 	empresa: string;
 	rol: string;
 	fecha: string;
-	bullets: string[][];
+	bullets: string[];
 	location: string;
 }
 
 interface CoCardResumeProps {
 	experiencia: ResumeItem;
-	filtroResumen: number;
 }
 
-const CoCardResume = ({ experiencia, filtroResumen }: CoCardResumeProps) => {
+const CoCardResume = ({ experiencia }: CoCardResumeProps) => {
 	return (
 		<div className="resume__sheet-content__body-card-experiencia">
 			<h4>
@@ -95,7 +89,7 @@ const CoCardResume = ({ experiencia, filtroResumen }: CoCardResumeProps) => {
 				{experiencia.location} | {experiencia.fecha}
 			</span>
 			<ul>
-				{experiencia.bullets[filtroResumen].map((bullet, index) => (
+				{experiencia.bullets.map((bullet, index) => (
 					<li key={index}>{bullet}</li>
 				))}
 			</ul>
@@ -114,11 +108,16 @@ interface InfoData {
 	bullets: InfoBullet[];
 }
 
-interface ExperienceItemData {
-	rol: string;
-	fecha: string;
-	bullets: string[][];
-}
+// Convierte un ExperienceJob (la forma cruda de experience.json) en el
+// ResumeItem que espera CoCardResume, resolviendo idioma y formateando la
+// fecha una sola vez.
+const toResumeItem = (job: ExperienceJob, lang: Lang, location: string): ResumeItem => ({
+	empresa: job.company,
+	rol: job.role[lang],
+	fecha: formatDateRange(job.startDate, job.endDate, lang),
+	bullets: job.bullets?.resume?.[lang] ?? [],
+	location,
+});
 
 // El currículo necesita existir dos veces en el DOM al mismo tiempo: una copia
 // oculta en pantalla (.printable) que solo se muestra vía @media print a
@@ -126,10 +125,14 @@ interface ExperienceItemData {
 // caber en cualquier viewport (ver style.scss ~L2499-2533). Antes ambas
 // copias eran ~200 líneas de JSX copiadas a mano; ahora es un solo componente
 // que se renderiza dos veces con distinto wrapper.
-const ResumeSheet = ({ filtroResumen }: { filtroResumen: number }) => {
-	const { t } = useTranslation();
+interface ResumeSheetProps {
+	filtroResumen: number;
+	experiencias: ResumeItem[];
+	proyectos: ResumeItem[];
+}
 
-	const location = t("resume.labels.location");
+const ResumeSheet = ({ filtroResumen, experiencias, proyectos }: ResumeSheetProps) => {
+	const { t } = useTranslation();
 
 	const infos = INFO_SLUGS.map((slug) => {
 		const data = t(`resume.infos.${slug}`, { returnObjects: true }) as InfoData;
@@ -145,28 +148,6 @@ const ResumeSheet = ({ filtroResumen }: { filtroResumen: number }) => {
 
 	const habilidades = t("resume.skills.categories", { returnObjects: true }) as string[][];
 	const resumenes = t("resume.summaries.categories", { returnObjects: true }) as string[][];
-
-	const experiencias: ResumeItem[] = EXPERIENCE_SLUGS.map((slug) => {
-		const data = t(`resume.experience.items.${slug}`, { returnObjects: true }) as ExperienceItemData;
-		return {
-			empresa: EXPERIENCE_COMPANIES[slug],
-			rol: data.rol,
-			fecha: data.fecha,
-			bullets: data.bullets,
-			location,
-		};
-	});
-
-	const proyectos: ResumeItem[] = PROJECT_SLUGS.map((slug) => {
-		const data = t(`resume.projects.items.${slug}`, { returnObjects: true }) as ExperienceItemData;
-		return {
-			empresa: PROJECT_COMPANIES[slug],
-			rol: data.rol,
-			fecha: data.fecha,
-			bullets: data.bullets,
-			location,
-		};
-	});
 
 	return (
 		<div className="resume__sheet-body">
@@ -228,7 +209,7 @@ const ResumeSheet = ({ filtroResumen }: { filtroResumen: number }) => {
 						<h3>{t("resume.labels.experience")}</h3>
 						{experiencias.map((experiencia, index) => (
 							<div key={index}>
-								<CoCardResume experiencia={experiencia} filtroResumen={filtroResumen} />
+								<CoCardResume experiencia={experiencia} />
 							</div>
 						))}
 					</div>
@@ -236,7 +217,7 @@ const ResumeSheet = ({ filtroResumen }: { filtroResumen: number }) => {
 						<h3>{t("resume.labels.projects")}</h3>
 						{proyectos.map((proyecto, index) => (
 							<div key={index}>
-								<CoCardResume experiencia={proyecto} filtroResumen={filtroResumen} />
+								<CoCardResume experiencia={proyecto} />
 							</div>
 						))}
 					</div>
@@ -246,8 +227,12 @@ const ResumeSheet = ({ filtroResumen }: { filtroResumen: number }) => {
 	);
 };
 
+const byStartDateDesc = (a: ExperienceJob, b: ExperienceJob) =>
+	a.startDate < b.startDate ? 1 : -1;
+
 const RoResume = () => {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const lang = resolveLang(i18n.language);
 	const { setRuta, setAmplio } = useContext(NavigationContext);
 	// filtroResumen solo se usa dentro de esta página (y sus hijos ResumeSheet/
 	// CoCardResume, vía props), así que ya no necesita vivir en un contexto
@@ -256,6 +241,7 @@ const RoResume = () => {
 	const [filtroResumen, setFiltroResumen] = useState(0);
 	const location = useLocation();
 	const { width } = useScreenSize();
+	const { data } = useExperienceData();
 
 	const tipos = t("resume.categories", { returnObjects: true }) as string[];
 
@@ -266,6 +252,16 @@ const RoResume = () => {
 	useEffect(() => {
 		setAmplio(false); // Reset amplio on route change
 	}, [location.pathname, setAmplio]);
+
+	const resumeLocation = data?.location[lang] ?? "";
+	const experiencias = (data?.jobs ?? [])
+		.filter((job) => job.presence.resume === "experience")
+		.sort(byStartDateDesc)
+		.map((job) => toResumeItem(job, lang, resumeLocation));
+	const proyectos = (data?.jobs ?? [])
+		.filter((job) => job.presence.resume === "projects")
+		.sort(byStartDateDesc)
+		.map((job) => toResumeItem(job, lang, resumeLocation));
 
 	return (
 		<div id="resume" className="container-fluid">
@@ -305,12 +301,24 @@ const RoResume = () => {
 					</button>
 				))}
 			</div>
-			<div className="resume__sheet printable">
-				<ResumeSheet filtroResumen={filtroResumen} />
-			</div>
-			<div className="resume__sheet" style={{ zoom: width / 1200 }}>
-				<ResumeSheet filtroResumen={filtroResumen} />
-			</div>
+			{experiencias.length > 0 && (
+				<>
+					<div className="resume__sheet printable">
+						<ResumeSheet
+							filtroResumen={filtroResumen}
+							experiencias={experiencias}
+							proyectos={proyectos}
+						/>
+					</div>
+					<div className="resume__sheet" style={{ zoom: width / 1200 }}>
+						<ResumeSheet
+							filtroResumen={filtroResumen}
+							experiencias={experiencias}
+							proyectos={proyectos}
+						/>
+					</div>
+				</>
+			)}
 			<CoBtn
 				type={"secondary"}
 				text={t("resume.labels.download")}

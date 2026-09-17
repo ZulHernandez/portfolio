@@ -1,0 +1,416 @@
+{
+  "location": {
+    "en": "Mexico City",
+    "es": "Ciudad de México"
+  },
+  "groups": [
+    {
+      "key": "Freelance",
+      "color": "orange"
+    },
+    {
+      "key": "Marsoft",
+      "color": "blue"
+    },
+    {
+      "key": "Grupo-PM",
+      "color": "purple"
+    },
+    {
+      "key": "Liverpool",
+      "color": "pink"
+    },
+    {
+      "key": "Galileo",
+      "color": "dark"
+    }
+  ],
+  "jobs": [
+    {
+      "slug": "sedema",
+      "group": "Freelance",
+      "name": "SEDEMA",
+      "company": "SEDEMA",
+      "role": {
+        "en": "Web designer",
+        "es": "Diseñador web"
+      },
+      "startDate": "2021-05-01",
+      "endDate": "2021-11-01",
+      "top": "0",
+      "presence": {
+        "timeline": true,
+        "collab": false,
+        "resume": null
+      }
+    },
+    {
+      "slug": "hubbub",
+      "group": "Freelance",
+      "name": "Hubbub",
+      "company": "Hubbub",
+      "role": {
+        "en": "Web developer",
+        "es": "Desarrollador web"
+      },
+      "startDate": "2022-05-01",
+      "endDate": null,
+      "top": "0",
+      "presence": {
+        "timeline": true,
+        "collab": false,
+        "resume": null
+      }
+    },
+    {
+      "slug": "marsoft",
+      "group": "Marsoft",
+      "name": "Marsoft",
+      "company": "Marsoft",
+      "role": {
+        "en": "Co-founder and Design Director",
+        "es": "Cofundador y Director de diseño"
+      },
+      "startDate": "2018-04-01",
+      "endDate": "2021-11-01",
+      "top": "0",
+      "presence": {
+        "timeline": true,
+        "collab": true,
+        "resume": "experience"
+      },
+      "bullets": {
+        "collab": {
+          "en": [
+            "Requirements gathering",
+            "Interface and experience designer and developer",
+            "Management of design and development teams",
+            "Development of SaaS, e-commerce and landing pages"
+          ],
+          "es": [
+            "Levantamiento de requerimientos",
+            "Diseñador y desarrollador de interfaz y experiencia",
+            "Administración de equipos de diseño y desarrollo",
+            "Desarrollo de proyectos SaaS, e-commerce y landing pages"
+          ]
+        },
+        "resume": {
+          "en": [
+            "Research of experience and interface solutions for various industries and purposes.",
+            "High-fidelity prototyping in Figma and Adobe XD.",
+            "Research of soft and hard requirements directly with end users and companies.",
+            "Direct communication and management of repositories with clients."
+          ],
+          "es": [
+            "Investigación de soluciones de experiencia e interfaz para diversas industrias y propósitos.",
+            "Prototipado de alta fidelidad en Figma y Adobe XD.",
+            "Investigación de requisitos suaves y duros directamente con usuarios finales y empresas.",
+            "Comunicación directa y gestión de repositorios con clientes."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "combucar",
+      "group": "Marsoft",
+      "name": "Combucar",
+      "company": "Combucar",
+      "role": {
+        "en": "Web designer",
+        "es": "Diseñador web"
+      },
+      "startDate": "2018-11-01",
+      "endDate": "2019-02-01",
+      "top": "4",
+      "presence": {
+        "timeline": true,
+        "collab": false,
+        "resume": null
+      }
+    },
+    {
+      "slug": "idea",
+      "group": "Marsoft",
+      "name": "IDEA",
+      "company": "IDEA",
+      "role": {
+        "en": "Web designer",
+        "es": "Diseñador web"
+      },
+      "startDate": "2018-11-01",
+      "endDate": "2019-03-01",
+      "top": "2",
+      "presence": {
+        "timeline": true,
+        "collab": false,
+        "resume": null
+      }
+    },
+    {
+      "slug": "gook",
+      "group": "Marsoft",
+      "name": "GOOK",
+      "company": "GOOK",
+      "role": {
+        "en": "UI/UX designer",
+        "es": "Diseñador UI/UX"
+      },
+      "startDate": "2020-08-01",
+      "endDate": "2021-09-01",
+      "top": "2",
+      "presence": {
+        "timeline": true,
+        "collab": false,
+        "resume": null
+      }
+    },
+    {
+      "slug": "grupoPm",
+      "group": "Grupo-PM",
+      "name": "Grupo PM",
+      "company": "Grupo People Media",
+      "role": {
+        "en": "Senior UX/UI Designer",
+        "es": "Diseñador UX/UI Senior"
+      },
+      "startDate": "2021-11-01",
+      "endDate": "2023-02-01",
+      "top": "0",
+      "presence": {
+        "timeline": true,
+        "collab": true,
+        "resume": "experience"
+      },
+      "bullets": {
+        "collab": {
+          "en": [
+            "Writing and execution of User Stories",
+            "Software as a Service (SaaS)",
+            "Coordination of multidisciplinary teams",
+            "High-level prototyping",
+            "Generation of graphic resources",
+            "Improvement of inputs"
+          ],
+          "es": [
+            "Redacción y ejecución de Historias de usuario",
+            "Software as a Service (SaaS)",
+            "Coordinación de equipos multidisciplinarios",
+            "Prototipado de alto nivel",
+            "Generación de recursos gráficos",
+            "Mejora de insumos"
+          ]
+        },
+        "resume": {
+          "en": [
+            "Design of payment, inventory and user management systems for the Mexican Social Security Institute.",
+            "Writing user stories and techniques for journeys.",
+            "Simultaneous management of 3 to 5 teams and projects related to UX/UI.",
+            "Creation of highly interactive prototypes used in government and presidential presentations."
+          ],
+          "es": [
+            "Diseño de sistemas de pago, inventario y administración de usuarios para el Instituto Mexicano del Seguro Social.",
+            "Redacción de historias de usuario y técnicas para journeys.",
+            "Gestión simultánea de 3 a 5 equipos y proyectos relacionados con UX/UI.",
+            "Creación de prototipos altamente interactivos utilizados en presentaciones gubernamentales y presidenciales."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "liverpool",
+      "group": "Liverpool",
+      "name": "Liverpool",
+      "company": "El Puerto de Liverpool",
+      "role": {
+        "en": "Senior UX/UI Designer",
+        "es": "Diseñador UX/UI Senior"
+      },
+      "startDate": "2023-02-01",
+      "endDate": "2025-09-01",
+      "top": "0",
+      "presence": {
+        "timeline": true,
+        "collab": true,
+        "resume": "experience"
+      },
+      "bullets": {
+        "collab": {
+          "en": [
+            "Agilization of design processes",
+            "Maintenance and modernization of the design system",
+            "Management of medium teams for digital projects",
+            "Omnichannel design web, wap and app",
+            "First and second level research",
+            "Continuous improvement"
+          ],
+          "es": [
+            "Agilización de procesos de diseño",
+            "Mantenimiento y modernización del sistema de diseño",
+            "Dirección de equipos medianos para proyectos digitales",
+            "Diseño omnicanal web, wap y app",
+            "Research de primer y segundo nivel",
+            "Mejora continua"
+          ]
+        },
+        "resume": {
+          "en": [
+            "Creation of design files for development teams in iOS, Android and web.",
+            "High-fidelity prototyping in Figma for large e-commerce and fintech systems.",
+            "Simultaneous management of 3 to 5 teams and projects related to UX/UI.",
+            "Redesign of existing projects for optimization and improvement of user flows."
+          ],
+          "es": [
+            "Creación de archivos de diseño para equipos de desarrollo en iOS, Android y web.",
+            "Prototipado de alta fidelidad en Figma para grandes sistemas de comercio electrónico y fintech.",
+            "Gestión simultánea de 3 a 5 equipos y proyectos relacionados con UX/UI.",
+            "Rediseño de proyectos existentes para optimización y mejora de flujos de usuario."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "galileo",
+      "group": "Galileo",
+      "name": "Galileo",
+      "company": "Galileo | Ben&Frank - Bombavista",
+      "role": {
+        "en": "Product Design Chapter Lead",
+        "es": "Product Design Chapter Lead"
+      },
+      "startDate": "2025-09-01",
+      "endDate": null,
+      "top": "0",
+      "presence": {
+        "timeline": true,
+        "collab": true,
+        "resume": "experience"
+      },
+      "bullets": {
+        "collab": {
+          "en": [
+            "Leadership of art projects in digital marketing and UX",
+            "Implementation of agile frameworks (Design Ops, Scrum, Kanban)",
+            "Automation of workflows in design and web development",
+            "Building a scalable and multichannel design system",
+            "Facilitation of graphic experience governance beyond design teams",
+            "Collaboration between design, development and marketing teams"
+          ],
+          "es": [
+            "Liderazgo de proyectos de arte en marketing digital y UX",
+            "Implementación de marcos ágiles (Design Ops, Scrum, Kanban)",
+            "Automatización de flujos de trabajo en diseño y desarrollo web",
+            "Construcción de un sistema de diseño escalable y multicanal",
+            "Facilitación de la gobernanza de la experiencia gráfica más allá de los equipos de diseño",
+            "Colaboración entre los equipos de diseño, desarrollo y marketing"
+          ]
+        },
+        "resume": {
+          "en": [
+            "Coordination of art projects focused on digital marketing and UX.",
+            "Application of agile methodologies for efficient creative management.",
+            "Advanced automation of workflows in web design and development.",
+            "Structuring of a scalable and decoupled design system.",
+            "Cross-functional collaboration for visual and functional consistency."
+          ],
+          "es": [
+            "Coordinación de proyectos de arte enfocados en marketing digital y UX.",
+            "Aplicación de metodologías ágiles para gestión creativa eficiente.",
+            "Automatización avanzada de flujos en diseño web y desarrollo.",
+            "Estructuración de sistema de diseño escalable y desacoplado.",
+            "Colaboración transversal para consistencia visual y funcional."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "paramo",
+      "group": null,
+      "name": "El Páramo de las bestias",
+      "company": "El Páramo de las bestias",
+      "role": {
+        "en": "Project manager / Web designer",
+        "es": "Project manager / Diseñador web"
+      },
+      "startDate": "2023-10-01",
+      "endDate": null,
+      "top": null,
+      "presence": {
+        "timeline": false,
+        "collab": false,
+        "resume": "projects"
+      },
+      "bullets": {
+        "resume": {
+          "en": [
+            "Management of design teams for the creation of an animated and interactive web book about Mexican mythological animals.",
+            "Design and development of the site using React, JS and Figma."
+          ],
+          "es": [
+            "Gestión de equipos de diseño para la creación de un libro web animado e interactivo sobre animales mitológicos mexicanos.",
+            "Diseño y desarrollo del sitio utilizando React, JS y Figma."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "uamAzcapotzalco",
+      "group": null,
+      "name": "UAM Azcapotzalco",
+      "company": "UAM Azcapotzalco",
+      "role": {
+        "en": "UX/UI Developer",
+        "es": "Desarrollador UX/UI"
+      },
+      "startDate": "2022-05-01",
+      "endDate": null,
+      "top": null,
+      "presence": {
+        "timeline": false,
+        "collab": false,
+        "resume": "projects"
+      },
+      "bullets": {
+        "resume": {
+          "en": [
+            "Design and development of a data visualization website on the phenomenon of noise in Mexico City and the Metropolitan Area.",
+            "Developed using JS, Processing and SASS, with repositories hosted on GitHub."
+          ],
+          "es": [
+            "Diseño y desarrollo de un sitio web de visualización de datos sobre el fenómeno del ruido en la Ciudad de México y el Área Metropolitana.",
+            "Desarrollado utilizando JS, Processing y SASS, con repositorios alojados en GitHub."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "hultzPrice",
+      "group": null,
+      "name": "Hultz Price at UAM",
+      "company": "Hultz Price at UAM",
+      "role": {
+        "en": "Committee and UX/UI expert",
+        "es": "Comité y experto en UX/UI"
+      },
+      "startDate": "2022-01-01",
+      "endDate": "2023-06-01",
+      "top": null,
+      "presence": {
+        "timeline": false,
+        "collab": false,
+        "resume": "projects"
+      },
+      "bullets": {
+        "resume": {
+          "en": [
+            "Participation in the organizing committee, designing banners, videos and graphic resources.",
+            "Speaker on UI/UX and branding topics."
+          ],
+          "es": [
+            "Participación en el comité organizador, diseñando banners, videos y recursos gráficos.",
+            "Expositor en temas de UI/UX y branding."
+          ]
+        }
+      }
+    }
+  ]
+}

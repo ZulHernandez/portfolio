@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import useScreenSize from "../context/useScreenSize";
 import { useTranslation } from "react-i18next";
 import { ACCENT_COLORS } from "../../utils/accentColors";
-import experiencia from "../context/varExperiencia";
-import type { ExperienciaWork } from "../../types";
+import { formatDateRange, resolveLang } from "../../utils/experienceData";
+import useExperienceData from "../context/useExperienceData";
+import { TIMELINE_LOGOS, GROUP_ICONS } from "../context/experienceAssets";
+import type { ExperienceJob } from "../../types";
 
 import CoBtn from "../general/CoBtn";
 
@@ -13,52 +15,48 @@ import small from "../../assets/imgs/vectores/small.svg";
 import medium from "../../assets/imgs/vectores/medium.svg";
 import large from "../../assets/imgs/vectores/large.svg";
 
-// Antes esta misma cadena de 4 ternarios (con un hex hardcodeado por rama, y
-// un tab suelto pegado al color por defecto) se repetía dos veces en este
-// archivo para colorear el mismo dato (trabajo.type).
-const TIMELINE_TYPE_COLORS: Record<string, string> = {
-	Freelance: ACCENT_COLORS.orange,
-	Marsoft: ACCENT_COLORS.blue,
-	"Grupo-PM": ACCENT_COLORS.purple,
-	Liverpool: ACCENT_COLORS.pink,
-};
-const getTimelineTypeColor = (type: string): string =>
-	TIMELINE_TYPE_COLORS[type] || ACCENT_COLORS.dark;
-
-let sortedTrabajos: ExperienciaWork[] = experiencia
-	.flatMap((job) => job.works)
-	.sort((a, b) => (dayjs(a.startDate).isBefore(dayjs(b.startDate)) ? -1 : 1));
-
-sortedTrabajos = [sortedTrabajos.pop() as ExperienciaWork, ...sortedTrabajos];
-
 interface CoWorkCardProps {
 	id?: string;
-	trabajo: ExperienciaWork;
+	trabajo: ExperienceJob;
+	lang: "en" | "es";
 }
 
-const CoWorkCard = ({ id, trabajo }: CoWorkCardProps) => {
-	const { t } = useTranslation();
-	const base = `timeline.items.${trabajo.slug}`;
-
+const CoWorkCard = ({ id, trabajo, lang }: CoWorkCardProps) => {
 	return (
 		<div id={id} className="time-line-info__card">
 			<div className="time-line-info__card-head">
-				<img loading="lazy" src={trabajo.logo} alt={trabajo.name} />
+				<img loading="lazy" src={TIMELINE_LOGOS[trabajo.slug]} alt={trabajo.name} />
 				<div className="time-line-info__card-head__text">
 					<h2>{trabajo.name}</h2>
-					<p className="text-normal">{t(`${base}.date`)}</p>
+					<p className="text-normal">{formatDateRange(trabajo.startDate, trabajo.endDate, lang)}</p>
 				</div>
 			</div>
-			<h3>{t(`${base}.role`)}</h3>
+			<h3>{trabajo.role[lang]}</h3>
 		</div>
 	);
 };
 
 const CoTimeline = () => {
-	const [works, setWorks] = useState<ExperienciaWork[]>(sortedTrabajos);
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const lang = resolveLang(i18n.language);
+	const { data } = useExperienceData();
 	const { width } = useScreenSize();
 	const [coeficiente, setCoeficiente] = useState(1);
+	// Trabajos que sí aparecen en la línea del tiempo, ordenados por fecha de
+	// inicio y luego rotados para que el más reciente quede primero (así
+	// works[1], la tarjeta central, arranca mostrando el puesto actual). Vive
+	// en estado porque el usuario los rota con las flechas; se siembra una
+	// sola vez cuando llega la data (ver useEffect de abajo).
+	const [works, setWorks] = useState<ExperienceJob[]>([]);
+
+	useEffect(() => {
+		if (!data) return;
+		const sorted = data.jobs
+			.filter((job) => job.presence.timeline)
+			.sort((a, b) => (dayjs(a.startDate).isBefore(dayjs(b.startDate)) ? -1 : 1));
+		if (sorted.length === 0) return;
+		setWorks([sorted[sorted.length - 1], ...sorted.slice(0, -1)]);
+	}, [data]);
 
 	useEffect(() => {
 		if (width >= 1400) {
@@ -124,7 +122,28 @@ const CoTimeline = () => {
 		return months;
 	}
 
-	const startDate = dayjs(experiencia[1].works[0].startDate).subtract(2, "month");
+	// No renderizar hasta tener al menos 3 trabajos (lo mínimo que necesitan
+	// las 3 tarjetas centrales): cubre tanto el instante entre que monta el
+	// componente y llega el fetch, como un experience.json mal formado.
+	if (!data || works.length < 3) return null;
+
+	const timelineJobs = data.jobs.filter((job) => job.presence.timeline);
+	const groups = data.groups
+		.map((group) => ({
+			...group,
+			works: timelineJobs.filter((job) => job.group === group.key),
+		}))
+		.filter((group) => group.works.length > 0);
+
+	const getGroupColor = (key: string): string => {
+		const group = data.groups.find((g) => g.key === key);
+		return group ? ACCENT_COLORS[group.color] : ACCENT_COLORS.dark;
+	};
+
+	const earliestJob = timelineJobs.reduce((earliest, job) =>
+		dayjs(job.startDate).isBefore(dayjs(earliest.startDate)) ? job : earliest
+	);
+	const startDate = dayjs(earliestJob.startDate).subtract(2, "month");
 	const currentDate = dayjs().add(2, "month");
 	const monthsArray = getMonthsBetween(startDate, currentDate);
 
@@ -132,17 +151,17 @@ const CoTimeline = () => {
 		<div id={t("timeline.id")} className="container-fluid grey">
 			<CoTitle titles={t("timeline.heading")} />
 			<div className="time-line-filters">
-				{experiencia.map((trabajo, index) => {
+				{groups.map((group) => {
 					return (
 						<div
 							className="time-line-filters__boton"
-							key={index}
+							key={group.key}
 							style={{
-								backgroundColor: getTimelineTypeColor(trabajo.type),
+								backgroundColor: getGroupColor(group.key),
 							}}
 						>
-							<img loading="lazy" src={trabajo.icon} alt={trabajo.type} />
-							<span>{trabajo.type.replace("-", " ")}</span>
+							<img loading="lazy" src={GROUP_ICONS[group.key]} alt={group.key} />
+							<span>{group.key.replace("-", " ")}</span>
 						</div>
 					);
 				})}
@@ -169,14 +188,15 @@ const CoTimeline = () => {
 					})}
 				</div>
 				<div className="time-line-squema">
-					{experiencia.map((trabajo, index) => {
+					{groups.map((group) => {
 						return (
 							<div
-								id={trabajo.type}
-								key={index}
+								id={group.key}
+								key={group.key}
 								className="time-line-squema__container"
 							>
-								{trabajo.works.map((work, workIndex) => {
+								{group.works.map((work, workIndex) => {
+									const workEnd = work.endDate ? dayjs(work.endDate) : dayjs();
 									return (
 										<div
 											className="time-line-squema__container-item"
@@ -194,17 +214,11 @@ const CoTimeline = () => {
 												}
 											}}
 											style={{
-												backgroundColor: getTimelineTypeColor(trabajo.type),
+												backgroundColor: getGroupColor(group.key),
 												width: `calc(${
-													dayjs(work.endDate).diff(
-														dayjs(work.startDate),
-														"month"
-													) * 4
+													workEnd.diff(dayjs(work.startDate), "month") * 4
 												}px + ${
-													dayjs(work.endDate).diff(
-														dayjs(work.startDate),
-														"month"
-													) * coeficiente
+													workEnd.diff(dayjs(work.startDate), "month") * coeficiente
 												}rem)`,
 												left: `calc(${
 													dayjs(work.startDate).diff(startDate, "month") * 4
@@ -212,7 +226,7 @@ const CoTimeline = () => {
 													dayjs(work.startDate).diff(startDate, "month") *
 													coeficiente
 												}rem)`,
-												bottom: workIndex * 1.5 - Number(work.top) * 1.5 + "rem",
+												bottom: workIndex * 1.5 - Number(work.top ?? 0) * 1.5 + "rem",
 												opacity: work.name == works[1].name ? 1 : 0.5,
 											}}
 										>
@@ -232,9 +246,9 @@ const CoTimeline = () => {
 					style={{ transform: "rotate(180deg)" }}
 					ariaLabel={t("timeline.previousAlt")}
 				/>
-				<CoWorkCard id="cardUno" trabajo={works[0]} />
-				<CoWorkCard id="cardDos" trabajo={works[1]} />
-				<CoWorkCard id="cardTres" trabajo={works[2]} />
+				<CoWorkCard id="cardUno" trabajo={works[0]} lang={lang} />
+				<CoWorkCard id="cardDos" trabajo={works[1]} lang={lang} />
+				<CoWorkCard id="cardTres" trabajo={works[2]} lang={lang} />
 				<CoBtn type={"primary"} onClick={rotateArray} ariaLabel={t("timeline.nextAlt")} />
 			</div>
 		</div>

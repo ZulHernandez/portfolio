@@ -17,6 +17,12 @@ describe("RoResume", () => {
 			</HelmetProvider>
 		);
 
+		// RoResume pide su data por fetch (ver useExperienceData.ts); el cuerpo
+		// del currículo (donde vive "Automation") no existe hasta que resuelve.
+		// Esperar a que aparezca al menos una tarjeta de experiencia evita una
+		// falsa negativa por leer antes de tiempo.
+		await screen.findAllByRole("heading", { level: 4 });
+
 		const generalTag = screen.getByRole("button", { name: "General" });
 		const designSystemTag = screen.getByRole("button", { name: "Design system" });
 
