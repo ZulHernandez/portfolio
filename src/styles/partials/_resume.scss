@@ -5,88 +5,126 @@
 #resume {
     padding-top: 10rem;
     align-items: center;
-    .resume__sheet {
-        @include fnCard();
-        width: 215mm;
-        background: white;
-        padding: 15mm;
-        border-radius: 3mm;
-        &-body {
-            @include fnFlex(column, flex-start, center, 5mm);
+}
+
+// .resume__sheet se renderiza en dos lugares del DOM: dentro de #resume (la
+// copia en pantalla de /resume, con zoom) y dentro de .printable, montado
+// aparte a nivel de App (ver CoPrintableResume) para que "Download CV"
+// funcione desde cualquier página sin depender de la ruta /resume. Antes
+// este bloque vivía anidado bajo `#resume { ... }`, así que en cuanto la
+// copia impresa dejó de estar dentro de #resume, se quedó sin NINGÚN estilo
+// (se imprimía como texto plano sin la hoja/tarjeta/columnas). Vive suelto
+// para que aplique sin importar en qué contenedor se renderice.
+.resume__sheet {
+    @include fnCard();
+    width: 215mm;
+    background: white;
+    padding: 15mm;
+    border-radius: 3mm;
+    &-body {
+        @include fnFlex(column, flex-start, center, 3mm);
+        width: 100%;
+        overflow: hidden;
+    }
+    &-header {
+        width: 100%;
+        @include fnFlex(column, flex-start, flex-start, 1mm);
+        &__title {
+            @include fnFlex(row, flex-start, baseline, 2mm);
+            flex-wrap: wrap;
             width: 100%;
-            overflow: hidden;
         }
-        &-header {
+        &__name {
+            @include fnFont("Raleway-Bold", 20px, none, $shade-700);
+        }
+        &__separator {
+            @include fnFont("Raleway-Bold", 12px, none, $shade-500);
+        }
+        &__tagline {
+            @include fnFont("Raleway-Bold", 12px, none, $shade-700);
+        }
+        hr {
             width: 100%;
-            @include fnFlex(column, center, center, 1mm);
-            h1 {
-                @include fnFont("Raleway-Bold", 32px, none, $shade-700);
-            }
-            h2 {
+            height: 0.2rem;
+            background-color: $shade-200;
+            border-radius: 1rem;
+            border: none;
+        }
+    }
+    // CoResumeSheet arma dos variantes de este contenedor (ver el prop
+    // `variant` ahí): "print" (.printable, la copia real que se convierte en
+    // PDF) deja todas las tarjetas —contacto, portafolios, resumen, skills,
+    // experiencia, proyectos, educación, idiomas— como hijas directas, en
+    // una sola columna y en orden de lectura lineal. Un CV a dos columnas es
+    // un riesgo conocido para los parsers de ATS/IA de reclutamiento: al
+    // reconstruir el texto por posición visual pueden entrelazar el
+    // contenido de ambas columnas línea por línea. "screen" (#resume, la
+    // copia que solo lee una persona) arma en cambio dos contenedores
+    // `&__info`/`&__body` de verdad —no CSS Grid: con Grid ambas columnas
+    // comparten el alto de fila, así que una columna angosta terminaba
+    // empujada hasta abajo por lo alta que es Experiencia— cada uno con su
+    // propio flujo vertical independiente (ver &--columns más abajo).
+    &-content {
+        @include fnFlex(column, flex-start, flex-start, 5mm);
+        width: 100%;
+        &--columns {
+            @include fnFlex(row, flex-start, flex-start, 8mm);
+        }
+        &__info {
+            @include fnFlex(column, flex-start, flex-start, 5mm);
+            width: 30%;
+        }
+        &__body {
+            @include fnFlex(column, flex-start, flex-start, 5mm);
+            width: 70%;
+        }
+        &__info-card {
+            @include fnFlex(column, center, flex-start, 1mm);
+            width: 100%;
+            h3 {
                 @include fnFont("Raleway-Bold", 12px, none, $shade-700);
             }
-            hr {
-                width: 100%;
-                height: 0.2rem;
-                background-color: $shade-200;
-                border-radius: 1rem;
-                border: none;
-            }
-        }
-        &-content {
-            @include fnFlex(row, center, flex-start, 10mm);
-            width: 100%;
-            &__info {
-                @include fnFlex(column, center, flex-start, 5mm);
-                width: 30%;
-                &-card {
-                    @include fnFlex(column, center, flex-start, 1mm);
-                    h3 {
-                        @include fnFont("Raleway-Bold", 12px, none, $shade-700);
-                    }
-                    &__bullets {
-                        @include fnFlex(column, center, flex-start, 0.8mm);
-                        p {
-                            @include fnFont("Raleway-Medium", 10px, none, $shade-500);
-                        }
-                        a {
-                            p {
-                                @include fnFont("Raleway-Medium", 10px, none, $shade-700);
-                            }
-                        }
+            &__bullets {
+                @include fnFlex(column, center, flex-start, 0.8mm);
+                p {
+                    @include fnFont("Raleway-Medium", 10px, none, $shade-500);
+                }
+                a {
+                    p {
+                        @include fnFont("Raleway-Medium", 10px, none, $shade-700);
                     }
                 }
             }
-            &__body {
-                width: 70%;
-                @include fnFlex(column, flex-start, flex-start, 5mm);
-                &-card {
-                    @include fnFlex(column, flex-start, flex-start, 0mm);
-                    h3 {
-                        @include fnFont("Raleway-Bold", 12px, none, $shade-700);
-                    }
-                    &-summary {
-                        ul {
-                            padding-left: 4mm;
-                            @include fnFont("Raleway-Medium", 10px, none, $shade-700);
-                        }
-                    }
-                    &-experiencia {
-                        padding: 2mm 0px 0px 0px;
-                        h4 {
-                            @include fnFont("Raleway-Medium", 10px, none, $shade-700);
-                        }
-                        &__ubicacion {
-                            @include fnFont("Raleway-Medium", 10px, none, $shade-500);
+            // Compartida por Skills y Languages: lista en una sola línea
+            // separada por comas, en vez de un bullet por renglón.
+            &__inline-list {
+                width: 100%;
+                @include fnFont("Raleway-Medium", 10px, none, $shade-500);
+            }
+        }
+        &__body-card {
+            @include fnFlex(column, flex-start, flex-start, 0mm);
+            width: 100%;
+            h3 {
+                @include fnFont("Raleway-Bold", 12px, none, $shade-700);
+            }
+            &-summary {
+                @include fnFont("Raleway-Medium", 10px, none, $shade-700);
+            }
+            &-experiencia {
+                padding: 2mm 0px 0px 0px;
+                h4 {
+                    @include fnFont("Raleway-Medium", 10px, none, $shade-700);
+                }
+                &__ubicacion {
+                    @include fnFont("Raleway-Medium", 10px, none, $shade-500);
 
-                            padding-bottom: 5mm;
-                        }
-                        ul {
-                            margin: 0;
-                            padding-left: 4mm;
-                            @include fnFont("Raleway-Medium", 10px, none, $shade-500);
-                        }
-                    }
+                    padding-bottom: 5mm;
+                }
+                ul {
+                    margin: 0;
+                    padding-left: 4mm;
+                    @include fnFont("Raleway-Medium", 10px, none, $shade-500);
                 }
             }
         }
@@ -98,33 +136,38 @@
 }
 
 @media print {
-    .nav-header,
-    .tags-list,
-    .btn,
-    .secondary,
-    .resume__sheet,
-    .no-print {
+    // Antes esta lista tenía que enumerar a mano cada clase visible en
+    // /resume (nav-header, tags-list, btn, resume__sheet...) porque
+    // .printable vivía dentro del árbol normal de esa ruta. Ahora .printable
+    // se monta aparte, a nivel de App (ver CoPrintableResume + App.tsx), así
+    // que un solo selector oculta TODO lo demás sin importar en qué página
+    // estés cuando se imprime.
+    .app-shell {
         display: none;
-    }
-
-    .container-fluid {
-        padding: 0;
-        margin: 0;
     }
 
     .printable {
         display: flex;
         zoom: 1;
         height: max-content;
+        // Denso solo aquí: esta es la copia que realmente se convierte en el
+        // PDF/impreso, así que aprieta el padding y el espacio entre
+        // tarjetas para acercarse a una sola hoja carta. La copia en
+        // pantalla (#resume) mantiene el padding/gap amplios de arriba.
+        padding: 10mm;
+        .resume__sheet-content {
+            gap: 3mm;
+        }
+        // El espacio entre el header (nombre/rol) y la primera tarjeta
+        // (Contacto) también se aprieta más aquí que en pantalla.
+        .resume__sheet-body {
+            gap: 0mm;
+        }
     }
 
     @page {
-        margin: 15mm;
+        margin: 10mm;
         margin-top: 0mm;
         size: auto;
-    }
-
-    .resume__sheet-content__body {
-        width: 100%;
     }
 }

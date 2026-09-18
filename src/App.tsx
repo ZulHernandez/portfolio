@@ -8,6 +8,7 @@ import RoHome from "./routes/RoHome";
 
 import CoNav from "./components/general/CoNav";
 import CoFooter from "./components/general/CoFooter";
+import CoPrintableResume from "./components/resume/CoPrintableResume";
 import RoCarga from "./routes/RoCarga"; // Fallback de carga
 
 // El idioma "de verdad" ya no vive en un Context propio: lo maneja i18next
@@ -49,22 +50,32 @@ function App() {
 
 	return (
 		<NavigationContext.Provider value={navigationValue}>
-			<CoNav />
+			{/* Todo lo que NO debe imprimirse va dentro de .app-shell — ver la
+			regla @media print en _resume.scss, que oculta este wrapper entero
+			y muestra solo .printable (CoPrintableResume, abajo). Antes esa
+			regla enumeraba a mano cada clase visible en /resume porque
+			.printable vivía dentro del árbol de esa ruta; ahora .printable se
+			monta aparte, siempre, así que funciona sin importar qué página
+			esté activa cuando se imprime. */}
+			<div className="app-shell">
+				<CoNav />
 
-			<Suspense fallback={<RoCarga />}>
-				<Routes>
-					<Route path="/" element={<RoHome />} />
-					<Route path="/works" element={<RoWorks />} />
-					<Route path="/works/glue" element={<RoGLUE />} />
-					<Route path="/works/movilidad" element={<RoMovilidad />} />
-					<Route path="/works/hubbub" element={<RoHUBBUB />} />
-					<Route path="/resume" element={<RoResume />} />
-					<Route path="/about-me" element={<RoAbout />} />
-					<Route path="*" element={<RoError />} />
-				</Routes>
-			</Suspense>
+				<Suspense fallback={<RoCarga />}>
+					<Routes>
+						<Route path="/" element={<RoHome />} />
+						<Route path="/works" element={<RoWorks />} />
+						<Route path="/works/glue" element={<RoGLUE />} />
+						<Route path="/works/movilidad" element={<RoMovilidad />} />
+						<Route path="/works/hubbub" element={<RoHUBBUB />} />
+						<Route path="/resume" element={<RoResume />} />
+						<Route path="/about-me" element={<RoAbout />} />
+						<Route path="*" element={<RoError />} />
+					</Routes>
+				</Suspense>
 
-			<CoFooter />
+				<CoFooter />
+			</div>
+			<CoPrintableResume />
 		</NavigationContext.Provider>
 	);
 }

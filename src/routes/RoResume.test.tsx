@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
@@ -7,8 +7,10 @@ import "../i18n";
 import RoResume from "./RoResume";
 
 describe("RoResume", () => {
-	it("switches the displayed skills when a different category tag is selected", async () => {
+	it("renders the résumé content and offers a download button both above and below the sheet", async () => {
 		const user = userEvent.setup();
+		const printSpy = vi.spyOn(window, "print").mockImplementation(() => {});
+
 		render(
 			<HelmetProvider>
 				<MemoryRouter>
@@ -18,25 +20,23 @@ describe("RoResume", () => {
 		);
 
 		// RoResume pide su data por fetch (ver useExperienceData.ts); el cuerpo
-		// del currículo (donde vive "Automation") no existe hasta que resuelve.
-		// Esperar a que aparezca al menos una tarjeta de experiencia evita una
-		// falsa negativa por leer antes de tiempo.
+		// del currículo no existe hasta que resuelve. Esperar a que aparezca al
+		// menos una tarjeta de experiencia evita una falsa negativa por leer
+		// antes de tiempo.
 		await screen.findAllByRole("heading", { level: 4 });
 
-		const generalTag = screen.getByRole("button", { name: "General" });
-		const designSystemTag = screen.getByRole("button", { name: "Design system" });
+		expect(screen.getAllByText("Contact").length).toBeGreaterThan(0);
 
-		expect(generalTag).toHaveAttribute("aria-pressed", "true");
-		expect(designSystemTag).toHaveAttribute("aria-pressed", "false");
+		// Se quitaron los tabs de categoría (ver comentario en RoResume.tsx):
+		// no aportaban lo suficiente para justificar mantener 4 variantes de
+		// Resumen/Skills. En su lugar hay un botón de descarga arriba de la
+		// hoja además del que ya existía abajo.
+		const downloadButtons = screen.getAllByRole("button", { name: "Download Resume" });
+		expect(downloadButtons.length).toBe(2);
 
-		// "Automation" only shows up under the "Design system" skills category.
-		expect(screen.queryByText("Automation")).not.toBeInTheDocument();
+		await user.click(downloadButtons[0]);
+		expect(printSpy).toHaveBeenCalledTimes(1);
 
-		await user.click(designSystemTag);
-
-		expect(generalTag).toHaveAttribute("aria-pressed", "false");
-		expect(designSystemTag).toHaveAttribute("aria-pressed", "true");
-		// The résumé sheet renders twice (print + scaled screen copy).
-		expect(screen.getAllByText("Automation").length).toBeGreaterThan(0);
+		printSpy.mockRestore();
 	});
 });

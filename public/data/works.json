@@ -23,7 +23,8 @@
       "company": "El Puerto de Liverpool",
       "startDate": "2023-02-01",
       "endDate": null,
-      "hasDetail": true
+      "hasDetail": true,
+      "featured": true
     },
     {
       "slug": "movilidad",
@@ -52,7 +53,8 @@
       "company": "El Puerto de Liverpool",
       "startDate": "2024-10-01",
       "endDate": "2025-05-01",
-      "hasDetail": true
+      "hasDetail": true,
+      "featured": true
     },
     {
       "slug": "activa",
@@ -81,7 +83,8 @@
       "company": "El Puerto de Liverpool",
       "startDate": "2023-03-01",
       "endDate": null,
-      "hasDetail": false
+      "hasDetail": false,
+      "featured": false
     },
     {
       "slug": "hubbub",
@@ -112,7 +115,8 @@
       "company": "Acoustic Design Laboratory - UAM Azcapotzalco",
       "startDate": "2023-02-01",
       "endDate": null,
-      "hasDetail": true
+      "hasDetail": true,
+      "featured": true
     },
     {
       "slug": "galeria",
@@ -141,7 +145,8 @@
       "company": "El Puerto de Liverpool",
       "startDate": "2024-03-01",
       "endDate": "2024-10-01",
-      "hasDetail": false
+      "hasDetail": false,
+      "featured": false
     },
     {
       "slug": "gook",
@@ -170,7 +175,8 @@
       "company": "Marsoft × Gook Óptica",
       "startDate": "2020-08-01",
       "endDate": "2021-09-01",
-      "hasDetail": false
+      "hasDetail": false,
+      "featured": false
     }
   ]
 }

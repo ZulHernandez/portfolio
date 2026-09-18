@@ -13,7 +13,11 @@ interface Contacto {
 	url: string;
 }
 
-const contactos: Contacto[] = [
+// El texto del botón de calendario vive en getInTouch.scheduleCta (antes
+// estaba escrito en español a mano aquí y nunca se traducía al inglés);
+// teléfono y correo son datos, no texto de idioma, así que se quedan tal
+// cual.
+const CONTACT_LINKS = [
 	{
 		icon: tel,
 		text: "+52 55-6502-7645",
@@ -24,15 +28,19 @@ const contactos: Contacto[] = [
 		text: "saululiseshernandezcruz@gmail.com",
 		url: "mailto:saululiseshernandezcruz@gmail.com",
 	},
-	{
-		icon: calendar,
-		text: "¡Agendemos una cita!",
-		url: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3IHfVcWon0GCIlKQNx98HMtHPHf_UV5dvAJD88J-6lr3AS9z3heiAl9kd_KvBRN88H2-5mS9VQ",
-	},
-];
+] as const;
 
 const CoConozca = () => {
 	const { t } = useTranslation();
+
+	const contactos: Contacto[] = [
+		...CONTACT_LINKS,
+		{
+			icon: calendar,
+			text: t("getInTouch.scheduleCta"),
+			url: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3IHfVcWon0GCIlKQNx98HMtHPHf_UV5dvAJD88J-6lr3AS9z3heiAl9kd_KvBRN88H2-5mS9VQ",
+		},
+	];
 
 	return (
 		<div id={t("home.anchors.conozca.id")} className="container-fluid grey">

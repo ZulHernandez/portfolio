@@ -1,7 +1,9 @@
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
 
 import CoTitle from "../../../components/general/CoTitle";
 import CoKPI from "../../../components/general/CoKPI";
+import CoBtn from "../../../components/general/CoBtn";
 
 import hubbubApp from "../../../assets/imgs/works/hubbub/hubbubApp.svg";
 import maps from "../../../assets/imgs/works/hubbub/maps.webp";
@@ -20,8 +22,18 @@ interface ContextBullets {
 	programming: ContextBullet;
 }
 
+// Cuánto desplaza cada click de flecha (ver .context-data-nav en
+// _movilidad.scss, compartido por MoviLidad y HUBBUB via #context) — mismo
+// valor que .carrousel-nav en GLUE.
+const SCROLL_AMOUNT = 320;
+
 const CoContexto = () => {
 	const { t } = useTranslation();
+	const contextDataRef = useRef<HTMLDivElement>(null);
+
+	const scrollContextData = (direction: 1 | -1) => {
+		contextDataRef.current?.scrollBy({ left: direction * SCROLL_AMOUNT, behavior: "smooth" });
+	};
 
 	// `ref` apunta a los ids de las propias secciones de HUBBUB (antes apuntaban,
 	// por error, a los ids de MoviLidad: #interfaz/#notificaciones/#flujo-y-metodos).
@@ -39,7 +51,7 @@ const CoContexto = () => {
 		<div id={t("hubbub.anchors.context.id")} className="container-fluid grey">
 			<CoTitle titles={t("hubbub.context.title")} />
 			<span className="text-normal">{t("hubbub.context.intro")}</span>
-			<div className="context-data">
+			<div className="context-data" ref={contextDataRef}>
 				<div className="context-data__uno" style={{ minWidth: "auto" }}>
 					<img loading="lazy" src={hubbubApp} alt="" />
 					<div className="context-data__uno-mapa">
@@ -87,6 +99,22 @@ const CoContexto = () => {
 						color="#4D4D4D"
 					/>
 				</div>
+			</div>
+			<div className="context-data-nav">
+				<CoBtn
+					type="secondary"
+					icon="block"
+					onClick={() => scrollContextData(-1)}
+					ariaLabel={t("caseStudy.carousel.prev")}
+					style={{ transform: "scale(0.5) rotate(180deg)" }}
+				/>
+				<CoBtn
+					type="secondary"
+					icon="block"
+					onClick={() => scrollContextData(1)}
+					ariaLabel={t("caseStudy.carousel.next")}
+					style={{ transform: "scale(0.5)" }}
+				/>
 			</div>
 			<div>
 				<span className="text-normal">{t("hubbub.context.participationIntro")}</span>

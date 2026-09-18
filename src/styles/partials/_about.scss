@@ -117,6 +117,16 @@
             }
         }
     }
+    // .music-list es un overflow-x: scroll sin ninguna pista visual de que
+    // hay más tarjetas a los lados (mismo problema que .colab-carrousel en
+    // Home, ver _home.scss). .music-nav son las mismas flechas de ahí:
+    // CoBtn en modo solo-ícono ya trae el chevron, la flecha "anterior" solo
+    // rota ese ícono 180°.
+    .music-nav {
+        @include fnFlex(row, flex-end, center, -1rem);
+        width: 100%;
+        margin-top: 0.5rem;
+    }
     .music-list {
         @include fnFlex(row, flex-start, flex-start, 3rem);
         width: 100%;

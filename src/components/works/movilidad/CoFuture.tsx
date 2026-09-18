@@ -42,6 +42,7 @@ const CoCard = ({ icon, title, tag, description }: CoCardProps) => {
 };
 
 interface FutureStepText {
+	title: string[];
 	tag: string;
 	description: string;
 }
@@ -55,13 +56,16 @@ interface FutureSteps {
 const CoFuture = () => {
 	const { t } = useTranslation();
 
+	// Los títulos ahora sí se traducen (antes estaban hardcodeados en español
+	// —"MONEDERO", "TIEMPO REAL", "PROGRAMA FIDELIZACIÓN"— y se veían así
+	// incluso en la versión en inglés del sitio). "MOVILIDAD" se mantiene
+	// igual en ambos idiomas porque es el nombre del producto, no una
+	// palabra genérica.
 	const steps = t("movilidad.future.steps", { returnObjects: true }) as FutureSteps;
-	// Los títulos son nombres de feature en mayúsculas, iguales en ambos
-	// idiomas (antes "MOBILIDAD" tenía una errata, corregida a "MOVILIDAD").
 	const futureSteps = [
-		{ icon: future1, title: ["MONEDERO", "MOVILIDAD"], ...steps.wallet },
-		{ icon: future2, title: ["TIEMPO", "REAL"], ...steps.realtime },
-		{ icon: future3, title: ["PROGRAMA", "FIDELIZACIÓN"], ...steps.loyalty },
+		{ icon: future1, ...steps.wallet },
+		{ icon: future2, ...steps.realtime },
+		{ icon: future3, ...steps.loyalty },
 	];
 
 	return (

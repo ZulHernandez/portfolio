@@ -2,6 +2,14 @@
 @use "mixins" as *;
 
 //main Movilidad
+//
+// #context es compartido por MoviLidad y HUBBUB (ambos montan su bloque de
+// contexto con id="context"), así que este bloque y su nav de flechas
+// homologan la experiencia en las dos páginas a la vez. En desktop/tablet
+// sigue siendo una fila con scroll horizontal, ahora con flechas visibles
+// (mismo patrón que .carrousel-nav en GLUE); en mobile se apila vertical y
+// se quita el scroll, para no depender de una barra de scroll nativa como
+// única pista de que hay más contenido.
 #contexto,
 #context {
     .context-data {
@@ -9,14 +17,26 @@
         @include fnFlex(row, flex-start, center, 5rem);
         clip-path: fill-box;
         overflow-x: scroll;
+        @include mobile {
+            @include fnFlex(column, center, center, 3rem);
+            overflow-x: visible;
+        }
         &__uno {
             @include fnFlex(row, flex-start, center, 3rem);
             min-width: 60rem;
+            @include mobile {
+                @include fnFlex(column, center, center, 2rem);
+                min-width: auto;
+                width: 100%;
+            }
             &-mapa {
                 @include fnFlex(column, flex-start, flex-start, 1rem);
                 width: 100%;
             }
             padding-bottom: 5rem;
+            @include mobile {
+                padding-bottom: 0rem;
+            }
             img {
                 height: 15rem;
             }
@@ -24,6 +44,10 @@
         &__dos {
             @include fnFlex(column, center, center, 2rem);
             padding: 0px 5rem;
+            @include mobile {
+                width: 100%;
+                padding: 0px;
+            }
             img {
                 height: 10rem;
             }
@@ -44,6 +68,17 @@
                 height: 9.5rem;
             }
             padding-bottom: 5rem;
+            @include mobile {
+                padding-bottom: 0rem;
+            }
+        }
+    }
+    .context-data-nav {
+        @include fnFlex(row, flex-end, center, -1rem);
+        width: 100%;
+        margin-top: 0.5rem;
+        @include mobile {
+            display: none;
         }
     }
 }
@@ -69,39 +104,189 @@
             }
         }
     }
+    // .schema es el contenedor externo (columna): la fila leyenda+diagrama
+    // arriba, y debajo el texto de ayuda del hover. Antes ese texto vivía
+    // como tercer hijo DENTRO de la fila (display:flex; row), y al no tener
+    // ancho fijo tomaba todo el espacio libre como flex-basis:auto,
+    // dejando en 0px el contenedor del diagrama (por eso no se veía nada
+    // salvo la leyenda). Separarlo en su propia fila evita el problema.
     .schema {
-        @include fnFlex(row, center, flex-start, 0rem);
+        @include fnFlex(column, flex-start, stretch, 1.5rem);
+        width: 100%;
+    }
+    .schema-row {
+        @include fnFlex(row, center, flex-start, 2rem);
         width: 100%;
         @include mobile {
             @include fnFlex(column, center, center, 3rem);
         }
-        img {
-            width: 70%;
-            height: auto;
-            @include mobile {
-                width: 100%;
+    }
+    .schema-legenda {
+        @include fnFlex(column, flex-start, flex-start, 1.2rem);
+        // El ancho anterior (11rem, con texto a 7.5rem) seguía viéndose
+        // ancho frente a íconos/texto más chicos. Además había un bug: el
+        // selector de texto (antes ".schema-legenda__item span") también
+        // alcanzaba al <span> del cuadrito de color (también es un span),
+        // y por ser más específico (clase+elemento) le ganaba a
+        // ".schema-legenda__swatch", así que el cuadrito terminaba
+        // estirado a 7.5rem de ancho en vez de cuadrado. Se le dio al
+        // texto su propia clase (&__label) para que ya no choque con el
+        // swatch, y de paso se redujo todo el bloque.
+        width: 9rem;
+        flex-shrink: 0;
+        padding-top: 5rem;
+        @include mobile {
+            @include fnFlex(row, center, flex-start, 1.5rem);
+            flex-wrap: wrap;
+            width: 100%;
+            padding-top: 0;
+        }
+        // Cada ítem es hoverable/enfocable: al pasar el cursor o el foco
+        // resalta el flujo correspondiente en el diagrama (ver
+        // CoFlowSchema.tsx). El estado "is-active" refuerza el texto para
+        // que quede claro cuál leyenda está resaltando en ese momento.
+        &__item {
+            @include fnFlex(row, center, center, 0.8rem);
+            cursor: pointer;
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.5rem;
+            margin: -0.3rem -0.5rem;
+            transition: background-color 0.2s ease-in-out;
+            &:hover,
+            &:focus-visible {
+                background-color: $shade-50;
+                outline: none;
+            }
+            &.is-active .schema-legenda__label {
+                color: $shade-800;
             }
         }
-        &-legenda {
-            @include fnFlex(column, flex-start, flex-start, 3rem);
-            width: 10%;
-            padding-top: 5rem;
-            @include mobile {
-                @include fnFlex(row, center, flex-start, 3rem);
-                flex-wrap: wrap;
-                width: 100%;
-            }
-            &__item {
-                @include fnFlex(row, center, center, 1rem);
-                img {
-                    width: 2rem;
+        &__label {
+            width: 6rem;
+            @include fnFont("Raleway-Medium", 1.15rem, none, $shade-500);
+            transition: color 0.2s ease-in-out;
+        }
+        &__swatch {
+            display: block;
+            width: 1.3rem;
+            height: 1.3rem;
+            border-radius: 0.25rem;
+            flex-shrink: 0;
+            &--line {
+                width: 1.3rem;
+                height: 0;
+                border-radius: 0;
+                border-top-width: 0.3rem;
+                border-top-style: solid;
+                background: none;
+                &.is-dashed {
+                    border-top-style: dashed;
                 }
+            }
+        }
+    }
+    .flow-schema-diagram-wrap {
+        flex: 1 1 0%;
+        min-width: 0;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        @include mobile {
+            width: 100%;
+        }
+    }
+    // Antes esta sección era una imagen fija (schemaEN.svg / schemaES.svg)
+    // con el texto de cada pantalla quemado como paths (0 <text> reales, ver
+    // CoFlowSchema.tsx). Ahora es DOM real sobre una cuadrícula fija: un SVG
+    // solo con las líneas de conexión (sin texto) superpuesto a íconos +
+    // texto real posicionados con porcentajes que coinciden con esa misma
+    // cuadrícula.
+    .flow-schema-diagram {
+        position: relative;
+        // Los 8 nodos por fila necesitan espacio real para su texto (p. ej.
+        // "Configuración de carga" o "Estatus 3: Cargo por estancia") sin
+        // que las etiquetas se encimen entre sí. El ancho de la fuente es
+        // fijo (rem), así que en vez de encoger el diagrama hasta que el
+        // texto se traslape, se fija un ancho mínimo y se deja scroll
+        // horizontal (.flow-schema-diagram-wrap) en cualquier pantalla
+        // donde no quepa completo — igual que .flow-schema en la sección de
+        // flujo transaccional.
+        // La cuadrícula (CoFlowSchema.tsx) se comprimió ~18% respecto a la
+        // primera versión para que ocupe menos ancho y su proporción se
+        // acerque más a la del diagrama original (900x712 ≈ 1.26:1); este
+        // min-width y el aspect-ratio bajaron en la misma proporción.
+        width: 100%;
+        min-width: 78rem;
+        aspect-ratio: 860 / 660;
+        &__connectors {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        &__connector {
+            fill: none;
+            stroke-width: 2.5;
+            transition: opacity 0.25s ease-in-out;
+            &.is-dimmed {
+                opacity: 0.12;
+            }
+            &--main {
+                stroke: #ff2079;
+            }
+            &--secondary {
+                stroke: #440bd4;
+            }
+            &--deprecated {
+                stroke: #f7b1fe;
+            }
+        }
+        &__nodes {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+        &__node {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            @include fnFlex(column, center, center, 0.4rem);
+            width: 7.8rem;
+            color: $shade-800;
+            transition: opacity 0.25s ease-in-out;
+            svg {
+                width: 1.8rem;
+                height: 1.8rem;
+            }
+            span {
+                @include fnFont("Raleway-SemiBold", 1rem, none, $shade-700);
+                text-align: center;
+                // Red de seguridad: si una sola palabra (p. ej. "Configuración")
+                // no cabe en el ancho del nodo, que se parta en vez de
+                // desbordarse y encimarse con el nodo vecino.
+                overflow-wrap: break-word;
+                word-break: break-word;
+            }
+            &.is-external {
+                color: $shade-400;
                 span {
-                    width: 10rem;
-                    @include fnFont("Raleway-Medium", 1.4rem, none, $shade-500);
+                    color: $shade-400;
                 }
             }
+            &.is-main {
+                color: $red-800;
+                span {
+                    color: $red-800;
+                }
+            }
+            &.is-dimmed {
+                opacity: 0.2;
+            }
         }
+    }
+    .flow-schema-diagram-hint {
+        color: $shade-500;
+        font-style: italic;
     }
     .questions {
         @include fnFlex(row, center, center, 10rem);
@@ -168,6 +353,65 @@
             }
         }
     }
+    // Ranking de prioridades del ejercicio (Mapa/Navegación/Monedero/
+    // Historial/Ayuda). Antes cada ícono se encogía con transform: scale()
+    // para sugerir su posición (más chico = menos relevante); esto venía de
+    // cuando el texto estaba quemado dentro del propio SVG y encogía junto
+    // con el ícono como una sola pieza. Al independizar la etiqueta como
+    // texto real (ver comentario en CoInvest.tsx), ese mismo encogimiento
+    // volvía el texto ilegible en las últimas posiciones. Ahora el ranking
+    // se muestra como barras horizontales descendentes (100/80/60/40/20%,
+    // mismo orden que el resultado real) — ícono y etiqueta quedan siempre
+    // al mismo tamaño y legibles, y la barra + el número comunican la
+    // posición, en vez de depender del tamaño del texto.
+    .rank-bars {
+        @include fnFlex(column, center, stretch, 1.5rem);
+        width: 100%;
+        max-width: 60rem;
+        margin: 0 auto;
+        &__item {
+            @include fnFlex(row, flex-start, center, 1.5rem);
+            width: 100%;
+            @include mobile {
+                @include fnFlex(column, flex-start, stretch, 0.8rem);
+            }
+            &-label {
+                @include fnFlex(row, flex-start, center, 1rem);
+                width: 15rem;
+                flex-shrink: 0;
+                @include mobile {
+                    width: 100%;
+                }
+                img {
+                    width: 3rem;
+                    height: 3rem;
+                }
+                span {
+                    @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-800);
+                }
+            }
+            &-track {
+                @include fnFlex(row, flex-start, center, 0rem);
+                width: 100%;
+                height: 3.2rem;
+                background-color: $shade-100;
+                border-radius: 1.6rem;
+                overflow: hidden;
+            }
+            &-fill {
+                @include fnFlex(row, flex-end, center, 0rem);
+                height: 100%;
+                min-width: 3.2rem;
+                background-color: $red-800;
+                border-radius: 1.6rem;
+                padding-right: 1.2rem;
+                transition: width 0.6s ease-in-out;
+                span {
+                    @include fnFont("Raleway-Bold", 1.4rem, none, $shade-0);
+                }
+            }
+        }
+    }
     .exercise {
         @include fnFlex(column, center, center, 3rem);
         width: 100%;
@@ -228,56 +472,7 @@
     .example {
         width: 100%;
         &-container {
-            @include fnFlex(row, space-between, center, 5rem);
             width: 100%;
-            &__control {
-                @include fnFlex(row, center, center, 1rem);
-                height: 15rem;
-                clip-path: fill-box;
-                &-arrows {
-                    @include fnFlex(column, space-between, center, 1rem);
-                    height: 100%;
-                    img {
-                        width: 4rem;
-                        height: 4rem;
-                        transition: all 0.3s ease-in-out;
-                    }
-                    .arrow {
-                        &:hover {
-                            cursor: pointer;
-                            transform: scale(1.2);
-                        }
-                    }
-                }
-                &-buttons {
-                    @include fnFlex(column, center, flex-start, 1rem);
-                    &-item {
-                        @include fnFlex(row, flex-start, center, 1rem);
-                        background-color: $shade-0;
-                        border-radius: 0.5rem;
-                        padding: 1.5rem 1.5rem;
-                        width: 100%;
-                        //transition: all 0.3s ease-in-out;
-                        img {
-                            width: 2.4rem;
-                            height: 2.4rem;
-                        }
-                        span {
-                            @include fnFont("Raleway-SemiBold", 2.4rem, none, $shade-800);
-                            width: max-content;
-                            @include tablet {
-                                display: none;
-                            }
-                        }
-                    }
-                    #uno,
-                    #tres {
-                        opacity: 0.5;
-                        transform-origin: left;
-                        transform: scale(0.8);
-                    }
-                }
-            }
             &__screens {
                 @include fnFlex(row, space-around, center, 3rem);
                 width: 100%;
@@ -291,8 +486,51 @@
                     width: auto;
                     padding: 2rem 0px;
                 }
-                .arrow {
-                    display: none;
+            }
+        }
+        // Antes esta sección tenía flechas arriba/abajo (.example-container__control)
+        // para rotar entre categorías, incluyendo 2 duplicadas en Android solo para
+        // igualar visualmente las 4 de iOS. Ahora cada plataforma muestra sus
+        // categorías reales como pestañas, con los mismos colores exactos que
+        // .btn en _base.scss (negro/blanco, no el acento rosa de la marca) —
+        // ver también .testflow-tabs__tab más abajo, que sigue el mismo criterio.
+        // GLUE es la excepción: ahí el color sí es funcional (se refleja en el
+        // diagrama de conectores), así que .handoff-flow__tab conserva su acento.
+        .noti-tabs {
+            @include fnFlex(row, center, center, 1rem);
+            width: 100%;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            &__tab {
+                @include fnFlex(row, center, center, 0.8rem);
+                @include fnFont("Raleway-Bold", 1.4rem, none, $shade-800);
+                background-color: transparent;
+                border: 0.2rem solid $shade-800;
+                cursor: pointer;
+                padding: 0.8rem 1.6rem;
+                border-radius: 2.5rem;
+                transition: all 0.3s ease-in-out;
+                img {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    transition: filter 0.3s ease-in-out;
+                }
+                // Los íconos son <img src="*.svg">, no SVG inline, así que no
+                // heredan `color` del botón (currentColor no cruza ese límite).
+                // Se fuerzan a blanco con un filtro en vez de tocar el archivo.
+                &:hover {
+                    background-color: $shade-800;
+                    color: $shade-0;
+                    img {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+                &.active {
+                    background-color: $shade-800;
+                    color: $shade-0;
+                    img {
+                        filter: brightness(0) invert(1);
+                    }
                 }
             }
         }
@@ -316,11 +554,34 @@
 
 #flujo-y-metodos,
 #flow-and-methods {
+    // Mismo conector animado (guiones fluyendo) que .handoff-flow__connector
+    // en _glue.scss, reemplazando la flecha estática entre pasos. El color
+    // se recibe por `color` inline (currentColor) para poder reusarlo con
+    // distintos acentos si hiciera falta más adelante.
+    .flow-connector {
+        width: 3rem;
+        height: 0.3rem;
+        min-width: 3rem;
+        border-radius: 1rem;
+        background-image: linear-gradient(
+            90deg,
+            currentColor 50%,
+            transparent 50%
+        );
+        background-size: 1.6rem 0.3rem;
+        animation: flow-connector-move 1.2s linear infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .flow-connector {
+            animation: none;
+        }
+    }
     .flow-schema {
         @include fnFlex(row, space-between, center, 3rem);
         width: 100%;
         height: 15rem;
         overflow-x: auto;
+        scroll-behavior: smooth;
         img {
             width: 4rem;
             height: 4rem;
@@ -338,6 +599,34 @@
                 @include fnFont("Raleway-SemiBold", 1.2rem, none, $red-800);
                 text-align: center;
                 width: 100%;
+            }
+        }
+    }
+    // Selector de test flows: antes flechas anterior/siguiente que no
+    // mostraban los nombres de los otros flujos; ahora pestañas con los mismos
+    // colores exactos que .btn en _base.scss (negro/blanco) — mismo criterio
+    // que .noti-tabs__tab más arriba. GLUE es la excepción porque su color
+    // es funcional (ver .handoff-flow__tab).
+    .testflow-tabs {
+        @include fnFlex(row, center, center, 1rem);
+        width: 100%;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+        &__tab {
+            @include fnFont("Raleway-Bold", 1.4rem, none, $shade-800);
+            background-color: transparent;
+            border: 0.2rem solid $shade-800;
+            cursor: pointer;
+            padding: 0.8rem 2rem;
+            border-radius: 2.5rem;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                background-color: $shade-800;
+                color: $shade-0;
+            }
+            &.active {
+                background-color: $shade-800;
+                color: $shade-0;
             }
         }
     }
@@ -377,7 +666,10 @@
                 }
                 &-item {
                     @include fnFlex(column, center, center, 0.5rem);
-                    cursor: pointer;
+                    // A diferencia de la fila principal, estos pasos solo
+                    // muestran el flujo de prueba seleccionado (no hay
+                    // descripción por paso), así que ya no son botones.
+                    cursor: default;
                     width: 10rem;
                     transition: all 0.3s ease-in-out;
                     img {
@@ -392,6 +684,15 @@
                 }
             }
         }
+    }
+}
+
+@keyframes flow-connector-move {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1.6rem 0;
     }
 }
 
@@ -684,6 +985,19 @@ iframe {
         width: 100%;
         height: auto;
     }
+}
+
+// Flechas para hojear .my-book (mismo componente/estilo que
+// .context-data-nav, pero centradas debajo del libro en vez de alineadas a
+// la derecha arriba, porque el libro está centrado y no es parte de una
+// fila con contenido a su izquierda). A diferencia de .context-data-nav no
+// se ocultan en mobile: ahí el carrusel de tarjetas se reemplaza por swipe
+// nativo del scroll, pero el libro seguía sin ninguna pista visual de que
+// se puede interactuar con él, que era justamente el problema reportado.
+.book-nav {
+    @include fnFlex(row, center, center, -1rem);
+    width: 100%;
+    margin-top: 0.5rem;
 }
 
 #hus {

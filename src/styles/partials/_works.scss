@@ -87,7 +87,19 @@
         @include fnFlex(column, center, flex-start, 2rem);
         width: 100%;
         clip-path: fill-box;
-        overflow-x: scroll;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: $shade-300 transparent;
+        &::-webkit-scrollbar {
+            height: 0.6rem;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $shade-300;
+            border-radius: 1rem;
+        }
         &-filters {
             @include fnFlex(row, flex-start, center, 2rem);
             width: 100%;
@@ -186,6 +198,10 @@
                 &#Liverpool {
                     height: 1.5rem;
                     z-index: 6;
+                }
+                &#Galileo {
+                    height: 1.5rem;
+                    z-index: 5;
                 }
             }
         }

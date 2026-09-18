@@ -83,6 +83,8 @@ export interface WorkEntry {
 	startDate: string;
 	endDate: string | null;
 	hasDetail: boolean;
+	/** Controla si aparece en "My featured works" (Home) — ver CoTrabajos.tsx. */
+	featured: boolean;
 }
 
 /** Forma completa de public/data/works.json. */

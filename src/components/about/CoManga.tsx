@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { useRef, useState } from "react";
 
+import CoBtn from "../general/CoBtn";
+
 import oyasumi from "../../assets/imgs/about/manga/oyasumi.webp";
 import uzumaki from "../../assets/imgs/about/manga/uzumaki.webp";
 import gakko from "../../assets/imgs/about/manga/gakko.webp";
@@ -82,8 +84,21 @@ const CoCard = ({ cover, title, author, url }: CoCardProps) => {
 	);
 };
 
+// Cuántas tarjetas desplaza cada click de flecha (ver .music-nav en
+// _about.scss) — mismo valor que .colab-nav en Home (_home.scss).
+const SCROLL_AMOUNT = 320;
+
 const CoManga = () => {
 	const { t } = useTranslation();
+	const mangaListRef = useRef<HTMLDivElement>(null);
+	const animeListRef = useRef<HTMLDivElement>(null);
+
+	const scrollMangas = (direction: 1 | -1) => {
+		mangaListRef.current?.scrollBy({ left: direction * SCROLL_AMOUNT, behavior: "smooth" });
+	};
+	const scrollAnimes = (direction: 1 | -1) => {
+		animeListRef.current?.scrollBy({ left: direction * SCROLL_AMOUNT, behavior: "smooth" });
+	};
 
 	const mangas = [
 		{ cover: oyasumi, title: "Oyasumi Punpun", author: "Inio Asano", url: null },
@@ -111,7 +126,7 @@ const CoManga = () => {
 					</div>
 				</div>
 			</div>
-			<div className="music-list">
+			<div className="music-list" ref={mangaListRef}>
 				{mangas.map((manga, index) => (
 					<CoCard
 						key={index}
@@ -122,6 +137,22 @@ const CoManga = () => {
 					/>
 				))}
 			</div>
+			<div className="music-nav">
+				<CoBtn
+					type="secondary"
+					icon="block"
+					onClick={() => scrollMangas(-1)}
+					ariaLabel={t("about.carousel.prev")}
+					style={{ transform: "scale(0.5) rotate(180deg)" }}
+				/>
+				<CoBtn
+					type="secondary"
+					icon="block"
+					onClick={() => scrollMangas(1)}
+					ariaLabel={t("about.carousel.next")}
+					style={{ transform: "scale(0.5)" }}
+				/>
+			</div>
 			<div className="tab-content">
 				<div className="tab-content__info">
 					<div className="tab-content__info-text">
@@ -129,7 +160,7 @@ const CoManga = () => {
 					</div>
 				</div>
 			</div>
-			<div className="music-list">
+			<div className="music-list" ref={animeListRef}>
 				{animes.map((anime, index) => (
 					<CoCard
 						key={index}
@@ -139,6 +170,22 @@ const CoManga = () => {
 						url={anime.url}
 					/>
 				))}
+			</div>
+			<div className="music-nav">
+				<CoBtn
+					type="secondary"
+					icon="block"
+					onClick={() => scrollAnimes(-1)}
+					ariaLabel={t("about.carousel.prev")}
+					style={{ transform: "scale(0.5) rotate(180deg)" }}
+				/>
+				<CoBtn
+					type="secondary"
+					icon="block"
+					onClick={() => scrollAnimes(1)}
+					ariaLabel={t("about.carousel.next")}
+					style={{ transform: "scale(0.5)" }}
+				/>
 			</div>
 		</div>
 	);

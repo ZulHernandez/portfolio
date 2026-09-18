@@ -2,32 +2,27 @@ import { Trans, useTranslation } from "react-i18next";
 import dayjs from "dayjs";
 
 import perfil from "../../assets/imgs/home/perfil.webp";
+import CoBtn from "../general/CoBtn";
 import useExperienceData from "../context/useExperienceData";
-import { resolveLang } from "../../utils/experienceData";
 
-// Antes "Product Design Chapter Lead" y la fecha de inicio de carrera
-// (2016-04-01) estaban escritos a mano aquí Y dentro de home.hola.p1 en
-// translation.json — dos lugares que se podían desincronizar del puesto
-// actual real. Ahora ambos salen de public/data/experience.json (el mismo
-// documento que alimenta CoColab/CoTimeline/RoResume): el título es el rol
-// del job con presence.collab=true y sin endDate (el puesto vigente), y los
-// años de experiencia se calculan desde `careerStartDate`. Estos valores de
-// respaldo solo se usan en el instante entre el primer render y que resuelva
-// el fetch (o si llegara a fallar) — mantienen el texto anterior para que no
-// haya un parpadeo/vacío en el héroe de la página.
-const FALLBACK_TITLE = "Product Design Chapter Lead";
+// Antes la fecha de inicio de carrera (2016-04-01) estaba escrita a mano
+// aquí. Ahora sale de public/data/experience.json (`careerStartDate`, el
+// mismo documento que alimenta CoColab/CoTimeline/RoResume). Este valor de
+// respaldo solo se usa en el instante entre el primer render y que resuelva
+// el fetch (o si llegara a fallar) — evita un parpadeo/vacío en el héroe.
+//
+// El título ("Senior Product Designer & Design Systems Lead") es un
+// posicionamiento para quien no conoce la nomenclatura interna de Galileo
+// ("Product Design Chapter Lead", modelo Spotify) — vive en
+// home.hola.positioningTitle, deliberadamente separado del puesto real que
+// sí se muestra tal cual en Colaboraciones/Resume.
 const FALLBACK_CAREER_START = "2016-04-01";
 
 const CoHola = () => {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 	const { data } = useExperienceData();
-	const lang = resolveLang(i18n.language);
 
-	const currentJob = data?.jobs
-		.filter((job) => job.presence.collab && job.endDate === null)
-		.sort((a, b) => b.startDate.localeCompare(a.startDate))[0];
-
-	const title = currentJob ? currentJob.role[lang] : FALLBACK_TITLE;
+	const title = t("home.hola.positioningTitle");
 	const years = dayjs().diff(dayjs(data?.careerStartDate ?? FALLBACK_CAREER_START), "year");
 
 	return (
@@ -54,6 +49,10 @@ const CoHola = () => {
 				<p>
 					<Trans i18nKey="home.hola.p3" components={{ b: <b /> }} />
 				</p>
+			</div>
+			<div id="hola-cta">
+				<CoBtn type="secondary" text={t("home.hola.seeWorkCta")} link="/works" />
+				<CoBtn type="primary" text={t("home.hola.downloadCvCta")} onClick={() => window.print()} />
 			</div>
 		</div>
 	);

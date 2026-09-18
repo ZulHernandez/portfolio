@@ -1,12 +1,18 @@
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
 
 import CoTitle from "../../../components/general/CoTitle";
 import CoIcon from "../../general/CoIcon";
 import CoFile from "../../general/CoFile";
+import CoBtn from "../../general/CoBtn";
 
 import drive from "../../../assets/imgs/works/glue/drive.svg";
 import folder from "../../../assets/imgs/vectores/folder.svg";
 import script from "../../../assets/imgs/vectores/script.svg";
+
+// Cuánto desplaza cada click de flecha (ver .carrousel-nav en _glue.scss) —
+// mismo valor que .colab-nav en Home y .music-nav en About.
+const SCROLL_AMOUNT = 320;
 
 // Niveles/iconos no se traducen; los textos (mismo orden) sí, y viven en
 // glue.insumos.fonts.files / glue.insumos.structure.projects.<slug>.bullets.
@@ -26,6 +32,11 @@ const projectBulletMeta: Record<ProjectSlug, { level: number; icon: string | nul
 
 const CoInsumos = () => {
 	const { t } = useTranslation();
+	const carrouselRef = useRef<HTMLDivElement>(null);
+
+	const scrollProjects = (direction: 1 | -1) => {
+		carrouselRef.current?.scrollBy({ left: direction * SCROLL_AMOUNT, behavior: "smooth" });
+	};
 
 	const fileTexts = t("glue.insumos.fonts.files", { returnObjects: true }) as string[];
 	const files = fileMeta.map((meta, index) => ({ ...meta, text: fileTexts[index] }));
@@ -77,7 +88,7 @@ const CoInsumos = () => {
 						</ul>
 					</div>
 				</div>
-				<div className="bullet__carrousel">
+				<div className="bullet__carrousel" ref={carrouselRef}>
 					{projects.map((project, index) => (
 						<div className="bullet__body__card" key={index}>
 							<div id="schema" className="bullet__body__card-schema">
@@ -93,6 +104,22 @@ const CoInsumos = () => {
 							</div>
 						</div>
 					))}
+				</div>
+				<div className="carrousel-nav">
+					<CoBtn
+						type="secondary"
+						icon="block"
+						onClick={() => scrollProjects(-1)}
+						ariaLabel={t("caseStudy.carousel.prev")}
+						style={{ transform: "scale(0.5) rotate(180deg)" }}
+					/>
+					<CoBtn
+						type="secondary"
+						icon="block"
+						onClick={() => scrollProjects(1)}
+						ariaLabel={t("caseStudy.carousel.next")}
+						style={{ transform: "scale(0.5)" }}
+					/>
 				</div>
 			</div>
 		</div>

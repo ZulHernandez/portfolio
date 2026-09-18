@@ -52,7 +52,7 @@ jobs:
           # Cambia esto si tu dominio no es el principal de la cuenta (por
           # ejemplo, un addon domain suele vivir en
           # ./domains/tu-dominio.com/public_html/ en vez de ./public_html/).
-          server-dir: ./public_html/
+          server-dir: ./
           exclude: |
             **/.git*
             **/.git*/**

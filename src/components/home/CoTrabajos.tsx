@@ -12,7 +12,10 @@ const CoTrabajos = () => {
 	const { width } = useScreenSize();
 	const { data } = useWorksData();
 	const lang = resolveLang(i18n.language);
-	const destacados = (data?.works ?? []).slice(0, 4).map((work) => toTrabajoItem(work, lang));
+	// Antes eran los primeros 4 de works.json (.slice(0,4)) — con el campo
+	// `featured` en cada work, cuáles se destacan en Home se controla editando
+	// ese JSON, sin tocar este componente.
+	const destacados = (data?.works ?? []).filter((work) => work.featured).map((work) => toTrabajoItem(work, lang));
 
 	return (
 		<div id={t("home.anchors.trabajos.id")} className="container-fluid">

@@ -71,9 +71,26 @@
             @include fnFont("Raleway-Medium", 2.4rem, none, $shade-600);
         }
     }
+    #hola-cta {
+        @include fnFlex(row, flex-end, center, 2rem);
+        width: 100%;
+        margin-top: 2rem;
+        @include tablet {
+            @include fnFlex(row, center, center, 2rem);
+        }
+    }
 }
 
 #colab {
+    // Las flechas se escalan a la mitad (transform: scale(0.5) en línea) sin
+    // achicar su propia caja de layout, así que un gap negativo compensa el
+    // espacio "fantasma" que deja el escalado para que se vean agrupadas.
+    .colab-nav {
+        @include fnFlex(row, flex-end, center, -1rem);
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
     .colab-carrousel {
         @include fnFlex(row, flex-start, flex-start, 5rem);
         @include tablet {

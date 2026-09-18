@@ -1,7 +1,9 @@
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
 
 import CoTitle from "../../../components/general/CoTitle";
 import CoKPI from "../../../components/general/CoKPI";
+import CoBtn from "../../../components/general/CoBtn";
 
 import map from "../../../assets/imgs/works/movilidad/cdmx.svg";
 import pistola1 from "../../../assets/imgs/works/movilidad/ccs1.svg";
@@ -24,8 +26,18 @@ interface ContextBullets {
 	transactionFlow: ContextBullet;
 }
 
+// Cuánto desplaza cada click de flecha (ver .context-data-nav en
+// _movilidad.scss) — mismo valor que .carrousel-nav en GLUE. Solo aplica en
+// desktop/tablet: en mobile la fila se apila vertical y no scrollea.
+const SCROLL_AMOUNT = 320;
+
 const CoContexto = () => {
 	const { t } = useTranslation();
+	const contextDataRef = useRef<HTMLDivElement>(null);
+
+	const scrollContextData = (direction: 1 | -1) => {
+		contextDataRef.current?.scrollBy({ left: direction * SCROLL_AMOUNT, behavior: "smooth" });
+	};
 
 	// `ref` apunta a los ids de las propias secciones de MoviLidad (estos son
 	// los ids "originales" que GLUE y HUBBUB copiaron por error para sus
@@ -44,7 +56,7 @@ const CoContexto = () => {
 		<div id={t("movilidad.anchors.context.id")} className="container-fluid grey">
 			<CoTitle titles={t("movilidad.context.title")} />
 			<span className="text-normal">{t("movilidad.context.intro")}</span>
-			<div className="context-data">
+			<div className="context-data" ref={contextDataRef}>
 				<div className="context-data__uno">
 					<img loading="lazy" src={map} alt="" />
 					<div className="context-data__uno-mapa">
@@ -72,7 +84,12 @@ const CoContexto = () => {
 					<div className="context-data__dos-pistolas">
 						{[pistola1, pistola2, pistola3, pistola4, pistola5, pistola6].map(
 							(pistolaImg, i) => (
-								<img loading="lazy" src={pistolaImg} alt={`Pistola ${i + 1}`} key={i + 1} />
+								<img
+									loading="lazy"
+									src={pistolaImg}
+									alt={t("movilidad.context.chargerTypeAlt", { number: i + 1 })}
+									key={i + 1}
+								/>
 							)
 						)}
 					</div>
@@ -86,6 +103,22 @@ const CoContexto = () => {
 						<center>{t("movilidad.context.collabLabel")}</center>
 					</span>
 				</div>
+			</div>
+			<div className="context-data-nav">
+				<CoBtn
+					type="secondary"
+					icon="block"
+					onClick={() => scrollContextData(-1)}
+					ariaLabel={t("caseStudy.carousel.prev")}
+					style={{ transform: "scale(0.5) rotate(180deg)" }}
+				/>
+				<CoBtn
+					type="secondary"
+					icon="block"
+					onClick={() => scrollContextData(1)}
+					ariaLabel={t("caseStudy.carousel.next")}
+					style={{ transform: "scale(0.5)" }}
+				/>
 			</div>
 			<div>
 				<span className="text-normal">{t("movilidad.context.topicsIntro")}</span>

@@ -1,15 +1,30 @@
-import { forwardRef } from "react";
-import type { ComponentType, ReactNode } from "react";
+import { forwardRef, useRef } from "react";
+import type { ComponentType, ReactNode, Ref } from "react";
 import { useTranslation } from "react-i18next";
 import HTMLFlipBook from "react-pageflip";
+
+import CoBtn from "../../../components/general/CoBtn";
 
 // react-pageflip's IFlipSetting types every setting as required, even though
 // the library supplies runtime defaults for all of them (only the props
 // actually passed below were ever set). Widen the type here rather than
 // fabricate values for props the original JS never passed.
 const FlipBook = HTMLFlipBook as unknown as ComponentType<
-	Record<string, unknown> & { children: ReactNode }
+	Record<string, unknown> & { children: ReactNode; ref?: Ref<PageFlipHandle> }
 >;
+
+// react-pageflip no expone tipos para el objeto que expone via ref: por
+// dentro es un wrapper de la librería page-flip (ver node_modules/page-flip),
+// cuya clase PageFlip sí trae flipNext()/flipPrev() (con animación de
+// "doblado" de esquina) además de turnToNextPage()/turnToPrevPage() (salto
+// instantáneo, sin animación). Se usan flipNext/flipPrev para que el clic en
+// las flechas se sienta igual que arrastrar la esquina de la página.
+interface PageFlipHandle {
+	pageFlip: () => {
+		flipNext: (corner?: "top" | "bottom") => void;
+		flipPrev: (corner?: "top" | "bottom") => void;
+	};
+}
 
 import CoTitle from "../../../components/general/CoTitle";
 
@@ -57,9 +72,16 @@ const CoPage = forwardRef<HTMLDivElement, { number: number }>((props, ref) => {
 
 CoPage.displayName = "CoPage";
 
-const CoMyBook = () => {
+// Antes el libro solo se podía "hojear" arrastrando la esquina de la
+// página (interacción nativa de react-pageflip) sin ninguna pista visual de
+// que fuera interactivo — por eso se veía como una imagen estática (ver
+// captura del usuario). Ahora recibe un ref hacia el propio FlipBook para
+// que las flechas ‹ › (mismas que el carrusel de #context, ver
+// .context-data-nav en _movilidad.scss) puedan controlarlo.
+const CoMyBook = ({ flipBookRef }: { flipBookRef: Ref<PageFlipHandle> }) => {
 	return (
 		<FlipBook
+			ref={flipBookRef}
 			width={110} // Ancho de UNA página
 			height={85} // Alto de la página (proporción habitual A4)
 			minWidth={110 * 2}
@@ -154,6 +176,9 @@ interface ChartText {
 
 const CoInvest = () => {
 	const { t } = useTranslation();
+	const bookRef = useRef<PageFlipHandle>(null);
+	const flipBookPrev = () => bookRef.current?.pageFlip().flipPrev();
+	const flipBookNext = () => bookRef.current?.pageFlip().flipNext();
 
 	const steps = t("hubbub.invest.steps", { returnObjects: true }) as InvestSteps;
 	const stepColumns = [steps.analysis, steps.research, steps.concepts];
@@ -332,7 +357,23 @@ const CoInvest = () => {
 					borderRadius: "1rem",
 					boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
 				}}>
-				<CoMyBook />
+				<CoMyBook flipBookRef={bookRef} />
+			</div>
+			<div className="book-nav">
+				<CoBtn
+					type="secondary"
+					icon="block"
+					onClick={flipBookPrev}
+					ariaLabel={t("caseStudy.carousel.prev")}
+					style={{ transform: "scale(0.5) rotate(180deg)" }}
+				/>
+				<CoBtn
+					type="secondary"
+					icon="block"
+					onClick={flipBookNext}
+					ariaLabel={t("caseStudy.carousel.next")}
+					style={{ transform: "scale(0.5)" }}
+				/>
 			</div>
 		</div>
 	);

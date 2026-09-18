@@ -271,6 +271,14 @@
             }
         }
     }
+    // Mismas flechas que .colab-nav en Home / .music-nav en About: el
+    // carrusel de arriba (3 tarjetas UX/Internal/Research) es un
+    // overflow-x sin ninguna pista de que hay más contenido a los lados.
+    .carrousel-nav {
+        @include fnFlex(row, flex-end, center, -1rem);
+        width: calc(100% - 10rem);
+        margin: 0.5rem 5rem 0px 5rem;
+    }
 }
 
 #automatizacion-de-procesos,
@@ -327,6 +335,15 @@
                 }
             }
         }
+    }
+
+    // Solo para el carrusel de plugins (3 tarjetas) — el de servers (#server
+    // más abajo) no scrollea en desktop (overflow-x: unset), así que no le
+    // hacen falta flechas.
+    .carrousel-nav {
+        @include fnFlex(row, flex-end, center, -1rem);
+        width: calc(100% - 10rem);
+        margin: 0.5rem 5rem 0px 5rem;
     }
 
     #server {
@@ -412,6 +429,131 @@
                 }
             }
         }
+    }
+
+    // Diagrama de hand-off (CoHandoffFlow.tsx): reemplaza el viejo
+    // EN/ES-hand-off.svg. Los conectores animan un gradiente punteado
+    // (background-position) para simular tokens fluyendo por el pipeline;
+    // se desactiva con prefers-reduced-motion.
+    .handoff-flow {
+        @include fnFlex(column, flex-start, center, 2.5rem);
+        width: 100%;
+        padding: 1rem 0 0 0;
+
+        &__tabs {
+            @include fnFlex(row, center, center, 1rem);
+        }
+
+        // Mismo lenguaje visual que .btn en _base.scss (borde grueso, tipografía
+        // Raleway-Bold, contorno que se rellena al interactuar) en vez del chip
+        // plano anterior — el acento de color por flujo llega vía la variable
+        // CSS --tab-accent que fija cada botón inline (ver CoHandoffFlow.tsx).
+        &__tab {
+            @include fnFont("Raleway-Bold", 1.4rem, none, var(--tab-accent, $shade-800));
+            background-color: transparent;
+            border: 0.2rem solid var(--tab-accent, $shade-800);
+            cursor: pointer;
+            padding: 0.8rem 2rem;
+            border-radius: 2.5rem;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                background-color: var(--tab-accent, $shade-800);
+                color: $shade-0;
+            }
+            &.active {
+                background-color: var(--tab-accent, $shade-800);
+                color: $shade-0;
+            }
+        }
+
+        &__steps {
+            @include fnFlex(row, center, flex-start, 0rem);
+            width: 100%;
+            flex-wrap: wrap;
+            @include mobile {
+                @include fnFlex(column, center, center, 0rem);
+            }
+        }
+
+        &__step-wrap {
+            @include fnFlex(row, center, center, 0rem);
+            @include mobile {
+                @include fnFlex(column, center, center, 0rem);
+            }
+        }
+
+        &__connector {
+            width: 4rem;
+            height: 0.3rem;
+            border-radius: 1rem;
+            background-image: linear-gradient(
+                90deg,
+                currentColor 50%,
+                transparent 50%
+            );
+            background-size: 1.6rem 0.3rem;
+            animation: handoff-flow-move 1.2s linear infinite;
+            @include mobile {
+                width: 0.3rem;
+                height: 3rem;
+                background-image: linear-gradient(
+                    180deg,
+                    currentColor 50%,
+                    transparent 50%
+                );
+                background-size: 0.3rem 1.6rem;
+                animation: handoff-flow-move-vertical 1.2s linear infinite;
+            }
+        }
+
+        &__node {
+            @include fnFlex(column, center, center, 0.5rem);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: $shade-500;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                transform: scale(1.05);
+            }
+            span {
+                @include fnFont("Raleway-SemiBold", 1.2rem, none, currentColor);
+                text-align: center;
+                max-width: 9rem;
+            }
+        }
+
+        &__description {
+            @include fnCard();
+            width: 100%;
+            text-align: center;
+            padding: 1.5rem 2.5rem;
+        }
+    }
+}
+
+@keyframes handoff-flow-move {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1.6rem 0;
+    }
+}
+
+@keyframes handoff-flow-move-vertical {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 1.6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .handoff-flow__connector {
+        animation: none;
     }
 }
 

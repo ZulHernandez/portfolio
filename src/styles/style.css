@@ -879,7 +879,36 @@ a {
     font-size: 2.88rem;
   }
 }
+#hola #hola-cta,
+#hello #hola-cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+@media (max-width: 1200px) {
+  #hola #hola-cta,
+  #hello #hola-cta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+}
 
+#colab .colab-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: -1rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
 #colab .colab-carrousel {
   display: flex;
   flex-direction: row;
@@ -1439,7 +1468,22 @@ footer img {
   gap: 2rem;
   width: 100%;
   clip-path: fill-box;
-  overflow-x: scroll;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #b3b3b3 transparent;
+}
+#linea-del-tiempo .time-line::-webkit-scrollbar,
+#timeline .time-line::-webkit-scrollbar {
+  height: 0.6rem;
+}
+#linea-del-tiempo .time-line::-webkit-scrollbar-track,
+#timeline .time-line::-webkit-scrollbar-track {
+  background: transparent;
+}
+#linea-del-tiempo .time-line::-webkit-scrollbar-thumb,
+#timeline .time-line::-webkit-scrollbar-thumb {
+  background-color: #b3b3b3;
+  border-radius: 1rem;
 }
 #linea-del-tiempo .time-line-filters,
 #timeline .time-line-filters {
@@ -1630,6 +1674,11 @@ footer img {
 #timeline .time-line-squema__container#Liverpool {
   height: 1.5rem;
   z-index: 6;
+}
+#linea-del-tiempo .time-line-squema__container#Galileo,
+#timeline .time-line-squema__container#Galileo {
+  height: 1.5rem;
+  z-index: 5;
 }
 #linea-del-tiempo .time-line-info,
 #timeline .time-line-info {
@@ -1984,6 +2033,16 @@ footer img {
   #this-is-me .tab-content__info-text__list-item span {
     font-size: 1.68rem;
   }
+}
+#esto-soy-yo .music-nav,
+#this-is-me .music-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: -1rem;
+  width: 100%;
+  margin-top: 0.5rem;
 }
 #esto-soy-yo .music-list,
 #this-is-me .music-list {
@@ -2824,6 +2883,16 @@ footer img {
   width: 100%;
   min-width: 30rem;
 }
+#mejora-de-insumos .carrousel-nav,
+#improvement-of-inputs .carrousel-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: -1rem;
+  width: calc(100% - 10rem);
+  margin: 0.5rem 5rem 0px 5rem;
+}
 
 #automatizacion-de-procesos .plugins,
 #automation-of-processes .plugins {
@@ -2949,6 +3018,16 @@ footer img {
   #automation-of-processes .plugins-carrousel__card .subtitle {
     font-size: 1.92rem;
   }
+}
+#automatizacion-de-procesos .carrousel-nav,
+#automation-of-processes .carrousel-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: -1rem;
+  width: calc(100% - 10rem);
+  margin: 0.5rem 5rem 0px 5rem;
 }
 #automatizacion-de-procesos #server,
 #automation-of-processes #server {
@@ -3144,7 +3223,189 @@ footer img {
   padding: 0.3rem 0.6rem;
   border-radius: 0.5rem;
 }
+#futuros-pasos .handoff-flow,
+#future-steps .handoff-flow {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  padding: 1rem 0 0 0;
+}
+#futuros-pasos .handoff-flow__tabs,
+#future-steps .handoff-flow__tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#futuros-pasos .handoff-flow__tab,
+#future-steps .handoff-flow__tab {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--tab-accent, #333333);
+}
+@media (max-width: 860px) {
+  #futuros-pasos .handoff-flow__tab,
+  #future-steps .handoff-flow__tab {
+    font-size: 1.68rem;
+  }
+}
+#futuros-pasos .handoff-flow__tab,
+#future-steps .handoff-flow__tab {
+  background-color: transparent;
+  border: 0.2rem solid var(--tab-accent, #333333);
+  cursor: pointer;
+  padding: 0.8rem 2rem;
+  border-radius: 2.5rem;
+  transition: all 0.3s ease-in-out;
+}
+#futuros-pasos .handoff-flow__tab:hover,
+#future-steps .handoff-flow__tab:hover {
+  background-color: var(--tab-accent, #333333);
+  color: #fff;
+}
+#futuros-pasos .handoff-flow__tab.active,
+#future-steps .handoff-flow__tab.active {
+  background-color: var(--tab-accent, #333333);
+  color: #fff;
+}
+#futuros-pasos .handoff-flow__steps,
+#future-steps .handoff-flow__steps {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+@media (max-width: 860px) {
+  #futuros-pasos .handoff-flow__steps,
+  #future-steps .handoff-flow__steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+  }
+}
+#futuros-pasos .handoff-flow__step-wrap,
+#future-steps .handoff-flow__step-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+}
+@media (max-width: 860px) {
+  #futuros-pasos .handoff-flow__step-wrap,
+  #future-steps .handoff-flow__step-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+  }
+}
+#futuros-pasos .handoff-flow__connector,
+#future-steps .handoff-flow__connector {
+  width: 4rem;
+  height: 0.3rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(90deg, currentColor 50%, transparent 50%);
+  background-size: 1.6rem 0.3rem;
+  animation: handoff-flow-move 1.2s linear infinite;
+}
+@media (max-width: 860px) {
+  #futuros-pasos .handoff-flow__connector,
+  #future-steps .handoff-flow__connector {
+    width: 0.3rem;
+    height: 3rem;
+    background-image: linear-gradient(180deg, currentColor 50%, transparent 50%);
+    background-size: 0.3rem 1.6rem;
+    animation: handoff-flow-move-vertical 1.2s linear infinite;
+  }
+}
+#futuros-pasos .handoff-flow__node,
+#future-steps .handoff-flow__node {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #808080;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+#futuros-pasos .handoff-flow__node:hover,
+#future-steps .handoff-flow__node:hover {
+  transform: scale(1.05);
+}
+#futuros-pasos .handoff-flow__node span,
+#future-steps .handoff-flow__node span {
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: currentColor;
+}
+@media (max-width: 860px) {
+  #futuros-pasos .handoff-flow__node span,
+  #future-steps .handoff-flow__node span {
+    font-size: 1.44rem;
+  }
+}
+#futuros-pasos .handoff-flow__node span,
+#future-steps .handoff-flow__node span {
+  text-align: center;
+  max-width: 9rem;
+}
+#futuros-pasos .handoff-flow__description,
+#future-steps .handoff-flow__description {
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 2.5rem;
+  transition: all 0.3s ease-in-out;
+}
+#futuros-pasos .handoff-flow__description:hover,
+#future-steps .handoff-flow__description:hover {
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
+  transform: scale(1.02);
+}
+#futuros-pasos .handoff-flow__description,
+#future-steps .handoff-flow__description {
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 2.5rem;
+}
 
+@keyframes handoff-flow-move {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1.6rem 0;
+  }
+}
+@keyframes handoff-flow-move-vertical {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 1.6rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .handoff-flow__connector {
+    animation: none;
+  }
+}
 .work-card__body-info-tags {
   display: flex;
   flex-direction: row;
@@ -3299,6 +3560,17 @@ footer img {
   clip-path: fill-box;
   overflow-x: scroll;
 }
+@media (max-width: 860px) {
+  #contexto .context-data,
+  #context .context-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    overflow-x: visible;
+  }
+}
 #contexto .context-data__uno,
 #context .context-data__uno {
   display: flex;
@@ -3307,6 +3579,18 @@ footer img {
   align-items: center;
   gap: 3rem;
   min-width: 60rem;
+}
+@media (max-width: 860px) {
+  #contexto .context-data__uno,
+  #context .context-data__uno {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    min-width: auto;
+    width: 100%;
+  }
 }
 #contexto .context-data__uno-mapa,
 #context .context-data__uno-mapa {
@@ -3321,6 +3605,12 @@ footer img {
 #context .context-data__uno {
   padding-bottom: 5rem;
 }
+@media (max-width: 860px) {
+  #contexto .context-data__uno,
+  #context .context-data__uno {
+    padding-bottom: 0rem;
+  }
+}
 #contexto .context-data__uno img,
 #context .context-data__uno img {
   height: 15rem;
@@ -3333,6 +3623,13 @@ footer img {
   align-items: center;
   gap: 2rem;
   padding: 0px 5rem;
+}
+@media (max-width: 860px) {
+  #contexto .context-data__dos,
+  #context .context-data__dos {
+    width: 100%;
+    padding: 0px;
+  }
 }
 #contexto .context-data__dos img,
 #context .context-data__dos img {
@@ -3365,6 +3662,28 @@ footer img {
 #contexto .context-data__dos,
 #context .context-data__dos {
   padding-bottom: 5rem;
+}
+@media (max-width: 860px) {
+  #contexto .context-data__dos,
+  #context .context-data__dos {
+    padding-bottom: 0rem;
+  }
+}
+#contexto .context-data-nav,
+#context .context-data-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: -1rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+@media (max-width: 860px) {
+  #contexto .context-data-nav,
+  #context .context-data-nav {
+    display: none;
+  }
 }
 
 #interfaz .research,
@@ -3406,31 +3725,29 @@ footer img {
 #interfaz .schema,
 #interface .schema {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1.5rem;
+  width: 100%;
+}
+#interfaz .schema-row,
+#interface .schema-row {
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 0rem;
+  gap: 2rem;
   width: 100%;
 }
 @media (max-width: 860px) {
-  #interfaz .schema,
-  #interface .schema {
+  #interfaz .schema-row,
+  #interface .schema-row {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3rem;
-  }
-}
-#interfaz .schema img,
-#interface .schema img {
-  width: 70%;
-  height: auto;
-}
-@media (max-width: 860px) {
-  #interfaz .schema img,
-  #interface .schema img {
-    width: 100%;
   }
 }
 #interfaz .schema-legenda,
@@ -3439,8 +3756,9 @@ footer img {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 3rem;
-  width: 10%;
+  gap: 1.2rem;
+  width: 9rem;
+  flex-shrink: 0;
   padding-top: 5rem;
 }
 @media (max-width: 860px) {
@@ -3450,9 +3768,10 @@ footer img {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    gap: 3rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
     width: 100%;
+    padding-top: 0;
   }
 }
 #interfaz .schema-legenda__item,
@@ -3461,25 +3780,180 @@ footer img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  margin: -0.3rem -0.5rem;
+  transition: background-color 0.2s ease-in-out;
 }
-#interfaz .schema-legenda__item img,
-#interface .schema-legenda__item img {
-  width: 2rem;
+#interfaz .schema-legenda__item:hover, #interfaz .schema-legenda__item:focus-visible,
+#interface .schema-legenda__item:hover,
+#interface .schema-legenda__item:focus-visible {
+  background-color: #f2f2f2;
+  outline: none;
 }
-#interfaz .schema-legenda__item span,
-#interface .schema-legenda__item span {
-  width: 10rem;
+#interfaz .schema-legenda__item.is-active .schema-legenda__label,
+#interface .schema-legenda__item.is-active .schema-legenda__label {
+  color: #333333;
+}
+#interfaz .schema-legenda__label,
+#interface .schema-legenda__label {
+  width: 6rem;
   font-family: "Raleway-Medium", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   text-decoration: none;
   color: #808080;
 }
 @media (max-width: 860px) {
-  #interfaz .schema-legenda__item span,
-  #interface .schema-legenda__item span {
-    font-size: 1.68rem;
+  #interfaz .schema-legenda__label,
+  #interface .schema-legenda__label {
+    font-size: 1.38rem;
   }
+}
+#interfaz .schema-legenda__label,
+#interface .schema-legenda__label {
+  transition: color 0.2s ease-in-out;
+}
+#interfaz .schema-legenda__swatch,
+#interface .schema-legenda__swatch {
+  display: block;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 0.25rem;
+  flex-shrink: 0;
+}
+#interfaz .schema-legenda__swatch--line,
+#interface .schema-legenda__swatch--line {
+  width: 1.3rem;
+  height: 0;
+  border-radius: 0;
+  border-top-width: 0.3rem;
+  border-top-style: solid;
+  background: none;
+}
+#interfaz .schema-legenda__swatch--line.is-dashed,
+#interface .schema-legenda__swatch--line.is-dashed {
+  border-top-style: dashed;
+}
+#interfaz .flow-schema-diagram-wrap,
+#interface .flow-schema-diagram-wrap {
+  flex: 1 1 0%;
+  min-width: 0;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+@media (max-width: 860px) {
+  #interfaz .flow-schema-diagram-wrap,
+  #interface .flow-schema-diagram-wrap {
+    width: 100%;
+  }
+}
+#interfaz .flow-schema-diagram,
+#interface .flow-schema-diagram {
+  position: relative;
+  width: 100%;
+  min-width: 78rem;
+  aspect-ratio: 860/660;
+}
+#interfaz .flow-schema-diagram__connectors,
+#interface .flow-schema-diagram__connectors {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#interfaz .flow-schema-diagram__connector,
+#interface .flow-schema-diagram__connector {
+  fill: none;
+  stroke-width: 2.5;
+  transition: opacity 0.25s ease-in-out;
+}
+#interfaz .flow-schema-diagram__connector.is-dimmed,
+#interface .flow-schema-diagram__connector.is-dimmed {
+  opacity: 0.12;
+}
+#interfaz .flow-schema-diagram__connector--main,
+#interface .flow-schema-diagram__connector--main {
+  stroke: #ff2079;
+}
+#interfaz .flow-schema-diagram__connector--secondary,
+#interface .flow-schema-diagram__connector--secondary {
+  stroke: #440bd4;
+}
+#interfaz .flow-schema-diagram__connector--deprecated,
+#interface .flow-schema-diagram__connector--deprecated {
+  stroke: #f7b1fe;
+}
+#interfaz .flow-schema-diagram__nodes,
+#interface .flow-schema-diagram__nodes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+#interfaz .flow-schema-diagram__node,
+#interface .flow-schema-diagram__node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  width: 7.8rem;
+  color: #333333;
+  transition: opacity 0.25s ease-in-out;
+}
+#interfaz .flow-schema-diagram__node svg,
+#interface .flow-schema-diagram__node svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+#interfaz .flow-schema-diagram__node span,
+#interface .flow-schema-diagram__node span {
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #4d4d4d;
+}
+@media (max-width: 860px) {
+  #interfaz .flow-schema-diagram__node span,
+  #interface .flow-schema-diagram__node span {
+    font-size: 1.2rem;
+  }
+}
+#interfaz .flow-schema-diagram__node span,
+#interface .flow-schema-diagram__node span {
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+#interfaz .flow-schema-diagram__node.is-external,
+#interface .flow-schema-diagram__node.is-external {
+  color: #999999;
+}
+#interfaz .flow-schema-diagram__node.is-external span,
+#interface .flow-schema-diagram__node.is-external span {
+  color: #999999;
+}
+#interfaz .flow-schema-diagram__node.is-main,
+#interface .flow-schema-diagram__node.is-main {
+  color: #ff2079;
+}
+#interfaz .flow-schema-diagram__node.is-main span,
+#interface .flow-schema-diagram__node.is-main span {
+  color: #ff2079;
+}
+#interfaz .flow-schema-diagram__node.is-dimmed,
+#interface .flow-schema-diagram__node.is-dimmed {
+  opacity: 0.2;
+}
+#interfaz .flow-schema-diagram-hint,
+#interface .flow-schema-diagram-hint {
+  color: #808080;
+  font-style: italic;
 }
 #interfaz .questions,
 #interface .questions {
@@ -3617,6 +4091,110 @@ footer img {
 #interface .questions__item #preg4 {
   width: 11.1111111111%;
 }
+#interfaz .rank-bars,
+#interface .rank-bars {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+#interfaz .rank-bars__item,
+#interface .rank-bars__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+@media (max-width: 860px) {
+  #interfaz .rank-bars__item,
+  #interface .rank-bars__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+}
+#interfaz .rank-bars__item-label,
+#interface .rank-bars__item-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: 15rem;
+  flex-shrink: 0;
+}
+@media (max-width: 860px) {
+  #interfaz .rank-bars__item-label,
+  #interface .rank-bars__item-label {
+    width: 100%;
+  }
+}
+#interfaz .rank-bars__item-label img,
+#interface .rank-bars__item-label img {
+  width: 3rem;
+  height: 3rem;
+}
+#interfaz .rank-bars__item-label span,
+#interface .rank-bars__item-label span {
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #333333;
+}
+@media (max-width: 860px) {
+  #interfaz .rank-bars__item-label span,
+  #interface .rank-bars__item-label span {
+    font-size: 1.68rem;
+  }
+}
+#interfaz .rank-bars__item-track,
+#interface .rank-bars__item-track {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0rem;
+  width: 100%;
+  height: 3.2rem;
+  background-color: #e6e6e6;
+  border-radius: 1.6rem;
+  overflow: hidden;
+}
+#interfaz .rank-bars__item-fill,
+#interface .rank-bars__item-fill {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0rem;
+  height: 100%;
+  min-width: 3.2rem;
+  background-color: #ff2079;
+  border-radius: 1.6rem;
+  padding-right: 1.2rem;
+  transition: width 0.6s ease-in-out;
+}
+#interfaz .rank-bars__item-fill span,
+#interface .rank-bars__item-fill span {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #fff;
+}
+@media (max-width: 860px) {
+  #interfaz .rank-bars__item-fill span,
+  #interface .rank-bars__item-fill span {
+    font-size: 1.68rem;
+  }
+}
 #interfaz .exercise,
 #interface .exercise {
   display: flex;
@@ -3735,99 +4313,7 @@ footer img {
 }
 #notificaciones .example-container,
 #notifications .example-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 5rem;
   width: 100%;
-}
-#notificaciones .example-container__control,
-#notifications .example-container__control {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  height: 15rem;
-  clip-path: fill-box;
-}
-#notificaciones .example-container__control-arrows,
-#notifications .example-container__control-arrows {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  height: 100%;
-}
-#notificaciones .example-container__control-arrows img,
-#notifications .example-container__control-arrows img {
-  width: 4rem;
-  height: 4rem;
-  transition: all 0.3s ease-in-out;
-}
-#notificaciones .example-container__control-arrows .arrow:hover,
-#notifications .example-container__control-arrows .arrow:hover {
-  cursor: pointer;
-  transform: scale(1.2);
-}
-#notificaciones .example-container__control-buttons,
-#notifications .example-container__control-buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1rem;
-}
-#notificaciones .example-container__control-buttons-item,
-#notifications .example-container__control-buttons-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1rem;
-  background-color: #fff;
-  border-radius: 0.5rem;
-  padding: 1.5rem 1.5rem;
-  width: 100%;
-}
-#notificaciones .example-container__control-buttons-item img,
-#notifications .example-container__control-buttons-item img {
-  width: 2.4rem;
-  height: 2.4rem;
-}
-#notificaciones .example-container__control-buttons-item span,
-#notifications .example-container__control-buttons-item span {
-  font-family: "Raleway-SemiBold", sans-serif;
-  font-size: 2.4rem;
-  text-decoration: none;
-  color: #333333;
-}
-@media (max-width: 860px) {
-  #notificaciones .example-container__control-buttons-item span,
-  #notifications .example-container__control-buttons-item span {
-    font-size: 2.88rem;
-  }
-}
-#notificaciones .example-container__control-buttons-item span,
-#notifications .example-container__control-buttons-item span {
-  width: -moz-max-content;
-  width: max-content;
-}
-@media (max-width: 1200px) {
-  #notificaciones .example-container__control-buttons-item span,
-  #notifications .example-container__control-buttons-item span {
-    display: none;
-  }
-}
-#notificaciones .example-container__control-buttons #uno,
-#notificaciones .example-container__control-buttons #tres,
-#notifications .example-container__control-buttons #uno,
-#notifications .example-container__control-buttons #tres {
-  opacity: 0.5;
-  transform-origin: left;
-  transform: scale(0.8);
 }
 #notificaciones .example-container__screens,
 #notifications .example-container__screens {
@@ -3849,9 +4335,67 @@ footer img {
   width: auto;
   padding: 2rem 0px;
 }
-#notificaciones .example-container__screens .arrow,
-#notifications .example-container__screens .arrow {
-  display: none;
+#notificaciones .example .noti-tabs,
+#notifications .example .noti-tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+#notificaciones .example .noti-tabs__tab,
+#notifications .example .noti-tabs__tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #333333;
+}
+@media (max-width: 860px) {
+  #notificaciones .example .noti-tabs__tab,
+  #notifications .example .noti-tabs__tab {
+    font-size: 1.68rem;
+  }
+}
+#notificaciones .example .noti-tabs__tab,
+#notifications .example .noti-tabs__tab {
+  background-color: transparent;
+  border: 0.2rem solid #333333;
+  cursor: pointer;
+  padding: 0.8rem 1.6rem;
+  border-radius: 2.5rem;
+  transition: all 0.3s ease-in-out;
+}
+#notificaciones .example .noti-tabs__tab img,
+#notifications .example .noti-tabs__tab img {
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: filter 0.3s ease-in-out;
+}
+#notificaciones .example .noti-tabs__tab:hover,
+#notifications .example .noti-tabs__tab:hover {
+  background-color: #333333;
+  color: #fff;
+}
+#notificaciones .example .noti-tabs__tab:hover img,
+#notifications .example .noti-tabs__tab:hover img {
+  filter: brightness(0) invert(1);
+}
+#notificaciones .example .noti-tabs__tab.active,
+#notifications .example .noti-tabs__tab.active {
+  background-color: #333333;
+  color: #fff;
+}
+#notificaciones .example .noti-tabs__tab.active img,
+#notifications .example .noti-tabs__tab.active img {
+  filter: brightness(0) invert(1);
 }
 #notificaciones .example .iOsIsland,
 #notificaciones .example .iOsNotification,
@@ -3875,6 +4419,22 @@ footer img {
   height: auto;
 }
 
+#flujo-y-metodos .flow-connector,
+#flow-and-methods .flow-connector {
+  width: 3rem;
+  height: 0.3rem;
+  min-width: 3rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(90deg, currentColor 50%, transparent 50%);
+  background-size: 1.6rem 0.3rem;
+  animation: flow-connector-move 1.2s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  #flujo-y-metodos .flow-connector,
+  #flow-and-methods .flow-connector {
+    animation: none;
+  }
+}
 #flujo-y-metodos .flow-schema,
 #flow-and-methods .flow-schema {
   display: flex;
@@ -3885,6 +4445,7 @@ footer img {
   width: 100%;
   height: 15rem;
   overflow-x: auto;
+  scroll-behavior: smooth;
 }
 #flujo-y-metodos .flow-schema img,
 #flow-and-methods .flow-schema img {
@@ -3924,6 +4485,49 @@ footer img {
 #flow-and-methods .flow-schema-item span {
   text-align: center;
   width: 100%;
+}
+#flujo-y-metodos .testflow-tabs,
+#flow-and-methods .testflow-tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+#flujo-y-metodos .testflow-tabs__tab,
+#flow-and-methods .testflow-tabs__tab {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #333333;
+}
+@media (max-width: 860px) {
+  #flujo-y-metodos .testflow-tabs__tab,
+  #flow-and-methods .testflow-tabs__tab {
+    font-size: 1.68rem;
+  }
+}
+#flujo-y-metodos .testflow-tabs__tab,
+#flow-and-methods .testflow-tabs__tab {
+  background-color: transparent;
+  border: 0.2rem solid #333333;
+  cursor: pointer;
+  padding: 0.8rem 2rem;
+  border-radius: 2.5rem;
+  transition: all 0.3s ease-in-out;
+}
+#flujo-y-metodos .testflow-tabs__tab:hover,
+#flow-and-methods .testflow-tabs__tab:hover {
+  background-color: #333333;
+  color: #fff;
+}
+#flujo-y-metodos .testflow-tabs__tab.active,
+#flow-and-methods .testflow-tabs__tab.active {
+  background-color: #333333;
+  color: #fff;
 }
 #flujo-y-metodos .flow-description,
 #flow-and-methods .flow-description {
@@ -4001,7 +4605,7 @@ footer img {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  cursor: pointer;
+  cursor: default;
   width: 10rem;
   transition: all 0.3s ease-in-out;
 }
@@ -4029,6 +4633,14 @@ footer img {
   width: 100%;
 }
 
+@keyframes flow-connector-move {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1.6rem 0;
+  }
+}
 .step-image {
   width: 80%;
   height: auto;
@@ -4526,6 +5138,16 @@ iframe {
   height: auto;
 }
 
+.book-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: -1rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
 #hus {
   width: 100%;
   height: 80rem;
@@ -4609,198 +5231,239 @@ iframe {
   padding-top: 10rem;
   align-items: center;
 }
-#resume .resume__sheet {
+
+.resume__sheet {
   background-color: #fff;
   border-radius: 2rem;
   padding: 2.5rem;
   transition: all 0.3s ease-in-out;
 }
-#resume .resume__sheet:hover {
+.resume__sheet:hover {
   box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
   transform: scale(1.02);
 }
-#resume .resume__sheet {
+.resume__sheet {
   width: 215mm;
   background: white;
   padding: 15mm;
   border-radius: 3mm;
 }
-#resume .resume__sheet-body {
+.resume__sheet-body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 5mm;
+  gap: 3mm;
   width: 100%;
   overflow: hidden;
 }
-#resume .resume__sheet-header {
+.resume__sheet-header {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 1mm;
 }
-#resume .resume__sheet-header h1 {
+.resume__sheet-header__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 2mm;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.resume__sheet-header__name {
   font-family: "Raleway-Bold", sans-serif;
-  font-size: 32px;
+  font-size: 20px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 860px) {
-  #resume .resume__sheet-header h1 {
-    font-size: 38.4px;
+  .resume__sheet-header__name {
+    font-size: 24px;
   }
 }
-#resume .resume__sheet-header h2 {
+.resume__sheet-header__separator {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  color: #808080;
+}
+@media (max-width: 860px) {
+  .resume__sheet-header__separator {
+    font-size: 14.4px;
+  }
+}
+.resume__sheet-header__tagline {
   font-family: "Raleway-Bold", sans-serif;
   font-size: 12px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 860px) {
-  #resume .resume__sheet-header h2 {
+  .resume__sheet-header__tagline {
     font-size: 14.4px;
   }
 }
-#resume .resume__sheet-header hr {
+.resume__sheet-header hr {
   width: 100%;
   height: 0.2rem;
   background-color: #cccccc;
   border-radius: 1rem;
   border: none;
 }
-#resume .resume__sheet-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 10mm;
-  width: 100%;
-}
-#resume .resume__sheet-content__info {
+.resume__sheet-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5mm;
+  width: 100%;
+}
+.resume__sheet-content--columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8mm;
+}
+.resume__sheet-content__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 5mm;
   width: 30%;
 }
-#resume .resume__sheet-content__info-card {
+.resume__sheet-content__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5mm;
+  width: 70%;
+}
+.resume__sheet-content__info-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 1mm;
+  width: 100%;
 }
-#resume .resume__sheet-content__info-card h3 {
+.resume__sheet-content__info-card h3 {
   font-family: "Raleway-Bold", sans-serif;
   font-size: 12px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 860px) {
-  #resume .resume__sheet-content__info-card h3 {
+  .resume__sheet-content__info-card h3 {
     font-size: 14.4px;
   }
 }
-#resume .resume__sheet-content__info-card__bullets {
+.resume__sheet-content__info-card__bullets {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 0.8mm;
 }
-#resume .resume__sheet-content__info-card__bullets p {
+.resume__sheet-content__info-card__bullets p {
   font-family: "Raleway-Medium", sans-serif;
   font-size: 10px;
   text-decoration: none;
   color: #808080;
 }
 @media (max-width: 860px) {
-  #resume .resume__sheet-content__info-card__bullets p {
+  .resume__sheet-content__info-card__bullets p {
     font-size: 12px;
   }
 }
-#resume .resume__sheet-content__info-card__bullets a p {
+.resume__sheet-content__info-card__bullets a p {
   font-family: "Raleway-Medium", sans-serif;
   font-size: 10px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 860px) {
-  #resume .resume__sheet-content__info-card__bullets a p {
+  .resume__sheet-content__info-card__bullets a p {
     font-size: 12px;
   }
 }
-#resume .resume__sheet-content__body {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 5mm;
+.resume__sheet-content__info-card__inline-list {
+  width: 100%;
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 10px;
+  text-decoration: none;
+  color: #808080;
 }
-#resume .resume__sheet-content__body-card {
+@media (max-width: 860px) {
+  .resume__sheet-content__info-card__inline-list {
+    font-size: 12px;
+  }
+}
+.resume__sheet-content__body-card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 0mm;
+  width: 100%;
 }
-#resume .resume__sheet-content__body-card h3 {
+.resume__sheet-content__body-card h3 {
   font-family: "Raleway-Bold", sans-serif;
   font-size: 12px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 860px) {
-  #resume .resume__sheet-content__body-card h3 {
+  .resume__sheet-content__body-card h3 {
     font-size: 14.4px;
   }
 }
-#resume .resume__sheet-content__body-card-summary ul {
-  padding-left: 4mm;
+.resume__sheet-content__body-card-summary {
   font-family: "Raleway-Medium", sans-serif;
   font-size: 10px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 860px) {
-  #resume .resume__sheet-content__body-card-summary ul {
+  .resume__sheet-content__body-card-summary {
     font-size: 12px;
   }
 }
-#resume .resume__sheet-content__body-card-experiencia {
+.resume__sheet-content__body-card-experiencia {
   padding: 2mm 0px 0px 0px;
 }
-#resume .resume__sheet-content__body-card-experiencia h4 {
+.resume__sheet-content__body-card-experiencia h4 {
   font-family: "Raleway-Medium", sans-serif;
   font-size: 10px;
   text-decoration: none;
   color: #4d4d4d;
 }
 @media (max-width: 860px) {
-  #resume .resume__sheet-content__body-card-experiencia h4 {
+  .resume__sheet-content__body-card-experiencia h4 {
     font-size: 12px;
   }
 }
-#resume .resume__sheet-content__body-card-experiencia__ubicacion {
+.resume__sheet-content__body-card-experiencia__ubicacion {
   font-family: "Raleway-Medium", sans-serif;
   font-size: 10px;
   text-decoration: none;
   color: #808080;
 }
 @media (max-width: 860px) {
-  #resume .resume__sheet-content__body-card-experiencia__ubicacion {
+  .resume__sheet-content__body-card-experiencia__ubicacion {
     font-size: 12px;
   }
 }
-#resume .resume__sheet-content__body-card-experiencia__ubicacion {
+.resume__sheet-content__body-card-experiencia__ubicacion {
   padding-bottom: 5mm;
 }
-#resume .resume__sheet-content__body-card-experiencia ul {
+.resume__sheet-content__body-card-experiencia ul {
   margin: 0;
   padding-left: 4mm;
   font-family: "Raleway-Medium", sans-serif;
@@ -4809,7 +5472,7 @@ iframe {
   color: #808080;
 }
 @media (max-width: 860px) {
-  #resume .resume__sheet-content__body-card-experiencia ul {
+  .resume__sheet-content__body-card-experiencia ul {
     font-size: 12px;
   }
 }
@@ -4819,30 +5482,25 @@ iframe {
 }
 
 @media print {
-  .nav-header,
-  .tags-list,
-  .btn,
-  .secondary,
-  .resume__sheet,
-  .no-print {
+  .app-shell {
     display: none;
-  }
-  .container-fluid {
-    padding: 0;
-    margin: 0;
   }
   .printable {
     display: flex;
     zoom: 1;
     height: -moz-max-content;
     height: max-content;
+    padding: 10mm;
+  }
+  .printable .resume__sheet-content {
+    gap: 3mm;
+  }
+  .printable .resume__sheet-body {
+    gap: 0mm;
   }
   @page {
-    margin: 15mm;
+    margin: 10mm;
     margin-top: 0mm;
     size: auto;
-  }
-  .resume__sheet-content__body {
-    width: 100%;
   }
 }

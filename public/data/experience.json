@@ -97,16 +97,16 @@
         },
         "resume": {
           "en": [
-            "Research of experience and interface solutions for various industries and purposes.",
-            "High-fidelity prototyping in Figma and Adobe XD.",
-            "Research of soft and hard requirements directly with end users and companies.",
-            "Direct communication and management of repositories with clients."
+            "Co-founded Marsoft as one of **3 developers** on a **5-person team** — front-end, web, and UX/UI design across all client engagements — and sat on the steering committee, defining requirements directly with clients.",
+            "Created Marsoft’s entire brand identity: logo, stationery, presentation templates, color system, typography, and website.",
+            "Delivered design work across diverse industries: a digital corporate magazine for Milano, brand identity for Berumen, landing pages for IDEA and Combucar, and **3 presentation decks** for a fire-extinguisher services company.",
+            "Designed and developed Gook Óptica’s **e-commerce platform and CRM** with inventory management."
           ],
           "es": [
-            "Investigación de soluciones de experiencia e interfaz para diversas industrias y propósitos.",
-            "Prototipado de alta fidelidad en Figma y Adobe XD.",
-            "Investigación de requisitos suaves y duros directamente con usuarios finales y empresas.",
-            "Comunicación directa y gestión de repositorios con clientes."
+            "Cofundador de Marsoft, uno de los **3 desarrolladores** en un equipo de **5 personas** —front-end, web y UX/UI en todos los proyectos de clientes— y miembro del comité de decisiones, definiendo requisitos directamente con clientes.",
+            "Creación de toda la imagen de marca de Marsoft: logo, papelería, plantillas de presentación, esquema de color, tipografía y sitio web.",
+            "Entrega de proyectos de diseño para clientes de industrias muy distintas: revista digital corporativa para Milano, imagen de marca para Berumen, landing pages para IDEA y Combucar, y **3 presentaciones corporativas** para una empresa de extintores.",
+            "Diseño y desarrollo de la plataforma de **e-commerce y CRM** con administración de inventarios para Gook Óptica."
           ]
         }
       }
@@ -186,33 +186,33 @@
         "collab": {
           "en": [
             "Writing and execution of User Stories",
-            "Software as a Service (SaaS)",
+            "Design of SaaS platforms for government institutions",
             "Coordination of multidisciplinary teams",
             "High-level prototyping",
             "Generation of graphic resources",
-            "Improvement of inputs"
+            "Improvement of design specs and handoff documentation"
           ],
           "es": [
             "Redacción y ejecución de Historias de usuario",
-            "Software as a Service (SaaS)",
+            "Diseño de plataformas SaaS para instituciones gubernamentales",
             "Coordinación de equipos multidisciplinarios",
             "Prototipado de alto nivel",
             "Generación de recursos gráficos",
-            "Mejora de insumos"
+            "Mejora de especificaciones de diseño y documentación de entrega"
           ]
         },
         "resume": {
           "en": [
-            "Design of payment, inventory and user management systems for the Mexican Social Security Institute.",
-            "Writing user stories and techniques for journeys.",
-            "Simultaneous management of 3 to 5 teams and projects related to UX/UI.",
-            "Creation of highly interactive prototypes used in government and presidential presentations."
+            "Designed payment, inventory, and user management systems for the Mexican Social Security Institute (IMSS), spanning **150+ user stories**.",
+            "Delivered the enrollment module for a compensation system for Cananea miners **in under a month**, under a tight delivery deadline.",
+            "Led cross-team definition of a medication indexing and alert module (**3+ teams**), and redesigned the IMSS Digital app with quick-access shortcuts and improved forms.",
+            "Led compact, UX-focused teams, translating complex government requirements into user stories, journey maps, and highly interactive prototypes used in **presidential presentations**."
           ],
           "es": [
-            "Diseño de sistemas de pago, inventario y administración de usuarios para el Instituto Mexicano del Seguro Social.",
-            "Redacción de historias de usuario y técnicas para journeys.",
-            "Gestión simultánea de 3 a 5 equipos y proyectos relacionados con UX/UI.",
-            "Creación de prototipos altamente interactivos utilizados en presentaciones gubernamentales y presidenciales."
+            "Diseño de sistemas de pago, inventario y administración de usuarios para el IMSS, con **más de 150 historias de usuario**.",
+            "Entrega del módulo de inscripción para el sistema de indemnizaciones de los mineros de Cananea **en menos de un mes**, por la premura del proyecto.",
+            "Definición del módulo de indexación y alerta de medicamentos coordinando con **más de 3 equipos**, y rediseño de la app IMSS Digital con accesos rápidos y mejora de formularios.",
+            "Lideré equipos compactos enfocados en UX, traduciendo requerimientos gubernamentales complejos en historias de usuario, mapas de journey y prototipos altamente interactivos usados en **presentaciones presidenciales**."
           ]
         }
       }
@@ -237,34 +237,36 @@
       "bullets": {
         "collab": {
           "en": [
-            "Agilization of design processes",
+            "Streamlining of design processes",
             "Maintenance and modernization of the design system",
             "Management of medium teams for digital projects",
-            "Omnichannel design web, wap and app",
-            "First and second level research",
+            "Omnichannel design across web, mobile and app",
+            "Primary and secondary research",
             "Continuous improvement"
           ],
           "es": [
             "Agilización de procesos de diseño",
             "Mantenimiento y modernización del sistema de diseño",
             "Dirección de equipos medianos para proyectos digitales",
-            "Diseño omnicanal web, wap y app",
-            "Research de primer y segundo nivel",
+            "Diseño omnicanal web, móvil y app",
+            "Investigación primaria y secundaria",
             "Mejora continua"
           ]
         },
         "resume": {
           "en": [
-            "Creation of design files for development teams in iOS, Android and web.",
-            "High-fidelity prototyping in Figma for large e-commerce and fintech systems.",
-            "Simultaneous management of 3 to 5 teams and projects related to UX/UI.",
-            "Redesign of existing projects for optimization and improvement of user flows."
+            "Rebuilt Galerías.com from the ground up — new experience and look and feel across the homepage, store-locator navigation, promotions, and a new account and notifications module.",
+            "Redesigned Activa, a savings and investment app built with Actinver — covering security, account, transaction, profiling, and investment flows.",
+            "Designed ‘Cliente Consentido,’ the Liverpool app’s loyalty and rewards system, and redesigned its Services tab with quick-access shortcuts, improved navigation, and a new thumbnail-based browsing concept.",
+            "Designed MoviLidad, Liverpool’s EV charging network app (**17 stations, 139 chargers across 6 charger types**) — payment flows with Openpay, map navigation, and the first module at Liverpool to use iOS/Android Live Activities.",
+            "Led the Design Ops and tokenization stage of GLUE (Global Liverpool User Experience), the company’s design system — as Tokens Engineer plus UI/dev/admin roles — while managing teams of **3–5 designers**, frontend developers, and business analysts."
           ],
           "es": [
-            "Creación de archivos de diseño para equipos de desarrollo en iOS, Android y web.",
-            "Prototipado de alta fidelidad en Figma para grandes sistemas de comercio electrónico y fintech.",
-            "Gestión simultánea de 3 a 5 equipos y proyectos relacionados con UX/UI.",
-            "Rediseño de proyectos existentes para optimización y mejora de flujos de usuario."
+            "Reconstrucción completa de Galerías.com, más que un rediseño — nueva experiencia y look and feel en el home, la navegación de tiendas y sucursales, avisos, y un nuevo módulo de cuenta y notificaciones.",
+            "Rediseño de Activa, la app de ahorro e inversión desarrollada junto con Actinver — flujos de seguridad, cuenta, transacción, perfilación e inversión.",
+            "Diseño de ‘Cliente Consentido’, el sistema de recompensas y fidelidad de la app de Liverpool, y rediseño de la sección de Servicios con accesos rápidos, mejoras de navegación y un nuevo concepto de miniaturas.",
+            "Diseño de MoviLidad, la red de electrolineras de Liverpool (**17 estaciones, 139 cargadores en 6 tipos**) — flujos de pago con Openpay, navegación en mapa, y el primer módulo de Liverpool en usar Live Activities de iOS/Android.",
+            "Lideré la etapa de Design Ops y tokenización de GLUE (Global Liverpool User Experience), el sistema de diseño de la empresa —como Tokens Engineer, además de roles de desarrollo, diseño UI y administración— gestionando equipos de **3 a 5 personas** entre diseñadores, desarrolladores frontend y analistas de negocio."
           ]
         }
       }
@@ -273,7 +275,7 @@
       "slug": "galileo",
       "group": "Galileo",
       "name": "Galileo",
-      "company": "Galileo | Ben&Frank - Bombavista",
+      "company": "Galileo: Ben&Frank - Bombavista",
       "role": {
         "en": "Product Design Chapter Lead",
         "es": "Product Design Chapter Lead"
@@ -289,36 +291,38 @@
       "bullets": {
         "collab": {
           "en": [
-            "Leadership of art projects in digital marketing and UX",
+            "Leadership of creative projects in digital marketing and UX",
             "Implementation of agile frameworks (Design Ops, Scrum, Kanban)",
             "Automation of workflows in design and web development",
             "Building a scalable and multichannel design system",
-            "Facilitation of graphic experience governance beyond design teams",
+            "Extending design governance beyond the design team",
             "Collaboration between design, development and marketing teams"
           ],
           "es": [
-            "Liderazgo de proyectos de arte en marketing digital y UX",
+            "Liderazgo de proyectos creativos en marketing digital y UX",
             "Implementación de marcos ágiles (Design Ops, Scrum, Kanban)",
             "Automatización de flujos de trabajo en diseño y desarrollo web",
             "Construcción de un sistema de diseño escalable y multicanal",
-            "Facilitación de la gobernanza de la experiencia gráfica más allá de los equipos de diseño",
+            "Extensión de la gobernanza de diseño más allá del equipo de diseño",
             "Colaboración entre los equipos de diseño, desarrollo y marketing"
           ]
         },
         "resume": {
           "en": [
-            "Coordination of art projects focused on digital marketing and UX.",
-            "Application of agile methodologies for efficient creative management.",
-            "Advanced automation of workflows in web design and development.",
-            "Structuring of a scalable and decoupled design system.",
-            "Cross-functional collaboration for visual and functional consistency."
+            "Built a token-based, multichannel design system (**310 primitive + 794 semantic tokens across 181 component sets**) spanning Ben&Frank, Bombavista, and Galileo's internal tools for HR, retail, lab, and operations.",
+            "Shipped **17 of 23 planned component sets** to production-ready status in the system's first year, cutting design-to-marketing turnaround **from a 3-week backlog to a month ahead of schedule**.",
+            "Standardized marketing request intake with asset-naming and campaign-based MVP protocols, and automated **80% of the ClickUp request pipeline** with auto-generated project and Drive structures via Apps Script.",
+            "Enabled **~90% self-service** for teams like Visual Merch through smart Figma templates and pages, cutting their dependency on the design team's queue.",
+            "Built two custom Figma plugins — an AI-assisted copywriter trained on **2,000+ brand copy examples**, and a GIF generator for the art team — and automated email, value-proposition, and discount campaign production through reusable templates.",
+            "Automated model photo retouching via a custom Weavy workflow, and built tooling to decimate 3D lens models for TikTok filters with automatic 360° renders."
           ],
           "es": [
-            "Coordinación de proyectos de arte enfocados en marketing digital y UX.",
-            "Aplicación de metodologías ágiles para gestión creativa eficiente.",
-            "Automatización avanzada de flujos en diseño web y desarrollo.",
-            "Estructuración de sistema de diseño escalable y desacoplado.",
-            "Colaboración transversal para consistencia visual y funcional."
+            "Construcción de un sistema de diseño multicanal basado en tokens (**310 primitivos y 794 semánticos en 181 component sets**), usado en Ben&Frank, Bombavista y las herramientas internas de Galileo para RRHH, retail, laboratorio y operaciones.",
+            "Entrega de **17 de 23 component sets** planeados en estado listo para desarrollo durante el primer año del sistema, reduciendo el tiempo de respuesta de diseño hacia marketing **de un rezago de 3 semanas a un mes completo adelantados**.",
+            "Estandarización de la recepción de solicitudes de marketing con protocolos de nombramiento de materiales y de generación de MVP por tipo de campaña, y automatización del **80% del proceso de pedidos en ClickUp**, con estructuras de proyecto y Drive generadas automáticamente vía Apps Script.",
+            "Habilitación de **~90% de autoservicio** para equipos como Visual Merch mediante templates y páginas inteligentes de Figma, reduciendo su dependencia de la cola del equipo de diseño.",
+            "Desarrollo de dos plugins de Figma a la medida —un asistente de copywriting con IA entrenado en **más de 2,000 ejemplos** de copy de la marca, y un generador de GIFs para el equipo de arte— y automatización de campañas de correo, propuesta de valor y descuentos mediante templates reutilizables.",
+            "Automatización del retoque de fotos de modelos mediante un workflow a la medida en Weavy, y desarrollo de herramientas para decimar modelos 3D de lentes usables en filtros de TikTok, con generación automática de vista 360°."
           ]
         }
       }
@@ -338,7 +342,7 @@
       "presence": {
         "timeline": false,
         "collab": false,
-        "resume": "projects"
+        "resume": null
       },
       "bullets": {
         "resume": {
@@ -398,7 +402,7 @@
       "presence": {
         "timeline": false,
         "collab": false,
-        "resume": "projects"
+        "resume": null
       },
       "bullets": {
         "resume": {

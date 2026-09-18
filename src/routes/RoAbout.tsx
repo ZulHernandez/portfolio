@@ -8,6 +8,7 @@ import CoTitle from "../components/general/CoTitle";
 import CoConozca from "../components/general/CoConozca";
 import CoNavLeft from "../components/general/CoNavLeft";
 import CoSeo from "../components/general/CoSeo";
+import CoBtn from "../components/general/CoBtn";
 import RoCarga from "../routes/RoCarga";
 
 const RoSport = lazy(() => import("./about/RoSport"));
@@ -32,6 +33,9 @@ import microphone from "../assets/imgs/about/music/microphone.svg";
 // nunca deben quedar hardcodeadas en el código fuente.
 const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 const PLAYLIST_ID = import.meta.env.VITE_YOUTUBE_PLAYLIST_ID;
+
+// Cuántas canciones desplaza cada click de flecha (ver .music-nav).
+const SCROLL_AMOUNT = 320;
 
 interface CoCardProps {
 	cover?: string;
@@ -142,6 +146,11 @@ const CoMusic = () => {
 	];
 
 	const [songs, setSongs] = useState<Song[]>([]);
+	const musicListRef = useRef<HTMLDivElement>(null);
+
+	const scrollMusic = (direction: 1 | -1) => {
+		musicListRef.current?.scrollBy({ left: direction * SCROLL_AMOUNT, behavior: "smooth" });
+	};
 
 	useEffect(() => {
 		const fetchSongs = async () => {
@@ -153,8 +162,15 @@ const CoMusic = () => {
 			}
 
 			try {
+				// maxResults=10 se quedaba corto: playlistItems devuelve los
+				// elementos en el orden de POSICIÓN de la playlist (no por
+				// fecha), así que si ya tiene más de 10 canciones, las
+				// agregadas más recientemente (al final) nunca llegaban a
+				// pedirse — de ahí que la lista se viera desactualizada. 50
+				// es el máximo por página que acepta la API; cubre cualquier
+				// playlist personal razonable sin necesitar paginación.
 				const response = await fetch(
-					`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=${PLAYLIST_ID}&key=${API_KEY}`
+					`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${PLAYLIST_ID}&key=${API_KEY}`
 				);
 				const data = (await response.json()) as { items?: YouTubePlaylistItem[] };
 
@@ -225,7 +241,7 @@ const CoMusic = () => {
 					<br />
 					<br />
 				</span>
-				<div className="music-list">
+				<div className="music-list" ref={musicListRef}>
 					{songs.map((song, index) => (
 						<CoCard
 							key={index}
@@ -235,6 +251,22 @@ const CoMusic = () => {
 							url={song.url}
 						/>
 					))}
+				</div>
+				<div className="music-nav">
+					<CoBtn
+						type="secondary"
+						icon="block"
+						onClick={() => scrollMusic(-1)}
+						ariaLabel={t("about.carousel.prev")}
+						style={{ transform: "scale(0.5) rotate(180deg)" }}
+					/>
+					<CoBtn
+						type="secondary"
+						icon="block"
+						onClick={() => scrollMusic(1)}
+						ariaLabel={t("about.carousel.next")}
+						style={{ transform: "scale(0.5)" }}
+					/>
 				</div>
 			</div>
 		</div>

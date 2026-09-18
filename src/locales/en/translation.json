@@ -1,1167 +1,1398 @@
 {
-	"nav": {
-		"home": "Home",
-		"works": "Works",
-		"resume": "Resume",
-		"about": "About me",
-		"menuAlt": "Menu"
-	},
-	"footer": {
-		"otherSpaces": "Other spaces",
-		"siteMap": "Site map",
-		"options": "Options"
-	},
-	"getInTouch": {
-		"title": "Let's get in touch",
-		"subtitle": "Let's talk about work or maybe just a hello!"
-	},
-	"home": {
-		"anchors": {
-			"hola": { "id": "hello", "label": "Hello" },
-			"colab": { "id": "colab", "label": "Collaborations" },
-			"trabajos": { "id": "works", "label": "My works" },
-			"conozca": { "id": "getInTouch", "label": "Get in touch" }
-		},
-		"hola": {
-			"greeting": "Hello, I'm",
-			"p1": "{{title}} with <b>{{years}} years of experience</b>.",
-			"p2": "I specialize in developing <b>scalable design systems</b> and automating <b>workflows</b> for product teams. I've worked in <b>e-commerce and fintech sectors</b>, focusing on the intersection of design, agile methodologies, and technical efficiency.",
-			"p3": "My current focus is on structuring <b>decoupled systems</b> and <b>customized solutions</b> that optimize <b>visual</b> and <b>functional production</b>."
-		},
-		"colab": {
-			"title": "Where I have collaborated"
-		}
-	},
-	"homeWorks": {
-		"title": "My featured works",
-		"cta": "See my other works"
-	},
-	"works": {
-		"id": "my-works",
-		"heading": "My works",
-		"timelineAnchorLabel": "Timeline",
-		"chooseTag": "Choose what catches your attention:",
-		"closeAlt": "Close",
-		"viewCaseStudyAlt": "View {{title}} case study"
-	},
-	"timeline": {
-		"heading": "Timeline",
-		"id": "timeline",
-		"previousAlt": "Show previous experience",
-		"nextAlt": "Show next experience"
-	},
-	"caseStudy": {
-		"summary": { "id": "summary", "label": "Summary" },
-		"role": "Role",
-		"sector": "Sector",
-		"team": "Team"
-	},
-	"glue": {
-		"summary": {
-			"title": "GLUE & DesignOps",
-			"dateRange": "feb 2023 - present",
-			"description": "As part of the ongoing evolution and improvement of the design system at Liverpool, we decided to integrate task automation tools, adopt new technologies such as variables in Figma, and optimize the processes of auditing and managing the system.",
-			"role": ["Tokens Engineer", "Developer, UI Designer & Admin"],
-			"sector": "Design Ops, design system, internal services, e-commerce",
-			"team": "Front and back developers, UX/UI designers and researchers"
-		},
-		"anchors": {
-			"context": { "id": "context", "label": "Context" },
-			"tech": { "id": "technologies-used", "label": "Technologies" },
-			"insumos": { "id": "improvement-of-inputs", "label": "Inputs" },
-			"automa": { "id": "automation-of-processes", "label": "Automation" },
-			"future": { "id": "future-steps", "label": "Future Steps" }
-		},
-		"context": {
-			"heading": "Context",
-			"intro": "Since the creation of the User Experience and Interface department within the Digital Product Management, various efforts have been made to develop and formalize a design system. These efforts have become recurrent and have undergone multiple changes due to technological advancements and the dynamic growth of the team. In this context of evolution and continuous improvement, the history of GLUE (Global Liverpool User Experience) can be divided into four major stages.",
-			"before": {
-				"groupTitle": "Before my entry",
-				"stage1": {
-					"step": "Stage 1",
-					"title": "Foundation and first steps",
-					"description": "The project was born as a library distributed to teams via Sketch and documented in Zeplin, designed by UX consultants in collaboration with Marketing."
-				},
-				"stage2": {
-					"step": "Stage 2",
-					"title": "Atomic design and UI Kits",
-					"description": "Atomic Design was adopted for component creation, facilitating the integration of UI Kits and the standardization of design documents. As part of this evolution, the library migrated to Figma."
-				}
-			},
-			"myPart": {
-				"groupTitle": "Here is my participation",
-				"stage3": {
-					"step": "Stage 3",
-					"title": "Documentation & communication",
-					"description": "A detailed documentation of the components begins, while an internal UX team takes over the maintenance of the system and the achievements of GLUE are disseminated."
-				},
-				"stage4": {
-					"step": "Stage 4 (Present)",
-					"title": "Design Ops and engineering",
-					"description": "A token system is implemented, improving communication with development and automating design processes to optimize tasks and efficiency."
-				}
-			},
-			"participationIntro": "My participation in GLUE focuses on four key areas:",
-			"bullets": [
-				{
-					"title": "1. Adoption of technologies.",
-					"description": "I seek to develop and integrate technological tools into the work environment, with the aim of optimizing workflows, providing innovative design resources for UXers, and modernizing management and design processes."
-				},
-				{
-					"title": "2. Improvement of inputs.",
-					"description": "Through audits and the definition of quality standards in design processes, I work to strengthen the governance of the design system, facilitating its use."
-				},
-				{
-					"title": "3. Automation of processes.",
-					"description": "I analyze and detect processes that can be automated in order to improve overall performance and operational efficiency."
-				}
-			],
-			"goToAlt": "Go to ({{title}})"
-		},
-		"tech": {
-			"title": "Technologies Used",
-			"intro": "As part of the updates in Figma, the integration of Variables was introduced, which represented a change in how components and tokens are generated within the design system. This process was carried out in two phases: the beta phase and the first release of the feature.",
-			"beta": {
-				"dateRange": "jun 2023 - feb 2025",
-				"brandsAdded": {
-					"title": "Brands added",
-					"value": "3 brands",
-					"desc": "(Representing the 3 main brand variations: Liverpool, Suburbia, and El Puerto de Liverpool)"
-				},
-				"tokenizedColors": {
-					"title": "Tokenized colors",
-					"value": "139 colours",
-					"desc": "(Normalized to the MD3 standard, replacing 3 UI Kits with 3 organized variable modes)"
-				}
-			},
-			"release": {
-				"dateRange": "feb 2025 - present",
-				"brandsAdded": {
-					"title": "Brands added",
-					"value": "+13 brands",
-					"desc": "(13 new modes were added, thus avoiding the creation of 8 UI Kits)"
-				},
-				"tokenizedColors": {
-					"title": "Tokenized colours",
-					"value": "+275 colours",
-					"desc": "(275 new colours were added by adding modifiers to auxiliary colours)"
-				},
-				"fontsAdded": {
-					"title": "Fonts added",
-					"value": "20 families",
-					"desc": "(Added and associated with the brands)"
-				},
-				"textDecorations": {
-					"title": "Text decorations",
-					"value": "8 styles",
-					"desc": "(As a basis for applying modes and variables to text in Figma)"
-				},
-				"textSizes": {
-					"title": "Text sizes",
-					"value": "18 sizes",
-					"desc": "(Based on rem and normalized for high readability)"
-				}
-			},
-			"improvementsIntro": "Since the implementation, the following improvements have been measured:",
-			"styleLib": {
-				"label": "Style-based library",
-				"designAtoms": { "title": "Design atoms", "value": "10 kits", "desc": "(One was created for each brand)" },
-				"brandRegistry": { "title": "Brand registry", "value": "2 hrs", "desc": "(For generating the atoms of a new brand)" },
-				"layouting": { "title": "Layouting", "value": "6 weeks", "desc": "(For creating a new multisite)" }
-			},
-			"varLib": {
-				"label": "Variable-based library",
-				"designAtoms": { "title": "Design atoms", "value": "2 kits", "descTemplate": "(Reduces maintenance complexity by {{percent}}%)" },
-				"brandRegistry": { "title": "Brand registry", "value": "30 min", "descTemplate": "(Time is reduced by {{percent}}%)" },
-				"layouting": { "title": "Layouting", "value": "2 weeks", "descTemplate": "(Time is reduced by {{percent}}%)" }
-			}
-		},
-		"insumos": {
-			"title": "Improvement of Inputs",
-			"intro": "Within the HandOff processes of the projects, different pains were improved that teams such as Development and Business Analyst had, which led to a series of works to address these problems:",
-			"fonts": {
-				"subtitle": "· Consolidation and care of fonts",
-				"intro": "A repository was created to consolidate all the fonts used throughout the e-commerce, internal tools, and other sites belonging to Liverpool. This repository was generated in Drive and built according to the specific needs of the UX team and Front-End developers. A nomenclature was created to serve both teams and was ultimately documented within the Figma variable library.",
-				"driveLabel": "Drive",
-				"files": ["Fonts", "FontFamily-Brand1,BrandN", "FontFamily-FontWeight.otf"]
-			},
-			"structure": {
-				"subtitle": "· Structure of documents in Figma",
-				"intro": "As a result of a series of approaches, discussions, and surveys with teams that consult Figma documents as part of their workflow, including Frontend devs, Business Analysts, Business, and QA, a structure was generated within the Figma documents that worked to correctly accommodate and prioritize those pages that needed it. Thus, a structure was created that includes the following points.",
-				"points": [
-					"Addition of emojis to improve page identification",
-					"Grouping of pages by similar semantics",
-					"Creation of three different types of documents: UX projects, research, and internal tools"
-				],
-				"projects": {
-					"ux": {
-						"title": "UX Project",
-						"bullets": ["🖼️ Cover", "🖍️ Ui / Ready for BA + DEV", "📲 App", "🖥️ Desktop", "💊 Tablet", "📱 Mobile", "---", "🤖 Prototype", "---", "📕 Version history", "🔎 Business + Research", "🧠 UX", "---", "🏝 Sandbox", "🛠 Local Components + Tools"]
-					},
-					"internal": {
-						"title": "Internal Project",
-						"bullets": ["🖼️ Cover", "🏬 Business", "🏝 Sandbox", "🧠 Brainstorming", "🗺️ Sitemap", "📕 Version history", "Benchmark", "Interviews", "👁️ Visuals", "🛠 Local Components + Tools"]
-					},
-					"research": {
-						"title": "Research",
-						"bullets": ["🖼️ Cover", "🤖 Prototype", "---", "📕 Version history", "🧠 UX", "---", "🏝 Sandbox", "🛠 Local Components + Tools"]
-					}
-				}
-			}
-		},
-		"automa": {
-			"title": "Automation of processes",
-			"intro": "To improve the design processes of UX designers, 3 plugins for Figma and 2 additional servers were programmed, which increased the team's productivity:",
-			"pluginsLabel": "Plugins (3 tools)",
-			"capabilitiesLabel": "Capabilities",
-			"serversLabel": "Servers (2 tools)",
-			"plugins": {
-				"projectSetter": {
-					"title": ["PROJECT", "SETTER"],
-					"description": "Generates a project with the standardized page structure according to the desired project type.",
-					"kpi1Value": "30 min",
-					"kpi1Desc": "Process that involved copying the template, generating a cover page, and manually adjusting the file if necessary.",
-					"kpi2Value": "30 sec",
-					"kpi2DescTemplate": "Time is reduced by {{percent}}% without the need for specific manual adjustments, as the plugin allows presetting.",
-					"capabilities": [
-						"Credentials are required to use the plugin",
-						"You can edit project information directly for the cover page, such as project name, project coordination, and whether it involves more coordinations or not.",
-						"Initialization of 4 types of projects:",
-						"Standard UX project",
-						"Research project for investigations",
-						"Sales tool project for internal development",
-						"Custom project that allows selecting which pages to insert",
-						"Insert pages within the page structure"
-					]
-				},
-				"plpFiller": {
-					"title": ["PLP", "FILLER"],
-					"description": "Designed to quickly generate a complete PLP view with real information obtained directly from the e-commerce production environment.",
-					"kpi1Value": "2 hrs",
-					"kpi1Desc": "Process that involved manually adjusting the information of a PLP with real data from the production environment.",
-					"kpi2Value": "30 sec",
-					"kpi2DescTemplate": "Time is reduced by {{percent}}% with the mere effort of a text and a click.",
-					"capabilities": [
-						"Information is obtained directly from the Liverpool e-commerce production environment.",
-						"This information is directly rendered in a PLP card component.",
-						"Only a valid text is required."
-					]
-				},
-				"frameReferencer": {
-					"title": ["FRAME", "REFERENCER"],
-					"description": "Allows connecting two frames through hyperlinks and arrows to link them in some way.",
-					"kpi1Value": "Navigation and weight",
-					"kpi1Desc": "Allows for much lighter navigation within large documents thanks to hyperlinks and arrows. The duplication in PNG of frames lightens the document's weight.",
-					"capabilities": [
-						"You can modify the color of references and hyperlinks",
-						"You can activate or deactivate the following options:",
-						"Generate a copy of the frame in PNG",
-						"Generate hyperlinks",
-						"Create connectors between two frames",
-						"These interactions can be generated between two frames by selecting one frame and then selecting another with the SHIFT key."
-					]
-				}
-			},
-			"servers": {
-				"credential": {
-					"title": ["CREDENTIAL", "SERVER"],
-					"description": "Server dedicated to validating and verifying credentials."
-				},
-				"crawler": {
-					"title": ["CRAWLER", "SERVER"],
-					"description": "Server dedicated to validating and verifying credentials."
-				}
-			}
-		},
-		"future": {
-			"title": "Future steps",
-			"intro": "Since the creation of the User Experience and Interface department within the Digital Product Management, various efforts have been made to develop and formalize a design system. These efforts have become recurrent and have undergone multiple changes due to technological advancements and the dynamic growth of the team. In this context of evolution and continuous improvement, the history of GLUE (Global Liverpool User Experience) can be divided into four major stages.",
-			"toolsLabel": "· Design tools",
-			"toolsIntro": "At least 4 more plugins are planned to address other needs in the design process. There are also plans to improve the existing ones. The following tools are already in development.",
-			"steps": {
-				"superapp": { "title": ["SUPER", "APP"], "tag": "new", "description": "App designed for the complete grouping of all sub-plugins involved in the design process" },
-				"bolito": { "title": ["BOLITO", "WRITTER"], "tag": "new", "description": "Implementation of an LLM (Llama) as a copywriting, voice and tone, writing assistant, and more" },
-				"audit": { "title": ["AUDIT", "ASSISTANT"], "tag": "new", "description": "Automatic audit assistant for components, tokens and instances" },
-				"ecommerce": { "title": ["E-COMMERCE", "FILLER"], "tag": "improvement", "description": "Improvement of the PDP filler by integrating PDP and other spaces of the e-commerce" }
-			},
-			"handoffLabel": "· Handoff processes",
-			"handoffIntro": "In order to improve handoff and distribution processes of design frameworks, as well as the integration of other design teams such as marketing, branding, and others, research has been conducted on methods for tokenization and distribution of libraries in various ways to the teams."
-		}
-	},
-	"hubbub": {
-		"summary": {
-			"title": "HUBBUB and the visualization of noise in Mexico City",
-			"dateRange": "may 2022 - present",
-			"description": "Website for the deployment of data on the phenomenon of noise in Mexico City and its Metropolitan Area",
-			"role": [
-				"UX / UI developer",
-				"Product designer, BA, developer, project manager"
-			],
-			"sector": "Research, scientific dissemination, data visualization",
-			"team": "Researchers"
-		},
-		"anchors": {
-			"context": {
-				"id": "context",
-				"label": "Context"
-			},
-			"invest": {
-				"id": "research",
-				"label": "Research"
-			},
-			"design": {
-				"id": "design",
-				"label": "Design"
-			},
-			"progra": {
-				"id": "programming",
-				"label": "Programming"
-			},
-			"future": {
-				"id": "future-steps",
-				"label": "Other media and future steps"
-			}
-		},
-		"context": {
-			"title": "Context",
-			"intro": "The Acoustic Design Laboratory of the Universidad Autónoma Metropolitana has been researching and studying noise phenomena in Mexico City and its Metropolitan Area for over 6 years, leading to a series of needs and developments that were implemented throughout the project. By the time I joined the team, the following elements were already in place:",
-			"kpis": {
-				"app": {
-					"value": "1 app",
-					"desc": "(Working for Android and iOS)"
-				},
-				"reports": {
-					"value": "51 reports",
-					"desc": "(For the data cut in April 2022)"
-				},
-				"maps": {
-					"value": "+6 maps",
-					"desc": "Including one general map of the city and other routes"
-				},
-				"team": {
-					"value": "Multidisciplinary Team",
-					"desc": "Including developers, architects and designers"
-				}
-			},
-			"participationIntro": "My participation in the team was to fulfill a specific need: the design of a dissemination space for the data and concepts of the phenomenon, as well as dashboards with different views and intentions for the application report data. The entire solution design process was carried out by me and was completed in 3 phases:",
-			"bullets": {
-				"research": {
-					"title": "1. Research",
-					"description": "Analysis of the problem, generation and understanding of concepts, and user and project research."
-				},
-				"design": {
-					"title": "2. Design",
-					"description": "Definition of proposal and graphic identity, sketching of ideas and prototyping of the project."
-				},
-				"programming": {
-					"title": "3. Programming",
-					"description": "Planning, coding and development"
-				}
-			},
-			"goToAlt": "Go to ({{title}})"
-		},
-		"invest": {
-			"title": "Research",
-			"intro": "Within the research stage, different efforts were made not only related to the interface and experience part, but also theoretical frameworks and a deep understanding of the concepts that would be poured into the project were required. Even a solution definition stage took place within this, being, in a very synthesized way, a stage composed of three parts.",
-			"steps": {
-				"analysis": {
-					"title": "Analysis",
-					"text": "Recognition of the problem, objectives of the Acoustic Design team with their HUBBUB project, and delimitation of the theoretical framework to be presented within the topic."
-				},
-				"research": {
-					"title": "Research",
-					"text": "Research on user needs, communication spaces, benchmarks, and product design guidelines."
-				},
-				"concepts": {
-					"title": "Concepts",
-					"text": "Research on the phenomenon of noise and data visualization, as well as user-centered design encompassing concepts, theorems, and philosophy."
-				}
-			},
-			"analysisSection": {
-				"heading": "Analysis section",
-				"intro": "Two exercises were carried out in parallel to obtain and make a first approach to hypotheses. The first of these were interviews with the Acoustic Design Laboratory, which already had a series of data that supported the construction of a series of primary needs for the project, which are reflected in three pillars that would end up guiding the subsequent stages of research."
-			},
-			"analysisCards": {
-				"noise": {
-					"title": "About noise",
-					"text": "Noise is a highly studied phenomenon but rarely disseminated within Mexican culture, which has led to a lack of understanding of concepts that would help bring people closer and guide them to understand it."
-				},
-				"harmlessData": {
-					"title": "Harmless data",
-					"text": "Harmless data is data that does not cause harm or negatively affect people or the environment. In the context of noise, it is essential to identify and use harmless data to ensure responsible and sustainable design."
-				},
-				"nonProfessionals": {
-					"title": "Reaching non-professionals",
-					"text": "In addition to what was mentioned about harmless data, it is not only necessary to find public access spaces for this information, but it is also important to establish an appropriate level of language so that any interested party can make these concepts and information their own."
-				}
-			},
-			"researchSection": {
-				"heading": "Research section",
-				"intro": "Once the problems, objectives, and scope of the project were identified, a design solution was then delineated, under a User Centered Design approach, so a series of surveys and approaches to stakeholders were conducted. The results obtained can be seen in the following graphs."
-			},
-			"areaCharts": {
-				"ageRange": {
-					"title": "Age range",
-					"data": [
-						"<15 years",
-						"15-24 years",
-						"25-34 years",
-						"35-44 years",
-						"45+ years"
-					]
-				},
-				"interestImportant": {
-					"title": "Are you interested in and do you think it is important to understand the phenomenon of noise?",
-					"data": [
-						"It is important and interesting to me",
-						"It is important but not interesting to me",
-						"I am indifferent"
-					]
-				},
-				"heardAbout": {
-					"title": "Have you heard about the phenomenon of noise?",
-					"data": [
-						"Yes, I have heard it",
-						"No, I have never heard it"
-					]
-				}
-			},
-			"barCharts": {
-				"learnMethod": {
-					"title": "How do you like to learn about new topics?",
-					"data": [
-						"Videos",
-						"Articles",
-						"Websites",
-						"Museums",
-						"Conferences",
-						"Podcasts"
-					]
-				},
-				"wantToKnow": {
-					"title": "What would you like to learn about?",
-					"data": [
-						"Consequences",
-						"Causes",
-						"Statistics",
-						"Solutions"
-					]
-				}
-			},
-			"conclusionsIntro": "From all these surveys, the following conclusions could be drawn:",
-			"conclusions": [
-				"The community really finds it important and interesting to talk about a phenomenon like noise.",
-				"Almost half of the respondents know nothing about the phenomenon.",
-				"Videos are the preferred medium for learning about new topics, followed by articles and websites.",
-				"The top three media through which people like to get informed are videos, articles, and websites; that is, digital media are generally preferred.",
-				"There is a greater interest in the consequences of noise, followed by its causes, and then statistics or informative data about it."
-			],
-			"solutionParagraph": "This already helps to determine a website as a solution design that pours in the information from the articles published by the laboratory: two spaces within the website, one focused on context, theoretical frameworks, and even consequences, and the second as an organized consultation dashboard for the reports obtained through the application.",
-			"conceptsSection": {
-				"heading": "Concepts section",
-				"intro": "As part of the understanding and appropriation of concepts, an entire investigation was carried out, which is covered in chapters 1, 2, and 3 of the thesis SEE THE NOISE, “An exercise in information visualization for the noise of Mexico City”"
-			}
-		},
-		"design": {
-			"title": "Design",
-			"intro": "Within the design stage, all efforts related to solution design were grouped, which involves different processes of graphic design, user experience, benchmarking, and interface. All these processes can be poured into three spaces.",
-			"steps": {
-				"understanding": {
-					"title": "Understanding HUBBUB",
-					"text": "Recognition and complete understanding of the project's current graphic identity, including the formation of a graphic identity for the site."
-				},
-				"sketching": {
-					"title": "Sketching",
-					"text": "Externalization of ideas, paper prototyping, and exploration of different graphic visualizers."
-				},
-				"mockup": {
-					"title": "Mockup",
-					"text": "Refinement of ideas, creation of the experience, and lowering the interface to a high-fidelity prototype."
-				}
-			},
-			"understandingSection": {
-				"heading": "Understanding HUBBUB section",
-				"intro1": "By the time the project began, HUBBUB already had a series of channels where it displayed a certain aesthetic.",
-				"intro2": "From all this, the color palette, iconographic style, typography, voice, and tone stood out. Certain terms and assets such as icons and logos were also rescued. All these graphic resources were poured into a new UI created for the website channel that we would develop, in addition to improving iconography, signage, and other aspects of the interface."
-			},
-			"sketchingSection": {
-				"heading": "Sketching section",
-				"intro": "For the sketching, a series of paper sketches were made that not only allowed for quick exploration of interaction and composition ideas but also involved non-designer teams (such as laboratory members) in the idea construction process. These sketches also allowed for rapid iteration between components and identification of the types of data we wanted to display."
-			},
-			"mockupSection": {
-				"heading": "Mockup section",
-				"intro1": "Once the idea exploration phase, fueled by team feedback, was completed, we moved on to the fine mockup phase. In this phase, components and all necessary screens for both parts of the experience were created. All this work was done in Figma and, similarly, subjected to various presentations with stakeholders to make specific adjustments, such as in browsers and viewers.",
-				"intro2": "In addition to the experience mockup done in Figma, a document of user stories and technical stories was also created to facilitate rapid implementation during the development phase. These stories were documented in the following document."
-			}
-		},
-		"progra": {
-			"title": "Programming",
-			"intro": "The programming stage encompasses the entire process of coding and effort planning.",
-			"steps": {
-				"planning": {
-					"title": "Planning",
-					"text": "Definition of modules to program, time planning in sprints, and technology selection."
-				},
-				"coding": {
-					"title": "Coding",
-					"text": "Programming of functionalities, creation of components, and database connection."
-				},
-				"implementation": {
-					"title": "Implementation*",
-					"text": "Execution, QA, and system evaluation. Deployment to production within university servers."
-				}
-			},
-			"implementationNote": "* This last stage has not been carried out as it is still awaiting approval on the business side.",
-			"planningSection": {
-				"heading": "Planning Section",
-				"intro": "Based on the information gathered in the User Stories, it was possible to identify without problems which modules to work on and thus distribute effort over two-week sprints with weekly meetings for reviews and official deliveries. Everything was distributed as follows."
-			},
-			"planLegend": {
-				"general": {
-					"title": "General Functions",
-					"bullets": [
-						"Left Navigator",
-						"Right Navigator",
-						"Footer",
-						"About Us (Swal)",
-						"Legal",
-						"Accessibility Actions",
-						"Hero image"
-					]
-				},
-				"noise": {
-					"title": "The Noise (Site Page)",
-					"bullets": [
-						"The Ear",
-						"Noise Classification",
-						"Noise Legislation",
-						"Noise Components",
-						"Health Effects",
-						"How Noise is Measured",
-						"Study Areas",
-						"HUBBUB Articles",
-						"References"
-					]
-				},
-				"viewNoise": {
-					"title": "View the Noise (Site Page)",
-					"bullets": [
-						"Introduction",
-						"Participation",
-						"Sound Pressure",
-						"Variables",
-						"Emitting Sources",
-						"Municipalities",
-						"Noise Map"
-					]
-				}
-			},
-			"planKPI": {
-				"hours": {
-					"title": "461 hrs",
-					"desc": "93 hrs of design + 368 hrs of coding"
-				},
-				"modules": {
-					"title": "3 Modules",
-					"desc": "They share navigation and the two pages"
-				},
-				"weeks": {
-					"title": "18 Weeks",
-					"desc": "approximately 4 and a half months of development"
-				}
-			},
-			"techIntro": "In addition to defining project timelines and management, the technologies involved in both development and team communication were also defined. In this regard, spaces that were naturally created in previous stages are revisited, and the technical information is also attached.",
-			"codingSection": {
-				"heading": "Coding Section",
-				"intro": "In a first approach to the project, it was built using PHP as a base, and all the graphical viewers were worked on there for the first time. However, thinking about the scalability and modularity of the project, it was decided to create a version based on React.js that would work much better for deployment on the web. These two stages of the project were carried out at different times, and the React.js version is what has been worked on lately. Here are some features of these two versions."
-			},
-			"versions": {
-				"php": {
-					"dateRange": "jun 2022 - sep 2023",
-					"description": "First version built to run on PHP, it served as a basis for the redesign in React.js",
-					"techLabel": "3 technologies",
-					"techDesc": "Highlights: JavaScript, PHP, SCSS",
-					"branchLabel": "2 branches",
-					"branchDesc": "The main one and another for a responsive mobile version"
-				},
-				"react": {
-					"dateRange": "sep 2024 - present",
-					"description": "Second version of the site with improvements in components and full integration with React.js",
-					"techLabel": "3 technologies",
-					"techDesc": "Highlights: JavaScript, HTML, SCSS",
-					"branchLabel": "2 branches",
-					"branchDesc": "The main one and another dedicated to the implementation of iframes"
-				}
-			},
-			"vizIntro": "Many of the graphical viewers rely on JavaScript libraries such as p5, noise, charts, or integrations with APIs like Sketchfab. These are examples of viewers that are already programmed:"
-		},
-		"future": {
-			"title": "Other media and future steps",
-			"intro": "Beyond the production release of the project, as it represents university scientific research, it has permeated other channels from which it is planned to follow up on or further develop its scope. Some events have already taken place and others are on the way.",
-			"steps": {
-				"coloquio": {
-					"title": [
-						"International",
-						"Colloquium"
-					],
-					"tag": "1st and 2nd edition",
-					"description": "Being a speaker at the last two editions of the “International Colloquium on Soundscape” organized by institutions such as the Universidad Autónoma Metropolitana, the Benemérita Universidad Autónoma de Puebla, and other public universities."
-				},
-				"implementation": {
-					"title": [
-						"Implementation",
-						"in other locations"
-					],
-					"tag": "amplification",
-					"description": "Thanks to the exposure that the project has had within international events, colloquiums and spaces, this project is being planned to be replicated in other states of the republic and in other Ibero-American countries."
-				},
-				"articles": {
-					"title": [
-						"Articles",
-						"and patents"
-					],
-					"tag": "in process",
-					"description": "The Universidad Autónoma Metropolitana, in conjunction with various governmental institutions and scientific press, is seeking the approval of articles related to the research as well as the registration of the site and data collection methodology as a patent."
-				}
-			}
-		}
-	},
-	"movilidad": {
-		"summary": {
-			"title": "Electrolineras system, MoviLidad",
-			"dateRange": "oct 2024 - may 2025",
-			"description": "Application for the offering of charging centers for electric cars",
-			"role": [
-				"UX / UI designer",
-				"Product designer, service designer, BA"
-			],
-			"sector": "Automotive, alternative fuels, services",
-			"team": "Front and Back developers, automotive business, business analyst, project manager"
-		},
-		"anchors": {
-			"context": {
-				"id": "context",
-				"label": "Context"
-			},
-			"invest": {
-				"id": "interface",
-				"label": "Interface"
-			},
-			"ambNoti": {
-				"id": "notifications",
-				"label": "Notification"
-			},
-			"flow": {
-				"id": "flow-and-methods",
-				"label": "Flow and Methods"
-			},
-			"future": {
-				"id": "future-steps",
-				"label": "Future Steps"
-			}
-		},
-		"context": {
-			"title": "Context",
-			"intro": "Due to the collaboration between BYD and Liverpool, along with the growing market for electric cars in Mexico, there was a need to install and offer charging points in strategic locations. Liverpool's real estate division creates a series of spaces within shopping centers like Galerías and others where Liverpool has a presence, allowing for the installation of electric charging stations within Mexico City.",
-			"kpis": {
-				"stations": {
-					"value": "17 stations",
-					"desc": "(Distributed in the northern area of CDMX)"
-				},
-				"chargers": {
-					"value": "139 chargers",
-					"desc": "(Located in specialized charging stations and shopping centers)"
-				}
-			},
-			"chargerTypesLabel": "6 different types of chargers",
-			"collabLabel": "Direct collaboration with QiOn for infrastructure and Openpay for payments",
-			"topicsIntro": "The project development topics within the UX approach that were most interesting would be these three:",
-			"bullets": {
-				"research": {
-					"title": "1. Research and definition of interface",
-					"description": "Benchmarks and direct user research to define the main user flow."
-				},
-				"notifications": {
-					"title": "2. Notification environment",
-					"description": "Integration of real-time activities and status for the user beyond the application and Liverpool environment."
-				},
-				"transactionFlow": {
-					"title": "3. Transaction flow and payment methods",
-					"description": "Modification and constant adaptation of the transactional flow, as well as the exploration of payment methods that directly influenced the user's flow."
-				}
-			},
-			"goToAlt": "Go to ({{title}})"
-		},
-		"invest": {
-			"title": "Research and definition of interface",
-			"intro1": "One of the most important parts of the application's design was the interface and how the user would have to learn to use it, as those who would use this charging network section would be users who were already familiar with it or, failing that, would have to familiarize themselves with the Pocket environment, Liverpool's application.",
-			"intro2": "Not only did it involve using previously used components and graphic language within Pocket, but it also had to approach what other applications in the same field already offered to the customer. With this in mind, the first steps were to generate benchmarks from multiple companies.",
-			"legends": {
-				"mainFlow": "Main flow",
-				"secondaryActions": "Secondary actions",
-				"deprecatedFlow": "Deprecated flow",
-				"externalFlow": "External flow",
-				"directSequence": "Direct sequence",
-				"alternateSequence": "Alternate sequence"
-			},
-			"mapIntro": "Once important points such as the map as the main screen, result filtering, and prepaid transactional flows were established, it was decided to mock up an experience that approached this structure and, at the same time, included all the offers and actionables that the app itself offered. This resulted in a map like the following:",
-			"testIntro": "As a final part of the research and as a result of some comments from the business side, it was also decided to test the home page of the application. This was done through a survey in Maze, and the results were as follows:",
-			"women": "50% women",
-			"men": "47% men",
-			"participants": {
-				"value": "30 participants",
-				"desc": "(Over a period of 3 weeks)"
-			},
-			"questionsKpi": {
-				"value": "9 questions",
-				"desc": "(Combining different types of instruments)"
-			},
-			"introQuestions": "Introductory",
-			"hierarchyQuestions": "Hierarchy and options",
-			"aestheticsQuestions": "Aesthetics and accessibility",
-			"finalQuestions": "Final",
-			"labels": {
-				"exercise": "Exercise",
-				"objective": "Objective",
-				"result": "Result",
-				"conclusions": "Conclusions"
-			},
-			"exercises": {
-				"first": {
-					"task": "The user is asked to order the options above according to their importance",
-					"objective": "To know the user's priorities and expectations regarding the application's capabilities",
-					"result": "In order of relevance, the options were arranged: Map, Navigation, Wallet, History, and Help",
-					"conclusions": [
-						"The Map becomes fundamental for the user as it describes a natural flow for locating charging stations, which will subsequently enable the rest of the transaction flow, which is ultimately the main task to be performed.",
-						"Navigation, which involves the user's ability to use the map and the rest of the application's activities, appears as complementary to exploration and, consequently, remains relevant.",
-						"The Wallet becomes the third fundamental option of the application by enabling the user to make payments and, consequently, complete the last part of the main journey."
-					]
-				},
-				"second": {
-					"task": "The user is asked to choose which of the two options seems more appropriate to access the different options offered by the application, in addition to complementing their choice with an open question to express their reasons.",
-					"objective": "To guide the interface towards an option that functionally and aesthetically meets the needs of our user, in addition to gathering qualitative information about their choice.",
-					"result": "The most chosen screen was number one, with a preference of 69% of respondents.",
-					"conclusions": [
-						"The majority of users expressed a preference for screen number 1, accompanied by comments highlighting a clean interface and simpler navigation, even considering the position of the options pill."
-					]
-				}
-			}
-		},
-		"ambNoti": {
-			"title": "Notification environment",
-			"intro1": "Another effort made for this project, which involved the implementation of a technology that had never been used within Pocket, was real-time activities. For the first time, there was a need to display information with real-time tracking that could add value to the customer experience, along with the technical capabilities provided by QiOn's CMS.",
-			"intro2": "Three specific spaces were identified where using these activities would be very beneficial:",
-			"bullets": {
-				"charging": {
-					"title": "1. Charging in progress",
-					"description": "Information such as total charging time, kilowatts charged, and current battery percentage of the car is displayed. The main animated component shows the progress of the charging."
-				},
-				"completed": {
-					"title": "2. Charging completed",
-					"description": "Displays instructions for disconnecting the car and uses a timer to show the time remaining before charging the parking fee begins."
-				},
-				"fee": {
-					"title": "3. Parking fee charge",
-					"description": "The same disconnection instructions as before are shown, along with the parking fee cost. The animated component changes to a stopwatch."
-				}
-			},
-			"labels": {
-				"island": "Dynamic Island",
-				"notification": "Notification",
-				"watch": "Watch",
-				"standby": "StandBy"
-			},
-			"outro": "The entire integration of the notification environment not only involved the creation of these notification modes but also prompted the research and documentation of design standards from Material Design by Android and the Human Interface by Apple. This was reflected in the documentation of Liverpool's design system with the addition of materials, effects, and animations."
-		},
-		"flow": {
-			"title": "Transactional Flow and Payment Methods",
-			"intro": "Among all the flows that make up the charging network application, the main and most important one is the transactional flow, which allows for the vehicle's charge to be processed and the service fee to be generated.",
-			"stepPreviousAlt": "Previous step",
-			"stepNextAlt": "Next step",
-			"flowPreviousAlt": "Previous test flow",
-			"flowNextAlt": "Next test flow",
-			"steps": {
-				"map": {
-					"label": "Map"
-				},
-				"qr": {
-					"label": "QR Reading"
-				},
-				"config": {
-					"label": "Charging configuration"
-				},
-				"status1": {
-					"label": "Status 1: Charging"
-				},
-				"status2": {
-					"label": "Status 2: Charging completed"
-				},
-				"status3": {
-					"label": "Status 3: Parking fee charge"
-				},
-				"thanks": {
-					"label": "Thank you page"
-				}
-			},
-			"screens": {
-				"map": {
-					"text": [
-						"This is the main page of the application, from which all secondary actions to manipulate the information displayed on the map are derived, and at the same time, it allows access to other sections of the application.",
-						"On this screen, you can see the city map with the charging stations. Its purpose is to allow identifying where the charging stations are located, information about them, and to start the transactional flow by scanning the QR code attached to the charging totem."
-					]
-				},
-				"qr": {
-					"text": [
-						"The device's camera is activated and the code printed on the charging totem is read.",
-						"At that moment, the information of that charging gun is loaded and the charging configuration is proceeded."
-					]
-				},
-				"config": {
-					"text": [
-						"The charging gun information is loaded, which includes: identifier, station name, charger type, charging speed, charging fee, and idling fee. In addition to this information, it allows configuration through 3 types of inputs which can be by the amount of money to recharge, final percentage to leave the vehicle, or the amount of kilowatts to be charged.",
-						"Once the charge is configured, the transactional flow is initiated. The rest of the information is for selecting the payment method, giving the option to select one of the methods already saved in their Liverpool wallet or registering a new one, plus the addition of using the balance they have in their digital wallet.",
-						"Much of this configuration depends on how the e-commerce checkout was already behaving."
-					]
-				},
-				"status1": {
-					"text": [
-						"This page briefly shows the progress of the car's charge as well as information for any problems that may arise, from charger information to a button for interrupting the charge.",
-						"It is accompanied by a real-time activity that reflects the same experience."
-					]
-				},
-				"status2": {
-					"text": [
-						"Once the charge is completed or interrupted, it moves to the status of completed charging where the user is asked to disconnect their car and leave the charging area, otherwise, idling charges will begin.",
-						"This message is also accompanied by a real-time activity that warns the user of the amount of time left before idling charges begin."
-					]
-				},
-				"status3": {
-					"text": [
-						"Here the application starts to add a fee per minute for the car's stay in the charging area. It is accompanied by a real-time activity that adds up the minutes spent and their equivalent in fees."
-					]
-				},
-				"thanks": {
-					"text": [
-						"Once the entire charging process is completed and no issues have arisen, a summary of the charge for all the activity performed is displayed, and the charge is processed automatically."
-					]
-				}
-			},
-			"testFlowsIntro": "This flow underwent different modifications based on the payment methods and the type of payment gateway that could be implemented within the flow, which led to a series of iterations. A summary of the types of flows proposed is as follows:",
-			"testFlows": {
-				"autoCharge": {
-					"title": "Flow with automatic charge",
-					"steps": [
-						"Charging configuration",
-						"Card selection and license entry",
-						"Charging process",
-						"Automatic payment"
-					],
-					"text": "In this proposal, licenses can be stored during the charging process, allowing for the charge to be made to the selected card at the beginning and displaying the thank you page at the end."
-				},
-				"doubleAuth": {
-					"title": "Flow with double authentication",
-					"steps": [
-						"Charging configuration",
-						"Card selection, license entry, and pre-charge",
-						"Charging process",
-						"Re-enter credentials and charge adjustment"
-					],
-					"text": "In this proposal, the aim is to make a charge based exclusively on the configured charging amount. At the end, the customer is asked to re-identify themselves to adjust the balance, either by charging or refunding."
-				},
-				"refund": {
-					"title": "Flow with refund",
-					"steps": [
-						"Charging configuration",
-						"Card selection, license entry, and pre-charge of excess amount",
-						"Charging process",
-						"Refund of excess amount"
-					],
-					"text": "In this proposal, the aim is to charge an excess amount of money to ensure the collection of all types of concepts, and subsequently generate the refund."
-				}
-			}
-		},
-		"future": {
-			"title": "Future steps",
-			"intro": "The next steps for the product are primarily focused on three specific improvements with business objectives.",
-			"steps": {
-				"wallet": {
-					"tag": "second phase",
-					"description": "Implementation of recharges and sale of physical balances in the form of credits for use within the application. It would be understood as a new payment method."
-				},
-				"realtime": {
-					"tag": "second phase",
-					"description": "Integration of other notification technologies such as StandBy, WearOS notifications, and other spaces"
-				},
-				"loyalty": {
-					"tag": "third phase",
-					"description": "Includes couponing, rewards program, gamification, and special deals."
-				}
-			}
-		}
-	},
-	"resume": {
-		"categories": [
-			"General",
-			"Design system",
-			"Research",
-			"Experience"
-		],
-		"labels": {
-			"skills": "Skills",
-			"summary": "Summary",
-			"experience": "Experience",
-			"projects": "Activities and projects",
-			"download": "Download Resume",
-			"location": "Mexico City"
-		},
-		"header": {
-			"tagline": "{{role}} at {{company}}"
-		},
-		"infos": {
-			"portfolios": {
-				"title": "Portfolios",
-				"bullets": [
-					{
-						"text": "zulhernandez.com",
-						"link": "https://zulhernandez.com"
-					},
-					{
-						"text": "linkedin.com/in/saululises",
-						"link": "https://linkedin.com/in/saululises"
-					},
-					{
-						"text": "behance.net/zulhernndez",
-						"link": "https://behance.net/zulhernndez"
-					},
-					{
-						"text": "sketchfab.com/zulHernandez1912",
-						"link": "https://sketchfab.com/zulHernandez1912"
-					},
-					{
-						"text": "github.com/ZulHernandez",
-						"link": "https://github.com/ZulHernandez"
-					}
-				]
-			},
-			"contact": {
-				"title": "Contact",
-				"bullets": [
-					{
-						"text": "+52 5565027645",
-						"link": "tel:+525565027645"
-					},
-					{
-						"text": "saululiseshernandezcruz@gmail.com",
-						"link": "mailto:saululiseshernandezcruz@gmail.com"
-					}
-				]
-			},
-			"education": {
-				"title": "Education",
-				"bullets": [
-					{
-						"text": "Ba. in Graphic Communication Design"
-					},
-					{
-						"text": "Te. in Programming"
-					}
-				]
-			},
-			"languages": {
-				"title": "Languages",
-				"bullets": [
-					{
-						"text": "Spanish"
-					},
-					{
-						"text": "English"
-					}
-				]
-			}
-		},
-		"skills": {
-			"categories": [
-				[
-					"Storytelling",
-					"Design Thinking",
-					"Leadership",
-					"Stakeholder management",
-					"Team management",
-					"Critical thinking",
-					"Agile methodologies",
-					"Design system"
-				],
-				[
-					"Automation",
-					"Design tools",
-					"Development",
-					"Update",
-					"High-fidelity prototypes",
-					"Figma variables",
-					"UI Kits"
-				],
-				[
-					"Quantitative research",
-					"Qualitative research",
-					"User stories",
-					"Direct observation",
-					"Data analysis",
-					"Prototyping",
-					"Usability testing"
-				],
-				[
-					"Storytelling",
-					"Journey map",
-					"Redesigns",
-					"Project management",
-					"Simultaneous projects"
-				]
-			]
-		},
-		"summaries": {
-			"categories": [
-				[
-					"Digital product designer with experience in Fintech and e-commerce, agile methodologies and communication with multidisciplinary teams.",
-					"Design, development and automation of design systems based on Design Operations, integrating tools such as custom plugins, UI Kits, templates, documentation and style guides."
-				],
-				[
-					"Digital product designer with experience in Fintech and e-commerce, specialized in design systems and automation.",
-					"Expert in Design Operations, integrating tools such as custom plugins, UI Kits, templates, documentation and style guides."
-				],
-				[
-					"Digital product designer with solid knowledge in user research for the design of optimized experiences and interfaces.",
-					"Management of multidisciplinary teams and projects while connecting directly with users."
-				],
-				[
-					"Senior UX/UI designer focused on creating optimized journeys, impactful user stories and intuitive flows for Fintech and e-commerce systems."
-				]
-			]
-		}
-	},
-	"error": {
-		"title": "Wrong way",
-		"description1": "Seems like we were not able to find what you were looking for.",
-		"description2": "Feel free to explore the rest of the site.",
-		"cta": "Go to the home page"
-	},
-	"about": {
-		"anchors": {
-			"intro": { "id": "this-is-me", "label": "This is me" }
-		},
-		"intro": {
-			"title": "This is me",
-			"subtitle": "I leave you this section so you can learn more about me — beyond my work, there are other things about me that may be interesting."
-		},
-		"tabs": {
-			"music": "Music",
-			"manga": "Manga",
-			"games": "Games",
-			"sport": "Sport",
-			"food": "Food"
-		},
-		"music": {
-			"title": "Listening to and playing music is wonderful",
-			"p1": "I love listening to music, and not just as background noise while walking around the city — I really enjoy taking my time to sit down and listen to a good album by Pink Floyd, Gorillaz, or Joji.",
-			"p2": "I also play and sing; I really enjoy taking my guitar, my melodica, or the electric guitar, turning on the amplifier, and playing for hours and hours.",
-			"instruments": {
-				"guitar": "Guitar",
-				"electricGuitar": "Electric Guitar",
-				"melodica": "Melodica",
-				"voice": "Voice",
-				"amplifier": "Amplifier"
-			},
-			"recentlyListening": "Recently, I have been listening to:"
-		},
-		"sport": {
-			"title": "I love swimming",
-			"p1": "I have been swimming for more than a year now and I couldn't be more in love with this sport — it's an incredible feeling to get lost in the water after a day of work.",
-			"p2": "If I had to make a tier list of which stroke I like the most...",
-			"styles": {
-				"apnea": "Apnea",
-				"backstroke": "Backstroke",
-				"free": "Free",
-				"breaststroke": "Breaststroke",
-				"butterfly": "Butterfly"
-			}
-		},
-		"games": {
-			"title": "I prefer singleplayer games...",
-			"p1": "I like games where I find myself alone, discovering a great story. I'd say my favorite genres are walking simulators, metroidvanias, and classic platformers. My favorite game is definitely Hollow Knight.",
-			"silksong": "P.S. Silk Song is real!",
-			"boardTitle": "...but I also love board games",
-			"boardParagraph": "Lately I've been collecting and discovering board games I've loved. I don't have many in my collection yet, but soon I'll be surrounded by them."
-		},
-		"food": {
-			"title": "Asian food, cooking, and a recipe",
-			"p1": "I love eating, but I also love cooking. Some of the things I cook most often are Asian dishes, from savory ones like ramen, gyozas, or onigiri to sweet ones like matcha ice cream. I obviously love Mexican food too — I make a spectacular birria, and I'll leave you a recipe for raw green salsa so you can enjoy it with your family.",
-			"ingredients": {
-				"celery": "Celery",
-				"tomato": "Tomato",
-				"mint": "Mint",
-				"serranoPepper": "Serrano pepper",
-				"orange": "Orange",
-				"lemon": "Lemon",
-				"salt": "Salt"
-			},
-			"ingredientsHeading": "Ingredients",
-			"instructionsHeading": "Instructions",
-			"recipeIngredients": [
-				"Celery stalk",
-				"Tomatoes (green tomato)",
-				"Mint leaves",
-				"Serrano peppers",
-				"Orange",
-				"Seedless green lemon",
-				"Salt",
-				"Oregano",
-				"Water"
-			],
-			"recipeSteps": [
-				"Chop the celery stalk, tomatoes, mint leaves, and serrano pepper.",
-				"Juice the lemon and the orange; set aside.",
-				"Grind everything in a mortar or blender and add salt and oregano to taste.",
-				"If needed, add water little by little — in the blender or the mortar — until you reach the consistency you like best; I prefer it a bit thicker.",
-				"Serve with tortilla chips, or use it for tacos."
-			]
-		},
-		"manga": {
-			"title": "Slices of life, terror, and mechas?",
-			"p1": "I'm more of a manga reader than an anime watcher, and that's led me to some incredible authors who've given me both great and rough moments. Here's my manga top picks, though if you can, you should read more about the author too.",
-			"animeIntro": "Even though I prefer the manga format, there are some works I honestly couldn't enjoy any other way than in full color and animated. I'd really recommend checking them out — you might like them a lot."
-		}
-	},
-	"seo": {
-		"home": {
-			"title": "Saúl Hernández | UI/UX Design Portfolio",
-			"description": "Experienced UI/UX designer with 9+ years of expertise in e-commerce and fintech. Passionate about design systems, process optimization, and creating innovative tools that enhance productivity and impact."
-		},
-		"works": {
-			"title": "Works | Saúl Hernández",
-			"description": "A collection of UI/UX design case studies spanning e-commerce, fintech, and design systems work, plus a timeline of professional experience."
-		},
-		"resume": {
-			"title": "Resume | Saúl Hernández",
-			"description": "Resume and work experience of Saúl Hernández, a UI/UX designer specializing in design systems, research, and product design."
-		},
-		"about": {
-			"title": "About Me | Saúl Hernández",
-			"description": "Get to know Saúl Hernández beyond design: music, sports, games, manga, and food."
-		},
-		"glue": {
-			"title": "GLUE & DesignOps | Case Study",
-			"description": "As part of the ongoing evolution of the design system at Liverpool, we integrated task automation tools, adopted Figma variables, and optimized system auditing and management."
-		},
-		"movilidad": {
-			"title": "MoviLidad — Electric Vehicle Charging Network | Case Study",
-			"description": "Application for the offering of charging centers for electric cars, including the transactional flow and payment methods design."
-		},
-		"hubbub": {
-			"title": "HUBBUB — Noise Visualization in Mexico City | Case Study",
-			"description": "Website for the deployment of data on the phenomenon of noise in Mexico City and its Metropolitan Area."
-		},
-		"notFound": {
-			"title": "Page Not Found | Saúl Hernández",
-			"description": "The page you're looking for doesn't exist. Head back to the portfolio home page."
-		}
-	}
+  "nav": {
+    "home": "Home",
+    "works": "Works",
+    "resume": "Resume",
+    "about": "About me",
+    "menuAlt": "Menu"
+  },
+  "footer": {
+    "otherSpaces": "Other spaces",
+    "siteMap": "Site map",
+    "options": "Options"
+  },
+  "getInTouch": {
+    "title": "Let's get in touch",
+    "subtitle": "Let's talk about work or maybe just a hello!",
+    "scheduleCta": "Let's schedule a call!"
+  },
+  "home": {
+    "anchors": {
+      "hola": {
+        "id": "hello",
+        "label": "Hello"
+      },
+      "colab": {
+        "id": "colab",
+        "label": "Collaborations"
+      },
+      "trabajos": {
+        "id": "works",
+        "label": "My works"
+      },
+      "conozca": {
+        "id": "getInTouch",
+        "label": "Get in touch"
+      }
+    },
+    "hola": {
+      "greeting": "Hello, I'm",
+      "positioningTitle": "Senior Product Designer & Design Systems Lead",
+      "p1": "{{title}} with <b>{{years}} years of experience</b>.",
+      "p2": "I specialize in building <b>scalable design systems</b> and automating <b>design-to-dev workflows</b> for product teams, with hands-on experience across <b>e-commerce and fintech</b>.",
+      "p3": "Today I lead <b>DesignOps</b> at Galileo, scaling a <b>multichannel design system</b> and agile practices across design, development, and marketing teams.",
+      "seeWorkCta": "See my work",
+      "downloadCvCta": "Download Resume"
+    },
+    "colab": {
+      "title": "Where I have collaborated",
+      "prev": "Previous",
+      "next": "Next"
+    }
+  },
+  "homeWorks": {
+    "title": "My featured works",
+    "cta": "See my other works"
+  },
+  "works": {
+    "id": "my-works",
+    "heading": "My works",
+    "timelineAnchorLabel": "Timeline",
+    "chooseTag": "Choose what catches your attention:",
+    "closeAlt": "Close",
+    "viewCaseStudyAlt": "View {{title}} case study"
+  },
+  "timeline": {
+    "heading": "Timeline",
+    "id": "timeline",
+    "previousAlt": "Show previous experience",
+    "nextAlt": "Show next experience"
+  },
+  "caseStudy": {
+    "summary": {
+      "id": "summary",
+      "label": "Summary"
+    },
+    "role": "Role",
+    "sector": "Sector",
+    "team": "Team",
+    "carousel": {
+      "prev": "Previous",
+      "next": "Next"
+    }
+  },
+  "glue": {
+    "summary": {
+      "title": "GLUE & DesignOps",
+      "dateRange": "feb 2023 - present",
+      "description": "As part of the ongoing evolution and improvement of the design system at Liverpool, we decided to integrate task automation tools, adopt new technologies such as variables in Figma, and optimize the processes of auditing and managing the system.",
+      "role": [
+        "Tokens Engineer",
+        "Developer, UI Designer & Admin"
+      ],
+      "sector": "Design Ops, design system, internal services, e-commerce",
+      "team": "Front and back developers, UX/UI designers and researchers"
+    },
+    "anchors": {
+      "context": {
+        "id": "context",
+        "label": "Context"
+      },
+      "tech": {
+        "id": "technologies-used",
+        "label": "Technologies"
+      },
+      "insumos": {
+        "id": "improvement-of-inputs",
+        "label": "Inputs"
+      },
+      "automa": {
+        "id": "automation-of-processes",
+        "label": "Automation"
+      },
+      "future": {
+        "id": "future-steps",
+        "label": "Future Steps"
+      }
+    },
+    "context": {
+      "heading": "Context",
+      "intro": "Since the creation of the User Experience and Interface department within the Digital Product Management, various efforts have been made to develop and formalize a design system. These efforts have become recurrent and have undergone multiple changes due to technological advancements and the dynamic growth of the team. In this context of evolution and continuous improvement, the history of GLUE (Global Liverpool User Experience) can be divided into four major stages.",
+      "before": {
+        "groupTitle": "Before my entry",
+        "stage1": {
+          "step": "Stage 1",
+          "title": "Foundation and first steps",
+          "description": "The project was born as a library distributed to teams via Sketch and documented in Zeplin, designed by UX consultants in collaboration with Marketing."
+        },
+        "stage2": {
+          "step": "Stage 2",
+          "title": "Atomic design and UI Kits",
+          "description": "Atomic Design was adopted for component creation, facilitating the integration of UI Kits and the standardization of design documents. As part of this evolution, the library migrated to Figma."
+        }
+      },
+      "myPart": {
+        "groupTitle": "Here is my participation",
+        "stage3": {
+          "step": "Stage 3",
+          "title": "Documentation & communication",
+          "description": "A detailed documentation of the components begins, while an internal UX team takes over the maintenance of the system and the achievements of GLUE are disseminated."
+        },
+        "stage4": {
+          "step": "Stage 4 (Present)",
+          "title": "Design Ops and engineering",
+          "description": "A token system is implemented, improving communication with development and automating design processes to optimize tasks and efficiency."
+        }
+      },
+      "participationIntro": "My participation in GLUE focuses on four key areas:",
+      "bullets": [
+        {
+          "title": "1. Adoption of technologies.",
+          "description": "I seek to develop and integrate technological tools into the work environment, with the aim of optimizing workflows, providing innovative design resources for UXers, and modernizing management and design processes."
+        },
+        {
+          "title": "2. Improvement of inputs.",
+          "description": "Through audits and the definition of quality standards in design processes, I work to strengthen the governance of the design system, facilitating its use."
+        },
+        {
+          "title": "3. Automation of processes.",
+          "description": "I analyze and detect processes that can be automated in order to improve overall performance and operational efficiency."
+        }
+      ],
+      "goToAlt": "Go to ({{title}})"
+    },
+    "tech": {
+      "title": "Technologies Used",
+      "intro": "As part of the updates in Figma, the integration of Variables was introduced, which represented a change in how components and tokens are generated within the design system. This process was carried out in two phases: the beta phase and the first release of the feature.",
+      "beta": {
+        "dateRange": "jun 2023 - feb 2025",
+        "brandsAdded": {
+          "title": "Brands added",
+          "value": "3 brands",
+          "desc": "(Representing the 3 main brand variations: Liverpool, Suburbia, and El Puerto de Liverpool)"
+        },
+        "tokenizedColors": {
+          "title": "Tokenized colors",
+          "value": "139 colours",
+          "desc": "(Normalized to the MD3 standard, replacing 3 UI Kits with 3 organized variable modes)"
+        }
+      },
+      "release": {
+        "dateRange": "feb 2025 - present",
+        "brandsAdded": {
+          "title": "Brands added",
+          "value": "+13 brands",
+          "desc": "(13 new modes were added, thus avoiding the creation of 8 UI Kits)"
+        },
+        "tokenizedColors": {
+          "title": "Tokenized colours",
+          "value": "+275 colours",
+          "desc": "(275 new colours were added by adding modifiers to auxiliary colours)"
+        },
+        "fontsAdded": {
+          "title": "Fonts added",
+          "value": "20 families",
+          "desc": "(Added and associated with the brands)"
+        },
+        "textDecorations": {
+          "title": "Text decorations",
+          "value": "8 styles",
+          "desc": "(As a basis for applying modes and variables to text in Figma)"
+        },
+        "textSizes": {
+          "title": "Text sizes",
+          "value": "18 sizes",
+          "desc": "(Based on rem and normalized for high readability)"
+        }
+      },
+      "improvementsIntro": "Since the implementation, the following improvements have been measured:",
+      "styleLib": {
+        "label": "Style-based library",
+        "designAtoms": {
+          "title": "Design atoms",
+          "value": "10 kits",
+          "desc": "(One was created for each brand)"
+        },
+        "brandRegistry": {
+          "title": "Brand registry",
+          "value": "2 hrs",
+          "desc": "(For generating the atoms of a new brand)"
+        },
+        "layouting": {
+          "title": "Layouting",
+          "value": "6 weeks",
+          "desc": "(For creating a new multisite)"
+        }
+      },
+      "varLib": {
+        "label": "Variable-based library",
+        "designAtoms": {
+          "title": "Design atoms",
+          "value": "2 kits",
+          "descTemplate": "(Reduces maintenance complexity by {{percent}}%)"
+        },
+        "brandRegistry": {
+          "title": "Brand registry",
+          "value": "30 min",
+          "descTemplate": "(Time is reduced by {{percent}}%)"
+        },
+        "layouting": {
+          "title": "Layouting",
+          "value": "2 weeks",
+          "descTemplate": "(Time is reduced by {{percent}}%)"
+        }
+      }
+    },
+    "insumos": {
+      "title": "Improvement of Inputs",
+      "intro": "Within the HandOff processes of the projects, different pains were improved that teams such as Development and Business Analyst had, which led to a series of works to address these problems:",
+      "fonts": {
+        "subtitle": "· Consolidation and care of fonts",
+        "intro": "A repository was created to consolidate all the fonts used throughout the e-commerce, internal tools, and other sites belonging to Liverpool. This repository was generated in Drive and built according to the specific needs of the UX team and Front-End developers. A nomenclature was created to serve both teams and was ultimately documented within the Figma variable library.",
+        "driveLabel": "Drive",
+        "files": [
+          "Fonts",
+          "FontFamily-Brand1,BrandN",
+          "FontFamily-FontWeight.otf"
+        ]
+      },
+      "structure": {
+        "subtitle": "· Structure of documents in Figma",
+        "intro": "As a result of a series of approaches, discussions, and surveys with teams that consult Figma documents as part of their workflow, including Frontend devs, Business Analysts, Business, and QA, a structure was generated within the Figma documents that worked to correctly accommodate and prioritize those pages that needed it. Thus, a structure was created that includes the following points.",
+        "points": [
+          "Addition of emojis to improve page identification",
+          "Grouping of pages by similar semantics",
+          "Creation of three different types of documents: UX projects, research, and internal tools"
+        ],
+        "projects": {
+          "ux": {
+            "title": "UX Project",
+            "bullets": [
+              "🖼️ Cover",
+              "🖍️ Ui / Ready for BA + DEV",
+              "📲 App",
+              "🖥️ Desktop",
+              "💊 Tablet",
+              "📱 Mobile",
+              "---",
+              "🤖 Prototype",
+              "---",
+              "📕 Version history",
+              "🔎 Business + Research",
+              "🧠 UX",
+              "---",
+              "🏝 Sandbox",
+              "🛠 Local Components + Tools"
+            ]
+          },
+          "internal": {
+            "title": "Internal Project",
+            "bullets": [
+              "🖼️ Cover",
+              "🏬 Business",
+              "🏝 Sandbox",
+              "🧠 Brainstorming",
+              "🗺️ Sitemap",
+              "📕 Version history",
+              "Benchmark",
+              "Interviews",
+              "👁️ Visuals",
+              "🛠 Local Components + Tools"
+            ]
+          },
+          "research": {
+            "title": "Research",
+            "bullets": [
+              "🖼️ Cover",
+              "🤖 Prototype",
+              "---",
+              "📕 Version history",
+              "🧠 UX",
+              "---",
+              "🏝 Sandbox",
+              "🛠 Local Components + Tools"
+            ]
+          }
+        }
+      }
+    },
+    "automa": {
+      "title": "Automation of processes",
+      "intro": "To improve the design processes of UX designers, 3 plugins for Figma and 2 additional servers were programmed, which increased the team's productivity:",
+      "pluginsLabel": "Plugins (3 tools)",
+      "capabilitiesLabel": "Capabilities",
+      "serversLabel": "Servers (2 tools)",
+      "plugins": {
+        "projectSetter": {
+          "title": [
+            "PROJECT",
+            "SETTER"
+          ],
+          "description": "Generates a project with the standardized page structure according to the desired project type.",
+          "kpi1Value": "30 min",
+          "kpi1Desc": "Process that involved copying the template, generating a cover page, and manually adjusting the file if necessary.",
+          "kpi2Value": "30 sec",
+          "kpi2DescTemplate": "Time is reduced by {{percent}}% without the need for specific manual adjustments, as the plugin allows presetting.",
+          "capabilities": [
+            "Credentials are required to use the plugin",
+            "You can edit project information directly for the cover page, such as project name, project coordination, and whether it involves more coordinations or not.",
+            "Initialization of 4 types of projects:",
+            "Standard UX project",
+            "Research project for investigations",
+            "Sales tool project for internal development",
+            "Custom project that allows selecting which pages to insert",
+            "Insert pages within the page structure"
+          ]
+        },
+        "plpFiller": {
+          "title": [
+            "PLP",
+            "FILLER"
+          ],
+          "description": "Designed to quickly generate a complete PLP view with real information obtained directly from the e-commerce production environment.",
+          "kpi1Value": "2 hrs",
+          "kpi1Desc": "Process that involved manually adjusting the information of a PLP with real data from the production environment.",
+          "kpi2Value": "30 sec",
+          "kpi2DescTemplate": "Time is reduced by {{percent}}% with the mere effort of a text and a click.",
+          "capabilities": [
+            "Information is obtained directly from the Liverpool e-commerce production environment.",
+            "This information is directly rendered in a PLP card component.",
+            "Only a valid text is required."
+          ]
+        },
+        "frameReferencer": {
+          "title": [
+            "FRAME",
+            "REFERENCER"
+          ],
+          "description": "Allows connecting two frames through hyperlinks and arrows to link them in some way.",
+          "kpi1Value": "Navigation and weight",
+          "kpi1Desc": "Allows for much lighter navigation within large documents thanks to hyperlinks and arrows. The duplication in PNG of frames lightens the document's weight.",
+          "capabilities": [
+            "You can modify the color of references and hyperlinks",
+            "You can activate or deactivate the following options:",
+            "Generate a copy of the frame in PNG",
+            "Generate hyperlinks",
+            "Create connectors between two frames",
+            "These interactions can be generated between two frames by selecting one frame and then selecting another with the SHIFT key."
+          ]
+        }
+      },
+      "servers": {
+        "credential": {
+          "title": [
+            "CREDENTIAL",
+            "SERVER"
+          ],
+          "description": "Server dedicated to validating and verifying credentials."
+        },
+        "crawler": {
+          "title": [
+            "CRAWLER",
+            "SERVER"
+          ],
+          "description": "Crawls Liverpool's e-commerce site to extract collection data, feeding the PLP Filler plugin with real production information."
+        }
+      }
+    },
+    "future": {
+      "title": "Future steps",
+      "intro": "As GLUE keeps maturing, the next stage looks at closing the gap between design and development: shipping tokens and components in formats front-end teams can consume directly, and cutting down the manual work still needed to hand a project off to them.",
+      "toolsLabel": "· Design tools",
+      "toolsIntro": "At least 4 more plugins are planned to address other needs in the design process. There are also plans to improve the existing ones. The following tools are already in development.",
+      "steps": {
+        "superapp": {
+          "title": [
+            "SUPER",
+            "APP"
+          ],
+          "tag": "new",
+          "description": "App designed for the complete grouping of all sub-plugins involved in the design process"
+        },
+        "bolito": {
+          "title": [
+            "BOLITO",
+            "WRITER"
+          ],
+          "tag": "new",
+          "description": "Implementation of an LLM (Llama) as a copywriting, voice and tone, writing assistant, and more"
+        },
+        "audit": {
+          "title": [
+            "AUDIT",
+            "ASSISTANT"
+          ],
+          "tag": "new",
+          "description": "Automatic audit assistant for components, tokens and instances"
+        },
+        "ecommerce": {
+          "title": [
+            "E-COMMERCE",
+            "FILLER"
+          ],
+          "tag": "improvement",
+          "description": "Improvement of the PDP filler by integrating PDP and other spaces of the e-commerce"
+        }
+      },
+      "handoffLabel": "· Handoff processes",
+      "handoffIntro": "In order to improve handoff and distribution processes of design frameworks, as well as the integration of other design teams such as marketing, branding, and others, research has been conducted on methods for tokenization and distribution of libraries in various ways to the teams.",
+      "handoffFlows": {
+        "tabs": {
+          "distribution": "Distribution",
+          "extension": "Extension"
+        },
+        "distribution": {
+          "steps": [
+            {
+              "label": "Design tokens",
+              "description": "Design tokens and variables are defined and maintained directly in Figma."
+            },
+            {
+              "label": "Extract & generate JSON",
+              "description": "A script pulls the Figma variables and generates JSON documents with the tokens."
+            },
+            {
+              "label": "CLI ingestion",
+              "description": "CLI commands run against those JSON files to activate the token-processing pipeline."
+            },
+            {
+              "label": "Store & version",
+              "description": "The processed tokens are uploaded, versioned, and distributed through a repository."
+            },
+            {
+              "label": "Decode & apply",
+              "description": "Each design system decodes the distributed tokens and applies them as real styles."
+            }
+          ]
+        },
+        "extension": {
+          "steps": [
+            {
+              "label": "Extend the pipeline",
+              "description": "When a new design system needs onboarding, the CLI pipeline's functionality is extended to support it."
+            },
+            {
+              "label": "Translate JSONs",
+              "description": "The token JSONs are translated into the format that new design system expects."
+            },
+            {
+              "label": "Style ingestion",
+              "description": "The translated styles are ingested back into the shared repository."
+            },
+            {
+              "label": "Back into Distribution",
+              "description": "From here, the new design system re-enters the Distribution flow and receives updates like everyone else."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "hubbub": {
+    "summary": {
+      "title": "HUBBUB and the visualization of noise in Mexico City",
+      "dateRange": "may 2022 - present",
+      "description": "Website for the deployment of data on the phenomenon of noise in Mexico City and its Metropolitan Area",
+      "role": [
+        "UX / UI developer",
+        "Product designer, BA, developer, project manager"
+      ],
+      "sector": "Research, scientific dissemination, data visualization",
+      "team": "Researchers"
+    },
+    "anchors": {
+      "context": {
+        "id": "context",
+        "label": "Context"
+      },
+      "invest": {
+        "id": "research",
+        "label": "Research"
+      },
+      "design": {
+        "id": "design",
+        "label": "Design"
+      },
+      "progra": {
+        "id": "programming",
+        "label": "Programming"
+      },
+      "future": {
+        "id": "future-steps",
+        "label": "Other media and future steps"
+      }
+    },
+    "context": {
+      "title": "Context",
+      "intro": "The Acoustic Design Laboratory of the Universidad Autónoma Metropolitana has been researching and studying noise phenomena in Mexico City and its Metropolitan Area for over 6 years, leading to a series of needs and developments that were implemented throughout the project. By the time I joined the team, the following elements were already in place:",
+      "kpis": {
+        "app": {
+          "value": "1 app",
+          "desc": "(Working for Android and iOS)"
+        },
+        "reports": {
+          "value": "51 reports",
+          "desc": "(For the data cut in April 2022)"
+        },
+        "maps": {
+          "value": "+6 maps",
+          "desc": "Including one general map of the city and other routes"
+        },
+        "team": {
+          "value": "Multidisciplinary Team",
+          "desc": "Including developers, architects and designers"
+        }
+      },
+      "participationIntro": "My participation in the team was to fulfill a specific need: the design of a dissemination space for the data and concepts of the phenomenon, as well as dashboards with different views and intentions for the application report data. The entire solution design process was carried out by me and was completed in 3 phases:",
+      "bullets": {
+        "research": {
+          "title": "1. Research",
+          "description": "Analysis of the problem, generation and understanding of concepts, and user and project research."
+        },
+        "design": {
+          "title": "2. Design",
+          "description": "Definition of proposal and graphic identity, sketching of ideas and prototyping of the project."
+        },
+        "programming": {
+          "title": "3. Programming",
+          "description": "Planning, coding and development"
+        }
+      },
+      "goToAlt": "Go to ({{title}})"
+    },
+    "invest": {
+      "title": "Research",
+      "intro": "Within the research stage, different efforts were made not only related to the interface and experience part, but also theoretical frameworks and a deep understanding of the concepts that would be poured into the project were required. Even a solution definition stage took place within this, being, in a very synthesized way, a stage composed of three parts.",
+      "steps": {
+        "analysis": {
+          "title": "Analysis",
+          "text": "Recognition of the problem, objectives of the Acoustic Design team with their HUBBUB project, and delimitation of the theoretical framework to be presented within the topic."
+        },
+        "research": {
+          "title": "Research",
+          "text": "Research on user needs, communication spaces, benchmarks, and product design guidelines."
+        },
+        "concepts": {
+          "title": "Concepts",
+          "text": "Research on the phenomenon of noise and data visualization, as well as user-centered design encompassing concepts, theorems, and philosophy."
+        }
+      },
+      "analysisSection": {
+        "heading": "Analysis section",
+        "intro": "Two exercises were carried out in parallel to obtain and make a first approach to hypotheses. The first of these were interviews with the Acoustic Design Laboratory, which already had a series of data that supported the construction of a series of primary needs for the project, which are reflected in three pillars that would end up guiding the subsequent stages of research."
+      },
+      "analysisCards": {
+        "noise": {
+          "title": "About noise",
+          "text": "Noise is a highly studied phenomenon but rarely disseminated within Mexican culture, which has led to a lack of understanding of concepts that would help bring people closer and guide them to understand it."
+        },
+        "harmlessData": {
+          "title": "Harmless data",
+          "text": "Harmless data is data that does not cause harm or negatively affect people or the environment. In the context of noise, it is essential to identify and use harmless data to ensure responsible and sustainable design."
+        },
+        "nonProfessionals": {
+          "title": "Reaching non-professionals",
+          "text": "In addition to what was mentioned about harmless data, it is not only necessary to find public access spaces for this information, but it is also important to establish an appropriate level of language so that any interested party can make these concepts and information their own."
+        }
+      },
+      "researchSection": {
+        "heading": "Research section",
+        "intro": "Once the problems, objectives, and scope of the project were identified, a design solution was then delineated, under a User Centered Design approach, so a series of surveys and approaches to stakeholders were conducted. The results obtained can be seen in the following graphs."
+      },
+      "areaCharts": {
+        "ageRange": {
+          "title": "Age range",
+          "data": [
+            "<15 years",
+            "15-24 years",
+            "25-34 years",
+            "35-44 years",
+            "45+ years"
+          ]
+        },
+        "interestImportant": {
+          "title": "Are you interested in and do you think it is important to understand the phenomenon of noise?",
+          "data": [
+            "It is important and interesting to me",
+            "It is important but not interesting to me",
+            "I am indifferent"
+          ]
+        },
+        "heardAbout": {
+          "title": "Have you heard about the phenomenon of noise?",
+          "data": [
+            "Yes, I have heard it",
+            "No, I have never heard it"
+          ]
+        }
+      },
+      "barCharts": {
+        "learnMethod": {
+          "title": "How do you like to learn about new topics?",
+          "data": [
+            "Videos",
+            "Articles",
+            "Websites",
+            "Museums",
+            "Conferences",
+            "Podcasts"
+          ]
+        },
+        "wantToKnow": {
+          "title": "What would you like to learn about?",
+          "data": [
+            "Consequences",
+            "Causes",
+            "Statistics",
+            "Solutions"
+          ]
+        }
+      },
+      "conclusionsIntro": "From all these surveys, the following conclusions could be drawn:",
+      "conclusions": [
+        "The community really finds it important and interesting to talk about a phenomenon like noise.",
+        "Almost half of the respondents know nothing about the phenomenon.",
+        "Videos are the preferred medium for learning about new topics, followed by articles and websites.",
+        "The top three media through which people like to get informed are videos, articles, and websites; that is, digital media are generally preferred.",
+        "There is a greater interest in the consequences of noise, followed by its causes, and then statistics or informative data about it."
+      ],
+      "solutionParagraph": "This already helps to determine a website as a solution design that pours in the information from the articles published by the laboratory: two spaces within the website, one focused on context, theoretical frameworks, and even consequences, and the second as an organized consultation dashboard for the reports obtained through the application.",
+      "conceptsSection": {
+        "heading": "Concepts section",
+        "intro": "As part of the understanding and appropriation of concepts, an entire investigation was carried out, which is covered in chapters 1, 2, and 3 of the thesis SEE THE NOISE, “An exercise in information visualization for the noise of Mexico City”"
+      }
+    },
+    "design": {
+      "title": "Design",
+      "intro": "Within the design stage, all efforts related to solution design were grouped, which involves different processes of graphic design, user experience, benchmarking, and interface. All these processes can be poured into three spaces.",
+      "steps": {
+        "understanding": {
+          "title": "Understanding HUBBUB",
+          "text": "Recognition and complete understanding of the project's current graphic identity, including the formation of a graphic identity for the site."
+        },
+        "sketching": {
+          "title": "Sketching",
+          "text": "Externalization of ideas, paper prototyping, and exploration of different graphic visualizers."
+        },
+        "mockup": {
+          "title": "Mockup",
+          "text": "Refinement of ideas, creation of the experience, and lowering the interface to a high-fidelity prototype."
+        }
+      },
+      "understandingSection": {
+        "heading": "Understanding HUBBUB section",
+        "intro1": "By the time the project began, HUBBUB already had a series of channels where it displayed a certain aesthetic.",
+        "intro2": "From all this, the color palette, iconographic style, typography, voice, and tone stood out. Certain terms and assets such as icons and logos were also rescued. All these graphic resources were poured into a new UI created for the website channel that we would develop, in addition to improving iconography, signage, and other aspects of the interface."
+      },
+      "sketchingSection": {
+        "heading": "Sketching section",
+        "intro": "For the sketching, a series of paper sketches were made that not only allowed for quick exploration of interaction and composition ideas but also involved non-designer teams (such as laboratory members) in the idea construction process. These sketches also allowed for rapid iteration between components and identification of the types of data we wanted to display."
+      },
+      "mockupSection": {
+        "heading": "Mockup section",
+        "intro1": "Once the idea exploration phase, fueled by team feedback, was completed, we moved on to the fine mockup phase. In this phase, components and all necessary screens for both parts of the experience were created. All this work was done in Figma and, similarly, subjected to various presentations with stakeholders to make specific adjustments, such as in browsers and viewers.",
+        "intro2": "In addition to the experience mockup done in Figma, a document of user stories and technical stories was also created to facilitate rapid implementation during the development phase. These stories were documented in the following document."
+      }
+    },
+    "progra": {
+      "title": "Programming",
+      "intro": "The programming stage encompasses the entire process of coding and effort planning.",
+      "steps": {
+        "planning": {
+          "title": "Planning",
+          "text": "Definition of modules to program, time planning in sprints, and technology selection."
+        },
+        "coding": {
+          "title": "Coding",
+          "text": "Programming of functionalities, creation of components, and database connection."
+        },
+        "implementation": {
+          "title": "Implementation*",
+          "text": "Execution, QA, and system evaluation. Deployment to production within university servers."
+        }
+      },
+      "implementationNote": "* This last stage has not been carried out as it is still awaiting approval on the business side.",
+      "planningSection": {
+        "heading": "Planning Section",
+        "intro": "Based on the information gathered in the User Stories, it was possible to identify without problems which modules to work on and thus distribute effort over two-week sprints with weekly meetings for reviews and official deliveries. Everything was distributed as follows."
+      },
+      "planLegend": {
+        "general": {
+          "title": "General Functions",
+          "bullets": [
+            "Left Navigator",
+            "Right Navigator",
+            "Footer",
+            "About Us (Swal)",
+            "Legal",
+            "Accessibility Actions",
+            "Hero image"
+          ]
+        },
+        "noise": {
+          "title": "The Noise (Site Page)",
+          "bullets": [
+            "The Ear",
+            "Noise Classification",
+            "Noise Legislation",
+            "Noise Components",
+            "Health Effects",
+            "How Noise is Measured",
+            "Study Areas",
+            "HUBBUB Articles",
+            "References"
+          ]
+        },
+        "viewNoise": {
+          "title": "View the Noise (Site Page)",
+          "bullets": [
+            "Introduction",
+            "Participation",
+            "Sound Pressure",
+            "Variables",
+            "Emitting Sources",
+            "Municipalities",
+            "Noise Map"
+          ]
+        }
+      },
+      "planKPI": {
+        "hours": {
+          "title": "461 hrs",
+          "desc": "93 hrs of design + 368 hrs of coding"
+        },
+        "modules": {
+          "title": "3 Modules",
+          "desc": "They share navigation and the two pages"
+        },
+        "weeks": {
+          "title": "18 Weeks",
+          "desc": "approximately 4 and a half months of development"
+        }
+      },
+      "techIntro": "In addition to defining project timelines and management, the technologies involved in both development and team communication were also defined. In this regard, spaces that were naturally created in previous stages are revisited, and the technical information is also attached.",
+      "codingSection": {
+        "heading": "Coding Section",
+        "intro": "In a first approach to the project, it was built using PHP as a base, and all the graphical viewers were worked on there for the first time. However, thinking about the scalability and modularity of the project, it was decided to create a version based on React.js that would work much better for deployment on the web. These two stages of the project were carried out at different times, and the React.js version is what has been worked on lately. Here are some features of these two versions."
+      },
+      "versions": {
+        "php": {
+          "dateRange": "jun 2022 - sep 2023",
+          "description": "First version built to run on PHP, it served as a basis for the redesign in React.js",
+          "techLabel": "3 technologies",
+          "techDesc": "Highlights: JavaScript, PHP, SCSS",
+          "branchLabel": "2 branches",
+          "branchDesc": "The main one and another for a responsive mobile version"
+        },
+        "react": {
+          "dateRange": "sep 2024 - present",
+          "description": "Second version of the site with improvements in components and full integration with React.js",
+          "techLabel": "3 technologies",
+          "techDesc": "Highlights: JavaScript, HTML, SCSS",
+          "branchLabel": "2 branches",
+          "branchDesc": "The main one and another dedicated to the implementation of iframes"
+        }
+      },
+      "vizIntro": "Many of the graphical viewers rely on JavaScript libraries such as p5, noise, charts, or integrations with APIs like Sketchfab. These are examples of viewers that are already programmed:"
+    },
+    "future": {
+      "title": "Other media and future steps",
+      "intro": "Beyond the production release of the project, as it represents university scientific research, it has permeated other channels from which it is planned to follow up on or further develop its scope. Some events have already taken place and others are on the way.",
+      "steps": {
+        "coloquio": {
+          "title": [
+            "International",
+            "Colloquium"
+          ],
+          "tag": "1st and 2nd edition",
+          "description": "Being a speaker at the last two editions of the “International Colloquium on Soundscape” organized by institutions such as the Universidad Autónoma Metropolitana, the Benemérita Universidad Autónoma de Puebla, and other public universities."
+        },
+        "implementation": {
+          "title": [
+            "Implementation",
+            "in other locations"
+          ],
+          "tag": "amplification",
+          "description": "Thanks to the exposure that the project has had within international events, colloquiums and spaces, this project is being planned to be replicated in other states of the republic and in other Ibero-American countries."
+        },
+        "articles": {
+          "title": [
+            "Articles",
+            "and patents"
+          ],
+          "tag": "in process",
+          "description": "The Universidad Autónoma Metropolitana, in conjunction with various governmental institutions and scientific press, is seeking the approval of articles related to the research as well as the registration of the site and data collection methodology as a patent."
+        }
+      }
+    }
+  },
+  "movilidad": {
+    "summary": {
+      "title": "Electrolineras system, MoviLidad",
+      "dateRange": "oct 2024 - may 2025",
+      "description": "Application for the offering of charging centers for electric cars",
+      "role": [
+        "UX / UI designer",
+        "Product designer, service designer, BA"
+      ],
+      "sector": "Automotive, alternative fuels, services",
+      "team": "Front and Back developers, automotive business, business analyst, project manager"
+    },
+    "anchors": {
+      "context": {
+        "id": "context",
+        "label": "Context"
+      },
+      "invest": {
+        "id": "interface",
+        "label": "Interface"
+      },
+      "ambNoti": {
+        "id": "notifications",
+        "label": "Notification"
+      },
+      "flow": {
+        "id": "flow-and-methods",
+        "label": "Flow and Methods"
+      },
+      "future": {
+        "id": "future-steps",
+        "label": "Future Steps"
+      }
+    },
+    "context": {
+      "title": "Context",
+      "intro": "Due to the collaboration between BYD and Liverpool, along with the growing market for electric cars in Mexico, there was a need to install and offer charging points in strategic locations. Liverpool's real estate division creates a series of spaces within shopping centers like Galerías and others where Liverpool has a presence, allowing for the installation of electric charging stations within Mexico City.",
+      "kpis": {
+        "stations": {
+          "value": "17 stations",
+          "desc": "(Distributed in the northern area of CDMX)"
+        },
+        "chargers": {
+          "value": "139 chargers",
+          "desc": "(Located in specialized charging stations and shopping centers)"
+        }
+      },
+      "chargerTypesLabel": "6 different types of chargers",
+      "chargerTypeAlt": "Charger plug {{number}}",
+      "collabLabel": "Direct collaboration with QiOn for infrastructure and Openpay for payments",
+      "topicsIntro": "The project development topics within the UX approach that were most interesting would be these three:",
+      "bullets": {
+        "research": {
+          "title": "1. Research and definition of interface",
+          "description": "Benchmarks and direct user research to define the main user flow."
+        },
+        "notifications": {
+          "title": "2. Notification environment",
+          "description": "Integration of real-time activities and status for the user beyond the application and Liverpool environment."
+        },
+        "transactionFlow": {
+          "title": "3. Transaction flow and payment methods",
+          "description": "Modification and constant adaptation of the transactional flow, as well as the exploration of payment methods that directly influenced the user's flow."
+        }
+      },
+      "goToAlt": "Go to ({{title}})"
+    },
+    "invest": {
+      "title": "Research and definition of interface",
+      "intro1": "One of the most important parts of the application's design was the interface and how the user would have to learn to use it, as those who would use this charging network section would be users who were already familiar with it or, failing that, would have to familiarize themselves with the Pocket environment, Liverpool's application.",
+      "intro2": "Not only did it involve using previously used components and graphic language within Pocket, but it also had to approach what other applications in the same field already offered to the customer. With this in mind, the first steps were to generate benchmarks from multiple companies.",
+      "legends": {
+        "mainFlow": "Main flow",
+        "secondaryActions": "Secondary actions",
+        "deprecatedFlow": "Deprecated flow",
+        "externalFlow": "External flow",
+        "directSequence": "Direct sequence",
+        "alternateSequence": "Alternate sequence"
+      },
+      "mapIntro": "Once important points such as the map as the main screen, result filtering, and prepaid transactional flows were established, it was decided to mock up an experience that approached this structure and, at the same time, included all the offers and actionables that the app itself offered. This resulted in a map like the following:",
+      "flowSchemaHint": "Hover over (or focus) a legend item to highlight that flow in the diagram.",
+      "flowSchemaAlt": "Sitemap of the charging network flow, from the app's entry points through the map, secondary actions, the charging transactional flow, and the wallet management screens.",
+      "flowSchema": {
+        "pocket": "Pocket",
+        "servicesTab": "Services tab",
+        "map": "Map",
+        "legend": "Legend",
+        "search": "Search",
+        "filters": "Filters",
+        "mapMode": "Map mode",
+        "stationDetail": "Station detail",
+        "operativeSystem": "Operative system",
+        "qrScanLegacy": "QR scan",
+        "qrScan": "QR scan",
+        "chargeConfig": "Charge configuration",
+        "status1": "Status 1: Charging",
+        "status2": "Status 2: Charge ended",
+        "status3": "Status 3: Parking charge",
+        "statusX": "Status X: Interruption",
+        "thankYouPage": "Thank You Page",
+        "chargeHistoric": "Charge history",
+        "outstandingBalance": "Outstanding balance",
+        "help": "Help",
+        "mobilityWallet": "Mobility wallet",
+        "addWallet": "Add wallet",
+        "manageWallet": "Manage wallet"
+      },
+      "wordMapAlt": "Word map with the most repeated words in participants' comments",
+      "testIntro": "As a final part of the research and as a result of some comments from the business side, it was also decided to test the home page of the application. This was done through a survey in Maze, and the results were as follows:",
+      "women": "50% women",
+      "men": "47% men",
+      "participants": {
+        "value": "30 participants",
+        "desc": "(Over a period of 3 weeks)"
+      },
+      "questionsKpi": {
+        "value": "9 questions",
+        "desc": "(Combining different types of instruments)"
+      },
+      "introQuestions": "Introductory",
+      "hierarchyQuestions": "Hierarchy and options",
+      "aestheticsQuestions": "Aesthetics and accessibility",
+      "finalQuestions": "Final",
+      "priorityOptions": ["Map", "Navigation", "Wallet", "History", "Help"],
+      "labels": {
+        "exercise": "Exercise",
+        "objective": "Objective",
+        "result": "Result",
+        "conclusions": "Conclusions"
+      },
+      "exercises": {
+        "first": {
+          "task": "The user is asked to order the options above according to their importance",
+          "objective": "To know the user's priorities and expectations regarding the application's capabilities",
+          "result": "In order of relevance, the options were arranged: Map, Navigation, Wallet, History, and Help",
+          "conclusions": [
+            "The Map becomes fundamental for the user as it describes a natural flow for locating charging stations, which will subsequently enable the rest of the transaction flow, which is ultimately the main task to be performed.",
+            "Navigation, which involves the user's ability to use the map and the rest of the application's activities, appears as complementary to exploration and, consequently, remains relevant.",
+            "The Wallet becomes the third fundamental option of the application by enabling the user to make payments and, consequently, complete the last part of the main journey."
+          ]
+        },
+        "second": {
+          "task": "The user is asked to choose which of the two options seems more appropriate to access the different options offered by the application, in addition to complementing their choice with an open question to express their reasons.",
+          "objective": "To guide the interface towards an option that functionally and aesthetically meets the needs of our user, in addition to gathering qualitative information about their choice.",
+          "result": "The most chosen screen was number one, with a preference of 69% of respondents.",
+          "conclusions": [
+            "The majority of users expressed a preference for screen number 1, accompanied by comments highlighting a clean interface and simpler navigation, even considering the position of the options pill."
+          ]
+        }
+      }
+    },
+    "ambNoti": {
+      "title": "Notification environment",
+      "intro1": "Another effort made for this project, which involved the implementation of a technology that had never been used within Pocket, was real-time activities. For the first time, there was a need to display information with real-time tracking that could add value to the customer experience, along with the technical capabilities provided by QiOn's CMS.",
+      "intro2": "Three specific spaces were identified where using these activities would be very beneficial:",
+      "bullets": {
+        "charging": {
+          "title": "1. Charging in progress",
+          "description": "Information such as total charging time, kilowatts charged, and current battery percentage of the car is displayed. The main animated component shows the progress of the charging."
+        },
+        "completed": {
+          "title": "2. Charging completed",
+          "description": "Displays instructions for disconnecting the car and uses a timer to show the time remaining before charging the parking fee begins."
+        },
+        "fee": {
+          "title": "3. Parking fee charge",
+          "description": "The same disconnection instructions as before are shown, along with the parking fee cost. The animated component changes to a stopwatch."
+        }
+      },
+      "labels": {
+        "island": "Dynamic Island",
+        "notification": "Notification",
+        "watch": "Watch",
+        "standby": "StandBy"
+      },
+      "arrowUpAlt": "Previous example",
+      "arrowDownAlt": "Next example",
+      "arrowCenterAlt": "Selected example",
+      "outro": "The entire integration of the notification environment not only involved the creation of these notification modes but also prompted the research and documentation of design standards from Material Design by Android and the Human Interface by Apple. This was reflected in the documentation of Liverpool's design system with the addition of materials, effects, and animations."
+    },
+    "flow": {
+      "title": "Transactional Flow and Payment Methods",
+      "intro": "Among all the flows that make up the charging network application, the main and most important one is the transactional flow, which allows for the vehicle's charge to be processed and the service fee to be generated.",
+      "stepPreviousAlt": "Previous step",
+      "stepNextAlt": "Next step",
+      "flowPreviousAlt": "Previous test flow",
+      "flowNextAlt": "Next test flow",
+      "steps": {
+        "map": {
+          "label": "Map"
+        },
+        "qr": {
+          "label": "QR Reading"
+        },
+        "config": {
+          "label": "Charging configuration"
+        },
+        "status1": {
+          "label": "Status 1: Charging"
+        },
+        "status2": {
+          "label": "Status 2: Charging completed"
+        },
+        "status3": {
+          "label": "Status 3: Parking fee charge"
+        },
+        "thanks": {
+          "label": "Thank you page"
+        }
+      },
+      "screens": {
+        "map": {
+          "text": [
+            "This is the main page of the application, from which all secondary actions to manipulate the information displayed on the map are derived, and at the same time, it allows access to other sections of the application.",
+            "On this screen, you can see the city map with the charging stations. Its purpose is to allow identifying where the charging stations are located, information about them, and to start the transactional flow by scanning the QR code attached to the charging totem."
+          ]
+        },
+        "qr": {
+          "text": [
+            "The device's camera is activated and the code printed on the charging totem is read.",
+            "At that moment, the information of that charging gun is loaded and the charging configuration is proceeded."
+          ]
+        },
+        "config": {
+          "text": [
+            "The charging gun information is loaded, which includes: identifier, station name, charger type, charging speed, charging fee, and idling fee. In addition to this information, it allows configuration through 3 types of inputs which can be by the amount of money to recharge, final percentage to leave the vehicle, or the amount of kilowatts to be charged.",
+            "Once the charge is configured, the transactional flow is initiated. The rest of the information is for selecting the payment method, giving the option to select one of the methods already saved in their Liverpool wallet or registering a new one, plus the addition of using the balance they have in their digital wallet.",
+            "Much of this configuration depends on how the e-commerce checkout was already behaving."
+          ]
+        },
+        "status1": {
+          "text": [
+            "This page briefly shows the progress of the car's charge as well as information for any problems that may arise, from charger information to a button for interrupting the charge.",
+            "It is accompanied by a real-time activity that reflects the same experience."
+          ]
+        },
+        "status2": {
+          "text": [
+            "Once the charge is completed or interrupted, it moves to the status of completed charging where the user is asked to disconnect their car and leave the charging area, otherwise, idling charges will begin.",
+            "This message is also accompanied by a real-time activity that warns the user of the amount of time left before idling charges begin."
+          ]
+        },
+        "status3": {
+          "text": [
+            "Here the application starts to add a fee per minute for the car's stay in the charging area. It is accompanied by a real-time activity that adds up the minutes spent and their equivalent in fees."
+          ]
+        },
+        "thanks": {
+          "text": [
+            "Once the entire charging process is completed and no issues have arisen, a summary of the charge for all the activity performed is displayed, and the charge is processed automatically."
+          ]
+        }
+      },
+      "testFlowsIntro": "This flow underwent different modifications based on the payment methods and the type of payment gateway that could be implemented within the flow, which led to a series of iterations. A summary of the types of flows proposed is as follows:",
+      "testFlows": {
+        "autoCharge": {
+          "title": "Flow with automatic charge",
+          "steps": [
+            "Charging configuration",
+            "Card selection and license entry",
+            "Charging process",
+            "Automatic payment"
+          ],
+          "text": "In this proposal, licenses can be stored during the charging process, allowing for the charge to be made to the selected card at the beginning and displaying the thank you page at the end."
+        },
+        "doubleAuth": {
+          "title": "Flow with double authentication",
+          "steps": [
+            "Charging configuration",
+            "Card selection, license entry, and pre-charge",
+            "Charging process",
+            "Re-enter credentials and charge adjustment"
+          ],
+          "text": "In this proposal, the aim is to make a charge based exclusively on the configured charging amount. At the end, the customer is asked to re-identify themselves to adjust the balance, either by charging or refunding."
+        },
+        "refund": {
+          "title": "Flow with refund",
+          "steps": [
+            "Charging configuration",
+            "Card selection, license entry, and pre-charge of excess amount",
+            "Charging process",
+            "Refund of excess amount"
+          ],
+          "text": "In this proposal, the aim is to charge an excess amount of money to ensure the collection of all types of concepts, and subsequently generate the refund."
+        }
+      }
+    },
+    "future": {
+      "title": "Future steps",
+      "intro": "The next steps for the product are primarily focused on three specific improvements with business objectives.",
+      "steps": {
+        "wallet": {
+          "title": ["WALLET", "MOVILIDAD"],
+          "tag": "second phase",
+          "description": "Implementation of recharges and sale of physical balances in the form of credits for use within the application. It would be understood as a new payment method."
+        },
+        "realtime": {
+          "title": ["REAL", "TIME"],
+          "tag": "second phase",
+          "description": "Integration of other notification technologies such as StandBy, WearOS notifications, and other spaces"
+        },
+        "loyalty": {
+          "title": ["LOYALTY", "PROGRAM"],
+          "tag": "third phase",
+          "description": "Includes couponing, rewards program, gamification, and special deals."
+        }
+      }
+    }
+  },
+  "resume": {
+    "categories": [
+      "General",
+      "Design system",
+      "Research",
+      "Experience"
+    ],
+    "labels": {
+      "skills": "Skills",
+      "summary": "Summary",
+      "experience": "Experience",
+      "projects": "Activities and projects",
+      "download": "Download Resume"
+    },
+    "header": {
+      "tagline": "{{role}} @ {{company}}"
+    },
+    "infos": {
+      "portfolios": {
+        "title": "Portfolios",
+        "bullets": [
+          {
+            "text": "zulhernandez.com",
+            "link": "https://zulhernandez.com"
+          },
+          {
+            "text": "linkedin.com/in/saululises",
+            "link": "https://linkedin.com/in/saululises"
+          },
+          {
+            "text": "github.com/ZulHernandez",
+            "link": "https://github.com/ZulHernandez"
+          }
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "bullets": [
+          {
+            "text": "+52 5565027645",
+            "link": "tel:+525565027645"
+          },
+          {
+            "text": "saululiseshernandezcruz@gmail.com",
+            "link": "mailto:saululiseshernandezcruz@gmail.com"
+          }
+        ]
+      },
+      "education": {
+        "title": "Education",
+        "bullets": [
+          {
+            "text": "Ba. in Graphic Communication Design"
+          },
+          {
+            "text": "Tech. in Programming"
+          }
+        ]
+      },
+      "languages": {
+        "title": "Languages",
+        "bullets": [
+          {
+            "text": "Spanish"
+          },
+          {
+            "text": "English"
+          }
+        ]
+      }
+    },
+    "skills": {
+      "categories": [
+        [
+          "Storytelling",
+          "Design Thinking",
+          "Leadership",
+          "Stakeholder management",
+          "Team management",
+          "Critical thinking",
+          "Agile methodologies",
+          "Design system"
+        ],
+        [
+          "Automation",
+          "Design tools",
+          "Development",
+          "Update",
+          "High-fidelity prototypes",
+          "Figma variables",
+          "UI Kits"
+        ],
+        [
+          "Quantitative research",
+          "Qualitative research",
+          "User stories",
+          "Direct observation",
+          "Data analysis",
+          "Prototyping",
+          "Usability testing"
+        ],
+        [
+          "Storytelling",
+          "Journey map",
+          "Redesigns",
+          "Project management",
+          "Simultaneous projects"
+        ]
+      ]
+    },
+    "summaries": {
+      "categories": [
+        [
+          "Digital product designer with experience in Fintech and e-commerce, specialized in building and automating design systems through Design Operations — custom plugins, UI Kits, templates and style guides — while working across multidisciplinary teams."
+        ],
+        [
+          "Digital product designer specialized in design systems and automation for Fintech and e-commerce, expert in Design Operations — custom plugins, UI Kits, templates, documentation and style guides."
+        ],
+        [
+          "Digital product designer with solid user-research expertise, designing optimized experiences and interfaces while managing multidisciplinary teams and projects in direct contact with users."
+        ],
+        [
+          "Senior UX/UI designer focused on creating optimized journeys, impactful user stories and intuitive flows for Fintech and e-commerce systems."
+        ]
+      ]
+    }
+  },
+  "error": {
+    "title": "Wrong way",
+    "description1": "Seems like we were not able to find what you were looking for.",
+    "description2": "Feel free to explore the rest of the site.",
+    "cta": "Go to the home page"
+  },
+  "about": {
+    "anchors": {
+      "intro": {
+        "id": "this-is-me",
+        "label": "This is me"
+      }
+    },
+    "intro": {
+      "title": "This is me",
+      "subtitle": "I leave you this section so you can learn more about me — beyond my work, there are other things about me that may be interesting."
+    },
+    "tabs": {
+      "music": "Music",
+      "manga": "Manga",
+      "games": "Games",
+      "sport": "Sport",
+      "food": "Food"
+    },
+    "music": {
+      "title": "Listening to and playing music is wonderful",
+      "p1": "I love listening to music, and not just as background noise while walking around the city — I really enjoy taking my time to sit down and listen to a good album by Pink Floyd, Gorillaz, or Joji.",
+      "p2": "I also play and sing; I really enjoy taking my guitar, my melodica, or the electric guitar, turning on the amplifier, and playing for hours and hours.",
+      "instruments": {
+        "guitar": "Guitar",
+        "electricGuitar": "Electric Guitar",
+        "melodica": "Melodica",
+        "voice": "Voice",
+        "amplifier": "Amplifier"
+      },
+      "recentlyListening": "Recently, I have been listening to:"
+    },
+    "sport": {
+      "title": "I love swimming",
+      "p1": "I have been swimming for more than a year now and I couldn't be more in love with this sport — it's an incredible feeling to get lost in the water after a day of work.",
+      "p2": "If I had to make a tier list of which stroke I like the most...",
+      "styles": {
+        "apnea": "Apnea",
+        "backstroke": "Backstroke",
+        "free": "Free",
+        "breaststroke": "Breaststroke",
+        "butterfly": "Butterfly"
+      }
+    },
+    "games": {
+      "title": "I prefer singleplayer games...",
+      "p1": "I like games where I find myself alone, discovering a great story. I'd say my favorite genres are walking simulators, metroidvanias, and classic platformers. My favorite game is definitely Hollow Knight.",
+      "silksong": "P.S. Silksong is finally out — the wait was real.",
+      "boardTitle": "...but I also love board games",
+      "boardParagraph": "Lately I've been collecting and discovering board games I've loved. I don't have many in my collection yet, but soon I'll be surrounded by them."
+    },
+    "food": {
+      "title": "Asian food, cooking, and a recipe",
+      "p1": "I love eating, but I also love cooking. Some of the things I cook most often are Asian dishes, from savory ones like ramen, gyozas, or onigiri to sweet ones like matcha ice cream. I obviously love Mexican food too — I make a spectacular birria, and I'll leave you a recipe for raw green salsa so you can enjoy it with your family.",
+      "ingredients": {
+        "celery": "Celery",
+        "tomato": "Tomato",
+        "mint": "Mint",
+        "serranoPepper": "Serrano pepper",
+        "orange": "Orange",
+        "lemon": "Lemon",
+        "salt": "Salt"
+      },
+      "ingredientsHeading": "Ingredients",
+      "instructionsHeading": "Instructions",
+      "recipeIngredients": [
+        "Celery stalk",
+        "Tomatoes (green tomato)",
+        "Mint leaves",
+        "Serrano peppers",
+        "Orange",
+        "Seedless green lemon",
+        "Salt",
+        "Oregano",
+        "Water"
+      ],
+      "recipeSteps": [
+        "Chop the celery stalk, tomatoes, mint leaves, and serrano pepper.",
+        "Juice the lemon and the orange; set aside.",
+        "Grind everything in a mortar or blender and add salt and oregano to taste.",
+        "If needed, add water little by little — in the blender or the mortar — until you reach the consistency you like best; I prefer it a bit thicker.",
+        "Serve with tortilla chips, or use it for tacos."
+      ]
+    },
+    "manga": {
+      "title": "Slices of life, terror, and mechas?",
+      "p1": "I'm more of a manga reader than an anime watcher, and that's led me to some incredible authors who've given me both great and rough moments. Here's my manga top picks, though if you can, you should read more about the author too.",
+      "animeIntro": "Even though I prefer the manga format, there are some works I honestly couldn't enjoy any other way than in full color and animated. I'd really recommend checking them out — you might like them a lot."
+    },
+    "carousel": {
+      "prev": "Previous",
+      "next": "Next"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Saúl Hernández | UI/UX Design Portfolio",
+      "description": "Experienced UI/UX designer with 9+ years of expertise in e-commerce and fintech. Passionate about design systems, process optimization, and creating innovative tools that enhance productivity and impact."
+    },
+    "works": {
+      "title": "Works | Saúl Hernández",
+      "description": "A collection of UI/UX design case studies spanning e-commerce, fintech, and design systems work, plus a timeline of professional experience."
+    },
+    "resume": {
+      "title": "Resume | Saúl Hernández",
+      "description": "Resume and work experience of Saúl Hernández, a UI/UX designer specializing in design systems, research, and product design."
+    },
+    "about": {
+      "title": "About Me | Saúl Hernández",
+      "description": "Get to know Saúl Hernández beyond design: music, sports, games, manga, and food."
+    },
+    "glue": {
+      "title": "GLUE & DesignOps | Case Study",
+      "description": "As part of the ongoing evolution of the design system at Liverpool, we integrated task automation tools, adopted Figma variables, and optimized system auditing and management."
+    },
+    "movilidad": {
+      "title": "MoviLidad — Electric Vehicle Charging Network | Case Study",
+      "description": "Application for the offering of charging centers for electric cars, including the transactional flow and payment methods design."
+    },
+    "hubbub": {
+      "title": "HUBBUB — Noise Visualization in Mexico City | Case Study",
+      "description": "Website for the deployment of data on the phenomenon of noise in Mexico City and its Metropolitan Area."
+    },
+    "notFound": {
+      "title": "Page Not Found | Saúl Hernández",
+      "description": "The page you're looking for doesn't exist. Head back to the portfolio home page."
+    }
+  }
 }

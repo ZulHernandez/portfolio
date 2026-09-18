@@ -33,7 +33,7 @@ jobs:
           local-dir: ./public/data/
           # Mismo destino donde vive dist/data/ tras un deploy completo (ver
           # deploy.yml) — Vite copia public/ a la raíz de dist/ tal cual.
-          server-dir: ./public_html/data/
+          server-dir: ./data/
           exclude: |
             **/.git*
             **/.git*/**

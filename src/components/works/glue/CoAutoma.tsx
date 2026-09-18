@@ -1,7 +1,9 @@
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
 
 import CoTitle from "../../../components/general/CoTitle";
 import CoKPI from "../../general/CoKPI";
+import CoBtn from "../../general/CoBtn";
 
 import projectSetter from "../../../assets/imgs/works/glue/projectSetter.svg";
 import plpFiller from "../../../assets/imgs/works/glue/plpFiller.svg";
@@ -138,8 +140,19 @@ const CoCardServer = ({ icon, title, description, tech }: CoCardServerProps) => 
 	);
 };
 
+// Cuánto desplaza cada click de flecha (ver .carrousel-nav en _glue.scss) —
+// mismo valor que .colab-nav en Home y .music-nav en About. Solo aplica al
+// carrusel de plugins: el de servers no scrollea en desktop (ver #server en
+// _glue.scss), así que no lleva flechas.
+const SCROLL_AMOUNT = 320;
+
 const CoAutoma = () => {
 	const { t } = useTranslation();
+	const pluginsRef = useRef<HTMLDivElement>(null);
+
+	const scrollPlugins = (direction: 1 | -1) => {
+		pluginsRef.current?.scrollBy({ left: direction * SCROLL_AMOUNT, behavior: "smooth" });
+	};
 
 	// Los niveles de indentación de "capacidades" no se traducen; el texto sí
 	// (glue.automa.plugins.<slug>.capabilities, mismo orden).
@@ -219,7 +232,7 @@ const CoAutoma = () => {
 			<span className="text-normal">{t("glue.automa.intro")}</span>
 			<div className="plugins">
 				<span className="subtitle">{t("glue.automa.pluginsLabel")}</span>
-				<div className="plugins-carrousel">
+				<div className="plugins-carrousel" ref={pluginsRef}>
 					{plugins.map((plugin, index) => (
 						<CoCardPlugin
 							key={index}
@@ -231,6 +244,22 @@ const CoAutoma = () => {
 							capacidades={plugin.capacidades}
 						/>
 					))}
+				</div>
+				<div className="carrousel-nav">
+					<CoBtn
+						type="secondary"
+						icon="block"
+						onClick={() => scrollPlugins(-1)}
+						ariaLabel={t("caseStudy.carousel.prev")}
+						style={{ transform: "scale(0.5) rotate(180deg)" }}
+					/>
+					<CoBtn
+						type="secondary"
+						icon="block"
+						onClick={() => scrollPlugins(1)}
+						ariaLabel={t("caseStudy.carousel.next")}
+						style={{ transform: "scale(0.5)" }}
+					/>
 				</div>
 			</div>
 			<div className="plugins">

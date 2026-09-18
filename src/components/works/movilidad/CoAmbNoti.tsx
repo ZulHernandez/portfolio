@@ -3,11 +3,8 @@ import { useState } from "react";
 
 import CoTitle from "../../../components/general/CoTitle";
 
-import up from "../../../assets/imgs/works/movilidad/notifications/up.svg";
-import center from "../../../assets/imgs/works/movilidad/notifications/center.svg";
-import down from "../../../assets/imgs/works/movilidad/notifications/down.svg";
-import noti from "../../../assets/imgs/works/movilidad/notifications/notification.svg";
 import island from "../../../assets/imgs/works/movilidad/notifications/dIsland.svg";
+import noti from "../../../assets/imgs/works/movilidad/notifications/notification.svg";
 import watch from "../../../assets/imgs/works/movilidad/notifications/watch.svg";
 import stand from "../../../assets/imgs/works/movilidad/notifications/stand.svg";
 
@@ -30,7 +27,7 @@ import wear1 from "../../../assets/imgs/works/movilidad/notifications/wear1.webp
 import wear2 from "../../../assets/imgs/works/movilidad/notifications/wear2.webp";
 import wear3 from "../../../assets/imgs/works/movilidad/notifications/wear3.webp";
 
-interface CarruselItem {
+interface NotiItem {
 	id: number;
 	text: string;
 	img: string;
@@ -56,23 +53,33 @@ interface NotiBullets {
 	fee: NotiBullet;
 }
 
+// Antes este carrusel forzaba a Android a mostrar 4 botones (rotando
+// arriba/abajo) aunque solo hubiera 2 categorías reales de notificación
+// (reloj y notificación) — los otros 2 eran las mismas 2 categorías
+// duplicadas, "para homologar experiencia con el carrusel de arriba" (iOS
+// sí tiene 4: Isla Dinámica, Notificación, Reloj, StandBy). Ahora cada
+// plataforma muestra únicamente sus categorías reales como pestañas (4 en
+// iOS, 2 en Android) y, debajo, la galería de capturas de la pestaña activa
+// — mismo patrón de pestañas que ya usamos en el diagrama de hand-off de
+// GLUE y en los test flows de arriba.
 const CoAmbNoti = () => {
 	const { t } = useTranslation();
 	const labels = t("movilidad.ambNoti.labels", { returnObjects: true }) as NotiLabels;
 
-	const [carruselIos, setCarruselIos] = useState<CarruselItem[]>([
+	const iosItems: NotiItem[] = [
 		{ id: 1, text: labels.island, img: island, screens: [isla1, isla2, isla3], alt: "iOsIsland" },
 		{ id: 2, text: labels.notification, img: noti, screens: [iOsNoti1, iOsNoti2, iOsNoti3], alt: "iOsNotification" },
 		{ id: 3, text: labels.watch, img: watch, screens: [iWatch1, iWatch2, iWatch3], alt: "iWatch" },
 		{ id: 4, text: labels.standby, img: stand, screens: [standBy1, standBy2], alt: "standBy" },
-	]);
+	];
 
-	const [carruselAndroid, setCarruselAndroid] = useState<CarruselItem[]>([
+	const androidItems: NotiItem[] = [
 		{ id: 1, text: labels.watch, img: watch, screens: [wear1, wear2, wear3], alt: "wear" },
 		{ id: 2, text: labels.notification, img: noti, screens: [anNoti1, anNoti2, anNoti3], alt: "noti" },
-		{ id: 3, text: labels.watch, img: watch, screens: [wear1, wear2, wear3], alt: "wear" },
-		{ id: 4, text: labels.notification, img: noti, screens: [anNoti1, anNoti2, anNoti3], alt: "noti" },
-	]);
+	];
+
+	const [iosTab, setIosTab] = useState(0);
+	const [androidTab, setAndroidTab] = useState(0);
 
 	const bulletsData = t("movilidad.ambNoti.bullets", { returnObjects: true }) as NotiBullets;
 	const bullets = [
@@ -80,28 +87,6 @@ const CoAmbNoti = () => {
 		{ ...bulletsData.completed, ref: "#" },
 		{ ...bulletsData.fee, ref: "#" },
 	];
-
-	const rotateArray = (brand: string) => {
-		if (brand === "iOs") {
-			setCarruselIos((prevWorks) => [...prevWorks.slice(1), prevWorks[0]]);
-		} else if (brand === "Android") {
-			setCarruselAndroid((prevWorks) => [...prevWorks.slice(1), prevWorks[0]]);
-		}
-	};
-
-	const rotateReverse = (brand: string) => {
-		if (brand === "iOs") {
-			setCarruselIos((prevWorks) => [
-				prevWorks[prevWorks.length - 1],
-				...prevWorks.slice(0, -1),
-			]);
-		} else if (brand === "Android") {
-			setCarruselAndroid((prevWorks) => [
-				prevWorks[prevWorks.length - 1],
-				...prevWorks.slice(0, -1),
-			]);
-		}
-	};
 
 	return (
 		<div id={t("movilidad.anchors.ambNoti.id")} className="container-fluid">
@@ -129,208 +114,58 @@ const CoAmbNoti = () => {
 			</div>
 			<div className="example">
 				<h2 className="subtitle">iOs</h2>
-				<div className="example-container">
-					<div className="example-container__control">
-						<div className="example-container__control-arrows">
-							<img
-								loading="lazy"
-								className="arrow"
-								src={up}
-								alt="Up arrow"
-								role="button"
-								tabIndex={0}
-								onClick={() => {
-									rotateReverse("iOs");
-								}}
-								onKeyDown={(e) => {
-									if (e.key === "Enter" || e.key === " ") {
-										e.preventDefault();
-										rotateReverse("iOs");
-									}
-								}}
-							/>
-							<img loading="lazy" src={center} alt="Center arrow" />
-							<img
-								loading="lazy"
-								className="arrow"
-								src={down}
-								alt="Down arrow"
-								role="button"
-								tabIndex={0}
-								onClick={() => {
-									rotateArray("iOs");
-								}}
-								onKeyDown={(e) => {
-									if (e.key === "Enter" || e.key === " ") {
-										e.preventDefault();
-										rotateArray("iOs");
-									}
-								}}
-							/>
-						</div>
-						<div className="example-container__control-buttons">
-							<div
-								id="uno"
-								key={carruselIos[0].id}
-								className="example-container__control-buttons-item"
-							>
-								<img
-									loading="lazy"
-									className="example-container__control-item-img"
-									src={carruselIos[0].img}
-									alt={carruselIos[0].text}
-								/>
-								<span className="example-container__control-item-text">
-									{carruselIos[0].text}
-								</span>
-							</div>
-							<div
-								id="dos"
-								key={carruselIos[1].id}
-								className="example-container__control-buttons-item"
-							>
-								<img
-									loading="lazy"
-									className="example-container__control-item-img"
-									src={carruselIos[1].img}
-									alt={carruselIos[1].text}
-								/>
-								<span className="example-container__control-item-text">
-									{carruselIos[1].text}
-								</span>
-							</div>
-							<div
-								id="tres"
-								key={carruselIos[2].id}
-								className="example-container__control-buttons-item"
-							>
-								<img
-									loading="lazy"
-									className="example-container__control-item-img"
-									src={carruselIos[2].img}
-									alt={carruselIos[2].text}
-								/>
-								<span className="example-container__control-item-text">
-									{carruselIos[2].text}
-								</span>
-							</div>
-						</div>
-					</div>
-					<div className="example-container__screens">
-						{carruselIos[1].screens &&
-							carruselIos[1].screens.map((screen, index) => (
-								<img
-									loading="lazy"
-									key={index}
-									className={carruselIos[1].alt}
-									src={screen}
-									alt={carruselIos[1].alt}
-								/>
-							))}
-					</div>
+				<div className="noti-tabs">
+					{iosItems.map((item, index) => (
+						<button
+							key={item.id}
+							type="button"
+							className={`noti-tabs__tab ${iosTab === index ? "active" : ""}`}
+							onClick={() => setIosTab(index)}
+							aria-pressed={iosTab === index}
+						>
+							<img loading="lazy" src={item.img} alt="" />
+							<span>{item.text}</span>
+						</button>
+					))}
+				</div>
+				<div className="example-container__screens">
+					{iosItems[iosTab].screens.map((screen, index) => (
+						<img
+							loading="lazy"
+							key={index}
+							className={iosItems[iosTab].alt}
+							src={screen}
+							alt={iosItems[iosTab].text}
+						/>
+					))}
 				</div>
 			</div>
 			<div className="example">
 				<h2 className="subtitle">Android</h2>
-				<div className="example-container">
-					<div className="example-container__control">
-						<div className="example-container__control-arrows">
-							<img
-								loading="lazy"
-								className="arrow"
-								src={up}
-								alt="Up arrow"
-								role="button"
-								tabIndex={0}
-								onClick={() => {
-									rotateReverse("Android");
-								}}
-								onKeyDown={(e) => {
-									if (e.key === "Enter" || e.key === " ") {
-										e.preventDefault();
-										rotateReverse("Android");
-									}
-								}}
-							/>
-							<img loading="lazy" src={center} alt="Center arrow" />
-							<img
-								loading="lazy"
-								className="arrow"
-								src={down}
-								alt="Down arrow"
-								role="button"
-								tabIndex={0}
-								onClick={() => {
-									rotateArray("Android");
-								}}
-								onKeyDown={(e) => {
-									if (e.key === "Enter" || e.key === " ") {
-										e.preventDefault();
-										rotateArray("Android");
-									}
-								}}
-							/>
-						</div>
-						<div className="example-container__control-buttons">
-							<div
-								id="uno"
-								key={carruselAndroid[0].id}
-								className="example-container__control-buttons-item"
-							>
-								<img
-									loading="lazy"
-									className="example-container__control-item-img"
-									src={carruselAndroid[0].img}
-									alt={carruselAndroid[0].text}
-								/>
-								<span className="example-container__control-item-text">
-									{carruselAndroid[0].text}
-								</span>
-							</div>
-							<div
-								id="dos"
-								key={carruselAndroid[1].id}
-								className="example-container__control-buttons-item"
-							>
-								<img
-									loading="lazy"
-									className="example-container__control-item-img"
-									src={carruselAndroid[1].img}
-									alt={carruselAndroid[1].text}
-								/>
-								<span className="example-container__control-item-text">
-									{carruselAndroid[1].text}
-								</span>
-							</div>
-							<div
-								id="tres"
-								key={carruselAndroid[2].id}
-								className="example-container__control-buttons-item"
-							>
-								<img
-									loading="lazy"
-									className="example-container__control-item-img"
-									src={carruselAndroid[2].img}
-									alt={carruselAndroid[2].text}
-								/>
-								<span className="example-container__control-item-text">
-									{carruselAndroid[2].text}
-								</span>
-							</div>
-						</div>
-					</div>
-					<div className="example-container__screens">
-						{carruselAndroid[1].screens &&
-							carruselAndroid[1].screens.map((screen, index) => (
-								<img
-									loading="lazy"
-									key={index}
-									className={carruselAndroid[1].alt}
-									src={screen}
-									alt={carruselAndroid[1].alt}
-								/>
-							))}
-					</div>
+				<div className="noti-tabs">
+					{androidItems.map((item, index) => (
+						<button
+							key={item.id}
+							type="button"
+							className={`noti-tabs__tab ${androidTab === index ? "active" : ""}`}
+							onClick={() => setAndroidTab(index)}
+							aria-pressed={androidTab === index}
+						>
+							<img loading="lazy" src={item.img} alt="" />
+							<span>{item.text}</span>
+						</button>
+					))}
+				</div>
+				<div className="example-container__screens">
+					{androidItems[androidTab].screens.map((screen, index) => (
+						<img
+							loading="lazy"
+							key={index}
+							className={androidItems[androidTab].alt}
+							src={screen}
+							alt={androidItems[androidTab].text}
+						/>
+					))}
 				</div>
 			</div>
 			<span className="text-normal">{t("movilidad.ambNoti.outro")}</span>

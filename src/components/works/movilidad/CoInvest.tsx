@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import CoTitle from "../../../components/general/CoTitle";
 import CoKPI from "../../../components/general/CoKPI";
+import CoFlowSchema from "./CoFlowSchema";
 
 import movLogo from "../../../assets/imgs/works/movilidad/electromaps/logo.svg";
 import mov1 from "../../../assets/imgs/works/movilidad/electromaps/1.webp";
@@ -46,16 +47,6 @@ import charge8 from "../../../assets/imgs/works/movilidad/chargemap/8.webp";
 import charge9 from "../../../assets/imgs/works/movilidad/chargemap/9.webp";
 import charge10 from "../../../assets/imgs/works/movilidad/chargemap/10.webp";
 
-import schemaES from "../../../assets/imgs/works/movilidad/schemaES.svg";
-import schemaEN from "../../../assets/imgs/works/movilidad/schemaEN.svg";
-
-import legend1 from "../../../assets/imgs/works/movilidad/legend/1.svg";
-import legend2 from "../../../assets/imgs/works/movilidad/legend/2.svg";
-import legend3 from "../../../assets/imgs/works/movilidad/legend/3.svg";
-import legend4 from "../../../assets/imgs/works/movilidad/legend/4.svg";
-import legend5 from "../../../assets/imgs/works/movilidad/legend/5.svg";
-import legend6 from "../../../assets/imgs/works/movilidad/legend/6.svg";
-
 import diamond from "../../../assets/imgs/works/movilidad/diamond.svg";
 
 import option1 from "../../../assets/imgs/works/movilidad/option1.svg";
@@ -74,17 +65,6 @@ const marcas = [
 	{ logo: plugLogo, images: [plug1, plug2, plug3, plug4, plug5, plug6, plug7, plug8, plug9, plug10, plug11, plug12, plug13, plug14, plug15] },
 	{ logo: chargeLogo, images: [charge1, charge2, charge3, charge4, charge5, charge6, charge7, charge8, charge9, charge10] },
 ];
-
-const legendIcons = [legend1, legend2, legend3, legend4, legend5, legend6];
-
-interface LegendTexts {
-	mainFlow: string;
-	secondaryActions: string;
-	deprecatedFlow: string;
-	externalFlow: string;
-	directSequence: string;
-	alternateSequence: string;
-}
 
 interface ExerciseText {
 	task: string;
@@ -108,18 +88,13 @@ interface InvestLabels {
 const CoInvest = () => {
 	const { t, i18n } = useTranslation();
 
-	const legendTexts = t("movilidad.invest.legends", { returnObjects: true }) as LegendTexts;
-	const legends = [
-		legendTexts.mainFlow,
-		legendTexts.secondaryActions,
-		legendTexts.deprecatedFlow,
-		legendTexts.externalFlow,
-		legendTexts.directSequence,
-		legendTexts.alternateSequence,
-	].map((description, index) => ({ icon: legendIcons[index], description }));
-
 	const exercises = t("movilidad.invest.exercises", { returnObjects: true }) as Exercises;
 	const labels = t("movilidad.invest.labels", { returnObjects: true }) as InvestLabels;
+	// Los íconos option1-5.svg traían el texto ("Mapa", "Navegación", etc.)
+	// quemado como paths (mismo problema que el diagrama de hand-off de
+	// GLUE): se quitaron los paths de texto de los SVG y ahora la etiqueta
+	// se muestra como texto real, traducido, debajo del ícono.
+	const priorityOptions = t("movilidad.invest.priorityOptions", { returnObjects: true }) as string[];
 
 	return (
 		<div id={t("movilidad.anchors.invest.id")} className="container-fluid">
@@ -149,17 +124,7 @@ const CoInvest = () => {
 				))}
 			</div>
 			<span className="text-normal">{t("movilidad.invest.mapIntro")}</span>
-			<div className="schema" style={{}}>
-				<div className="schema-legenda">
-					{legends.map((legend, index) => (
-						<div key={index} className="schema-legenda__item">
-							<img loading="lazy" src={legend.icon} alt={`Legend ${index + 1}`} />
-							<span>{legend.description}</span>
-						</div>
-					))}
-				</div>
-				<img loading="lazy" src={i18n.language === "es" ? schemaES : schemaEN} alt="" />
-			</div>
+			<CoFlowSchema />
 			<span className="text-normal">{t("movilidad.invest.testIntro")}</span>
 			<div className="questions">
 				<div className="questions__item">
@@ -221,17 +186,30 @@ const CoInvest = () => {
 				</div>
 			</div>
 			<div className="exercise">
-				<div className="exercise__imgs">
+				{/* Antes cada ícono se encogía con transform: scale() para sugerir
+				    su posición en el ranking (más chico = menos relevante). Al
+				    sacar la etiqueta del SVG (ver arriba) ese mismo encogimiento
+				    volvía el texto real ilegible en las últimas posiciones. Ahora
+				    el ranking se muestra como barras descendentes (100/80/60/40/20%,
+				    en el mismo orden en que quedaron los resultados) — el ícono y
+				    la etiqueta quedan siempre al mismo tamaño y legibles, y la
+				    barra + el número comunican la posición. */}
+				<div className="rank-bars">
 					{Array.from({ length: 5 }, (_, index) => {
 						const options = [option1, option2, option3, option4, option5];
+						const widthPct = 100 - index * 20;
 						return (
-							<img
-								loading="lazy"
-								key={index}
-								src={options[index]}
-								alt={`Diamond ${index + 1}`}
-								style={{ width: "10rem", transform: `scale(${1 - index / 7})` }}
-							/>
+							<div key={index} className="rank-bars__item">
+								<div className="rank-bars__item-label">
+									<img loading="lazy" src={options[index]} alt="" />
+									<span>{priorityOptions[index]}</span>
+								</div>
+								<div className="rank-bars__item-track">
+									<div className="rank-bars__item-fill" style={{ width: `${widthPct}%` }}>
+										<span>{index + 1}</span>
+									</div>
+								</div>
+							</div>
 						);
 					})}
 				</div>
@@ -266,7 +244,12 @@ const CoInvest = () => {
             <div className="exercise">
 				<div className="exercise__imgs">
 					<img loading="lazy" id="screen1" src={screen1} alt="" />
-					<img loading="lazy" id="wordMap" src={i18n.language === "es" ? wordMapES : wordMapEN} alt="Word Map" />
+					<img
+						loading="lazy"
+						id="wordMap"
+						src={i18n.language === "es" ? wordMapES : wordMapEN}
+						alt={t("movilidad.invest.wordMapAlt")}
+					/>
 					<img loading="lazy" id="screen2" src={screen2} alt="" />
 				</div>
 				<br />
