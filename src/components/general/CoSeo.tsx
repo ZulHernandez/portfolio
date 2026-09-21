@@ -4,6 +4,20 @@ import { useTranslation } from "react-i18next";
 const SITE_URL = "https://zulhernandez.com";
 const DEFAULT_OG_IMAGE = "https://i.ibb.co/k2gDyPcL/Sin-t-tulo-1-02.png";
 
+// Imagen de vista previa (og:image/twitter:image) especifica por pagina,
+// autohospedada en public/og/ -- mismas claves que ROUTES en
+// scripts/generate-seo-html.mjs; si agregas una aqui, agregala alla tambien.
+// Solo notFound (404) no tiene entrada -- sigue usando DEFAULT_OG_IMAGE.
+const OG_IMAGES: Record<string, string> = {
+	home: `${SITE_URL}/og/home.jpg`,
+	works: `${SITE_URL}/og/works.jpg`,
+	resume: `${SITE_URL}/og/resume.jpg`,
+	about: `${SITE_URL}/og/about.jpg`,
+	glue: `${SITE_URL}/og/glue.jpg`,
+	movilidad: `${SITE_URL}/og/movilidad.jpg`,
+	hubbub: `${SITE_URL}/og/hubbub.jpg`,
+};
+
 interface CoSeoProps {
 	/** Clave bajo el namespace `seo` de i18n (seo.<routeKey>.title/description). */
 	routeKey: string;
@@ -23,6 +37,7 @@ const CoSeo = ({ routeKey, path, noindex }: CoSeoProps) => {
 	const title = t(`seo.${routeKey}.title`);
 	const description = t(`seo.${routeKey}.description`);
 	const url = `${SITE_URL}${path}`;
+	const image = OG_IMAGES[routeKey] ?? DEFAULT_OG_IMAGE;
 
 	return (
 		<Helmet>
@@ -34,11 +49,11 @@ const CoSeo = ({ routeKey, path, noindex }: CoSeoProps) => {
 			<meta property="og:title" content={title} />
 			<meta property="og:description" content={description} />
 			<meta property="og:url" content={url} />
-			<meta property="og:image" content={DEFAULT_OG_IMAGE} />
+			<meta property="og:image" content={image} />
 
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
-			<meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+			<meta name="twitter:image" content={image} />
 		</Helmet>
 	);
 };

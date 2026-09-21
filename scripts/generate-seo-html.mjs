@@ -36,6 +36,21 @@ const ROUTES = [
 	{ key: "hubbub", path: "/works/hubbub", outFile: "works/hubbub/index.html" },
 ];
 
+// Imagen de vista previa propia por ruta (autohospedada en public/og/),
+// mismas claves y mismos archivos que OG_IMAGES en
+// src/components/general/CoSeo.tsx -- si agregas una aqui, agregala alla
+// tambien. Solo notFound (sin ruta real, no esta en ROUTES) no tiene
+// entrada y no aplica esta logica.
+const OG_IMAGES = {
+	home: `${SITE_URL}/og/home.jpg`,
+	works: `${SITE_URL}/og/works.jpg`,
+	resume: `${SITE_URL}/og/resume.jpg`,
+	about: `${SITE_URL}/og/about.jpg`,
+	glue: `${SITE_URL}/og/glue.jpg`,
+	movilidad: `${SITE_URL}/og/movilidad.jpg`,
+	hubbub: `${SITE_URL}/og/hubbub.jpg`,
+};
+
 function escapeHtml(str) {
 	return String(str)
 		.replace(/&/g, "&amp;")
@@ -76,11 +91,12 @@ function main() {
 
 		let html = template.replace(/<title>.*?<\/title>/s, () => `<title>${escapeHtml(title)}</title>`);
 
-		// og:image / twitter:image NO se repiten aquí: ya están en el
-		// index.html fuente (src/../index.html, misma imagen para toda ruta) y
-		// sobreviven intactos en el template — agregar otra copia por ruta
-		// duplicaría la etiqueta, el mismo bug que se corrigió antes para
-		// description/og:title/og:description/og:url/twitter:title/description.
+		// og:image/twitter:image/pinterest:image ya vienen en el template
+		// (index.html fuente) con la imagen default -- para cada ruta en
+		// OG_IMAGES (las 7 de arriba) se sobreescriben in place con un replace,
+		// nunca un append, para no duplicar la etiqueta (el mismo bug que se
+		// corrigio antes para description/og:title/og:description/og:url/
+		// twitter:title/description).
 		const tags = [
 			`<meta name="description" content="${escapeHtml(description)}" />`,
 			`<link rel="canonical" href="${url}" />`,
@@ -92,6 +108,25 @@ function main() {
 		].join("\n\t\t");
 
 		html = html.replace("</head>", () => `\t\t${tags}\n\t</head>`);
+
+		const ogImage = OG_IMAGES[route.key];
+		if (ogImage) {
+			// El <meta> fuente en index.html escribe cada atributo en su propia
+			// línea (ver public/../index.html) -- \s+ entre atributos para que
+			// el replace funcione sin importar el formato exacto de espacios.
+			html = html.replace(
+				/<meta\s+name="image"\s+property="og:image"\s+content="[^"]*"\s*\/>/,
+				() => `<meta name="image" property="og:image" content="${escapeHtml(ogImage)}" />`
+			);
+			html = html.replace(
+				/<meta\s+name="pinterest:image"\s+content="[^"]*"\s*\/>/,
+				() => `<meta name="pinterest:image" content="${escapeHtml(ogImage)}" />`
+			);
+			html = html.replace(
+				/<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/>/,
+				() => `<meta name="twitter:image" content="${escapeHtml(ogImage)}" />`
+			);
+		}
 
 		const outPath = join(DIST, route.outFile);
 		mkdirSync(dirname(outPath), { recursive: true });
