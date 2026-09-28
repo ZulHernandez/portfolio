@@ -16,7 +16,13 @@ let inflight: Promise<WorksData> | null = null;
 const loadWorksData = (): Promise<WorksData> => {
 	if (cache) return Promise.resolve(cache);
 	if (!inflight) {
-		inflight = fetch(DATA_URL)
+		// "no-cache" (a pesar del nombre) no desactiva la caché: obliga a
+		// revalidar con el servidor en cada carga en vez de servir una copia
+		// vieja sin preguntar — así un cambio subido vía update-data.yml se ve
+		// de inmediato. El .htaccess ya manda Cache-Control: no-cache para
+		// estos archivos; esto es una segunda capa por si ese header no
+		// aplicara (proxy intermedio, etc.).
+		inflight = fetch(DATA_URL, { cache: "no-cache" })
 			.then((res) => {
 				if (!res.ok) {
 					throw new Error(`No se pudo cargar ${DATA_URL} (HTTP ${res.status})`);

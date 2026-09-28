@@ -21,3 +21,37 @@
 
 	RewriteRule ^ index.html [L]
 </IfModule>
+
+# Headers de seguridad estándar — no cambian nada visualmente, solo indican
+# al navegador reglas más estrictas sobre cómo tratar el sitio.
+<IfModule mod_headers.c>
+	# Evita que el navegador intente adivinar el tipo de un archivo distinto
+	# al que el servidor ya declaró (mitiga ataques de MIME-sniffing).
+	Header always set X-Content-Type-Options "nosniff"
+
+	# Evita que el sitio se pueda incrustar en un <iframe> de otro dominio
+	# (protección básica contra clickjacking).
+	Header always set X-Frame-Options "SAMEORIGIN"
+
+	# Al navegar a otro sitio desde aquí, solo comparte el origen
+	# (zulhernandez.com), no la URL completa con la ruta que se estaba viendo.
+	Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+	# El sitio ya fuerza HTTPS (ver content-security-policy:
+	# upgrade-insecure-requests) — HSTS le dice al navegador que recuerde eso
+	# y nunca intente HTTP plano con este dominio, ni siquiera en la primera
+	# visita futura.
+	Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# public/data/*.json se actualiza fuera de un build completo (ver
+# .github/workflows/update-data.yml) para dar de alta un trabajo o una
+# colaboración nueva sin rehacer todo el sitio. Sin esto, el navegador puede
+# quedarse con una copia vieja en caché y no enterarse del cambio de
+# inmediato — no-cache no desactiva la caché, solo obliga a revalidar con el
+# servidor en cada visita (barato: normalmente es un 304 sin descargar nada).
+<IfModule mod_headers.c>
+	<FilesMatch "\.json$">
+		Header set Cache-Control "no-cache"
+	</FilesMatch>
+</IfModule>

@@ -949,7 +949,13 @@
       "hierarchyQuestions": "Jerarquía y opciones",
       "aestheticsQuestions": "Estética y accesibilidad",
       "finalQuestions": "Final",
-      "priorityOptions": ["Mapa", "Navegación", "Monedero", "Historial", "Ayuda"],
+      "priorityOptions": [
+        "Mapa",
+        "Navegación",
+        "Monedero",
+        "Historial",
+        "Ayuda"
+      ],
       "labels": {
         "exercise": "Ejercicio",
         "objective": "Objetivo",
@@ -1118,17 +1124,26 @@
       "intro": "Se pretende que los siguientes pasos del producto caigan principalmente en tres mejoras puntuales con objetivos de negocio.",
       "steps": {
         "wallet": {
-          "title": ["MONEDERO", "MOVILIDAD"],
+          "title": [
+            "MONEDERO",
+            "MOVILIDAD"
+          ],
           "tag": "segunda fase",
           "description": "Implementación de recargas y venta de saldos físicos a forma de créditos para su uso dentro del aplicativo. Se comprendería como un nuevo método de pago."
         },
         "realtime": {
-          "title": ["TIEMPO", "REAL"],
+          "title": [
+            "TIEMPO",
+            "REAL"
+          ],
           "tag": "segunda fase",
           "description": "Integración de otras tecnologías de notificación como StandBy, notificación en WearOS y otros espacios"
         },
         "loyalty": {
-          "title": ["PROGRAMA", "FIDELIZACIÓN"],
+          "title": [
+            "PROGRAMA",
+            "FIDELIZACIÓN"
+          ],
           "tag": "tercera fase",
           "description": "Comprende cuponera, programa de recompensas, gamification y tratos especiales."
         }
@@ -1386,6 +1401,10 @@
       "title": "MoviLidad — Red de carga para autos eléctricos | Caso de estudio",
       "description": "Aplicativo para el ofrecimiento de centros de carga para automóviles eléctricos, incluyendo el flujo transaccional y el diseño de métodos de pago."
     },
+    "activa": {
+      "title": "Activa — Ahorro e inversión con Actinver | Caso de estudio",
+      "description": "Proyecto de fintech en colaboración con Actinver: diseño de flujos de ahorro e inversión, homologación de biométricos y resultados para usuarios Liverpool."
+    },
     "hubbub": {
       "title": "HUBBUB — Visualización del ruido en la CDMX | Caso de estudio",
       "description": "Sitio web para el despliegue de data sobre el fenómeno del ruido en la CDMX y área Metropolitana."
@@ -1393,6 +1412,354 @@
     "notFound": {
       "title": "Página no encontrada | Saúl Hernández",
       "description": "La página que buscas no existe. Regresa a la página principal del portafolio."
+    }
+  },
+  "activa": {
+    "anchors": {
+      "context": {
+        "id": "contexto",
+        "label": "El contexto"
+      },
+      "flujos": {
+        "id": "flujos",
+        "label": "Adaptación y mejora de flujos"
+      },
+      "inversion": {
+        "id": "inversion",
+        "label": "Perfil de inversión y dashboard"
+      },
+      "biometricos": {
+        "id": "biometricos",
+        "label": "Biométricos"
+      },
+      "investigacion": {
+        "id": "investigacion",
+        "label": "Investigación con usuarios"
+      },
+      "homologacion": {
+        "id": "homologacion",
+        "label": "Homologación a Sistema de diseño"
+      },
+      "resultados": {
+        "id": "resultados",
+        "label": "Resultados y futuros pasos"
+      }
+    },
+    "homologacion": {
+      "title": "Homologación a Sistema de diseño",
+      "intro": "El proyecto arrancó en 2020-2021 y para 2024, cuando salió esta interfaz, ya acumulaba un rezago considerable frente a los estándares vigentes del design system de Liverpool (GLUE). Más allá del encargo original, tomé la iniciativa de actualizar la interfaz completa:",
+      "bullets": [
+        "Modales → bottom sheets",
+        "Tokenización de colores",
+        "Ajuste de tamaños y tipografía",
+        "Implementación de los componentes oficiales del design system",
+        "Alineación de sombras, elevaciones y contenedores",
+        "Interacciones consistentes con GLUE"
+      ],
+      "tabs": {
+        "errorPages": "Páginas de error",
+        "questions": "Preguntas",
+        "charts": "Gráficos"
+      },
+      "oldUiLabel": "UI Vieja",
+      "newUiLabel": "Nueva UI",
+      "outro": "Además se coordinaron esfuerzos con las diseñadoras UX de Actinver para que la documentación y separación de flujos quedaran bien estructuradas de ambos lados, compartiendo las bibliotecas de componentes, estilos y tokens del sistema de diseño.",
+      "errorPages": {
+        "old": [
+          {
+            "caption": "Sin conexión a internet"
+          },
+          {
+            "caption": "Falla en verificación biométrica"
+          }
+        ],
+        "new": [
+          {
+            "caption": "Pantalla de mantenimiento"
+          },
+          {
+            "caption": "Falla en verificación biométrica"
+          }
+        ]
+      },
+      "questions": {
+        "old": [
+          {
+            "caption": "¿Tienes otras cuentas de inversión?"
+          },
+          {
+            "caption": "Nivel de experiencia con inversiones"
+          }
+        ],
+        "new": [
+          {
+            "caption": "¿Tienes otras cuentas de inversión?"
+          },
+          {
+            "caption": "Nivel de experiencia con inversiones"
+          }
+        ]
+      },
+      "charts": {
+        "old": [
+          {
+            "caption": "Simula tu inversión"
+          },
+          {
+            "caption": "Resumen de inversión"
+          }
+        ],
+        "new": [
+          {
+            "caption": "Simula tu inversión"
+          },
+          {
+            "caption": "Resumen de inversión"
+          }
+        ]
+      }
+    },
+    "investigacion": {
+      "title": "Investigación con usuarios",
+      "intro": "La sesión combinó entrevistas semiestructuradas (qué esperan de una app de inversión, qué les atrae de otras apps del mercado, cómo había sido su experiencia con Activa) con un ejercicio guiado: registrarse y fondear la cuenta.",
+      "phases": [
+        {
+          "title": "1er fase - Conocer",
+          "description": "Entender a los usuarios, ofrecer comida e introducir las actividades a realizar"
+        },
+        {
+          "title": "2da fase - Introducción de experiencia",
+          "description": "A travez de una seríe de preguntas guiadas recopilamos información sobre el como han interactuado con otras apps del mercado o con la misma activa"
+        },
+        {
+          "title": "3er fase - Experimentar la app",
+          "description": "Se les pidio a los participantes que generaran su cuenta o, en caso de poseer una, la fondearan e hiciera una inversión"
+        },
+        {
+          "title": "4ta fase - Feedback y expectativas",
+          "description": "Al finalizar, se les pidió a los usuarios que nos comentaran cuales fueron los roses y problemas que tuvieron al usar la aplicación. También se les pidió que nos dejaran comentarios sobre que cosas les gustaría ver implementadas"
+        }
+      ],
+      "participants": {
+        "value": "15 usuarios",
+        "desc": "Dentre los que destacan perfiles como amas de casa, adultos jóvenes, estudiantes, inversionistas y trabajadores"
+      },
+      "duration": {
+        "value": "6 horas",
+        "desc": "El ejercicio se realizo por alrededor de 6 horas, sin embargo, la preparación y definición del ejercicio tomo 2 días"
+      },
+      "findings": {
+        "value": "4 áreas de hallazgo",
+        "desc": "Problemas de comunicación, interrupción de servicios, oferta comercial pobre, autonomía de la cuenta respecto a Liverpool"
+      }
+    },
+    "summary": {
+      "title": "Activa, un producto de ahorro e inversión",
+      "dateRange": "mar 2023 - sep 2025",
+      "description": "Proyecto de fintech en colaboración con Actinver sobre ahorro e inversión para usuarios Liverpool",
+      "role": [
+        "Diseñador UX / UI",
+        ""
+      ],
+      "sector": "Fintech, ahorro e inversión, e-commerce",
+      "team": "Dirección de Crédito y Fintech de Liverpool, front de Liverpool y Actinver, PO compartida, 2 diseñadoras UX de Actinver, BAs de Actinver"
+    },
+    "context": {
+      "title": "El contexto",
+      "intro": "Activa es la cuenta de ahorro con tarjeta de débito Visa y servicio de inversión 100% digital de Liverpool y Grupo Financiero Actinver — la entrada de Liverpool al sector financiero digital, operando a través de la app Liverpool Pocket. Ofrece un rendimiento equivalente al 50% de Cetes a 28 días, sin comisiones ni anualidad, y acceso a cuatro estrategias de inversión (conservadora, balanceada, agresiva, protección cambiaria) directamente desde el celular.",
+      "years": {
+        "value": "3 años",
+        "desc": "De desarrollo al momento de mi ingreso ya existían 3 años de trabajo previo"
+      },
+      "existingFlows": {
+        "value": "6 flujos",
+        "desc": "Al entrar ya existían flujos como Login, registro N2 sencillo, perfilador, fondear cuenta, etc."
+      },
+      "flowsToAdd": {
+        "value": "8 flujos a sumar",
+        "desc": "Flujos nuevos que se integraron al alta N4",
+        "items": [
+          "Registro N4 (con repercusiones en N2)",
+          "Seguridad con biométricos (afectando toda el app)",
+          "Recuperación de contraseña",
+          "Perfilación",
+          "Dashboard",
+          "Cambio de correo",
+          "Simulador de inversión",
+          "Flujo de inversión"
+        ]
+      },
+      "collabLabel": "El proyecto arrancó entre 2020 y 2021 hasta 2023, cuando me integré a él",
+      "ejesIntro": "Más allá del scope inicial, mi participación se enfocó en tres ejes principales:",
+      "goToAlt": "Ir a ({{title}})",
+      "bullets": [
+        {
+          "title": "1. Adaptación y mejora de flujos",
+          "description": "Adopción de y entendimiento técnico de los sistemas de seguridad biométrica, registro para aumentar las capacidades de la cuenta contra el flujo N2 existente y perfil de inversión + dashboard como explicación de conceptos de inversión, perfilación, simulador y flujos de verificación de datos para cuentas y tarjetas asociadas."
+        },
+        {
+          "title": "2. Investigación y feedback",
+          "description": "Uno de los ejercicios más interesantes que se realizó fue un ejercicio con 15 usuarios y los módulos principales ya en productivo."
+        },
+        {
+          "title": "3. Homologación a sistema de diseño",
+          "description": "Con un proyecto que traía un delay de definiciones de diseño de más de 3 años, se trabajó en la homologación a los nuevos estándares de diseño que se tenían."
+        }
+      ]
+    },
+    "flujos": {
+      "title": "Adaptación y mejora de flujos",
+      "subtitle": "Registro N4",
+      "intro": "N4 es el registro que amplía las capacidades de la cuenta más allá del alta básica. El reto central no fue solo integrar tecnologías de reconocimiento, sino diseñar un flujo de actualización de datos y de comunicación que convenciera a los usuarios de ampliar su cuenta.",
+      "n2": {
+        "title": "Cuenta N2",
+        "permissions": {
+          "value": "3 permisos",
+          "desc": "Ubicación, almacenamiento y acceso al teléfono"
+        },
+        "time": {
+          "value": "10 min",
+          "desc": "Promedio de tiempo para la generación de la cuenta"
+        },
+        "steps": {
+          "value": "11 pasos",
+          "desc": "para la creación de la cuenta e integración de datos al registro"
+        },
+        "note": "Prácticamente la premisa era generar el flujo lo más rápido posible para generar un primer registro intentando reducir el pedido de información a lo mínimo necesario para cumplir con la regulación bancaria y para los datos que necesitamos"
+      },
+      "n4": {
+        "title": "Cuenta N4",
+        "phases": {
+          "value": "3 fases",
+          "desc": "Donde se agrupan formularios: Datos personales → Verificación de identidad → Contrato y firma"
+        },
+        "time": {
+          "value": "10 min",
+          "desc": "Promedio de tiempo para la mejora de la cuenta"
+        },
+        "steps": {
+          "value": "9 pasos",
+          "desc": "+ 2 opcionales según la información del perfil"
+        },
+        "note": "En este flujo se buscaba hacer 2 cosas, recopilar la información faltante identificada en la cuenta, cumplir con la regulación bancaría y mejorar la calidad de los datos del perfil"
+      },
+      "n2Steps": [
+        "Permisos",
+        "Avisos",
+        "Registro de teléfono",
+        "Registro de mail",
+        "Carga de ID",
+        "Toma de selfie",
+        "Validar datos de ID",
+        "Registrar dirección",
+        "Ocupación y recursos",
+        "Firma de contratos",
+        "Generar contraseña"
+      ],
+      "n4Steps": [
+        "Detalles de la operación",
+        "Términos y condiciones",
+        "Datos personales",
+        "Registro de mail",
+        "Verificación con selfie",
+        "Verificación de ID",
+        "Verificar domicilio",
+        "Datos de contrato",
+        "Firma de contratos"
+      ],
+      "n4OptionalSteps": [
+        "Proveedor de recursos",
+        "Registro de beneficiario"
+      ],
+      "comparisonIntro": "La comparación de flujos nos dío la capacidad de discernir y ajustar a medida esta información, evitar la saturación de datos, evitar la duplicación y delimitar cuales eran realmente los datos que valdría la pena recopilar aqui sin caer en abandono de flujo:",
+      "n2FlowLabel": "Cuenta N2",
+      "n4FlowLabel": "Cuenta N4"
+    },
+    "inversion": {
+      "title": "Perfil de inversión y dashboard",
+      "intro1": "Este eje cubre el viaje de inversión dentro de la app: el dashboard principal, la explicación de conceptos de inversión para usuarios que muchas veces invertían por primera vez, la perfilación (el cuestionario que determina el perfil de riesgo del usuario y recomienda una de las cuatro estrategias — conservadora, balanceada, agresiva o de protección cambiaria), un simulador de inversión, y los flujos de verificación de datos asociados a cuentas y tarjetas.",
+      "intro2": "El reto de diseño fue doble: traducir conceptos financieros poco familiares para el usuario promedio de Liverpool en lenguaje simple, y sostener la confianza del usuario en cada paso de verificación sin fricción excesiva.",
+      "simulatorSteps": {
+        "value": "6 pasos",
+        "desc": "Anidados en 4 simples pantallas",
+        "steps": []
+      },
+      "profilingQuestions": {
+        "value": "15 preguntas",
+        "desc": "De implementación técnica + permisos de Banxico"
+      },
+      "profiles": {
+        "value": "4 perfiles",
+        "desc": "Dentre los que opdias obetener perfiles: conservador, balanceado, agresivo y cambiario"
+      },
+      "resultProfile": {
+        "title": "Resultado y perfil",
+        "desc": "Dicho perfil permeaba y cambiaba la comunicación en diferentes puntos de la aplcicación"
+      },
+      "dashboards": {
+        "title": "Dashboards",
+        "desc": "Una vez perfilado, el dashboard de inversión se habilitaba y cambiaba segun tu perfil"
+      },
+      "strategies": [
+        {
+          "name": "Conservadora"
+        },
+        {
+          "name": "Balanceada"
+        },
+        {
+          "name": "Agresiva"
+        },
+        {
+          "name": "Cambiaria"
+        }
+      ]
+    },
+    "biometricos": {
+      "title": "Biométricos",
+      "intro": "Uno de los ejes más técnicamente retadores: adoptar login por huella y reconocimiento facial dentro de Pocket, algo que la app no había usado antes. El trabajo implicó el rediseño visual del flujo de login/sign-in y de activación (desde Mi Cuenta), y entender a fondo cómo operan los sistemas de seguridad biométrica en iOS y Android para diseñar estados de éxito, error y excepción consistentes en ambos.",
+      "technologies": {
+        "value": "4 técnologías",
+        "desc": "Se tomaron en cuenta el uso activo de TouchID, FaceID y sus equivalentes en Android huella y rostro"
+      },
+      "screensKpi": {
+        "value": "3 pantallas",
+        "desc": "Modulares, se reciclaban dependiendo el momento desde el cual disparabas el flujo que podría ser desde mi cuenta, login o un flujo de verificación de identidad"
+      }
+    },
+    "resultados": {
+      "title": "Resultados y futuros pasos",
+      "signups": {
+        "value": "1,400 registros",
+        "desc": "Solo en su primer fin de semana, después, el crecimiento se mantuvo en un 7% semanal por tres meses"
+      },
+      "funded": {
+        "value": "40% fondeadas",
+        "desc": "Se registró un tope máximo de un 40% de las cuentas totales siendo fondeadas"
+      },
+      "biometricsTime": {
+        "value": "3 meses",
+        "desc": "De implementación para el flujo de biométricos (desarrollo + Banxico)"
+      },
+      "futureIntro": "Al cierre de mi participación, el roadmap del proyecto contemplaba:",
+      "future": {
+        "ownership": {
+          "title": [
+            "Transferencia",
+            "de ownership"
+          ],
+          "tag": "Transferencia de ownership",
+          "description": "Pasar el dominio del servicio a un futuro equipo de UX dedicado exclusivamente al área de Seguros y Crédito."
+        },
+        "dinn": {
+          "title": [
+            "Convergencia",
+            "con DINN"
+          ],
+          "tag": "Convergencia con DINN",
+          "description": "Alinear en paralelo los desarrollos de Activa con DINN (la app de Actinver), para que features, desarrollo y mantenimiento avanzaran juntos en vez de sostener dos stacks tecnológicos desfasados entre sí."
+        }
+      }
     }
   }
 }

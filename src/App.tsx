@@ -25,6 +25,7 @@ const RoAbout = React.lazy(() => import("./routes/RoAbout"));
 const RoError = React.lazy(() => import("./routes/RoError"));
 const RoGLUE = React.lazy(() => import("./routes/works/RoGLUE"));
 const RoMovilidad = React.lazy(() => import("./routes/works/RoMovilidad"));
+const RoActiva = React.lazy(() => import("./routes/works/RoActiva"));
 const RoHUBBUB = React.lazy(() => import("./routes/works/RoHUBBUB"));
 
 import "./styles/style.css";
@@ -66,6 +67,7 @@ function App() {
 						<Route path="/works" element={<RoWorks />} />
 						<Route path="/works/glue" element={<RoGLUE />} />
 						<Route path="/works/movilidad" element={<RoMovilidad />} />
+						<Route path="/works/activa" element={<RoActiva />} />
 						<Route path="/works/hubbub" element={<RoHUBBUB />} />
 						<Route path="/resume" element={<RoResume />} />
 						<Route path="/about-me" element={<RoAbout />} />

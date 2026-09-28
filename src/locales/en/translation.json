@@ -949,7 +949,13 @@
       "hierarchyQuestions": "Hierarchy and options",
       "aestheticsQuestions": "Aesthetics and accessibility",
       "finalQuestions": "Final",
-      "priorityOptions": ["Map", "Navigation", "Wallet", "History", "Help"],
+      "priorityOptions": [
+        "Map",
+        "Navigation",
+        "Wallet",
+        "History",
+        "Help"
+      ],
       "labels": {
         "exercise": "Exercise",
         "objective": "Objective",
@@ -1118,17 +1124,26 @@
       "intro": "The next steps for the product are primarily focused on three specific improvements with business objectives.",
       "steps": {
         "wallet": {
-          "title": ["WALLET", "MOVILIDAD"],
+          "title": [
+            "WALLET",
+            "MOVILIDAD"
+          ],
           "tag": "second phase",
           "description": "Implementation of recharges and sale of physical balances in the form of credits for use within the application. It would be understood as a new payment method."
         },
         "realtime": {
-          "title": ["REAL", "TIME"],
+          "title": [
+            "REAL",
+            "TIME"
+          ],
           "tag": "second phase",
           "description": "Integration of other notification technologies such as StandBy, WearOS notifications, and other spaces"
         },
         "loyalty": {
-          "title": ["LOYALTY", "PROGRAM"],
+          "title": [
+            "LOYALTY",
+            "PROGRAM"
+          ],
           "tag": "third phase",
           "description": "Includes couponing, rewards program, gamification, and special deals."
         }
@@ -1386,6 +1401,10 @@
       "title": "MoviLidad — Electric Vehicle Charging Network | Case Study",
       "description": "Application for the offering of charging centers for electric cars, including the transactional flow and payment methods design."
     },
+    "activa": {
+      "title": "Activa — Savings and investment with Actinver | Case study",
+      "description": "Fintech project in collaboration with Actinver: designing savings and investment flows, biometrics homologation, and results for Liverpool users."
+    },
     "hubbub": {
       "title": "HUBBUB — Noise Visualization in Mexico City | Case Study",
       "description": "Website for the deployment of data on the phenomenon of noise in Mexico City and its Metropolitan Area."
@@ -1393,6 +1412,354 @@
     "notFound": {
       "title": "Page Not Found | Saúl Hernández",
       "description": "The page you're looking for doesn't exist. Head back to the portfolio home page."
+    }
+  },
+  "activa": {
+    "anchors": {
+      "context": {
+        "id": "contexto",
+        "label": "The context"
+      },
+      "flujos": {
+        "id": "flujos",
+        "label": "Adapting and improving flows"
+      },
+      "inversion": {
+        "id": "inversion",
+        "label": "Investment profile and dashboard"
+      },
+      "biometricos": {
+        "id": "biometricos",
+        "label": "Biometrics"
+      },
+      "investigacion": {
+        "id": "investigacion",
+        "label": "User research"
+      },
+      "homologacion": {
+        "id": "homologacion",
+        "label": "Design system alignment"
+      },
+      "resultados": {
+        "id": "resultados",
+        "label": "Results and next steps"
+      }
+    },
+    "homologacion": {
+      "title": "Design system alignment",
+      "intro": "The project started in 2020-2021, and by 2024, when this interface shipped, it had accumulated considerable lag against Liverpool's current design system standards (GLUE). Beyond the original scope, I took the initiative to update the entire interface:",
+      "bullets": [
+        "Modals → bottom sheets",
+        "Color tokenization",
+        "Sizing and typography adjustments",
+        "Implementation of official design system components",
+        "Alignment of shadows, elevations and containers",
+        "Interactions consistent with GLUE"
+      ],
+      "tabs": {
+        "errorPages": "Error pages",
+        "questions": "Questions",
+        "charts": "Charts"
+      },
+      "oldUiLabel": "Old UI",
+      "newUiLabel": "New UI",
+      "outro": "We also coordinated with Actinver's UX designers so the documentation and flow separation were well structured on both sides, sharing the design system's component libraries, styles and tokens.",
+      "errorPages": {
+        "old": [
+          {
+            "caption": "No internet connection"
+          },
+          {
+            "caption": "Biometric verification failure"
+          }
+        ],
+        "new": [
+          {
+            "caption": "Maintenance screen"
+          },
+          {
+            "caption": "Biometric verification failure"
+          }
+        ]
+      },
+      "questions": {
+        "old": [
+          {
+            "caption": "Do you have other investment accounts?"
+          },
+          {
+            "caption": "Investment experience level"
+          }
+        ],
+        "new": [
+          {
+            "caption": "Do you have other investment accounts?"
+          },
+          {
+            "caption": "Investment experience level"
+          }
+        ]
+      },
+      "charts": {
+        "old": [
+          {
+            "caption": "Simulate your investment"
+          },
+          {
+            "caption": "Investment summary"
+          }
+        ],
+        "new": [
+          {
+            "caption": "Simulate your investment"
+          },
+          {
+            "caption": "Investment summary"
+          }
+        ]
+      }
+    },
+    "investigacion": {
+      "title": "User research",
+      "intro": "The session combined semi-structured interviews (what they expect from an investment app, what attracts them to other apps on the market, what their experience with Activa had been like) with a guided exercise: signing up and funding the account.",
+      "phases": [
+        {
+          "title": "Phase 1 - Getting to know them",
+          "description": "Understand the users, offer food and introduce the activities to be carried out"
+        },
+        {
+          "title": "Phase 2 - Experience introduction",
+          "description": "Through a series of guided questions we gathered information on how they had interacted with other apps on the market or with Activa itself"
+        },
+        {
+          "title": "Phase 3 - Experiencing the app",
+          "description": "Participants were asked to create their account or, if they already had one, to fund it and make an investment"
+        },
+        {
+          "title": "Phase 4 - Feedback and expectations",
+          "description": "At the end, users were asked to share the friction points and problems they had while using the app. They were also asked for comments on what they would like to see implemented"
+        }
+      ],
+      "participants": {
+        "value": "15 users",
+        "desc": "Including profiles such as homemakers, young adults, students, investors and workers"
+      },
+      "duration": {
+        "value": "6 hours",
+        "desc": "The exercise took around 6 hours, though preparing and defining it took 2 days"
+      },
+      "findings": {
+        "value": "4 finding areas",
+        "desc": "Communication issues, service interruptions, weak commercial offering, the account's autonomy relative to Liverpool"
+      }
+    },
+    "summary": {
+      "title": "Activa, a savings and investment product",
+      "dateRange": "Mar 2023 - Sep 2025",
+      "description": "Fintech project in collaboration with Actinver on savings and investment for Liverpool users",
+      "role": [
+        "UX / UI Designer",
+        ""
+      ],
+      "sector": "Fintech, savings and investment, e-commerce",
+      "team": "Liverpool's Credit and Fintech Division, Liverpool and Actinver front-end developers, shared PO, 2 UX designers from Actinver, Actinver BAs"
+    },
+    "context": {
+      "title": "The context",
+      "intro": "Activa is Liverpool and Grupo Financiero Actinver's 100% digital savings account with a Visa debit card and investment service — Liverpool's entry into the digital financial sector, operating through the Liverpool Pocket app. It offers a yield equivalent to 50% of the 28-day Cetes rate, with no fees or annual charge, and access to four investment strategies (conservative, balanced, aggressive, currency-hedged) directly from your phone.",
+      "years": {
+        "value": "3 years",
+        "desc": "By the time I joined, there were already 3 years of prior development work"
+      },
+      "existingFlows": {
+        "value": "6 flows",
+        "desc": "When I joined, flows like Login, simple N2 registration, profiler, and account funding already existed"
+      },
+      "flowsToAdd": {
+        "value": "8 flows to add",
+        "desc": "New flows that were added to the N4 upgrade",
+        "items": [
+          "N4 registration (with repercussions on N2)",
+          "Biometric security (affecting the whole app)",
+          "Password recovery",
+          "Profiling",
+          "Dashboard",
+          "Email change",
+          "Investment simulator",
+          "Investment flow"
+        ]
+      },
+      "collabLabel": "The project started between 2020 and 2021, until 2023, when I joined it",
+      "ejesIntro": "Beyond the initial scope, my involvement focused on three main areas:",
+      "goToAlt": "Go to ({{title}})",
+      "bullets": [
+        {
+          "title": "1. Adapting and improving flows",
+          "description": "Adopting and gaining technical understanding of biometric security systems, and the registration flow to extend the account's capabilities beyond the existing N2 flow, plus the investment profile + dashboard to explain investment concepts, profiling, the simulator, and data-verification flows for accounts and associated cards."
+        },
+        {
+          "title": "2. Research and feedback",
+          "description": "One of the most interesting exercises carried out was a session with 15 users, with the main modules already live in production."
+        },
+        {
+          "title": "3. Design system alignment",
+          "description": "With a project that carried a design-definition lag of more than 3 years, we worked on aligning it to the design standards then in place."
+        }
+      ]
+    },
+    "flujos": {
+      "title": "Adapting and improving flows",
+      "subtitle": "N4 registration",
+      "intro": "N4 is the registration tier that extends the account's capabilities beyond the basic sign-up. The core challenge wasn't just integrating recognition technologies, but designing a data-update and communication flow that convinced users to upgrade their account.",
+      "n2": {
+        "title": "N2 account",
+        "permissions": {
+          "value": "3 permissions",
+          "desc": "Location, storage and phone access"
+        },
+        "time": {
+          "value": "10 min",
+          "desc": "Average time to create the account"
+        },
+        "steps": {
+          "value": "11 steps",
+          "desc": "to create the account and integrate data into the registration"
+        },
+        "note": "The premise was essentially to make the flow as fast as possible to generate a first-time registration, trying to reduce the information requested to the bare minimum needed to comply with banking regulation and for the data we needed"
+      },
+      "n4": {
+        "title": "N4 account",
+        "phases": {
+          "value": "3 phases",
+          "desc": "Where forms are grouped: Personal data → Identity verification → Contract and signature"
+        },
+        "time": {
+          "value": "10 min",
+          "desc": "Average time to upgrade the account"
+        },
+        "steps": {
+          "value": "9 steps",
+          "desc": "+ 2 optional depending on the profile information"
+        },
+        "note": "This flow aimed to do 2 things: collect the missing information identified on the account, comply with banking regulation, and improve the quality of the profile data"
+      },
+      "n2Steps": [
+        "Permissions",
+        "Notices",
+        "Phone registration",
+        "Email registration",
+        "ID upload",
+        "Selfie capture",
+        "Validate ID data",
+        "Register address",
+        "Occupation and resources",
+        "Sign contracts",
+        "Generate password"
+      ],
+      "n4Steps": [
+        "Transaction details",
+        "Terms and conditions",
+        "Personal data",
+        "Email registration",
+        "Selfie verification",
+        "ID verification",
+        "Verify address",
+        "Contract data",
+        "Sign contracts"
+      ],
+      "n4OptionalSteps": [
+        "Resource provider",
+        "Beneficiary registration"
+      ],
+      "comparisonIntro": "Comparing the flows let us discern and fine-tune this information, avoid data overload, avoid duplication, and pin down which data was actually worth collecting here without causing flow abandonment:",
+      "n2FlowLabel": "N2 account",
+      "n4FlowLabel": "N4 account"
+    },
+    "inversion": {
+      "title": "Investment profile and dashboard",
+      "intro1": "This axis covers the investment journey within the app: the main dashboard, explaining investment concepts to users who were often investing for the first time, profiling (the questionnaire that determines the user's risk profile and recommends one of four strategies — conservative, balanced, aggressive, or currency-hedged), an investment simulator, and the data verification flows tied to accounts and cards.",
+      "intro2": "The design challenge was twofold: translating financial concepts unfamiliar to the average Liverpool user into simple language, and sustaining user trust at every verification step without excessive friction.",
+      "simulatorSteps": {
+        "value": "6 steps",
+        "desc": "Nested across 4 simple screens",
+        "steps": []
+      },
+      "profilingQuestions": {
+        "value": "15 questions",
+        "desc": "For technical implementation + Banxico permissions"
+      },
+      "profiles": {
+        "value": "4 profiles",
+        "desc": "You could get profiles such as: conservative, balanced, aggressive and currency-hedged"
+      },
+      "resultProfile": {
+        "title": "Result and profile",
+        "desc": "That profile permeated and changed communication at different points across the app"
+      },
+      "dashboards": {
+        "title": "Dashboards",
+        "desc": "Once profiled, the investment dashboard would activate and change according to your profile"
+      },
+      "strategies": [
+        {
+          "name": "Conservative"
+        },
+        {
+          "name": "Balanced"
+        },
+        {
+          "name": "Aggressive"
+        },
+        {
+          "name": "Currency-hedged"
+        }
+      ]
+    },
+    "biometricos": {
+      "title": "Biometrics",
+      "intro": "One of the most technically challenging axes: adopting fingerprint and facial-recognition login within Pocket, something the app hadn't used before. The work involved the visual redesign of the login/sign-in and activation flow (from My Account), and thoroughly understanding how biometric security systems work on iOS and Android in order to design consistent success, error and exception states on both.",
+      "technologies": {
+        "value": "4 technologies",
+        "desc": "Accounting for the active use of TouchID, FaceID and their Android equivalents, fingerprint and face"
+      },
+      "screensKpi": {
+        "value": "3 screens",
+        "desc": "Modular, reused depending on where the flow was triggered from — My Account, login, or an identity-verification flow"
+      }
+    },
+    "resultados": {
+      "title": "Results and next steps",
+      "signups": {
+        "value": "1,400 sign-ups",
+        "desc": "In its first weekend alone, then growth held steady at 7% per week for three months"
+      },
+      "funded": {
+        "value": "40% funded",
+        "desc": "A peak of 40% of total accounts were recorded as funded"
+      },
+      "biometricsTime": {
+        "value": "3 months",
+        "desc": "To implement the biometrics flow (development + Banxico)"
+      },
+      "futureIntro": "By the end of my involvement, the project roadmap included:",
+      "future": {
+        "ownership": {
+          "title": [
+            "Ownership",
+            "transfer"
+          ],
+          "tag": "Ownership transfer",
+          "description": "Handing the service off to a future UX team dedicated exclusively to the Insurance and Credit area."
+        },
+        "dinn": {
+          "title": [
+            "Convergence",
+            "with DINN"
+          ],
+          "tag": "Convergence with DINN",
+          "description": "Aligning Activa's development in parallel with DINN (Actinver's app), so features, development, and maintenance moved forward together instead of maintaining two out-of-sync tech stacks."
+        }
+      }
     }
   }
 }

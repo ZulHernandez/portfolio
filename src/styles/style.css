@@ -5227,6 +5227,839 @@ iframe {
   background-color: #333333;
 }
 
+.activa-investigacion-stats,
+.activa-resultados-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.activa-investigacion-stats .card-kpi,
+.activa-resultados-stats .card-kpi {
+  width: calc((100% - 8rem) / 3);
+}
+@media (max-width: 860px) {
+  .activa-investigacion-stats .card-kpi,
+  .activa-resultados-stats .card-kpi {
+    width: 100%;
+  }
+}
+
+.activa-context-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+  width: 100%;
+}
+@media (max-width: 860px) {
+  .activa-context-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+}
+.activa-context-row__logos, .activa-context-row__stack, .activa-context-row__flows {
+  width: calc((100% - 8rem) / 3);
+}
+@media (max-width: 860px) {
+  .activa-context-row__logos, .activa-context-row__stack, .activa-context-row__flows {
+    width: 100%;
+  }
+}
+.activa-context-row__logos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+.activa-context-row__logos img {
+  height: 3rem;
+}
+.activa-context-row__logos-x {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #999999;
+}
+@media (max-width: 860px) {
+  .activa-context-row__logos-x {
+    font-size: 1.92rem;
+  }
+}
+.activa-context-row__stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 3rem;
+}
+.activa-context-row__flows h5 {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #4d4d4d;
+}
+@media (max-width: 860px) {
+  .activa-context-row__flows h5 {
+    font-size: 2.4rem;
+  }
+}
+.activa-context-row__flows h5 {
+  margin-bottom: 1rem;
+}
+.activa-context-row__flows ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding-left: 1.8rem;
+}
+.activa-context-row__flows ul li {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #4d4d4d;
+}
+@media (max-width: 860px) {
+  .activa-context-row__flows ul li {
+    font-size: 1.8rem;
+  }
+}
+
+.activa-ejes {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+.activa-ejes__title {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #333333;
+}
+@media (max-width: 860px) {
+  .activa-ejes__title {
+    font-size: 1.8rem;
+  }
+}
+
+.activa-accounts-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 4rem;
+  width: 100%;
+}
+@media (max-width: 860px) {
+  .activa-accounts-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.activa-account-card {
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 2.5rem;
+  transition: all 0.3s ease-in-out;
+}
+.activa-account-card:hover {
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
+  transform: scale(1.02);
+}
+.activa-account-card {
+  width: calc((100% - 4rem) / 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+}
+@media (max-width: 860px) {
+  .activa-account-card {
+    width: 100%;
+  }
+}
+.activa-account-card h3 {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 2.2rem;
+  text-decoration: none;
+  color: #333333;
+}
+@media (max-width: 860px) {
+  .activa-account-card h3 {
+    font-size: 2.64rem;
+  }
+}
+.activa-account-card h3.is-n4 {
+  color: #ff2079;
+}
+.activa-account-card__stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.activa-account-card__stats .card-kpi {
+  width: calc(50% - 1rem);
+}
+@media (max-width: 860px) {
+  .activa-account-card__stats .card-kpi {
+    width: 100%;
+  }
+}
+
+.activa-flow-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.activa-flow-block h5 {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #4d4d4d;
+}
+@media (max-width: 860px) {
+  .activa-flow-block h5 {
+    font-size: 2.16rem;
+  }
+}
+.activa-flow-block h5.is-n4 {
+  color: #ff2079;
+}
+.activa-flow-block__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.activa-flow-block__header img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+#flujos .flow-schema {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0rem;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+}
+#flujos .flow-schema-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 11rem;
+  flex-shrink: 0;
+  text-align: center;
+}
+#flujos .flow-schema-item img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+#flujos .flow-schema-item span {
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #4d4d4d;
+}
+@media (max-width: 860px) {
+  #flujos .flow-schema-item span {
+    font-size: 1.56rem;
+  }
+}
+#flujos .flow-schema-item span {
+  text-align: center;
+}
+#flujos .flow-connector {
+  width: 3rem;
+  height: 0.3rem;
+  min-width: 3rem;
+  margin-top: 2.5rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(90deg, #808080 50%, transparent 50%);
+  background-size: 1.6rem 0.3rem;
+  animation: activa-flow-connector-move 1.2s linear infinite;
+}
+#flujos .flow-schema.is-n4 .flow-connector {
+  background-image: linear-gradient(90deg, #ff2079 50%, transparent 50%);
+}
+@media (prefers-reduced-motion: reduce) {
+  #flujos .flow-connector {
+    animation: none;
+  }
+}
+#flujos .activa-flow-schema-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+#flujos .activa-flow-branch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 11rem;
+  border: 0.15rem dashed #ffabcd;
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+}
+#flujos .activa-flow-branch span {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: #ff2079;
+}
+@media (max-width: 860px) {
+  #flujos .activa-flow-branch span {
+    font-size: 1.38rem;
+  }
+}
+#flujos .activa-flow-branch span {
+  text-align: center;
+}
+
+@keyframes activa-flow-connector-move {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1.6rem 0;
+  }
+}
+.activa-steps-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12.5rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.activa-steps-row > .card-kpi {
+  flex: 0 0 auto;
+  width: 26.125rem;
+  max-width: 100%;
+}
+@media (max-width: 860px) {
+  .activa-steps-row > .card-kpi {
+    width: 100%;
+  }
+}
+.activa-steps-row__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 6.25rem;
+  flex: 1 1 40rem;
+  min-width: 0;
+}
+@media (max-width: 860px) {
+  .activa-steps-row__col {
+    flex-basis: 100%;
+  }
+}
+
+#inversion .context-data__dos,
+#biometricos .context-data__dos {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2.5rem;
+  width: 100%;
+}
+@media (max-width: 860px) {
+  #inversion .context-data__dos,
+  #biometricos .context-data__dos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+#inversion .context-data__dos img,
+#biometricos .context-data__dos img {
+  flex-shrink: 0;
+  width: 15.125rem;
+  height: auto;
+}
+#inversion .context-data,
+#biometricos .context-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  flex: 1 1 0%;
+  min-width: 0;
+}
+#inversion .context-data .card-kpi,
+#biometricos .context-data .card-kpi {
+  width: 100%;
+}
+
+.activa-simulator-steps {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.activa-simulator-steps li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  width: calc((100% - 10rem) / 6);
+  min-width: 12rem;
+  list-style: none;
+}
+.activa-simulator-steps li img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.activa-simulator-steps li span {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #666666;
+}
+@media (max-width: 860px) {
+  .activa-simulator-steps li span {
+    font-size: 1.68rem;
+  }
+}
+@media (max-width: 860px) {
+  .activa-simulator-steps li {
+    width: 100%;
+  }
+}
+
+.activa-invest-phones-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+@media (max-width: 860px) {
+  .activa-invest-phones-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+.activa-invest-phones-row__phone {
+  flex-shrink: 0;
+}
+.activa-invest-phones-row__phone img {
+  height: 40rem;
+  width: auto;
+}
+@media (max-width: 860px) {
+  .activa-invest-phones-row__phone img {
+    height: 30rem;
+  }
+}
+.activa-invest-phones-row__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  width: 100%;
+}
+.activa-invest-phones-row__block h4 {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #ff2079;
+}
+@media (max-width: 860px) {
+  .activa-invest-phones-row__block h4 {
+    font-size: 2.16rem;
+  }
+}
+.activa-invest-phones-row__block h4 {
+  margin-bottom: 0.5rem;
+}
+
+.activa-strategies-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 3rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+@media (max-width: 860px) {
+  .activa-strategies-row {
+    gap: 1.5rem;
+  }
+}
+
+.activa-strategy-card {
+  width: calc((100% - 9rem) / 4);
+}
+@media (max-width: 1200px) {
+  .activa-strategy-card {
+    width: calc((100% - 3rem) / 2);
+  }
+}
+@media (max-width: 860px) {
+  .activa-strategy-card {
+    width: calc((100% - 1.5rem) / 2);
+  }
+}
+.activa-strategy-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.activa-biometric-detail-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 4rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.activa-biometric-detail-row > .context-data__dos {
+  flex: 1 1 30rem;
+  min-width: 0;
+}
+@media (max-width: 860px) {
+  .activa-biometric-detail-row > .context-data__dos {
+    flex-basis: 100%;
+  }
+}
+
+.activa-phases-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.activa-phase-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.8rem;
+  border-radius: 1.5rem;
+  padding: 1.75rem 2rem;
+  color: #fff;
+}
+.activa-phase-card img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.activa-phase-card h5 {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #fff;
+}
+@media (max-width: 860px) {
+  .activa-phase-card h5 {
+    font-size: 1.68rem;
+  }
+}
+.activa-phase-card span {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #fff;
+}
+@media (max-width: 860px) {
+  .activa-phase-card span {
+    font-size: 1.68rem;
+  }
+}
+
+.activa-research-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+@media (max-width: 860px) {
+  .activa-research-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+.activa-research-stats .card-kpi {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: calc((100% - 8rem) / 3);
+}
+@media (max-width: 860px) {
+  .activa-research-stats .card-kpi {
+    width: 100%;
+  }
+}
+
+.activa-homologacion-bullets {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.8rem;
+  width: 100%;
+  padding-left: 1.8rem;
+}
+.activa-homologacion-bullets li {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #4d4d4d;
+}
+@media (max-width: 860px) {
+  .activa-homologacion-bullets li {
+    font-size: 1.92rem;
+  }
+}
+
+.activa-tab-switcher {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.activa-tab-switcher__pill {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  border-radius: 5rem;
+  padding: 1rem 2rem;
+  border: 0.15rem solid #333333;
+  background-color: #fff;
+  font: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.activa-tab-switcher__pill img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.activa-tab-switcher__pill span {
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #333333;
+}
+@media (max-width: 860px) {
+  .activa-tab-switcher__pill span {
+    font-size: 1.68rem;
+  }
+}
+.activa-tab-switcher__pill.is-active {
+  background-color: #333333;
+  border-color: #333333;
+}
+.activa-tab-switcher__pill.is-active span {
+  color: #fff;
+}
+.activa-tab-switcher__pill.is-active img {
+  filter: brightness(0) invert(1);
+}
+
+.activa-glue-compare {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  width: 100%;
+}
+@media (max-width: 860px) {
+  .activa-glue-compare {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+}
+.activa-glue-compare__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  width: calc((100% - 4rem) / 2);
+}
+@media (max-width: 860px) {
+  .activa-glue-compare__col {
+    width: 100%;
+  }
+}
+.activa-glue-compare__col h5 {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #4d4d4d;
+}
+@media (max-width: 860px) {
+  .activa-glue-compare__col h5 {
+    font-size: 2.16rem;
+  }
+}
+.activa-glue-compare__screens {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.activa-glue-compare__screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: calc((100% - 2rem) / 2);
+  text-align: center;
+}
+.activa-glue-compare__screen img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.6rem;
+  box-shadow: 1rem 1rem 2rem #e6e6e6, -1rem -1rem 2rem #fff;
+}
+.activa-glue-compare__screen span {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #666666;
+}
+@media (max-width: 860px) {
+  .activa-glue-compare__screen span {
+    font-size: 1.56rem;
+  }
+}
+
+.activa-future-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 3rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.activa-future-card {
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 2.5rem;
+  transition: all 0.3s ease-in-out;
+}
+.activa-future-card:hover {
+  box-shadow: 2rem 2rem 4rem #d2d2d2, -2rem -2rem 4rem #fff;
+  transform: scale(1.02);
+}
+.activa-future-card {
+  box-sizing: border-box;
+  width: calc((100% - 3rem) / 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.activa-future-card img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.activa-future-card h4 {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #333333;
+}
+@media (max-width: 860px) {
+  .activa-future-card h4 {
+    font-size: 2.16rem;
+  }
+}
+
+.activa-funded-grid {
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
+}
+
 #resume {
   padding-top: 10rem;
   align-items: center;

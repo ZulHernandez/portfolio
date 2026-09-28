@@ -1,0 +1,512 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+// Activa — ahorro e inversión (Liverpool x Actinver)
+//
+// Convención de este archivo: las clases ya prefijadas "activa-" son únicas
+// en todo el sitio, así que se definen una sola vez sin necesidad de
+// encapsularlas por ID de sección. Los nombres de clase "pelones" que se
+// reusan de otros casos (p. ej. .flow-schema / .flow-connector, mismo
+// patrón visual que en _movilidad.scss pero con su propio diseño) SÍ se
+// encapsulan bajo los IDs de sección de Activa para no chocar con esos
+// otros casos.
+
+// ---------------------------------------------------------------------
+// Filas de estadísticas (CoKPI) — se repite el mismo layout de 3 columnas
+// en Investigación y Resultados (Perfil de inversión y Biométricos ya no
+// la usan, esa fila no estaba en Figma).
+// ---------------------------------------------------------------------
+.activa-investigacion-stats,
+.activa-resultados-stats {
+    @include fnFlex(row, center, flex-start, 4rem);
+    width: 100%;
+    flex-wrap: wrap;
+    .card-kpi {
+        width: calc((100% - 8rem) / 3);
+        @include mobile {
+            width: 100%;
+        }
+    }
+}
+
+// ---------------------------------------------------------------------
+// El contexto
+// ---------------------------------------------------------------------
+.activa-context-row {
+    @include fnFlex(row, space-between, flex-start, 4rem);
+    width: 100%;
+    @include mobile {
+        @include fnFlex(column, center, center, 4rem);
+    }
+    &__logos,
+    &__stack,
+    &__flows {
+        width: calc((100% - 8rem) / 3);
+        @include mobile {
+            width: 100%;
+        }
+    }
+    &__logos {
+        @include fnFlex(column, center, center, 1.5rem);
+        text-align: center;
+        img {
+            height: 3rem;
+        }
+    }
+    &__logos-x {
+        @include fnFont("Raleway-Bold", 1.6rem, none, $shade-400);
+    }
+    &__stack {
+        @include fnFlex(column, flex-start, flex-start, 3rem);
+    }
+    &__flows {
+        h5 {
+            @include fnFont("Raleway-Bold", 2rem, none, $shade-700);
+            margin-bottom: 1rem;
+        }
+        ul {
+            @include fnFlex(column, flex-start, flex-start, 0.8rem);
+            padding-left: 1.8rem;
+            li {
+                @include fnFont("Raleway-Medium", 1.5rem, none, $shade-700);
+            }
+        }
+    }
+}
+
+.activa-ejes {
+    @include fnFlex(column, flex-start, flex-start, 1rem);
+    width: 100%;
+    &__title {
+        @include fnFont("Raleway-Bold", 1.5rem, none, $shade-800);
+    }
+}
+
+// ---------------------------------------------------------------------
+// Registro N4 (cuentas + flujos)
+// ---------------------------------------------------------------------
+.activa-accounts-row {
+    @include fnFlex(row, center, stretch, 4rem);
+    width: 100%;
+    @include mobile {
+        @include fnFlex(column, center, center, 3rem);
+    }
+}
+
+.activa-account-card {
+    @include fnCard();
+    width: calc((100% - 4rem) / 2);
+    @include fnFlex(column, flex-start, flex-start, 2rem);
+    @include mobile {
+        width: 100%;
+    }
+    h3 {
+        @include fnFont("Raleway-Bold", 2.2rem, none, $shade-800);
+        &.is-n4 {
+            color: $red-800;
+        }
+    }
+    &__stats {
+        @include fnFlex(row, center, flex-start, 2rem);
+        width: 100%;
+        flex-wrap: wrap;
+        .card-kpi {
+            width: calc(50% - 1rem);
+            @include mobile {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.activa-flow-block {
+    width: 100%;
+    @include fnFlex(column, flex-start, flex-start, 1.5rem);
+    h5 {
+        @include fnFont("Raleway-Bold", 1.8rem, none, $shade-700);
+        &.is-n4 {
+            color: $red-800;
+        }
+    }
+    &__header {
+        @include fnFlex(row, flex-start, center, 1rem);
+        img {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+}
+
+#flujos {
+    .flow-schema {
+        @include fnFlex(row, flex-start, flex-start, 0rem);
+        width: 100%;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding-bottom: 1rem;
+    }
+    .flow-schema-item {
+        @include fnFlex(column, center, center, 0.5rem);
+        width: 11rem;
+        flex-shrink: 0;
+        text-align: center;
+        img {
+            width: 3.2rem;
+            height: 3.2rem;
+        }
+        span {
+            @include fnFont("Raleway-SemiBold", 1.3rem, none, $shade-700);
+            text-align: center;
+        }
+    }
+    .flow-connector {
+        width: 3rem;
+        height: 0.3rem;
+        min-width: 3rem;
+        margin-top: 2.5rem;
+        border-radius: 1rem;
+        background-image: linear-gradient(90deg, $shade-500 50%, transparent 50%);
+        background-size: 1.6rem 0.3rem;
+        animation: activa-flow-connector-move 1.2s linear infinite;
+    }
+    .flow-schema.is-n4 .flow-connector {
+        background-image: linear-gradient(90deg, $red-800 50%, transparent 50%);
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .flow-connector {
+            animation: none;
+        }
+    }
+    .activa-flow-schema-column {
+        @include fnFlex(column, flex-start, center, 1rem);
+        flex-shrink: 0;
+    }
+    .activa-flow-branch {
+        @include fnFlex(column, center, center, 0);
+        width: 11rem;
+        border: 0.15rem dashed $red-300;
+        border-radius: 0.8rem;
+        padding: 0.8rem;
+        span {
+            @include fnFont("Raleway-Medium", 1.15rem, none, $red-800);
+            text-align: center;
+        }
+    }
+}
+
+@keyframes activa-flow-connector-move {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1.6rem 0;
+    }
+}
+
+// ---------------------------------------------------------------------
+// Perfil de inversión
+// ---------------------------------------------------------------------
+// Proporción real de Figma (nodo 2975:17713): columna A es angosta (209px,
+// del ancho de la imagen del flujo) y columna B ocupa el resto del espacio —
+// NO es un 50/50. Ambas columnas parten de un gap de 100px entre sí.
+.activa-steps-row {
+    @include fnFlex(row, flex-start, flex-start, 12.5rem);
+    width: 100%;
+    flex-wrap: wrap;
+    > .card-kpi {
+        flex: 0 0 auto;
+        width: 26.125rem;
+        max-width: 100%;
+        @include mobile {
+            width: 100%;
+        }
+    }
+    &__col {
+        @include fnFlex(column, flex-start, flex-start, 6.25rem);
+        flex: 1 1 40rem;
+        min-width: 0;
+        @include mobile {
+            flex-basis: 100%;
+        }
+    }
+}
+
+#inversion,
+#biometricos {
+    .context-data__dos {
+        @include fnFlex(row, flex-start, flex-start, 2.5rem);
+        width: 100%;
+        @include mobile {
+            @include fnFlex(column, flex-start, flex-start, 2rem);
+        }
+        img {
+            flex-shrink: 0;
+            width: 15.125rem;
+            height: auto;
+        }
+    }
+    .context-data {
+        @include fnFlex(column, flex-start, flex-start, 2rem);
+        flex: 1 1 0%;
+        min-width: 0;
+        .card-kpi {
+            width: 100%;
+        }
+    }
+}
+
+.activa-simulator-steps {
+    @include fnFlex(row, flex-start, flex-start, 2rem);
+    width: 100%;
+    flex-wrap: wrap;
+    li {
+        @include fnFlex(column, flex-start, flex-start, 1rem);
+        width: calc((100% - 10rem) / 6);
+        min-width: 12rem;
+        list-style: none;
+        img {
+            width: 3.2rem;
+            height: 3.2rem;
+        }
+        span {
+            @include fnFont("Raleway-Medium", 1.4rem, none, $shade-600);
+        }
+        @include mobile {
+            width: 100%;
+        }
+    }
+}
+
+.activa-invest-phones-row {
+    @include fnFlex(row, center, center, 4rem);
+    width: 100%;
+    @include mobile {
+        @include fnFlex(column, center, center, 3rem);
+    }
+    &__phone {
+        flex-shrink: 0;
+        img {
+            height: 40rem;
+            width: auto;
+            @include mobile {
+                height: 30rem;
+            }
+        }
+    }
+    &__text {
+        @include fnFlex(column, center, flex-start, 3rem);
+        width: 100%;
+    }
+    &__block {
+        h4 {
+            @include fnFont("Raleway-Bold", 1.8rem, none, $red-800);
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+.activa-strategies-row {
+    @include fnFlex(row, center, stretch, 3rem);
+    width: 100%;
+    flex-wrap: wrap;
+    @include mobile {
+        gap: 1.5rem;
+    }
+}
+
+.activa-strategy-card {
+    width: calc((100% - 9rem) / 4);
+    @include tablet {
+        width: calc((100% - 3rem) / 2);
+    }
+    @include mobile {
+        // Zul: dos columnas también en móvil/angosto, no una sola.
+        width: calc((100% - 1.5rem) / 2);
+    }
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+// ---------------------------------------------------------------------
+// Biométricos
+// ---------------------------------------------------------------------
+.activa-biometric-detail-row {
+    @include fnFlex(row, flex-start, stretch, 4rem);
+    width: 100%;
+    flex-wrap: wrap;
+    // Cada hijo es un .context-data__dos (imagen real de Figma + CoKPI),
+    // ya resuelto por el scoping de #biometricos/#biometrics de arriba.
+    > .context-data__dos {
+        flex: 1 1 30rem;
+        min-width: 0;
+        @include mobile {
+            flex-basis: 100%;
+        }
+    }
+}
+
+// ---------------------------------------------------------------------
+// Investigación con usuarios
+// ---------------------------------------------------------------------
+// La línea horizontal de esta sección reutiliza el <hr> inline que ya se
+// usa entre secciones en RoGLUE.tsx (border 0.2rem #ccc, width 80%,
+// border-radius 5rem) — no lleva clase propia, ver CoInvestigacion.tsx.
+
+// Fases apiladas a todo lo ancho (una debajo de otra), y debajo, los 3
+// KPIs en fila — layout confirmado por Zul sobre el render en vivo,
+// reemplaza el intento anterior de dos columnas lado a lado.
+.activa-phases-row {
+    @include fnFlex(column, flex-start, stretch, 1.25rem);
+    width: 100%;
+}
+
+.activa-phase-card {
+    width: 100%;
+    @include fnFlex(column, flex-start, flex-start, 0.8rem);
+    border-radius: 1.5rem;
+    padding: 1.75rem 2rem;
+    color: $shade-0;
+    img {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+    h5 {
+        @include fnFont("Raleway-Bold", 1.4rem, none, $shade-0);
+    }
+    span {
+        @include fnFont("Raleway-Medium", 1.4rem, none, $shade-0);
+    }
+}
+
+// Fila de 3 KPIs centrados, ícono arriba del texto (column-reverse: el
+// <img> es el último hijo en el DOM de CoKPI, así que en reversa queda
+// primero/arriba sin tocar el componente compartido).
+.activa-research-stats {
+    @include fnFlex(row, center, flex-start, 4rem);
+    width: 100%;
+    flex-wrap: wrap;
+    @include mobile {
+        @include fnFlex(column, center, center, 3rem);
+    }
+    .card-kpi {
+        @include fnFlex(column-reverse, flex-start, center, 1rem);
+        width: calc((100% - 8rem) / 3);
+        @include mobile {
+            width: 100%;
+        }
+    }
+}
+
+// ---------------------------------------------------------------------
+// Homologación a Sistema de diseño (GLUE)
+// ---------------------------------------------------------------------
+.activa-homologacion-bullets {
+    @include fnFlex(column, flex-start, flex-start, 0.8rem);
+    width: 100%;
+    padding-left: 1.8rem;
+    li {
+        @include fnFont("Raleway-Medium", 1.6rem, none, $shade-700);
+    }
+}
+
+.activa-tab-switcher {
+    @include fnFlex(row, flex-start, center, 1rem);
+    width: 100%;
+    flex-wrap: wrap;
+    &__pill {
+        @include fnFlex(row, center, center, 0.8rem);
+        border-radius: 5rem;
+        padding: 1rem 2rem;
+        border: 0.15rem solid $shade-800;
+        background-color: $shade-0;
+        font: inherit;
+        cursor: pointer;
+        appearance: none;
+        img {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+        span {
+            @include fnFont("Raleway-SemiBold", 1.4rem, none, $shade-800);
+        }
+        &.is-active {
+            background-color: $shade-800;
+            border-color: $shade-800;
+            span {
+                color: $shade-0;
+            }
+            img {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+}
+
+.activa-glue-compare {
+    @include fnFlex(row, center, flex-start, 4rem);
+    width: 100%;
+    @include mobile {
+        @include fnFlex(column, center, center, 4rem);
+    }
+    &__col {
+        @include fnFlex(column, flex-start, center, 2rem);
+        width: calc((100% - 4rem) / 2);
+        @include mobile {
+            width: 100%;
+        }
+        h5 {
+            @include fnFont("Raleway-Bold", 1.8rem, none, $shade-700);
+        }
+    }
+    &__screens {
+        @include fnFlex(row, center, flex-start, 2rem);
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    &__screen {
+        @include fnFlex(column, center, center, 1rem);
+        width: calc((100% - 2rem) / 2);
+        text-align: center;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 1.6rem;
+            @include softShadow(1rem, 2rem, #e6e6e6, $shade-0);
+        }
+        span {
+            @include fnFont("Raleway-Medium", 1.3rem, none, $shade-600);
+        }
+    }
+}
+
+// ---------------------------------------------------------------------
+// Resultados y futuros pasos
+// ---------------------------------------------------------------------
+.activa-future-row {
+    @include fnFlex(row, center, stretch, 3rem);
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.activa-future-card {
+    @include fnCard();
+    box-sizing: border-box;
+    width: calc((100% - 3rem) / 2);
+    @include fnFlex(column, flex-start, flex-start, 1rem);
+    img {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+    h4 {
+        @include fnFont("Raleway-Bold", 1.8rem, none, $shade-800);
+    }
+}
+
+.activa-funded-grid {
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+}

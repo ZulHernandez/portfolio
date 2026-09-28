@@ -33,6 +33,7 @@ const ROUTES = [
 	{ key: "about", path: "/about-me", outFile: "about-me/index.html" },
 	{ key: "glue", path: "/works/glue", outFile: "works/glue/index.html" },
 	{ key: "movilidad", path: "/works/movilidad", outFile: "works/movilidad/index.html" },
+	{ key: "activa", path: "/works/activa", outFile: "works/activa/index.html" },
 	{ key: "hubbub", path: "/works/hubbub", outFile: "works/hubbub/index.html" },
 ];
 
