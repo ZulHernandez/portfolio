@@ -49,6 +49,7 @@ const OG_IMAGES = {
 	about: `${SITE_URL}/og/about.jpg`,
 	glue: `${SITE_URL}/og/glue.jpg`,
 	movilidad: `${SITE_URL}/og/movilidad.jpg`,
+	activa: `${SITE_URL}/og/activa.jpg`,
 	hubbub: `${SITE_URL}/og/hubbub.jpg`,
 };
 
